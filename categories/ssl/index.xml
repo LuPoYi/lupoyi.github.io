@@ -19,7 +19,7 @@
       <guid>https://blog.poyi.tw/posts/2016-07-14-ssl-certificate-nginx-ubuntu-config/</guid>
       <description>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包
 要上Production的話還是必須找SSL服務來簽
-# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt  server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }  sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
+# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crtserver { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
     </item>
     
   </channel>

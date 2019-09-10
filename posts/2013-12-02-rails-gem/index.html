@@ -19,28 +19,30 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Rails] 打包Gem套件" />
 <meta property="og:description" content="當我們要安裝別人寫好的Library、API時，通常會
-gem &#39;google-translate&#39;  或是
-$ gem install google-translate  打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugin  gem build bob_test_plugin.gemspec  此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gem  irb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &quot;BobTestPlugin&quot;  發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages" />
+gem &#39;google-translate&#39; 或是
+$ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
+$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+$ sudo gem install bob_test_plugin-0.0.1.gemirb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
+$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-12-02-rails-gem/" />
 
 
   <meta itemprop="name" content="[Rails] 打包Gem套件">
 <meta itemprop="description" content="當我們要安裝別人寫好的Library、API時，通常會
-gem &#39;google-translate&#39;  或是
-$ gem install google-translate  打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugin  gem build bob_test_plugin.gemspec  此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gem  irb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &quot;BobTestPlugin&quot;  發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">
+gem &#39;google-translate&#39; 或是
+$ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
+$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+$ sudo gem install bob_test_plugin-0.0.1.gemirb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
+$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">
 
 
 
-<meta itemprop="wordCount" content="41">
+<meta itemprop="wordCount" content="39">
 
 
 
@@ -56,7 +58,7 @@ $ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/201
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -133,45 +135,22 @@ $ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/201
 
 <h1>[Rails] 打包Gem套件</h1>
 <p>當我們要安裝別人寫好的Library、API時，通常會</p>
-
-<pre><code class="language-ruby">gem 'google-translate'
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-ruby Gemfile" data-lang="ruby Gemfile">gem &#39;google-translate&#39;</code></pre></div>
 <p>或是</p>
-
-<pre><code class="language-bash">$ gem install google-translate
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash  Terminal" data-lang="bash  Terminal">$ gem install google-translate</code></pre></div>
 <h1 id="打包gem">打包gem</h1>
 
 <p>而當我們要打包自己的gem，自用或供他人使用，該怎麼做？</p>
-
-<pre><code class="language-bash">$ bundle gem bob_test_plugin
-</code></pre>
-
-<pre><code class="language-bash">gem build bob_test_plugin.gemspec
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash 用bundle 生成gem結構" data-lang="bash 用bundle 生成gem結構">$ bundle gem bob_test_plugin</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 建立gem" data-lang="bash 建立gem">gem build bob_test_plugin.gemspec</code></pre></div>
 <p>此時會生成 bob_test_plugin-0.0.1.gem</p>
-
-<pre><code class="language-bash">$ sudo gem install bob_test_plugin-0.0.1.gem
-
-</code></pre>
-
-<pre><code class="language-bash">irb&gt;require 'bob_test_plugin'
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝gem" data-lang="bash 安裝gem">$ sudo gem install bob_test_plugin-0.0.1.gem</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 在rails c下測試gem" data-lang="bash 在rails c下測試gem">irb&gt;require &#39;bob_test_plugin&#39;
 =&gt; true
 irb&gt;BobTestPlugin.name
-=&gt; &quot;BobTestPlugin&quot;
-
-</code></pre>
-
+=&gt; &#34;BobTestPlugin&#34;</code></pre></div>
 <h1 id="發佈在-rubygems-org">發佈在 RubyGems.org</h1>
 
 <p><a href="http://rubygems.org/sign_up">申請RubyGems帳號</a></p>
-
-<pre><code class="language-bash">$ gem push bob_test_plugin-0.0.1.gem
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash 發佈" data-lang="bash 發佈">$ gem push bob_test_plugin-0.0.1.gem</code></pre></div>
 <p>Reference:
 <a href="http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem">http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem</a>
 <a href="http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</a></p>
@@ -181,7 +160,7 @@ irb&gt;BobTestPlugin.name
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

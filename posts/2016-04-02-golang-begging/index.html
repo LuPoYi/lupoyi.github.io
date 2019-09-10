@@ -19,20 +19,22 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Golang] Golang 101 入門筆記" />
-<meta property="og:description" content="Hello Go! package main import &quot;fmt&quot; func main() { fmt.Println(&quot;hello, go!&quot;) }  $ go run hello.go Hello Go!  基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &quot;iota&quot;  變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &quot;Hello Go!" />
+<meta property="og:description" content="Hello Go! package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2016-04-02-golang-begging/" />
 <meta property="article:published_time" content="2016-04-02T20:59:38+08:00" />
 <meta property="article:modified_time" content="2016-04-02T20:59:38+08:00" />
 
   <meta itemprop="name" content="[Golang] Golang 101 入門筆記">
-<meta itemprop="description" content="Hello Go! package main import &quot;fmt&quot; func main() { fmt.Println(&quot;hello, go!&quot;) }  $ go run hello.go Hello Go!  基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &quot;iota&quot;  變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &quot;Hello Go!">
+<meta itemprop="description" content="Hello Go! package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!">
 
 
 <meta itemprop="datePublished" content="2016-04-02T20:59:38&#43;08:00" />
 <meta itemprop="dateModified" content="2016-04-02T20:59:38&#43;08:00" />
-<meta itemprop="wordCount" content="291">
+<meta itemprop="wordCount" content="290">
 
 
 
@@ -48,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -125,51 +127,39 @@
 
 <h1>[Golang] Golang 101 入門筆記</h1>
 <h2 id="hello-go">Hello Go!</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go hello.go" data-lang="go hello.go"><span class="kn">package</span> <span class="nx">main</span>
 
-<pre><code class="language-go">package main
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-import &quot;fmt&quot;
-
-func main() {
-    fmt.Println(&quot;hello, go!&quot;)
-}
-</code></pre>
-
-<pre><code class="language-bash">$ go run hello.go
-Hello Go!
-</code></pre>
-
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello, go!&#34;</span><span class="p">)</span>
+<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ go run hello.go
+Hello Go!</code></pre></div>
 <h2 id="基本結構-定義變數">基本結構、定義變數</h2>
 
 <h3 id="常數">常數</h3>
-
-<pre><code class="language-go">const Pi = 3.14159
+<div class="highlight"><pre class="chroma"><code class="language-go 常數 const identifier [type] = value" data-lang="go 常數 const identifier [type] = value">const Pi = 3.14159
 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6
 const (
   Unknown = 0
   Female = 1
   Male = 2
 )
-// &quot;iota&quot;
-</code></pre>
-
+// &#34;iota&#34;</code></pre></div>
 <h3 id="變數">變數</h3>
-
-<pre><code class="language-go">var a int
+<div class="highlight"><pre class="chroma"><code class="language-go 變數 var identifier type / var identifier [type] = value" data-lang="go 變數 var identifier type / var identifier [type] = value">var a int
 var b bool
 var str string
 
 var a int = 15
 var i = 5
 var b bool = false
-var str string = &quot;Hello Go!&quot;
+var str string = &#34;Hello Go!&#34;
 
 
 // := 初始化並給值(local限定)
 i := 1
-s := &quot;hi&quot;
-</code></pre>
-
+s := &#34;hi&#34;</code></pre></div>
 <h3 id="類型轉換">類型轉換</h3>
 
 <ul>
@@ -178,62 +168,52 @@ s := &quot;hi&quot;
 <li>float: float32, float64</li>
 
 <li><p>不同類型之間做計算都需要經過類型轉換</p>
-
-<pre><code class="language-go">var a int
+<div class="highlight"><pre class="chroma"><code class="language-go 類型轉換 valueOfTypeB = typeB(valueOfTypeA)" data-lang="go 類型轉換 valueOfTypeB = typeB(valueOfTypeA)">var a int
 var b int32
 a = 15
 b = a + 6 // cannot use a + 6 (type int) as type int32 in assignment
-b = int32(a) + 6
-</code></pre></li>
+b = int32(a) + 6</code></pre></div></li>
 </ul>
 
-<h3 id="指針">指針</h3>
-
-<pre><code class="language-go">// 若有一個變數為abc，則 &amp;abc 可取得 abc 的記憶體位置
+<p><h3 id="指針">指針</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go pointer" data-lang="go pointer">// 若有一個變數為abc，則 &amp;abc 可取得 abc 的記憶體位置
   var i1 = 5
-  fmt.Printf(&quot;An integer: %d, its location in memory: %p\n&quot;, i1, &amp;i1)
+  fmt.Printf(&#34;An integer: %d, its location in memory: %p\n&#34;, i1, &amp;i1)</p>
 
-// 要直接定義pointer的話，使用 *abc
+<p>// 要直接定義pointer的話，使用 *abc
   var intP *int
   intP = &amp;i1
-  fmt.Printf(&quot;The value at memory location %p is %d\n&quot;, intP, *intP)
-
-</code></pre>
-
+  fmt.Printf(&#34;The value at memory location %p is %d\n&#34;, intP, *intP)</code></pre></div>
 <h2 id="判斷式-迴圈">判斷式、迴圈</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go if/else/switch/for" data-lang="go if/else/switch/for">if abc &gt; 5 {</p>
 
-<pre><code class="language-go">if abc &gt; 5 {
+<p>} else if abc &lt; -5  {</p>
 
-} else if abc &lt; -5  {
+<p>} else {</p>
 
-} else {
+<p>}</p>
 
-}
-
-switch abc {
+<p>switch abc {
   case 1:
-    ......
+    &hellip;&hellip;
   case 2:
-    ......
+    &hellip;&hellip;
   default:
-    ......
-}
+    &hellip;&hellip;
+}</p>
 
-for i := 0; i &lt; 5; i++ {
+<p>for i := 0; i &lt; 5; i++ {</p>
 
-}
+<p>}</p>
 
-// break 中斷並跳出迴圈或判斷式
-// continue 略過當次剩餘的code，直接跳至迴圈下一run
-</code></pre>
-
+<p>// break 中斷並跳出迴圈或判斷式
+// continue 略過當次剩餘的code，直接跳至迴圈下一run</code></pre></div>
 <h2 id="function">Function</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go function" data-lang="go function">func say() {
+  println(&#34;Hi~&#34;)
+}</p>
 
-<pre><code class="language-go">func say() {
-  println(&quot;Hi~&quot;)
-}
-
-// min, max = MinMax(44, 33)
+<p>// min, max = MinMax(44, 33)
 func MinMax(a int, b int) (min int, max int) {
   if a &lt; b {
       min = a
@@ -243,15 +223,12 @@ func MinMax(a int, b int) (min int, max int) {
       max = a
   }
   return
-}
+}</p>
 
+<p>func Min(a &hellip;int) int {</p>
 
-func Min(a ...int) int {
-
-}
-</code></pre>
-
-<h2 id="其他備忘">其他備忘</h2>
+<p>}</code></pre></div>
+<h2 id="其他備忘">其他備忘</h2></p>
 
 <ul>
 <li>不同類型之間做計算都需要經過類型轉換</li>
@@ -268,7 +245,7 @@ func Min(a ...int) int {
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

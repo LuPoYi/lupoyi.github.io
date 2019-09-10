@@ -19,18 +19,20 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Rails] ActiveRecord" />
-<meta property="og:description" content="class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss end  class Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &quot;User&quot;, :foreign_key =&gt; &quot;manager_id&quot; ,:order =&gt; &quot;id desc&quot; end # class_name =&gt; &quot;User&quot; 變更關聯class name # :foreign_key =&gt; &quot;manager_id&quot;變更關聯foreign key,預設為class_id # :order =&gt; &quot;id desc&quot; 排序  class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6." />
+<meta property="og:description" content="class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss endclass Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &#34;User&#34;, :foreign_key =&gt; &#34;manager_id&#34; ,:order =&gt; &#34;id desc&#34; end # class_name =&gt; &#34;User&#34; 變更關聯class name # :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id # :order =&gt; &#34;id desc&#34; 排序class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-11-20-rails-activerecord/" />
 
 
   <meta itemprop="name" content="[Rails] ActiveRecord">
-<meta itemprop="description" content="class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss end  class Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &quot;User&quot;, :foreign_key =&gt; &quot;manager_id&quot; ,:order =&gt; &quot;id desc&quot; end # class_name =&gt; &quot;User&quot; 變更關聯class name # :foreign_key =&gt; &quot;manager_id&quot;變更關聯foreign key,預設為class_id # :order =&gt; &quot;id desc&quot; 排序  class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6.">
+<meta itemprop="description" content="class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss endclass Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &#34;User&#34;, :foreign_key =&gt; &#34;manager_id&#34; ,:order =&gt; &#34;id desc&#34; end # class_name =&gt; &#34;User&#34; 變更關聯class name # :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id # :order =&gt; &#34;id desc&#34; 排序class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6.">
 
 
 
-<meta itemprop="wordCount" content="115">
+<meta itemprop="wordCount" content="113">
 
 
 
@@ -46,7 +48,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -122,35 +124,32 @@
     <main id="content" class="posts">
 
 <h1>[Rails] ActiveRecord</h1>
-<pre><code class="language-ruby">class Boss &lt; ActiveRecord::Base
-  has_one :employee 
+<p><div class="highlight"><pre class="chroma"><code class="language-ruby Model之間要關聯時，雙方都要設定 (單複數要注意)" data-lang="ruby Model之間要關聯時，雙方都要設定 (單複數要注意)">class Boss &lt; ActiveRecord::Base
+  has_one :employee
   has_many :employees
-end
+end</p>
 
-class Employee &lt; ActiveRecord::Base
+<p>class Employee &lt; ActiveRecord::Base
     belongs_to :boss
-end
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 常用參數" data-lang="ruby 常用參數">class Employee &lt; ActiveRecord::Base
+    belongs_to :manager, :class_name =&gt; &#34;User&#34;, :foreign_key =&gt; &#34;manager_id&#34; ,:order =&gt; &#34;id desc&#34;
+end</p>
 
+<h1 id="class-name-gt-34-user-34-變更關聯class-name">class_name =&gt; &#34;User&#34; 變更關聯class name</h1>
+
+<h1 id="foreign-key-gt-34-manager-id-34-變更關聯foreign-key-預設為class-id">:foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id</h1>
+
+<h1 id="order-gt-34-id-desc-34-排序-code-pre-div-div-class-highlight-pre-class-chroma-code-class-language-ruby-資料驗證-data-lang-ruby-資料驗證-class-group-lt-activerecord-base">:order =&gt; &#34;id desc&#34; 排序</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 資料驗證" data-lang="ruby 資料驗證">class Group &lt; ActiveRecord::Base</h1>
+
+<pre><code>validates :name, presence: true # 此欄位必填
 </code></pre>
 
-<pre><code class="language-ruby">class Employee &lt; ActiveRecord::Base
-    belongs_to :manager, :class_name =&gt; &quot;User&quot;, :foreign_key =&gt; &quot;manager_id&quot; ,:order =&gt; &quot;id desc&quot;
-end
-
-# class_name =&gt; &quot;User&quot; 變更關聯class name
-# :foreign_key =&gt; &quot;manager_id&quot;變更關聯foreign key,預設為class_id
-# :order =&gt; &quot;id desc&quot; 排序
-</code></pre>
-
-<pre><code class="language-ruby">class Group &lt; ActiveRecord::Base
-    validates :name, presence: true # 此欄位必填
-  
-  validates :name, :length =&gt; { :minimum =&gt; 2 }
+<p>validates :name, :length =&gt; { :minimum =&gt; 2 }
   validates :bio, :length =&gt; { :maximum =&gt; 500 }
   validates :password, :length =&gt; { :in =&gt; 6..20 }
-  validates :registration_number, :length =&gt; { :is =&gt; 6 }
-  
-=begin
+  validates :registration_number, :length =&gt; { :is =&gt; 6 }</p>
+
+<p>=begin
   others helpler:
     acceptance
     validates_associated
@@ -165,19 +164,16 @@ end
     validates_with
     validates_each
 =end
-end
-
-</code></pre>
-
+end</code></pre></div>
 <p>Reference:
-<a href="http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers">http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers</a></p>
+<a href="http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers">http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers</a></p></p>
 
 
     </main>
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

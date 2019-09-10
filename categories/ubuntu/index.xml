@@ -17,7 +17,7 @@
       <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2019-05-26-rails-ubuntu-environment-ubuntu18-dot-04/</guid>
-      <description>sudo adduser deploy sudo adduser deploy sudo exit  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn  git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.</description>
+      <description>sudo adduser deploy sudo adduser deploy sudo exitcurl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarngit clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 26 Nov 2016 16:56:10 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-11-26-rails-ubuntu-environment-ubuntu16-dot-04/</guid>
-      <description>sudo adduser bob sudo adduser bob sudo su bob  sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev  Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc echo &#39;eval &amp;quot;$(rbenv init -)&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &#39;export PATH=&amp;quot;$HOME/.</description>
+      <description>sudo adduser bob sudo adduser bob sudo su bobsudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL rbenv install 2.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-10-19-my-linux-command/</guid>
-      <description>稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *  grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt  grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt  grep -v &#39;bob&#39; abc.txt  find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫  find /home -type d -name log  locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf   Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
+      <description>稍微進階是對我來說啦 grep grep -r &amp;#39;bob&amp;#39; *OR)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| = OR)&#34;grep -E &amp;#39;bob|poyi&amp;#39; abc.txt egrep &amp;#39;bob|poyi&amp;#39; abc.txtAND)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* = AND)&#34;grep -E &amp;#39;bob.*poyi|200.*poyi&amp;#39; abc.txtgrep -v &amp;#39;bob&amp;#39; abc.txt find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
  Ctrl + w : 刪除文字至上一個空白
  Ctrl + u : 刪除游標前</description>
     </item>
@@ -46,7 +46,7 @@
       <pubDate>Thu, 25 Aug 2016 20:54:54 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-08-25-linux-some-common-security-setting/</guid>
-      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart  開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades  ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
+      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@
       <guid>https://blog.poyi.tw/posts/2016-07-14-ssl-certificate-nginx-ubuntu-config/</guid>
       <description>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包
 要上Production的話還是必須找SSL服務來簽
-# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt  server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }  sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
+# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crtserver { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
     </item>
     
     <item>
@@ -66,7 +66,7 @@
       <pubDate>Sat, 05 Mar 2016 11:42:49 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-03-05-ubuntu-openvpn-server-client/</guid>
-      <description>OpenVpn apt-get update apt-get install openvpn easy-rsa  gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &amp;gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf  # dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &amp;quot;redirect-gateway def1 bypass-dhcp&amp;quot; user nobody group nogroup # 補上8.8.8.8 push &amp;quot;dhcp-option DNS 8.8.8.8&amp;quot; ;push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot; ;push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot; #其他基本上維持預設即可  Packet Forwarding echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf  # 拿掉註解 net.ipv4.ip_forward=1  Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw  # 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&amp;quot;ACCEPT&amp;quot;  vim /etc/ufw/before.</description>
+      <description>OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &amp;gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &amp;#34;redirect-gateway def1 bypass-dhcp&amp;#34; user nobody group nogroup # 補上8.8.8.8 push &amp;#34;dhcp-option DNS 8.8.8.8&amp;#34; ;push &amp;#34;dhcp-option DNS 208.67.222.222&amp;#34; ;push &amp;#34;dhcp-option DNS 208.67.220.220&amp;#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&amp;#34;ACCEPT&amp;#34;vim /etc/ufw/before.</description>
     </item>
     
     <item>
@@ -85,9 +85,9 @@ $ date # 確認目前時間 $ dpkg -l | grep ntp # 檢查是否已安裝 $ sudo 
       <pubDate>Sun, 17 Jan 2016 16:08:49 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-01-17-ubuntu-setting-pppoe-static-ip/</guid>
-      <description>一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic auto p1p1 iface p1p1 inet static address 192.168.1.100 netmask 255.255.255.0 gateway 192.168.1.1  而需要使用PPPoE 輸入電信商提供的帳號來登入時 #####帳號以中華電信為例
+      <description>一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic auto p1p1 iface p1p1 inet static address 192.168.1.100 netmask 255.255.255.0 gateway 192.168.1.1 而需要使用PPPoE 輸入電信商提供的帳號來登入時 #####帳號以中華電信為例
  xxxxxxxx@hinet.net 取得動態IP (原有帳號格式) xxxxxxxx@ip.hinet.net 取得固定IP 僅限一台電腦使用
-$ sudo apt-get install pppoeconf $ sudo pppoeconf   接著照著說明下一步，輸入帳號密碼等等的，全部設定完即可使用
+$ sudo apt-get install pppoeconf $ sudo pppoeconf  接著照著說明下一步，輸入帳號密碼等等的，全部設定完即可使用
 也可以看到/etc/network/interfaces被加了一些設定
 Reference:
 http://note.drx.tw/2008/08/networkpppoe-adsl.html</description>
@@ -99,7 +99,7 @@ http://note.drx.tw/2008/08/networkpppoe-adsl.html</description>
       <pubDate>Mon, 29 Jun 2015 23:39:10 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2015-06-29-mac-build-ubuntu-flash-using-command/</guid>
-      <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%  Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successful  Bob:Downloads $ sudo dd if=ubuntu-14.</description>
+      <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successfulBob:Downloads $ sudo dd if=ubuntu-14.</description>
     </item>
     
   </channel>

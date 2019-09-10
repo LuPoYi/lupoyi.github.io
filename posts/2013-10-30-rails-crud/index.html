@@ -19,18 +19,20 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Rails] CRUD 備忘" />
-<meta property="og:description" content="&lt;%= link_to &#39;list&#39;, teams_path %&gt; # GET def index @teams = Team.all end  &lt;%= link_to &#39;show&#39;, team_path(team) %&gt; # GET def show @team = Team.find(params[:id]) end  &lt;%= link_to &#39;new Team&#39;, new_team_path %&gt; def new @team = Team.new end  &lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST &lt;%= t.text_field :name %&gt; &lt;%= t.text_field :year %&gt; &lt;%= t.submit &quot;Create&quot; %&gt; &lt;% end %&gt; def create Team." />
+<meta property="og:description" content="&lt;%= link_to &#39;list&#39;, teams_path %&gt; # GET def index @teams = Team.all end&lt;%= link_to &#39;show&#39;, team_path(team) %&gt; # GET def show @team = Team.find(params[:id]) end&lt;%= link_to &#39;new Team&#39;, new_team_path %&gt; def new @team = Team.new end&lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST &lt;%= t.text_field :name %&gt; &lt;%= t.text_field :year %&gt; &lt;%= t.submit &#34;Create&#34; %&gt; &lt;% end %&gt; def create Team." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-10-30-rails-crud/" />
 
 
   <meta itemprop="name" content="[Rails] CRUD 備忘">
-<meta itemprop="description" content="&lt;%= link_to &#39;list&#39;, teams_path %&gt; # GET def index @teams = Team.all end  &lt;%= link_to &#39;show&#39;, team_path(team) %&gt; # GET def show @team = Team.find(params[:id]) end  &lt;%= link_to &#39;new Team&#39;, new_team_path %&gt; def new @team = Team.new end  &lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST &lt;%= t.text_field :name %&gt; &lt;%= t.text_field :year %&gt; &lt;%= t.submit &quot;Create&quot; %&gt; &lt;% end %&gt; def create Team.">
+<meta itemprop="description" content="&lt;%= link_to &#39;list&#39;, teams_path %&gt; # GET def index @teams = Team.all end&lt;%= link_to &#39;show&#39;, team_path(team) %&gt; # GET def show @team = Team.find(params[:id]) end&lt;%= link_to &#39;new Team&#39;, new_team_path %&gt; def new @team = Team.new end&lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST &lt;%= t.text_field :name %&gt; &lt;%= t.text_field :year %&gt; &lt;%= t.submit &#34;Create&#34; %&gt; &lt;% end %&gt; def create Team.">
 
 
 
-<meta itemprop="wordCount" content="129">
+<meta itemprop="wordCount" content="123">
 
 
 
@@ -46,7 +48,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -122,69 +124,50 @@
     <main id="content" class="posts">
 
 <h1>[Rails] CRUD 備忘</h1>
-<pre><code class="language-ruby">&lt;%= link_to 'list', teams_path %&gt; # GET
+<div class="highlight"><pre class="chroma"><code class="language-ruby index" data-lang="ruby index">&lt;%= link_to &#39;list&#39;, teams_path %&gt; # GET
 
 def index
     @teams = Team.all
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= link_to 'show', team_path(team) %&gt; # GET
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby show" data-lang="ruby show">&lt;%= link_to &#39;show&#39;, team_path(team) %&gt; # GET
 
 def show
     @team = Team.find(params[:id])
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= link_to 'new Team', new_team_path %&gt;
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby new" data-lang="ruby new">&lt;%= link_to &#39;new Team&#39;, new_team_path %&gt;
 
 def new
     @team = Team.new
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby create" data-lang="ruby create">&lt;%= form_for @team, :url =&gt; teams_path do |t| %&gt; #In a form, the default request method is POST
 &lt;%= t.text_field :name %&gt;
 &lt;%= t.text_field :year %&gt;
-&lt;%= t.submit &quot;Create&quot; %&gt;
+&lt;%= t.submit &#34;Create&#34; %&gt;
 &lt;% end %&gt;
 
 def create
     Team.create(params[:id])
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= link_to 'edit', edit_team_path(team) %&gt;
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby edit" data-lang="ruby edit">&lt;%= link_to &#39;edit&#39;, edit_team_path(team) %&gt;
 
 def edit
     @team = Team.find(params[:id])
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= form_for @team, :url =&gt; teams_path(@team),:method =&gt; :put do |t| %&gt; 
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby update" data-lang="ruby update">&lt;%= form_for @team, :url =&gt; teams_path(@team),:method =&gt; :put do |t| %&gt; 
 &lt;%= t.text_field :name %&gt;
 &lt;%= t.text_field :year %&gt;
-&lt;%= t.submit &quot;Create&quot; %&gt;
+&lt;%= t.submit &#34;Create&#34; %&gt;
 &lt;% end %&gt;
 
 def update
     @team.update_attributes(params[:team]) #...
-end
-</code></pre>
-
-<pre><code class="language-ruby">&lt;%= link_to @team, team_path(@team), :method =&gt; :delete %&gt;
+end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby destroy" data-lang="ruby destroy">&lt;%= link_to @team, team_path(@team), :method =&gt; :delete %&gt;
 
 def destroy
     Team.find(params[:id].destroy
-end
-</code></pre>
+end</code></pre></div>
 
 
     </main>
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

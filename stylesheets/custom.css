@@ -1,0 +1,4 @@
+header { width: 25% }
+.content-wrapper { width: 75%; margin-left: 25% }
+footer { width: 75%; left: 25%; padding: 15px 45px; }
+#content, .breadcrumb { max-width: 50em }

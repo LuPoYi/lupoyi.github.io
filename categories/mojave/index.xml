@@ -17,7 +17,7 @@
       <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</guid>
-      <description>ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &amp;gt; /dev/null; then eval &amp;quot;$(rbenv init -)&amp;quot;; fi&#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3  gem install rails -v 6.0.0.rc1 rbenv rehash  brew install mysql brew install redis brew install ssdb brew install memcached  </description>
+      <description>ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3gem install rails -v 6.0.0.rc1 rbenv rehashbrew install mysql brew install redis brew install ssdb brew install memcached</description>
     </item>
     
   </channel>

@@ -19,11 +19,13 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[JavaScript] 中斷事件或動作的觸發" />
 <meta property="og:description" content="bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
-&lt;div class=&quot;p&quot;&gt; &lt;div class=&quot;a&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&quot;.p&quot;).click(function(event){ alert(&quot;p 外&quot;); }); $(&quot;.a&quot;).click(function(event){ alert(&quot;a 內&quot;); event.stopPropagation(); }); &lt;/script&gt;  preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
-&lt;a href=&quot;http://www.google.com&quot;&gt;go to google&lt;/a&gt; &lt;div id=&quot;check&quot;&gt;&lt;/div&gt; &lt;script&gt; $(&quot;a&quot;).click(function(event) { event.preventDefault(); $(&quot;&lt;div&gt;&quot;).append(&quot;Ya&quot;).appendTo(&quot;#check&quot;); }); &lt;/script&gt;  Reference:
+&lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
 http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
 http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html" />
 <meta property="og:type" content="article" />
@@ -33,8 +35,8 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html" /
   <meta itemprop="name" content="[JavaScript] 中斷事件或動作的觸發">
 <meta itemprop="description" content="bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
-&lt;div class=&quot;p&quot;&gt; &lt;div class=&quot;a&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&quot;.p&quot;).click(function(event){ alert(&quot;p 外&quot;); }); $(&quot;.a&quot;).click(function(event){ alert(&quot;a 內&quot;); event.stopPropagation(); }); &lt;/script&gt;  preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
-&lt;a href=&quot;http://www.google.com&quot;&gt;go to google&lt;/a&gt; &lt;div id=&quot;check&quot;&gt;&lt;/div&gt; &lt;script&gt; $(&quot;a&quot;).click(function(event) { event.preventDefault(); $(&quot;&lt;div&gt;&quot;).append(&quot;Ya&quot;).appendTo(&quot;#check&quot;); }); &lt;/script&gt;  Reference:
+&lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
 http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
 http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
 
@@ -56,7 +58,7 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -141,40 +143,33 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
 
 <p>停止向上層bubble up，但仍然會觸發browser
 看例子比較快 <a href="http://jsfiddle.net/dA6R3/1/">http://jsfiddle.net/dA6R3/1/</a></p>
-
-<pre><code class="language-html">
-&lt;div class=&quot;p&quot;&gt;
-    &lt;div class=&quot;a&quot;&gt;&lt;/div&gt;
+<div class="highlight"><pre class="chroma"><code class="language-html 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作" data-lang="html 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作">&lt;div class=&#34;p&#34;&gt;
+    &lt;div class=&#34;a&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
-$(&quot;.p&quot;).click(function(event){
-    alert(&quot;p 外&quot;);
+$(&#34;.p&#34;).click(function(event){
+    alert(&#34;p 外&#34;);
 });
 
-$(&quot;.a&quot;).click(function(event){
-    alert(&quot;a 內&quot;);
+$(&#34;.a&#34;).click(function(event){
+    alert(&#34;a 內&#34;);
     event.stopPropagation();
 });
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre></div>
 <h2 id="preventdefault">preventDefault()</h2>
 
 <p>會將預設的動作停掉不讓它執行，不會觸發browser
 看例子比較快 <a href="http://jsfiddle.net/88dcF/1/">http://jsfiddle.net/88dcF/1/</a></p>
-
-<pre><code class="language-html">&lt;a href=&quot;http://www.google.com&quot;&gt;go to google&lt;/a&gt;
-&lt;div id=&quot;check&quot;&gt;&lt;/div&gt;
+<div class="highlight"><pre class="chroma"><code class="language-html 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)" data-lang="html 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)">&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt;
+&lt;div id=&#34;check&#34;&gt;&lt;/div&gt;
 
 &lt;script&gt;
-$(&quot;a&quot;).click(function(event) {
+$(&#34;a&#34;).click(function(event) {
   event.preventDefault();
-  $(&quot;&lt;div&gt;&quot;).append(&quot;Ya&quot;).appendTo(&quot;#check&quot;);
+  $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;);
 });
-&lt;/script&gt;
-</code></pre>
-
+&lt;/script&gt;</code></pre></div>
 <p>Reference:</p>
 
 <p><a href="http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/">http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/</a></p>
@@ -186,7 +181,7 @@ $(&quot;a&quot;).click(function(event) {
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

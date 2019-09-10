@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[ASP.NET] 檔案下載寫法" />
 <meta property="og:description" content="Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &quot;C:/porn.jpg&quot;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &quot;application/octet-stream&quot;; // 指定檔案類型 Response.AddHeader(&quot;Content-Disposition&quot;,&quot;attachment;filename=&quot;&#43;&quot;porn.jpg&quot;); // 設定檔名 // System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 Response.AppendHeader(&quot;Content-Length&quot;, file.Length.ToString()); // 表頭加入檔案大小 Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &quot;C:/porn.jpg&quot;; // 設定路徑 byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 Response.AppendHeader(&quot;content-disposition&quot;, &quot;attachment;filename=&quot; &#43; &quot;porn.jpg&quot;); //設定檔名 // HttpContext." />
 <meta property="og:type" content="article" />
@@ -46,7 +48,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -166,7 +168,7 @@ Response.End();
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

@@ -19,8 +19,10 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Rails] AJAX render errors in json" />
-<meta property="og:description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );  def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &quot;金額不足&quot; }, :status =&gt; 422 return end end  當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+<meta property="og:description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data" />
 <meta property="og:type" content="article" />
@@ -29,14 +31,14 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
 <meta property="article:modified_time" content="2015-06-12T19:02:48+08:00" />
 
   <meta itemprop="name" content="[Rails] AJAX render errors in json">
-<meta itemprop="description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );  def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &quot;金額不足&quot; }, :status =&gt; 422 return end end  當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+<meta itemprop="description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">
 
 
 <meta itemprop="datePublished" content="2015-06-12T19:02:48&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-12T19:02:48&#43;08:00" />
-<meta itemprop="wordCount" content="50">
+<meta itemprop="wordCount" content="49">
 
 
 
@@ -52,7 +54,7 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -128,14 +130,14 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
     <main id="content" class="posts">
 
 <h1>[Rails] AJAX render errors in json</h1>
-<pre><code class="language-javascript">$.ajax({
+<p><div class="highlight"><pre class="chroma"><code class="language-javascript new.html.erb" data-lang="javascript new.html.erb">$.ajax({
   url: URL,
   async:false,
   data:{
     amount: 100,
   },
-  dataType:'json',
-  method:'post',
+  dataType:&#39;json&#39;,
+  method:&#39;post&#39;,
   success:function(data){
     // do success things
   },
@@ -143,18 +145,13 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
     var errors = $.parseJSON(xhr.responseText).errors
     alert(errors);
   }
-);
-</code></pre>
-
-<pre><code class="language-ruby">def create
-  if amount &lt; 100
-    render :json =&gt; { :errors =&gt; &quot;金額不足&quot; }, :status =&gt; 422
-    return 
-  end
-end
-</code></pre>
-
-<p>當錯誤回傳時，使用422(Unprocessable Entity)來做error handling</p>
+);</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby orders_controller.rb" data-lang="ruby orders_controller.rb"><span class="k">def</span> <span class="nf">create</span>
+  <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span>
+    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:errors</span> <span class="o">=&gt;</span> <span class="s2">&#34;金額不足&#34;</span> <span class="p">},</span> <span class="ss">:status</span> <span class="o">=&gt;</span> <span class="mi">422</span>
+    <span class="k">return</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+<p>當錯誤回傳時，使用422(Unprocessable Entity)來做error handling</p></p>
 
 <p>Reference:</p>
 
@@ -166,7 +163,7 @@ end
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

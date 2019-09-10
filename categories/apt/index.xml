@@ -21,7 +21,7 @@
 Physical Malware Infection - USB
 External Attacks - 駭客入侵 - 漏洞攻擊
 APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
-Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account  駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Default Password (root) for &amp;#39;root&amp;#39; Account Unpassworded for &amp;#39;sa&amp;#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
 Reference: IThome「防駭演練與危機處理」研習會</description>
     </item>
     

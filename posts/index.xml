@@ -17,7 +17,7 @@
       <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2019-05-26-rails-ubuntu-environment-ubuntu18-dot-04/</guid>
-      <description>sudo adduser deploy sudo adduser deploy sudo exit  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn  git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.</description>
+      <description>sudo adduser deploy sudo adduser deploy sudo exitcurl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarngit clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&amp;rsquo;s CUDA Zcash mine
 自己solo的話就是有挖到block才有收益
 http://zcash.flypool.org/
 通常礦池首頁都會寫很清楚該怎麼做
-miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3  nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
+miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.&amp;lt;自命名worker&amp;gt; nheqminer.</description>
     </item>
     
     <item>
@@ -82,7 +82,7 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
       <pubDate>Sat, 26 Nov 2016 16:56:10 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-11-26-rails-ubuntu-environment-ubuntu16-dot-04/</guid>
-      <description>sudo adduser bob sudo adduser bob sudo su bob  sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev  Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc echo &#39;eval &amp;quot;$(rbenv init -)&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &#39;export PATH=&amp;quot;$HOME/.</description>
+      <description>sudo adduser bob sudo adduser bob sudo su bobsudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL rbenv install 2.</description>
     </item>
     
     <item>
@@ -91,7 +91,7 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
       <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</guid>
-      <description>ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &amp;gt; /dev/null; then eval &amp;quot;$(rbenv init -)&amp;quot;; fi&#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3  gem install rails -v 6.0.0.rc1 rbenv rehash  brew install mysql brew install redis brew install ssdb brew install memcached  </description>
+      <description>ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3gem install rails -v 6.0.0.rc1 rbenv rehashbrew install mysql brew install redis brew install ssdb brew install memcached</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
       <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-10-19-my-linux-command/</guid>
-      <description>稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *  grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt  grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt  grep -v &#39;bob&#39; abc.txt  find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫  find /home -type d -name log  locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf   Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
+      <description>稍微進階是對我來說啦 grep grep -r &amp;#39;bob&amp;#39; *OR)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| = OR)&#34;grep -E &amp;#39;bob|poyi&amp;#39; abc.txt egrep &amp;#39;bob|poyi&amp;#39; abc.txtAND)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* = AND)&#34;grep -E &amp;#39;bob.*poyi|200.*poyi&amp;#39; abc.txtgrep -v &amp;#39;bob&amp;#39; abc.txt find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
  Ctrl + w : 刪除文字至上一個空白
  Ctrl + u : 刪除游標前</description>
     </item>
@@ -111,7 +111,7 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
       <pubDate>Thu, 25 Aug 2016 20:54:54 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-08-25-linux-some-common-security-setting/</guid>
-      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart  開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades  ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
+      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
       <guid>https://blog.poyi.tw/posts/2016-07-14-ssl-certificate-nginx-ubuntu-config/</guid>
       <description>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包
 要上Production的話還是必須找SSL服務來簽
-# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt  server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }  sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
+# 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crtserver { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &amp;lt;--- rails路徑 rails_env production; passenger_enabled on; }sudo openssl dhparam -out /opt/nginx/ssl/dhparam.</description>
     </item>
     
     <item>
@@ -135,16 +135,18 @@ miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼
 以下指令都需要開command line(cmd)
-geth account new  同步所有交易
-# --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192  // 第一次似乎可以用geth &amp;ndash;rpc &amp;ndash;fast來快速sync完整node(沒試過)
+geth account new 同步所有交易
+# --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &amp;ndash;rpc &amp;ndash;fast來快速sync完整node(沒試過)
 2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
 安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &amp;gt; nVidia)
-ethminer -G -M # GPU ethminer -M # CPU  3. 挖礦 挖礦前blockchain要先sync過，也就是&amp;rdquo;geth &amp;ndash;rpc&amp;rdquo;
+ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&amp;rdquo;geth &amp;ndash;rpc&amp;rdquo;
 看是要自己挖還是加入別人礦池
-自己挖 ethminer -G # GPU  加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了
+自己挖 ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了
 我這邊使用nanopool(另外還有dwarfpool/ethpool&amp;hellip;)
-// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G  也可以加上worker跟mail(會通知你的worker是否關閉)
-ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G  4. 看成果(礦池) 可依照nanopool提供的api查看目前情況</description>
+// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G 也可以加上worker跟mail(會通知你的worker是否關閉)
+ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G 4. 看成果(礦池) 可依照nanopool提供的api查看目前情況
+http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123
+nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</description>
     </item>
     
     <item>
@@ -153,7 +155,7 @@ ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME
       <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-04-02-golang-begging/</guid>
-      <description>Hello Go! package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;hello, go!&amp;quot;) }  $ go run hello.go Hello Go!  基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;quot;iota&amp;quot;  變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;quot;Hello Go!</description>
+      <description>Hello Go! package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello, go!&amp;#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;#34;iota&amp;#34; 變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;#34;Hello Go!</description>
     </item>
     
     <item>
@@ -162,8 +164,9 @@ ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME
       <pubDate>Sat, 05 Mar 2016 13:32:29 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-03-05-generate-your-own-bitcoin-address/</guid>
-      <description>使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make  Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
-# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind</description>
+      <description>使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
+# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind
+# 先確認此Address狀態 $ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &amp;#34;isvalid&amp;#34;: true, &amp;#34;address&amp;#34;: &amp;#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&amp;#34;, &amp;#34;scriptPubKey&amp;#34;: &amp;#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&amp;#34;, &amp;#34;ismine&amp;#34;: false, &amp;#34;iswatchonly&amp;#34;: false, &amp;#34;isscript&amp;#34;: false } # &amp;#34;ismine&amp;#34;: false =&amp;gt; 代表此address還不是自己的# bitcoin-cli importprivkey &amp;lt;Privkey&amp;gt; [label] [rescan=true] # label 是指你要放入哪個account，預設都會有一個””空字串的account # rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久) # 如果只是新address的話這邊填false就行了 $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &amp;#34;isvalid&amp;#34;: true, &amp;#34;address&amp;#34;: &amp;#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&amp;#34;, &amp;#34;scriptPubKey&amp;#34;: &amp;#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&amp;#34;, &amp;#34;ismine&amp;#34;: true, &amp;#34;iswatchonly&amp;#34;: false, &amp;#34;isscript&amp;#34;: false, &amp;#34;iscompressed&amp;#34;: true, &amp;#34;account&amp;#34;: &amp;#34;&amp;#34; } # &amp;#34;ismine&amp;#34;: true =&amp;gt; 現在此Address就是屬於你的 Reference:</description>
     </item>
     
     <item>
@@ -172,7 +175,7 @@ ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME
       <pubDate>Sat, 05 Mar 2016 11:42:49 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-03-05-ubuntu-openvpn-server-client/</guid>
-      <description>OpenVpn apt-get update apt-get install openvpn easy-rsa  gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &amp;gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf  # dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &amp;quot;redirect-gateway def1 bypass-dhcp&amp;quot; user nobody group nogroup # 補上8.8.8.8 push &amp;quot;dhcp-option DNS 8.8.8.8&amp;quot; ;push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot; ;push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot; #其他基本上維持預設即可  Packet Forwarding echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf  # 拿掉註解 net.ipv4.ip_forward=1  Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw  # 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&amp;quot;ACCEPT&amp;quot;  vim /etc/ufw/before.</description>
+      <description>OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &amp;gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &amp;#34;redirect-gateway def1 bypass-dhcp&amp;#34; user nobody group nogroup # 補上8.8.8.8 push &amp;#34;dhcp-option DNS 8.8.8.8&amp;#34; ;push &amp;#34;dhcp-option DNS 208.67.222.222&amp;#34; ;push &amp;#34;dhcp-option DNS 208.67.220.220&amp;#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&amp;#34;ACCEPT&amp;#34;vim /etc/ufw/before.</description>
     </item>
     
     <item>
@@ -191,9 +194,9 @@ $ date # 確認目前時間 $ dpkg -l | grep ntp # 檢查是否已安裝 $ sudo 
       <pubDate>Sun, 17 Jan 2016 16:08:49 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-01-17-ubuntu-setting-pppoe-static-ip/</guid>
-      <description>一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic auto p1p1 iface p1p1 inet static address 192.168.1.100 netmask 255.255.255.0 gateway 192.168.1.1  而需要使用PPPoE 輸入電信商提供的帳號來登入時 #####帳號以中華電信為例
+      <description>一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic auto p1p1 iface p1p1 inet static address 192.168.1.100 netmask 255.255.255.0 gateway 192.168.1.1 而需要使用PPPoE 輸入電信商提供的帳號來登入時 #####帳號以中華電信為例
  xxxxxxxx@hinet.net 取得動態IP (原有帳號格式) xxxxxxxx@ip.hinet.net 取得固定IP 僅限一台電腦使用
-$ sudo apt-get install pppoeconf $ sudo pppoeconf   接著照著說明下一步，輸入帳號密碼等等的，全部設定完即可使用
+$ sudo apt-get install pppoeconf $ sudo pppoeconf  接著照著說明下一步，輸入帳號密碼等等的，全部設定完即可使用
 也可以看到/etc/network/interfaces被加了一些設定
 Reference:
 http://note.drx.tw/2008/08/networkpppoe-adsl.html</description>
@@ -208,7 +211,7 @@ http://note.drx.tw/2008/08/networkpppoe-adsl.html</description>
       <description>###對稱金鑰加密：加解密使用的金鑰是同一把
  DES (Data Encryption Standard) AES (Advanced Encryption Standard)  ###非對稱金鑰加密系統(公開金鑰加密)，加解密不同把key(公鑰私鑰)
  RSA
-$key = &amp;quot;自定key&amp;quot; # 可利用rails的sercret key(Rails.application.secrets.secret_key_base) $iv = &amp;quot;自定iv&amp;quot; # AES 加密 def aes_encrypt(data) cipher = OpenSSL::Cipher::AES128.new(:CBC) cipher.encrypt cipher.key = $key cipher.iv = $iv encrypted = cipher.update(data) + cipher.final encrypted_base64 = Base64.encode64(encrypted) return encrypted_base64 end # 解密 def aes_decrypt(encrypted_base64) encrypted = Base64.decode64(encrypted_base64) decipher = OpenSSL::Cipher::AES128.new(:CBC) decipher.decrypt decipher.key = $key decipher.iv = $iv data = decipher.update(encrypted) + decipher.</description>
+$key = &amp;#34;自定key&amp;#34; # 可利用rails的sercret key(Rails.application.secrets.secret_key_base) $iv = &amp;#34;自定iv&amp;#34; # AES 加密 def aes_encrypt(data) cipher = OpenSSL::Cipher::AES128.new(:CBC) cipher.encrypt cipher.key = $key cipher.iv = $iv encrypted = cipher.update(data) + cipher.final encrypted_base64 = Base64.encode64(encrypted) return encrypted_base64 end # 解密 def aes_decrypt(encrypted_base64) encrypted = Base64.decode64(encrypted_base64) decipher = OpenSSL::Cipher::AES128.new(:CBC) decipher.decrypt decipher.key = $key decipher.iv = $iv data = decipher.update(encrypted) + decipher.</description>
     </item>
     
     <item>
@@ -219,9 +222,9 @@ $key = &amp;quot;自定key&amp;quot; # 可利用rails的sercret key(Rails.applic
       <guid>https://blog.poyi.tw/posts/2015-07-11-rails-various-update-methods/</guid>
       <description>##正規Rails的更新 - update
 會觸發validation、callback、也會更新updated_at
-&amp;gt; Comment.last.update(message: &#39;bbb&#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &amp;quot;comments&amp;quot; SET &amp;quot;message&amp;quot; = ?, &amp;quot;updated_at&amp;quot; = ? WHERE &amp;quot;comments&amp;quot;.&amp;quot;id&amp;quot; = ? [[&amp;quot;message&amp;quot;, &amp;quot;bbb&amp;quot;], [&amp;quot;updated_at&amp;quot;, &amp;quot;2015-07-11 09:42:02.303661&amp;quot;], [&amp;quot;id&amp;quot;, 200]] (9.1ms) commit transaction =&amp;gt; true  ##相當於直接下SQL的更新 - update_columns, update_all
+&amp;gt; Comment.last.update(message: &amp;#39;bbb&amp;#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = ?, &amp;#34;updated_at&amp;#34; = ? WHERE &amp;#34;comments&amp;#34;.&amp;#34;id&amp;#34; = ? [[&amp;#34;message&amp;#34;, &amp;#34;bbb&amp;#34;], [&amp;#34;updated_at&amp;#34;, &amp;#34;2015-07-11 09:42:02.303661&amp;#34;], [&amp;#34;id&amp;#34;, 200]] (9.1ms) commit transaction =&amp;gt; true ##相當於直接下SQL的更新 - update_columns, update_all
 而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
-&amp;gt; Comment.where(:id =&amp;gt; 200).first.update_columns(message: &#39;bbbbb&#39;, post_id: 3) SQL (9.2ms) UPDATE &amp;quot;comments&amp;quot; SET &amp;quot;message&amp;quot; = &#39;bbbbb&#39;, &amp;quot;post_id&amp;quot; = 3 WHERE &amp;quot;comments&amp;quot;.&amp;quot;id&amp;quot; = ? [[&amp;quot;id&amp;quot;, 200]] # update_column 跟 update_columns 相同，只是傳入值key跟value必須是string，並用逗點分隔 &amp;gt; Comment.</description>
+&amp;gt; Comment.where(:id =&amp;gt; 200).first.update_columns(message: &amp;#39;bbbbb&amp;#39;, post_id: 3) SQL (9.2ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = &amp;#39;bbbbb&amp;#39;, &amp;#34;post_id&amp;#34; = 3 WHERE &amp;#34;comments&amp;#34;.&amp;#34;id&amp;#34; = ? [[&amp;#34;id&amp;#34;, 200]] # update_column 跟 update_columns 相同，只是傳入值key跟value必須是string，並用逗點分隔 &amp;gt; Comment.</description>
     </item>
     
     <item>
@@ -230,7 +233,7 @@ $key = &amp;quot;自定key&amp;quot; # 可利用rails的sercret key(Rails.applic
       <pubDate>Mon, 29 Jun 2015 23:39:10 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2015-06-29-mac-build-ubuntu-flash-using-command/</guid>
-      <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%  Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successful  Bob:Downloads $ sudo dd if=ubuntu-14.</description>
+      <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successfulBob:Downloads $ sudo dd if=ubuntu-14.</description>
     </item>
     
     <item>
@@ -239,7 +242,7 @@ $key = &amp;quot;自定key&amp;quot; # 可利用rails的sercret key(Rails.applic
       <pubDate>Fri, 12 Jun 2015 19:02:48 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2015-06-12-rails-ajax-render-error-in-json/</guid>
-      <description>$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );  def create if amount &amp;lt; 100 render :json =&amp;gt; { :errors =&amp;gt; &amp;quot;金額不足&amp;quot; }, :status =&amp;gt; 422 return end end  當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+      <description>$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&amp;#39;json&amp;#39;, method:&amp;#39;post&amp;#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &amp;lt; 100 render :json =&amp;gt; { :errors =&amp;gt; &amp;#34;金額不足&amp;#34; }, :status =&amp;gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</description>
     </item>
@@ -276,7 +279,7 @@ http://www.epochtimes.com/b5/15/4/9/n4407355.htm</description>
       <pubDate>Sun, 12 Apr 2015 22:27:04 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2015-04-12-ruby-basic-2/</guid>
-      <description>Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)  def temp(&amp;amp;block) end temp(1) #=&amp;gt; wrong number of arguments (1 for 0) &amp;amp;block不是傳入的參數 temp() #=&amp;gt; nil temp(){puts &amp;quot;temp&amp;quot;} #=&amp;gt; nil # 當temp()後面有block時會把這一段code放置&amp;amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;amp;abc) abc.</description>
+      <description>Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)def temp(&amp;amp;block) end temp(1) #=&amp;gt; wrong number of arguments (1 for 0) &amp;amp;block不是傳入的參數 temp() #=&amp;gt; nil temp(){puts &amp;#34;temp&amp;#34;} #=&amp;gt; nil # 當temp()後面有block時會把這一段code放置&amp;amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;amp;abc) abc.</description>
     </item>
     
     <item>
@@ -289,9 +292,9 @@ http://www.epochtimes.com/b5/15/4/9/n4407355.htm</description>
 未來讓以後開發不會這麼吃力，來整複習一下好了 :D
 ##Everything is Ruby is an object
 Ruby 內皆為物件，無基本型別
-123.methods #=&amp;gt; 123可用的method列表 123.class #=&amp;gt; Fixnum #知道class後就可以查doc true.class #=&amp;gt; TrueClass nil.class #=&amp;gt; NilClass  &amp;gt; 2.even? =&amp;gt; true &amp;gt; 3.next =&amp;gt; 4 &amp;gt; -1.abs =&amp;gt; 1  ##基本使用
+123.methods #=&amp;gt; 123可用的method列表 123.class #=&amp;gt; Fixnum #知道class後就可以查doc true.class #=&amp;gt; TrueClass nil.class #=&amp;gt; NilClass &amp;gt; 2.even? =&amp;gt; true &amp;gt; 3.next =&amp;gt; 4 &amp;gt; -1.abs =&amp;gt; 1 ##基本使用
 123.class #integer 42343243243243243242343242344234234234.class #bignum 123.123.class #float “123”.class #string [].class #array {}.class #hash :abc.class #symbol nil.class #nilClass true.class #TrueClass false.class #FalseClass  ###輸出String的用法
-“123” + “345” + “333” x = 18 puts &amp;quot;your age is #{x}&amp;quot; puts ‘\n\t’ #單引號 (無視內容，直接輸出) puts &amp;quot;\n\t&amp;quot; #雙引號 (換行)  ###Hash</description>
+“123” + “345” + “333” x = 18 puts &amp;#34;your age is #{x}&amp;#34; puts ‘\n\t’ #單引號 (無視內容，直接輸出) puts &amp;#34;\n\t&amp;#34; #雙引號 (換行) ###Hash</description>
     </item>
     
     <item>
@@ -300,7 +303,7 @@ Ruby 內皆為物件，無基本型別
       <pubDate>Tue, 06 May 2014 22:00:59 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2014-05-06-ruby-txt-file/</guid>
-      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;+8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close  # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end  Reference:
+      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&amp;#39;mobile like ?&amp;#39;, &amp;#39;+8869%&amp;#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;w&amp;#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;r&amp;#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html</description>
     </item>
     
@@ -315,7 +318,7 @@ http://ruby-doc.org/core-2.1.4/File.html</description>
 Physical Malware Infection - USB
 External Attacks - 駭客入侵 - 漏洞攻擊
 APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
-Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account  駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Default Password (root) for &amp;#39;root&amp;#39; Account Unpassworded for &amp;#39;sa&amp;#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
 Reference: IThome「防駭演練與危機處理」研習會</description>
     </item>
     
@@ -326,7 +329,7 @@ Reference: IThome「防駭演練與危機處理」研習會</description>
       
       <guid>https://blog.poyi.tw/posts/2013-09-30-aspnet-connect-to-sql-server/</guid>
       <description>最陽春的寫法
-string QueryString = &amp;quot;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&amp;quot;;  SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;quot;SELECT name FROM Employee&amp;quot;; SqlCommand cmd = new SqlCommand(sqlStr, conn); SqlDataReader dr = cmd.ExecuteReader(); while (dr.Read()) { // 將找到的值取出來 string user = dr[&amp;quot;name&amp;quot;].ToString(); //... } conn.Close();  SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;quot;UPDATE Employee SET name = &#39;Bob&#39;&amp;quot;; SqlCommand cmd = new SqlCommand(sqlStr, conn); cmd.ExecuteNonQuery(); conn.Close();  sqlStr = &amp;quot;SELECT * FROM Employee WHERE action = @Action&amp;quot;; cmd.</description>
+string QueryString = &amp;#34;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&amp;#34;;SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;SELECT name FROM Employee&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); SqlDataReader dr = cmd.ExecuteReader(); while (dr.Read()) { // 將找到的值取出來 string user = dr[&amp;#34;name&amp;#34;].ToString(); //... } conn.Close();SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;UPDATE Employee SET name = &amp;#39;Bob&amp;#39;&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); cmd.ExecuteNonQuery(); conn.Close();sqlStr = &amp;#34;SELECT * FROM Employee WHERE action = @Action&amp;#34;; cmd.</description>
     </item>
     
     <item>
@@ -336,7 +339,7 @@ string QueryString = &amp;quot;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxx
       
       <guid>https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/</guid>
       <description>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
-static void linqPB() { var list = new List&amp;lt;string&amp;gt; { &amp;quot;apple&amp;quot;, &amp;quot;bob&amp;quot;, &amp;quot;coco&amp;quot;, &amp;quot;durex&amp;quot;, &amp;quot;enter&amp;quot;, &amp;quot;fuck&amp;quot;}; var searchKeyword = new List&amp;lt;string&amp;gt; { &amp;quot;o&amp;quot;, &amp;quot;e&amp;quot; }; var predicate = PredicateBuilder.False&amp;lt;string&amp;gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&amp;gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter  主要的重點如下，將條件放入xxx</description>
+static void linqPB() { var list = new List&amp;lt;string&amp;gt; { &amp;#34;apple&amp;#34;, &amp;#34;bob&amp;#34;, &amp;#34;coco&amp;#34;, &amp;#34;durex&amp;#34;, &amp;#34;enter&amp;#34;, &amp;#34;fuck&amp;#34;}; var searchKeyword = new List&amp;lt;string&amp;gt; { &amp;#34;o&amp;#34;, &amp;#34;e&amp;#34; }; var predicate = PredicateBuilder.False&amp;lt;string&amp;gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&amp;gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx</description>
     </item>
     
     <item>
@@ -358,7 +361,7 @@ int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0;
       
       <guid>https://blog.poyi.tw/posts/2013-02-14-aspnet-reset-password-in-active-directory/</guid>
       <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
-DirectoryEntry userDirEntry = new DirectoryEntry(&amp;quot;LDAP://&amp;quot; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;quot;SetPassword&amp;quot;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;quot;pwdLastSet&amp;quot;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close();  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;quot;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;quot;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int } string strPwd = new string(chars); while (!((Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;quot;[a-z]&amp;quot;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;quot;[A-Z]&amp;quot;)) &amp;amp;&amp;amp; (Regex.</description>
+DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close();public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int } string strPwd = new string(chars); while (!((Regex.IsMatch(strPwd, &amp;#34;[0-9]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;#34;[a-z]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;#34;[A-Z]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, @&amp;#34;[\W]&amp;#34;)))) // \w [a-zA-Z0-9_] , \W !</description>
     </item>
     
     <item>
@@ -485,7 +488,7 @@ dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add
       <description>在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&amp;hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&amp;lt;Employee&amp;gt; list1 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;quot;S&amp;quot;)); list1 = list1.Take&amp;lt;Employee&amp;gt;(10); // list2 IQueryable&amp;lt;Employee&amp;gt; list2 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;quot;S&amp;quot;)); list2 = list2.Take&amp;lt;Employee&amp;gt;(10);  // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0  可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// list1 IEnumerable&amp;lt;Employee&amp;gt; list1 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list1 = list1.Take&amp;lt;Employee&amp;gt;(10); // list2 IQueryable&amp;lt;Employee&amp;gt; list2 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list2 = list2.Take&amp;lt;Employee&amp;gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html</description>
     </item>
     
@@ -525,8 +528,8 @@ Reference: http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.95).aspx http:/
       <guid>https://blog.poyi.tw/posts/2013-01-02-css-position/</guid>
       <description>以前都是直接用現成的，或是抓別人的css來用 一堆語法都知道是幹麻的，但自己寫的時候就完全不行 尤其是layout的配置..明明感覺很簡單的卻要一直亂試喬半天&amp;hellip;
 趁著最近面試的機會來記一下CSS&amp;hellip;. 不然平常都很懶得學
-Position position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */  z-index z-index 元件重疊時，值愈大，顯示愈上面
-overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */  Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php</description>
+Position position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */ z-index z-index 元件重疊時，值愈大，顯示愈上面
+overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */ Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php</description>
     </item>
     
     <item>
@@ -565,8 +568,8 @@ http://www.w3schools.com/html/html5_video.asp</description>
       <guid>https://blog.poyi.tw/posts/2014-01-13-javascript-triggered-interrupt-event-or-action/</guid>
       <description>bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
-&amp;lt;div class=&amp;quot;p&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;a&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;quot;.p&amp;quot;).click(function(event){ alert(&amp;quot;p 外&amp;quot;); }); $(&amp;quot;.a&amp;quot;).click(function(event){ alert(&amp;quot;a 內&amp;quot;); event.stopPropagation(); }); &amp;lt;/script&amp;gt;  preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
-&amp;lt;a href=&amp;quot;http://www.google.com&amp;quot;&amp;gt;go to google&amp;lt;/a&amp;gt; &amp;lt;div id=&amp;quot;check&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;quot;a&amp;quot;).click(function(event) { event.preventDefault(); $(&amp;quot;&amp;lt;div&amp;gt;&amp;quot;).append(&amp;quot;Ya&amp;quot;).appendTo(&amp;quot;#check&amp;quot;); }); &amp;lt;/script&amp;gt;  Reference:
+&amp;lt;div class=&amp;#34;p&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;a&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;#34;.p&amp;#34;).click(function(event){ alert(&amp;#34;p 外&amp;#34;); }); $(&amp;#34;.a&amp;#34;).click(function(event){ alert(&amp;#34;a 內&amp;#34;); event.stopPropagation(); }); &amp;lt;/script&amp;gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+&amp;lt;a href=&amp;#34;http://www.google.com&amp;#34;&amp;gt;go to google&amp;lt;/a&amp;gt; &amp;lt;div id=&amp;#34;check&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;#34;a&amp;#34;).click(function(event) { event.preventDefault(); $(&amp;#34;&amp;lt;div&amp;gt;&amp;#34;).append(&amp;#34;Ya&amp;#34;).appendTo(&amp;#34;#check&amp;#34;); }); &amp;lt;/script&amp;gt; Reference:
 http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
 http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html</description>
     </item>
@@ -605,7 +608,7 @@ var person = new Object(); person.Name = &amp;quot;Bob&amp;quot;; person.Speak =
       <guid>https://blog.poyi.tw/posts/2013-02-15-linux-getting-started-with-hyper-basic-instructions/</guid>
       <description>之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&amp;hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&amp;hellip;
 對Linux不是完全陌生，但指令倒是全忘了&amp;hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
-$ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history  $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線  chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [+-=] [rwxX] test.</description>
+$ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history$ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [+-=] [rwxX] test.</description>
     </item>
     
     <item>
@@ -616,15 +619,16 @@ $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w 
       <guid>https://blog.poyi.tw/posts/2014-01-17-rails-mac-os-environment-build/</guid>
       <description>是說終於買了mac，省去開箱文趕緊把環境用好來繼續練習Rails 但使用上還是有一點不習慣，會覺得有些地方也蠻不人性化，但相對穩定就是了
 以下環境為OS X 10.9.1 Mavericks 1.安裝xcode-select Command line tool已經獨立出來，不需要安裝XCode了
-$ xcode-select --install  如果安裝失敗的話也可以到這裡下載
+$ xcode-select --install 如果安裝失敗的話也可以到這裡下載
 2.安裝homebrew
-$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)&amp;quot;  3.安裝所需要的工具
-$ brew install git  4.安裝RVM
-$ curl -L https://get.rvm.io | bash -s stable  5.透過RVM來安裝RUBY
-$ rvm install ruby  6.透過RVM來安裝RubyGems
-$ rvm rubygems current  7.安裝Rails
-$ gem install rails  ===
- XCode:官方提供的一個IDE，主要用來開發IOS APP，不過它也包含了一些開發其他語言所需的環境 Homebrew: OSX 套件管理工具 RVM (Ruby Version Manager):Ruby版本管理工具，便於切換不同版本  Reference:</description>
+$ ruby -e &amp;#34;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)&amp;#34; 3.安裝所需要的工具
+$ brew install git 4.安裝RVM
+$ curl -L https://get.rvm.io | bash -s stable 5.透過RVM來安裝RUBY
+$ rvm install ruby 6.透過RVM來安裝RubyGems
+$ rvm rubygems current 7.安裝Rails
+$ gem install rails ===
+ XCode:官方提供的一個IDE，主要用來開發IOS APP，不過它也包含了一些開發其他語言所需的環境 Homebrew: OSX 套件管理工具 RVM (Ruby Version Manager):Ruby版本管理工具，便於切換不同版本  Reference:
+http://www.computersnyou.com/2025/2013/06/install-command-line-tools-in-osx-10-9-mavericks-how-to/ http://www.slideshare.net/marsz330/ruby-on-rails-for-mac</description>
     </item>
     
     <item>
@@ -633,7 +637,7 @@ $ gem install rails  ===
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2014-01-19-mac-directly-in-the-terminal-to-open-sublime/</guid>
-      <description>ln -sv /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl subl test.rb git clone https://github.com/bitcoin/bitcoin.git subl bitcoin/  Reference:
+      <description>ln -sv /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl subl test.rb git clone https://github.com/bitcoin/bitcoin.git subl bitcoin/ Reference:
 https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
     </item>
     
@@ -654,7 +658,7 @@ https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-11-20-rails-activerecord/</guid>
-      <description>class Boss &amp;lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &amp;lt; ActiveRecord::Base belongs_to :boss end  class Employee &amp;lt; ActiveRecord::Base belongs_to :manager, :class_name =&amp;gt; &amp;quot;User&amp;quot;, :foreign_key =&amp;gt; &amp;quot;manager_id&amp;quot; ,:order =&amp;gt; &amp;quot;id desc&amp;quot; end # class_name =&amp;gt; &amp;quot;User&amp;quot; 變更關聯class name # :foreign_key =&amp;gt; &amp;quot;manager_id&amp;quot;變更關聯foreign key,預設為class_id # :order =&amp;gt; &amp;quot;id desc&amp;quot; 排序  class Group &amp;lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&amp;gt; { :minimum =&amp;gt; 2 } validates :bio, :length =&amp;gt; { :maximum =&amp;gt; 500 } validates :password, :length =&amp;gt; { :in =&amp;gt; 6.</description>
+      <description>class Boss &amp;lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &amp;lt; ActiveRecord::Base belongs_to :boss endclass Employee &amp;lt; ActiveRecord::Base belongs_to :manager, :class_name =&amp;gt; &amp;#34;User&amp;#34;, :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34; ,:order =&amp;gt; &amp;#34;id desc&amp;#34; end # class_name =&amp;gt; &amp;#34;User&amp;#34; 變更關聯class name # :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34;變更關聯foreign key,預設為class_id # :order =&amp;gt; &amp;#34;id desc&amp;#34; 排序class Group &amp;lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&amp;gt; { :minimum =&amp;gt; 2 } validates :bio, :length =&amp;gt; { :maximum =&amp;gt; 500 } validates :password, :length =&amp;gt; { :in =&amp;gt; 6.</description>
     </item>
     
     <item>
@@ -663,7 +667,7 @@ https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-12-07-rails-bootstrap-for-rails/</guid>
-      <description>gem &#39;bootstrap-sass&#39;  @import &#39;bootstrap&#39;  //= require bootstrap  這樣就可以用了yaya</description>
+      <description>gem &amp;#39;bootstrap-sass&amp;#39;@import &amp;#39;bootstrap&amp;#39;//= require bootstrap 這樣就可以用了yaya</description>
     </item>
     
     <item>
@@ -674,8 +678,8 @@ https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
       <guid>https://blog.poyi.tw/posts/2013-10-30-rails-search/</guid>
       <description>看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
 Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
-$ sudo apt-get install freetds-dev freetds-bin tdsodbc  $ tsql -C  $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)  $ select * from Team $ go  這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
-Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter  修改DateBase.yml OK..在這邊理論上是可以直接在Rails調用.. 但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的.</description>
+$ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
+Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.yml OK..在這邊理論上是可以直接在Rails調用.. 但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..) 錯誤訊息可參考 &amp;gt; https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279 暫時找不到解法，除非把Rails降到3.x版</description>
     </item>
     
     <item>
@@ -684,7 +688,7 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-10-30-rails-crud/</guid>
-      <description>&amp;lt;%= link_to &#39;list&#39;, teams_path %&amp;gt; # GET def index @teams = Team.all end  &amp;lt;%= link_to &#39;show&#39;, team_path(team) %&amp;gt; # GET def show @team = Team.find(params[:id]) end  &amp;lt;%= link_to &#39;new Team&#39;, new_team_path %&amp;gt; def new @team = Team.new end  &amp;lt;%= form_for @team, :url =&amp;gt; teams_path do |t| %&amp;gt; #In a form, the default request method is POST &amp;lt;%= t.text_field :name %&amp;gt; &amp;lt;%= t.text_field :year %&amp;gt; &amp;lt;%= t.submit &amp;quot;Create&amp;quot; %&amp;gt; &amp;lt;% end %&amp;gt; def create Team.</description>
+      <description>&amp;lt;%= link_to &amp;#39;list&amp;#39;, teams_path %&amp;gt; # GET def index @teams = Team.all end&amp;lt;%= link_to &amp;#39;show&amp;#39;, team_path(team) %&amp;gt; # GET def show @team = Team.find(params[:id]) end&amp;lt;%= link_to &amp;#39;new Team&amp;#39;, new_team_path %&amp;gt; def new @team = Team.new end&amp;lt;%= form_for @team, :url =&amp;gt; teams_path do |t| %&amp;gt; #In a form, the default request method is POST &amp;lt;%= t.text_field :name %&amp;gt; &amp;lt;%= t.text_field :year %&amp;gt; &amp;lt;%= t.submit &amp;#34;Create&amp;#34; %&amp;gt; &amp;lt;% end %&amp;gt; def create Team.</description>
     </item>
     
     <item>
@@ -702,7 +706,7 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-10-07-ruby/</guid>
-      <description>development: # 開發用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 test: # 測試用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 production: # 上線用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000  get &amp;quot;welcome&amp;quot; =&amp;gt; &amp;quot;welcome#index&amp;quot; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。 resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &#39;/events&#39; =&amp;gt; &amp;quot;events#index&amp;quot;, :as =&amp;gt; &amp;quot;events&amp;quot; post &#39;/events&#39; =&amp;gt; &amp;quot;events#create&amp;quot;, :as =&amp;gt; &amp;quot;events&amp;quot; get &#39;/events/:id&#39; =&amp;gt; &amp;quot;events#show&amp;quot;, :as =&amp;gt; &amp;quot;event&amp;quot; put &#39;/events/:id&#39; =&amp;gt; &amp;quot;events#update&amp;quot;, :as =&amp;gt; &amp;quot;event&amp;quot; delete &#39;/events/:id&#39; =&amp;gt; &amp;quot;events#destroy&amp;quot;, :as =&amp;gt; &amp;quot;event&amp;quot; get &#39;/events/new&#39; =&amp;gt; &amp;quot;events#new&amp;quot;, :as =&amp;gt; &amp;quot;new_event&amp;quot; get &#39;/events/:id/edit&#39; =&amp;gt; &amp;quot;events#edit&amp;quot;, :as =&amp;gt; &amp;quot;edit_event&amp;quot; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。  # &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
+      <description>development:# 開發用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000test:# 測試用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000production:# 上線用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
     </item>
     
     <item>
@@ -721,11 +725,11 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       
       <guid>https://blog.poyi.tw/posts/2013-12-02-rails-gem/</guid>
       <description>當我們要安裝別人寫好的Library、API時，通常會
-gem &#39;google-translate&#39;  或是
-$ gem install google-translate  打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugin  gem build bob_test_plugin.gemspec  此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gem  irb&amp;gt;require &#39;bob_test_plugin&#39; =&amp;gt; true irb&amp;gt;BobTestPlugin.name =&amp;gt; &amp;quot;BobTestPlugin&amp;quot;  發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</description>
+gem &amp;#39;google-translate&amp;#39; 或是
+$ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
+$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+$ sudo gem install bob_test_plugin-0.0.1.gemirb&amp;gt;require &amp;#39;bob_test_plugin&amp;#39; =&amp;gt; true irb&amp;gt;BobTestPlugin.name =&amp;gt; &amp;#34;BobTestPlugin&amp;#34; 發佈在 RubyGems.org 申請RubyGems帳號
+$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</description>
     </item>
     
     <item>
@@ -739,7 +743,7 @@ $ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/201
  higher precedence  [=,%=,~=,/=]  between this two  [not,and,or]
  lower precedence
  優先權：&amp;amp;&amp;amp;　→　||　→　and　＝　or 。 &amp;amp;&amp;amp; 或 || 會將符號前後方都認定為boolean(true,false)
-&amp;gt; a = true &amp;amp;&amp;amp; false =&amp;gt; false &amp;gt; a =&amp;gt; false &amp;gt; a = true and false =&amp;gt; false &amp;gt; a =&amp;gt; true #  &amp;gt; a = false || true =&amp;gt; true &amp;gt; a =&amp;gt; true &amp;gt; a = false or true =&amp;gt; true &amp;gt; a =&amp;gt; false #  # boolean expression if some_condition &amp;amp;&amp;amp; some_other_condition do_something end # control flow document.</description>
+&amp;gt; a = true &amp;amp;&amp;amp; false =&amp;gt; false &amp;gt; a =&amp;gt; false &amp;gt; a = true and false =&amp;gt; false &amp;gt; a =&amp;gt; true #&amp;gt; a = false || true =&amp;gt; true &amp;gt; a =&amp;gt; true &amp;gt; a = false or true =&amp;gt; true &amp;gt; a =&amp;gt; false ## boolean expression if some_condition &amp;amp;&amp;amp; some_other_condition do_something end # control flow document.</description>
     </item>
     
     <item>
@@ -748,7 +752,7 @@ $ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/201
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-12-18-ruby-functions-for-numbers/</guid>
-      <description>&amp;gt; 2 ** 3 # 次方 =&amp;gt; 8 =begin Addition (+) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end  &amp;gt; 9.9.integer? =&amp;gt; false &amp;gt; -5.abs =&amp;gt; 5 &amp;gt; 5.6.round # 取最近的整數/四捨五入 =&amp;gt; 6 &amp;gt; 9.9.floor	# 取整數/無條件捨去 =&amp;gt; 9 &amp;gt; 2312.22.ceil # 取整數/無條件進位 =&amp;gt; 2313 &amp;gt; 2.next =&amp;gt; 3  n &amp;amp; num n | num n ^ num (XOR) n &amp;lt;&amp;lt; num (向左位移) n &amp;gt;&amp;gt; num (向右位移)  Reference: http://www.</description>
+      <description>&amp;gt; 2 ** 3 # 次方 =&amp;gt; 8 =begin Addition (+) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&amp;gt; 9.9.integer? =&amp;gt; false &amp;gt; -5.abs =&amp;gt; 5 &amp;gt; 5.6.round # 取最近的整數/四捨五入 =&amp;gt; 6 &amp;gt; 9.9.floor	# 取整數/無條件捨去 =&amp;gt; 9 &amp;gt; 2312.22.ceil # 取整數/無條件進位 =&amp;gt; 2313 &amp;gt; 2.next =&amp;gt; 3n &amp;amp; num n | num n ^ num (XOR) n &amp;lt;&amp;lt; num (向左位移) n &amp;gt;&amp;gt; num (向右位移) Reference: http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</description>
     </item>
     
     <item>
@@ -758,8 +762,8 @@ $ gem push bob_test_plugin-0.0.1.gem  Reference: http://blog.xdite.net/posts/201
       
       <guid>https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/</guid>
       <description>require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
-$a = (rand * 10).floor  require &amp;quot;./random&amp;quot; puts $a require &amp;quot;./random&amp;quot; # 此行無效果 puts $a  load &amp;quot;./random.rb&amp;quot; puts $a load &amp;quot;./random.rb&amp;quot; puts $a  include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
-module Say def say_hi puts &amp;quot;Hi!&amp;quot; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end  001 &amp;gt; require &#39;./include_extend.rb&#39; =&amp;gt; true 002 &amp;gt; Person.say_hi Hi!</description>
+$a = (rand * 10).floorrequire &amp;#34;./random&amp;#34; puts $a require &amp;#34;./random&amp;#34; # 此行無效果 puts $aload &amp;#34;./random.rb&amp;#34; puts $a load &amp;#34;./random.rb&amp;#34; puts $a include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+module Say def say_hi puts &amp;#34;Hi!&amp;#34; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end001 &amp;gt; require &amp;#39;./include_extend.rb&amp;#39; =&amp;gt; true 002 &amp;gt; Person.say_hi Hi! =&amp;gt; nil 003 &amp;gt; People.new.say_hi Hi! =&amp;gt; nil  Reference:</description>
     </item>
     
     <item>
@@ -769,9 +773,9 @@ module Say def say_hi puts &amp;quot;Hi!&amp;quot; end end class People include 
       
       <guid>https://blog.poyi.tw/posts/2013-12-23-ruby-exception-handling/</guid>
       <description>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
-例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end  而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
+例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
  $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
-begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;quot;Except class: #{ex.class}&amp;quot; puts &amp;quot;Except message: #{ex.message}&amp;quot; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&amp;gt; nil   Reference: http://blog.tonycube.com/2011/07/ruby8.html</description>
+begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;#34;Except class: #{ex.class}&amp;#34; puts &amp;#34;Except message: #{ex.message}&amp;#34; ensure puts &amp;#39;Always print&amp;#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&amp;gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html</description>
     </item>
     
     <item>
@@ -781,8 +785,8 @@ begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;quot;Except class: #{ex.class}&a
       
       <guid>https://blog.poyi.tw/posts/2014-05-06-ruby-csv-file/</guid>
       <description>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
-匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]  head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end # &amp;gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &amp;quot;\xEF\xBB\xBF#{csv_string}&amp;quot; # 若不需要調整格式就直接下載 send_data csv_string  require &#39;csv&#39; CSV.open(&amp;quot;export.csv&amp;quot;,&amp;quot;w&amp;quot;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end  半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
-def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).</description>
+匯出csv header = [&amp;#39;name&amp;#39;,&amp;#39;money&amp;#39;,&amp;#39;age&amp;#39;] body = [&amp;#39;ruby&amp;#39;,&amp;#39;1000&amp;#39;,&amp;#39;18&amp;#39;]head = &amp;#39;EF BB BF&amp;#39;.split(&amp;#39; &amp;#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end # &amp;gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&amp;#39;big5&amp;#39;) # BOM也可以這樣加 csv_string = &amp;#34;\xEF\xBB\xBF#{csv_string}&amp;#34; # 若不需要調整格式就直接下載 send_data csv_stringrequire &amp;#39;csv&amp;#39; CSV.open(&amp;#34;export.csv&amp;#34;,&amp;#34;w&amp;#34;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
+def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[0-9]/){|a|(a.ord + 41599).</description>
     </item>
     
     <item>
@@ -795,7 +799,7 @@ def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&#
 希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)
 Ruby命名也有一定的慣例
  $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)
-ruby&amp;gt; $foo =&amp;gt; nil ruby&amp;gt; @foo =&amp;gt; nil ruby&amp;gt; foo ERR: (eval):1: undefined local variable or method `foo&#39; for main(Object) ruby&amp;gt; Foo = 2 =&amp;gt; 2 ruby&amp;gt; Foo = 3 =&amp;gt; warning: alread initialized constant Foo =&amp;gt; 3   </description>
+ruby&amp;gt; $foo =&amp;gt; nil ruby&amp;gt; @foo =&amp;gt; nil ruby&amp;gt; foo ERR: (eval):1: undefined local variable or method `foo&amp;#39; for main(Object) ruby&amp;gt; Foo = 2 =&amp;gt; 2 ruby&amp;gt; Foo = 3 =&amp;gt; warning: alread initialized constant Foo =&amp;gt; 3  </description>
     </item>
     
     <item>
@@ -855,7 +859,7 @@ Cluster
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2013-08-29-git/</guid>
-      <description>apt-get install git-core git config --global user.name &amp;quot;name&amp;quot; git config --global user.email &amp;quot;email&amp;quot; git config --list #查看設定  git status git add git add . git commit git commit -m &amp;quot;Add test.rb to test git function&amp;quot; git log (-p) git log --stat  gitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;quot;Loser&amp;quot; 切換branch  http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
+      <description>apt-get install git-core git config --global user.name &amp;#34;name&amp;#34; git config --global user.email &amp;#34;email&amp;#34; git config --list #查看設定git status git add git add . git commit git commit -m &amp;#34;Add test.rb to test git function&amp;#34; git log (-p) git log --statgitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;#34;Loser&amp;#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
     </item>
     
   </channel>

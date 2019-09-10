@@ -17,7 +17,7 @@
       <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
       
       <guid>https://blog.poyi.tw/posts/2016-04-02-golang-begging/</guid>
-      <description>Hello Go! package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;hello, go!&amp;quot;) }  $ go run hello.go Hello Go!  基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;quot;iota&amp;quot;  變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;quot;Hello Go!</description>
+      <description>Hello Go! package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello, go!&amp;#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;#34;iota&amp;#34; 變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;#34;Hello Go!</description>
     </item>
     
   </channel>

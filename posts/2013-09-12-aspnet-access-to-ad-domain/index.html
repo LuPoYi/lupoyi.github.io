@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[ASP.NET] 存取AD網域" />
 <meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &quot;LDAP://網域&quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&quot;(&amp;(samaccountname=&quot; &#43; employeeName &#43; &quot;)(Description=&quot; &#43; employeeNo &#43; &quot;))&quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&quot;description&quot;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&quot;description&quot;][0].ToString(); Response.Write(resultNo); Response.Write(&quot;&lt;br&gt;&quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
 <meta property="og:type" content="article" />
@@ -46,7 +48,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -189,7 +191,7 @@ ou.CommitChanges();
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

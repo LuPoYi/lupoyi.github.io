@@ -19,20 +19,22 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Ruby] 教學 - 基本使用介紹2" />
-<meta property="og:description" content="Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)  def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &quot;temp&quot;} #=&gt; nil # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc." />
+<meta property="og:description" content="Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2015-04-12-ruby-basic-2/" />
 <meta property="article:published_time" content="2015-04-12T22:27:04+08:00" />
 <meta property="article:modified_time" content="2015-04-12T22:27:04+08:00" />
 
   <meta itemprop="name" content="[Ruby] 教學 - 基本使用介紹2">
-<meta itemprop="description" content="Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)  def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &quot;temp&quot;} #=&gt; nil # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc.">
+<meta itemprop="description" content="Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc.">
 
 
 <meta itemprop="datePublished" content="2015-04-12T22:27:04&#43;08:00" />
 <meta itemprop="dateModified" content="2015-04-12T22:27:04&#43;08:00" />
-<meta itemprop="wordCount" content="202">
+<meta itemprop="wordCount" content="200">
 
 
 
@@ -48,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -124,135 +126,121 @@
     <main id="content" class="posts">
 
 <h1>[Ruby] 教學 - 基本使用介紹2</h1>
-<h2 id="define-methods">Define Methods</h2>
-
-<pre><code class="language-ruby">def temp
+<p><h2 id="define-methods">Define Methods</h2>
+<div class="highlight"><pre class="chroma"><code class="language-ruby 基本的method定義" data-lang="ruby 基本的method定義">def temp
   puts 123
-end
+end</p>
 
-temp() 
-temp
+<p>temp()
+temp</p>
 
-def temp(a,b,c)
+<p>def temp(a,b,c)
 puts “#{a} , #{b}, #{c}”
 end
 temp(1,2,3)
-temp 1 , 2 , 3
+temp 1 , 2 , 3</p>
 
-def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99
+<p>def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99
 puts “#{a} , #{b}, #{c}”
 end
 temp()  # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個
 temp(1,2)
-temp(1,2,3)
+temp(1,2,3)</p>
 
-def temp(a,b,c=99, *argv)   
+<p>def temp(a,b,c=99, *argv)<br />
   ap [a,b,c,argv]
 end
 temp()  # wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上
-temp(1,2,3,4,5,6,7,8)
-</code></pre>
+temp(1,2,3,4,5,6,7,8)</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 進階的method定義 (block)" data-lang="ruby 進階的method定義 (block)">def temp(&amp;block)
+end</p>
 
-<pre><code class="language-ruby">def temp(&amp;block)
-end
-
-temp(1)  #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數
+<p>temp(1)  #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數
 temp()   #=&gt; nil
-temp(){puts &quot;temp&quot;} #=&gt; nil 
-# 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil
+temp(){puts &#34;temp&#34;} #=&gt; nil</p>
 
+<h1 id="當temp-後面有block時會把這一段code放置-amp-block當中-但因為裡面沒有呼叫它執行所以nil">當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil</h1>
 
-def temp2(&amp;abc)
+<p>def temp2(&amp;abc)
   abc.call
-end
+end</p>
 
-temp2{puts &quot;gogo&quot;} #=&gt; &quot;gogo&quot;
-</code></pre>
-
-<pre><code class="language-ruby">class Car
+<p>temp2{puts &#34;gogo&#34;} #=&gt; &#34;gogo&#34;</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby class methods  / instance methods" data-lang="ruby class methods  / instance methods">class Car
   def self.hi
     puts “aaa”
   end
   def hi
     puts “bbb”
   end
-end
+end</p>
 
-car = Car.new
-Car.hi #=&gt; &quot;aaa&quot;
-car.hi #=&gt; &quot;bbb&quot;
-</code></pre>
-
+<p>car = Car.new
+Car.hi #=&gt; &#34;aaa&#34;
+car.hi #=&gt; &#34;bbb&#34;</code></pre></div>
 <ul>
 <li>attr_accessor 自動設定setter &amp; getter</li>
-<li>attr_reader 設定getter</li>
+<li>attr_reader 設定getter</li></p>
 
-<li><p>attr_writer 設定setter</p>
+<p><li><p>attr_writer 設定setter</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby attr_accessor 等同於 getter & setter" data-lang="ruby attr_accessor 等同於 getter & setter">class Person</p>
 
-<pre><code class="language-ruby">class Person
-# attr_accessor :name 
-def name # getter
+<h1 id="attr-accessor-name">attr_accessor :name</h1>
+
+<p>def name # getter
 @name
-end
+end</p>
 
-def name=(str) # setter
+<p>def name=(str) # setter
 @name = str
 end
-end
+end</p>
 
-person = Person.new
-person.name = 'Bob' # setter
-person.name # =&gt; &quot;bob&quot; # getter
-</code></pre></li>
+<p>person = Person.new
+person.name = &#39;Bob&#39; # setter
+person.name # =&gt; &#34;bob&#34; # getter</code></pre></div></li></p>
 
-<li><p>$name:全域變數</p></li>
+<p><li><p>$name:全域變數</p></li></p>
 
-<li><p>@name:實例變數，作用域僅限定於 self 指示的物件</p></li>
+<p><li><p>@name:實例變數，作用域僅限定於 self 指示的物件</p></li></p>
 
-<li><p>@@name: 類別變數，在class內才使用，跨class</p></li>
+<p><li><p>@@name: 類別變數，在class內才使用，跨class</p></li></p>
 
-<li><p>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</p></li>
+<p><li><p>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</p></li></p>
 
-<li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p></li>
-</ul>
+<p><li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p></li>
+</ul></p>
 
-<p>####Class &amp; Module
+<p><p>####Class &amp; Module
 Moudule只是一個不能被new的class</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby class / module" data-lang="ruby class / module">Class.superclass #=&gt; module</p>
 
-<pre><code class="language-ruby">Class.superclass #=&gt; module 
-
-module Flyable
+<p>module Flyable
   def fly
-    puts &quot;I can fly!&quot;
+    puts &#34;I can fly!&#34;
   end
-end
+end</p>
 
-class Cat
+<p>class Cat
   include Flyable
-end
+end</p>
 
-kitty = Cat.new
-kitty.fly  
-</code></pre>
-
+<p>kitty = Cat.new
+kitty.fly  </code></pre></div>
 <p>####Error Handling
 沒額外指定變數的話，錯誤資訊會放至$!(ERROR_INFO)及$@(ERROR_POSITION)</p>
-
-<pre><code class="language-ruby">begin
+<div class="highlight"><pre class="chroma"><code class="language-ruby begin/rescue/ensure/end" data-lang="ruby begin/rescue/ensure/end">begin
   # 有機會發生例外的code
 rescue
   # 發現例外後要執行的code
 ensure
   # 無論是否例外都會執行的code
-end
-</code></pre>
+end</code></pre></div></p>
 
 
     </main>
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

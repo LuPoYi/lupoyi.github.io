@@ -19,8 +19,10 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Ruby] 匯出txt檔" />
-<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close  # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end  Reference:
+<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2014-05-06-ruby-txt-file/" />
@@ -28,13 +30,13 @@ http://ruby-doc.org/core-2.1.4/File.html" />
 <meta property="article:modified_time" content="2014-05-06T22:00:59+08:00" />
 
   <meta itemprop="name" content="[Ruby] 匯出txt檔">
-<meta itemprop="description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close  # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end  Reference:
+<meta itemprop="description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html">
 
 
 <meta itemprop="datePublished" content="2014-05-06T22:00:59&#43;08:00" />
 <meta itemprop="dateModified" content="2014-05-06T22:00:59&#43;08:00" />
-<meta itemprop="wordCount" content="38">
+<meta itemprop="wordCount" content="37">
 
 
 
@@ -50,7 +52,7 @@ http://ruby-doc.org/core-2.1.4/File.html">
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,31 +128,26 @@ http://ruby-doc.org/core-2.1.4/File.html">
     <main id="content" class="posts">
 
 <h1>[Ruby] 匯出txt檔</h1>
-<h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
+<p><h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
+<div class="highlight"><pre class="chroma"><code class="language-ruby 寫入txt" data-lang="ruby 寫入txt">all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;+8869%&#39;).select(:mobile).uniq</p>
 
-<pre><code class="language-ruby">all_users_mobile = User.where('mobile like ?', '+8869%').select(:mobile).uniq
+<h1 id="建立txt並給予寫入權限">建立txt並給予寫入權限</h1>
 
-# 建立txt並給予寫入權限
-file = File.open('mobile_tw.txt' , 'w')
+<p>file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;)</p>
 
-all_users_mobile.each do |mobile|
+<p>all_users_mobile.each do |mobile|
   file.puts mobile # 一行一筆mobile
-end
+end</p>
 
-# 記得要關掉
-file.close
-</code></pre>
+<h1 id="記得要關掉">記得要關掉</h1>
 
-<pre><code class="language-ruby"># 讀取txt
-file = File.open('mobile_tw.txt' , 'r')
+<p>file.close</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 讀取txt" data-lang="ruby 讀取txt"># 讀取txt
+file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;)</p>
 
-100.times do
+<p>100.times do
   file.readline
-end
-
-</code></pre>
-
-<p>Reference:</p>
+end</code></pre></div>
+<p>Reference:</p></p>
 
 <p><a href="http://ruby-doc.org/core-2.1.4/File.html">http://ruby-doc.org/core-2.1.4/File.html</a></p>
 
@@ -159,7 +156,7 @@ end
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

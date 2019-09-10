@@ -19,20 +19,22 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[Ruby] 例外處理" />
 <meta property="og:description" content="好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
-例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end  而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
+例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
  $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
-begin abc = 1 / 0 rescue =&gt; ex puts &quot;Except class: #{ex.class}&quot; puts &quot;Except message: #{ex.message}&quot; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil   Reference: http://blog.tonycube.com/2011/07/ruby8.html" />
+begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-12-23-ruby-exception-handling/" />
 
 
   <meta itemprop="name" content="[Ruby] 例外處理">
 <meta itemprop="description" content="好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
-例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end  而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
+例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
  $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
-begin abc = 1 / 0 rescue =&gt; ex puts &quot;Except class: #{ex.class}&quot; puts &quot;Except message: #{ex.message}&quot; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil   Reference: http://blog.tonycube.com/2011/07/ruby8.html">
+begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html">
 
 
 
@@ -52,7 +54,7 @@ begin abc = 1 / 0 rescue =&gt; ex puts &quot;Except class: #{ex.class}&quot; put
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -130,18 +132,15 @@ begin abc = 1 / 0 rescue =&gt; ex puts &quot;Except class: #{ex.class}&quot; put
 <h1>[Ruby] 例外處理</h1>
 <p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
 
-<h1 id="例外處理">例外處理</h1>
-
-<pre><code class="language-ruby">begin
+<p><h1 id="例外處理">例外處理</h1>
+<div class="highlight"><pre class="chroma"><code class="language-ruby begin..end當中的rescue" data-lang="ruby begin..end當中的rescue">begin
   # 有機會發生例外的code
 rescue
   # 發現例外後要執行的code
 ensure
   # 無論是否例外都會執行的code
-end
-</code></pre>
-
-<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p>
+end</code></pre></div>
+<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p></p>
 
 <ul>
 <li>$! (例外物件)
@@ -153,21 +152,19 @@ end
 </ul></li>
 
 <li><p>$@ (例外的位置資訊)</p>
-
-<pre><code class="language-ruby">begin
+<div class="highlight"><pre class="chroma"><code class="language-ruby example" data-lang="ruby example">begin
     abc = 1 / 0
 rescue =&gt; ex
-    puts &quot;Except class:  #{ex.class}&quot;
-    puts &quot;Except message: #{ex.message}&quot;
+    puts &#34;Except class:  #{ex.class}&#34;
+    puts &#34;Except message: #{ex.message}&#34;
 ensure
-    puts 'Always print'
+    puts &#39;Always print&#39;
 end
 
 Except class:  ZeroDivisionError
 Except message: divided by 0
 Always print
-=&gt; nil
-</code></pre></li>
+=&gt; nil</code></pre></div></li>
 </ul>
 
 <p>Reference:
@@ -178,7 +175,7 @@ Always print
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

@@ -19,16 +19,18 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[ASP.NET] Linq 動態條件搜尋" />
 <meta property="og:description" content="一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
-static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &quot;bob&quot;, &quot;coco&quot;, &quot;durex&quot;, &quot;enter&quot;, &quot;fuck&quot;}; var searchKeyword = new List&lt;string&gt; { &quot;o&quot;, &quot;e&quot; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter  主要的重點如下，將條件放入xxx" />
+static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/" />
 
 
   <meta itemprop="name" content="[ASP.NET] Linq 動態條件搜尋">
 <meta itemprop="description" content="一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
-static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &quot;bob&quot;, &quot;coco&quot;, &quot;durex&quot;, &quot;enter&quot;, &quot;fuck&quot;}; var searchKeyword = new List&lt;string&gt; { &quot;o&quot;, &quot;e&quot; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter  主要的重點如下，將條件放入xxx">
+static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx">
 
 
 
@@ -48,7 +50,7 @@ static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &q
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,11 +128,10 @@ static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &q
 <h1>[ASP.NET] Linq 動態條件搜尋</h1>
 <p>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成
 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來</p>
-
-<pre><code class="language-Console">static void linqPB()
+<div class="highlight"><pre class="chroma"><code class="language-Console" data-lang="Console">static void linqPB()
     {
-        var list = new List&lt;string&gt; { &quot;apple&quot;, &quot;bob&quot;, &quot;coco&quot;, &quot;durex&quot;, &quot;enter&quot;, &quot;fuck&quot;};
-        var searchKeyword = new List&lt;string&gt; { &quot;o&quot;, &quot;e&quot; };
+        var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;};
+        var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; };
         var predicate = PredicateBuilder.False&lt;string&gt;();
 
         foreach (var word in searchKeyword)
@@ -146,9 +147,7 @@ static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &q
         }
         Console.Read();
     }
-// result: apple bob coco durex enter
-</code></pre>
-
+// result: apple bob coco durex enter</code></pre></div>
 <p>主要的重點如下，將條件放入xxx</p>
 
 <pre><code>  var predicate = PredicateBuilder.False();  // 這邊的true/false會與下列的or做串接
@@ -168,7 +167,7 @@ static void linqPB() { var list = new List&lt;string&gt; { &quot;apple&quot;, &q
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

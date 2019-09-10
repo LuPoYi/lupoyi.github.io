@@ -19,18 +19,20 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="GIT" />
-<meta property="og:description" content="apt-get install git-core git config --global user.name &quot;name&quot; git config --global user.email &quot;email&quot; git config --list #查看設定  git status git add git add . git commit git commit -m &quot;Add test.rb to test git function&quot; git log (-p) git log --stat  gitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &quot;Loser&quot; 切換branch  http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案" />
+<meta property="og:description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list #查看設定git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-08-29-git/" />
 
 
   <meta itemprop="name" content="GIT">
-<meta itemprop="description" content="apt-get install git-core git config --global user.name &quot;name&quot; git config --global user.email &quot;email&quot; git config --list #查看設定  git status git add git add . git commit git commit -m &quot;Add test.rb to test git function&quot; git log (-p) git log --stat  gitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &quot;Loser&quot; 切換branch  http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案">
+<meta itemprop="description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list #查看設定git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案">
 
 
 
-<meta itemprop="wordCount" content="73">
+<meta itemprop="wordCount" content="71">
 
 
 
@@ -46,7 +48,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -122,38 +124,29 @@
     <main id="content" class="posts">
 
 <h1>GIT</h1>
-<pre><code class="language-bash">apt-get install git-core
+<p><div class="highlight"><pre class="chroma"><code class="language-bash git" data-lang="bash git">apt-get install git-core</p>
 
-git config --global user.name &quot;name&quot;
-git config --global user.email &quot;email&quot;
+<p>git config &ndash;global user.name &#34;name&#34;
+git config &ndash;global user.email &#34;email&#34;</p>
 
-git config --list #查看設定
-</code></pre>
+<p>git config &ndash;list #查看設定</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Git的基本功(status, add, commit, log, .gitignore)" data-lang="bash Git的基本功(status, add, commit, log, .gitignore)">git status</p>
 
-<pre><code class="language-bash">git status
+<p>git add
+git add .</p>
 
-git add
-git add .
+<p>git commit
+git commit -m &#34;Add test.rb to test git function&#34;</p>
 
-git commit
-git commit -m &quot;Add test.rb to test git function&quot;
-
-git log (-p)
-git log --stat
-</code></pre>
-
-<pre><code class="language-bash">gitk --all (&amp;) 內建gui
+<p>git log (-p)
+git log &ndash;stat</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Git" data-lang="bash Git">gitk &ndash;all (&amp;) 內建gui
 git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch：
-git branch (new_branch_name)
+git branch (new_branch_name)</p>
 
-git checkout &quot;Loser&quot; 切換branch
-
-</code></pre>
-
+<p>git checkout &#34;Loser&#34; 切換branch</code></pre></div>
 <p><a href="http://howar31.blogspot.tw/2013/06/git.html">http://howar31.blogspot.tw/2013/06/git.html</a>
 <a href="http://tech.marsw.tw/blog/2013/08/16/git-notes-github">http://tech.marsw.tw/blog/2013/08/16/git-notes-github</a>
 因此我們稍微做一下流程的整理：
-修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案</p>
+修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案</p></p>
 
 <p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/95260/DcnMzKdwRnym16KQJwvF_2013-10-31%20%E4%B8%8A%E5%8D%88%2011-36-28.jpg" alt="2013-10-31 上午 11-36-28.jpg" /></p>
 
@@ -162,7 +155,7 @@ git checkout &quot;Loser&quot; 切換branch
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>

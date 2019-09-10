@@ -19,11 +19,13 @@
 <link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
 <link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
 
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
   <meta property="og:title" content="[C#] IEnumerable vs IQueryable" />
 <meta property="og:description" content="在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;)); list2 = list2.Take&lt;Employee&gt;(10);  // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0  可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/posts/2013-09-30-c-ienumerable/" />
@@ -33,7 +35,7 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
 <meta itemprop="description" content="在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;)); list2 = list2.Take&lt;Employee&gt;(10);  // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0  可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html">
 
 
@@ -54,7 +56,7 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile [Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -138,25 +140,19 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
 <p>兩者的差別從概念上來說：
 <strong>IEnumerable<T></strong>:先將查詢的值取出，再一層一層做篩選。
 <strong>IQueryable<T></strong>:把全部Linq翻成T-SQL，直到真正要使用時才去執行。</p>
-
-<pre><code class="language-c#">// list1
-IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;));
+<div class="highlight"><pre class="chroma"><code class="language-c# IEnumerable" data-lang="c# IEnumerable">// list1
+IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;));
 list1 = list1.Take&lt;Employee&gt;(10); 
 
 // list2
-IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&quot;S&quot;));
-list2 = list2.Take&lt;Employee&gt;(10); 
-</code></pre>
-
-<pre><code class="language-SQL">// list1
+IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;));
+list2 = list2.Take&lt;Employee&gt;(10); </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-SQL SQL" data-lang="SQL SQL">// list1
 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0]
 WHERE [t0].[EmpName] LIKE @p0
 
 // list2
 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0]
-WHERE [t0].[EmpName] LIKE @p0
-</code></pre>
-
+WHERE [t0].[EmpName] LIKE @p0</code></pre></div>
 <p>可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。</p>
 
 <p>Reference:
@@ -169,7 +165,7 @@ WHERE [t0].[EmpName] LIKE @p0
   </div>
   <footer>
     <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
       <p></p>
     </div>
   </footer>
