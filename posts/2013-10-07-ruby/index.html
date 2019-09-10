@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Rails] 基本概念（待補） - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/2013-10-07-ruby/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[Rails] 基本概念（待補）" />
+<meta property="og:description" content="development: # 開發用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 test: # 測試用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 production: # 上線用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000  get &quot;welcome&quot; =&gt; &quot;welcome#index&quot; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。 resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &#39;/events&#39; =&gt; &quot;events#index&quot;, :as =&gt; &quot;events&quot; post &#39;/events&#39; =&gt; &quot;events#create&quot;, :as =&gt; &quot;events&quot; get &#39;/events/:id&#39; =&gt; &quot;events#show&quot;, :as =&gt; &quot;event&quot; put &#39;/events/:id&#39; =&gt; &quot;events#update&quot;, :as =&gt; &quot;event&quot; delete &#39;/events/:id&#39; =&gt; &quot;events#destroy&quot;, :as =&gt; &quot;event&quot; get &#39;/events/new&#39; =&gt; &quot;events#new&quot;, :as =&gt; &quot;new_event&quot; get &#39;/events/:id/edit&#39; =&gt; &quot;events#edit&quot;, :as =&gt; &quot;edit_event&quot; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。  # &lt;% 執行但不輸出 # &lt;%= 輸出值 &lt;% @people." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/2013-10-07-ruby/" />
+
+
+  <meta itemprop="name" content="[Rails] 基本概念（待補）">
+<meta itemprop="description" content="development: # 開發用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 test: # 測試用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 production: # 上線用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000  get &quot;welcome&quot; =&gt; &quot;welcome#index&quot; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。 resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &#39;/events&#39; =&gt; &quot;events#index&quot;, :as =&gt; &quot;events&quot; post &#39;/events&#39; =&gt; &quot;events#create&quot;, :as =&gt; &quot;events&quot; get &#39;/events/:id&#39; =&gt; &quot;events#show&quot;, :as =&gt; &quot;event&quot; put &#39;/events/:id&#39; =&gt; &quot;events#update&quot;, :as =&gt; &quot;event&quot; delete &#39;/events/:id&#39; =&gt; &quot;events#destroy&quot;, :as =&gt; &quot;event&quot; get &#39;/events/new&#39; =&gt; &quot;events#new&quot;, :as =&gt; &quot;new_event&quot; get &#39;/events/:id/edit&#39; =&gt; &quot;events#edit&quot;, :as =&gt; &quot;edit_event&quot; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。  # &lt;% 執行但不輸出 # &lt;%= 輸出值 &lt;% @people.">
+
+
+
+<meta itemprop="wordCount" content="125">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/2013-10-07-ruby/">[Rails] 基本概念（待補）</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Rails] 基本概念（待補）</h1>
+<pre><code class="language-ruby">development: # 開發用
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+test: # 測試用
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+production: # 上線用
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+</code></pre>
+
+<pre><code class="language-ruby">
+get &quot;welcome&quot; =&gt; &quot;welcome#index&quot;
+# 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。 
+
+
+
+resources :events
+# 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下：
+get    '/events'          =&gt; &quot;events#index&quot;,   :as =&gt; &quot;events&quot;
+post   '/events'          =&gt; &quot;events#create&quot;,  :as =&gt; &quot;events&quot;
+get    '/events/:id'      =&gt; &quot;events#show&quot;,    :as =&gt; &quot;event&quot;
+put    '/events/:id'      =&gt; &quot;events#update&quot;,  :as =&gt; &quot;event&quot;
+delete '/events/:id'      =&gt; &quot;events#destroy&quot;, :as =&gt; &quot;event&quot;
+get    '/events/new'      =&gt; &quot;events#new&quot;,     :as =&gt; &quot;new_event&quot;
+get    '/events/:id/edit' =&gt; &quot;events#edit&quot;,    :as =&gt; &quot;edit_event&quot;
+
+
+
+# get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。
+# HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。
+
+</code></pre>
+
+<pre><code class="language-ruby"># &lt;% 執行但不輸出
+# &lt;%= 輸出值
+
+&lt;% @people.each do |p| %&gt;
+    &lt;%= p.name %&gt;
+&lt;% end %&gt;
+
+</code></pre>
+
+<pre><code class="language-ruby">render 回傳使用的樣版(資料不會遺失)
+redirect_to 重新導向action
+</code></pre>
+
+<p>Reference:
+<a href="http://ihower.tw/rails3/index.html">http://ihower.tw/rails3/index.html</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

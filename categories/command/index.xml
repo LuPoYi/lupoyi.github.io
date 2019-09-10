@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>command on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/command/</link>
+    <description>Recent content in command on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Wed, 19 Oct 2016 19:01:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ubuntu] Linux 稍微進階的常用指令</title>
+      <link>https://blog.poyi.tw/posts/2016-10-19-my-linux-command/</link>
+      <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2016-10-19-my-linux-command/</guid>
+      <description>稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *  grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt  grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt  grep -v &#39;bob&#39; abc.txt  find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫  find /home -type d -name log  locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf   Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
+ Ctrl + w : 刪除文字至上一個空白
+ Ctrl + u : 刪除游標前</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Ubuntu] Linux 稍微進階的常用指令 - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/2016-10-19-my-linux-command/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[Ubuntu] Linux 稍微進階的常用指令" />
+<meta property="og:description" content="稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *  grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt  grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt  grep -v &#39;bob&#39; abc.txt  find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫  find /home -type d -name log  locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf   Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear
+ Ctrl &#43; w : 刪除文字至上一個空白
+ Ctrl &#43; u : 刪除游標前" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/2016-10-19-my-linux-command/" />
+<meta property="article:published_time" content="2016-10-19T19:01:28+08:00" />
+<meta property="article:modified_time" content="2016-10-19T19:01:28+08:00" />
+
+  <meta itemprop="name" content="[Ubuntu] Linux 稍微進階的常用指令">
+<meta itemprop="description" content="稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *  grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt  grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt  grep -v &#39;bob&#39; abc.txt  find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫  find /home -type d -name log  locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf   Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear
+ Ctrl &#43; w : 刪除文字至上一個空白
+ Ctrl &#43; u : 刪除游標前">
+
+
+<meta itemprop="datePublished" content="2016-10-19T19:01:28&#43;08:00" />
+<meta itemprop="dateModified" content="2016-10-19T19:01:28&#43;08:00" />
+<meta itemprop="wordCount" content="118">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/2016-10-19-my-linux-command/">[Ubuntu] Linux 稍微進階的常用指令</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Ubuntu] Linux 稍微進階的常用指令</h1>
+<h4 id="稍微進階是對我來說啦">稍微進階是對我來說啦</h4>
+
+<h2 id="grep">grep</h2>
+
+<pre><code class="language-bash">grep -r 'bob' *
+</code></pre>
+
+<pre><code class="language-bash">grep -E 'bob|poyi' abc.txt
+egrep 'bob|poyi' abc.txt
+</code></pre>
+
+<pre><code class="language-bash">grep -E 'bob.*poyi|200.*poyi' abc.txt
+</code></pre>
+
+<pre><code class="language-bash">grep -v 'bob' abc.txt
+</code></pre>
+
+<h2 id="find-找檔案">find 找檔案</h2>
+
+<pre><code class="language-bash">find /home -name production.log
+find /home -iname production.log # 不分大小寫
+</code></pre>
+
+<pre><code class="language-bash">find /home -type d -name log
+</code></pre>
+
+<h2 id="locate-找檔案-查系統index-不是直接掃目錄">locate 找檔案(查系統index，不是直接掃目錄)</h2>
+
+<pre><code class="language-bash">locate nginx.conf
+</code></pre>
+
+<ul>
+<li>Ctrl + c : 終止正在執行的程式</li>
+
+<li><p>Ctrl + l : clear</p></li>
+
+<li><p>Ctrl + w : 刪除文字至上一個空白</p></li>
+
+<li><p>Ctrl + u : 刪除游標前</p></li>
+
+<li><p>Ctrl + k : 刪除游標後</p></li>
+
+<li><p>Ctrl + h : Backspace</p></li>
+
+<li><p>Ctrl + d : Del</p></li>
+
+<li><p>Ctrl + a : 游標移到最前面</p></li>
+
+<li><p>Ctrl + e : 游標移到最後面</p></li>
+
+<li><p>Ctrl + f : 往右移一個字元</p></li>
+
+<li><p>Ctrl + b : 往左移一個字元</p></li>
+</ul>
+
+<h2 id="權限管理">權限管理</h2>
+
+<pre><code class="language-bash">$ id bob
+uid=1000(bob) gid=1000(bob) groups=1000(bob),27(sudo)
+</code></pre>
+
+<pre><code class="language-bash">$ sudo adduser newuser
+$ sudo adduser newuser sudo
+</code></pre>
+
+<pre><code class="language-bash">/etc/passwd
+</code></pre>
+
+<p>Reference:</p>
+
+<p><a href="http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html">http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html</a></p>
+
+<p><a href="http://blog.jex.tw/blog/2013/11/26/grep/">http://blog.jex.tw/blog/2013/11/26/grep/</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

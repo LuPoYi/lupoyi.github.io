@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Ruby] require,load,include,extend - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[Ruby] require,load,include,extend" />
+<meta property="og:description" content="require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
+$a = (rand * 10).floor  require &quot;./random&quot; puts $a require &quot;./random&quot; # 此行無效果 puts $a  load &quot;./random.rb&quot; puts $a load &quot;./random.rb&quot; puts $a  include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+module Say def say_hi puts &quot;Hi!&quot; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end  001 &gt; require &#39;./include_extend.rb&#39; =&gt; true 002 &gt; Person.say_hi Hi!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/" />
+
+
+  <meta itemprop="name" content="[Ruby] require,load,include,extend">
+<meta itemprop="description" content="require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
+$a = (rand * 10).floor  require &quot;./random&quot; puts $a require &quot;./random&quot; # 此行無效果 puts $a  load &quot;./random.rb&quot; puts $a load &quot;./random.rb&quot; puts $a  include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+module Say def say_hi puts &quot;Hi!&quot; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end  001 &gt; require &#39;./include_extend.rb&#39; =&gt; true 002 &gt; Person.say_hi Hi!">
+
+
+
+<meta itemprop="wordCount" content="77">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/">[Ruby] require,load,include,extend</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Ruby] require,load,include,extend</h1>
+<h2 id="require-vs-load">require vs load</h2>
+
+<p>首先require與load都是用來載入指定的檔案
+差別在於使用require只會調用一次，且副檔名可省略，load則相反。</p>
+
+<pre><code class="language-ruby">$a = (rand * 10).floor
+</code></pre>
+
+<pre><code class="language-ruby">require &quot;./random&quot;
+puts $a
+require &quot;./random&quot; # 此行無效果
+puts $a
+</code></pre>
+
+<pre><code class="language-ruby">load &quot;./random.rb&quot;
+puts $a
+load &quot;./random.rb&quot;
+puts $a
+</code></pre>
+
+<hr />
+
+<h2 id="include-vs-extend">include vs extend</h2>
+
+<p>include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用
+extend: 相當於把目標的code直接放進來；具有目標的class methods</p>
+
+<pre><code class="language-ruby">module Say
+  def say_hi
+    puts &quot;Hi!&quot;
+  end
+end
+
+class People
+  include Say
+end
+
+class Person
+  extend Say # 具有Say的method，可直接呼叫
+end
+</code></pre>
+
+<pre><code class="language-bash">001 &gt; require './include_extend.rb'
+ =&gt; true 
+002 &gt; Person.say_hi
+Hi!
+ =&gt; nil 
+003 &gt; People.new.say_hi
+Hi!
+ =&gt; nil 
+</code></pre>
+
+<p>Reference:</p>
+
+<p><a href="http://www.slideshare.net/BruceLi2/rubypart2">http://www.slideshare.net/BruceLi2/rubypart2</a></p>
+
+<p><a href="http://cat-son.blogspot.tw/2012/10/2-rubyinclude-extendrequire.html#sthash.QduzPsMe.cFJYqpMb.dpbs">http://cat-son.blogspot.tw/2012/10/2-rubyinclude-extendrequire.html#sthash.QduzPsMe.cFJYqpMb.dpbs</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

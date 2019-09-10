@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zec on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/zec/</link>
+    <description>Recent content in zec on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 04 Nov 2017 16:22:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/zec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</title>
+      <link>https://blog.poyi.tw/posts/2017-11-04-private-coins-monero-dash-zcash-pivx/</link>
+      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2017-11-04-private-coins-monero-dash-zcash-pivx/</guid>
+      <description>// 個人筆記尚未整理
+Pirvacy Coins 匿名貨幣 - 強調隱私 Bitcoin 本身具有一定的隱私性，錢包地址跟使用者之間沒有直接的關聯性 所有交易都是公開的，任何人都可以知道某錢包地址現在或過去有過多少交易，但理論上無法得知該錢包是持有者是誰。
+但今天你發送一筆交易給朋友或是客戶，對方得知了你的錢包地址，就可以觀察你持有多少BTC，就像你的銀行存款暴露在外一樣，任何人只要知道你的錢包地址都可以查得到你的餘額及所有交易紀錄。當然你也可以一直換錢包地址或是透過交易所發送來隱藏你主要的錢包地址，而這些匿名貨幣用各自的手段去解決這些問題。
+Dash 主要特色是雙層網路並提供即時發送及匿名發送  150 seconds/block
+ Masternodes 主節點  需抵押 1000 Dash 具投票權可以決定Dash未來走向 45%的區塊獎勵 持續 sync blockchain 提供 InstantSend(即時發送) 服務 提供 PirvateSend(匿名發送) 服務  PirvateSend 匿名發送 - 混幣(Coinjoin)  該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向  InstantSend 即時發送  每個block產生後會隨機挑選10個Masternodes來提供InstantSend服務 發送交易時這10個Masternodes會優先收到廣播，而它們會對其他node廣播說這筆發送方已被鎖定，如果在這同時收到另一筆來自發送方的交易將會被reject 這時該筆交易會馬上收到5confirm，即完成交易 (1.3秒)  Pivx 特色與Dash相同，似乎更著重在隱私 - PoS版本的Dash  60 seconds/block
+ Masternodes 主節點  需抵押 10000 Pivx 具投票權可以決定Pivx未來走向 持續 sync blockchain 提供 InstantSend(即時發送) 服務 提供 PirvateSend(匿名發送) 服務  PirvateSend 匿名發送 - 混幣(Coinjoin)  該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向 Zerocoin Protocol(zPiv)  InstantSend 即時發送(SwiftTx)  SwiftTx  Zcash 主要特色是錢包地址分為兩種類型，Public address(t-addrs)及 Shielded address(z-addrs) Public address(t-addrs)  t開頭的地址 與其他加密貨幣地址相同，在公開帳本可查詢餘額、歷史交易  Shielded address(z-addrs)  z開頭的地址 零知識證明(Zero-knowledge proof) - zk-SNARKs 無法在公開帳本上查詢  Monero(XMR) 任何地址交易金額都無法查詢，完整的強制匿名貨幣  使用 CryptoNote 演算法 Ring Signature RingCT 動態區塊大小</description>
+    </item>
+    
+    <item>
+      <title>[ZCash] 如何使用Windows來挖礦</title>
+      <link>https://blog.poyi.tw/posts/2017-01-15-how-to-mine-zcash-on-windows/</link>
+      <pubDate>Sun, 15 Jan 2017 13:32:55 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2017-01-15-how-to-mine-zcash-on-windows/</guid>
+      <description>幾千塊的顯卡來挖其實收益非常低，電費還比較貴，玩票性質再試試看吧
+ ZCash錢包 首先要下載一個錢包並取得address(t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE)來存放你挖到的幣
+推薦Jaxx，支援windows/macos/ios/android&amp;hellip;，幣別也支援btc/eth/etc/zec&amp;hellip;.。
+Nvidia挖ZCash會比較快，如果是AMD可考慮挖Ethereum之類的
+Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&amp;rsquo;s CUDA Zcash miner
+ EWBF Miner - 效率好30% - 使用時會吃掉大部分顯卡效能無法正常使用  Nicehash - nheqminer-0.5c nheqminer-0.5c
+ Nicehash - 不開大型遊戲的話，電腦還可以正常使用  礦池 如果是組礦機多張顯卡，算力夠強的話可以考慮自己挖，只是台桌機的話就加入礦池吧
+礦池是你提供多少算力，就會回饋給你多少，收益比較穩定
+自己solo的話就是有挖到block才有收益
+http://zcash.flypool.org/
+通常礦池首頁都會寫很清楚該怎麼做
+miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3  nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>

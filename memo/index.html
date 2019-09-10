@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>Memo - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/memo/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="Memo" />
+<meta property="og:description" content="調整系統時區 sudo dpkg-reconfigure tzdata  查詢容量 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh  查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l  網路設定 # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/memo/" />
+
+
+  <meta itemprop="name" content="Memo">
+<meta itemprop="description" content="調整系統時區 sudo dpkg-reconfigure tzdata  查詢容量 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh  查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l  網路設定 # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192.">
+
+
+
+<meta itemprop="wordCount" content="383">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/memo/">Memo</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="">
+
+<h1>Memo</h1>
+<h2 id="調整系統時區">調整系統時區</h2>
+
+<pre><code class="language-bash">  sudo dpkg-reconfigure tzdata
+</code></pre>
+
+<h2 id="查詢容量">查詢容量</h2>
+
+<pre><code class="language-bash">// 目錄下各檔案資料夾的所佔空間
+$ du -smh *
+
+// 列出佔用空間前 5 名
+$ du -s /var/* | sort -rn | head -5
+
+// 依磁區
+$ df -h
+
+// 顯示目錄下檔案
+ls -lh
+</code></pre>
+
+<h2 id="查詢系統資訊">查詢系統資訊</h2>
+
+<pre><code class="language-bash">// 記憶體用量
+$ free -h
+
+// 硬體規格
+$ cat /proc/cpuinfo
+$ cat /proc/cpuinfo | grep processor | wc -l
+
+$ cat /proc/meminfo
+$ sudo lshw
+$ ls /sys/class/net
+
+// 登入的user
+$ w
+
+$ whoami
+$ date
+$ cal 
+$ uptime
+
+// os版本資訊
+$ uname -a
+$ lsb_release -a
+
+$ more /proc/partitions
+$ ls /dev/[sh]d*
+$ df -h
+$ sudo fdisk -l
+</code></pre>
+
+<h2 id="網路設定">網路設定</h2>
+
+<pre><code class="language-bash">  # 有線
+  auto eth0
+  iface eth0 inet dhcp
+  # iface wlan0 inet static
+  # address 192.168.1.150
+  # netmask 255.255.255.0
+  # gateway 192.168.1.1
+
+  # wifi
+  auto wlan0
+  iface wlan0 inet dhcp
+  wpa-ssid &lt;SSID&gt;
+  wpa-psk &lt;PASSWORD&gt;
+</code></pre>
+
+<pre><code>$ route add default gw 192.168.1.1 # gateway
+$ sudo ifconfig eth0 down &amp;&amp; sudo ifconfig eth0 up
+</code></pre>
+
+<h2 id="壓縮-解壓縮">壓縮/解壓縮</h2>
+
+<pre><code class="language-bash">$ tar -czvf FileName.tar.gz DirName
+$ tar -xzvf FileName.tar.gz
+  c 壓縮
+  x 解壓縮
+  z 使用gzip 
+  v 過程中顯示檔案
+  f 指定檔名
+</code></pre>
+
+<h2 id="mysql-dump-load">mysql dump/load</h2>
+
+<pre><code class="language-bash">// dump
+mysqldump -u root -p mydb &gt; mydb20160202.sql
+
+// load
+mysql -u root -p mydb &lt; mydb20160202.sql
+</code></pre>
+
+<h2 id="ubuntu-rails-基本環境建置">Ubuntu rails 基本環境建置</h2>
+
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install nodejs
+curl -L get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm requirements
+rvm install 2.3.0
+rvm rubygems current
+
+# fix nokogiri error
+sudo apt-get install build-essential patch
+sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
+sudo apt-get install libgmp-dev
+
+echo 'gem: --no-document' &gt;&gt; ~/.gemrc
+gem install rails
+</code></pre>
+
+<pre><code class="language-bash">sudo apt-get install libpcre3-dev # fix ngnix ssl
+gem install passenger
+rvmsudo passenger-install-nginx-module
+
+# fix nginx
+wget -O init-deb.sh https://www.linode.com/docs/assets/660-init-deb.sh
+
+sudo mv init-deb.sh /etc/init.d/nginx
+sudo chmod +x /etc/init.d/nginx
+
+sudo /usr/sbin/update-rc.d -f nginx defaults
+
+sudo service nginx start
+
+vim /opt/nginx/conf/nginx.conf
+</code></pre>
+
+<h2 id="user">user</h2>
+
+<pre><code class="language-bash">$ passwd
+</code></pre>
+
+<h2 id="shutdown">shutdown</h2>
+
+<pre><code class="language-bash">
+$ sudo shutdown -h now
+$ sudo reboot
+
+</code></pre>
+
+<h2 id="network">network</h2>
+
+<pre><code class="language-bash">$ sudo vim /etc/network/interfaces
+$ sudo /etc/init.d/networking restart
+
+</code></pre>
+
+<h2 id="linux-list-the-open-ports-and-the-process-that-owns-them">Linux List The Open Ports And The Process That Owns Them</h2>
+
+<pre><code class="language-bash">$ sudo lsof -i
+$ sudo netstat -lptu
+$ sudo netstat -tulpn
+</code></pre>
+
+<h2 id="git">Git</h2>
+
+<pre><code class="language-bash">$ git config --list
+$ git remote -v
+$ git remote add origin &lt;url&gt;
+$ git remote rm origin
+$ git branch --set-upstream-to=origin/master master
+$ git commit --amend # 修改上一次commit
+$ git commit --amend -m &quot;update file&quot; # 把commit併到上一次commit
+# 空目錄無法上git，可放一個.keep檔
+</code></pre>
+
+<h2 id="web-開發筆記">Web 開發筆記</h2>
+
+<ul>
+<li>前端任何值皆不可信任，後端都要再判斷一次</li>
+<li>form當中有name的tag才能傳到後端</li>
+<li>Filter Input</li>
+<li>Escape Output</li>
+<li>One Time Token</li>
+</ul>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

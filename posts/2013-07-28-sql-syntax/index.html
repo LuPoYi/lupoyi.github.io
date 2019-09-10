@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[SQL] 常用語法 - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/2013-07-28-sql-syntax/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[SQL] 常用語法" />
+<meta property="og:description" content="不一定是常用…而是記不太起來，每次都要查…
+DBCC CHECKIDENT ( tablename, RESEED, new_reseed_value ) 強制重設table的識別值
+DBCC CHECKIDENT(tablename, RESEED, 0) // 歸零識別值  SQL驗證 Data Source=;Initial catalog=;User ID=;Password=
+Windows驗證 Data Source=;Initial Catalog=;integrated security=sspi
+union:上下重直合併
+萬用字元 % _:代表一個字元 〔〕:指定字元範圍；[0-9]、[A-D]、[ABCD] 〔^〕:排除字元範圍:[^ABC]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/2013-07-28-sql-syntax/" />
+
+
+  <meta itemprop="name" content="[SQL] 常用語法">
+<meta itemprop="description" content="不一定是常用…而是記不太起來，每次都要查…
+DBCC CHECKIDENT ( tablename, RESEED, new_reseed_value ) 強制重設table的識別值
+DBCC CHECKIDENT(tablename, RESEED, 0) // 歸零識別值  SQL驗證 Data Source=;Initial catalog=;User ID=;Password=
+Windows驗證 Data Source=;Initial Catalog=;integrated security=sspi
+union:上下重直合併
+萬用字元 % _:代表一個字元 〔〕:指定字元範圍；[0-9]、[A-D]、[ABCD] 〔^〕:排除字元範圍:[^ABC]">
+
+
+
+<meta itemprop="wordCount" content="31">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/2013-07-28-sql-syntax/">[SQL] 常用語法</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[SQL] 常用語法</h1>
+<p>不一定是常用…而是記不太起來，每次都要查…</p>
+
+<p>DBCC CHECKIDENT ( <em>tablename</em>, RESEED, new_reseed_value ) 強制重設table的識別值</p>
+
+<pre><code>DBCC CHECKIDENT(tablename,  RESEED, 0)  // 歸零識別值
+</code></pre>
+
+<p>SQL驗證
+Data Source=<strong><em>;Initial catalog=</em></strong>;User ID=<strong><em>;Password=</em></strong></p>
+
+<p>Windows驗證
+Data Source=<strong><em>;Initial Catalog=</em></strong>;integrated security=sspi</p>
+
+<p>union:上下重直合併</p>
+
+<p>萬用字元
+%
+_:代表一個字元
+〔〕:指定字元範圍；[0-9]、[A-D]、[ABCD]
+〔^〕:排除字元範圍:[^ABC]</p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

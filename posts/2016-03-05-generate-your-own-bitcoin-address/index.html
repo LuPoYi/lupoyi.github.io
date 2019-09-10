@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Bitcoin] 客製比特幣位址並匯入錢包 - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/2016-03-05-generate-your-own-bitcoin-address/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <meta property="og:title" content="[Bitcoin] 客製比特幣位址並匯入錢包" />
+<meta property="og:description" content="使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make  Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
+# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/2016-03-05-generate-your-own-bitcoin-address/" />
+<meta property="article:published_time" content="2016-03-05T13:32:29+08:00" />
+<meta property="article:modified_time" content="2016-03-05T13:32:29+08:00" />
+
+  <meta itemprop="name" content="[Bitcoin] 客製比特幣位址並匯入錢包">
+<meta itemprop="description" content="使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make  Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
+# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind">
+
+
+<meta itemprop="datePublished" content="2016-03-05T13:32:29&#43;08:00" />
+<meta itemprop="dateModified" content="2016-03-05T13:32:29&#43;08:00" />
+<meta itemprop="wordCount" content="140">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/2016-03-05-generate-your-own-bitcoin-address/">[Bitcoin] 客製比特幣位址並匯入錢包</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Bitcoin] 客製比特幣位址並匯入錢包</h1>
+<h2 id="使用vanitygen客製比特幣位址">使用vanitygen客製比特幣位址</h2>
+
+<h3 id="安裝vanitygen">安裝vanitygen</h3>
+
+<pre><code class="language-bash">sudo apt-get install build-essential libssl-dev libpcre3-dev
+git clone https://github.com/samr7/vanitygen.git
+cd vanitygen
+make
+</code></pre>
+
+<h3 id="generate-your-own-bitcoin-address">Generate Your Own Bitcoin Address</h3>
+
+<ul>
+<li>Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l</li>
+
+<li><p>要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權</p>
+
+<pre><code class="language-bash"># 指定開頭
+$ ./vanitygen 1Bob
+Difficulty: 77178
+Pattern: 1Bob
+Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
+Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# 忽略大小寫
+$ ./vanitygen -i 1boba
+Difficulty: 1100434
+Pattern: 1boba
+Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L
+Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# 指定結尾
+$ ./vanitygen -r bob$
+Pattern: bob$
+Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob
+Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre></li>
+</ul>
+
+<h3 id="將-privkey-匯入bitcoind錢包">將 Privkey 匯入Bitcoind錢包</h3>
+
+<p>大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind</p>
+
+<pre><code class="language-bash"># 先確認此Address狀態
+$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
+{
+  &quot;isvalid&quot;: true,
+  &quot;address&quot;: &quot;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&quot;,
+  &quot;scriptPubKey&quot;: &quot;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&quot;,
+  &quot;ismine&quot;: false,
+  &quot;iswatchonly&quot;: false,
+  &quot;isscript&quot;: false
+}
+# &quot;ismine&quot;: false =&gt; 代表此address還不是自己的
+</code></pre>
+
+<pre><code class="language-bash"># bitcoin-cli importprivkey &lt;Privkey&gt; [label] [rescan=true]
+# label 是指你要放入哪個account，預設都會有一個””空字串的account
+# rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久)
+#        如果只是新address的話這邊填false就行了
+$ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false
+</code></pre>
+
+<pre><code class="language-bash">$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
+{
+  &quot;isvalid&quot;: true,
+  &quot;address&quot;: &quot;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&quot;,
+  &quot;scriptPubKey&quot;: &quot;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&quot;,
+  &quot;ismine&quot;: true,
+  &quot;iswatchonly&quot;: false,
+  &quot;isscript&quot;: false,
+  &quot;iscompressed&quot;: true,
+  &quot;account&quot;: &quot;&quot;
+} 
+# &quot;ismine&quot;: true =&gt; 現在此Address就是屬於你的
+</code></pre>
+
+<p>Reference:</p>
+
+<p><a href="https://en.bitcoin.it/wiki/Vanitygen">https://en.bitcoin.it/wiki/Vanitygen</a></p>
+
+<p><a href="http://8btc.com/article-1930-1.html">http://8btc.com/article-1930-1.html</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme. Icons come from the great <a href="https://fontawesome.com/license" target="_blank" rel="external">Font Awesome</a> library</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

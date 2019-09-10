@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/ruby/</link>
+    <description>Recent content in ruby on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 26 May 2019 15:28:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</title>
+      <link>https://blog.poyi.tw/posts/2019-05-26-rails-ubuntu-environment-ubuntu18-dot-04/</link>
+      <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2019-05-26-rails-ubuntu-environment-ubuntu18-dot-04/</guid>
+      <description>sudo adduser deploy sudo adduser deploy sudo exit  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn  git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.</description>
+    </item>
+    
+    <item>
+      <title>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS</title>
+      <link>https://blog.poyi.tw/posts/2016-11-26-rails-ubuntu-environment-ubuntu16-dot-04/</link>
+      <pubDate>Sat, 26 Nov 2016 16:56:10 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2016-11-26-rails-ubuntu-environment-ubuntu16-dot-04/</guid>
+      <description>sudo adduser bob sudo adduser bob sudo su bob  sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev  Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc echo &#39;eval &amp;quot;$(rbenv init -)&amp;quot;&#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &#39;export PATH=&amp;quot;$HOME/.</description>
+    </item>
+    
+    <item>
+      <title>[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave</title>
+      <link>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</link>
+      <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</guid>
+      <description>ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &amp;gt; /dev/null; then eval &amp;quot;$(rbenv init -)&amp;quot;; fi&#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3  gem install rails -v 6.0.0.rc1 rbenv rehash  brew install mysql brew install redis brew install ssdb brew install memcached  </description>
+    </item>
+    
+    <item>
+      <title>[Ruby] AES 加密解密</title>
+      <link>https://blog.poyi.tw/posts/2015-11-07-ruby-aes-encrypt-decrypt/</link>
+      <pubDate>Sat, 07 Nov 2015 14:48:06 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2015-11-07-ruby-aes-encrypt-decrypt/</guid>
+      <description>###對稱金鑰加密：加解密使用的金鑰是同一把
+ DES (Data Encryption Standard) AES (Advanced Encryption Standard)  ###非對稱金鑰加密系統(公開金鑰加密)，加解密不同把key(公鑰私鑰)
+ RSA
+$key = &amp;quot;自定key&amp;quot; # 可利用rails的sercret key(Rails.application.secrets.secret_key_base) $iv = &amp;quot;自定iv&amp;quot; # AES 加密 def aes_encrypt(data) cipher = OpenSSL::Cipher::AES128.new(:CBC) cipher.encrypt cipher.key = $key cipher.iv = $iv encrypted = cipher.update(data) + cipher.final encrypted_base64 = Base64.encode64(encrypted) return encrypted_base64 end # 解密 def aes_decrypt(encrypted_base64) encrypted = Base64.decode64(encrypted_base64) decipher = OpenSSL::Cipher::AES128.new(:CBC) decipher.decrypt decipher.key = $key decipher.iv = $iv data = decipher.update(encrypted) + decipher.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 教學 - 基本使用介紹2</title>
+      <link>https://blog.poyi.tw/posts/2015-04-12-ruby-basic-2/</link>
+      <pubDate>Sun, 12 Apr 2015 22:27:04 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2015-04-12-ruby-basic-2/</guid>
+      <description>Define Methods def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)  def temp(&amp;amp;block) end temp(1) #=&amp;gt; wrong number of arguments (1 for 0) &amp;amp;block不是傳入的參數 temp() #=&amp;gt; nil temp(){puts &amp;quot;temp&amp;quot;} #=&amp;gt; nil # 當temp()後面有block時會把這一段code放置&amp;amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;amp;abc) abc.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 教學 - 基本使用介紹</title>
+      <link>https://blog.poyi.tw/posts/2015-03-31-ruby-basic-1/</link>
+      <pubDate>Tue, 31 Mar 2015 22:27:04 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2015-03-31-ruby-basic-1/</guid>
+      <description>Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
+未來讓以後開發不會這麼吃力，來整複習一下好了 :D
+##Everything is Ruby is an object
+Ruby 內皆為物件，無基本型別
+123.methods #=&amp;gt; 123可用的method列表 123.class #=&amp;gt; Fixnum #知道class後就可以查doc true.class #=&amp;gt; TrueClass nil.class #=&amp;gt; NilClass  &amp;gt; 2.even? =&amp;gt; true &amp;gt; 3.next =&amp;gt; 4 &amp;gt; -1.abs =&amp;gt; 1  ##基本使用
+123.class #integer 42343243243243243242343242344234234234.class #bignum 123.123.class #float “123”.class #string [].class #array {}.class #hash :abc.class #symbol nil.class #nilClass true.class #TrueClass false.class #FalseClass  ###輸出String的用法
+“123” + “345” + “333” x = 18 puts &amp;quot;your age is #{x}&amp;quot; puts ‘\n\t’ #單引號 (無視內容，直接輸出) puts &amp;quot;\n\t&amp;quot; #雙引號 (換行)  ###Hash</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 匯出txt檔</title>
+      <link>https://blog.poyi.tw/posts/2014-05-06-ruby-txt-file/</link>
+      <pubDate>Tue, 06 May 2014 22:00:59 +0800</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2014-05-06-ruby-txt-file/</guid>
+      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;+8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close  # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end  Reference:
+http://ruby-doc.org/core-2.1.4/File.html</description>
+    </item>
+    
+    <item>
+      <title>[Mac] Ruby on Rails 基本環境建置 - 10.9 Mavericks</title>
+      <link>https://blog.poyi.tw/posts/2014-01-17-rails-mac-os-environment-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2014-01-17-rails-mac-os-environment-build/</guid>
+      <description>是說終於買了mac，省去開箱文趕緊把環境用好來繼續練習Rails 但使用上還是有一點不習慣，會覺得有些地方也蠻不人性化，但相對穩定就是了
+以下環境為OS X 10.9.1 Mavericks 1.安裝xcode-select Command line tool已經獨立出來，不需要安裝XCode了
+$ xcode-select --install  如果安裝失敗的話也可以到這裡下載
+2.安裝homebrew
+$ ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)&amp;quot;  3.安裝所需要的工具
+$ brew install git  4.安裝RVM
+$ curl -L https://get.rvm.io | bash -s stable  5.透過RVM來安裝RUBY
+$ rvm install ruby  6.透過RVM來安裝RubyGems
+$ rvm rubygems current  7.安裝Rails
+$ gem install rails  ===
+ XCode:官方提供的一個IDE，主要用來開發IOS APP，不過它也包含了一些開發其他語言所需的環境 Homebrew: OSX 套件管理工具 RVM (Ruby Version Manager):Ruby版本管理工具，便於切換不同版本  Reference:</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] and與&amp;&amp;的差別</title>
+      <link>https://blog.poyi.tw/posts/2013-12-09-ruby-and/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-12-09-ruby-and/</guid>
+      <description>在Ruby中的邏輯運算有兩組，[!,&amp;amp;&amp;amp;,||]及[not,and,or]
+ [!,&amp;amp;&amp;amp;,||]
+ higher precedence  [=,%=,~=,/=]  between this two  [not,and,or]
+ lower precedence
+ 優先權：&amp;amp;&amp;amp;　→　||　→　and　＝　or 。 &amp;amp;&amp;amp; 或 || 會將符號前後方都認定為boolean(true,false)
+&amp;gt; a = true &amp;amp;&amp;amp; false =&amp;gt; false &amp;gt; a =&amp;gt; false &amp;gt; a = true and false =&amp;gt; false &amp;gt; a =&amp;gt; true #  &amp;gt; a = false || true =&amp;gt; true &amp;gt; a =&amp;gt; true &amp;gt; a = false or true =&amp;gt; true &amp;gt; a =&amp;gt; false #  # boolean expression if some_condition &amp;amp;&amp;amp; some_other_condition do_something end # control flow document.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] Functions for Numbers</title>
+      <link>https://blog.poyi.tw/posts/2013-12-18-ruby-functions-for-numbers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-12-18-ruby-functions-for-numbers/</guid>
+      <description>&amp;gt; 2 ** 3 # 次方 =&amp;gt; 8 =begin Addition (+) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end  &amp;gt; 9.9.integer? =&amp;gt; false &amp;gt; -5.abs =&amp;gt; 5 &amp;gt; 5.6.round # 取最近的整數/四捨五入 =&amp;gt; 6 &amp;gt; 9.9.floor	# 取整數/無條件捨去 =&amp;gt; 9 &amp;gt; 2312.22.ceil # 取整數/無條件進位 =&amp;gt; 2313 &amp;gt; 2.next =&amp;gt; 3  n &amp;amp; num n | num n ^ num (XOR) n &amp;lt;&amp;lt; num (向左位移) n &amp;gt;&amp;gt; num (向右位移)  Reference: http://www.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] require,load,include,extend</title>
+      <link>https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/</guid>
+      <description>require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
+$a = (rand * 10).floor  require &amp;quot;./random&amp;quot; puts $a require &amp;quot;./random&amp;quot; # 此行無效果 puts $a  load &amp;quot;./random.rb&amp;quot; puts $a load &amp;quot;./random.rb&amp;quot; puts $a  include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+module Say def say_hi puts &amp;quot;Hi!&amp;quot; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end  001 &amp;gt; require &#39;./include_extend.rb&#39; =&amp;gt; true 002 &amp;gt; Person.say_hi Hi!</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 例外處理</title>
+      <link>https://blog.poyi.tw/posts/2013-12-23-ruby-exception-handling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-12-23-ruby-exception-handling/</guid>
+      <description>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
+例外處理 begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end  而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
+ $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
+begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;quot;Except class: #{ex.class}&amp;quot; puts &amp;quot;Except message: #{ex.message}&amp;quot; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&amp;gt; nil   Reference: http://blog.tonycube.com/2011/07/ruby8.html</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 匯出批次csv檔</title>
+      <link>https://blog.poyi.tw/posts/2014-05-06-ruby-csv-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2014-05-06-ruby-csv-file/</guid>
+      <description>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
+匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]  head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end # &amp;gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &amp;quot;\xEF\xBB\xBF#{csv_string}&amp;quot; # 若不需要調整格式就直接下載 send_data csv_string  require &#39;csv&#39; CSV.open(&amp;quot;export.csv&amp;quot;,&amp;quot;w&amp;quot;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end  半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
+def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).</description>
+    </item>
+    
+  </channel>
+</rss>

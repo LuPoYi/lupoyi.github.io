@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/c#/</link>
+    <description>Recent content in C# on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    
+	<atom:link href="https://blog.poyi.tw/categories/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[ASP.NET] Reset Password in Active Directory</title>
+      <link>https://blog.poyi.tw/posts/2013-02-14-aspnet-reset-password-in-active-directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-02-14-aspnet-reset-password-in-active-directory/</guid>
+      <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
+DirectoryEntry userDirEntry = new DirectoryEntry(&amp;quot;LDAP://&amp;quot; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;quot;SetPassword&amp;quot;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;quot;pwdLastSet&amp;quot;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close();  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;quot;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;quot;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int } string strPwd = new string(chars); while (!((Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;quot;[a-z]&amp;quot;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;quot;[A-Z]&amp;quot;)) &amp;amp;&amp;amp; (Regex.</description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] 自動寄信</title>
+      <link>https://blog.poyi.tw/posts/2013-03-03-aspnet-auto-return/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-03-03-aspnet-auto-return/</guid>
+      <description>一樣是紀綠一下&amp;hellip;
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
+    </item>
+    
+    <item>
+      <title>[C#] DataTable 的操作備忘</title>
+      <link>https://blog.poyi.tw/posts/2013-03-03-c-datatable-operation-memos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-03-03-c-datatable-operation-memos/</guid>
+      <description>稍微記一下，相關變化都蠻簡單的
+DataTable dt = new DataTable();
+// 定義欄位 dt.Columns.Add(&amp;ldquo;name&amp;rdquo;); dt.Columns.Add(&amp;ldquo;cardNumber&amp;rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&amp;ldquo;ID&amp;rdquo;, typeof(Int32));
+dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Ada&amp;rdquo;, &amp;ldquo;10000&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Kilin&amp;rdquo;,&amp;ldquo;20000&amp;rdquo;); // 也可用DataRow來存放資料
+// 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();</description>
+    </item>
+    
+    <item>
+      <title>[C#] IEnumerable vs IQueryable</title>
+      <link>https://blog.poyi.tw/posts/2013-09-30-c-ienumerable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2013-09-30-c-ienumerable/</guid>
+      <description>在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
+而IQueryable又繼承了IEnumerable&amp;hellip;
+兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
+// list1 IEnumerable&amp;lt;Employee&amp;gt; list1 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;quot;S&amp;quot;)); list1 = list1.Take&amp;lt;Employee&amp;gt;(10); // list2 IQueryable&amp;lt;Employee&amp;gt; list2 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;quot;S&amp;quot;)); list2 = list2.Take&amp;lt;Employee&amp;gt;(10);  // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0  可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html</description>
+    </item>
+    
+  </channel>
+</rss>

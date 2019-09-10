@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>include on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/include/</link>
+    <description>Recent content in include on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    
+	<atom:link href="https://blog.poyi.tw/categories/include/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ruby] require,load,include,extend</title>
+      <link>https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/posts/2014-03-16-ruby-require-load-include-extend/</guid>
+      <description>require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
+$a = (rand * 10).floor  require &amp;quot;./random&amp;quot; puts $a require &amp;quot;./random&amp;quot; # 此行無效果 puts $a  load &amp;quot;./random.rb&amp;quot; puts $a load &amp;quot;./random.rb&amp;quot; puts $a  include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+module Say def say_hi puts &amp;quot;Hi!&amp;quot; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end  001 &amp;gt; require &#39;./include_extend.rb&#39; =&amp;gt; true 002 &amp;gt; Person.say_hi Hi!</description>
+    </item>
+    
+  </channel>
+</rss>
