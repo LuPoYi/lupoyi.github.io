@@ -1,4 +1,11 @@
-header { width: 25% }
-.content-wrapper { width: 75%; margin-left: 25% }
+html { background: #112f41; }
+header { width: 25%; background: #112f41; }
+.content-wrapper { width: 75%; margin-left: 25%; min-height: 94vh }
 footer { width: 75%; left: 25%; padding: 15px 45px; }
 #content, .breadcrumb { max-width: 50em }
+
+@media (max-width: 767px) {
+  header { width: 100% }
+  .content-wrapper { width: 100%; margin-left: 0 }
+  footer { width: 100%; left: 0 }
+}

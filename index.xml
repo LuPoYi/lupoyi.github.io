@@ -862,10 +862,7 @@ Cluster
       <description>Bob Lu Ruby on Rails
 Bitcoin, Blockchain, Cryptocurrency
 maydaybob2000 at gmail.com
-Bitcoin Address: 1BobLu5mh5H6sbhGYcwfKt2griDkV6Vhmw 
-    jQuery(function($){ new QRCode(&amp;ldquo;qrcode_image&amp;rdquo; , { text: &amp;lsquo;bitcoin://1BobLu5mh5H6sbhGYcwfKt2griDkV6Vhmw&amp;rsquo;, width: 178, height: 178, colorDark : &amp;ldquo;#000000&amp;rdquo;, colorLight : &amp;ldquo;#ffffff&amp;rdquo;, correctLevel : QRCode.CorrectLevel.L });
-$.getJSON(&amp;ldquo;https://blockchain.info/q/addressbalance/1BobLu5mh5H6sbhGYcwfKt2griDkV6Vhmw&amp;quot;, function(data) { $(&amp;lsquo;#amount&amp;rsquo;).html((data/100000000).toFixed(8)); });
-});</description>
+Bitcoin Address: 1BobLu5mh5H6sbhGYcwfKt2griDkV6Vhmw  </description>
     </item>
     
     <item>
