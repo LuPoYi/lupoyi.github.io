@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/tags/security/</link>
+    <description>Recent content in security on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Thu, 25 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ubuntu] Linux 基本的安全設定</title>
+      <link>https://blog.poyi.tw/blog/2016/08/25/linux-some-common-security-setting/</link>
+      <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2016/08/25/linux-some-common-security-setting/</guid>
+      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,6 +1,6 @@
 html { background: #112f41; }
 header { width: 25%; background: #112f41; }
-.content-wrapper { width: 75%; margin-left: 25%; min-height: 94vh }
+.content-wrapper { width: 75%; margin-left: 25%; min-height: 92vh }
 footer { width: 75%; left: 25%; padding: 15px 45px; }
 #content, .breadcrumb { max-width: 50em }
 

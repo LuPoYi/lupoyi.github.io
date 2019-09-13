@@ -6,16 +6,17 @@
     <description>Recent content in ASP.NET(C#) on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Mon, 22 Jul 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/asp.netc#/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C#] String常用語法</title>
-      <link>https://blog.poyi.tw/posts/2013-07-22-string-syntax/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-07-22-string-syntax/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</guid>
       <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
 一般情況都用String String.IndexOf 找字串中第一次出現的index
 if(employeeName.IndexOf(&amp;quot;Admin&amp;quot;) == -1)	// 可判斷Name中是否有符合Admin的字串  String.LastIndexOf 找字串中最後一次出現的index

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ntp on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/tags/ntp/</link>
+    <description>Recent content in ntp on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 17 Jan 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ubuntu] 設定NTP校正時間</title>
+      <link>https://blog.poyi.tw/blog/2016/01/17/ubuntu-setting-ntp-sync-time/</link>
+      <pubDate>Sun, 17 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2016/01/17/ubuntu-setting-ntp-sync-time/</guid>
+      <description>校正系統時間 類似OTP(google authenticator)這種服務當你系統時間不對就完全不能用
+$ date # 確認目前時間 $ dpkg -l | grep ntp # 檢查是否已安裝 $ sudo apt-get install ntp ntpdate $ vim /etc/ntp.conf # Specify one or more NTP servers. # Use servers from the NTP Pool Project. Approved by Ubuntu Technical Board # on 2011-02-08 (LP: #104525). See http://www.pool.ntp.org/join.html for # more information. # 加上 server tock.stdtime.gov.tw server watch.stdtime.gov.tw server time.stdtime.gov.tw server clock.stdtime.gov.tw server tick.stdtime.gov.tw $ sudo service ntp restart # ntp會自動校時 $ ntpdate time.</description>
+    </item>
+    
+  </channel>
+</rss>

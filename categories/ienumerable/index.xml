@@ -6,16 +6,17 @@
     <description>Recent content in IEnumerable on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/ienumerable/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[C#] IEnumerable vs IQueryable</title>
-      <link>https://blog.poyi.tw/posts/2013-09-30-c-ienumerable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/09/30/c-ienumerable/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-30-c-ienumerable/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/09/30/c-ienumerable/</guid>
       <description>在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&amp;hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。

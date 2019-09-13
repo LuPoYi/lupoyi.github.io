@@ -6,16 +6,17 @@
     <description>Recent content in apt on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Fri, 22 Nov 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/apt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[APT] 進階持續性滲透攻擊 筆記</title>
-      <link>https://blog.poyi.tw/posts/2013-11-22-apt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/11/22/apt/</link>
+      <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-11-22-apt/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/11/22/apt/</guid>
       <description>Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
 主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
 Physical Malware Infection - USB

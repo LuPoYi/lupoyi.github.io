@@ -6,16 +6,17 @@
     <description>Recent content in email on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Sun, 03 Mar 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/email/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[ASP.NET] 自動寄信</title>
-      <link>https://blog.poyi.tw/posts/2013-03-03-aspnet-auto-return/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-03-03-aspnet-auto-return/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
 MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
     </item>

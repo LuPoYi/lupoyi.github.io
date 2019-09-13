@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/tags/golang/</link>
+    <description>Recent content in Golang on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 02 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Golang] Golang 101 入門筆記</title>
+      <link>https://blog.poyi.tw/blog/2016/04/02/golang-begging/</link>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2016/04/02/golang-begging/</guid>
+      <description>Hello Go! package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello, go!&amp;#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;#34;iota&amp;#34; 變數 var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;#34;Hello Go!</description>
+    </item>
+    
+  </channel>
+</rss>

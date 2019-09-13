@@ -6,26 +6,27 @@
     <description>Recent content in Linq on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Sun, 29 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/linq/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[ASP.NET] Linq 動態條件搜尋</title>
-      <link>https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/</link>
+      <pubDate>Sun, 29 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/</guid>
       <description>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
 static void linqPB() { var list = new List&amp;lt;string&amp;gt; { &amp;#34;apple&amp;#34;, &amp;#34;bob&amp;#34;, &amp;#34;coco&amp;#34;, &amp;#34;durex&amp;#34;, &amp;#34;enter&amp;#34;, &amp;#34;fuck&amp;#34;}; var searchKeyword = new List&amp;lt;string&amp;gt; { &amp;#34;o&amp;#34;, &amp;#34;e&amp;#34; }; var predicate = PredicateBuilder.False&amp;lt;string&amp;gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&amp;gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx</description>
     </item>
     
     <item>
       <title>[ASP.NET] Linq基本用法</title>
-      <link>https://blog.poyi.tw/posts/2013-08-23-linq-introduction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/08/23/linq-introduction/</link>
+      <pubDate>Fri, 23 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-08-23-linq-introduction/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/08/23/linq-introduction/</guid>
       <description>公司前輩跟我提過可以用用看Linq比較潮(?) 寫.NET的時候就不需要寫的這麼..無腦
 sqlStr += &amp;quot;Select ...&amp;quot;; sqlStr += &amp;quot;from ....&amp;quot;; sqlStr += &amp;quot;join ...&amp;quot;; sqlStr += &amp;quot;where ....&amp;quot; string sql = @&amp;quot;SELECT ... FROM table1 WHERE field3 = @Param1&amp;quot;;  基本Linq類似這樣
 var Query = from q in myDB.Employee where q.Name == &amp;quot;Bob&amp;quot; select q;  Group By

@@ -6,726 +6,132 @@
     <description>Recent content in Categories on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 26 May 2019 15:28:03 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>rails</title>
-      <link>https://blog.poyi.tw/categories/rails/</link>
-      <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/rails/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ruby</title>
-      <link>https://blog.poyi.tw/categories/ruby/</link>
-      <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/ruby/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ubuntu</title>
       <link>https://blog.poyi.tw/categories/ubuntu/</link>
-      <pubDate>Sun, 26 May 2019 15:28:03 +0800</pubDate>
+      <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bip32</title>
-      <link>https://blog.poyi.tw/categories/bip32/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/bip32/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bip39</title>
       <link>https://blog.poyi.tw/categories/bip39/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
+      <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/bip39/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bip44</title>
-      <link>https://blog.poyi.tw/categories/bip44/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/bip44/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>deterministic</title>
-      <link>https://blog.poyi.tw/categories/deterministic/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/deterministic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mnemonic</title>
-      <link>https://blog.poyi.tw/categories/mnemonic/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/mnemonic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wallet</title>
-      <link>https://blog.poyi.tw/categories/wallet/</link>
-      <pubDate>Sun, 10 Dec 2017 18:26:47 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/wallet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dash</title>
-      <link>https://blog.poyi.tw/categories/dash/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/dash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Monero</title>
-      <link>https://blog.poyi.tw/categories/monero/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/monero/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pivx</title>
-      <link>https://blog.poyi.tw/categories/pivx/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/pivx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>private</title>
-      <link>https://blog.poyi.tw/categories/private/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/private/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xmr</title>
-      <link>https://blog.poyi.tw/categories/xmr/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/xmr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ZCash</title>
       <link>https://blog.poyi.tw/categories/zcash/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/zcash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>zec</title>
-      <link>https://blog.poyi.tw/categories/zec/</link>
-      <pubDate>Sat, 04 Nov 2017 16:22:35 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/zec/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mining</title>
-      <link>https://blog.poyi.tw/categories/mining/</link>
-      <pubDate>Sun, 15 Jan 2017 13:32:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/mining/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://blog.poyi.tw/categories/windows/</link>
-      <pubDate>Sun, 15 Jan 2017 13:32:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mac</title>
       <link>https://blog.poyi.tw/categories/mac/</link>
-      <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
+      <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/mac/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mojave</title>
-      <link>https://blog.poyi.tw/categories/mojave/</link>
-      <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/mojave/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>command</title>
-      <link>https://blog.poyi.tw/categories/command/</link>
-      <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>linux</title>
       <link>https://blog.poyi.tw/categories/linux/</link>
-      <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
+      <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>permission</title>
-      <link>https://blog.poyi.tw/categories/permission/</link>
-      <pubDate>Wed, 19 Oct 2016 19:01:28 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/permission/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fail2ban</title>
-      <link>https://blog.poyi.tw/categories/fail2ban/</link>
-      <pubDate>Thu, 25 Aug 2016 20:54:54 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/fail2ban/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>security</title>
-      <link>https://blog.poyi.tw/categories/security/</link>
-      <pubDate>Thu, 25 Aug 2016 20:54:54 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>https</title>
-      <link>https://blog.poyi.tw/categories/https/</link>
-      <pubDate>Thu, 14 Jul 2016 20:00:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>https://blog.poyi.tw/categories/nginx/</link>
-      <pubDate>Thu, 14 Jul 2016 20:00:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ssl</title>
       <link>https://blog.poyi.tw/categories/ssl/</link>
-      <pubDate>Thu, 14 Jul 2016 20:00:55 +0800</pubDate>
+      <pubDate>Thu, 14 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/ssl/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>dwarfpool</title>
-      <link>https://blog.poyi.tw/categories/dwarfpool/</link>
-      <pubDate>Tue, 05 Apr 2016 15:48:43 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/dwarfpool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ethereum</title>
       <link>https://blog.poyi.tw/categories/ethereum/</link>
-      <pubDate>Tue, 05 Apr 2016 15:48:43 +0800</pubDate>
+      <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/ethereum/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>nanopool</title>
-      <link>https://blog.poyi.tw/categories/nanopool/</link>
-      <pubDate>Tue, 05 Apr 2016 15:48:43 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/nanopool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>basic</title>
-      <link>https://blog.poyi.tw/categories/basic/</link>
-      <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/basic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>beginning</title>
-      <link>https://blog.poyi.tw/categories/beginning/</link>
-      <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/beginning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Go</title>
       <link>https://blog.poyi.tw/categories/go/</link>
-      <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/go/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://blog.poyi.tw/categories/golang/</link>
-      <pubDate>Sat, 02 Apr 2016 20:59:38 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>address</title>
-      <link>https://blog.poyi.tw/categories/address/</link>
-      <pubDate>Sat, 05 Mar 2016 13:32:29 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/address/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bitcoin</title>
       <link>https://blog.poyi.tw/categories/bitcoin/</link>
-      <pubDate>Sat, 05 Mar 2016 13:32:29 +0800</pubDate>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/bitcoin/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>vanitygen</title>
-      <link>https://blog.poyi.tw/categories/vanitygen/</link>
-      <pubDate>Sat, 05 Mar 2016 13:32:29 +0800</pubDate>
+      <title>ruby</title>
+      <link>https://blog.poyi.tw/categories/ruby/</link>
+      <pubDate>Sat, 07 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/categories/vanitygen/</guid>
+      <guid>https://blog.poyi.tw/categories/ruby/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Openvpn</title>
-      <link>https://blog.poyi.tw/categories/openvpn/</link>
-      <pubDate>Sat, 05 Mar 2016 11:42:49 +0800</pubDate>
+      <title>rails</title>
+      <link>https://blog.poyi.tw/categories/rails/</link>
+      <pubDate>Sat, 11 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/categories/openvpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vpn</title>
-      <link>https://blog.poyi.tw/categories/vpn/</link>
-      <pubDate>Sat, 05 Mar 2016 11:42:49 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/vpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ntp</title>
-      <link>https://blog.poyi.tw/categories/ntp/</link>
-      <pubDate>Sun, 17 Jan 2016 23:34:01 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/ntp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ntpdate</title>
-      <link>https://blog.poyi.tw/categories/ntpdate/</link>
-      <pubDate>Sun, 17 Jan 2016 23:34:01 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/ntpdate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PPPoE</title>
-      <link>https://blog.poyi.tw/categories/pppoe/</link>
-      <pubDate>Sun, 17 Jan 2016 16:08:49 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/pppoe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>StaticIP</title>
-      <link>https://blog.poyi.tw/categories/staticip/</link>
-      <pubDate>Sun, 17 Jan 2016 16:08:49 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/staticip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aes</title>
-      <link>https://blog.poyi.tw/categories/aes/</link>
-      <pubDate>Sat, 07 Nov 2015 14:48:06 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/aes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>decrypt</title>
-      <link>https://blog.poyi.tw/categories/decrypt/</link>
-      <pubDate>Sat, 07 Nov 2015 14:48:06 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/decrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>encrypt</title>
-      <link>https://blog.poyi.tw/categories/encrypt/</link>
-      <pubDate>Sat, 07 Nov 2015 14:48:06 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/encrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update</title>
-      <link>https://blog.poyi.tw/categories/update/</link>
-      <pubDate>Sat, 11 Jul 2015 17:16:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/update/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update_all</title>
-      <link>https://blog.poyi.tw/categories/update_all/</link>
-      <pubDate>Sat, 11 Jul 2015 17:16:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/update_all/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>update_columns</title>
-      <link>https://blog.poyi.tw/categories/update_columns/</link>
-      <pubDate>Sat, 11 Jul 2015 17:16:55 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/update_columns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>usb</title>
-      <link>https://blog.poyi.tw/categories/usb/</link>
-      <pubDate>Mon, 29 Jun 2015 23:39:10 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/usb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>encrypted</title>
-      <link>https://blog.poyi.tw/categories/encrypted/</link>
-      <pubDate>Sat, 18 Apr 2015 00:13:56 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/encrypted/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>file</title>
-      <link>https://blog.poyi.tw/categories/file/</link>
-      <pubDate>Tue, 06 May 2014 22:00:59 +0800</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/file/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Active Directory</title>
-      <link>https://blog.poyi.tw/categories/active-directory/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/active-directory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apt</title>
-      <link>https://blog.poyi.tw/categories/apt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/apt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ASP.Net</title>
-      <link>https://blog.poyi.tw/categories/asp.net/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/asp.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ASP.NET(C#)</title>
-      <link>https://blog.poyi.tw/categories/asp.netc#/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/asp.netc#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#</title>
-      <link>https://blog.poyi.tw/categories/c#/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cluster</title>
-      <link>https://blog.poyi.tw/categories/cluster/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/cluster/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>https://blog.poyi.tw/categories/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csv</title>
-      <link>https://blog.poyi.tw/categories/csv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/csv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>email</title>
-      <link>https://blog.poyi.tw/categories/email/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/email/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://blog.poyi.tw/categories/english/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>extend</title>
-      <link>https://blog.poyi.tw/categories/extend/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/extend/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTML5</title>
-      <link>https://blog.poyi.tw/categories/html5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/html5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IEnumerable</title>
-      <link>https://blog.poyi.tw/categories/ienumerable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/ienumerable/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>include</title>
-      <link>https://blog.poyi.tw/categories/include/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/include/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IQueryable</title>
-      <link>https://blog.poyi.tw/categories/iqueryable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/iqueryable/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.poyi.tw/categories/javascript/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/javascript/</guid>
+      <guid>https://blog.poyi.tw/categories/rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jquery</title>
       <link>https://blog.poyi.tw/categories/jquery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/jquery/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linq</title>
-      <link>https://blog.poyi.tw/categories/linq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>apt</title>
+      <link>https://blog.poyi.tw/categories/apt/</link>
+      <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/categories/linq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>load</title>
-      <link>https://blog.poyi.tw/categories/load/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/load/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mavericks</title>
-      <link>https://blog.poyi.tw/categories/mavericks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/mavericks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network security</title>
-      <link>https://blog.poyi.tw/categories/network-security/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/network-security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Password</title>
-      <link>https://blog.poyi.tw/categories/password/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/password/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PredicateBuilder</title>
-      <link>https://blog.poyi.tw/categories/predicatebuilder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/predicatebuilder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>require</title>
-      <link>https://blog.poyi.tw/categories/require/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/require/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sql</title>
-      <link>https://blog.poyi.tw/categories/sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQLServer</title>
-      <link>https://blog.poyi.tw/categories/sqlserver/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/categories/sqlserver/</guid>
+      <guid>https://blog.poyi.tw/categories/apt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VCenter</title>
       <link>https://blog.poyi.tw/categories/vcenter/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/vcenter/</guid>
       <description></description>
@@ -734,9 +140,144 @@
     <item>
       <title>vmware</title>
       <link>https://blog.poyi.tw/categories/vmware/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://blog.poyi.tw/categories/c#/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IEnumerable</title>
+      <link>https://blog.poyi.tw/categories/ienumerable/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/ienumerable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IQueryable</title>
+      <link>https://blog.poyi.tw/categories/iqueryable/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/iqueryable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.Net</title>
+      <link>https://blog.poyi.tw/categories/asp.net/</link>
+      <pubDate>Sun, 29 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/asp.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linq</title>
+      <link>https://blog.poyi.tw/categories/linq/</link>
+      <pubDate>Sun, 29 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/linq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PredicateBuilder</title>
+      <link>https://blog.poyi.tw/categories/predicatebuilder/</link>
+      <pubDate>Sun, 29 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/predicatebuilder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Directory</title>
+      <link>https://blog.poyi.tw/categories/active-directory/</link>
+      <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://blog.poyi.tw/categories/sql/</link>
+      <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network security</title>
+      <link>https://blog.poyi.tw/categories/network-security/</link>
+      <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/network-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML5</title>
+      <link>https://blog.poyi.tw/categories/html5/</link>
+      <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET(C#)</title>
+      <link>https://blog.poyi.tw/categories/asp.netc#/</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/asp.netc#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://blog.poyi.tw/categories/english/</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>email</title>
+      <link>https://blog.poyi.tw/categories/email/</link>
+      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Password</title>
+      <link>https://blog.poyi.tw/categories/password/</link>
+      <pubDate>Thu, 14 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://blog.poyi.tw/categories/css/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/css/</guid>
       <description></description>
     </item>
     

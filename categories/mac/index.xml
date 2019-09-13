@@ -6,35 +6,45 @@
     <description>Recent content in mac on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 30 Oct 2016 15:39:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Oct 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave</title>
-      <link>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</link>
-      <pubDate>Sun, 30 Oct 2016 15:39:21 +0800</pubDate>
+      <link>https://blog.poyi.tw/blog/2016/10/30/rails-mac-os-environment-sierra/</link>
+      <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2016-10-30-rails-mac-os-environment-sierra/</guid>
+      <guid>https://blog.poyi.tw/blog/2016/10/30/rails-mac-os-environment-sierra/</guid>
       <description>ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3gem install rails -v 6.0.0.rc1 rbenv rehashbrew install mysql brew install redis brew install ssdb brew install memcached</description>
     </item>
     
     <item>
       <title>[Mac] 三步驟純指令建立Ubuntu的USB隨身碟</title>
-      <link>https://blog.poyi.tw/posts/2015-06-29-mac-build-ubuntu-flash-using-command/</link>
-      <pubDate>Mon, 29 Jun 2015 23:39:10 +0800</pubDate>
+      <link>https://blog.poyi.tw/blog/2015/06/29/mac-build-ubuntu-flash-using-command/</link>
+      <pubDate>Mon, 29 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2015-06-29-mac-build-ubuntu-flash-using-command/</guid>
+      <guid>https://blog.poyi.tw/blog/2015/06/29/mac-build-ubuntu-flash-using-command/</guid>
       <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successfulBob:Downloads $ sudo dd if=ubuntu-14.</description>
     </item>
     
     <item>
-      <title>[Mac] Ruby on Rails 基本環境建置 - 10.9 Mavericks</title>
-      <link>https://blog.poyi.tw/posts/2014-01-17-rails-mac-os-environment-build/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>[Mac] 直接在command line開啟sublime</title>
+      <link>https://blog.poyi.tw/blog/2014/01/19/mac-directly-in-the-terminal-to-open-sublime/</link>
+      <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2014-01-17-rails-mac-os-environment-build/</guid>
+      <guid>https://blog.poyi.tw/blog/2014/01/19/mac-directly-in-the-terminal-to-open-sublime/</guid>
+      <description>ln -sv /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl subl test.rb git clone https://github.com/bitcoin/bitcoin.git subl bitcoin/ Reference:
+https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
+    </item>
+    
+    <item>
+      <title>[Mac] Ruby on Rails 基本環境建置 - 10.9 Mavericks</title>
+      <link>https://blog.poyi.tw/blog/2014/01/17/rails-mac-os-environment-build/</link>
+      <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2014/01/17/rails-mac-os-environment-build/</guid>
       <description>是說終於買了mac，省去開箱文趕緊把環境用好來繼續練習Rails 但使用上還是有一點不習慣，會覺得有些地方也蠻不人性化，但相對穩定就是了
 以下環境為OS X 10.9.1 Mavericks 1.安裝xcode-select Command line tool已經獨立出來，不需要安裝XCode了
 $ xcode-select --install 如果安裝失敗的話也可以到這裡下載
@@ -50,21 +60,11 @@ http://www.computersnyou.com/2025/2013/06/install-command-line-tools-in-osx-10-9
     </item>
     
     <item>
-      <title>[Mac] 直接在command line開啟sublime</title>
-      <link>https://blog.poyi.tw/posts/2014-01-19-mac-directly-in-the-terminal-to-open-sublime/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/posts/2014-01-19-mac-directly-in-the-terminal-to-open-sublime/</guid>
-      <description>ln -sv /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl subl test.rb git clone https://github.com/bitcoin/bitcoin.git subl bitcoin/ Reference:
-https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
-    </item>
-    
-    <item>
       <title>[Mac] 設定開啟檔案的預設軟體</title>
-      <link>https://blog.poyi.tw/posts/2013-02-08-mac-set-to-open-files-by-default-software/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/02/08/mac-set-to-open-files-by-default-software/</link>
+      <pubDate>Fri, 08 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-02-08-mac-set-to-open-files-by-default-software/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/02/08/mac-set-to-open-files-by-default-software/</guid>
       <description> 近期在mac的環境上有點卡關，像是環境的PATH曾被我改壞&amp;hellip; 還好朋友有幫我救回來= =&amp;hellip;
 在windows上習慣會調整一些檔案的預設軟體來開啟，像是影片檔的格式一堆就很需要額外設定。
 首先，在檔案上右鍵找到「簡介」 接著找到「打開檔案的應用程式」，調整為你要的預設軟體 然後按下「全部更改」 就可以把該副檔名的檔案都設定成此軟體開啟了yaya </description>

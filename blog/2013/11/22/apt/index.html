@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[APT] 進階持續性滲透攻擊 筆記 - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/blog/2013/11/22/apt/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[APT] 進階持續性滲透攻擊 筆記" />
+<meta property="og:description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
+Physical Malware Infection - USB
+External Attacks - 駭客入侵 - 漏洞攻擊
+APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Reference: IThome「防駭演練與危機處理」研習會" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/blog/2013/11/22/apt/" />
+<meta property="article:published_time" content="2013-11-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-11-22T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[APT] 進階持續性滲透攻擊 筆記">
+<meta itemprop="description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
+Physical Malware Infection - USB
+External Attacks - 駭客入侵 - 漏洞攻擊
+APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Reference: IThome「防駭演練與危機處理」研習會">
+
+
+<meta itemprop="datePublished" content="2013-11-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-11-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="57">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/blog/2013/11/22/apt/">[APT] 進階持續性滲透攻擊 筆記</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[APT] 進階持續性滲透攻擊 筆記</h1>
+<h1 id="advanced-persistent-threat">Advanced Persistent Threat</h1>
+
+<p>Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。
+ Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。
+ 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。</p>
+
+<h2 id="主要攻擊目標">主要攻擊目標</h2>
+
+<ul>
+<li>依組職：政治、軍事、企業</li>
+<li>依國家：中國、美國、印度</li>
+</ul>
+
+<h2 id="常見手法">常見手法</h2>
+
+<p><strong>Internet Malware Infection</strong>
+-   下載驅動程式
+-   Email附件
+-   非正式授權軟體
+-   DNS中毒</p>
+
+<p><strong>Physical Malware Infection</strong>
+-   USB</p>
+
+<p><strong>External Attacks</strong>
+-   駭客入侵
+-   漏洞攻擊</p>
+
+<h2 id="apt五種典型的特色">APT五種典型的特色：</h2>
+
+<ul>
+<li>高度針對性</li>
+<li>具有潛伏並保持低調的技術能力</li>
+<li>擁有資料情報分析的能力</li>
+<li>擁有多樣工具的多重面向攻擊方式</li>
+<li>資金充裕</li>
+</ul>
+
+<p>而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號
+也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash 掃描漏洞.." data-lang="bash 掃描漏洞..">Default Password (root) for &#39;root&#39; Account
+Unpassworded for &#39;sa&#39; Account</code></pre></div>
+<p>駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。</p>
+
+<p>Reference:
+IThome「防駭演練與危機處理」研習會</p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

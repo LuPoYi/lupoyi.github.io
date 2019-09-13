@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/blog/2016/11/26/rails-ubuntu-environment-ubuntu16-dot-04/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS" />
+<meta property="og:description" content="sudo adduser bob sudo adduser bob sudo su bobsudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc exec $SHELL rbenv install 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/blog/2016/11/26/rails-ubuntu-environment-ubuntu16-dot-04/" />
+<meta property="article:published_time" content="2016-11-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-11-26T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS">
+<meta itemprop="description" content="sudo adduser bob sudo adduser bob sudo su bobsudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc exec $SHELL rbenv install 2.">
+
+
+<meta itemprop="datePublished" content="2016-11-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-11-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="411">
+
+
+
+<meta itemprop="keywords" content="ruby,rails," />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/blog/2016/11/26/rails-ubuntu-environment-ubuntu16-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS</h1>
+<p><div class="highlight"><pre class="chroma"><code class="language-bash 建立user" data-lang="bash 建立user">sudo adduser bob
+sudo adduser bob sudo
+su bob</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 安裝常用lib" data-lang="bash 安裝常用lib">sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim nodejs autoconf
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev</code></pre></div>
+<h2 id="install-ruby-rails">Install Ruby &amp; Rails</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash 使用rbenv來管理ruby" data-lang="bash 使用rbenv來管理ruby">cd
+git clone <a href="https://github.com/rbenv/rbenv.git">https://github.com/rbenv/rbenv.git</a> ~/.rbenv
+echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc
+echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &gt;&gt; ~/.bashrc
+exec $SHELL</p>
+
+<p>git clone <a href="https://github.com/rbenv/ruby-build.git">https://github.com/rbenv/ruby-build.git</a> ~/.rbenv/plugins/ruby-build
+echo &#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc
+exec $SHELL</p>
+
+<p>rbenv install 2.3.1
+rbenv global 2.3.1</p>
+
+<h1 id="rbenv-shell-2-3-1">rbenv shell 2.3.1</h1>
+
+<h1 id="rbenv-local-2-3-1">rbenv local 2.3.1</h1>
+
+<h1 id="rbenv-global-2-3-1">rbenv global 2.3.1</h1>
+
+<p>ruby -v</p>
+
+<h1 id="rvm">rvm</h1>
+
+<h1 id="sudo-apt-get-install-libgdbm-dev-libncurses5-dev-automake-libtool-bison-libffi-dev">sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev</h1>
+
+<h1 id="gpg-keyserver-hkp-keys-gnupg-net-recv-keys-409b6b1796c275462a1703113804bb82d39dc0e3">gpg &ndash;keyserver hkp://keys.gnupg.net &ndash;recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</h1>
+
+<h1 id="curl-ssl-https-get-rvm-io-bash-s-stable">curl -sSL <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable</h1>
+
+<h1 id="source-rvm-scripts-rvm">source ~/.rvm/scripts/rvm</h1>
+
+<h1 id="rvm-install-2-3-1">rvm install 2.3.1</h1>
+
+<h1 id="rvm-use-2-3-1-default">rvm use 2.3.1 &ndash;default</h1>
+
+<h1 id="skip-doc">skip doc</h1>
+
+<p>echo &#34;gem: &ndash;no-ri &ndash;no-rdoc&#34; &gt; ~/.gemrc</p>
+
+<p>gem install bundler</code></pre></div>
+<h2 id="install-passenger-nginx">Install Passenger &amp; Nginx</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash install nginx" data-lang="bash install nginx">sudo apt-key adv &ndash;keyserver hkp://keyserver.ubuntu.com:80 &ndash;recv-keys 561F9B9CAC40B2F7
+sudo apt-get install -y apt-transport-https ca-certificates</p>
+
+<h1 id="add-passenger-apt-repository">Add Passenger APT repository</h1>
+
+<p>sudo sh -c &#39;echo deb <a href="https://oss-binaries.phusionpassenger.com/apt/passenger">https://oss-binaries.phusionpassenger.com/apt/passenger</a> xenial main &gt; /etc/apt/sources.list.d/passenger.list&#39;
+sudo apt-get update</p>
+
+<h1 id="install-passenger-amp-nginx">Install Passenger &amp; Nginx</h1>
+
+<p>sudo apt-get install -y nginx-extras passenger</p>
+
+<p>sudo service nginx start</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/nginx/nginx.conf" data-lang="bash /etc/nginx/nginx.conf"><span class="c1">##
+</span><span class="c1"># Phusion Passenger
+</span><span class="c1">##
+</span><span class="c1"># Uncomment it if you installed ruby-passenger or ruby-passenger-enterprise
+</span><span class="c1">##
+</span><span class="c1"></span>
+<span class="k">include</span> <span class="n">/etc/nginx/passenger.conf</span>;</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/nginx/passenger.conf" data-lang="bash /etc/nginx/passenger.conf"># 加上
+passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+passenger_ruby /home/bob/.rbenv/shims/ruby;</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/nginx/sites-enabled/default" data-lang="bash /etc/nginx/sites-enabled/default">server {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;</p>
+
+<pre><code>    server_name poyi.com;
+    passenger_enabled on;
+    rails_env    production;
+    root         /home/bob/poyi/public;
+
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+
+    # 註解掉
+    # root /var/www/html;
+</code></pre>
+
+<p>}</code></pre></div>
+<h2 id="install-mysql">Install Mysql</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝mysql" data-lang="bash 安裝mysql">sudo apt-get install mysql-server mysql-client libmysqlclient-dev</code></pre></div>
+<h2 id="install-redis">Install Redis</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝redis" data-lang="bash 安裝redis">sudo apt-get update
+sudo apt-get install build-essential tcl</p>
+
+<p>cd /tmp
+curl -O <a href="http://download.redis.io/redis-stable.tar.gz">http://download.redis.io/redis-stable.tar.gz</a>
+tar xzvf redis-stable.tar.gz
+cd redis-stable
+make
+make test
+sudo make install</p>
+
+<p>sudo mkdir /etc/redis
+sudo cp /tmp/redis-stable/redis.conf /etc/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 修改/etc/redis/redis.conf" data-lang="bash 修改/etc/redis/redis.conf"># 兩個地方要改
+supervised systemd
+dir /var/lib/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 新增/etc/systemd/system/redis.service" data-lang="bash 新增/etc/systemd/system/redis.service"><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Redis In-Memory Data Store</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span></p>
+
+<p><span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">redis</span>
+<span class="na">Group</span><span class="o">=</span><span class="s">redis</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/redis-server /etc/redis/redis.conf</span>
+<span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/local/bin/redis-cli shutdown</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span></p>
+
+<p><span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 新增redis user並給權限" data-lang="bash 新增redis user並給權限">sudo adduser &ndash;system &ndash;group &ndash;no-create-home redis
+sudo mkdir /var/lib/redis
+sudo chown redis:redis /var/lib/redis
+sudo chmod 770 /var/lib/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl <span class="nb">enable</span> redis <span class="c1"># 設定開機啟動</span>
+sudo systemctl start redis
+sudo systemctl stop redis
+sudo systemctl status redis</code></pre></div>
+<h2 id="install-ssdb">Install SSDB</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝ssdb" data-lang="bash 安裝ssdb">wget &ndash;no-check-certificate <a href="https://github.com/ideawu/ssdb/archive/master.zip">https://github.com/ideawu/ssdb/archive/master.zip</a>
+unzip master
+cd ssdb-master
+make
+sudo make install</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 新增/etc/systemd/system/ssdb.service" data-lang="bash 新增/etc/systemd/system/ssdb.service"><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">SSDB</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span></p>
+
+<p><span class="k">[Service]</span>
+<span class="na">LimitCORE</span><span class="o">=</span><span class="s">infinity</span>
+<span class="na">LimitNOFILE</span><span class="o">=</span><span class="s">100000</span>
+<span class="na">LimitNPROC</span><span class="o">=</span><span class="s">100000</span>
+<span class="na">PIDFile</span><span class="o">=</span><span class="s">/usr/local/ssdb/var/ssdb.pid</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/usr/local/ssdb</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/ssdb/ssdb-server /usr/local/ssdb/ssdb.conf -s restart -d</span>
+<span class="na">ExecStop</span><span class="o">=</span><span class="s">/usr/local/ssdb/ssdb-server /usr/local/ssdb/ssdb.conf -s stop -d</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">forking</span>
+<span class="na">KillMode</span><span class="o">=</span><span class="s">none</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">on-failure</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">10s</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span></p>
+
+<p><span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl <span class="nb">enable</span> ssdb <span class="c1"># 設定開機啟動</span>
+sudo systemctl start ssdb
+sudo systemctl stop ssdb
+sudo systemctl status ssdb</code></pre></div>
+<h3 id="這邊先跳過-capistrano-deploy">這邊先跳過 capistrano deploy</h3></p>
+
+<p>Reference:</p>
+
+<p><a href="https://gorails.com/deploy/ubuntu/16.04">https://gorails.com/deploy/ubuntu/16.04</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

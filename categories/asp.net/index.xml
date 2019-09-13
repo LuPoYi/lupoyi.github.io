@@ -6,71 +6,40 @@
     <description>Recent content in ASP.Net on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Sun, 29 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/asp.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[ASP.NET] Linq 動態條件搜尋</title>
-      <link>https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/</link>
+      <pubDate>Sun, 29 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-29-aspnet-linq-dynamic-conditions/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/</guid>
       <description>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
 static void linqPB() { var list = new List&amp;lt;string&amp;gt; { &amp;#34;apple&amp;#34;, &amp;#34;bob&amp;#34;, &amp;#34;coco&amp;#34;, &amp;#34;durex&amp;#34;, &amp;#34;enter&amp;#34;, &amp;#34;fuck&amp;#34;}; var searchKeyword = new List&amp;lt;string&amp;gt; { &amp;#34;o&amp;#34;, &amp;#34;e&amp;#34; }; var predicate = PredicateBuilder.False&amp;lt;string&amp;gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&amp;gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx</description>
     </item>
     
     <item>
-      <title>[ASP.NET] 列印</title>
-      <link>https://blog.poyi.tw/posts/2013-09-04-aspnet-print/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>[C#] 字串補零</title>
+      <link>https://blog.poyi.tw/blog/2013/09/23/aspnet-string-is-padded-with-zeros/</link>
+      <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-04-aspnet-print/</guid>
-      <description> 列印指定文件 string filePath = &amp;quot;C:\\test.txt&amp;quot;; // 使用預設印表機 LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機 PrintServer ps = new PrintServer(@&amp;quot;\\TY-SRV-PRINT01&amp;quot;); PrintQueue queue = new PrintQueue(ps, &amp;quot;FUJIXEROX&amp;quot;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit();  </description>
-    </item>
-    
-    <item>
-      <title>[ASP.NET] 呼叫執行檔</title>
-      <link>https://blog.poyi.tw/posts/2013-09-04-aspnet-implementation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/posts/2013-09-04-aspnet-implementation/</guid>
-      <description> 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &amp;quot;@&amp;quot;C:\Users\PoYi\Desktop\test.txt&amp;quot;&amp;quot;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&amp;quot;C:\Users\PoYi\Desktop\test.txt&amp;quot;; psi.Arguments=&amp;quot;&amp;quot;; System.Diagnostics.Process.Start(psi);  </description>
-    </item>
-    
-    <item>
-      <title>[ASP.NET] 存取AD網域</title>
-      <link>https://blog.poyi.tw/posts/2013-09-12-aspnet-access-to-ad-domain/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/posts/2013-09-12-aspnet-access-to-ad-domain/</guid>
-      <description>透過AD網域來存取帳號資料 查詢資料 string QueryString = &amp;quot;LDAP://網域&amp;quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&amp;quot;(&amp;amp;(samaccountname=&amp;quot; + employeeName + &amp;quot;)(Description=&amp;quot; + employeeNo + &amp;quot;))&amp;quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&amp;quot;description&amp;quot;].Count &amp;gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&amp;quot;description&amp;quot;][0].ToString(); Response.Write(resultNo); Response.Write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &amp;quot;LDAP://&amp;quot;+ userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.</description>
-    </item>
-    
-    <item>
-      <title>[ASP.NET] 日期處理</title>
-      <link>https://blog.poyi.tw/posts/2013-09-05-aspnet-date/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/posts/2013-09-05-aspnet-date/</guid>
-      <description>日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間 DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式 TextBox1.Text = DateTime4.ToString(&amp;quot;dddd&amp;quot;); // 星期二 TextBox1.Text = DateTime4.ToString(&amp;quot;MMMM&amp;quot;); // 七月 TextBox1.Text = DateTime4.ToString(&amp;quot;MMMM&amp;quot;,CultureInfo.CreateSpecificCulture(&amp;quot;en-US&amp;quot;))); // July TextBox1.Text = DateTime4.ToString(&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</description>
-    </item>
-    
-    <item>
-      <title>[ASP.NET] 檔案下載寫法</title>
-      <link>https://blog.poyi.tw/posts/2013-08-28-aspnet-file-download/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/posts/2013-08-28-aspnet-file-download/</guid>
-      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;quot;C:/porn.jpg&amp;quot;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;quot;application/octet-stream&amp;quot;; // 指定檔案類型 Response.AddHeader(&amp;quot;Content-Disposition&amp;quot;,&amp;quot;attachment;filename=&amp;quot;+&amp;quot;porn.jpg&amp;quot;); // 設定檔名 // System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 Response.AppendHeader(&amp;quot;Content-Length&amp;quot;, file.Length.ToString()); // 表頭加入檔案大小 Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;quot;C:/porn.jpg&amp;quot;; // 設定路徑 byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 Response.AppendHeader(&amp;quot;content-disposition&amp;quot;, &amp;quot;attachment;filename=&amp;quot; + &amp;quot;porn.jpg&amp;quot;); //設定檔名 // HttpContext.</description>
+      <guid>https://blog.poyi.tw/blog/2013/09/23/aspnet-string-is-padded-with-zeros/</guid>
+      <description>最近常常手動新增假員工AD帳號來測我的程式 在嘗試跑程式step by step來測試時，想說奇怪怎麼假帳號會有電腦資產 原來這帳號跟設計部門的元老經理的員工工號重複了&amp;hellip; 還好有及時發現沒有把程式執行完，不然IT部門就要起飛了&amp;hellip;
+所以想說寫個迴圈來測是不是有其他工號也有重複的案例 而工號欄位都是五位數(BOB00001~BOB99999) 像我的工號是4104需要補足五位數 有三種方式：
+int myEmpNo = 4104; empNo.ToString(&amp;quot;00000&amp;quot;); empNo.ToString(&amp;quot;D5&amp;quot;); empNo.ToString().PadLeft(5,&#39;0&#39;); // 04104  查了才知道原來ToString蠻方便的，有些好用的例子
+empNo.ToString(&amp;quot;BOB00000&amp;quot;); // BOB04104 empNo.ToString(&amp;quot;C&amp;quot;); // NT$4,104.00 empNo.ToString(&amp;quot;C&amp;quot;, new System.Globalization.CultureInfo(&amp;quot;en-US&amp;quot;)); $4,104.00 int myPhoneNo =123456789; myPhoneNo.ToString(&amp;quot;(##) ###-####&amp;quot;); // (12) 345-6789  PadLeft ：字串向右靠齊，將指定字元填滿左邊。 PadRight：字串向左靠齊，將指定字元填滿右邊。
+Reference: http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.95).aspx http://www.dotblogs.com.tw/ethon.chi/archive/2010/09/27/17917.aspx</description>
     </item>
     
     <item>
       <title>[ASP.NET] 檔案資料夾存取</title>
-      <link>https://blog.poyi.tw/posts/2013-09-18-aspnet-archive-folder-access/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2013/09/18/aspnet-archive-folder-access/</link>
+      <pubDate>Wed, 18 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-18-aspnet-archive-folder-access/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/09/18/aspnet-archive-folder-access/</guid>
       <description>刪除
  System.IO.File.Delete(filePath); System.IO.Directory.Delete(folderPath);  搬移
  System.IO.File.Move(sourceFilePath, destinationFilePath); System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);  複製
@@ -80,11 +49,47 @@ static void linqPB() { var list = new List&amp;lt;string&amp;gt; { &amp;#34;appl
     </item>
     
     <item>
-      <title>[ASP.NET] 資安基本概念</title>
-      <link>https://blog.poyi.tw/posts/2013-09-04-network-attacks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>[ASP.NET] 存取AD網域</title>
+      <link>https://blog.poyi.tw/blog/2013/09/12/aspnet-access-to-ad-domain/</link>
+      <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-04-network-attacks/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/09/12/aspnet-access-to-ad-domain/</guid>
+      <description>透過AD網域來存取帳號資料 查詢資料 string QueryString = &amp;quot;LDAP://網域&amp;quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&amp;quot;(&amp;amp;(samaccountname=&amp;quot; + employeeName + &amp;quot;)(Description=&amp;quot; + employeeNo + &amp;quot;))&amp;quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&amp;quot;description&amp;quot;].Count &amp;gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&amp;quot;description&amp;quot;][0].ToString(); Response.Write(resultNo); Response.Write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &amp;quot;LDAP://&amp;quot;+ userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.</description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] 日期處理</title>
+      <link>https://blog.poyi.tw/blog/2013/09/05/aspnet-date/</link>
+      <pubDate>Thu, 05 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/05/aspnet-date/</guid>
+      <description>日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間 DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式 TextBox1.Text = DateTime4.ToString(&amp;quot;dddd&amp;quot;); // 星期二 TextBox1.Text = DateTime4.ToString(&amp;quot;MMMM&amp;quot;); // 七月 TextBox1.Text = DateTime4.ToString(&amp;quot;MMMM&amp;quot;,CultureInfo.CreateSpecificCulture(&amp;quot;en-US&amp;quot;))); // July TextBox1.Text = DateTime4.ToString(&amp;quot;yyyy-MM-dd HH:mm:ss&amp;quot;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] 列印</title>
+      <link>https://blog.poyi.tw/blog/2013/09/04/aspnet-print/</link>
+      <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/04/aspnet-print/</guid>
+      <description> 列印指定文件 string filePath = &amp;quot;C:\\test.txt&amp;quot;; // 使用預設印表機 LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機 PrintServer ps = new PrintServer(@&amp;quot;\\TY-SRV-PRINT01&amp;quot;); PrintQueue queue = new PrintQueue(ps, &amp;quot;FUJIXEROX&amp;quot;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit();  </description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] 呼叫執行檔</title>
+      <link>https://blog.poyi.tw/blog/2013/09/04/aspnet-implementation/</link>
+      <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/04/aspnet-implementation/</guid>
+      <description> 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &amp;quot;@&amp;quot;C:\Users\PoYi\Desktop\test.txt&amp;quot;&amp;quot;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&amp;quot;C:\Users\PoYi\Desktop\test.txt&amp;quot;; psi.Arguments=&amp;quot;&amp;quot;; System.Diagnostics.Process.Start(psi);  </description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] 資安基本概念</title>
+      <link>https://blog.poyi.tw/blog/2013/09/04/network-attacks/</link>
+      <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/04/network-attacks/</guid>
       <description>以往都是寫供內部使用的網站，也沒想過有什麼資安的問題… 也就是說資安這一環，幾乎是無知的狀態…
 SQL Injection 將字串中夾帶SQL指令，讓SERVER認為是正常指令而執行
 ASP.NET 防範方法  避免直接將使用者輸入的資料作為SQL指令；或是利用SQLParameter來處理參數 將設定customErrors:On，至少出錯時不會show出程式碼 設定專屬SQL帳號及必要權限，避免使用sa 其他&amp;hellip;  XSS －通常是指對方將有害程式碼惡意嵌入網頁當中，使得其他人連進此網頁時會受到影響；或是對方竊取更高的權限、Cookie等等…；(常見的為JavaScript)
@@ -92,26 +97,22 @@ ASP.NET 防範方法  盡量保持ValidateRequest為啟用 進行Html Encode(前
     </item>
     
     <item>
-      <title>[ASP.NET] 頁面傳值</title>
-      <link>https://blog.poyi.tw/posts/2013-08-22-91974/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>[ASP.NET] 檔案下載寫法</title>
+      <link>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</link>
+      <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-08-22-91974/</guid>
-      <description>Client-Base ViewState：相當於把值存放於hidden field當中 只存在單一Web form 預設開啟、未完善加密 不會佔用系統資源 較不適合大量或機密資料
-Server-Base Session：類似跨網頁的全域變數 多個頁面傳值 預設存放記憶體 可設定Time out</description>
+      <guid>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</guid>
+      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;quot;C:/porn.jpg&amp;quot;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;quot;application/octet-stream&amp;quot;; // 指定檔案類型 Response.AddHeader(&amp;quot;Content-Disposition&amp;quot;,&amp;quot;attachment;filename=&amp;quot;+&amp;quot;porn.jpg&amp;quot;); // 設定檔名 // System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 Response.AppendHeader(&amp;quot;Content-Length&amp;quot;, file.Length.ToString()); // 表頭加入檔案大小 Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;quot;C:/porn.jpg&amp;quot;; // 設定路徑 byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 Response.AppendHeader(&amp;quot;content-disposition&amp;quot;, &amp;quot;attachment;filename=&amp;quot; + &amp;quot;porn.jpg&amp;quot;); //設定檔名 // HttpContext.</description>
     </item>
     
     <item>
-      <title>[C#] 字串補零</title>
-      <link>https://blog.poyi.tw/posts/2013-09-23-aspnet-string-is-padded-with-zeros/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>[ASP.NET] 頁面傳值</title>
+      <link>https://blog.poyi.tw/blog/2013/08/22/91974/</link>
+      <pubDate>Thu, 22 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2013-09-23-aspnet-string-is-padded-with-zeros/</guid>
-      <description>最近常常手動新增假員工AD帳號來測我的程式 在嘗試跑程式step by step來測試時，想說奇怪怎麼假帳號會有電腦資產 原來這帳號跟設計部門的元老經理的員工工號重複了&amp;hellip; 還好有及時發現沒有把程式執行完，不然IT部門就要起飛了&amp;hellip;
-所以想說寫個迴圈來測是不是有其他工號也有重複的案例 而工號欄位都是五位數(BOB00001~BOB99999) 像我的工號是4104需要補足五位數 有三種方式：
-int myEmpNo = 4104; empNo.ToString(&amp;quot;00000&amp;quot;); empNo.ToString(&amp;quot;D5&amp;quot;); empNo.ToString().PadLeft(5,&#39;0&#39;); // 04104  查了才知道原來ToString蠻方便的，有些好用的例子
-empNo.ToString(&amp;quot;BOB00000&amp;quot;); // BOB04104 empNo.ToString(&amp;quot;C&amp;quot;); // NT$4,104.00 empNo.ToString(&amp;quot;C&amp;quot;, new System.Globalization.CultureInfo(&amp;quot;en-US&amp;quot;)); $4,104.00 int myPhoneNo =123456789; myPhoneNo.ToString(&amp;quot;(##) ###-####&amp;quot;); // (12) 345-6789  PadLeft ：字串向右靠齊，將指定字元填滿左邊。 PadRight：字串向左靠齊，將指定字元填滿右邊。
-Reference: http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.95).aspx http://www.dotblogs.com.tw/ethon.chi/archive/2010/09/27/17917.aspx</description>
+      <guid>https://blog.poyi.tw/blog/2013/08/22/91974/</guid>
+      <description>Client-Base ViewState：相當於把值存放於hidden field當中 只存在單一Web form 預設開啟、未完善加密 不會佔用系統資源 較不適合大量或機密資料
+Server-Base Session：類似跨網頁的全域變數 多個頁面傳值 預設存放記憶體 可設定Time out</description>
     </item>
     
   </channel>

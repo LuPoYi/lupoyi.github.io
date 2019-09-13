@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Ruby] Functions for Numbers - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/blog/2013/12/18/ruby-functions-for-numbers/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[Ruby] Functions for Numbers" />
+<meta property="og:description" content="&gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/blog/2013/12/18/ruby-functions-for-numbers/" />
+<meta property="article:published_time" content="2013-12-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-12-18T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[Ruby] Functions for Numbers">
+<meta itemprop="description" content="&gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">
+
+
+<meta itemprop="datePublished" content="2013-12-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-12-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="70">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/blog/2013/12/18/ruby-functions-for-numbers/">[Ruby] Functions for Numbers</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Ruby] Functions for Numbers</h1>
+<p><div class="highlight"><pre class="chroma"><code class="language-ruby Math" data-lang="ruby Math">&gt; 2 ** 3 # 次方
+ =&gt; 8</p>
+
+<p>=begin
+  Addition (+)
+  Subtraction (-)
+  Multiplication (*)
+  Division (/)
+  Exponentiation (**)
+  Modulo (%)
+ =end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 常用的" data-lang="ruby 常用的">&gt; 9.9.integer?
+ =&gt; false</p>
+
+<p>&gt; -5.abs
+ =&gt; 5</p>
+
+<p>&gt; 5.6.round # 取最近的整數/四捨五入
+ =&gt; 6</p>
+
+<p>&gt; 9.9.floor  # 取整數/無條件捨去
+ =&gt; 9</p>
+
+<p>&gt; 2312.22.ceil   # 取整數/無條件進位
+=&gt; 2313</p>
+
+<p>&gt; 2.next
+ =&gt; 3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 二元運算" data-lang="ruby 二元運算">n &amp; num
+n | num
+n ^ num (XOR)
+n &lt;&lt; num (向左位移)
+n &gt;&gt; num (向右位移)</code></pre></div>
+<p>Reference: <a href="http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</a></p></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>
