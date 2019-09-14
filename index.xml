@@ -478,10 +478,10 @@ Reference: IThome「防駭演練與危機處理」研習會</description>
     
     <item>
       <title>[Rails] Connect SQL Server</title>
-      <link>https://blog.poyi.tw/blog/2013/10/30/rails-search/</link>
+      <link>https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/</link>
       <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/30/rails-search/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/</guid>
       <description>看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
 Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
 $ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
@@ -533,10 +533,10 @@ Reference: http://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80
     
     <item>
       <title>[Rails] 基本概念（待補）</title>
-      <link>https://blog.poyi.tw/blog/2013/10/07/ruby/</link>
+      <link>https://blog.poyi.tw/blog/2013/10/07/ruby-basic/</link>
       <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/07/ruby/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/10/07/ruby-basic/</guid>
       <description>development:# 開發用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000test:# 測試用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000production:# 上線用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
     </item>
     
@@ -710,11 +710,11 @@ http://www.w3schools.com/html/html5_video.asp</description>
     
     <item>
       <title>GIT</title>
-      <link>https://blog.poyi.tw/blog/2013/08/29/git/</link>
+      <link>https://blog.poyi.tw/blog/2013/08/29/git-basic/</link>
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/08/29/git/</guid>
-      <description>apt-get install git-core git config --global user.name &amp;#34;name&amp;#34; git config --global user.email &amp;#34;email&amp;#34; git config --list #查看設定git status git add git add . git commit git commit -m &amp;#34;Add test.rb to test git function&amp;#34; git log (-p) git log --statgitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;#34;Loser&amp;#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
+      <guid>https://blog.poyi.tw/blog/2013/08/29/git-basic/</guid>
+      <description>apt-get install git-core git config --global user.name &amp;#34;name&amp;#34; git config --global user.email &amp;#34;email&amp;#34; git config --list # 查看設定git status git add git add . git commit git commit -m &amp;#34;Add test.rb to test git function&amp;#34; git log (-p) git log --statgitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;#34;Loser&amp;#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
     </item>
     
     <item>
@@ -740,10 +740,10 @@ int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0;
     
     <item>
       <title>[ASP.NET] 頁面傳值</title>
-      <link>https://blog.poyi.tw/blog/2013/08/22/91974/</link>
+      <link>https://blog.poyi.tw/blog/2013/08/22/aspnet-viewstatus-session/</link>
       <pubDate>Thu, 22 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/08/22/91974/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/08/22/aspnet-viewstatus-session/</guid>
       <description>Client-Base ViewState：相當於把值存放於hidden field當中 只存在單一Web form 預設開啟、未完善加密 不會佔用系統資源 較不適合大量或機密資料
 Server-Base Session：類似跨網頁的全域變數 多個頁面傳值 預設存放記憶體 可設定Time out</description>
     </item>
@@ -795,16 +795,6 @@ X: Dear Miss Lu, (Ms. is correct, because we don&amp;rsquo;t know she is married
     </item>
     
     <item>
-      <title>[ASP.NET] 自動寄信</title>
-      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
-      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
-      <description>一樣是紀綠一下&amp;hellip;
-MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
-    </item>
-    
-    <item>
       <title>[C#] DataTable 的操作備忘</title>
       <link>https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/</link>
       <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
@@ -815,6 +805,16 @@ DataTable dt = new DataTable();
 // 定義欄位 dt.Columns.Add(&amp;ldquo;name&amp;rdquo;); dt.Columns.Add(&amp;ldquo;cardNumber&amp;rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&amp;ldquo;ID&amp;rdquo;, typeof(Int32));
 dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Ada&amp;rdquo;, &amp;ldquo;10000&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Kilin&amp;rdquo;,&amp;ldquo;20000&amp;rdquo;); // 也可用DataRow來存放資料
 // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();</description>
+    </item>
+    
+    <item>
+      <title>[C#] 自動寄信</title>
+      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
+      <description>一樣是紀綠一下&amp;hellip;
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
     </item>
     
     <item>

@@ -6,19 +6,10 @@
     <description>Recent content in Active Directory on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 12 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Feb 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/active-directory/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>[ASP.NET] 存取AD網域</title>
-      <link>https://blog.poyi.tw/blog/2013/09/12/aspnet-access-to-ad-domain/</link>
-      <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/blog/2013/09/12/aspnet-access-to-ad-domain/</guid>
-      <description>透過AD網域來存取帳號資料 查詢資料 string QueryString = &amp;quot;LDAP://網域&amp;quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&amp;quot;(&amp;amp;(samaccountname=&amp;quot; + employeeName + &amp;quot;)(Description=&amp;quot; + employeeNo + &amp;quot;))&amp;quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&amp;quot;description&amp;quot;].Count &amp;gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&amp;quot;description&amp;quot;][0].ToString(); Response.Write(resultNo); Response.Write(&amp;quot;&amp;lt;br&amp;gt;&amp;quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &amp;quot;LDAP://&amp;quot;+ userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.</description>
-    </item>
     
     <item>
       <title>[ASP.NET] Reset Password in Active Directory</title>

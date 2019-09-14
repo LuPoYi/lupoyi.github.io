@@ -6,16 +6,17 @@
     <description>Recent content in javascript on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Mon, 13 Jan 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>[JavaScript] 中斷事件或動作的觸發</title>
-      <link>https://blog.poyi.tw/posts/2014-01-13-javascript-triggered-interrupt-event-or-action/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.poyi.tw/blog/2014/01/13/javascript-triggered-interrupt-event-or-action/</link>
+      <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/2014-01-13-javascript-triggered-interrupt-event-or-action/</guid>
+      <guid>https://blog.poyi.tw/blog/2014/01/13/javascript-triggered-interrupt-event-or-action/</guid>
       <description>bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
 &amp;lt;div class=&amp;#34;p&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;a&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;#34;.p&amp;#34;).click(function(event){ alert(&amp;#34;p 外&amp;#34;); }); $(&amp;#34;.a&amp;#34;).click(function(event){ alert(&amp;#34;a 內&amp;#34;); event.stopPropagation(); }); &amp;lt;/script&amp;gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/

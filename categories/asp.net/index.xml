@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ASP.Net on Bob 學習筆記</title>
+    <title>ASP.NET on Bob 學習筆記</title>
     <link>https://blog.poyi.tw/categories/asp.net/</link>
-    <description>Recent content in ASP.Net on Bob 學習筆記</description>
+    <description>Recent content in ASP.NET on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 29 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/asp.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[ASP.NET] Connect to SQL Server</title>
+      <link>https://blog.poyi.tw/blog/2013/09/30/aspnet-connect-to-sql-server/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/30/aspnet-connect-to-sql-server/</guid>
+      <description>最陽春的寫法
+string QueryString = &amp;#34;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&amp;#34;;SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;SELECT name FROM Employee&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); SqlDataReader dr = cmd.ExecuteReader(); while (dr.Read()) { // 將找到的值取出來 string user = dr[&amp;#34;name&amp;#34;].ToString(); //... } conn.Close();SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;UPDATE Employee SET name = &amp;#39;Bob&amp;#39;&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); cmd.ExecuteNonQuery(); conn.Close();sqlStr = &amp;#34;SELECT * FROM Employee WHERE action = @Action&amp;#34;; cmd.</description>
+    </item>
     
     <item>
       <title>[ASP.NET] Linq 動態條件搜尋</title>
@@ -107,12 +117,51 @@ ASP.NET 防範方法  盡量保持ValidateRequest為啟用 進行Html Encode(前
     
     <item>
       <title>[ASP.NET] 頁面傳值</title>
-      <link>https://blog.poyi.tw/blog/2013/08/22/91974/</link>
+      <link>https://blog.poyi.tw/blog/2013/08/22/aspnet-viewstatus-session/</link>
       <pubDate>Thu, 22 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/08/22/91974/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/08/22/aspnet-viewstatus-session/</guid>
       <description>Client-Base ViewState：相當於把值存放於hidden field當中 只存在單一Web form 預設開啟、未完善加密 不會佔用系統資源 較不適合大量或機密資料
 Server-Base Session：類似跨網頁的全域變數 多個頁面傳值 預設存放記憶體 可設定Time out</description>
+    </item>
+    
+    <item>
+      <title>[SQL] 常用語法</title>
+      <link>https://blog.poyi.tw/blog/2013/07/28/sql-syntax/</link>
+      <pubDate>Sun, 28 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/07/28/sql-syntax/</guid>
+      <description>不一定是常用…而是記不太起來，每次都要查…
+DBCC CHECKIDENT ( tablename, RESEED, new_reseed_value ) 強制重設table的識別值
+DBCC CHECKIDENT(tablename, RESEED, 0) // 歸零識別值  SQL驗證 Data Source=;Initial catalog=;User ID=;Password=
+Windows驗證 Data Source=;Initial Catalog=;integrated security=sspi
+union:上下重直合併
+萬用字元 % _:代表一個字元 〔〕:指定字元範圍；[0-9]、[A-D]、[ABCD] 〔^〕:排除字元範圍:[^ABC]</description>
+    </item>
+    
+    <item>
+      <title>[C#] String常用語法</title>
+      <link>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</guid>
+      <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
+一般情況都用String String.IndexOf 找字串中第一次出現的index
+if(employeeName.IndexOf(&amp;quot;Admin&amp;quot;) == -1)	// 可判斷Name中是否有符合Admin的字串  String.LastIndexOf 找字串中最後一次出現的index
+Substring(int startIndex, int length) 擷取字串
+string str = &amp;quot;台灣駐史瓦濟蘭大使館&amp;quot;; str.Substring(3, 6); // output: 史瓦濟蘭大使  Split 分隔字串
+string wholeString = &amp;quot;Bob.Lu&amp;quot;; string[] spiltString = wholeString.Split(new string[] { &amp;quot;.&amp;quot; }, StringSplitOptions.RemoveEmptyEntries); aryUserInfo[0].ToString(); // output: Bob  Regex.IsMatch(string input, string pattern) 是否包含xxx
+Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;) // = Regex.IsMatch(strPwd, @&amp;quot;\d&amp;quot;) Regex.IsMatch(strPwd, @&amp;quot;[\W]&amp;quot;)  pattern表示法 : \d : [0-9] 數字 \D : 數字以外的字元 \w : [a-zA-Z0-9_] \W : \w以外的字元</description>
+    </item>
+    
+    <item>
+      <title>[C#] 自動寄信</title>
+      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
+      <description>一樣是紀綠一下&amp;hellip;
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
     </item>
     
   </channel>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>[Rails] Connect SQL Server - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[Rails] Connect SQL Server" />
+<meta property="og:description" content="看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
+Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
+$ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
+Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.yml OK..在這邊理論上是可以直接在Rails調用.. 但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..) 錯誤訊息可參考 &gt; https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279 暫時找不到解法，除非把Rails降到3.x版" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/" />
+<meta property="article:published_time" content="2013-10-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-10-30T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[Rails] Connect SQL Server">
+<meta itemprop="description" content="看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
+Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
+$ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
+Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.yml OK..在這邊理論上是可以直接在Rails調用.. 但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..) 錯誤訊息可參考 &gt; https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279 暫時找不到解法，除非把Rails降到3.x版">
+
+
+<meta itemprop="datePublished" content="2013-10-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="73">
+
+
+
+<meta itemprop="keywords" content="SQLServer," />
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/">[Rails] Connect SQL Server</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Rails] Connect SQL Server</h1>
+<p>看到官方提供的adpter..真的不知道怎麼下手.. <del>魯蛇無誤</del></p>
+
+<h2 id="ubuntu-connect-to-sql-server">Ubuntu Connect to SQL Server</h2>
+
+<p>想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝FreeTDS" data-lang="bash 安裝FreeTDS">$ sudo apt-get install freetds-dev freetds-bin tdsodbc</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 檢查FreeTDS版本資訊" data-lang="bash 檢查FreeTDS版本資訊">$ tsql -C</code></pre></div>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/0fBGvXZHQ4ug2ZQOTol3_2013-11-6%20%E4%B8%8A%E5%8D%88%2010-53-15.jpg" alt="2013-11-6 上午 10-53-15.jpg" /></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash 這時候就可以Connect SQL Server" data-lang="bash 這時候就可以Connect SQL Server">$ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 直接下TSQL，這邊要用go才會執行" data-lang="bash 直接下TSQL，這邊要用go才會執行">$ select * from Team
+$ go</code></pre></div>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/J9JDVHr7S9uu6H8nhWLj_2013-11-6%20%E4%B8%8A%E5%8D%88%2011-03-53.jpg" alt="2013-11-6 上午 11-03-53.jpg" /></p>
+
+<p>這邊代表已能在Ubuntu Connect SQL Server
+但Rails還需要其他套件</p>
+
+<hr />
+
+<p><h2 id="rails-connect-to-sql-server-error">Rails Connect to SQL Server (Error)</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash 安裝tiny_tds、sqlserver adapter" data-lang="bash 安裝tiny_tds、sqlserver adapter">$ sudo gem install tiny_tds
+$ sudo gem install activerecord-sqlserver-adapter</code></pre></div>
+<p>修改DateBase.yml
+<img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/n2j3Og9gRCKcn9v70smh_2013-11-6%20%E4%B8%8A%E5%8D%88%2011-36-45.jpg" alt="2013-11-6 上午 11-36-45.jpg" /></p></p>
+
+<p>OK..在這邊理論上是可以直接在Rails調用..
+但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..)
+錯誤訊息可參考 &gt; <a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279</a>
+暫時找不到解法，除非把Rails降到3.x版</p>
+
+<p>Reference:
+<a href="https://github.com/rails-sqlserver">https://github.com/rails-sqlserver</a>
+<a href="http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html">http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html</a>
+<a href="http://stackoverflow.com/questions/12010780/rails-how-to-do-search">http://stackoverflow.com/questions/12010780/rails-how-to-do-search</a></p>
+
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>

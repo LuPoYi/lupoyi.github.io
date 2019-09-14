@@ -13,10 +13,10 @@
     
     <item>
       <title>[Rails] Connect SQL Server</title>
-      <link>https://blog.poyi.tw/blog/2013/10/30/rails-search/</link>
+      <link>https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/</link>
       <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/30/rails-search/</guid>
+      <guid>https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/</guid>
       <description>看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
 Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
 $ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件

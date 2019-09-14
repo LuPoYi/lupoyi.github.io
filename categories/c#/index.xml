@@ -6,10 +6,21 @@
     <description>Recent content in C# on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Oct 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/c#/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[C#]  Delegate 委派</title>
+      <link>https://blog.poyi.tw/blog/2013/10/04/c-delegate-delegate/</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/10/04/c-delegate-delegate/</guid>
+      <description>Delegate 是 C# 的特殊型別，用來定義方法（method/function）的 signature，delegate 的實體（instance）可以存放一或多個符合該 signature 的方法。這樣講也許還是鴨子聽雷，不如我們實際來感受一下吧！ delegate實例獨立於它所封裝的方法的類 這邊在個multicst delegate的例子 using System;
+class MulticastTester { delegate void Greeting();
+public static void Main() { Greeting myGreeting = new Greeting(SayThankYou); Console.WriteLine(&amp;quot;My single greeting:&amp;quot;); myGreeting(); Greeting yourGreeting = new Greeting(SayGoodMorning); Console.WriteLine(&amp;quot;\nYour single greeting:&amp;quot;); yourGreeting(); Greeting ourGreeting = myGreeting + yourGreeting; Console.WriteLine(&amp;quot;\nOur multicast greeting:&amp;quot;); ourGreeting(); ourGreeting += new Greeting(SayGoodnight); Console.WriteLine(&amp;quot;\nMulticast greeting which includes Goodnight:&amp;quot;); ourGreeting(); ourGreeting = ourGreeting - yourGreeting; Console.WriteLine(&amp;quot;\nMulticast greeting without your greeting:&amp;quot;); ourGreeting(); ourGreeting -= myGreeting; Console.</description>
+    </item>
     
     <item>
       <title>[C#] IEnumerable vs IQueryable</title>
@@ -25,13 +36,27 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
     </item>
     
     <item>
-      <title>[ASP.NET] 自動寄信</title>
-      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
-      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
+      <title>[ASP.NET] 檔案下載寫法</title>
+      <link>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</link>
+      <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
-      <description>一樣是紀綠一下&amp;hellip;
-MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
+      <guid>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</guid>
+      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;quot;C:/porn.jpg&amp;quot;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;quot;application/octet-stream&amp;quot;; // 指定檔案類型 Response.AddHeader(&amp;quot;Content-Disposition&amp;quot;,&amp;quot;attachment;filename=&amp;quot;+&amp;quot;porn.jpg&amp;quot;); // 設定檔名 // System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 Response.AppendHeader(&amp;quot;Content-Length&amp;quot;, file.Length.ToString()); // 表頭加入檔案大小 Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;quot;C:/porn.jpg&amp;quot;; // 設定路徑 byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 Response.AppendHeader(&amp;quot;content-disposition&amp;quot;, &amp;quot;attachment;filename=&amp;quot; + &amp;quot;porn.jpg&amp;quot;); //設定檔名 // HttpContext.</description>
+    </item>
+    
+    <item>
+      <title>[C#] String常用語法</title>
+      <link>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</link>
+      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</guid>
+      <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
+一般情況都用String String.IndexOf 找字串中第一次出現的index
+if(employeeName.IndexOf(&amp;quot;Admin&amp;quot;) == -1)	// 可判斷Name中是否有符合Admin的字串  String.LastIndexOf 找字串中最後一次出現的index
+Substring(int startIndex, int length) 擷取字串
+string str = &amp;quot;台灣駐史瓦濟蘭大使館&amp;quot;; str.Substring(3, 6); // output: 史瓦濟蘭大使  Split 分隔字串
+string wholeString = &amp;quot;Bob.Lu&amp;quot;; string[] spiltString = wholeString.Split(new string[] { &amp;quot;.&amp;quot; }, StringSplitOptions.RemoveEmptyEntries); aryUserInfo[0].ToString(); // output: Bob  Regex.IsMatch(string input, string pattern) 是否包含xxx
+Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;) // = Regex.IsMatch(strPwd, @&amp;quot;\d&amp;quot;) Regex.IsMatch(strPwd, @&amp;quot;[\W]&amp;quot;)  pattern表示法 : \d : [0-9] 數字 \D : 數字以外的字元 \w : [a-zA-Z0-9_] \W : \w以外的字元</description>
     </item>
     
     <item>
@@ -45,6 +70,16 @@ DataTable dt = new DataTable();
 // 定義欄位 dt.Columns.Add(&amp;ldquo;name&amp;rdquo;); dt.Columns.Add(&amp;ldquo;cardNumber&amp;rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&amp;ldquo;ID&amp;rdquo;, typeof(Int32));
 dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Ada&amp;rdquo;, &amp;ldquo;10000&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Kilin&amp;rdquo;,&amp;ldquo;20000&amp;rdquo;); // 也可用DataRow來存放資料
 // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();</description>
+    </item>
+    
+    <item>
+      <title>[C#] 自動寄信</title>
+      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
+      <description>一樣是紀綠一下&amp;hellip;
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
     </item>
     
     <item>

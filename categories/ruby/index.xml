@@ -100,6 +100,19 @@ begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;#34;Except class: #{ex.class}&am
     </item>
     
     <item>
+      <title>[Ruby] 變數</title>
+      <link>https://blog.poyi.tw/blog/2013/12/14/ruby-is-a-small-note/</link>
+      <pubDate>Sat, 14 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/12/14/ruby-is-a-small-note/</guid>
+      <description>Ruby 有一個重要特性 Convention Over Configuration
+希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)
+Ruby命名也有一定的慣例
+ $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)
+ruby&amp;gt; $foo =&amp;gt; nil ruby&amp;gt; @foo =&amp;gt; nil ruby&amp;gt; foo ERR: (eval):1: undefined local variable or method `foo&amp;#39; for main(Object) ruby&amp;gt; Foo = 2 =&amp;gt; 2 ruby&amp;gt; Foo = 3 =&amp;gt; warning: alread initialized constant Foo =&amp;gt; 3  </description>
+    </item>
+    
+    <item>
       <title>[Ruby] and與&amp;&amp;的差別</title>
       <link>https://blog.poyi.tw/blog/2013/12/09/ruby-and/</link>
       <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
@@ -111,6 +124,15 @@ begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;#34;Except class: #{ex.class}&am
  lower precedence
  優先權：&amp;amp;&amp;amp;　→　||　→　and　＝　or 。 &amp;amp;&amp;amp; 或 || 會將符號前後方都認定為boolean(true,false)
 &amp;gt; a = true &amp;amp;&amp;amp; false =&amp;gt; false &amp;gt; a =&amp;gt; false &amp;gt; a = true and false =&amp;gt; false &amp;gt; a =&amp;gt; true #&amp;gt; a = false || true =&amp;gt; true &amp;gt; a =&amp;gt; true &amp;gt; a = false or true =&amp;gt; true &amp;gt; a =&amp;gt; false ## boolean expression if some_condition &amp;amp;&amp;amp; some_other_condition do_something end # control flow document.</description>
+    </item>
+    
+    <item>
+      <title>[Rails] 基本概念（待補）</title>
+      <link>https://blog.poyi.tw/blog/2013/10/07/ruby-basic/</link>
+      <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/10/07/ruby-basic/</guid>
+      <description>development:# 開發用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000test:# 測試用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000production:# 上線用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
     </item>
     
   </channel>

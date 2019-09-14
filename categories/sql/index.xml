@@ -6,10 +6,20 @@
     <description>Recent content in sql on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 12 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/sql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[ASP.NET] Connect to SQL Server</title>
+      <link>https://blog.poyi.tw/blog/2013/09/30/aspnet-connect-to-sql-server/</link>
+      <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/blog/2013/09/30/aspnet-connect-to-sql-server/</guid>
+      <description>最陽春的寫法
+string QueryString = &amp;#34;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&amp;#34;;SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;SELECT name FROM Employee&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); SqlDataReader dr = cmd.ExecuteReader(); while (dr.Read()) { // 將找到的值取出來 string user = dr[&amp;#34;name&amp;#34;].ToString(); //... } conn.Close();SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;UPDATE Employee SET name = &amp;#39;Bob&amp;#39;&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); cmd.ExecuteNonQuery(); conn.Close();sqlStr = &amp;#34;SELECT * FROM Employee WHERE action = @Action&amp;#34;; cmd.</description>
+    </item>
     
     <item>
       <title>[SQL] 常用的日期函數</title>
