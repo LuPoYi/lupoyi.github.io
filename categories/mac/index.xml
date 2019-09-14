@@ -17,7 +17,7 @@
       <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2016/10/30/rails-mac-os-environment-sierra/</guid>
-      <description>ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3gem install rails -v 6.0.0.rc1 rbenv rehashbrew install mysql brew install redis brew install ssdb brew install memcached</description>
+      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 29 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2015/06/29/mac-build-ubuntu-flash-using-command/</guid>
-      <description>Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successfulBob:Downloads $ sudo dd if=ubuntu-14.</description>
+      <description># 將載好的ubuntu.iso 轉成 ubuntu.dmg Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso 正在讀取Driver Descriptor Map（DDM：0）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：1）⋯ 正在讀取Apple（Apple_partition_map：2）⋯ 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：3）⋯ .............. 正在讀取EFI（Apple_HFS：4）⋯ ............... 正在讀取Ubuntu-Server 14.04.2 LTS amd64 （Apple_ISO：5）⋯ .............................................................................. 經過時間： 7.977s 速度：74.6Mbyte/秒 節省：0.0%# 找到你的usb隨身碟後卸載它 Bob:Downloads $ diskutil list /dev/disk0 ... /dev/disk1 ... /dev/disk2 #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *8.1 GB disk2 1: Windows_FAT_32 ADATA UFD 8.1 GB disk2s1 Bob:Downloads $ diskutil unmountDisk /dev/disk2 Unmount of all volumes on disk2 was successful# dd 把資料寫入隨身碟 Bob:Downloads $ sudo dd if=ubuntu-14.</description>
     </item>
     
     <item>

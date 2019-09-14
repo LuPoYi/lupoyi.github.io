@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,7 +26,7 @@
 
   <meta property="og:title" content="[ASP.NET] Linq 動態條件搜尋" />
 <meta property="og:description" content="一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
-static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx" />
+static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址  predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter  主要的重點如下，將條件放入xxx" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/" />
 <meta property="article:published_time" content="2013-09-29T00:00:00+00:00" />
@@ -31,7 +34,7 @@ static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34
 
   <meta itemprop="name" content="[ASP.NET] Linq 動態條件搜尋">
 <meta itemprop="description" content="一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來
-static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址 predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter 主要的重點如下，將條件放入xxx">
+static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;}; var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; }; var predicate = PredicateBuilder.False&lt;string&gt;(); foreach (var word in searchKeyword) { var temp = word; // 避免參考到相同變數位址  predicate = predicate.Or(p =&gt; p.Contains(temp)); } var qry = list.Where(predicate.Compile()); foreach (var item in qry) { Console.WriteLine(item); } Console.Read(); } // result: apple bob coco durex enter  主要的重點如下，將條件放入xxx">
 
 
 <meta itemprop="datePublished" content="2013-09-29T00:00:00&#43;00:00" />
@@ -52,7 +55,7 @@ static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -130,34 +133,33 @@ static void linqPB() { var list = new List&lt;string&gt; { &#34;apple&#34;, &#34
 <h1>[ASP.NET] Linq 動態條件搜尋</h1>
 <p>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成
 而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來</p>
-<div class="highlight"><pre class="chroma"><code class="language-Console" data-lang="Console">static void linqPB()
-    {
-        var list = new List&lt;string&gt; { &#34;apple&#34;, &#34;bob&#34;, &#34;coco&#34;, &#34;durex&#34;, &#34;enter&#34;, &#34;fuck&#34;};
-        var searchKeyword = new List&lt;string&gt; { &#34;o&#34;, &#34;e&#34; };
-        var predicate = PredicateBuilder.False&lt;string&gt;();
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="k">static</span> <span class="k">void</span> <span class="n">linqPB</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;apple&#34;</span><span class="p">,</span> <span class="s">&#34;bob&#34;</span><span class="p">,</span> <span class="s">&#34;coco&#34;</span><span class="p">,</span> <span class="s">&#34;durex&#34;</span><span class="p">,</span> <span class="s">&#34;enter&#34;</span><span class="p">,</span> <span class="s">&#34;fuck&#34;</span><span class="p">};</span>
+        <span class="kt">var</span> <span class="n">searchKeyword</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;o&#34;</span><span class="p">,</span> <span class="s">&#34;e&#34;</span> <span class="p">};</span>
+        <span class="kt">var</span> <span class="n">predicate</span> <span class="p">=</span> <span class="n">PredicateBuilder</span><span class="p">.</span><span class="n">False</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
 
-        foreach (var word in searchKeyword)
-        {
-            var temp = word;  // 避免參考到相同變數位址
-            predicate = predicate.Or(p =&gt; p.Contains(temp));
-        }
-        var qry = list.Where(predicate.Compile());
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">word</span> <span class="k">in</span> <span class="n">searchKeyword</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">word</span><span class="p">;</span>  <span class="c1">// 避免參考到相同變數位址
+</span><span class="c1"></span>            <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">temp</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="kt">var</span> <span class="n">qry</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">predicate</span><span class="p">.</span><span class="n">Compile</span><span class="p">());</span>
 
-        foreach (var item in qry)
-        {
-            Console.WriteLine(item);
-        }
-        Console.Read();
-    }
-// result: apple bob coco durex enter</code></pre></div>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">qry</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="c1">// result: apple bob coco durex enter
+</span></code></pre></div>
 <p>主要的重點如下，將條件放入xxx</p>
-
-<pre><code>  var predicate = PredicateBuilder.False();  // 這邊的true/false會與下列的or做串接
-  predicate = predicate.Or(p =&gt; p.name.Contains(xxx));
-  predicate = predicate.Or(p =&gt; p.department.Contains (xxx));
-  myDB.employee.Where (predicate);
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">  <span class="kt">var</span> <span class="n">predicate</span> <span class="p">=</span> <span class="n">PredicateBuilder</span><span class="p">.</span><span class="n">False</span><span class="p">();</span>   <span class="c1">// 這邊的true/false會與下列的or做串接
+</span><span class="c1"></span>  <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">xxx</span><span class="p">));</span>
+  <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">department</span><span class="p">.</span><span class="n">Contains</span> <span class="p">(</span><span class="n">xxx</span><span class="p">));</span>
+  <span class="n">myDB</span><span class="p">.</span><span class="n">employee</span><span class="p">.</span><span class="n">Where</span> <span class="p">(</span><span class="n">predicate</span><span class="p">);</span>
+</code></pre></div>
 <p>Reference:
 要使用PredicateBuilder，需要加入參考: LinqKit.dll
 <a href="http://www.albahari.com/nutshell/predicatebuilder.aspx">http://www.albahari.com/nutshell/predicatebuilder.aspx</a><br />

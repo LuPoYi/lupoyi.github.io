@@ -438,12 +438,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/javascript/</loc>
+    <loc>https://blog.poyi.tw/tags/javascript/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/javascript/</loc>
+    <loc>https://blog.poyi.tw/categories/javascript/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -755,6 +755,10 @@
   <url>
     <loc>https://blog.poyi.tw/categories/css/</loc>
     <lastmod>2013-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.poyi.tw/about/</loc>
   </url>
   
   <url>

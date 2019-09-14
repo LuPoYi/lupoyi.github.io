@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,19 +25,19 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Ubuntu] 架設 OpenVpn Server &amp; Client" />
-<meta property="og:description" content="OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &#34;redirect-gateway def1 bypass-dhcp&#34; user nobody group nogroup # 補上8.8.8.8 push &#34;dhcp-option DNS 8.8.8.8&#34; ;push &#34;dhcp-option DNS 208.67.222.222&#34; ;push &#34;dhcp-option DNS 208.67.220.220&#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&#34;ACCEPT&#34;vim /etc/ufw/before." />
+<meta property="og:description" content="OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# /etc/openvpn/server.conf # dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &#34;redirect-gateway def1 bypass-dhcp&#34; user nobody group nogroup # 補上8.8.8.8 push &#34;dhcp-option DNS 8.8.8.8&#34; ;push &#34;dhcp-option DNS 208.67.222.222&#34; ;push &#34;dhcp-option DNS 208.67.220.220&#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&#34;ACCEPT&#34;vim /etc/ufw/before." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2016/03/05/ubuntu-openvpn-server-client/" />
 <meta property="article:published_time" content="2016-03-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-03-05T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Ubuntu] 架設 OpenVpn Server &amp; Client">
-<meta itemprop="description" content="OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &#34;redirect-gateway def1 bypass-dhcp&#34; user nobody group nogroup # 補上8.8.8.8 push &#34;dhcp-option DNS 8.8.8.8&#34; ;push &#34;dhcp-option DNS 208.67.222.222&#34; ;push &#34;dhcp-option DNS 208.67.220.220&#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&#34;ACCEPT&#34;vim /etc/ufw/before.">
+<meta itemprop="description" content="OpenVpn apt-get update apt-get install openvpn easy-rsagunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf vim /etc/openvpn/server.conf# /etc/openvpn/server.conf # dh dh1024.pem dh2048.pem ca ca.crt cert server.crt key server.key # 拿掉註解 push &#34;redirect-gateway def1 bypass-dhcp&#34; user nobody group nogroup # 補上8.8.8.8 push &#34;dhcp-option DNS 8.8.8.8&#34; ;push &#34;dhcp-option DNS 208.67.222.222&#34; ;push &#34;dhcp-option DNS 208.67.220.220&#34; #其他基本上維持預設即可 Packet Forwarding echo 1 &gt; /proc/sys/net/ipv4/ip_forward vim /etc/sysctl.conf# 拿掉註解 net.ipv4.ip_forward=1 Uncomplicated Firewall ufw allow ssh ufw allow 1194/udp ufw allow 80 # 開外連進來所需要的port vim /etc/default/ufw# 將DROP改成ACCEPT DEFAULT_FORWARD_POLICY=&#34;ACCEPT&#34;vim /etc/ufw/before.">
 
 
 <meta itemprop="datePublished" content="2016-03-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="227">
+<meta itemprop="wordCount" content="229">
 
 
 
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -129,26 +132,24 @@
 <p><h2 id="openvpn">OpenVpn</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get update
 apt-get install openvpn easy-rsa</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf
-vim /etc/openvpn/server.conf</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/openvpn/server.conf" data-lang="bash /etc/openvpn/server.conf"># dh dh1024.pem
+vim /etc/openvpn/server.conf</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/openvpn/server.conf</span>
+<span class="c1"># dh dh1024.pem</span>
 dh2048.pem</p>
 
 <p>ca ca.crt
 cert server.crt
 key server.key</p>
 
-<h1 id="拿掉註解">拿掉註解</h1>
-
-<p>push &#34;redirect-gateway def1 bypass-dhcp&#34;
+<p><span class="c1"># 拿掉註解</span>
+push <span class="s2">&#34;redirect-gateway def1 bypass-dhcp&#34;</span>
 user nobody
-group nogroup</p>
+group nogroup
+<span class="c1"># 補上8.8.8.8</span>
+push <span class="s2">&#34;dhcp-option DNS 8.8.8.8&#34;</span>
+<span class="p">;</span>push <span class="s2">&#34;dhcp-option DNS 208.67.222.222&#34;</span>
+<span class="p">;</span>push <span class="s2">&#34;dhcp-option DNS 208.67.220.220&#34;</span></p>
 
-<h1 id="補上8-8-8-8">補上8.8.8.8</h1>
-
-<p>push &#34;dhcp-option DNS 8.8.8.8&#34;
-;push &#34;dhcp-option DNS 208.67.222.222&#34;
-;push &#34;dhcp-option DNS 208.67.220.220&#34;</p>
-
-<p>#其他基本上維持預設即可</code></pre></div>
+<p><span class="c1">#其他基本上維持預設即可</span></code></pre></div>
 <h3 id="packet-forwarding">Packet Forwarding</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 vim /etc/sysctl.conf</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/sysctl.conf" data-lang="bash /etc/sysctl.conf"># 拿掉註解

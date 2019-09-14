@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -24,8 +27,8 @@
   <meta property="og:title" content="[CSS] 定位" />
 <meta property="og:description" content="以前都是直接用現成的，或是抓別人的css來用 一堆語法都知道是幹麻的，但自己寫的時候就完全不行 尤其是layout的配置..明明感覺很簡單的卻要一直亂試喬半天&hellip;
 趁著最近面試的機會來記一下CSS&hellip;. 不然平常都很懶得學
-Position position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */ z-index z-index 元件重疊時，值愈大，顯示愈上面
-overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */ Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php" />
+Position # position, 依top, left, right, bottom調整位置 position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */ z-index z-index 元件重疊時，值愈大，顯示愈上面
+overflow # 控制轉軸 overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */ Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/01/02/css-position/" />
 <meta property="article:published_time" content="2013-01-02T00:00:00+00:00" />
@@ -34,13 +37,13 @@ overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯�
   <meta itemprop="name" content="[CSS] 定位">
 <meta itemprop="description" content="以前都是直接用現成的，或是抓別人的css來用 一堆語法都知道是幹麻的，但自己寫的時候就完全不行 尤其是layout的配置..明明感覺很簡單的卻要一直亂試喬半天&hellip;
 趁著最近面試的機會來記一下CSS&hellip;. 不然平常都很懶得學
-Position position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */ z-index z-index 元件重疊時，值愈大，顯示愈上面
-overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */ Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php">
+Position # position, 依top, left, right, bottom調整位置 position: absloute /* 絕對位置 */ position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */ position: fixed /* 固定位置，定在視窗上 */ /* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */ z-index z-index 元件重疊時，值愈大，顯示愈上面
+overflow # 控制轉軸 overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯示放得下的內容 */ overflow: scroll /* 強制加右方下方捲軸 */ overflow: auto /* 內容放不下時，加右方捲軸 */ Reference: http://my-web-design.blogspot.tw/2007/10/css-divposition.html http://www.1keydata.com/css-tutorial/tw/position.php">
 
 
 <meta itemprop="datePublished" content="2013-01-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-01-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="51">
+<meta itemprop="wordCount" content="59">
 
 
 
@@ -56,7 +59,7 @@ overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯�
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -139,20 +142,22 @@ overflow overflow: visible /* 內容完整呈現 */ overflow: hidden /* 只顯�
 <p>趁著最近面試的機會來記一下CSS&hellip;. <del>不然平常都很懶得學</del></p>
 
 <h2 id="position">Position</h2>
-<div class="highlight"><pre class="chroma"><code class="language-css position, 依top, left, right, bottom調整位置" data-lang="css position, 依top, left, right, bottom調整位置">position: absloute /* 絕對位置 */
-position: relative /* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */
-position: fixed    /* 固定位置，定在視窗上 */
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="err">#</span> <span class="nt">position</span><span class="o">,</span> <span class="nt">依top</span><span class="o">,</span> <span class="nt">left</span><span class="o">,</span> <span class="nt">right</span><span class="o">,</span> <span class="nt">bottom調整位置</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">absloute</span> <span class="c">/* 絕對位置 */</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">relative</span> <span class="c">/* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">fixed</span>    <span class="c">/* 固定位置，定在視窗上 */</span>
   
-/* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */</code></pre></div>
+<span class="c">/* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */</span></code></pre></div>
 <h2 id="z-index">z-index</h2>
 
 <p>z-index 元件重疊時，值愈大，顯示愈上面</p>
 
 <p><h2 id="overflow">overflow</h2>
-<div class="highlight"><pre class="chroma"><code class="language-css 控制轉軸" data-lang="css 控制轉軸">overflow: visible /* 內容完整呈現 <em>/
-overflow: hidden  /</em> 只顯示放得下的內容 <em>/
-overflow: scroll  /</em> 強制加右方下方捲軸 <em>/
-overflow: auto    /</em> 內容放不下時，加右方捲軸 */</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="err">#</span> <span class="nt">控制轉軸</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">visible</span> <span class="c">/* 內容完整呈現 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span>  <span class="c">/</em> 只顯示放得下的內容 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">scroll</span>  <span class="c">/</em> 強制加右方下方捲軸 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">auto</span>    <span class="c">/</em> 內容放不下時，加右方捲軸 */</span></code></pre></div>
 <p>Reference:
 <a href="http://my-web-design.blogspot.tw/2007/10/css-divposition.html">http://my-web-design.blogspot.tw/2007/10/css-divposition.html</a>
 <a href="http://www.1keydata.com/css-tutorial/tw/position.php">http://www.1keydata.com/css-tutorial/tw/position.php</a></p></p>

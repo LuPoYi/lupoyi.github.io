@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title> - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+
+  <meta itemprop="name" content="Bob 學習筆記">
+<meta itemprop="description" content="">
+
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="">
+
+
+
+  <h1 id="title"> Posts</h1>
+  <p></p>
+  <div id="list">
+    
+      <h1>[CSS] 定位</h1>
+<p>以前都是直接用現成的，或是抓別人的css來用
+一堆語法都知道是幹麻的，但自己寫的時候就完全不行
+尤其是layout的配置..明明感覺很簡單的卻要一直亂試喬半天&hellip;</p>
+
+<p>趁著最近面試的機會來記一下CSS&hellip;. <del>不然平常都很懶得學</del></p>
+
+<h2 id="position">Position</h2>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="err">#</span> <span class="nt">position</span><span class="o">,</span> <span class="nt">依top</span><span class="o">,</span> <span class="nt">left</span><span class="o">,</span> <span class="nt">right</span><span class="o">,</span> <span class="nt">bottom調整位置</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">absloute</span> <span class="c">/* 絕對位置 */</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">relative</span> <span class="c">/* 相對位置，以該元件所屬的左上角做基準點，移動位置仍會佔有原先位置的空間 */</span>
+<span class="nt">position</span><span class="o">:</span> <span class="nt">fixed</span>    <span class="c">/* 固定位置，定在視窗上 */</span>
+  
+<span class="c">/* 當相對位置包住絕對位置時，絕對位置所基準就會為相對位置 */</span></code></pre></div>
+<h2 id="z-index">z-index</h2>
+
+<p>z-index 元件重疊時，值愈大，顯示愈上面</p>
+
+<p><h2 id="overflow">overflow</h2>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="err">#</span> <span class="nt">控制轉軸</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">visible</span> <span class="c">/* 內容完整呈現 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">hidden</span>  <span class="c">/</em> 只顯示放得下的內容 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">scroll</span>  <span class="c">/</em> 強制加右方下方捲軸 <em>/</span>
+<span class="nt">overflow</span><span class="o">:</span> <span class="nt">auto</span>    <span class="c">/</em> 內容放不下時，加右方捲軸 */</span></code></pre></div>
+<p>Reference:
+<a href="http://my-web-design.blogspot.tw/2007/10/css-divposition.html">http://my-web-design.blogspot.tw/2007/10/css-divposition.html</a>
+<a href="http://www.1keydata.com/css-tutorial/tw/position.php">http://www.1keydata.com/css-tutorial/tw/position.php</a></p></p>
+
+<br>
+    
+  </div>
+
+  <div class="pagination">
+    
+  
+    
+      <a class="next" href="/page/7/">Newer &rarr;</a>
+    
+  </div>
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>
+

@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,14 +25,14 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[ASP.NET] 日期處理" />
-<meta property="og:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間 DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式 TextBox1.Text = DateTime4.ToString(&quot;dddd&quot;); // 星期二 TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;); // 七月 TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;,CultureInfo.CreateSpecificCulture(&quot;en-US&quot;))); // July TextBox1.Text = DateTime4.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86" />
+<meta property="og:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/05/aspnet-date/" />
 <meta property="article:published_time" content="2013-09-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-09-05T00:00:00+00:00" />
 
   <meta itemprop="name" content="[ASP.NET] 日期處理">
-<meta itemprop="description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間 DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式 TextBox1.Text = DateTime4.ToString(&quot;dddd&quot;); // 星期二 TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;); // 七月 TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;,CultureInfo.CreateSpecificCulture(&quot;en-US&quot;))); // July TextBox1.Text = DateTime4.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">
+<meta itemprop="description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">
 
 
 <meta itemprop="datePublished" content="2013-09-05T00:00:00&#43;00:00" />
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,26 +129,28 @@
     <main id="content" class="posts">
 
 <h1>[ASP.NET] 日期處理</h1>
-<h1 id="日期運算其實還蠻常用到的-但好像變化不多">日期運算其實還蠻常用到的，但好像變化不多</h1>
+<p><h1 id="日期運算其實還蠻常用到的-但好像變化不多">日期運算其實還蠻常用到的，但好像變化不多</h1>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="c1">// 利用TimeSpan 日期相減
+</span><span class="c1"></span> <span class="n">TimeSpan</span> <span class="n">ts</span> <span class="p">=</span> <span class="n">DateTime1</span> <span class="p">-</span> <span class="n">DateTime2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">differenceInDays</span> <span class="p">=</span> <span class="n">ts</span><span class="p">.</span><span class="n">Days</span><span class="p">;</span></p>
 
-<pre><code>// 利用TimeSpan 日期相減
-TimeSpan ts = DateTime1 - DateTime2;
-int differenceInDays = ts.Days;
-
-// 加上指定月數、天數、時間
-DateTime DateTime3 = DateTime1.AddDays(50);
-DateTime DateTime4 = DateTime1.AddMonths(12);
-
-// 顯示特定格式
-TextBox1.Text = DateTime4.ToString(&quot;dddd&quot;); // 星期二
-TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;); // 七月
-TextBox1.Text = DateTime4.ToString(&quot;MMMM&quot;,CultureInfo.CreateSpecificCulture(&quot;en-US&quot;))); // July
-TextBox1.Text = DateTime4.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+<pre><code>&lt;span class=&quot;c1&quot;&gt;// 加上指定月數、天數、時間
 </code></pre>
 
+<p></span><span class="c1"></span>    <span class="n">DateTime</span> <span class="n">DateTime3</span> <span class="p">=</span> <span class="n">DateTime1</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="m">50</span><span class="p">);</span>
+    <span class="n">DateTime</span> <span class="n">DateTime4</span> <span class="p">=</span> <span class="n">DateTime1</span><span class="p">.</span><span class="n">AddMonths</span><span class="p">(</span><span class="m">12</span><span class="p">);</span></p>
+
+<pre><code>&lt;span class=&quot;c1&quot;&gt;// 顯示特定格式
+</code></pre>
+
+<p></span><span class="c1"></span>    <span class="n">TextBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime4</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;dddd&#34;</span><span class="p">);</span> <span class="c1">// 星期二
+</span><span class="c1"></span>    <span class="n">TextBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime4</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;MMMM&#34;</span><span class="p">);</span>    <span class="c1">// 七月
+</span><span class="c1"></span>    <span class="n">TextBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime4</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;MMMM&#34;</span><span class="p">,</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">CreateSpecificCulture</span><span class="p">(</span><span class="s">&#34;en-US&#34;</span><span class="p">)));</span>  <span class="c1">// July
+</span><span class="c1"></span> <span class="n">TextBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime4</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class="p">);</span><br />
+</code></pre></div>
 <p>Reference:
 <a href="http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx">http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx</a>
-<a href="http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</a></p>
+<a href="http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</a></p></p>
 
 
     </main>

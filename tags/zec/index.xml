@@ -28,7 +28,7 @@ Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&amp;rsquo;s CUDA Zcash mine
 自己solo的話就是有挖到block才有收益
 http://zcash.flypool.org/
 通常礦池首頁都會寫很清楚該怎麼做
-miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.&amp;lt;自命名worker&amp;gt; nheqminer.</description>
+# EWBF Miner miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3# Nicehash Miner nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
     </item>
     
   </channel>

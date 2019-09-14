@@ -2,10 +2,29 @@ html { background: #112f41; }
 header { width: 25%; background: #112f41; }
 .content-wrapper { width: 75%; margin-left: 25%; min-height: 92vh }
 footer { width: 75%; left: 25%; padding: 15px 45px; }
-#content, .breadcrumb { max-width: 50em }
+#content, .breadcrumb { max-width: 50em; position: relative; }
 
 @media (max-width: 767px) {
   header { width: 100% }
   .content-wrapper { width: 100%; margin-left: 0 }
   footer { width: 100%; left: 0 }
+}
+
+#content div.pagination {
+  text-align: center;
+  font-size: .95em;
+  position: relative;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIW…sTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC) top left repeat-x;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+#content div.pagination a.prev {
+  position: absolute;
+  left: 0;
+}
+#content div.pagination a.next{
+  position:absolute;right:0
+}
+#content div.pagination a:hover {
+  color: #0181eb;
 }

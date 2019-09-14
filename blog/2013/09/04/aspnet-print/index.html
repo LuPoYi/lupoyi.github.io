@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,14 +25,14 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[ASP.NET] 列印" />
-<meta property="og:description" content=" 列印指定文件 string filePath = &quot;C:\\test.txt&quot;; // 使用預設印表機 LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機 PrintServer ps = new PrintServer(@&quot;\\TY-SRV-PRINT01&quot;); PrintQueue queue = new PrintQueue(ps, &quot;FUJIXEROX&quot;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit();  " />
+<meta property="og:description" content=" 列印指定文件 string filePath = &#34;C:\\test.txt&#34;; // 使用預設印表機  LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機  PrintServer ps = new PrintServer(@&#34;\\TY-SRV-PRINT01&#34;); PrintQueue queue = new PrintQueue(ps, &#34;FUJIXEROX&#34;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit(); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/04/aspnet-print/" />
 <meta property="article:published_time" content="2013-09-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-09-04T00:00:00+00:00" />
 
   <meta itemprop="name" content="[ASP.NET] 列印">
-<meta itemprop="description" content=" 列印指定文件 string filePath = &quot;C:\\test.txt&quot;; // 使用預設印表機 LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機 PrintServer ps = new PrintServer(@&quot;\\TY-SRV-PRINT01&quot;); PrintQueue queue = new PrintQueue(ps, &quot;FUJIXEROX&quot;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit();  ">
+<meta itemprop="description" content=" 列印指定文件 string filePath = &#34;C:\\test.txt&#34;; // 使用預設印表機  LocalPrintServer ps = new LocalPrintServer(); PrintQueue queue = ps.DefaultPrintQueue; // 指定特定印表機  PrintServer ps = new PrintServer(@&#34;\\TY-SRV-PRINT01&#34;); PrintQueue queue = new PrintQueue(ps, &#34;FUJIXEROX&#34;); PrintSystemJobInfo pj = queue.AddJob(filePath); Stream myStream = pj.JobStream; Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath); myStream.Write(myByteBuffer, 0, myByteBuffer.Length); myStream.Close(); queue.Commit(); ">
 
 
 <meta itemprop="datePublished" content="2013-09-04T00:00:00&#43;00:00" />
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,26 +129,32 @@
     <main id="content" class="posts">
 
 <h1>[ASP.NET] 列印</h1>
-<h1 id="列印指定文件">列印指定文件</h1>
+<p><h1 id="列印指定文件">列印指定文件</h1>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="kt">string</span> <span class="n">filePath</span> <span class="p">=</span> <span class="s">&#34;C:\test.txt&#34;</span><span class="p">;</span></p>
 
-<pre><code>string filePath = &quot;C:\\test.txt&quot;;
-
-// 使用預設印表機
-LocalPrintServer ps = new LocalPrintServer();
-PrintQueue queue = ps.DefaultPrintQueue;
-
-// 指定特定印表機
-PrintServer ps = new PrintServer(@&quot;\\TY-SRV-PRINT01&quot;);
-PrintQueue queue = new PrintQueue(ps, &quot;FUJIXEROX&quot;);
-
-PrintSystemJobInfo pj = queue.AddJob(filePath);
-Stream myStream = pj.JobStream;
-Byte[] myByteBuffer = System.IO.File.ReadAllBytes(filePath);
-myStream.Write(myByteBuffer, 0, myByteBuffer.Length);
-myStream.Close();
-
-queue.Commit();
+<pre><code>&lt;span class=&quot;c1&quot;&gt;// 使用預設印表機
 </code></pre>
+
+<p></span><span class="c1"></span>    <span class="n">LocalPrintServer</span> <span class="n">ps</span> <span class="p">=</span> <span class="k">new</span> <span class="n">LocalPrintServer</span><span class="p">();</span>
+    <span class="n">PrintQueue</span> <span class="n">queue</span> <span class="p">=</span> <span class="n">ps</span><span class="p">.</span><span class="n">DefaultPrintQueue</span><span class="p">;</span></p>
+
+<pre><code>&lt;span class=&quot;c1&quot;&gt;// 指定特定印表機
+</code></pre>
+
+<p></span><span class="c1"></span>    <span class="n">PrintServer</span> <span class="n">ps</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PrintServer</span><span class="p">(</span><span class="s">@&#34;\TY-SRV-PRINT01&#34;</span><span class="p">);</span>
+    <span class="n">PrintQueue</span> <span class="n">queue</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PrintQueue</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="s">&#34;FUJIXEROX&#34;</span><span class="p">);</span></p>
+
+<pre><code>&lt;span class=&quot;n&quot;&gt;PrintSystemJobInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pj&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AddJob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myStream&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JobStream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myByteBuffer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReadAllBytes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myStream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myByteBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myByteBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;myStream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+</code></pre>
+
+<p></code></pre></div></p>
+
 
     </main>
   </div>

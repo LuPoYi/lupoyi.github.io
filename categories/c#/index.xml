@@ -18,8 +18,7 @@
       
       <guid>https://blog.poyi.tw/blog/2013/10/04/c-delegate-delegate/</guid>
       <description>Delegate 是 C# 的特殊型別，用來定義方法（method/function）的 signature，delegate 的實體（instance）可以存放一或多個符合該 signature 的方法。這樣講也許還是鴨子聽雷，不如我們實際來感受一下吧！ delegate實例獨立於它所封裝的方法的類 這邊在個multicst delegate的例子 using System;
-class MulticastTester { delegate void Greeting();
-public static void Main() { Greeting myGreeting = new Greeting(SayThankYou); Console.WriteLine(&amp;quot;My single greeting:&amp;quot;); myGreeting(); Greeting yourGreeting = new Greeting(SayGoodMorning); Console.WriteLine(&amp;quot;\nYour single greeting:&amp;quot;); yourGreeting(); Greeting ourGreeting = myGreeting + yourGreeting; Console.WriteLine(&amp;quot;\nOur multicast greeting:&amp;quot;); ourGreeting(); ourGreeting += new Greeting(SayGoodnight); Console.WriteLine(&amp;quot;\nMulticast greeting which includes Goodnight:&amp;quot;); ourGreeting(); ourGreeting = ourGreeting - yourGreeting; Console.WriteLine(&amp;quot;\nMulticast greeting without your greeting:&amp;quot;); ourGreeting(); ourGreeting -= myGreeting; Console.</description>
+class MulticastTester { delegate void Greeting(); public static void Main() { Greeting myGreeting = new Greeting(SayThankYou); Console.WriteLine(&amp;#34;My single greeting:&amp;#34;); myGreeting(); Greeting yourGreeting = new Greeting(SayGoodMorning); Console.WriteLine(&amp;#34;\nYour single greeting:&amp;#34;); yourGreeting(); Greeting ourGreeting = myGreeting + yourGreeting; Console.WriteLine(&amp;#34;\nOur multicast greeting:&amp;#34;); ourGreeting(); ourGreeting += new Greeting(SayGoodnight); Console.WriteLine(&amp;#34;\nMulticast greeting which includes Goodnight:&amp;#34;); ourGreeting(); ourGreeting = ourGreeting - yourGreeting; Console.WriteLine(&amp;#34;\nMulticast greeting without your greeting:&amp;#34;); ourGreeting(); ourGreeting -= myGreeting; Console.</description>
     </item>
     
     <item>
@@ -31,7 +30,7 @@ public static void Main() { Greeting myGreeting = new Greeting(SayThankYou); Con
       <description>在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&amp;hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&amp;lt;Employee&amp;gt; list1 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list1 = list1.Take&amp;lt;Employee&amp;gt;(10); // list2 IQueryable&amp;lt;Employee&amp;gt; list2 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list2 = list2.Take&amp;lt;Employee&amp;gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// IEnumerable // list1 IEnumerable&amp;lt;Employee&amp;gt; list1 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list1 = list1.Take&amp;lt;Employee&amp;gt;(10); // list2 IQueryable&amp;lt;Employee&amp;gt; list2 = myDB.Employees.Where(p =&amp;gt; p.Name.StartsWith(&amp;#34;S&amp;#34;)); list2 = list2.Take&amp;lt;Employee&amp;gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html</description>
     </item>
     
@@ -41,7 +40,7 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</guid>
-      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;quot;C:/porn.jpg&amp;quot;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;quot;application/octet-stream&amp;quot;; // 指定檔案類型 Response.AddHeader(&amp;quot;Content-Disposition&amp;quot;,&amp;quot;attachment;filename=&amp;quot;+&amp;quot;porn.jpg&amp;quot;); // 設定檔名 // System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 Response.AppendHeader(&amp;quot;Content-Length&amp;quot;, file.Length.ToString()); // 表頭加入檔案大小 Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;quot;C:/porn.jpg&amp;quot;; // 設定路徑 byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 Response.AppendHeader(&amp;quot;content-disposition&amp;quot;, &amp;quot;attachment;filename=&amp;quot; + &amp;quot;porn.jpg&amp;quot;); //設定檔名 // HttpContext.</description>
+      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;#34;C:/porn.jpg&amp;#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;#34;application/octet-stream&amp;#34;; // 指定檔案類型 	Response.AddHeader(&amp;#34;Content-Disposition&amp;#34;,&amp;#34;attachment;filename=&amp;#34;+&amp;#34;porn.jpg&amp;#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&amp;#34;Content-Length&amp;#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;#34;C:/porn.jpg&amp;#34;; // 設定路徑 	byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 	Response.</description>
     </item>
     
     <item>
@@ -66,10 +65,7 @@ Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;) // = Regex.IsMatch(strPwd, @&am
       
       <guid>https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/</guid>
       <description>稍微記一下，相關變化都蠻簡單的
-DataTable dt = new DataTable();
-// 定義欄位 dt.Columns.Add(&amp;ldquo;name&amp;rdquo;); dt.Columns.Add(&amp;ldquo;cardNumber&amp;rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&amp;ldquo;ID&amp;rdquo;, typeof(Int32));
-dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Ada&amp;rdquo;, &amp;ldquo;10000&amp;rdquo;); dt.Rows.Add(&amp;ldquo;Kilin&amp;rdquo;,&amp;ldquo;20000&amp;rdquo;); // 也可用DataRow來存放資料
-// 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();</description>
+DataTable dt = new DataTable(); // 定義欄位 dt.Columns.Add(&amp;#34;name&amp;#34;); dt.Columns.Add(&amp;#34;cardNumber&amp;#34;); // 也可定義欄位型態 // dt.Columns.Add(&amp;#34;ID&amp;#34;, typeof(Int32));  dt.Rows.Add(&amp;#34;Bob&amp;#34;, &amp;#34;12345&amp;#34;); dt.Rows.Add(&amp;#34;Ada&amp;#34;, &amp;#34;10000&amp;#34;); dt.Rows.Add(&amp;#34;Kilin&amp;#34;,&amp;#34;20000&amp;#34;); // 也可用DataRow來存放資料  // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind(); </description>
     </item>
     
     <item>
@@ -79,7 +75,7 @@ dt.Rows.Add(&amp;ldquo;Bob&amp;rdquo;, &amp;ldquo;12345&amp;rdquo;); dt.Rows.Add
       
       <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
-MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;#34;這邊可放html&amp;#34; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage); </description>
     </item>
     
     <item>
@@ -89,7 +85,7 @@ MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mail
       
       <guid>https://blog.poyi.tw/blog/2013/02/14/aspnet-reset-password-in-active-directory/</guid>
       <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
-DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close();public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int } string strPwd = new string(chars); while (!((Regex.IsMatch(strPwd, &amp;#34;[0-9]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;#34;[a-z]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, &amp;#34;[A-Z]&amp;#34;)) &amp;amp;&amp;amp; (Regex.IsMatch(strPwd, @&amp;#34;[\W]&amp;#34;)))) // \w [a-zA-Z0-9_] , \W !</description>
+// Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int  } string strPwd = new string(chars); while (!</description>
     </item>
     
   </channel>

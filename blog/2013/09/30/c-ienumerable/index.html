@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -25,7 +28,7 @@
 <meta property="og:description" content="在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// IEnumerable // list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/30/c-ienumerable/" />
@@ -36,13 +39,13 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
 <meta itemprop="description" content="在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
-// list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
+// IEnumerable // list1 IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list1 = list1.Take&lt;Employee&gt;(10); // list2 IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;)); list2 = list2.Take&lt;Employee&gt;(10); // list1 SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 // list2 SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0] WHERE [t0].[EmpName] LIKE @p0 可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。
 Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html">
 
 
 <meta itemprop="datePublished" content="2013-09-30T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-09-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="68">
+<meta itemprop="wordCount" content="70">
 
 
 
@@ -58,7 +61,7 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -142,19 +145,21 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
 <p>兩者的差別從概念上來說：
 <strong>IEnumerable<T></strong>:先將查詢的值取出，再一層一層做篩選。
 <strong>IQueryable<T></strong>:把全部Linq翻成T-SQL，直到真正要使用時才去執行。</p>
-<div class="highlight"><pre class="chroma"><code class="language-c# IEnumerable" data-lang="c# IEnumerable">// list1
-IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;));
-list1 = list1.Take&lt;Employee&gt;(10); 
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// IEnumerable
+</span><span class="c1">// list1
+</span><span class="c1"></span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;</span> <span class="n">list1</span> <span class="p">=</span> <span class="n">myDB</span><span class="p">.</span><span class="n">Employees</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&#34;S&#34;</span><span class="p">));</span>
+<span class="n">list1</span> <span class="p">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">Take</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;(</span><span class="m">10</span><span class="p">);</span> 
 
-// list2
-IQueryable&lt;Employee&gt; list2 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(&#34;S&#34;));
-list2 = list2.Take&lt;Employee&gt;(10); </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-SQL SQL" data-lang="SQL SQL">// list1
-SELECT [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0]
-WHERE [t0].[EmpName] LIKE @p0
+<span class="c1">// list2
+</span><span class="c1"></span><span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;</span> <span class="n">list2</span> <span class="p">=</span> <span class="n">myDB</span><span class="p">.</span><span class="n">Employees</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&#34;S&#34;</span><span class="p">));</span>
+<span class="n">list2</span> <span class="p">=</span> <span class="n">list2</span><span class="p">.</span><span class="n">Take</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;(</span><span class="m">10</span><span class="p">);</span> 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="o">//</span> <span class="n">list1</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Salary</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">Employee</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">]</span> <span class="k">LIKE</span> <span class="o">@</span><span class="n">p0</span>
 
-// list2
-SELECT TOP 10 [t0].[EmpID], [t0].[EmpName], [t0].[Salary] FROM [Employee] AS [t0]
-WHERE [t0].[EmpName] LIKE @p0</code></pre></div>
+<span class="o">//</span> <span class="n">list2</span>
+<span class="k">SELECT</span> <span class="n">TOP</span> <span class="mi">10</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Salary</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">Employee</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">]</span> <span class="k">LIKE</span> <span class="o">@</span><span class="n">p0</span></code></pre></div>
 <p>可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。</p>
 
 <p>Reference:

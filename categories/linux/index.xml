@@ -17,9 +17,7 @@
       <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2016/10/19/my-linux-command/</guid>
-      <description>稍微進階是對我來說啦 grep grep -r &amp;#39;bob&amp;#39; *OR)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| = OR)&#34;grep -E &amp;#39;bob|poyi&amp;#39; abc.txt egrep &amp;#39;bob|poyi&amp;#39; abc.txtAND)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* = AND)&#34;grep -E &amp;#39;bob.*poyi|200.*poyi&amp;#39; abc.txtgrep -v &amp;#39;bob&amp;#39; abc.txt find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl + c : 終止正在執行的程式 Ctrl + l : clear
- Ctrl + w : 刪除文字至上一個空白
- Ctrl + u : 刪除游標前</description>
+      <description>稍微進階是對我來說啦 grep # 找該目錄底下所有出現&amp;#39;bob&amp;#39;的檔案 grep -r &amp;#39;bob&amp;#39; *# 找abc.txt內所有出現&amp;#39;bob&amp;#39;或&amp;#39;poyi&amp;#39;的內容 (| =&amp;gt; OR) grep -E &amp;#39;bob|poyi&amp;#39; abc.txt egrep &amp;#39;bob|poyi&amp;#39; abc.txt# 找abc.txt內所有出現&amp;#39;bob&amp;#39;及&amp;#39;poyi&amp;#39;的內容 (.* =&amp;gt; AND) grep -E &amp;#39;bob.*poyi|200.*poyi&amp;#39; abc.txt# 找abc.txt內沒有出現&amp;#39;bob&amp;#39;的內容 (NOT) grep -v &amp;#39;bob&amp;#39; abc.txt find 找檔案 # 在/home目錄下找檔名為production.log的檔案 find /home -name production.log find /home -iname production.log # 不分大小寫# 在/home目錄下找所有的log folder find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl + c : 終止正在執行的程式 Ctrl + l : clear</description>
     </item>
     
     <item>
@@ -28,7 +26,7 @@
       <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2016/08/25/linux-some-common-security-setting/</guid>
-      <description>列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
+      <description>列幾個基本款常見的一些設定 ssh port更換到別的port # ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.</description>
     </item>
     
     <item>
@@ -39,7 +37,7 @@
       <guid>https://blog.poyi.tw/blog/2013/02/15/linux-getting-started-with-hyper-basic-instructions/</guid>
       <description>之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&amp;hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&amp;hellip;
 對Linux不是完全陌生，但指令倒是全忘了&amp;hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
-$ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history$ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [+-=] [rwxX] test.</description>
+# 系統資訊 $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history# 網路 $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線# chmod 調整檔案權限 chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [+-=] [rwxX] test.</description>
     </item>
     
   </channel>

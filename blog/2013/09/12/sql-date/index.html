@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,9 +26,9 @@
 
   <meta property="og:title" content="[SQL] 常用的日期函數" />
 <meta property="og:description" content="DATEADD (datepart , number , date ) 將日期加上n個datepart
-Select dateadd( day , 1 , &#39;2020-10-20&#39;) // 2020-10-21 Select dateadd( year , 5 , &#39;2020-10-20&#39;) // 2025-10-20  DATEDIFF ( datepart , startdate , enddate ) 計算startdate跟enddate距離幾個datepart
-Select datediff ( day , &#39;2015-06-17&#39;, &#39;2015-06-20&#39;) // 3 Select datediff ( MONTH , &#39;2015-06-17&#39;, &#39;2016-06-20&#39;) // 12  DATEPART( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數
-Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate() ) // 3  DATENAME ( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾." />
+Select dateadd( day , 1 , &#39;2020-10-20&#39;) // 2020-10-21 Select dateadd( year , 5 , &#39;2020-10-20&#39;) // 2025-10-20 DATEDIFF ( datepart , startdate , enddate ) 計算startdate跟enddate距離幾個datepart
+Select datediff ( day , &#39;2015-06-17&#39;, &#39;2015-06-20&#39;) // 3 Select datediff ( MONTH , &#39;2015-06-17&#39;, &#39;2016-06-20&#39;) // 12 DATEPART( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數
+Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate() ) // 3 DATENAME ( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/12/sql-date/" />
 <meta property="article:published_time" content="2013-09-12T00:00:00+00:00" />
@@ -33,9 +36,9 @@ Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate()
 
   <meta itemprop="name" content="[SQL] 常用的日期函數">
 <meta itemprop="description" content="DATEADD (datepart , number , date ) 將日期加上n個datepart
-Select dateadd( day , 1 , &#39;2020-10-20&#39;) // 2020-10-21 Select dateadd( year , 5 , &#39;2020-10-20&#39;) // 2025-10-20  DATEDIFF ( datepart , startdate , enddate ) 計算startdate跟enddate距離幾個datepart
-Select datediff ( day , &#39;2015-06-17&#39;, &#39;2015-06-20&#39;) // 3 Select datediff ( MONTH , &#39;2015-06-17&#39;, &#39;2016-06-20&#39;) // 12  DATEPART( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數
-Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate() ) // 3  DATENAME ( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾.">
+Select dateadd( day , 1 , &#39;2020-10-20&#39;) // 2020-10-21 Select dateadd( year , 5 , &#39;2020-10-20&#39;) // 2025-10-20 DATEDIFF ( datepart , startdate , enddate ) 計算startdate跟enddate距離幾個datepart
+Select datediff ( day , &#39;2015-06-17&#39;, &#39;2015-06-20&#39;) // 3 Select datediff ( MONTH , &#39;2015-06-17&#39;, &#39;2016-06-20&#39;) // 12 DATEPART( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數
+Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate() ) // 3 DATENAME ( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾.">
 
 
 <meta itemprop="datePublished" content="2013-09-12T00:00:00&#43;00:00" />
@@ -56,7 +59,7 @@ Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate()
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -134,32 +137,20 @@ Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate()
 <h1>[SQL] 常用的日期函數</h1>
 <p>DATEADD (datepart , number , date )
 將日期加上n個datepart</p>
-
-<pre><code>Select dateadd( day , 1 , '2020-10-20') // 2020-10-21
-Select dateadd( year , 5 , '2020-10-20') // 2025-10-20
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">    <span class="k">Select</span> <span class="n">dateadd</span><span class="p">(</span> <span class="k">day</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="s1">&#39;2020-10-20&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">21</span>
+    <span class="k">Select</span> <span class="n">dateadd</span><span class="p">(</span> <span class="k">year</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="s1">&#39;2020-10-20&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2025</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">20</span></code></pre></div>
 <p>DATEDIFF ( datepart , startdate , enddate )
 計算startdate跟enddate距離幾個datepart</p>
-
-<pre><code>Select datediff ( day , '2015-06-17', '2015-06-20') // 3 
-    Select datediff ( MONTH , '2015-06-17', '2016-06-20') // 12
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">    <span class="k">Select</span> <span class="n">datediff</span> <span class="p">(</span> <span class="k">day</span> <span class="p">,</span> <span class="s1">&#39;2015-06-17&#39;</span><span class="p">,</span> <span class="s1">&#39;2015-06-20&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">3</span> 
+        <span class="k">Select</span> <span class="n">datediff</span> <span class="p">(</span> <span class="k">MONTH</span> <span class="p">,</span> <span class="s1">&#39;2015-06-17&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-06-20&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">12</span></code></pre></div>
 <p>DATEPART( datepart , date )
   可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數</p>
-
-<pre><code>Select DATEPART( weekday , getdate() ) // 4
-Select DATEPART( quarter , getdate() ) // 3
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">    <span class="k">Select</span> <span class="n">DATEPART</span><span class="p">(</span> <span class="n">weekday</span> <span class="p">,</span> <span class="n">getdate</span><span class="p">()</span> <span class="p">)</span> <span class="o">//</span> <span class="mi">4</span>
+    <span class="k">Select</span> <span class="n">DATEPART</span><span class="p">(</span> <span class="n">quarter</span> <span class="p">,</span> <span class="n">getdate</span><span class="p">()</span> <span class="p">)</span> <span class="o">//</span> <span class="mi">3</span></code></pre></div>
 <p>DATENAME ( datepart , date )
   可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回字串</p>
-
-<pre><code>Select DATENAME( weekday , getdate() ) // Wednesday
-Select DATENAME( month  , getdate() ) // September
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql">      <span class="k">Select</span> <span class="n">DATENAME</span><span class="p">(</span> <span class="n">weekday</span> <span class="p">,</span> <span class="n">getdate</span><span class="p">()</span> <span class="p">)</span> <span class="o">//</span> <span class="n">Wednesday</span>
+    <span class="k">Select</span> <span class="n">DATENAME</span><span class="p">(</span> <span class="k">month</span>  <span class="p">,</span> <span class="n">getdate</span><span class="p">()</span> <span class="p">)</span> <span class="o">//</span> <span class="n">September</span></code></pre></div>
 <p>其他</p>
 
 <pre><code>IsDate() 判斷是否為合法日期

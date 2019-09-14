@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -24,8 +27,8 @@
   <meta property="og:title" content="[JavaScript] 中斷事件或動作的觸發" />
 <meta property="og:description" content="bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
-&lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
-&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
+// 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作 &lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+# 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE) &lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
 http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
 http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html" />
 <meta property="og:type" content="article" />
@@ -36,15 +39,15 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html" /
   <meta itemprop="name" content="[JavaScript] 中斷事件或動作的觸發">
 <meta itemprop="description" content="bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
 stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
-&lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
-&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
+// 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作 &lt;div class=&#34;p&#34;&gt; &lt;div class=&#34;a&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;script&gt; $(&#34;.p&#34;).click(function(event){ alert(&#34;p 外&#34;); }); $(&#34;.a&#34;).click(function(event){ alert(&#34;a 內&#34;); event.stopPropagation(); }); &lt;/script&gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+# 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE) &lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt; &lt;div id=&#34;check&#34;&gt;&lt;/div&gt; &lt;script&gt; $(&#34;a&#34;).click(function(event) { event.preventDefault(); $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;); }); &lt;/script&gt; Reference:
 http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
 http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
 
 
 <meta itemprop="datePublished" content="2014-01-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-01-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="51">
+<meta itemprop="wordCount" content="57">
 
 
 
@@ -60,7 +63,7 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -145,33 +148,36 @@ http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">
 
 <p>停止向上層bubble up，但仍然會觸發browser
 看例子比較快 <a href="http://jsfiddle.net/dA6R3/1/">http://jsfiddle.net/dA6R3/1/</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-html 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作" data-lang="html 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作">&lt;div class=&#34;p&#34;&gt;
-    &lt;div class=&#34;a&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">// 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作
 
-&lt;script&gt;
-$(&#34;.p&#34;).click(function(event){
-    alert(&#34;p 外&#34;);
-});
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;p&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;a&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-$(&#34;.a&#34;).click(function(event){
-    alert(&#34;a 內&#34;);
-    event.stopPropagation();
-});
-&lt;/script&gt;</code></pre></div>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.p&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;p 外&#34;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.a&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;a 內&#34;</span><span class="p">);</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
 <h2 id="preventdefault">preventDefault()</h2>
 
 <p>會將預設的動作停掉不讓它執行，不會觸發browser
 看例子比較快 <a href="http://jsfiddle.net/88dcF/1/">http://jsfiddle.net/88dcF/1/</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-html 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)" data-lang="html 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)">&lt;a href=&#34;http://www.google.com&#34;&gt;go to google&lt;/a&gt;
-&lt;div id=&#34;check&#34;&gt;&lt;/div&gt;
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"># 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://www.google.com&#34;</span><span class="p">&gt;</span>go to google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;check&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-&lt;script&gt;
-$(&#34;a&#34;).click(function(event) {
-  event.preventDefault();
-  $(&#34;&lt;div&gt;&#34;).append(&#34;Ya&#34;).appendTo(&#34;#check&#34;);
-});
-&lt;/script&gt;</code></pre></div>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;&lt;div&gt;&#34;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;Ya&#34;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&#34;#check&#34;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
 <p>Reference:</p>
 
 <p><a href="http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/">http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/</a></p>

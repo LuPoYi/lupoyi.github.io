@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,11 +26,11 @@
 
   <meta property="og:title" content="[Rails] 打包Gem套件" />
 <meta property="og:description" content="當我們要安裝別人寫好的Library、API時，通常會
-gem &#39;google-translate&#39; 或是
+# Gemfile gem &#39;google-translate&#39; 或是
 $ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gemirb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages" />
+# 用bundle 生成gem結構 $ bundle gem bob_test_plugin# 建立gem gem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+# 安裝gem $ sudo gem install bob_test_plugin-0.0.1.gem# 在rails c下測試gem irb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
+# 發佈 $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/12/02/rails-gem/" />
 <meta property="article:published_time" content="2013-12-02T00:00:00+00:00" />
@@ -35,16 +38,16 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
 
   <meta itemprop="name" content="[Rails] 打包Gem套件">
 <meta itemprop="description" content="當我們要安裝別人寫好的Library、API時，通常會
-gem &#39;google-translate&#39; 或是
+# Gemfile gem &#39;google-translate&#39; 或是
 $ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gemirb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">
+# 用bundle 生成gem結構 $ bundle gem bob_test_plugin# 建立gem gem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+# 安裝gem $ sudo gem install bob_test_plugin-0.0.1.gem# 在rails c下測試gem irb&gt;require &#39;bob_test_plugin&#39; =&gt; true irb&gt;BobTestPlugin.name =&gt; &#34;BobTestPlugin&#34; 發佈在 RubyGems.org 申請RubyGems帳號
+# 發佈 $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">
 
 
 <meta itemprop="datePublished" content="2013-12-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="39">
+<meta itemprop="wordCount" content="53">
 
 
 
@@ -60,7 +63,7 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -137,22 +140,28 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
 
 <h1>[Rails] 打包Gem套件</h1>
 <p>當我們要安裝別人寫好的Library、API時，通常會</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby Gemfile" data-lang="ruby Gemfile">gem &#39;google-translate&#39;</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">&#39;google-translate&#39;</span></code></pre></div>
 <p>或是</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash  Terminal" data-lang="bash  Terminal">$ gem install google-translate</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ gem install google-translate</code></pre></div>
 <h1 id="打包gem">打包gem</h1>
 
 <p>而當我們要打包自己的gem，自用或供他人使用，該怎麼做？</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash 用bundle 生成gem結構" data-lang="bash 用bundle 生成gem結構">$ bundle gem bob_test_plugin</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 建立gem" data-lang="bash 建立gem">gem build bob_test_plugin.gemspec</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 用bundle 生成gem結構</span>
+$ bundle gem bob_test_plugin</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 建立gem</span>
+gem build bob_test_plugin.gemspec</code></pre></div>
 <p>此時會生成 bob_test_plugin-0.0.1.gem</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash 安裝gem" data-lang="bash 安裝gem">$ sudo gem install bob_test_plugin-0.0.1.gem</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 在rails c下測試gem" data-lang="bash 在rails c下測試gem">irb&gt;require &#39;bob_test_plugin&#39;
-=&gt; true
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 安裝gem</span>
+$ sudo gem install bob_test_plugin-0.0.1.gem</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在rails c下測試gem</span>
+irb&gt;require <span class="s1">&#39;bob_test_plugin&#39;</span>
+<span class="o">=</span>&gt; <span class="nb">true</span>
 irb&gt;BobTestPlugin.name
-=&gt; &#34;BobTestPlugin&#34;</code></pre></div>
+<span class="o">=</span>&gt; <span class="s2">&#34;BobTestPlugin&#34;</span></code></pre></div>
 <h1 id="發佈在-rubygems-org">發佈在 RubyGems.org</h1>
 
 <p><a href="http://rubygems.org/sign_up">申請RubyGems帳號</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash 發佈" data-lang="bash 發佈">$ gem push bob_test_plugin-0.0.1.gem</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 發佈</span>
+$ gem push bob_test_plugin-0.0.1.gem</code></pre></div>
 <p>Reference:
 <a href="http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem">http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem</a>
 <a href="http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</a></p>

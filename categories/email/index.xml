@@ -18,7 +18,7 @@
       
       <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
-MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;quot;這邊可放html&amp;quot; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage);  </description>
+MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;#34;這邊可放html&amp;#34; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage); </description>
     </item>
     
   </channel>

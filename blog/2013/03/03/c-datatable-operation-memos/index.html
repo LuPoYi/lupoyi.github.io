@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,10 +26,7 @@
 
   <meta property="og:title" content="[C#] DataTable 的操作備忘" />
 <meta property="og:description" content="稍微記一下，相關變化都蠻簡單的
-DataTable dt = new DataTable();
-// 定義欄位 dt.Columns.Add(&ldquo;name&rdquo;); dt.Columns.Add(&ldquo;cardNumber&rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&ldquo;ID&rdquo;, typeof(Int32));
-dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;); dt.Rows.Add(&ldquo;Ada&rdquo;, &ldquo;10000&rdquo;); dt.Rows.Add(&ldquo;Kilin&rdquo;,&ldquo;20000&rdquo;); // 也可用DataRow來存放資料
-// 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();" />
+DataTable dt = new DataTable(); // 定義欄位 dt.Columns.Add(&#34;name&#34;); dt.Columns.Add(&#34;cardNumber&#34;); // 也可定義欄位型態 // dt.Columns.Add(&#34;ID&#34;, typeof(Int32));  dt.Rows.Add(&#34;Bob&#34;, &#34;12345&#34;); dt.Rows.Add(&#34;Ada&#34;, &#34;10000&#34;); dt.Rows.Add(&#34;Kilin&#34;,&#34;20000&#34;); // 也可用DataRow來存放資料  // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind(); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/" />
 <meta property="article:published_time" content="2013-03-03T00:00:00+00:00" />
@@ -34,10 +34,7 @@ dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;); dt.Rows.Add(&ldquo;Ada&rdqu
 
   <meta itemprop="name" content="[C#] DataTable 的操作備忘">
 <meta itemprop="description" content="稍微記一下，相關變化都蠻簡單的
-DataTable dt = new DataTable();
-// 定義欄位 dt.Columns.Add(&ldquo;name&rdquo;); dt.Columns.Add(&ldquo;cardNumber&rdquo;); // 也可定義欄位型態 // dt.Columns.Add(&ldquo;ID&rdquo;, typeof(Int32));
-dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;); dt.Rows.Add(&ldquo;Ada&rdquo;, &ldquo;10000&rdquo;); dt.Rows.Add(&ldquo;Kilin&rdquo;,&ldquo;20000&rdquo;); // 也可用DataRow來存放資料
-// 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind();">
+DataTable dt = new DataTable(); // 定義欄位 dt.Columns.Add(&#34;name&#34;); dt.Columns.Add(&#34;cardNumber&#34;); // 也可定義欄位型態 // dt.Columns.Add(&#34;ID&#34;, typeof(Int32));  dt.Rows.Add(&#34;Bob&#34;, &#34;12345&#34;); dt.Rows.Add(&#34;Ada&#34;, &#34;10000&#34;); dt.Rows.Add(&#34;Kilin&#34;,&#34;20000&#34;); // 也可用DataRow來存放資料  // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind(); ">
 
 
 <meta itemprop="datePublished" content="2013-03-03T00:00:00&#43;00:00" />
@@ -58,7 +55,7 @@ dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;); dt.Rows.Add(&ldquo;Ada&rdqu
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -134,24 +131,25 @@ dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;); dt.Rows.Add(&ldquo;Ada&rdqu
     <main id="content" class="posts">
 
 <h1>[C#] DataTable 的操作備忘</h1>
-<p>稍微記一下，相關變化都蠻簡單的</p>
+<p><p>稍微記一下，相關變化都蠻簡單的</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="n">DataTable</span> <span class="n">dt</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DataTable</span><span class="p">();</span></p>
 
-<p>DataTable dt = new DataTable();</p>
+<p><span class="c1">// 定義欄位
+</span><span class="c1"></span><span class="n">dt</span><span class="p">.</span><span class="n">Columns</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">);</span>
+<span class="n">dt</span><span class="p">.</span><span class="n">Columns</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;cardNumber&#34;</span><span class="p">);</span>
+<span class="c1">// 也可定義欄位型態
+</span><span class="c1">// dt.Columns.Add(&#34;ID&#34;, typeof(Int32));
+</span><span class="c1"></span>
+<span class="n">dt</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="s">&#34;12345&#34;</span><span class="p">);</span>
+<span class="n">dt</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;Ada&#34;</span><span class="p">,</span> <span class="s">&#34;10000&#34;</span><span class="p">);</span>
+<span class="n">dt</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;Kilin&#34;</span><span class="p">,</span><span class="s">&#34;20000&#34;</span><span class="p">);</span>
+<span class="c1">// 也可用DataRow來存放資料
+</span><span class="c1"></span></p>
 
-<p>// 定義欄位
-dt.Columns.Add(&ldquo;name&rdquo;);
-dt.Columns.Add(&ldquo;cardNumber&rdquo;);
-// 也可定義欄位型態
-// dt.Columns.Add(&ldquo;ID&rdquo;, typeof(Int32));</p>
-
-<p>dt.Rows.Add(&ldquo;Bob&rdquo;, &ldquo;12345&rdquo;);
-dt.Rows.Add(&ldquo;Ada&rdquo;, &ldquo;10000&rdquo;);
-dt.Rows.Add(&ldquo;Kilin&rdquo;,&ldquo;20000&rdquo;);
-// 也可用DataRow來存放資料</p>
-
-<p>// 格式相同直接放入GridView
-GridView.DataSource = dt;
-GridView.DataBind();</p>
+<p><span class="c1">// 格式相同直接放入GridView
+</span><span class="c1"></span><span class="n">GridView</span><span class="p">.</span><span class="n">DataSource</span> <span class="p">=</span> <span class="n">dt</span><span class="p">;</span>
+<span class="n">GridView</span><span class="p">.</span><span class="n">DataBind</span><span class="p">();</span>
+</code></pre></div></p>
 
 
     </main>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title> - Bob 學習筆記</title>
+  <link rel='canonical' href='https://blog.poyi.tw/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  <meta name="generator" content="Hugo 0.58.1" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+
+  <meta itemprop="name" content="Bob 學習筆記">
+<meta itemprop="description" content="">
+
+
+</head>
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="">
+
+
+
+  <h1 id="title"> Posts</h1>
+  <p></p>
+  <div id="list">
+    
+      <h1>[Rails] 小技巧</h1>
+<h2 id="erb的註解">.erb的註解</h2>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="sx">% #註解可寫在井號後面 </span> <span class="s">%&gt;
+</span><span class="s">
+</span><span class="s">&lt;% if false %&gt;</span>
+<span class="err">或寫在這</span>
+<span class="o">&lt;</span><span class="sx">% end </span> <span class="o">%&gt;</span></code></pre></div>
+<h2 id="rb的註解">.rb的註解</h2>
+
+<pre><code># 一般只用單行註解
+
+=begin
+    多行註解比較少見
+=end
+
+</code></pre>
+
+<p><h2 id="檢查自己寫了多少code">檢查自己寫了多少code</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ bundle <span class="nb">exec</span> rake stats</code></pre></div>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/9dPiFwgmRd61Oaf5xz2Z_2013-10-17%20%E4%B8%8B%E5%8D%88%2010-38-13.jpg" alt="2013-10-17 下午 10-38-13.jpg" /></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ rake routes</code></pre></div>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/gXa3Ts8RrqxlUGr0Ducw_2013-11-1%20%E4%B8%8B%E5%8D%88%2002-58-54.jpg" alt="2013-11-1 下午 02-58-54.jpg" /></p></p>
+
+<br>
+    
+      <h1>[VMware] VCenter 80 Port 已被使用</h1>
+<p>在嘗試安裝vCenter時，中途出現了「VMware VirtualCenter HTTP Port: 80」</p>
+
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147088/Dh30xvaKQpiGNxLRUEAh_2013-10-14%20%E4%B8%8B%E5%8D%88%2002-30-11.jpg" alt="2013-10-14 下午 02-30-11.jpg" /></p>
+
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147088/BSI6GB26R6GYxsu7JrMh_181188866_x.jpg" alt="181188866_x.jpg" /></p>
+
+<p>原因是vCenter自動安裝時會把SQL Server及.NET Framework相關的元件裝上，導致IIS佔用了80Port。</p>
+
+<p>解法之一就是直接在Roles裡把IIS移掉就行了(想在vCenter上使用IIS就要另求解了)</p>
+
+<p><br>
+Reference:
+<a href="http://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80%91%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E5%93%AA%E5%80%8B%E7%A8%8B%E5%BC%8F%E4%BD%94%E7%94%A8%E4%BA%86%E6%8C%87%E5%AE%9APort">http://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80%91%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E5%93%AA%E5%80%8B%E7%A8%8B%E5%BC%8F%E4%BD%94%E7%94%A8%E4%BA%86%E6%8C%87%E5%AE%9APort</a></p>
+
+<br>
+    
+      <h1>[Rails] 基本概念（待補）</h1>
+<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># config/database.yml</span>
+<span class="ss">development</span><span class="p">:</span> <span class="c1"># 開發用</span>
+  <span class="ss">adapter</span><span class="p">:</span> <span class="n">sqlite3</span>
+  <span class="ss">database</span><span class="p">:</span> <span class="n">db</span><span class="o">/</span><span class="n">development</span><span class="o">.</span><span class="n">sqlite3</span>
+  <span class="ss">pool</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="ss">timeout</span><span class="p">:</span> <span class="mi">5000</span>
+<span class="nb">test</span><span class="p">:</span> <span class="c1"># 測試用</span>
+  <span class="ss">adapter</span><span class="p">:</span> <span class="n">sqlite3</span>
+  <span class="ss">database</span><span class="p">:</span> <span class="n">db</span><span class="o">/</span><span class="n">development</span><span class="o">.</span><span class="n">sqlite3</span>
+  <span class="ss">pool</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="ss">timeout</span><span class="p">:</span> <span class="mi">5000</span>
+<span class="ss">production</span><span class="p">:</span> <span class="c1"># 上線用</span>
+  <span class="ss">adapter</span><span class="p">:</span> <span class="n">sqlite3</span>
+  <span class="ss">database</span><span class="p">:</span> <span class="n">db</span><span class="o">/</span><span class="n">development</span><span class="o">.</span><span class="n">sqlite3</span>
+  <span class="ss">pool</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="ss">timeout</span><span class="p">:</span> <span class="mi">5000</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># config/routes.rb</span></p>
+
+<p><span class="n">get</span> <span class="s2">&#34;welcome&#34;</span> <span class="o">=&gt;</span> <span class="s2">&#34;welcome#index&#34;</span>
+<span class="c1"># 代表<a href="http://localhost:3000/welcome">http://localhost:3000/welcome</a> 會對應到 welcome Controller的index Action。 </span></p>
+
+<p><span class="n">resources</span> <span class="ss">:events</span>
+<span class="c1"># 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下：</span>
+<span class="n">get</span>    <span class="s1">&#39;/events&#39;</span>          <span class="o">=&gt;</span> <span class="s2">&#34;events#index&#34;</span><span class="p">,</span>   <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;events&#34;</span>
+<span class="n">post</span>   <span class="s1">&#39;/events&#39;</span>          <span class="o">=&gt;</span> <span class="s2">&#34;events#create&#34;</span><span class="p">,</span>  <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;events&#34;</span>
+<span class="n">get</span>    <span class="s1">&#39;/events/:id&#39;</span>      <span class="o">=&gt;</span> <span class="s2">&#34;events#show&#34;</span><span class="p">,</span>    <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;event&#34;</span>
+<span class="n">put</span>    <span class="s1">&#39;/events/:id&#39;</span>      <span class="o">=&gt;</span> <span class="s2">&#34;events#update&#34;</span><span class="p">,</span>  <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;event&#34;</span>
+<span class="n">delete</span> <span class="s1">&#39;/events/:id&#39;</span>      <span class="o">=&gt;</span> <span class="s2">&#34;events#destroy&#34;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;event&#34;</span>
+<span class="n">get</span>    <span class="s1">&#39;/events/new&#39;</span>      <span class="o">=&gt;</span> <span class="s2">&#34;events#new&#34;</span><span class="p">,</span>     <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;new_event&#34;</span>
+<span class="n">get</span>    <span class="s1">&#39;/events/:id/edit&#39;</span> <span class="o">=&gt;</span> <span class="s2">&#34;events#edit&#34;</span><span class="p">,</span>    <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="s2">&#34;edit_event&#34;</span></p>
+
+<p><span class="c1"># get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。</span>
+<span class="c1"># HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># &lt;% 執行但不輸出</span>
+<span class="c1"># &lt;%= 輸出值</span></p>
+
+<p><span class="o">&lt;</span><span class="sx">% @people.each </span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="s">%&gt;
+</span><span class="s"> &lt;%= p.name %&gt;</span>
+<span class="o">&lt;</span><span class="sx">% end </span> <span class="o">%&gt;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">render</span> <span class="err">回傳使用的樣版</span><span class="p">(</span><span class="err">資料不會遺失</span><span class="p">)</span>
+<span class="n">redirect_to</span> <span class="err">重新導向</span><span class="n">action</span></code></pre></div>
+<p>Reference:
+<a href="http://ihower.tw/rails3/index.html">http://ihower.tw/rails3/index.html</a></p></p>
+
+<br>
+    
+      <h1>[C#]  Delegate 委派</h1>
+<h2 id="delegate-是-c-的特殊型別-用來定義方法-method-function-的-signature-delegate-的實體-instance-可以存放一或多個符合該-signature-的方法-這樣講也許還是鴨子聽雷-不如我們實際來感受一下吧">Delegate 是 C# 的特殊型別，用來定義方法（method/function）的 signature，delegate 的實體（instance）可以存放一或多個符合該 signature 的方法。這樣講也許還是鴨子聽雷，不如我們實際來感受一下吧！</h2>
+
+<p><p>delegate實例獨立於它所封裝的方法的類
+這邊在個multicst delegate的例子
+using System;</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="k">class</span> <span class="nc">MulticastTester</span>
+<span class="p">{</span>
+    <span class="k">delegate</span> <span class="k">void</span> <span class="n">Greeting</span><span class="p">();</span></p>
+
+<pre><code>&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SayThankYou&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;My single greeting:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;myGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SayGoodMorning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;        
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;\nYour single greeting:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;yourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;\nOur multicast greeting:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SayGoodnight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;\nMulticast greeting which includes Goodnight:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;\nMulticast greeting without your greeting:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;\nSingle greeting without your greeting and my greeting:&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ourGreeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SayThankYou&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;Thank you!&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SayGoodMorning&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;Good morning!&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SayGoodnight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#34;Goodnight&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+</code></pre>
+
+<p><span class="p">}</span>
+</code></pre></div></p>
+
+<br>
+    
+      <h1>[C#] IEnumerable vs IQueryable</h1>
+<p>在linq的使用上，IEnumerable<T>是不可或缺的泛型介面
+像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。</p>
+
+<p>而IQueryable<T>又繼承了IEnumerable<T>&hellip;</p>
+
+<p>兩者的差別從概念上來說：
+<strong>IEnumerable<T></strong>:先將查詢的值取出，再一層一層做篩選。
+<strong>IQueryable<T></strong>:把全部Linq翻成T-SQL，直到真正要使用時才去執行。</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// IEnumerable
+</span><span class="c1">// list1
+</span><span class="c1"></span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;</span> <span class="n">list1</span> <span class="p">=</span> <span class="n">myDB</span><span class="p">.</span><span class="n">Employees</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&#34;S&#34;</span><span class="p">));</span>
+<span class="n">list1</span> <span class="p">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">Take</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;(</span><span class="m">10</span><span class="p">);</span> 
+
+<span class="c1">// list2
+</span><span class="c1"></span><span class="n">IQueryable</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;</span> <span class="n">list2</span> <span class="p">=</span> <span class="n">myDB</span><span class="p">.</span><span class="n">Employees</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s">&#34;S&#34;</span><span class="p">));</span>
+<span class="n">list2</span> <span class="p">=</span> <span class="n">list2</span><span class="p">.</span><span class="n">Take</span><span class="p">&lt;</span><span class="n">Employee</span><span class="p">&gt;(</span><span class="m">10</span><span class="p">);</span> 
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="o">//</span> <span class="n">list1</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Salary</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">Employee</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">]</span> <span class="k">LIKE</span> <span class="o">@</span><span class="n">p0</span>
+
+<span class="o">//</span> <span class="n">list2</span>
+<span class="k">SELECT</span> <span class="n">TOP</span> <span class="mi">10</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpID</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">],</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">Salary</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">Employee</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">t0</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">t0</span><span class="p">].[</span><span class="n">EmpName</span><span class="p">]</span> <span class="k">LIKE</span> <span class="o">@</span><span class="n">p0</span></code></pre></div>
+<p>可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。</p>
+
+<p>Reference:
+<a href="http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX">http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX</a>
+<a href="http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html">http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html</a>
+<a href="http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html">http://www.dotnet-tricks.com/Tutorial/linq/I8SY160612-IEnumerable-VS-IQueryable.html</a></p>
+
+<br>
+    
+      <h1>[ASP.NET] Connect to SQL Server</h1>
+<p><p>最陽春的寫法</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// 用SQL驗證來登入
+</span><span class="c1"></span><span class="kt">string</span> <span class="n">QueryString</span> <span class="p">=</span> <span class="s">&#34;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&#34;</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// QUERY
+</span><span class="c1"></span><span class="n">SqlConnection</span> <span class="n">conn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">QueryString</span><span class="p">);</span>
+<span class="n">conn</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span></p>
+
+<p><span class="n">sqlStr</span> <span class="p">=</span> <span class="s">&#34;SELECT name FROM Employee&#34;</span><span class="p">;</span></p>
+
+<p><span class="n">SqlCommand</span> <span class="n">cmd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">sqlStr</span><span class="p">,</span> <span class="n">conn</span><span class="p">);</span>
+<span class="n">SqlDataReader</span> <span class="n">dr</span> <span class="p">=</span> <span class="n">cmd</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">dr</span><span class="p">.</span><span class="n">Read</span><span class="p">())</span>
+<span class="p">{</span>
+        <span class="c1">// 將找到的值取出來
+</span><span class="c1"></span>    <span class="kt">string</span> <span class="n">user</span> <span class="p">=</span> <span class="n">dr</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">].</span><span class="n">ToString</span><span class="p">();</span>
+    <span class="c1">//&hellip;
+</span><span class="c1"></span><span class="p">}</span></p>
+
+<p><span class="n">conn</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// UPDATE INSERT DELETE
+</span><span class="c1"></span><span class="n">SqlConnection</span> <span class="n">conn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">QueryString</span><span class="p">);</span>
+<span class="n">conn</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span></p>
+
+<p><span class="n">sqlStr</span> <span class="p">=</span> <span class="s">&#34;UPDATE Employee SET name = &#39;Bob&#39;&#34;</span><span class="p">;</span></p>
+
+<p><span class="n">SqlCommand</span> <span class="n">cmd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">sqlStr</span><span class="p">,</span> <span class="n">conn</span><span class="p">);</span>
+<span class="n">cmd</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span></p>
+
+<p><span class="n">conn</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="c1">// 用Parameter
+</span><span class="c1"></span><span class="n">sqlStr</span> <span class="p">=</span> <span class="s">&#34;SELECT * FROM Employee WHERE action = @Action&#34;</span><span class="p">;</span>
+<span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">SqlParameter</span><span class="p">(</span><span class="s">&#34;@Action&#34;</span><span class="p">,</span> <span class="n">item</span><span class="p">.</span><span class="n">ACTION</span><span class="p">));</span>
+</code></pre></div></p>
+
+<br>
+    
+      <h1>[ASP.NET] Linq 動態條件搜尋</h1>
+<p>一般Linq在多種動態條件的組合時會顯得比較麻煩，要額外加很多if else判斷式來達成
+而「PredicateBuilder」可以解決這些麻煩，原理上是將where的條件獨立出來</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#"><span class="k">static</span> <span class="k">void</span> <span class="n">linqPB</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;apple&#34;</span><span class="p">,</span> <span class="s">&#34;bob&#34;</span><span class="p">,</span> <span class="s">&#34;coco&#34;</span><span class="p">,</span> <span class="s">&#34;durex&#34;</span><span class="p">,</span> <span class="s">&#34;enter&#34;</span><span class="p">,</span> <span class="s">&#34;fuck&#34;</span><span class="p">};</span>
+        <span class="kt">var</span> <span class="n">searchKeyword</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="p">{</span> <span class="s">&#34;o&#34;</span><span class="p">,</span> <span class="s">&#34;e&#34;</span> <span class="p">};</span>
+        <span class="kt">var</span> <span class="n">predicate</span> <span class="p">=</span> <span class="n">PredicateBuilder</span><span class="p">.</span><span class="n">False</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">word</span> <span class="k">in</span> <span class="n">searchKeyword</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">word</span><span class="p">;</span>  <span class="c1">// 避免參考到相同變數位址
+</span><span class="c1"></span>            <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">temp</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="kt">var</span> <span class="n">qry</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">predicate</span><span class="p">.</span><span class="n">Compile</span><span class="p">());</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">qry</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="c1">// result: apple bob coco durex enter
+</span></code></pre></div>
+<p>主要的重點如下，將條件放入xxx</p>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">  <span class="kt">var</span> <span class="n">predicate</span> <span class="p">=</span> <span class="n">PredicateBuilder</span><span class="p">.</span><span class="n">False</span><span class="p">();</span>   <span class="c1">// 這邊的true/false會與下列的or做串接
+</span><span class="c1"></span>  <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">xxx</span><span class="p">));</span>
+  <span class="n">predicate</span> <span class="p">=</span> <span class="n">predicate</span><span class="p">.</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">department</span><span class="p">.</span><span class="n">Contains</span> <span class="p">(</span><span class="n">xxx</span><span class="p">));</span>
+  <span class="n">myDB</span><span class="p">.</span><span class="n">employee</span><span class="p">.</span><span class="n">Where</span> <span class="p">(</span><span class="n">predicate</span><span class="p">);</span>
+</code></pre></div>
+<p>Reference:
+要使用PredicateBuilder，需要加入參考: LinqKit.dll
+<a href="http://www.albahari.com/nutshell/predicatebuilder.aspx">http://www.albahari.com/nutshell/predicatebuilder.aspx</a><br />
+<a href="http://blog.sanc.idv.tw/2010/10/linq.html">http://blog.sanc.idv.tw/2010/10/linq.html</a>
+<a href="http://leaflet-t-h.blogspot.tw/2011/11/linq-predicatebuilder.html">http://leaflet-t-h.blogspot.tw/2011/11/linq-predicatebuilder.html</a></p>
+
+<br>
+    
+      <h1>[C#] 字串補零</h1>
+<p>最近常常手動新增假員工AD帳號來測我的程式
+在嘗試跑程式step by step來測試時，想說奇怪怎麼假帳號會有電腦資產
+原來這帳號跟設計部門的元老經理的員工工號重複了&hellip;
+還好有及時發現沒有把程式執行完，不然IT部門就要起飛了&hellip;</p>
+
+<p>所以想說寫個迴圈來測是不是有其他工號也有重複的案例
+而工號欄位都是五位數(BOB00001~BOB99999)
+像我的工號是4104需要補足五位數
+有三種方式：</p>
+
+<pre><code>int myEmpNo = 4104;
+empNo.ToString(&quot;00000&quot;);  
+empNo.ToString(&quot;D5&quot;);                        
+empNo.ToString().PadLeft(5,'0'); 
+// 04104
+</code></pre>
+
+<p>查了才知道原來ToString蠻方便的，有些好用的例子</p>
+
+<pre><code>empNo.ToString(&quot;BOB00000&quot;); // BOB04104
+empNo.ToString(&quot;C&quot;);  // NT$4,104.00
+empNo.ToString(&quot;C&quot;, new System.Globalization.CultureInfo(&quot;en-US&quot;)); $4,104.00
+
+int myPhoneNo =123456789;
+myPhoneNo.ToString(&quot;(##) ###-####&quot;); // (12) 345-6789
+</code></pre>
+
+<p>PadLeft ：字串向右靠齊，將指定字元填滿左邊。
+PadRight：字串向左靠齊，將指定字元填滿右邊。</p>
+
+<p>Reference:
+<a href="http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.95).aspx">http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.95).aspx</a>
+<a href="http://www.dotblogs.com.tw/ethon.chi/archive/2010/09/27/17917.aspx">http://www.dotblogs.com.tw/ethon.chi/archive/2010/09/27/17917.aspx</a></p>
+
+<br>
+    
+      <h1>[ASP.NET] 檔案資料夾存取</h1>
+<p>刪除</p>
+
+<pre><code>    System.IO.File.Delete(filePath);
+    System.IO.Directory.Delete(folderPath);
+</code></pre>
+
+<p>搬移</p>
+
+<pre><code>    System.IO.File.Move(sourceFilePath, destinationFilePath);
+    System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);
+</code></pre>
+
+<p>複製</p>
+
+<pre><code>    System.IO.File.Copy(sourceFilePath, destinationFilePath, true); 
+    System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫
+</code></pre>
+
+<p>取得該目標下所有檔案</p>
+
+<pre><code>    string[] files = System.IO.Directory.GetFiles(folderPath);
+</code></pre>
+
+<p>比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。</p>
+
+<p>這樣也一篇…</p>
+
+<br>
+    
+      <h1>[jQuery] 入門</h1>
+<p>jQuery 是一套 JavaScript 的 Library，目的是簡化dom的操作，也可以說是簡化HTML與JavaScript之間的操作</p>
+
+<p>基本規則：jQuery物件.方法( ).方法( )</p>
+
+<p>具名函數</p>
+
+<pre><code>var person = new Object();
+person.Name = &quot;Bob&quot;;
+person.Speak = say;
+
+function say(msg) {
+    alert(this.Name + &quot;: &quot; + msg);
+}
+person.Speak(&quot;Fuck You Jex&quot;);
+</code></pre>
+
+<p>不具名函數</p>
+
+<pre><code>var person = new Object();
+person.Name = &quot;Bob&quot;;
+person.Speak = function (msg) { alert(this.Name + &quot;: &quot; + msg); }
+
+person.Speak(&quot;Fuck You Jex&quot;);
+</code></pre>
+
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/139105/UhKVDZTaTaWvACtSs3ix_2013-9-15%20%E4%B8%8B%E5%8D%88%2005-26-04.jpg" alt="2013-9-15 下午 05-26-04.jpg" /></p>
+
+<p>Reference:
+<a href="http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx">http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx</a></p>
+
+<br>
+    
+  </div>
+
+  <div class="pagination">
+    
+      <a class="prev" href="/page/6/">&larr; Older</a>
+    
+  
+    
+      <a class="next" href="/page/4/">Newer &rarr;</a>
+    
+  </div>
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+</body>
+</html>
+

@@ -19,9 +19,9 @@
       <guid>https://blog.poyi.tw/blog/2015/07/11/rails-various-update-methods/</guid>
       <description>##正規Rails的更新 - update
 會觸發validation、callback、也會更新updated_at
-&amp;gt; Comment.last.update(message: &amp;#39;bbb&amp;#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = ?, &amp;#34;updated_at&amp;#34; = ? WHERE &amp;#34;comments&amp;#34;.&amp;#34;id&amp;#34; = ? [[&amp;#34;message&amp;#34;, &amp;#34;bbb&amp;#34;], [&amp;#34;updated_at&amp;#34;, &amp;#34;2015-07-11 09:42:02.303661&amp;#34;], [&amp;#34;id&amp;#34;, 200]] (9.1ms) commit transaction =&amp;gt; true ##相當於直接下SQL的更新 - update_columns, update_all
+# update 寫法 (for 單筆) &amp;gt; Comment.last.update(message: &amp;#39;bbb&amp;#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = ?, &amp;#34;updated_at&amp;#34; = ? WHERE &amp;#34;comments&amp;#34;.&amp;#34;id&amp;#34; = ? [[&amp;#34;message&amp;#34;, &amp;#34;bbb&amp;#34;], [&amp;#34;updated_at&amp;#34;, &amp;#34;2015-07-11 09:42:02.303661&amp;#34;], [&amp;#34;id&amp;#34;, 200]] (9.1ms) commit transaction =&amp;gt; true ##相當於直接下SQL的更新 - update_columns, update_all
 而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
-&amp;gt; Comment.where(:id =&amp;gt; 200).first.update_columns(message: &amp;#39;bbbbb&amp;#39;, post_id: 3) SQL (9.2ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = &amp;#39;bbbbb&amp;#39;, &amp;#34;post_id&amp;#34; = 3 WHERE &amp;#34;comments&amp;#34;.&amp;#34;id&amp;#34; = ? [[&amp;#34;id&amp;#34;, 200]] # update_column 跟 update_columns 相同，只是傳入值key跟value必須是string，並用逗點分隔 &amp;gt; Comment.</description>
+# update_columns 寫法 (for 單筆) &amp;gt; Comment.where(:id =&amp;gt; 200).first.update_columns(message: &amp;#39;bbbbb&amp;#39;, post_id: 3) SQL (9.2ms) UPDATE &amp;#34;comments&amp;#34; SET &amp;#34;message&amp;#34; = &amp;#39;bbbbb&amp;#39;, &amp;#34;post_id&amp;#34; = 3 WHERE &amp;#34;comments&amp;#34;.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2015/06/12/rails-ajax-render-error-in-json/</guid>
-      <description>$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&amp;#39;json&amp;#39;, method:&amp;#39;post&amp;#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &amp;lt; 100 render :json =&amp;gt; { :errors =&amp;gt; &amp;#34;金額不足&amp;#34; }, :status =&amp;gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+      <description>// new.html.erb $.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&amp;#39;json&amp;#39;, method:&amp;#39;post&amp;#39;, success:function(data){ // do success things  }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } ); # orders_controller.rb  def create if amount &amp;lt; 100 render :json =&amp;gt; { :errors =&amp;gt; &amp;#34;金額不足&amp;#34; }, :status =&amp;gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</description>
     </item>
@@ -41,7 +41,7 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/12/07/rails-bootstrap-for-rails/</guid>
-      <description>gem &amp;#39;bootstrap-sass&amp;#39;@import &amp;#39;bootstrap&amp;#39;//= require bootstrap 這樣就可以用了yaya</description>
+      <description># add to gemfile.rb and remember to bundle install gem &amp;#39;bootstrap-sass&amp;#39;# 新增一個app/assets/stylesheets/styles.css.scss並將bootstrap import @import &amp;#39;bootstrap&amp;#39;# app/assets/javascripts/application.js 加入bootstrap //= require bootstrap 這樣就可以用了yaya</description>
     </item>
     
     <item>
@@ -51,11 +51,11 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
       
       <guid>https://blog.poyi.tw/blog/2013/12/02/rails-gem/</guid>
       <description>當我們要安裝別人寫好的Library、API時，通常會
-gem &amp;#39;google-translate&amp;#39; 或是
+# Gemfile gem &amp;#39;google-translate&amp;#39; 或是
 $ gem install google-translate 打包gem 而當我們要打包自己的gem，自用或供他人使用，該怎麼做？
-$ bundle gem bob_test_plugingem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
-$ sudo gem install bob_test_plugin-0.0.1.gemirb&amp;gt;require &amp;#39;bob_test_plugin&amp;#39; =&amp;gt; true irb&amp;gt;BobTestPlugin.name =&amp;gt; &amp;#34;BobTestPlugin&amp;#34; 發佈在 RubyGems.org 申請RubyGems帳號
-$ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</description>
+# 用bundle 生成gem結構 $ bundle gem bob_test_plugin# 建立gem gem build bob_test_plugin.gemspec 此時會生成 bob_test_plugin-0.0.1.gem
+# 安裝gem $ sudo gem install bob_test_plugin-0.0.1.gem# 在rails c下測試gem irb&amp;gt;require &amp;#39;bob_test_plugin&amp;#39; =&amp;gt; true irb&amp;gt;BobTestPlugin.name =&amp;gt; &amp;#34;BobTestPlugin&amp;#34; 發佈在 RubyGems.org 申請RubyGems帳號
+# 發佈 $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
       <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/11/20/rails-activerecord/</guid>
-      <description>class Boss &amp;lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &amp;lt; ActiveRecord::Base belongs_to :boss endclass Employee &amp;lt; ActiveRecord::Base belongs_to :manager, :class_name =&amp;gt; &amp;#34;User&amp;#34;, :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34; ,:order =&amp;gt; &amp;#34;id desc&amp;#34; end # class_name =&amp;gt; &amp;#34;User&amp;#34; 變更關聯class name # :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34;變更關聯foreign key,預設為class_id # :order =&amp;gt; &amp;#34;id desc&amp;#34; 排序class Group &amp;lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&amp;gt; { :minimum =&amp;gt; 2 } validates :bio, :length =&amp;gt; { :maximum =&amp;gt; 500 } validates :password, :length =&amp;gt; { :in =&amp;gt; 6.</description>
+      <description># Model relation class Boss &amp;lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &amp;lt; ActiveRecord::Base belongs_to :boss end# 常用參數 class Employee &amp;lt; ActiveRecord::Base belongs_to :manager, :class_name =&amp;gt; &amp;#34;User&amp;#34;, :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34; ,:order =&amp;gt; &amp;#34;id desc&amp;#34; end # class_name =&amp;gt; &amp;#34;User&amp;#34; 變更關聯class name # :foreign_key =&amp;gt; &amp;#34;manager_id&amp;#34;變更關聯foreign key,預設為class_id # :order =&amp;gt; &amp;#34;id desc&amp;#34; 排序# 資料驗證 class Group &amp;lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&amp;gt; { :minimum =&amp;gt; 2 } validates :bio, :length =&amp;gt; { :maximum =&amp;gt; 500 } validates :password, :length =&amp;gt; { :in =&amp;gt; 6.</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/11/14/rails-rest/</guid>
-      <description> Action helpers Verb Path   index groups_path GET /groups   show group_path(@group) GET /groups/1   new new_group_path GET /groups/new   create groups_path POST /groups   edit edit_group_path(@group) GET /groups/1/edit   update group_path(@group) PUT /groups/1   destroy group_path(@group) DELETE /groups/1   </description>
+      <description>&amp;lt;table border=&amp;#34;1&amp;#34;&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;Action&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;helpers&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Verb&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;Path&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;index&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;groups_path&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;GET&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;show&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;group_path(@group)&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;GET&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups/1&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;new&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;new_group_path&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;GET&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups/new&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;create&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;groups_path&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;POST&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;edit&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;edit_group_path(@group)&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;GET&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups/1/edit&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;update&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;group_path(@group)&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;PUT&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups/1&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;tr&amp;gt; &amp;lt;td&amp;gt;destroy&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;group_path(@group)&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;DELETE&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt;/groups/1&amp;lt;/td&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt;</description>
     </item>
     
     <item>
@@ -84,8 +84,8 @@ $ gem push bob_test_plugin-0.0.1.gem Reference: http://blog.xdite.net/posts/2012
       <guid>https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/</guid>
       <description>看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
 Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
-$ sudo apt-get install freetds-dev freetds-bin tdsodbc$ tsql -C $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)$ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
-Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.yml OK..在這邊理論上是可以直接在Rails調用.. 但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..) 錯誤訊息可參考 &amp;gt; https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279 暫時找不到解法，除非把Rails降到3.x版</description>
+# 安裝FreeTDS $ sudo apt-get install freetds-dev freetds-bin tdsodbc# 檢查FreeTDS版本資訊 $ tsql -C # 這時候就可以Connect SQL Server $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)# 直接下TSQL，這邊要用go才會執行 $ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
+Rails Connect to SQL Server (Error) # 安裝tiny_tds、sqlserver adapter $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/10/30/rails-crud/</guid>
-      <description>&amp;lt;%= link_to &amp;#39;list&amp;#39;, teams_path %&amp;gt; # GET def index @teams = Team.all end&amp;lt;%= link_to &amp;#39;show&amp;#39;, team_path(team) %&amp;gt; # GET def show @team = Team.find(params[:id]) end&amp;lt;%= link_to &amp;#39;new Team&amp;#39;, new_team_path %&amp;gt; def new @team = Team.new end&amp;lt;%= form_for @team, :url =&amp;gt; teams_path do |t| %&amp;gt; #In a form, the default request method is POST &amp;lt;%= t.text_field :name %&amp;gt; &amp;lt;%= t.text_field :year %&amp;gt; &amp;lt;%= t.submit &amp;#34;Create&amp;#34; %&amp;gt; &amp;lt;% end %&amp;gt; def create Team.</description>
+      <description># index &amp;lt;%= link_to &amp;#39;list&amp;#39;, teams_path %&amp;gt; # GET def index @teams = Team.all end# show &amp;lt;%= link_to &amp;#39;show&amp;#39;, team_path(team) %&amp;gt; # GET def show @team = Team.find(params[:id]) end# new &amp;lt;%= link_to &amp;#39;new Team&amp;#39;, new_team_path %&amp;gt; def new @team = Team.new end# create &amp;lt;%= form_for @team, :url =&amp;gt; teams_path do |t| %&amp;gt; #In a form, the default request method is POST &amp;lt;%= t.text_field :name %&amp;gt; &amp;lt;%= t.text_field :year %&amp;gt; &amp;lt;%= t.</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       <pubDate>Wed, 16 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/10/16/rails-tips/</guid>
-      <description> .erb的註解 &amp;lt;% #註解可寫在井號後面 %&amp;gt; &amp;lt;% if false %&amp;gt; 或寫在這 &amp;lt;% end %&amp;gt;  .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end  檢查自己寫了多少code $ bundle exec rake stats  $ rake routes  </description>
+      <description> .erb的註解 &amp;lt;% #註解可寫在井號後面  %&amp;gt; &amp;lt;% if false %&amp;gt; 或寫在這 &amp;lt;% end  %&amp;gt; .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end  檢查自己寫了多少code $ bundle exec rake stats $ rake routes </description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ Rails Connect to SQL Server (Error) $ sudo gem install tiny_tds $ sudo gem insta
       <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2013/10/07/ruby-basic/</guid>
-      <description>development:# 開發用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000test:# 測試用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000production:# 上線用adapter:sqlite3database:db/development.sqlite3pool:5timeout:5000get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
+      <description># config/database.yml development: # 開發用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 test: # 測試用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 production: # 上線用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000# config/routes.rb get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
     </item>
     
   </channel>

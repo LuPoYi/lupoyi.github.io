@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -25,9 +28,8 @@
 <meta property="og:description" content="Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
 未來讓以後開發不會這麼吃力，來整複習一下好了 :D
 Everything is Ruby is an object Ruby 內皆為物件，無基本型別
-123.methods #=&gt; 123可用的method列表 123.class #=&gt; Fixnum #知道class後就可以查doc true.class #=&gt; TrueClass nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
-123.class #integer 42343243243243243242343242344234234234.class #bignum 123.123.class #float “123”.class #string [].class #array {}.class #hash :abc.class #symbol nil.class #nilClass true.class #TrueClass false.class #FalseClass  ###輸出String的用法
-“123” &#43; “345” &#43; “333” x = 18 puts &#34;your age is #{x}&#34; puts ‘\n\t’ #單引號 (無視內容，直接輸出) puts &#34;\n\t&#34; #雙引號 (換行) Hash x = {&#34;wer&#34; =&gt; 123, &#34;sdf&#34; =&gt; 234} y = {:wer =&gt; 123, :sdf =&gt; 234} # symbol 拿來當key用 :wer." />
+# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
+# 各種常見型別 123.class #integer 42343243243243243242343242344234234234.class #bignum  123.123.class #float  “123”.class #string  [].class #array  {}.class #hash  :abc.class #symbol  nil.class #nilClass  true.class #TrueClass false." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2015/03/31/ruby-basic-1/" />
 <meta property="article:published_time" content="2015-03-31T00:00:00+00:00" />
@@ -37,14 +39,13 @@ Everything is Ruby is an object Ruby 內皆為物件，無基本型別
 <meta itemprop="description" content="Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
 未來讓以後開發不會這麼吃力，來整複習一下好了 :D
 Everything is Ruby is an object Ruby 內皆為物件，無基本型別
-123.methods #=&gt; 123可用的method列表 123.class #=&gt; Fixnum #知道class後就可以查doc true.class #=&gt; TrueClass nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
-123.class #integer 42343243243243243242343242344234234234.class #bignum 123.123.class #float “123”.class #string [].class #array {}.class #hash :abc.class #symbol nil.class #nilClass true.class #TrueClass false.class #FalseClass  ###輸出String的用法
-“123” &#43; “345” &#43; “333” x = 18 puts &#34;your age is #{x}&#34; puts ‘\n\t’ #單引號 (無視內容，直接輸出) puts &#34;\n\t&#34; #雙引號 (換行) Hash x = {&#34;wer&#34; =&gt; 123, &#34;sdf&#34; =&gt; 234} y = {:wer =&gt; 123, :sdf =&gt; 234} # symbol 拿來當key用 :wer.">
+# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
+# 各種常見型別 123.class #integer 42343243243243243242343242344234234234.class #bignum  123.123.class #float  “123”.class #string  [].class #array  {}.class #hash  :abc.class #symbol  nil.class #nilClass  true.class #TrueClass false.">
 
 
 <meta itemprop="datePublished" content="2015-03-31T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-03-31T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="224">
+<meta itemprop="wordCount" content="243">
 
 
 
@@ -60,7 +61,7 @@ Everything is Ruby is an object Ruby 內皆為物件，無基本型別
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -143,51 +144,56 @@ Everything is Ruby is an object Ruby 內皆為物件，無基本型別
 <h2 id="everything-is-ruby-is-an-object">Everything is Ruby is an object</h2>
 
 <p>Ruby 內皆為物件，無基本型別</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby X.class，X.methods 的用法" data-lang="ruby X.class，X.methods 的用法">123.methods #=&gt; 123可用的method列表  
-123.class   #=&gt; Fixnum #知道class後就可以查doc  
-true.class  #=&gt; TrueClass  
-nil.class   #=&gt; NilClass  </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">even?</span>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># X.class，X.methods 的用法</span>
+<span class="mi">123</span><span class="o">.</span><span class="n">methods</span> <span class="c1">#=&gt; 123可用的method列表  </span>
+<span class="mi">123</span><span class="o">.</span><span class="n">class</span>   <span class="c1">#=&gt; Fixnum #知道class後就可以查doc  </span>
+<span class="kp">true</span><span class="o">.</span><span class="n">class</span>  <span class="c1">#=&gt; TrueClass  </span>
+<span class="kp">nil</span><span class="o">.</span><span class="n">class</span>   <span class="c1">#=&gt; NilClass  </span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">even?</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="n">next</span>
  <span class="o">=&gt;</span> <span class="mi">4</span>
 <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="n">abs</span>
  <span class="o">=&gt;</span> <span class="mi">1</span></code></pre></div>
 <p>##基本使用</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby 各種常見型別" data-lang="ruby 各種常見型別">123.class #integer
-42343243243243243242343242344234234234.class #bignum  
-123.123.class #float  
-“123”.class #string  
-[].class #array  
-{}.class  #hash  
-:abc.class #symbol  
-nil.class #nilClass  
-true.class #TrueClass
-false.class #FalseClass  </code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 各種常見型別</span>
+<span class="mi">123</span><span class="o">.</span><span class="n">class</span> <span class="c1">#integer</span>
+<span class="mi">42343243243243243242343242344234234234</span><span class="o">.</span><span class="n">class</span> <span class="c1">#bignum  </span>
+<span class="mi">123</span><span class="o">.</span><span class="mi">123</span><span class="o">.</span><span class="n">class</span> <span class="c1">#float  </span>
+<span class="err">“</span><span class="mi">123</span><span class="err">”</span><span class="o">.</span><span class="n">class</span> <span class="c1">#string  </span>
+<span class="o">[].</span><span class="n">class</span> <span class="c1">#array  </span>
+<span class="p">{}</span><span class="o">.</span><span class="n">class</span>  <span class="c1">#hash  </span>
+<span class="ss">:abc</span><span class="o">.</span><span class="n">class</span> <span class="c1">#symbol  </span>
+<span class="kp">nil</span><span class="o">.</span><span class="n">class</span> <span class="c1">#nilClass  </span>
+<span class="kp">true</span><span class="o">.</span><span class="n">class</span> <span class="c1">#TrueClass</span>
+<span class="kp">false</span><span class="o">.</span><span class="n">class</span> <span class="c1">#FalseClass  </span></code></pre></div>
 <p>###輸出String的用法</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby 輸出String的用法" data-lang="ruby 輸出String的用法">“123” + “345” + “333”  
-x = 18  
-puts &#34;your age is #{x}&#34;  
-puts ‘\n\t’ #單引號 (無視內容，直接輸出)  
-puts &#34;\n\t&#34; #雙引號 (換行)</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 輸出String的用法</span>
+<span class="err">“</span><span class="mi">123</span><span class="err">”</span> <span class="o">+</span> <span class="err">“</span><span class="mi">345</span><span class="err">”</span> <span class="o">+</span> <span class="err">“</span><span class="mi">333</span><span class="err">”</span>  
+<span class="n">x</span> <span class="o">=</span> <span class="mi">18</span>  
+<span class="nb">puts</span> <span class="s2">&#34;your age is </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&#34;</span>  
+<span class="nb">puts</span> <span class="err">‘</span><span class="p">\</span><span class="n">n</span><span class="p">\</span><span class="n">t</span><span class="err">’</span> <span class="c1">#單引號 (無視內容，直接輸出)  </span>
+<span class="nb">puts</span> <span class="s2">&#34;</span><span class="se">\n\t</span><span class="s2">&#34;</span> <span class="c1">#雙引號 (換行)</span></code></pre></div>
 <h3 id="hash">Hash</h3>
-<div class="highlight"><pre class="chroma"><code class="language-ruby hash宣告方式" data-lang="ruby hash宣告方式">x = {&#34;wer&#34; =&gt; 123, &#34;sdf&#34; =&gt; 234}  
-y = {:wer =&gt; 123, :sdf =&gt; 234}  
-# symbol 拿來當key用  
-:wer.object_id  # 在hash中key使用symbol會比string還相對快    </code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># hash宣告方式</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;wer&#34;</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span> <span class="s2">&#34;sdf&#34;</span> <span class="o">=&gt;</span> <span class="mi">234</span><span class="p">}</span>  
+<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:wer</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span> <span class="ss">:sdf</span> <span class="o">=&gt;</span> <span class="mi">234</span><span class="p">}</span>  
+<span class="c1"># symbol 拿來當key用  </span>
+<span class="ss">:wer</span><span class="o">.</span><span class="n">object_id</span>  <span class="c1"># 在hash中key使用symbol會比string還相對快    </span></code></pre></div>
 <h3 id="nil-false">Nil/ False</h3>
 
 <p>ruby只有兩種東西為非 =&gt; nil / false
 其他都為true</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby nil false" data-lang="ruby nil false">nil || false || 0   # 0    
-nil &amp;&amp; false &amp;&amp; 0   # nil  </code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="kp">nil</span> <span class="o">||</span> <span class="kp">false</span> <span class="o">||</span> <span class="mi">0</span>   <span class="c1"># 0    </span>
+<span class="kp">nil</span> <span class="o">&amp;&amp;</span> <span class="kp">false</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span>   <span class="c1"># nil  </span></code></pre></div>
 <p>###判斷式</p>
 
 <p>#####基本上if else</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby if/else if/elsif/else unless/end" data-lang="ruby if/else if/elsif/else unless/end">if size &gt; 30  
-  puts &#34;winner&#34;  
-else  
-  puts &#34;loser&#34;  
-end</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># if/else if/elsif/else unless/end</span>
+<span class="k">if</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">30</span>  
+  <span class="nb">puts</span> <span class="s2">&#34;winner&#34;</span>  
+<span class="k">else</span>  
+  <span class="nb">puts</span> <span class="s2">&#34;loser&#34;</span>  
+<span class="k">end</span></code></pre></div>
 <p>#####因為在ruby只有false及nil為非，所以當你要判斷該變數有沒有值時可以直接這樣寫</p>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="nb">name</span>
   <span class="nb">puts</span> <span class="nb">name</span>
@@ -198,35 +204,36 @@ end</code></pre></div>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="nb">name</span> <span class="k">if</span> <span class="nb">name</span> <span class="c1"># 當name有值時印出來，沒有值即略過</span>
 <span class="nb">puts</span> <span class="s2">&#34;error&#34;</span> <span class="k">unless</span> <span class="nb">name</span> <span class="c1"># 當name沒有值時印error</span></code></pre></div>
 <p>#####簡單的判斷式也可以寫成單行</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby condition ? true : false" data-lang="ruby condition ? true : false">puts size &gt; 30 ? &#34;winner&#34; : &#34;loser&#34;    </code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># condition ? true : false</span>
+<span class="nb">puts</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">30</span> <span class="o">?</span> <span class="s2">&#34;winner&#34;</span> <span class="p">:</span> <span class="s2">&#34;loser&#34;</span>    </code></pre></div>
 <h5 id="ruby的switch-case寫法">ruby的switch case寫法</h5>
-<div class="highlight"><pre class="chroma"><code class="language-ruby case/when/end" data-lang="ruby case/when/end">case lang
-when &#34;java&#34;
-  puts &#34;good&#34;
-when &#34;python&#34;
-  puts &#34;great!&#34;
-when &#34;ruby&#34;
-  puts &#34;perfect!&#34;
-else
-  puts &#34;WTF&#34;
-end</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="k">case</span> <span class="n">lang</span>
+<span class="k">when</span> <span class="s2">&#34;java&#34;</span>
+  <span class="nb">puts</span> <span class="s2">&#34;good&#34;</span>
+<span class="k">when</span> <span class="s2">&#34;python&#34;</span>
+  <span class="nb">puts</span> <span class="s2">&#34;great!&#34;</span>
+<span class="k">when</span> <span class="s2">&#34;ruby&#34;</span>
+  <span class="nb">puts</span> <span class="s2">&#34;perfect!&#34;</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">&#34;WTF&#34;</span>
+<span class="k">end</span></code></pre></div>
 <p>###迴圈</p>
 
 <p>在ruby中比較少在用for跟while迴圈，大部分情況都使用each(iterator迭代器)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby each" data-lang="ruby each">lang = [&#34;ruby&#34;,&#34;python&#34;,&#34;java&#34;,&#34;c&#34;,&#34;php&#34;]
-for i in lang
-  puts i
-end
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">lang</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;ruby&#34;</span><span class="p">,</span><span class="s2">&#34;python&#34;</span><span class="p">,</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;c&#34;</span><span class="p">,</span><span class="s2">&#34;php&#34;</span><span class="o">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">lang</span>
+  <span class="nb">puts</span> <span class="n">i</span>
+<span class="k">end</span>
 
-lang.each do |i|
-  puts &#39;I love &#39; + i
-end
+<span class="n">lang</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s1">&#39;I love &#39;</span> <span class="o">+</span> <span class="n">i</span>
+<span class="k">end</span>
 
-[1,2,3,4,5,6].each do |i| end
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="k">end</span>
 
-3.times do
-  puts &#39;Good Job!&#39;
-end</code></pre></div>
+<span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s1">&#39;Good Job!&#39;</span>
+<span class="k">end</span></code></pre></div>
 <p>Reference: RailsFun - JokerCatz</p>
 
 

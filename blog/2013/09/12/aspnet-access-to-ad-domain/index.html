@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,14 +25,14 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[ASP.NET] 存取AD網域" />
-<meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &quot;LDAP://網域&quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&quot;(&amp;(samaccountname=&quot; &#43; employeeName &#43; &quot;)(Description=&quot; &#43; employeeNo &#43; &quot;))&quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&quot;description&quot;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&quot;description&quot;][0].ToString(); Response.Write(resultNo); Response.Write(&quot;&lt;br&gt;&quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
+<meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/12/aspnet-access-to-ad-domain/" />
 <meta property="article:published_time" content="2013-09-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-09-12T00:00:00+00:00" />
 
   <meta itemprop="name" content="[ASP.NET] 存取AD網域">
-<meta itemprop="description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &quot;LDAP://網域&quot;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢 ds.Filter = @&quot;(&amp;(samaccountname=&quot; &#43; employeeName &#43; &quot;)(Description=&quot; &#43; employeeNo &#43; &quot;))&quot;; // 將查詢結果放入Results Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&quot;description&quot;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號 string resultNo = result.Properties[&quot;description&quot;][0].ToString(); Response.Write(resultNo); Response.Write(&quot;&lt;br&gt;&quot;); } } ds.Dispose(); // 釋放資源 de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.">
+<meta itemprop="description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.">
 
 
 <meta itemprop="datePublished" content="2013-09-12T00:00:00&#43;00:00" />
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -129,31 +132,29 @@
 <h2 id="透過ad網域來存取帳號資料">透過AD網域來存取帳號資料</h2>
 
 <h2 id="查詢資料">查詢資料</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="kt">string</span> <span class="n">QueryString</span> <span class="p">=</span> <span class="s">&#34;LDAP://網域&#34;</span><span class="p">;</span>
+    <span class="n">DirectoryEntry</span> <span class="n">de</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectoryEntry</span><span class="p">(</span><span class="n">QueryString</span><span class="p">,</span><span class="n">adminAccount</span><span class="p">,</span><span class="n">adminPassword</span><span class="p">);</span>
+    <span class="n">DirectorySearcher</span> <span class="n">ds</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectorySearcher</span><span class="p">(</span><span class="n">de</span><span class="p">);</span>
+    <span class="n">SearchResultCollection</span> <span class="n">Results</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 
-<pre><code>string QueryString = &quot;LDAP://網域&quot;;
-DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword);
-DirectorySearcher ds = new DirectorySearcher(de);
-SearchResultCollection Results = null;
+    <span class="c1">// 設定查詢條件：依姓名及工號查詢
+</span><span class="c1"></span>    <span class="n">ds</span><span class="p">.</span><span class="n">Filter</span> <span class="p">=</span> <span class="s">@&#34;(&amp;(samaccountname=&#34;</span> <span class="p">+</span> <span class="n">employeeName</span> <span class="p">+</span> <span class="s">&#34;)(Description=&#34;</span> <span class="p">+</span> <span class="n">employeeNo</span> <span class="p">+</span> <span class="s">&#34;))&#34;</span><span class="p">;</span>
+    <span class="c1">// 將查詢結果放入Results
+</span><span class="c1"></span>    <span class="n">Results</span> <span class="p">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">FindAll</span><span class="p">();</span>
 
-// 設定查詢條件：依姓名及工號查詢
-ds.Filter = @&quot;(&amp;(samaccountname=&quot; + employeeName + &quot;)(Description=&quot; + employeeNo + &quot;))&quot;;
-// 將查詢結果放入Results
-Results = ds.FindAll();
-
-foreach (SearchResult result in Results)
-{
-    if (result.Properties[&quot;description&quot;].Count &gt; 0)
-    {
-        // 透過AD裡的屬性「description」，取得工號
-        string resultNo = result.Properties[&quot;description&quot;][0].ToString();
-        Response.Write(resultNo);
-        Response.Write(&quot;&lt;br&gt;&quot;);
-    }
-}
-ds.Dispose(); // 釋放資源
-de.Dispose();
-</code></pre>
-
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">SearchResult</span> <span class="n">result</span> <span class="k">in</span> <span class="n">Results</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">&#34;description&#34;</span><span class="p">].</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 透過AD裡的屬性「description」，取得工號
+</span><span class="c1"></span>            <span class="kt">string</span> <span class="n">resultNo</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">&#34;description&#34;</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">ToString</span><span class="p">();</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">resultNo</span><span class="p">);</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&#34;&lt;br&gt;&#34;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">ds</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span> <span class="c1">// 釋放資源
+</span><span class="c1"></span>    <span class="n">de</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+</code></pre></div>
 <h2 id="修改指定帳號的屬性值">修改指定帳號的屬性值</h2>
 
 <pre><code>string QueryString = &quot;LDAP://&quot;+ userLDAP;

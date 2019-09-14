@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,19 +25,19 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Ubuntu] Linux 基本的安全設定" />
-<meta property="og:description" content="列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth." />
+<meta property="og:description" content="列幾個基本款常見的一些設定 ssh port更換到別的port # ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2016/08/25/linux-some-common-security-setting/" />
 <meta property="article:published_time" content="2016-08-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-08-25T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Ubuntu] Linux 基本的安全設定">
-<meta itemprop="description" content="列幾個基本款常見的一些設定 ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.">
+<meta itemprop="description" content="列幾個基本款常見的一些設定 ssh port更換到別的port # ssh port更換到別的port $ sudo vim /etc/ssh/sshd_config Port 1968 $ sudo service sshd restart 開始自動安全性更新 $ sudo apt-get install unattended-upgrades $ sudo dpkg-reconfigure -plow unattended-upgrades $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades ssh 登入盡量用 key-exchange 方式 fail2ban - 自動ban掉多次嘗試登入者 $ sudo apt-get install fail2ban # 保留原始conf檔，把設定都寫在.local $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local $ vim /etc/fail2ban/jail.local # 將enabled改成true [DEFAULT] ignoreip = 127.0.0.1/8 bantime = 600 findtime = 600 maxretry = 5 backend = auto enabled = true # 啟動 $ sudo service fail2ban start # 看目前狀態，目前有一個被ban $ sudo fail2ban-client status Status |- Number of jail: 1 `- Jail list: sshd # detail $ sudo fail2ban-client status sshd Status for the jail: sshd |- Filter | |- Currently failed: 1 | |- Total failed: 6 | `- File list: /var/log/auth.">
 
 
 <meta itemprop="datePublished" content="2016-08-25T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="426">
+<meta itemprop="wordCount" content="441">
 
 
 
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -129,50 +132,51 @@
 <h2 id="列幾個基本款常見的一些設定">列幾個基本款常見的一些設定</h2>
 
 <h2 id="ssh-port更換到別的port">ssh port更換到別的port</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash ssh port更換到別的port" data-lang="bash ssh port更換到別的port">$ sudo vim /etc/ssh/sshd_config
-Port 1968
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ssh port更換到別的port</span>
+$ sudo vim /etc/ssh/sshd_config
+Port <span class="m">1968</span>
 $ sudo service sshd restart</code></pre></div>
 <h2 id="開始自動安全性更新">開始自動安全性更新</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash 開始自動安全性更新" data-lang="bash 開始自動安全性更新"> $ sudo apt-get install unattended-upgrades
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> $ sudo apt-get install unattended-upgrades
  $ sudo dpkg-reconfigure -plow unattended-upgrades
  $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades</code></pre></div>
 <h2 id="ssh-登入盡量用-key-exchange-方式">ssh 登入盡量用 key-exchange 方式</h2>
 
 <h2 id="fail2ban-自動ban掉多次嘗試登入者">fail2ban - 自動ban掉多次嘗試登入者</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash fail2ban基本設定" data-lang="bash fail2ban基本設定">$ sudo apt-get install fail2ban
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install fail2ban
 
-# 保留原始conf檔，把設定都寫在.local
+<span class="c1"># 保留原始conf檔，把設定都寫在.local</span>
 $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 
 $ vim /etc/fail2ban/jail.local 
-# 將enabled改成true
-  [DEFAULT]
-    ignoreip = 127.0.0.1/8
-    bantime  = 600
-    findtime = 600
-    maxretry = 5
-    backend  = auto
-    enabled = true
+<span class="c1"># 將enabled改成true</span>
+  <span class="o">[</span>DEFAULT<span class="o">]</span>
+    <span class="nv">ignoreip</span> <span class="o">=</span> <span class="m">127</span>.0.0.1/8
+    <span class="nv">bantime</span>  <span class="o">=</span> <span class="m">600</span>
+    <span class="nv">findtime</span> <span class="o">=</span> <span class="m">600</span>
+    <span class="nv">maxretry</span> <span class="o">=</span> <span class="m">5</span>
+    <span class="nv">backend</span>  <span class="o">=</span> auto
+    <span class="nv">enabled</span> <span class="o">=</span> <span class="nb">true</span>
 
-# 啟動
+<span class="c1"># 啟動</span>
 $ sudo service fail2ban start
 
-# 看目前狀態，目前有一個被ban
+<span class="c1"># 看目前狀態，目前有一個被ban</span>
 $ sudo fail2ban-client status
 Status
-|- Number of jail:      1
-`- Jail list:   sshd
+<span class="p">|</span>- Number of jail:      <span class="m">1</span>
+<span class="sb">`</span>- Jail list:   sshd
 
-# detail
+<span class="c1"># detail</span>
 $ sudo fail2ban-client status sshd
-Status for the jail: sshd
-|- Filter
-|  |- Currently failed: 1
-|  |- Total failed:     6
-|  `- File list:        /var/log/auth.log
-`- Actions
-   |- Currently banned: 1
-   |- Total banned:     1
-   `- Banned IP list:   111.248.10.10</code></pre></div>
+Status <span class="k">for</span> the jail: sshd
+<span class="p">|</span>- Filter
+<span class="p">|</span>  <span class="p">|</span>- Currently failed: <span class="m">1</span>
+<span class="p">|</span>  <span class="p">|</span>- Total failed:     <span class="m">6</span>
+<span class="p">|</span>  <span class="sb">`</span>- File list:        /var/log/auth.log
+<span class="sb">`</span>- Actions
+   <span class="p">|</span>- Currently banned: <span class="m">1</span>
+   <span class="p">|</span>- Total banned:     <span class="m">1</span>
+   <span class="sb">`</span>- Banned IP list:   <span class="m">111</span>.248.10.10</code></pre></div>
 <h2 id="設定iptables">設定iptables</h2>
 
 <h4 id="用來過濾該網路封包是否能進出server-預設都是開啟的-若是沒有外部防火牆的話還蠻危險的">用來過濾該網路封包是否能進出server，預設都是開啟的，若是沒有外部防火牆的話還蠻危險的</h4>
@@ -227,44 +231,45 @@ iptables --append OUTPUT --jump ACCEPT
 <li>dpkg.log 軟體安裝及更新紀錄</li>
 
 <li><p>auth.log 身份確認相關紀錄(使用sudo)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash /etc/logrotate.conf" data-lang="bash /etc/logrotate.conf">/path/to/your/rails/log/*.log {
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/logrotate.conf</span>
+/path/to/your/rails/log/*.log <span class="o">{</span>
 daily # 
 dateext
 missingok
-rotate 30 # 保留30份
+rotate <span class="m">30</span> <span class="c1"># 保留30份</span>
 compress 
 delaycompress
 notifempty
 copytruncate
-}</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash /etc/logrotate.d" data-lang="bash /etc/logrotate.d"><span class="err">#</span> <span class="o">(</span><span class="n">略</span><span class="o">)</span>
-</code></pre></div></li>
+<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/logrotate.d</span>
+<span class="c1"># (略)</span></code></pre></div></li>
 </ul>
 
 <p>設定完成可直接執行看是否設定正確，或等明天系統自己run</p>
 
 <p><pre><code>/usr/sbin/logrotate -f /etc/logrotate.conf
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-bash wtmp user登入次數及使用時間紀錄" data-lang="bash wtmp user登入次數及使用時間紀錄">$ last
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wtmp user登入次數及使用時間紀錄</span>
+$ last
 $ last -f /var/log/wtmp
-bob      pts/1        1.1.1.1   Tue Aug 23 13:22   still logged in
-bob      pts/1        1.1.1.1   Sun Aug 14 06:34 - 06:45  (00:10)
-bob      pts/0        1.1.1.1   Sun Aug 14 05:44 - 08:45  (03:00)
-bob      pts/0        1.1.1.1   Sat Aug  6 13:14 - 05:44 (7+16:29)</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash wtmp user登入失敗紀錄" data-lang="bash wtmp user登入失敗紀錄">$ sudo lastb
+bob      pts/1        <span class="m">1</span>.1.1.1   Tue Aug <span class="m">23</span> <span class="m">13</span>:22   still logged in
+bob      pts/1        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">06</span>:34 - <span class="m">06</span>:45  <span class="o">(</span><span class="m">00</span>:10<span class="o">)</span>
+bob      pts/0        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">05</span>:44 - <span class="m">08</span>:45  <span class="o">(</span><span class="m">03</span>:00<span class="o">)</span>
+bob      pts/0        <span class="m">1</span>.1.1.1   Sat Aug  <span class="m">6</span> <span class="m">13</span>:14 - <span class="m">05</span>:44 <span class="o">(</span><span class="m">7</span>+16:29<span class="o">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wtmp user登入失敗紀錄</span>
+$ sudo lastb
 $ last -f /var/log/btmp
-bob      pts/1        1.1.1.1   Tue Aug 23 13:22   still logged in
-bob      pts/1        1.1.1.1   Sun Aug 14 06:34 - 06:45  (00:10)
-bob      pts/0        1.1.1.1   Sun Aug 14 05:44 - 08:45  (03:00)
-bob      pts/0        1.1.1.1   Sat Aug  6 13:14 - 05:44 (7+16:29)</code></pre></div>
+bob      pts/1        <span class="m">1</span>.1.1.1   Tue Aug <span class="m">23</span> <span class="m">13</span>:22   still logged in
+bob      pts/1        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">06</span>:34 - <span class="m">06</span>:45  <span class="o">(</span><span class="m">00</span>:10<span class="o">)</span>
+bob      pts/0        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">05</span>:44 - <span class="m">08</span>:45  <span class="o">(</span><span class="m">03</span>:00<span class="o">)</span>
+bob      pts/0        <span class="m">1</span>.1.1.1   Sat Aug  <span class="m">6</span> <span class="m">13</span>:14 - <span class="m">05</span>:44 <span class="o">(</span><span class="m">7</span>+16:29<span class="o">)</span></code></pre></div>
 <h2 id="關閉root-ssh登入">關閉root ssh登入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash /etc/ssh/sshd_config" data-lang="bash /etc/ssh/sshd_config"># Authentication:
-LoginGraceTime 120
-PermitRootLogin prohibit-password</p>
-
-<h1 id="新版本ssh-root登入預設不能使用密碼登入-僅可用key-有設定的話">新版本ssh root登入預設不能使用密碼登入，僅可用key(有設定的話)</h1>
-
-<h1 id="也可以直接改成-permitrootlogin-no-直接擋掉">也可以直接改成 PermitRootLogin no 直接擋掉</h1>
-
-<p>StrictModes yes</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/ssh/sshd_config</span>
+<span class="c1"># Authentication:</span>
+LoginGraceTime <span class="m">120</span>
+PermitRootLogin prohibit-password
+<span class="c1"># 新版本ssh root登入預設不能使用密碼登入，僅可用key(有設定的話)</span>
+<span class="c1"># 也可以直接改成 PermitRootLogin no 直接擋掉</span>
+StrictModes yes</code></pre></div>
 <p>Reference:</p></p>
 
 <p><a href="https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/">https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/</a></p>

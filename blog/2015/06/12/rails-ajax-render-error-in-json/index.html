@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,7 +25,7 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Rails] AJAX render errors in json" />
-<meta property="og:description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+<meta property="og:description" content="// new.html.erb $.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things  }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } ); # orders_controller.rb  def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data" />
 <meta property="og:type" content="article" />
@@ -31,14 +34,14 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
 <meta property="article:modified_time" content="2015-06-12T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Rails] AJAX render errors in json">
-<meta itemprop="description" content="$.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } );def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
+<meta itemprop="description" content="// new.html.erb $.ajax({ url: URL, async:false, data:{ amount: 100, }, dataType:&#39;json&#39;, method:&#39;post&#39;, success:function(data){ // do success things  }, error:function(xhr){ var errors = $.parseJSON(xhr.responseText).errors alert(errors); } ); # orders_controller.rb  def create if amount &lt; 100 render :json =&gt; { :errors =&gt; &#34;金額不足&#34; }, :status =&gt; 422 return end end 當錯誤回傳時，使用422(Unprocessable Entity)來做error handling
 Reference:
 http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">
 
 
 <meta itemprop="datePublished" content="2015-06-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="49">
+<meta itemprop="wordCount" content="54">
 
 
 
@@ -54,7 +57,7 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -130,22 +133,25 @@ http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/ http://s
     <main id="content" class="posts">
 
 <h1>[Rails] AJAX render errors in json</h1>
-<p><div class="highlight"><pre class="chroma"><code class="language-javascript new.html.erb" data-lang="javascript new.html.erb">$.ajax({
-  url: URL,
-  async:false,
-  data:{
-    amount: 100,
-  },
-  dataType:&#39;json&#39;,
-  method:&#39;post&#39;,
-  success:function(data){
-    // do success things
-  },
-  error:function(xhr){
-    var errors = $.parseJSON(xhr.responseText).errors
-    alert(errors);
-  }
-);</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby orders_controller.rb" data-lang="ruby orders_controller.rb"><span class="k">def</span> <span class="nf">create</span>
+<p><div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// new.html.erb
+</span><span class="c1"></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="nx">URL</span><span class="p">,</span>
+  <span class="kr">async</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
+    <span class="nx">amount</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
+  <span class="nx">method</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="c1">// do success things
+</span><span class="c1"></span>  <span class="p">},</span>
+  <span class="nx">error</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">errors</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">errors</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">errors</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># orders_controller.rb </span>
+<span class="k">def</span> <span class="nf">create</span>
   <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span>
     <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:errors</span> <span class="o">=&gt;</span> <span class="s2">&#34;金額不足&#34;</span> <span class="p">},</span> <span class="ss">:status</span> <span class="o">=&gt;</span> <span class="mi">422</span>
     <span class="k">return</span>

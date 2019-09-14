@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,8 +26,8 @@
 
   <meta property="og:title" content="[Ruby] 匯出批次csv檔" />
 <meta property="og:description" content="讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
-匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &lt;&lt; header csv &lt;&lt; body end # &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34; # 若不需要調整格式就直接下載 send_data csv_stringrequire &#39;csv&#39; CSV.open(&#34;export.csv&#34;,&#34;w&#34;) do |csv| csv &lt;&lt; header csv &lt;&lt; body end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
-def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord &#43; 41608).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[w-z]/){|a|(a.ord &#43; 41673).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[A-Z]/){|a|(a.ord &#43; 41614).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[0-9]/){|a|(a.ord &#43; 41599)." />
+匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]# export_to_csv_string 匯出csv的string格式再利用send_data下載 head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &lt;&lt; header csv &lt;&lt; body end # &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34;  # 若不需要調整格式就直接下載 send_data csv_string# export_to_csv 直接匯出檔案 require &#39;csv&#39; CSV.open(&#34;export.csv&#34;,&#34;w&#34;) do |csv| csv &lt;&lt; header csv &lt;&lt; body end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
+# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2014/05/06/ruby-csv-file/" />
 <meta property="article:published_time" content="2014-05-06T00:00:00+00:00" />
@@ -32,13 +35,13 @@ def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord &#43; 41608).ch
 
   <meta itemprop="name" content="[Ruby] 匯出批次csv檔">
 <meta itemprop="description" content="讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
-匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &lt;&lt; header csv &lt;&lt; body end # &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34; # 若不需要調整格式就直接下載 send_data csv_stringrequire &#39;csv&#39; CSV.open(&#34;export.csv&#34;,&#34;w&#34;) do |csv| csv &lt;&lt; header csv &lt;&lt; body end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
-def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord &#43; 41608).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[w-z]/){|a|(a.ord &#43; 41673).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[A-Z]/){|a|(a.ord &#43; 41614).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)} .gsub(/[0-9]/){|a|(a.ord &#43; 41599).">
+匯出csv header = [&#39;name&#39;,&#39;money&#39;,&#39;age&#39;] body = [&#39;ruby&#39;,&#39;1000&#39;,&#39;18&#39;]# export_to_csv_string 匯出csv的string格式再利用send_data下載 head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = head) do |csv| csv &lt;&lt; header csv &lt;&lt; body end # &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII csv_string.force_encoding(&#39;big5&#39;) # BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34;  # 若不需要調整格式就直接下載 send_data csv_string# export_to_csv 直接匯出檔案 require &#39;csv&#39; CSV.open(&#34;export.csv&#34;,&#34;w&#34;) do |csv| csv &lt;&lt; header csv &lt;&lt; body end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛 其實也不太確定怎解，我單純用硬幹的方式
+# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text.">
 
 
 <meta itemprop="datePublished" content="2014-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="81">
+<meta itemprop="wordCount" content="90">
 
 
 
@@ -54,7 +57,7 @@ def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord &#43; 41608).ch
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -134,37 +137,40 @@ def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord &#43; 41608).ch
 
 <h2 id="匯出csv">匯出csv</h2>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">header</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;money&#39;</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="o">]</span>
-<span class="n">body</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;ruby&#39;</span><span class="p">,</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span><span class="s1">&#39;18&#39;</span><span class="o">]</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby export_to_csv_string 匯出csv的string格式再利用send_data下載" data-lang="ruby export_to_csv_string 匯出csv的string格式再利用send_data下載">  head = &#39;EF BB BF&#39;.split(&#39; &#39;).map{|a|a.hex.chr}.join() # 加入BOM，解決excel中文亂碼
+<span class="n">body</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;ruby&#39;</span><span class="p">,</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span><span class="s1">&#39;18&#39;</span><span class="o">]</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># export_to_csv_string 匯出csv的string格式再利用send_data下載</span>
+<span class="n">head</span> <span class="o">=</span> <span class="s1">&#39;EF BB BF&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="n">a</span><span class="o">.</span><span class="n">hex</span><span class="o">.</span><span class="n">chr</span><span class="p">}</span><span class="o">.</span><span class="n">join</span><span class="p">()</span> <span class="c1"># 加入BOM，解決excel中文亂碼</span>
 
-    
-  csv_string = CSV.generate(csv = head) do |csv|
-    csv &lt;&lt; header
-    csv &lt;&lt; body
-  end
   
-  # &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII
-  csv_string.force_encoding(&#39;big5&#39;)
-  # BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34;  
-  # 若不需要調整格式就直接下載
-  send_data csv_string</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby export_to_csv 直接匯出檔案" data-lang="ruby export_to_csv 直接匯出檔案"> require &#39;csv&#39;
- CSV.open(&#34;export.csv&#34;,&#34;w&#34;) do |csv|
-   csv &lt;&lt; header
-   csv &lt;&lt; body
- end</code></pre></div>
+<span class="n">csv_string</span> <span class="o">=</span> <span class="no">CSV</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">csv</span> <span class="o">=</span> <span class="n">head</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">header</span>
+  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">body</span>
+<span class="k">end</span>
+
+<span class="c1"># &gt; csv_string.encoding 執行這句會發現預設編碼為ACSII</span>
+<span class="n">csv_string</span><span class="o">.</span><span class="n">force_encoding</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span>
+<span class="c1"># BOM也可以這樣加 csv_string = &#34;\xEF\xBB\xBF#{csv_string}&#34;  </span>
+<span class="c1"># 若不需要調整格式就直接下載</span>
+<span class="n">send_data</span> <span class="n">csv_string</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># export_to_csv 直接匯出檔案</span>
+<span class="nb">require</span> <span class="s1">&#39;csv&#39;</span>
+<span class="no">CSV</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;export.csv&#34;</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
+  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">header</span>
+  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">body</span>
+<span class="k">end</span></code></pre></div>
 <h2 id="半形轉全形">半形轉全形</h2>
 
 <p>在某些情況會需要轉出全形字元，照理說不用才對，<del>可能是因為合作對方的系統太爛</del>
 其實也不太確定怎解，我單純用硬幹的方式</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby convert_to_wide_word 大小寫英文數字轉全形字元" data-lang="ruby convert_to_wide_word 大小寫英文數字轉全形字元">def self.convert_to_wide_word(text)
-  text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)}
-    .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)}
-    .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)}
-    .gsub(/[0-9]/){|a|(a.ord + 41599).chr(&#39;big5&#39;).encode(&#39;utf-8&#39;)}
-end
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># convert_to_wide_word 大小寫英文數字轉全形字元</span>
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert_to_wide_word</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+  <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[a-v]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41608</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
+    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[w-z]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41673</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
+    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[A-Z]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41614</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
+    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[0-9]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41599</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
+<span class="k">end</span>
 
-convert_to_wide_word(&#34;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;)
- =&gt; &#34;０１２３４５６７８９ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬ
- ＭＮＯＰＱＲＳＴＵＶＷＸＹＺ&#34; </code></pre></div>
+<span class="n">convert_to_wide_word</span><span class="p">(</span><span class="s2">&#34;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="s2">&#34;０１２３４５６７８９ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬ
+</span><span class="s2"> ＭＮＯＰＱＲＳＴＵＶＷＸＹＺ&#34;</span> </code></pre></div>
 <p>匯出匯入csv也可以試試FasterCSV這個gem</p>
 
 <p>Reference:</p>

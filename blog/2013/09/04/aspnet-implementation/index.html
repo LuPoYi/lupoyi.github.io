@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,14 +25,14 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[ASP.NET] 呼叫執行檔" />
-<meta property="og:description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &quot;@&quot;C:\Users\PoYi\Desktop\test.txt&quot;&quot;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&quot;C:\Users\PoYi\Desktop\test.txt&quot;; psi.Arguments=&quot;&quot;; System.Diagnostics.Process.Start(psi);  " />
+<meta property="og:description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/09/04/aspnet-implementation/" />
 <meta property="article:published_time" content="2013-09-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-09-04T00:00:00+00:00" />
 
   <meta itemprop="name" content="[ASP.NET] 呼叫執行檔">
-<meta itemprop="description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &quot;@&quot;C:\Users\PoYi\Desktop\test.txt&quot;&quot;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&quot;C:\Users\PoYi\Desktop\test.txt&quot;; psi.Arguments=&quot;&quot;; System.Diagnostics.Process.Start(psi);  ">
+<meta itemprop="description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); ">
 
 
 <meta itemprop="datePublished" content="2013-09-04T00:00:00&#43;00:00" />
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -128,20 +131,17 @@
 <h1>[ASP.NET] 呼叫執行檔</h1>
 <h2 id="執行指定檔案-or-exe">執行指定檔案(or .exe)</h2>
 
-<h2 id="client端">Client端</h2>
-
-<pre><code>Process p = new Process();
-p.StartInfo.FileName   = &quot;@&quot;C:\Users\PoYi\Desktop\test.txt&quot;&quot;;
-p.Start();
-</code></pre>
-
+<p><h2 id="client端">Client端</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="n">Process</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Process</span><span class="p">();</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">StartInfo</span><span class="p">.</span><span class="n">FileName</span>   <span class="p">=</span> <span class="s">&#34;@&#34;</span><span class="n">C</span><span class="p">:</span><span class="err">&lt;/span&gt;<span class="n">Users</span><span class="err">&lt;/span&gt;<span class="n">PoYi</span><span class="err">&lt;/span&gt;<span class="n">Desktop</span><span class="err">&lt;/span&gt;<span class="n">test</span><span class="p">.</span><span class="n">txt</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</code></pre></div>
 <h2 id="server端">Server端</h2>
-
-<pre><code>System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
-psi.FileName = @&quot;C:\Users\PoYi\Desktop\test.txt&quot;;
-psi.Arguments=&quot;&quot;;
-System.Diagnostics.Process.Start(psi);
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">ProcessStartInfo</span> <span class="n">psi</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">ProcessStartInfo</span><span class="p">();</span>
+    <span class="n">psi</span><span class="p">.</span><span class="n">FileName</span> <span class="p">=</span> <span class="s">@&#34;C:\Users\PoYi\Desktop\test.txt&#34;</span><span class="p">;</span>
+    <span class="n">psi</span><span class="p">.</span><span class="n">Arguments</span><span class="p">=</span><span class="s">&#34;&#34;</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Process</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="n">psi</span><span class="p">);</span>
+</code></pre></div></p>
 
 
     </main>

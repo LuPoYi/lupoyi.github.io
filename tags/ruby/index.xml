@@ -17,7 +17,7 @@
       <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2019/05/26/rails-ubuntu-environment-ubuntu18-dot-04/</guid>
-      <description>sudo adduser deploy sudo adduser deploy sudo exitcurl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarngit clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.</description>
+      <description># user sudo adduser deploy sudo adduser deploy sudo exit# required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn# ruby git clone https://github.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 26 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2016/11/26/rails-ubuntu-environment-ubuntu16-dot-04/</guid>
-      <description>sudo adduser bob sudo adduser bob sudo su bobsudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL rbenv install 2.</description>
+      <description># 建立user sudo adduser bob sudo adduser bob sudo su bob# 安裝常用lib sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails # 使用rbenv來管理ruby cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/blog/2016/10/30/rails-mac-os-environment-sierra/</guid>
-      <description>ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3gem install rails -v 6.0.0.rc1 rbenv rehashbrew install mysql brew install redis brew install ssdb brew install memcached</description>
+      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached</description>
     </item>
     
     <item>

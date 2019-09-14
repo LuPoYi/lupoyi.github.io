@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -23,9 +26,8 @@
 
   <meta property="og:title" content="[ASP.NET] Linq基本用法" />
 <meta property="og:description" content="公司前輩跟我提過可以用用看Linq比較潮(?) 寫.NET的時候就不需要寫的這麼..無腦
-sqlStr &#43;= &quot;Select ...&quot;; sqlStr &#43;= &quot;from ....&quot;; sqlStr &#43;= &quot;join ...&quot;; sqlStr &#43;= &quot;where ....&quot; string sql = @&quot;SELECT ... FROM table1 WHERE field3 = @Param1&quot;;  基本Linq類似這樣
-var Query = from q in myDB.Employee where q.Name == &quot;Bob&quot; select q;  Group By
-int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4  " />
+ sqlStr &#43;= &quot;Select ...&quot;; sqlStr &#43;= &quot;from ....&quot;; sqlStr &#43;= &quot;join ...&quot;; sqlStr &#43;= &quot;where ....&quot; string sql = @&quot;SELECT ... FROM table1 WHERE field3 = @Param1&quot;;  基本Linq類似這樣
+ var Query = from q in myDB.Employee where q.Name == &quot;Bob&quot; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/08/23/linq-introduction/" />
 <meta property="article:published_time" content="2013-08-23T00:00:00+00:00" />
@@ -33,9 +35,8 @@ int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0;
 
   <meta itemprop="name" content="[ASP.NET] Linq基本用法">
 <meta itemprop="description" content="公司前輩跟我提過可以用用看Linq比較潮(?) 寫.NET的時候就不需要寫的這麼..無腦
-sqlStr &#43;= &quot;Select ...&quot;; sqlStr &#43;= &quot;from ....&quot;; sqlStr &#43;= &quot;join ...&quot;; sqlStr &#43;= &quot;where ....&quot; string sql = @&quot;SELECT ... FROM table1 WHERE field3 = @Param1&quot;;  基本Linq類似這樣
-var Query = from q in myDB.Employee where q.Name == &quot;Bob&quot; select q;  Group By
-int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4  ">
+ sqlStr &#43;= &quot;Select ...&quot;; sqlStr &#43;= &quot;from ....&quot;; sqlStr &#43;= &quot;join ...&quot;; sqlStr &#43;= &quot;where ....&quot; string sql = @&quot;SELECT ... FROM table1 WHERE field3 = @Param1&quot;;  基本Linq類似這樣
+ var Query = from q in myDB.Employee where q.Name == &quot;Bob&quot; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4  ">
 
 
 <meta itemprop="datePublished" content="2013-08-23T00:00:00&#43;00:00" />
@@ -56,7 +57,7 @@ int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0;
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -135,31 +136,30 @@ int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0;
 <p>公司前輩跟我提過可以用用看Linq比較潮(?)
 寫.NET的時候就不需要寫的這麼..無腦</p>
 
-<pre><code>sqlStr += &quot;Select ...&quot;;
-sqlStr += &quot;from ....&quot;;
-sqlStr += &quot;join ...&quot;;
-sqlStr += &quot;where ....&quot;
-
-string sql = @&quot;SELECT ...
-           FROM table1
-           WHERE field3 = @Param1&quot;;
+<pre><code>    sqlStr += &quot;Select ...&quot;;
+    sqlStr += &quot;from ....&quot;;
+    sqlStr += &quot;join ...&quot;;
+    sqlStr += &quot;where ....&quot;
+        
+    string sql = @&quot;SELECT ...
+               FROM table1
+               WHERE field3 = @Param1&quot;;
 </code></pre>
 
 <p>基本Linq類似這樣</p>
 
-<pre><code>var Query =
-    from q in myDB.Employee
-    where q.Name == &quot;Bob&quot;
-    select q;
-</code></pre>
-
-<p>Group By</p>
-
-<pre><code>int[] values = {1,2,3,4,5,6};
-var Query =
-    from p in values
-    group p by p % 2 ==0;
-    // values =&gt; 1 3 5 0 2 4
+<pre><code>    var Query =
+        from q in myDB.Employee
+        where q.Name == &quot;Bob&quot;
+        select q;
+      
+Group By
+    
+    int[] values = {1,2,3,4,5,6};
+    var Query =
+        from p in values
+        group p by p % 2 ==0;
+        // values =&gt; 1 3 5 0 2 4
 </code></pre>
 
 

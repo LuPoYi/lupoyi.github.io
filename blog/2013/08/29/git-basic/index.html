@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,19 +25,19 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="GIT" />
-<meta property="og:description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list # 查看設定git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案" />
+<meta property="og:description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list # 查看設定# Git的基本功(status, add, commit, log, .gitignore) git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/08/29/git-basic/" />
 <meta property="article:published_time" content="2013-08-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-08-29T00:00:00+00:00" />
 
   <meta itemprop="name" content="GIT">
-<meta itemprop="description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list # 查看設定git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案">
+<meta itemprop="description" content="apt-get install git-core git config --global user.name &#34;name&#34; git config --global user.email &#34;email&#34; git config --list # 查看設定# Git的基本功(status, add, commit, log, .gitignore) git status git add git add . git commit git commit -m &#34;Add test.rb to test git function&#34; git log (-p) git log --statgitk --all (&amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &#34;Loser&#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&gt; 加入 stage (git add) =&gt; 提交( git commit )=&gt; 繼續修改其他檔案">
 
 
 <meta itemprop="datePublished" content="2013-08-29T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-08-29T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="72">
+<meta itemprop="wordCount" content="78">
 
 
 
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,25 +129,26 @@
     <main id="content" class="posts">
 
 <h1>GIT</h1>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash git" data-lang="bash git">apt-get install git-core</p>
+<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get install git-core</p>
 
-<p>git config &ndash;global user.name &#34;name&#34;
-git config &ndash;global user.email &#34;email&#34;</p>
+<p>git config &ndash;global user.name <span class="s2">&#34;name&#34;</span>
+git config &ndash;global user.email <span class="s2">&#34;email&#34;</span></p>
 
-<p>git config &ndash;list # 查看設定</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Git的基本功(status, add, commit, log, .gitignore)" data-lang="bash Git的基本功(status, add, commit, log, .gitignore)">git status</p>
+<p>git config &ndash;list <span class="c1"># 查看設定</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Git的基本功(status, add, commit, log, .gitignore)</span>
+git status</p>
 
 <p>git add
 git add .</p>
 
 <p>git commit
-git commit -m &#34;Add test.rb to test git function&#34;</p>
+git commit -m <span class="s2">&#34;Add test.rb to test git function&#34;</span></p>
 
-<p>git log (-p)
-git log &ndash;stat</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Git" data-lang="bash Git">gitk &ndash;all (&amp;) 內建gui
+<p>git log <span class="o">(</span>-p<span class="o">)</span>
+git log &ndash;stat</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gitk &ndash;all <span class="o">(</span><span class="p">&amp;</span><span class="o">)</span> 內建gui
 git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch：
-git branch (new_branch_name)</p>
+git branch <span class="o">(</span>new_branch_name<span class="o">)</span></p>
 
-<p>git checkout &#34;Loser&#34; 切換branch</code></pre></div>
+<p>git checkout <span class="s2">&#34;Loser&#34;</span> 切換branch</code></pre></div>
 <p><a href="http://howar31.blogspot.tw/2013/06/git.html">http://howar31.blogspot.tw/2013/06/git.html</a>
 <a href="http://tech.marsw.tw/blog/2013/08/16/git-notes-github">http://tech.marsw.tw/blog/2013/08/16/git-notes-github</a>
 因此我們稍微做一下流程的整理：

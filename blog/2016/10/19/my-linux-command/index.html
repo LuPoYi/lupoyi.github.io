@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,23 +25,19 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Ubuntu] Linux 稍微進階的常用指令" />
-<meta property="og:description" content="稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *OR)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| = OR)&#34;grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txtAND)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* = AND)&#34;grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txtgrep -v &#39;bob&#39; abc.txt find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear
- Ctrl &#43; w : 刪除文字至上一個空白
- Ctrl &#43; u : 刪除游標前" />
+<meta property="og:description" content="稍微進階是對我來說啦 grep # 找該目錄底下所有出現&#39;bob&#39;的檔案 grep -r &#39;bob&#39; *# 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| =&gt; OR) grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt# 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* =&gt; AND) grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt# 找abc.txt內沒有出現&#39;bob&#39;的內容 (NOT) grep -v &#39;bob&#39; abc.txt find 找檔案 # 在/home目錄下找檔名為production.log的檔案 find /home -name production.log find /home -iname production.log # 不分大小寫# 在/home目錄下找所有的log folder find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2016/10/19/my-linux-command/" />
 <meta property="article:published_time" content="2016-10-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Ubuntu] Linux 稍微進階的常用指令">
-<meta itemprop="description" content="稍微進階是對我來說啦 grep grep -r &#39;bob&#39; *OR)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| = OR)&#34;grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txtAND)&#34; data-lang=&#34;bash 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* = AND)&#34;grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txtgrep -v &#39;bob&#39; abc.txt find 找檔案 find /home -name production.log find /home -iname production.log # 不分大小寫find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear
- Ctrl &#43; w : 刪除文字至上一個空白
- Ctrl &#43; u : 刪除游標前">
+<meta itemprop="description" content="稍微進階是對我來說啦 grep # 找該目錄底下所有出現&#39;bob&#39;的檔案 grep -r &#39;bob&#39; *# 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| =&gt; OR) grep -E &#39;bob|poyi&#39; abc.txt egrep &#39;bob|poyi&#39; abc.txt# 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.* =&gt; AND) grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt# 找abc.txt內沒有出現&#39;bob&#39;的內容 (NOT) grep -v &#39;bob&#39; abc.txt find 找檔案 # 在/home目錄下找檔名為production.log的檔案 find /home -name production.log find /home -iname production.log # 不分大小寫# 在/home目錄下找所有的log folder find /home -type d -name log locate 找檔案(查系統index，不是直接掃目錄) locate nginx.conf  Ctrl &#43; c : 終止正在執行的程式 Ctrl &#43; l : clear">
 
 
 <meta itemprop="datePublished" content="2016-10-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-10-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="122">
+<meta itemprop="wordCount" content="139">
 
 
 
@@ -54,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -133,11 +132,17 @@
 <h4 id="稍微進階是對我來說啦">稍微進階是對我來說啦</h4>
 
 <p><h2 id="grep">grep</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash 找該目錄底下所有出現'bob'的檔案" data-lang="bash 找該目錄底下所有出現'bob'的檔案">grep -r &#39;bob&#39; <em></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 找abc.txt內所有出現'bob'或'poyi'的內容 (| => OR)&rdquo; data-lang=&ldquo;bash 找abc.txt內所有出現&rsquo;bob&rsquo;或&rsquo;poyi&rsquo;的內容 (| =&gt; OR)&rdquo;&gt;grep -E &#39;bob|poyi&#39; abc.txt
-egrep &#39;bob|poyi&#39; abc.txt</code></pre></div><div class="highlight"><pre class="chroma">&lt;code class=&ldquo;language-bash 找abc.txt內所有出現&rsquo;bob&rsquo;及&rsquo;poyi&rsquo;的內容 (.</em> =&gt; AND)&rdquo; data-lang=&ldquo;bash 找abc.txt內所有出現&rsquo;bob&rsquo;及&rsquo;poyi&rsquo;的內容 (.* =&gt; AND)&ldquo;&gt;grep -E &#39;bob.*poyi|200.*poyi&#39; abc.txt</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 找abc.txt內沒有出現'bob'的內容 (NOT)" data-lang="bash 找abc.txt內沒有出現'bob'的內容 (NOT)">grep -v &#39;bob&#39; abc.txt</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找該目錄底下所有出現&#39;bob&#39;的檔案</span>
+grep -r <span class="s1">&#39;bob&#39;</span> <em></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| =&gt; OR)</span>
+grep -E <span class="s1">&#39;bob|poyi&#39;</span> abc.txt
+egrep <span class="s1">&#39;bob|poyi&#39;</span> abc.txt</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.</em> =&gt; AND)</span>
+grep -E <span class="s1">&#39;bob.*poyi|200.*poyi&#39;</span> abc.txt</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內沒有出現&#39;bob&#39;的內容 (NOT)</span>
+grep -v <span class="s1">&#39;bob&#39;</span> abc.txt</code></pre></div>
 <h2 id="find-找檔案">find 找檔案</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash 在/home目錄下找檔名為production.log的檔案" data-lang="bash 在/home目錄下找檔名為production.log的檔案">find /home -name production.log
-find /home -iname production.log # 不分大小寫</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 在/home目錄下找所有的log folder" data-lang="bash 在/home目錄下找所有的log folder">find /home -type d -name log</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在/home目錄下找檔名為production.log的檔案</span>
+find /home -name production.log
+find /home -iname production.log <span class="c1"># 不分大小寫</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在/home目錄下找所有的log folder</span>
+find /home -type d -name log</code></pre></div>
 <h2 id="locate-找檔案-查系統index-不是直接掃目錄">locate 找檔案(查系統index，不是直接掃目錄)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">locate nginx.conf</code></pre></div>
 <ul>
@@ -165,9 +170,12 @@ find /home -iname production.log # 不分大小寫</code></pre></div><div class=
 </ul></p>
 
 <p><h2 id="權限管理">權限管理</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash 查詢所屬群組" data-lang="bash 查詢所屬群組">$ id bob
-uid=1000(bob) gid=1000(bob) groups=1000(bob),27(sudo)</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 新增account, 給予sudo權限" data-lang="bash 新增account, 給予sudo權限">$ sudo adduser newuser
-$ sudo adduser newuser sudo</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash 帳號相關資訊" data-lang="bash 帳號相關資訊">/etc/passwd</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查詢所屬群組</span>
+$ id bob
+<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span>,27<span class="o">(</span>sudo<span class="o">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增account, 給予sudo權限</span>
+$ sudo adduser newuser
+$ sudo adduser newuser sudo</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 帳號相關資訊</span>
+/etc/passwd</code></pre></div>
 <p>Reference:</p></p>
 
 <p><a href="http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html">http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html</a></p>

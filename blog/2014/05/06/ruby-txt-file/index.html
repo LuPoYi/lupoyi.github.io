@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,7 +25,7 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Ruby] 匯出txt檔" />
-<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
+<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2014/05/06/ruby-txt-file/" />
@@ -30,13 +33,13 @@ http://ruby-doc.org/core-2.1.4/File.html" />
 <meta property="article:modified_time" content="2014-05-06T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Ruby] 匯出txt檔">
-<meta itemprop="description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
+<meta itemprop="description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html">
 
 
 <meta itemprop="datePublished" content="2014-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="37">
+<meta itemprop="wordCount" content="39">
 
 
 
@@ -52,7 +55,7 @@ http://ruby-doc.org/core-2.1.4/File.html">
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -129,24 +132,23 @@ http://ruby-doc.org/core-2.1.4/File.html">
 
 <h1>[Ruby] 匯出txt檔</h1>
 <p><h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
-<div class="highlight"><pre class="chroma"><code class="language-ruby 寫入txt" data-lang="ruby 寫入txt">all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;+8869%&#39;).select(:mobile).uniq</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 寫入txt</span>
+<span class="n">all_users_mobile</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;mobile like ?&#39;</span><span class="p">,</span> <span class="s1">&#39;+8869%&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:mobile</span><span class="p">)</span><span class="o">.</span><span class="n">uniq</span></p>
 
-<h1 id="建立txt並給予寫入權限">建立txt並給予寫入權限</h1>
+<p><span class="c1"># 建立txt並給予寫入權限</span>
+<span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mobile_tw.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span></p>
 
-<p>file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;)</p>
+<p><span class="n">all_users_mobile</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mobile</span><span class="o">|</span>
+  <span class="n">file</span><span class="o">.</span><span class="n">puts</span> <span class="n">mobile</span> <span class="c1"># 一行一筆mobile</span>
+<span class="k">end</span></p>
 
-<p>all_users_mobile.each do |mobile|
-  file.puts mobile # 一行一筆mobile
-end</p>
+<p><span class="c1"># 記得要關掉</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 讀取txt</span>
+<span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mobile_tw.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span></p>
 
-<h1 id="記得要關掉">記得要關掉</h1>
-
-<p>file.close</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 讀取txt" data-lang="ruby 讀取txt"># 讀取txt
-file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;)</p>
-
-<p>100.times do
-  file.readline
-end</code></pre></div>
+<p><span class="mi">100</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+  <span class="n">file</span><span class="o">.</span><span class="n">readline</span>
+<span class="k">end</span></code></pre></div>
 <p>Reference:</p></p>
 
 <p><a href="http://ruby-doc.org/core-2.1.4/File.html">http://ruby-doc.org/core-2.1.4/File.html</a></p>

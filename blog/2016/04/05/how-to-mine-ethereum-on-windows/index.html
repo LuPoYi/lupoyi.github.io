@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -26,18 +29,15 @@
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼
 以下指令都需要開command line(cmd)
-geth account new 同步所有交易
-# --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
+# C:\ geth account new 同步所有交易
+# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
 2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
 安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
-ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
 看是要自己挖還是加入別人礦池
-自己挖 ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
+自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
 我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
-// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G 也可以加上worker跟mail(會通知你的worker是否關閉)
-ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G 4. 看成果(礦池) 可依照nanopool提供的api查看目前情況
-http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123
-nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet" />
+# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2016/04/05/how-to-mine-ethereum-on-windows/" />
 <meta property="article:published_time" content="2016-04-05T00:00:00+00:00" />
@@ -48,23 +48,20 @@ nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼
 以下指令都需要開command line(cmd)
-geth account new 同步所有交易
-# --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
+# C:\ geth account new 同步所有交易
+# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
 2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
 安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
-ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
 看是要自己挖還是加入別人礦池
-自己挖 ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
+自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
 我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
-// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G 也可以加上worker跟mail(會通知你的worker是否關閉)
-ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G 4. 看成果(礦池) 可依照nanopool提供的api查看目前情況
-http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123
-nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet">
+# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.">
 
 
 <meta itemprop="datePublished" content="2016-04-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="154">
+<meta itemprop="wordCount" content="186">
 
 
 
@@ -80,7 +77,7 @@ nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -165,10 +162,12 @@ nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的
 <p>建立錢包並設定密碼</p>
 
 <p>以下指令都需要開command line(cmd)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\" data-lang="bash C:\">geth account new</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+geth account new</code></pre></div>
 <p>同步所有交易</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\" data-lang="bash C:\"># --cache=看你想分配多少RAM來sync。預設只有16MB
-geth --rpc --cache=8192</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+<span class="c1"># --cache=看你想分配多少RAM來sync。預設只有16MB</span>
+geth --rpc --cache<span class="o">=</span><span class="m">8192</span></code></pre></div>
 <p>// 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)</p>
 
 <h2 id="2-安裝mining軟體">2. 安裝mining軟體</h2>
@@ -177,8 +176,9 @@ geth --rpc --cache=8192</code></pre></div>
 照一般安裝流程</p>
 
 <p>安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\Program Files\Ethereum (版號)\Release" data-lang="bash C:\Program Files\Ethereum (版號)\Release">ethminer -G -M # GPU
-ethminer -M    # CPU</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G -M <span class="c1"># GPU</span>
+ethminer -M    <span class="c1"># CPU</span></code></pre></div>
 <h2 id="3-挖礦">3. 挖礦</h2>
 
 <p>挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;</p>
@@ -186,16 +186,19 @@ ethminer -M    # CPU</code></pre></div>
 <p>看是要自己挖還是加入別人礦池</p>
 
 <h3 id="自己挖">自己挖</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\Program Files\Ethereum (版號)\Release" data-lang="bash C:\Program Files\Ethereum (版號)\Release">ethminer -G # GPU</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G <span class="c1"># GPU</span></code></pre></div>
 <h3 id="加入礦池">加入礦池</h3>
 
 <p>需按照<a href="http://cryptomining-blog.com/7529-ethereum-mining-is-getting-way-too-centralized/">各大礦池</a>的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了</p>
 
 <p>我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\Program Files\Ethereum (版號)\Release" data-lang="bash C:\Program Files\Ethereum (版號)\Release">// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
 ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G</code></pre></div>
 <p>也可以加上worker跟mail(會通知你的worker是否關閉)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\Program Files\Ethereum (版號)\Release" data-lang="bash C:\Program Files\Ethereum (版號)\Release">ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
 <h2 id="4-看成果-礦池">4. 看成果(礦池)</h2>
 
 <p>可依照nanopool提供的api查看目前情況</p>
@@ -207,25 +210,28 @@ ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba
 <p>nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</p>
 
 <p>可以在本機下geth指令查你的錢包資訊</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash C:\" data-lang="bash C:\">geth attach
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+geth attach
 &gt; eth.coinbase
-&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;
+<span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>
 &gt; eth.acccounts
-[&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;]
-&gt; eth.getBalance(eth.coinbase)
-0</code></pre></div>
+<span class="o">[</span><span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span><span class="o">]</span>
+&gt; eth.getBalance<span class="o">(</span>eth.coinbase<span class="o">)</span>
+<span class="m">0</span></code></pre></div>
 <p>記得要sync到最新才能拿到正確資訊</p>
 
 <p>可以到<a href="https://www.etherchain.org/">Etherchain</a>看一下Recent blocks是不是已經sync到最新的block</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash geth指令整理" data-lang="bash geth指令整理">geth upgradedb
-geth removedb # 整個blockchain會被清掉
-geth --rpc --cache=8192 # sync</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># geth指令整理</span>
+geth upgradedb
+geth removedb <span class="c1"># 整個blockchain會被清掉</span>
+geth --rpc --cache<span class="o">=</span><span class="m">8192</span> <span class="c1"># sync</span></code></pre></div>
 <h2 id="其他-把指令包成-bat批次檔">其他－把指令包成.bat批次檔</h2>
 
 <h3 id="ethereum-mining-bat">ethereum_mining.bat</h3>
 
 <p>因為需要分別開mining, sync以及console三個cmd並執行不同指令，所以我把指令包成.bat放桌面一鍵執行，或是拿來排程執行也ok</p>
-<div class="highlight"><pre class="chroma"><code class="language-bat ethereum_mining.bat" data-lang="bat ethereum_mining.bat"><span class="k">echo</span> on
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_mining.bat
+<span class="k">echo</span> on
 E<span class="p">:</span>
 <span class="k">cd</span> <span class="s2">&#34;Program Files\Ethereum 0.9.41\Release&#34;</span>
 ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
@@ -234,7 +240,8 @@ ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/b
 <p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
 
 <p><h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat ethereum_sync.bat" data-lang="bat ethereum_sync.bat"><span class="k">echo</span> on
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
+<span class="k">echo</span> on
 E<span class="p">:</span>
 geth &ndash;rpc &ndash;cache=8192</code></pre></div>
 <p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p></p>
@@ -242,7 +249,8 @@ geth &ndash;rpc &ndash;cache=8192</code></pre></div>
 <p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
 
 <p><h3 id="ethereum-console-bat">ethereum_console.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat ethereum_console.bat" data-lang="bat ethereum_console.bat"><span class="k">echo</span> on
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_console.bat
+<span class="k">echo</span> on
 E<span class="p">:</span>
 geth attach</code></pre></div>
 <p>使用console前記得打開sync</p></p>
@@ -262,8 +270,9 @@ geth attach</code></pre></div>
 <li>開cmd下指令 &ldquo;mklink /D C:\Users\Bob\AppData\Local\Ethask E:\ETH\Ethash</li>
 
 <li><p>這樣就行了，另一個folder也比照辦理</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash cmd" data-lang="bash cmd">C:\Users\Bob&gt; mklink /D C:\Users\Bob\AppData\Local\Ethash E:\ETH\Ethash
-已建立 C:\Users\Bob\AppData\Local\Ethash 的符號連結 &lt;&lt;===&gt;&gt; E:\ETH\Ethash</code></pre></div></li>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cmd</span>
+C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash E:<span class="se">\E</span>TH<span class="se">\E</span>thash
+已建立 C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash 的符號連結 &lt;&lt;<span class="o">===</span>&gt;&gt; E:<span class="se">\E</span>TH<span class="se">\E</span>thash</code></pre></div></li>
 </ul>
 
 <p>Reference:</p>

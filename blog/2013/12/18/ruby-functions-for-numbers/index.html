@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -22,19 +25,19 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Ruby] Functions for Numbers" />
-<meta property="og:description" content="&gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm" />
+<meta property="og:description" content="# Math &gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3# 二元運算 n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2013/12/18/ruby-functions-for-numbers/" />
 <meta property="article:published_time" content="2013-12-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2013-12-18T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Ruby] Functions for Numbers">
-<meta itemprop="description" content="&gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">
+<meta itemprop="description" content="# Math &gt; 2 ** 3 # 次方 =&gt; 8 =begin Addition (&#43;) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&gt; 9.9.integer? =&gt; false &gt; -5.abs =&gt; 5 &gt; 5.6.round # 取最近的整數/四捨五入 =&gt; 6 &gt; 9.9.floor	# 取整數/無條件捨去 =&gt; 9 &gt; 2312.22.ceil # 取整數/無條件進位 =&gt; 2313 &gt; 2.next =&gt; 3# 二元運算 n &amp; num n | num n ^ num (XOR) n &lt;&lt; num (向左位移) n &gt;&gt; num (向右位移) Reference: http://www.">
 
 
 <meta itemprop="datePublished" content="2013-12-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="wordCount" content="74">
 
 
 
@@ -50,7 +53,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -126,37 +129,39 @@
     <main id="content" class="posts">
 
 <h1>[Ruby] Functions for Numbers</h1>
-<p><div class="highlight"><pre class="chroma"><code class="language-ruby Math" data-lang="ruby Math">&gt; 2 ** 3 # 次方
- =&gt; 8</p>
+<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Math</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># 次方</span>
+ <span class="o">=&gt;</span> <span class="mi">8</span></p>
 
-<p>=begin
-  Addition (+)
-  Subtraction (-)
-  Multiplication (*)
-  Division (/)
-  Exponentiation (**)
-  Modulo (%)
- =end</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 常用的" data-lang="ruby 常用的">&gt; 9.9.integer?
- =&gt; false</p>
+<p><span class="cm">=begin
+</span><span class="cm">  Addition (+)
+</span><span class="cm">  Subtraction (-)
+</span><span class="cm">  Multiplication (*)
+</span><span class="cm">  Division (/)
+</span><span class="cm">  Exponentiation (**)
+</span><span class="cm">  Modulo (%)
+</span><span class="cm">=end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">integer?</span>
+ <span class="o">=&gt;</span> <span class="kp">false</span></p>
 
-<p>&gt; -5.abs
- =&gt; 5</p>
+<p><span class="o">&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">.</span><span class="n">abs</span>
+ <span class="o">=&gt;</span> <span class="mi">5</span></p>
 
-<p>&gt; 5.6.round # 取最近的整數/四捨五入
- =&gt; 6</p>
+<p><span class="o">&gt;</span> <span class="mi">5</span><span class="o">.</span><span class="mi">6</span><span class="o">.</span><span class="n">round</span> <span class="c1"># 取最近的整數/四捨五入</span>
+ <span class="o">=&gt;</span> <span class="mi">6</span></p>
 
-<p>&gt; 9.9.floor  # 取整數/無條件捨去
- =&gt; 9</p>
+<p><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">floor</span>  <span class="c1"># 取整數/無條件捨去</span>
+ <span class="o">=&gt;</span> <span class="mi">9</span></p>
 
-<p>&gt; 2312.22.ceil   # 取整數/無條件進位
-=&gt; 2313</p>
+<p><span class="o">&gt;</span> <span class="mi">2312</span><span class="o">.</span><span class="mi">22</span><span class="o">.</span><span class="n">ceil</span>   <span class="c1"># 取整數/無條件進位</span>
+<span class="o">=&gt;</span> <span class="mi">2313</span></p>
 
-<p>&gt; 2.next
- =&gt; 3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby 二元運算" data-lang="ruby 二元運算">n &amp; num
-n | num
-n ^ num (XOR)
-n &lt;&lt; num (向左位移)
-n &gt;&gt; num (向右位移)</code></pre></div>
+<p><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">next</span>
+ <span class="o">=&gt;</span> <span class="mi">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 二元運算</span>
+<span class="n">n</span> <span class="o">&amp;</span> <span class="n">num</span>
+<span class="n">n</span> <span class="o">|</span> <span class="n">num</span>
+<span class="n">n</span> <span class="o">^</span> <span class="n">num</span> <span class="p">(</span><span class="no">XOR</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向左位移</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向右位移</span><span class="p">)</span></code></pre></div>
 <p>Reference: <a href="http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</a></p></p>
 
 

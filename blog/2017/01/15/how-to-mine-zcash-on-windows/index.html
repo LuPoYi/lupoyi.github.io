@@ -7,6 +7,9 @@
   <meta name='description' content='' />
   <meta name='theme-color' content='#FD3519' />
   
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
 
   <meta name="generator" content="Hugo 0.58.1" />
 
@@ -33,7 +36,7 @@ Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&rsquo;s CUDA Zcash miner
 自己solo的話就是有挖到block才有收益
 http://zcash.flypool.org/
 通常礦池首頁都會寫很清楚該怎麼做
-miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3nheqminer.exe -cd 0 -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.&lt;自命名worker&gt; nheqminer." />
+# EWBF Miner miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3# Nicehash Miner nheqminer.exe -cd 0 -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2017/01/15/how-to-mine-zcash-on-windows/" />
 <meta property="article:published_time" content="2017-01-15T00:00:00+00:00" />
@@ -51,12 +54,12 @@ Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&rsquo;s CUDA Zcash miner
 自己solo的話就是有挖到block才有收益
 http://zcash.flypool.org/
 通常礦池首頁都會寫很清楚該怎麼做
-miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3nheqminer.exe -cd 0 -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.&lt;自命名worker&gt; nheqminer.">
+# EWBF Miner miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3# Nicehash Miner nheqminer.exe -cd 0 -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.">
 
 
 <meta itemprop="datePublished" content="2017-01-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-01-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="108">
+<meta itemprop="wordCount" content="118">
 
 
 
@@ -72,7 +75,7 @@ miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -189,21 +192,25 @@ miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &
 <p><a href="http://zcash.flypool.org/">http://zcash.flypool.org/</a></p>
 
 <p>通常礦池首頁都會寫很清楚該怎麼做</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash EWBF Miner" data-lang="bash EWBF Miner">miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices 0 1 2 3
-miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Nicehash Miner" data-lang="bash Nicehash Miner">nheqminer.exe -cd 0 -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.&lt;自命名worker&gt; 
-nheqminer.exe -cd 0 -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># EWBF Miner</span>
+miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port <span class="m">3333</span> --cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Nicehash Miner</span>
+nheqminer.exe -cd <span class="m">0</span> -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.&lt;自命名worker&gt; 
+nheqminer.exe -cd <span class="m">0</span> -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
 <p>監控挖礦情況 (Nvidia GTX960)</p>
 
 <p><a href="http://zcash.flypool.org/miners/t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE">http://zcash.flypool.org/miners/t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE</a></p>
 
-<p><h2 id="打包至桌面一鍵開挖">打包至桌面一鍵開挖</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash EWBF_Miner.bat" data-lang="bash EWBF_Miner.bat"><span class="p">@</span><span class="k">echo</span> on
-E<span class="p">:</span>
-<span class="k">cd</span> <span class="s2">&#34;Zec Miner 0.3.4b\0.3.4b&#34;</span>
-miner.exe &ndash;server asia1-zcash.flypool.org &ndash;user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 &ndash;port 3333 &ndash;cuda_devices 0 1 2 3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash Nicehash_Miner.bat" data-lang="bash Nicehash_Miner.bat"><span class="p">@</span><span class="k">echo</span> on
-E<span class="p">:</span>
-<span class="k">cd</span> <span class="s2">&#34;Windows_x64_nheqminer-5c&#34;</span>
-nheqminer.exe -cd 0 -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
+<p><h2 id="製作成bat檔一鍵開挖">製作成bat檔一鍵開挖</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># EWBF_Miner.bat</span>
+@echo on
+E:
+<span class="nb">cd</span> <span class="s2">&#34;Zec Miner 0.3.4b\0.3.4b&#34;</span>
+miner.exe &ndash;server asia1-zcash.flypool.org &ndash;user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 &ndash;port <span class="m">3333</span> &ndash;cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Nicehash_Miner.bat</span>
+@echo on
+E:
+<span class="nb">cd</span> <span class="s2">&#34;Windows_x64_nheqminer-5c&#34;</span>
+nheqminer.exe -cd <span class="m">0</span> -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
 <p>Reference:</p></p>
 
 <p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-zcash-with-gpu-and-cpu/">https://www.cryptocompare.com/mining/guides/how-to-mine-zcash-with-gpu-and-cpu/</a></p>
