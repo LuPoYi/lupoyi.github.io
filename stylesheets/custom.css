@@ -28,3 +28,5 @@ footer { width: 75%; left: 25%; padding: 15px 45px; }
 #content div.pagination a:hover {
   color: #0181eb;
 }
+
+.h1 { font-size: 36px; font-weight: 600 }
