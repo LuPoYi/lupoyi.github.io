@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,28 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[VMware] VCenter Cluster 練習筆記</h1>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/91YcA52rS8Owm0IT1612_SHL-TEST.COM.jpg" alt="SHL-TEST.COM.jpg" /></p>
+
+<p>vSphere ESXi: 整個虛擬化平台，算是一個作業系統
+vSphere Client: 操作VM用的軟體(遠端連線到ESXi)
+vCenter: 可統一管理，支援ADD 容錯</p>
+
+<p>&ndash;VLAN 45(橘底)
+- 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN
+- 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域
+- 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS</p>
+
+<p>Cluster</p>
+
+<p>註記：
+HT Hyper-threading 可將核心分成兩個序列在處理 cpu數<em>核心數</em>(2)(HT)=邏輯核心
+硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)</p>
+
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/MiZIdkkTlW47nQrleONw_2013-10-27%20%E4%B8%8B%E5%8D%88%2006-32-23.jpg" alt="2013-10-27 下午 06-32-23.jpg" /></p>
+
+<br>
     
       <h1>[Rails] 小技巧</h1>
 <h2 id="erb的註解">.erb的註解</h2>
@@ -430,39 +452,6 @@ PadRight：字串向左靠齊，將指定字元填滿右邊。</p>
 <p>比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。</p>
 
 <p>這樣也一篇…</p>
-
-<br>
-    
-      <h1>[jQuery] 入門</h1>
-<p>jQuery 是一套 JavaScript 的 Library，目的是簡化dom的操作，也可以說是簡化HTML與JavaScript之間的操作</p>
-
-<p>基本規則：jQuery物件.方法( ).方法( )</p>
-
-<p>具名函數</p>
-
-<pre><code>var person = new Object();
-person.Name = &quot;Bob&quot;;
-person.Speak = say;
-
-function say(msg) {
-    alert(this.Name + &quot;: &quot; + msg);
-}
-person.Speak(&quot;Fuck You Jex&quot;);
-</code></pre>
-
-<p>不具名函數</p>
-
-<pre><code>var person = new Object();
-person.Name = &quot;Bob&quot;;
-person.Speak = function (msg) { alert(this.Name + &quot;: &quot; + msg); }
-
-person.Speak(&quot;Fuck You Jex&quot;);
-</code></pre>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/139105/UhKVDZTaTaWvACtSs3ix_2013-9-15%20%E4%B8%8B%E5%8D%88%2005-26-04.jpg" alt="2013-9-15 下午 05-26-04.jpg" /></p>
-
-<p>Reference:
-<a href="http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx">http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx</a></p>
 
 <br>
     

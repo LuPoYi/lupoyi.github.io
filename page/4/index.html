@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,44 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[Ruby] Functions for Numbers</h1>
+<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Math</span>
+<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># 次方</span>
+ <span class="o">=&gt;</span> <span class="mi">8</span></p>
+
+<p><span class="cm">=begin
+</span><span class="cm">  Addition (+)
+</span><span class="cm">  Subtraction (-)
+</span><span class="cm">  Multiplication (*)
+</span><span class="cm">  Division (/)
+</span><span class="cm">  Exponentiation (**)
+</span><span class="cm">  Modulo (%)
+</span><span class="cm">=end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">integer?</span>
+ <span class="o">=&gt;</span> <span class="kp">false</span></p>
+
+<p><span class="o">&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">.</span><span class="n">abs</span>
+ <span class="o">=&gt;</span> <span class="mi">5</span></p>
+
+<p><span class="o">&gt;</span> <span class="mi">5</span><span class="o">.</span><span class="mi">6</span><span class="o">.</span><span class="n">round</span> <span class="c1"># 取最近的整數/四捨五入</span>
+ <span class="o">=&gt;</span> <span class="mi">6</span></p>
+
+<p><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">floor</span>  <span class="c1"># 取整數/無條件捨去</span>
+ <span class="o">=&gt;</span> <span class="mi">9</span></p>
+
+<p><span class="o">&gt;</span> <span class="mi">2312</span><span class="o">.</span><span class="mi">22</span><span class="o">.</span><span class="n">ceil</span>   <span class="c1"># 取整數/無條件進位</span>
+<span class="o">=&gt;</span> <span class="mi">2313</span></p>
+
+<p><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">next</span>
+ <span class="o">=&gt;</span> <span class="mi">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 二元運算</span>
+<span class="n">n</span> <span class="o">&amp;</span> <span class="n">num</span>
+<span class="n">n</span> <span class="o">|</span> <span class="n">num</span>
+<span class="n">n</span> <span class="o">^</span> <span class="n">num</span> <span class="p">(</span><span class="no">XOR</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向左位移</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向右位移</span><span class="p">)</span></code></pre></div>
+<p>Reference: <a href="http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</a></p></p>
+
+<br>
     
       <h1>[Ruby] 變數</h1>
 <p>Ruby 有一個重要特性 <strong>Convention Over Configuration</strong></p>
@@ -464,28 +502,6 @@ $ sudo gem install activerecord-sqlserver-adapter</code></pre></div>
 <a href="https://github.com/rails-sqlserver">https://github.com/rails-sqlserver</a>
 <a href="http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html">http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html</a>
 <a href="http://stackoverflow.com/questions/12010780/rails-how-to-do-search">http://stackoverflow.com/questions/12010780/rails-how-to-do-search</a></p>
-
-<br>
-    
-      <h1>[VMware] VCenter Cluster 練習筆記</h1>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/91YcA52rS8Owm0IT1612_SHL-TEST.COM.jpg" alt="SHL-TEST.COM.jpg" /></p>
-
-<p>vSphere ESXi: 整個虛擬化平台，算是一個作業系統
-vSphere Client: 操作VM用的軟體(遠端連線到ESXi)
-vCenter: 可統一管理，支援ADD 容錯</p>
-
-<p>&ndash;VLAN 45(橘底)
-- 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN
-- 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域
-- 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS</p>
-
-<p>Cluster</p>
-
-<p>註記：
-HT Hyper-threading 可將核心分成兩個序列在處理 cpu數<em>核心數</em>(2)(HT)=邏輯核心
-硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)</p>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/MiZIdkkTlW47nQrleONw_2013-10-27%20%E4%B8%8B%E5%8D%88%2006-32-23.jpg" alt="2013-10-27 下午 06-32-23.jpg" /></p>
 
 <br>
     

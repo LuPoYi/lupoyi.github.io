@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,98 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[gRPC] Golang &amp; Ruby</h1>
+<h2 id="grpc">gRPC</h2>
+
+<p>gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers
+(protobuf)序列化資料來更有效地進行傳輸。</p>
+
+<p>有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。</p>
+
+<p><h3 id="install-grpc">Install gRPC</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">go get google.golang.org/grpc
+go get -u github.com/golang/protobuf/<span class="o">{</span>proto,protoc-gen-go<span class="o">}</span></code></pre></div>
+<h3 id="定義protobuf-demo-proto">定義protobuf - demo.proto</h3>
+<div class="highlight"><pre class="chroma"><code class="language-proto" data-lang="proto"><span class="n">syntax</span> <span class="o">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kn">package</span> <span class="nn">demo</span><span class="p">;</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kd">service</span> <span class="n">DemoService</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>  <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloResponse</span><span class="p">);</span><span class="err">
+</span><span class="err"></span>  <span class="k">rpc</span> <span class="n">Sum</span> <span class="p">(</span><span class="n">SumRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">SumResponse</span><span class="p">);</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>  <span class="kt">string</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloResponse</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>  <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kd">message</span> <span class="nc">SumRequest</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">numberOne</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">numberOne</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="kd">message</span> <span class="nc">SumResponse</span> <span class="p">{</span><span class="err">
+</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
+</span><span class="err"></span><span class="p">}</span></code></pre></div>
+<h3 id="server-golang-實作">Server - Golang 實作</h3>
+<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o"><em></span><span class="nx">server</span><span class="p">)</span> <span class="nf">SayHello</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">in</span> <span class="o"></em></span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Received: %v&#34;</span><span class="p">,</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetName</span><span class="p">())</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloResponse</span><span class="p">{</span><span class="nx">Message</span><span class="p">:</span> <span class="s">&#34;Hello &#34;</span> <span class="o">+</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetName</span><span class="p">()},</span> <span class="kc">nil</span>
+<span class="p">}</span></p>
+
+<p><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o"><em></span><span class="nx">server</span><span class="p">)</span> <span class="nf">Sum</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">in</span> <span class="o"></em></span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumRequest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Received: %v + %v&#34;</span><span class="p">,</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberOne</span><span class="p">(),</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberTwo</span><span class="p">())</span>
+    <span class="nx">sum</span> <span class="o">:=</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberOne</span><span class="p">()</span> <span class="o">+</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberTwo</span><span class="p">()</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumResponse</span><span class="p">{</span><span class="nx">Sum</span><span class="p">:</span> <span class="nx">sum</span><span class="p">},</span> <span class="kc">nil</span>
+<span class="p">}</span></p>
+
+<p><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">lis</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;50051&#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;failed to listen: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">()</span>
+    <span class="nx">pb</span><span class="p">.</span><span class="nf">RegisterDemoServer</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">server</span><span class="p">{})</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">Serve</span><span class="p">(</span><span class="nx">lis</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;failed to serve: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="client-ruby-實作">Client - Ruby 實作</h3>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">this_dir</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp"><strong>FILE</strong></span><span class="p">))</span>
+<span class="n">lib_dir</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">this_dir</span><span class="p">),</span> <span class="s1">&#39;lib&#39;</span><span class="p">)</span>
+<span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="n">lib_dir</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">lib_dir</span><span class="p">)</span></p>
+
+<p><span class="nb">require</span> <span class="s1">&#39;grpc&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;demo_services_pb&#39;</span></p>
+
+<p><span class="k">def</span> <span class="nf">main</span>
+  <span class="n">stub</span> <span class="o">=</span> <span class="no">Demo</span><span class="o">::</span><span class="no">Stub</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;localhost:50051&#39;</span><span class="p">,</span> <span class="ss">:this_channel_is_insecure</span><span class="p">)</span></p>
+
+<p><span class="n">say_hello_response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="no">Demo</span><span class="o">::</span><span class="no">HelloRequest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="ss">greeting</span><span class="p">:</span> <span class="s1">&#39;Hi&#39;</span>
+  <span class="p">))</span>
+  <span class="nb">puts</span> <span class="s2">&#34;say_hello_response </span><span class="si">#{</span><span class="n">say_hello_response</span><span class="si">}</span><span class="s2">&#34;</span></p>
+
+<p><span class="n">sum_response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="no">Demo</span><span class="o">::</span><span class="no">SumRequest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+    <span class="ss">number1</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="ss">number1</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+  <span class="p">))</span>
+  <span class="nb">puts</span> <span class="s2">&#34;sum_response </span><span class="si">#{</span><span class="n">sum_response</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class="k">end</span></p>
+
+<p><span class="n">main</span></code></pre></div>
+<p>Reference:</p></p>
+
+<p><a href="https://yami.io/grpc/">https://yami.io/grpc/</a></p>
+
+<p><a href="https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w">https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w</a></p>
+
+<br>
     
       <h1>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</h1>
 <p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># user</span>
@@ -869,141 +961,6 @@ sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span class="m">2048</span>
 <p><a href="https://ksmx.me/letsencrypt-ssl-https/">https://ksmx.me/letsencrypt-ssl-https/</a></p>
 
 <p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
-
-<br>
-    
-      <h1>[Ethereum] 如何使用Windows來挖礦</h1>
-<h2 id="1-安裝geth">1. 安裝geth</h2>
-
-<p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
-
-<p>解壓縮後不用執行放在C:\ (我放在E:\不過沒差)</p>
-
-<p>建立錢包並設定密碼</p>
-
-<p>以下指令都需要開command line(cmd)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-geth account new</code></pre></div>
-<p>同步所有交易</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-<span class="c1"># --cache=看你想分配多少RAM來sync。預設只有16MB</span>
-geth --rpc --cache<span class="o">=</span><span class="m">8192</span></code></pre></div>
-<p>// 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)</p>
-
-<h2 id="2-安裝mining軟體">2. 安裝mining軟體</h2>
-
-<p><a href="https://build.ethdev.com/builds/Windows%20C%2B%2B%20develop%20branch/">下載mining軟體</a>(載最下面的即可)
-照一般安裝流程</p>
-
-<p>安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer -G -M <span class="c1"># GPU</span>
-ethminer -M    <span class="c1"># CPU</span></code></pre></div>
-<h2 id="3-挖礦">3. 挖礦</h2>
-
-<p>挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;</p>
-
-<p>看是要自己挖還是加入別人礦池</p>
-
-<h3 id="自己挖">自己挖</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer -G <span class="c1"># GPU</span></code></pre></div>
-<h3 id="加入礦池">加入礦池</h3>
-
-<p>需按照<a href="http://cryptomining-blog.com/7529-ethereum-mining-is-getting-way-too-centralized/">各大礦池</a>的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了</p>
-
-<p>我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
-ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G</code></pre></div>
-<p>也可以加上worker跟mail(會通知你的worker是否關閉)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
-<h2 id="4-看成果-礦池">4. 看成果(礦池)</h2>
-
-<p>可依照nanopool提供的api查看目前情況</p>
-
-<p><a href="http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a>
-<a href="http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob">http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob</a>
-<a href="https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a></p>
-
-<p>nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</p>
-
-<p>可以在本機下geth指令查你的錢包資訊</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-geth attach
-&gt; eth.coinbase
-<span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>
-&gt; eth.acccounts
-<span class="o">[</span><span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span><span class="o">]</span>
-&gt; eth.getBalance<span class="o">(</span>eth.coinbase<span class="o">)</span>
-<span class="m">0</span></code></pre></div>
-<p>記得要sync到最新才能拿到正確資訊</p>
-
-<p>可以到<a href="https://www.etherchain.org/">Etherchain</a>看一下Recent blocks是不是已經sync到最新的block</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># geth指令整理</span>
-geth upgradedb
-geth removedb <span class="c1"># 整個blockchain會被清掉</span>
-geth --rpc --cache<span class="o">=</span><span class="m">8192</span> <span class="c1"># sync</span></code></pre></div>
-<h2 id="其他-把指令包成-bat批次檔">其他－把指令包成.bat批次檔</h2>
-
-<h3 id="ethereum-mining-bat">ethereum_mining.bat</h3>
-
-<p>因為需要分別開mining, sync以及console三個cmd並執行不同指令，所以我把指令包成.bat放桌面一鍵執行，或是拿來排程執行也ok</p>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_mining.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-<span class="k">cd</span> <span class="s2">&#34;Program Files\Ethereum 0.9.41\Release&#34;</span>
-ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
-<p>使用GPU來挖，所以會吃顯卡效能</p>
-
-<p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
-
-<p><h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-geth &ndash;rpc &ndash;cache=8192</code></pre></div>
-<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p></p>
-
-<p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
-
-<p><h3 id="ethereum-console-bat">ethereum_console.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_console.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-geth attach</code></pre></div>
-<p>使用console前記得打開sync</p></p>
-
-<p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
-
-<h2 id="其他-將eth所佔的c槽容量移到e槽">其他－將ETH所佔的C槽容量移到E槽</h2>
-
-<p>挖礦及同步的資料預設都放在C底下</p>
-
-<p>(C:\Users\Bob\AppData\Local\Ethask)</p>
-
-<p>(C:\Users\Bob\AppData\Roaming\Ethereum)</p>
-
-<ul>
-<li>把C:\Users\Bob\AppData\Local\Ethask這個資料夾直接搬移到E:\ETH\Ethash</li>
-<li>開cmd下指令 &ldquo;mklink /D C:\Users\Bob\AppData\Local\Ethask E:\ETH\Ethash</li>
-
-<li><p>這樣就行了，另一個folder也比照辦理</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cmd</span>
-C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash E:<span class="se">\E</span>TH<span class="se">\E</span>thash
-已建立 C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash 的符號連結 &lt;&lt;<span class="o">===</span>&gt;&gt; E:<span class="se">\E</span>TH<span class="se">\E</span>thash</code></pre></div></li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/">https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/</a></p>
-
-<p><a href="http://nanopool.org">http://nanopool.org</a></p>
-
-<p><a href="https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore">https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore</a></p>
-
-<p><a href="https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/">https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/</a></p>
 
 <br>
     

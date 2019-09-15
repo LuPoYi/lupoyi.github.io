@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,44 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[ASP.NET] 檔案下載寫法</h1>
+<h2 id="response-writefile-檔案下載方式一">Response.WriteFile 檔案下載方式一</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+    
+    <span class="kt">string</span> <span class="n">filePath</span> <span class="p">=</span> <span class="s">&#34;C:/porn.jpg&#34;</span><span class="p">;</span>
+    <span class="n">FileInfo</span> <span class="n">file</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileInfo</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+    <span class="n">Response</span><span class="p">.</span><span class="n">Clear</span><span class="p">()</span>
+    <span class="n">Response</span><span class="p">.</span><span class="n">Buffer</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> 
+    <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&#34;application/octet-stream&#34;</span><span class="p">;</span> <span class="c1">// 指定檔案類型
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="p">,</span><span class="s">&#34;attachment;filename=&#34;</span><span class="p">+</span><span class="s">&#34;porn.jpg&#34;</span><span class="p">);</span> <span class="c1">// 設定檔名
+</span><span class="c1"></span> <span class="c1">// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;Content-Length&#34;</span><span class="p">,</span> <span class="n">file</span><span class="p">.</span><span class="n">Length</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span> <span class="c1">// 表頭加入檔案大小
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">WriteFile</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">FullName</span><span class="p">);</span>
+    <span class="n">Response</span><span class="p">.</span><span class="n">Flush</span><span class="p">();</span>
+    <span class="n">Response</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="system-net-webclient-downloaddata-檔案下載方式二">System.Net.WebClient.DownloadData 檔案下載方式二</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+     
+    <span class="n">WebClient</span> <span class="n">wc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebClient</span><span class="p">();</span>
+    <span class="kt">byte</span><span class="p">[]</span> <span class="n">byteFile</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">&#34;C:/porn.jpg&#34;</span><span class="p">;</span> <span class="c1">// 設定路徑
+</span><span class="c1"></span> <span class="n">byteFile</span> <span class="p">=</span> <span class="n">wc</span><span class="p">.</span><span class="n">DownloadData</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+    <span class="kt">string</span> <span class="n">fileName</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">Path</span><span class="p">.</span><span class="n">GetFileName</span><span class="p">(</span><span class="n">path</span><span class="p">);</span> <span class="c1">// 取得檔案名稱
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;content-disposition&#34;</span><span class="p">,</span> <span class="s">&#34;attachment;filename=&#34;</span> <span class="p">+</span> <span class="s">&#34;porn.jpg&#34;</span><span class="p">);</span> <span class="c1">//設定檔名
+</span><span class="c1"></span> <span class="c1">// HttpContext.Current.Server.UrlEncode(fileName) 解決中文檔名亂碼
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&#34;application/octet-stream&#34;</span><span class="p">;</span>  <span class="c1">// 指定檔案類型    
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">BinaryWrite</span><span class="p">(</span><span class="n">byteFile</span><span class="p">);</span> <span class="c1">// 內容轉出作檔案下載
+</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="參考資料">參考資料</h2>
+
+<p><a href="http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx">http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx</a>
+<a href="http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx">http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx</a>
+<a href="http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx">http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx</a></p>
+
+<br>
     
       <h1>[ASP.NET] Linq基本用法</h1>
 <p>公司前輩跟我提過可以用用看Linq比較潮(?)
@@ -411,28 +449,6 @@ $ chmod <span class="m">777</span> test.txt
       <span class="k">return</span> <span class="n">BitConverter</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></p>
-
-<br>
-    
-      <h1>[Mac] 設定開啟檔案的預設軟體</h1>
-<p>近期在mac的環境上有點卡關，像是環境的PATH曾被我改壞&hellip;
-還好朋友有幫我救回來= =&hellip;</p>
-
-<p>在windows上習慣會調整一些檔案的預設軟體來開啟，像是影片檔的格式一堆就很需要額外設定。</p>
-
-<h2 id="首先-在檔案上右鍵找到-簡介">首先，在檔案上右鍵找到「簡介」</h2>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/178268/gVGABZ5oQ9Oca4LD8OTm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-02-08%20%E4%B8%8B%E5%8D%8810.36.21.png" alt="螢幕快照 2014-02-08 下午10.36.21.png" /></p>
-
-<h2 id="接著找到-打開檔案的應用程式-調整為你要的預設軟體">接著找到「打開檔案的應用程式」，調整為你要的預設軟體</h2>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/178268/kVk2SMrPT6qXdk2uoBBP_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-02-08%20%E4%B8%8B%E5%8D%8810.37.00.png" alt="螢幕快照 2014-02-08 下午10.37.00.png" /></p>
-
-<h2 id="然後按下-全部更改">然後按下「全部更改」</h2>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/178268/esuLHuOZSXyw2g7fe7W8_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-02-08%20%E4%B8%8B%E5%8D%8810.29.35.png" alt="螢幕快照 2014-02-08 下午10.29.35.png" /></p>
-
-<h2 id="就可以把該副檔名的檔案都設定成此軟體開啟了yaya">就可以把該副檔名的檔案都設定成此軟體開啟了yaya</h2>
 
 <br>
     

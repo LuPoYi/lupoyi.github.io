@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,39 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[jQuery] 入門</h1>
+<p>jQuery 是一套 JavaScript 的 Library，目的是簡化dom的操作，也可以說是簡化HTML與JavaScript之間的操作</p>
+
+<p>基本規則：jQuery物件.方法( ).方法( )</p>
+
+<p>具名函數</p>
+
+<pre><code>var person = new Object();
+person.Name = &quot;Bob&quot;;
+person.Speak = say;
+
+function say(msg) {
+    alert(this.Name + &quot;: &quot; + msg);
+}
+person.Speak(&quot;Fuck You Jex&quot;);
+</code></pre>
+
+<p>不具名函數</p>
+
+<pre><code>var person = new Object();
+person.Name = &quot;Bob&quot;;
+person.Speak = function (msg) { alert(this.Name + &quot;: &quot; + msg); }
+
+person.Speak(&quot;Fuck You Jex&quot;);
+</code></pre>
+
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/139105/UhKVDZTaTaWvACtSs3ix_2013-9-15%20%E4%B8%8B%E5%8D%88%2005-26-04.jpg" alt="2013-9-15 下午 05-26-04.jpg" /></p>
+
+<p>Reference:
+<a href="http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx">http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx</a></p>
+
+<br>
     
       <h1>[jQuery] Selector</h1>
 <h1 id="jquery物件有下列三種">jQuery物件有下列三種：</h1>
@@ -681,44 +714,6 @@ FireFox 支援webm ogg (mp4部分支援)
 Chrome 全都支援</p>
 
 <p><a href="http://www.w3schools.com/html/html5_video.asp">http://www.w3schools.com/html/html5_video.asp</a></p>
-
-<br>
-    
-      <h1>[ASP.NET] 檔案下載寫法</h1>
-<h2 id="response-writefile-檔案下載方式一">Response.WriteFile 檔案下載方式一</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
-    
-    <span class="kt">string</span> <span class="n">filePath</span> <span class="p">=</span> <span class="s">&#34;C:/porn.jpg&#34;</span><span class="p">;</span>
-    <span class="n">FileInfo</span> <span class="n">file</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileInfo</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
-    <span class="n">Response</span><span class="p">.</span><span class="n">Clear</span><span class="p">()</span>
-    <span class="n">Response</span><span class="p">.</span><span class="n">Buffer</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span> 
-    <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&#34;application/octet-stream&#34;</span><span class="p">;</span> <span class="c1">// 指定檔案類型
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="p">,</span><span class="s">&#34;attachment;filename=&#34;</span><span class="p">+</span><span class="s">&#34;porn.jpg&#34;</span><span class="p">);</span> <span class="c1">// 設定檔名
-</span><span class="c1"></span> <span class="c1">// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;Content-Length&#34;</span><span class="p">,</span> <span class="n">file</span><span class="p">.</span><span class="n">Length</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span> <span class="c1">// 表頭加入檔案大小
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">WriteFile</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">FullName</span><span class="p">);</span>
-    <span class="n">Response</span><span class="p">.</span><span class="n">Flush</span><span class="p">();</span>
-    <span class="n">Response</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
-</code></pre></div>
-<h2 id="system-net-webclient-downloaddata-檔案下載方式二">System.Net.WebClient.DownloadData 檔案下載方式二</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
-     
-    <span class="n">WebClient</span> <span class="n">wc</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebClient</span><span class="p">();</span>
-    <span class="kt">byte</span><span class="p">[]</span> <span class="n">byteFile</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="s">&#34;C:/porn.jpg&#34;</span><span class="p">;</span> <span class="c1">// 設定路徑
-</span><span class="c1"></span> <span class="n">byteFile</span> <span class="p">=</span> <span class="n">wc</span><span class="p">.</span><span class="n">DownloadData</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
-    <span class="kt">string</span> <span class="n">fileName</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">Path</span><span class="p">.</span><span class="n">GetFileName</span><span class="p">(</span><span class="n">path</span><span class="p">);</span> <span class="c1">// 取得檔案名稱
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;content-disposition&#34;</span><span class="p">,</span> <span class="s">&#34;attachment;filename=&#34;</span> <span class="p">+</span> <span class="s">&#34;porn.jpg&#34;</span><span class="p">);</span> <span class="c1">//設定檔名
-</span><span class="c1"></span> <span class="c1">// HttpContext.Current.Server.UrlEncode(fileName) 解決中文檔名亂碼
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">&#34;application/octet-stream&#34;</span><span class="p">;</span>  <span class="c1">// 指定檔案類型    
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">BinaryWrite</span><span class="p">(</span><span class="n">byteFile</span><span class="p">);</span> <span class="c1">// 內容轉出作檔案下載
-</span><span class="c1"></span> <span class="n">Response</span><span class="p">.</span><span class="n">End</span><span class="p">();</span>
-</code></pre></div>
-<h2 id="參考資料">參考資料</h2>
-
-<p><a href="http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx">http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx</a>
-<a href="http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx">http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx</a>
-<a href="http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx">http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx</a></p>
 
 <br>
     

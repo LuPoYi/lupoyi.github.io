@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,44 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>資料被綁架軟體加密，要求贖金用比特幣支付</h1>
+<p><strong>這篇單純紀錄一下被綁架後頁面的流程。</strong></p>
+
+<p>最近遇到幾間公司發現這種事，突然所有檔案被綁架軟體加密無法開啟，而桌面多了一份文字檔，裡面附上特殊網址及比特幣錢包位址…。(當然，這只是其中一款綁架軟體的方式)</p>
+
+<p>{% img /images/poyi/bitcoin1.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
+
+<p>輸入它給的錢包地址登入後，就可以看到所要求的贖金或相關資料了</p>
+
+<p>應該會有類似以下的字眼 (這邊贖金要求你付2.5顆比特幣)</p>
+
+<p><strong>All your important files are encrypted. <br>At the moment, the cost of private key for decrypting your file is 2.5 BTC</strong></p>
+
+<p>而為了證明你付完贖金真的幫你解密，它還幫你解密其中一個的檔案讓你下載看看是否沒問題(如下圖下方的xlsx檔)… <del>不得不說還蠻貼心的…</del></p>
+
+<p>{% img /images/poyi/bitcoin2.jpg &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
+
+<p>而聽說沒付指定的贖金，對方不但不解密還會提高贖金</p>
+
+<p>所以如果資料沒備份又找不到解法，也許就甘願一點付錢吧…</p>
+
+<p>算是這年頭支付太過方便的缺點吧</p>
+
+<p>{% img /images/poyi/bitcoin3.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
+
+<p>而另外它也提供如何購買比特幣相關資訊…<del>貼心再+1…</del></p>
+
+<p>目前在台灣是可以直接去全家買會比較方便，這邊就請自行google :D</p>
+
+<p><br>
+Reference:</p>
+
+<p><a href="http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/">http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/</a></p>
+
+<p><a href="http://www.epochtimes.com/b5/15/4/9/n4407355.htm">http://www.epochtimes.com/b5/15/4/9/n4407355.htm</a></p>
+
+<br>
     
       <h1>[Ruby] 教學 - 基本使用介紹2</h1>
 <p><h2 id="define-methods">Define Methods</h2>
@@ -604,44 +642,6 @@ Command line tool已經獨立出來，不需要安裝XCode了</p>
 
 <p>Reference:
 <a href="http://blog.tonycube.com/2011/07/ruby8.html">http://blog.tonycube.com/2011/07/ruby8.html</a></p>
-
-<br>
-    
-      <h1>[Ruby] Functions for Numbers</h1>
-<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Math</span>
-<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># 次方</span>
- <span class="o">=&gt;</span> <span class="mi">8</span></p>
-
-<p><span class="cm">=begin
-</span><span class="cm">  Addition (+)
-</span><span class="cm">  Subtraction (-)
-</span><span class="cm">  Multiplication (*)
-</span><span class="cm">  Division (/)
-</span><span class="cm">  Exponentiation (**)
-</span><span class="cm">  Modulo (%)
-</span><span class="cm">=end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">integer?</span>
- <span class="o">=&gt;</span> <span class="kp">false</span></p>
-
-<p><span class="o">&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">.</span><span class="n">abs</span>
- <span class="o">=&gt;</span> <span class="mi">5</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">5</span><span class="o">.</span><span class="mi">6</span><span class="o">.</span><span class="n">round</span> <span class="c1"># 取最近的整數/四捨五入</span>
- <span class="o">=&gt;</span> <span class="mi">6</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">floor</span>  <span class="c1"># 取整數/無條件捨去</span>
- <span class="o">=&gt;</span> <span class="mi">9</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">2312</span><span class="o">.</span><span class="mi">22</span><span class="o">.</span><span class="n">ceil</span>   <span class="c1"># 取整數/無條件進位</span>
-<span class="o">=&gt;</span> <span class="mi">2313</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">next</span>
- <span class="o">=&gt;</span> <span class="mi">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 二元運算</span>
-<span class="n">n</span> <span class="o">&amp;</span> <span class="n">num</span>
-<span class="n">n</span> <span class="o">|</span> <span class="n">num</span>
-<span class="n">n</span> <span class="o">^</span> <span class="n">num</span> <span class="p">(</span><span class="no">XOR</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向左位移</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向右位移</span><span class="p">)</span></code></pre></div>
-<p>Reference: <a href="http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</a></p></p>
 
 <br>
     

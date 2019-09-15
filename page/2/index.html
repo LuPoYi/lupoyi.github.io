@@ -15,7 +15,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
   
 
-  <meta name="generator" content="Hugo 0.58.1" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
   
 
@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -50,7 +50,7 @@
   <div class="intro">
     <div class="logo-container">
       <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Categories" class="rounded-logo">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Bob 學習筆記" class="rounded-logo">
       </a>
     </div>
     <h2>Bob</h2>
@@ -113,6 +113,141 @@
 
   <p></p>
   <div id="list">
+    
+      <h1>[Ethereum] 如何使用Windows來挖礦</h1>
+<h2 id="1-安裝geth">1. 安裝geth</h2>
+
+<p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
+
+<p>解壓縮後不用執行放在C:\ (我放在E:\不過沒差)</p>
+
+<p>建立錢包並設定密碼</p>
+
+<p>以下指令都需要開command line(cmd)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+geth account new</code></pre></div>
+<p>同步所有交易</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+<span class="c1"># --cache=看你想分配多少RAM來sync。預設只有16MB</span>
+geth --rpc --cache<span class="o">=</span><span class="m">8192</span></code></pre></div>
+<p>// 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)</p>
+
+<h2 id="2-安裝mining軟體">2. 安裝mining軟體</h2>
+
+<p><a href="https://build.ethdev.com/builds/Windows%20C%2B%2B%20develop%20branch/">下載mining軟體</a>(載最下面的即可)
+照一般安裝流程</p>
+
+<p>安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G -M <span class="c1"># GPU</span>
+ethminer -M    <span class="c1"># CPU</span></code></pre></div>
+<h2 id="3-挖礦">3. 挖礦</h2>
+
+<p>挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;</p>
+
+<p>看是要自己挖還是加入別人礦池</p>
+
+<h3 id="自己挖">自己挖</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G <span class="c1"># GPU</span></code></pre></div>
+<h3 id="加入礦池">加入礦池</h3>
+
+<p>需按照<a href="http://cryptomining-blog.com/7529-ethereum-mining-is-getting-way-too-centralized/">各大礦池</a>的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了</p>
+
+<p>我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
+ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G</code></pre></div>
+<p>也可以加上worker跟mail(會通知你的worker是否關閉)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
+<h2 id="4-看成果-礦池">4. 看成果(礦池)</h2>
+
+<p>可依照nanopool提供的api查看目前情況</p>
+
+<p><a href="http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a>
+<a href="http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob">http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob</a>
+<a href="https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a></p>
+
+<p>nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</p>
+
+<p>可以在本機下geth指令查你的錢包資訊</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
+geth attach
+&gt; eth.coinbase
+<span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>
+&gt; eth.acccounts
+<span class="o">[</span><span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span><span class="o">]</span>
+&gt; eth.getBalance<span class="o">(</span>eth.coinbase<span class="o">)</span>
+<span class="m">0</span></code></pre></div>
+<p>記得要sync到最新才能拿到正確資訊</p>
+
+<p>可以到<a href="https://www.etherchain.org/">Etherchain</a>看一下Recent blocks是不是已經sync到最新的block</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># geth指令整理</span>
+geth upgradedb
+geth removedb <span class="c1"># 整個blockchain會被清掉</span>
+geth --rpc --cache<span class="o">=</span><span class="m">8192</span> <span class="c1"># sync</span></code></pre></div>
+<h2 id="其他-把指令包成-bat批次檔">其他－把指令包成.bat批次檔</h2>
+
+<h3 id="ethereum-mining-bat">ethereum_mining.bat</h3>
+
+<p>因為需要分別開mining, sync以及console三個cmd並執行不同指令，所以我把指令包成.bat放桌面一鍵執行，或是拿來排程執行也ok</p>
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_mining.bat
+<span class="k">echo</span> on
+E<span class="p">:</span>
+<span class="k">cd</span> <span class="s2">&#34;Program Files\Ethereum 0.9.41\Release&#34;</span>
+ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
+<p>使用GPU來挖，所以會吃顯卡效能</p>
+
+<p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
+
+<p><h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
+<span class="k">echo</span> on
+E<span class="p">:</span>
+geth &ndash;rpc &ndash;cache=8192</code></pre></div>
+<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p></p>
+
+<p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
+
+<p><h3 id="ethereum-console-bat">ethereum_console.bat</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_console.bat
+<span class="k">echo</span> on
+E<span class="p">:</span>
+geth attach</code></pre></div>
+<p>使用console前記得打開sync</p></p>
+
+<p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
+
+<h2 id="其他-將eth所佔的c槽容量移到e槽">其他－將ETH所佔的C槽容量移到E槽</h2>
+
+<p>挖礦及同步的資料預設都放在C底下</p>
+
+<p>(C:\Users\Bob\AppData\Local\Ethask)</p>
+
+<p>(C:\Users\Bob\AppData\Roaming\Ethereum)</p>
+
+<ul>
+<li>把C:\Users\Bob\AppData\Local\Ethask這個資料夾直接搬移到E:\ETH\Ethash</li>
+<li>開cmd下指令 &ldquo;mklink /D C:\Users\Bob\AppData\Local\Ethask E:\ETH\Ethash</li>
+
+<li><p>這樣就行了，另一個folder也比照辦理</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cmd</span>
+C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash E:<span class="se">\E</span>TH<span class="se">\E</span>thash
+已建立 C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash 的符號連結 &lt;&lt;<span class="o">===</span>&gt;&gt; E:<span class="se">\E</span>TH<span class="se">\E</span>thash</code></pre></div></li>
+</ul>
+
+<p>Reference:</p>
+
+<p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/">https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/</a></p>
+
+<p><a href="http://nanopool.org">http://nanopool.org</a></p>
+
+<p><a href="https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore">https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore</a></p>
+
+<p><a href="https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/">https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/</a></p>
+
+<br>
     
       <h1>[Golang] Golang 101 入門筆記</h1>
 <h2 id="hello-go">Hello Go!</h2>
@@ -623,44 +758,6 @@ Password:
 
 <p><a href="http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/">http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/</a>
 <a href="http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</a></p>
-
-<br>
-    
-      <h1>資料被綁架軟體加密，要求贖金用比特幣支付</h1>
-<p><strong>這篇單純紀錄一下被綁架後頁面的流程。</strong></p>
-
-<p>最近遇到幾間公司發現這種事，突然所有檔案被綁架軟體加密無法開啟，而桌面多了一份文字檔，裡面附上特殊網址及比特幣錢包位址…。(當然，這只是其中一款綁架軟體的方式)</p>
-
-<p>{% img /images/poyi/bitcoin1.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>輸入它給的錢包地址登入後，就可以看到所要求的贖金或相關資料了</p>
-
-<p>應該會有類似以下的字眼 (這邊贖金要求你付2.5顆比特幣)</p>
-
-<p><strong>All your important files are encrypted. <br>At the moment, the cost of private key for decrypting your file is 2.5 BTC</strong></p>
-
-<p>而為了證明你付完贖金真的幫你解密，它還幫你解密其中一個的檔案讓你下載看看是否沒問題(如下圖下方的xlsx檔)… <del>不得不說還蠻貼心的…</del></p>
-
-<p>{% img /images/poyi/bitcoin2.jpg &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>而聽說沒付指定的贖金，對方不但不解密還會提高贖金</p>
-
-<p>所以如果資料沒備份又找不到解法，也許就甘願一點付錢吧…</p>
-
-<p>算是這年頭支付太過方便的缺點吧</p>
-
-<p>{% img /images/poyi/bitcoin3.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>而另外它也提供如何購買比特幣相關資訊…<del>貼心再+1…</del></p>
-
-<p>目前在台灣是可以直接去全家買會比較方便，這邊就請自行google :D</p>
-
-<p><br>
-Reference:</p>
-
-<p><a href="http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/">http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/</a></p>
-
-<p><a href="http://www.epochtimes.com/b5/15/4/9/n4407355.htm">http://www.epochtimes.com/b5/15/4/9/n4407355.htm</a></p>
 
 <br>
     
