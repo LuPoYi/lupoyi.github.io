@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.poyi.tw/blog/2019/09/15/grpc-golang-ruby/</loc>
+    <loc>https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/grpc/</loc>
+    <loc>https://blog.poyi.tw/tags/grpc/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/grpc/</loc>
+    <loc>https://blog.poyi.tw/categories/grpc/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -543,12 +543,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/vmware/</loc>
+    <loc>https://blog.poyi.tw/tags/vmware/</loc>
     <lastmod>2013-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/vmware/</loc>
+    <loc>https://blog.poyi.tw/categories/vmware/</loc>
     <lastmod>2013-10-25T00:00:00+00:00</lastmod>
   </url>
   
