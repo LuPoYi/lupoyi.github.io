@@ -13,37 +13,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/golang/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/grpc/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/grpc/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/posts/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/ruby/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,47 +23,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/rails/</loc>
-    <lastmod>2019-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/ubuntu/</loc>
-    <lastmod>2019-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2017/12/10/bitcoin-improvement-proposal-39/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/bip32/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/bip39/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/bip44/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/deterministic/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/mnemonic/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/wallet/</loc>
     <lastmod>2017-12-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,57 +33,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/dash/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/monero/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/pivx/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/private/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/xmr/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/zcase/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/zcash/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2017/01/15/how-to-mine-zcash-on-windows/</loc>
-    <lastmod>2017-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/mining/</loc>
-    <lastmod>2017-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/windows/</loc>
-    <lastmod>2017-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/zec/</loc>
     <lastmod>2017-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -168,32 +48,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/mac/</loc>
-    <lastmod>2016-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2016/10/19/my-linux-command/</loc>
-    <lastmod>2016-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/command/</loc>
-    <lastmod>2016-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/linux/</loc>
-    <lastmod>2016-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/permission/</loc>
-    <lastmod>2016-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/ubuntu/</loc>
     <lastmod>2016-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -203,32 +58,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/fail2ban/</loc>
-    <lastmod>2016-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/security/</loc>
-    <lastmod>2016-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2016/07/14/ssl-certificate-nginx-ubuntu-config/</loc>
-    <lastmod>2016-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/https/</loc>
-    <lastmod>2016-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/nginx/</loc>
-    <lastmod>2016-07-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/ssl/</loc>
     <lastmod>2016-07-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -238,27 +68,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/dwarfpool/</loc>
-    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/ethereum/</loc>
-    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/nanopool/</loc>
-    <lastmod>2016-04-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2016/04/02/golang-begging/</loc>
-    <lastmod>2016-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/golang/</loc>
     <lastmod>2016-04-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -273,31 +83,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/address/</loc>
-    <lastmod>2016-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/bitcoin/</loc>
-    <lastmod>2016-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/openvpn/</loc>
-    <lastmod>2016-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/vanitygen/</loc>
-    <lastmod>2016-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/vpn/</loc>
-    <lastmod>2016-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2016/01/17/ubuntu-setting-pppoe-static-ip/</loc>
     <lastmod>2016-01-17T00:00:00+00:00</lastmod>
   </url>
@@ -308,47 +93,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/ntp/</loc>
-    <lastmod>2016-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/ntpdate/</loc>
-    <lastmod>2016-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/pppoe/</loc>
-    <lastmod>2016-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/staticip/</loc>
-    <lastmod>2016-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2015/11/07/ruby-aes-encrypt-decrypt/</loc>
-    <lastmod>2015-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/aes/</loc>
-    <lastmod>2015-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/decrypt/</loc>
-    <lastmod>2015-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/encrypt/</loc>
-    <lastmod>2015-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/ruby/</loc>
     <lastmod>2015-11-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -358,43 +103,13 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/rails/</loc>
-    <lastmod>2015-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/update/</loc>
-    <lastmod>2015-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/update_all/</loc>
-    <lastmod>2015-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/update_columns/</loc>
-    <lastmod>2015-07-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2015/06/29/mac-build-ubuntu-flash-using-command/</loc>
-    <lastmod>2015-06-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/usb/</loc>
     <lastmod>2015-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/blog/2015/06/12/rails-ajax-render-error-in-json/</loc>
     <lastmod>2015-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/encrypted/</loc>
-    <lastmod>2015-04-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -423,16 +138,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/csv/</loc>
-    <lastmod>2014-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/file/</loc>
-    <lastmod>2014-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2014/03/16/ruby-require-load-include-extend/</loc>
     <lastmod>2014-03-16T00:00:00+00:00</lastmod>
   </url>
@@ -443,27 +148,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/sublime/</loc>
-    <lastmod>2014-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2014/01/17/rails-mac-os-environment-build/</loc>
     <lastmod>2014-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/blog/2014/01/13/javascript-triggered-interrupt-event-or-action/</loc>
-    <lastmod>2014-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/javascript/</loc>
-    <lastmod>2014-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/javascript/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -503,11 +193,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/apt/</loc>
-    <lastmod>2013-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/11/20/rails-activerecord/</loc>
     <lastmod>2013-11-20T00:00:00+00:00</lastmod>
   </url>
@@ -528,27 +213,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/sqlserver/</loc>
-    <lastmod>2013-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/10/25/vmware-vcenter-cluster-exercises/</loc>
-    <lastmod>2013-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/cluster/</loc>
-    <lastmod>2013-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/vmware/</loc>
-    <lastmod>2013-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/tags/vmware/</loc>
     <lastmod>2013-10-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -573,11 +238,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/c#/</loc>
-    <lastmod>2013-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/09/30/aspnet-connect-to-sql-server/</loc>
     <lastmod>2013-09-30T00:00:00+00:00</lastmod>
   </url>
@@ -588,32 +248,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/asp.net/</loc>
-    <lastmod>2013-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/ienumerable/</loc>
-    <lastmod>2013-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/iqueryable/</loc>
-    <lastmod>2013-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/sql/</loc>
-    <lastmod>2013-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/09/29/aspnet-linq-dynamic-conditions/</loc>
-    <lastmod>2013-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/linq/</loc>
     <lastmod>2013-09-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -634,11 +269,6 @@
   
   <url>
     <loc>https://blog.poyi.tw/blog/2013/09/15/jquery/</loc>
-    <lastmod>2013-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/jquery/</loc>
     <lastmod>2013-09-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -683,16 +313,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/git/</loc>
-    <lastmod>2013-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/html5/</loc>
-    <lastmod>2013-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</loc>
     <lastmod>2013-08-28T00:00:00+00:00</lastmod>
   </url>
@@ -723,22 +343,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/english/</loc>
-    <lastmod>2013-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/</loc>
     <lastmod>2013-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</loc>
-    <lastmod>2013-03-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/email/</loc>
     <lastmod>2013-03-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -753,16 +363,6 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/active-directory/</loc>
-    <lastmod>2013-02-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/password/</loc>
-    <lastmod>2013-02-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/blog/2013/02/08/mac-set-to-open-files-by-default-software/</loc>
     <lastmod>2013-02-08T00:00:00+00:00</lastmod>
   </url>
@@ -773,16 +373,15 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/css/</loc>
-    <lastmod>2013-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.poyi.tw/about/</loc>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/memo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.poyi.tw/series/</loc>
   </url>
   
 </urlset>
