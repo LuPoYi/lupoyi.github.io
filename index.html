@@ -492,15 +492,17 @@ supervised systemd</code></pre></div>
 
 <li><p>address - 95 character string (public view key &amp; public spend key)</p></li>
 
-<li><p>add some fake transaction to mix</p>
+<li><p>add some fake transaction to mix</p></li>
 
-<pre><code>Alice 要發送交易給 Bob
-Alice 將 Bob 的 public view key &amp; public spend key 再加上 randon data 來產生一次性的公鑰 供 Bob 後續使用
-一次性的公鑰大家都看得到
-Bob可以用一次性的公鑰推出一次性的私鑰，最後用private spend key來發送給別人
-整個交易都不需要Bob的address
-// A 發送給 B =&gt; 使用A+ 發送給 B+ (而A+/B+無法推回A/B)
-</code></pre></li>
+<li><p>Alice 要發送交易給 Bob</p></li>
+
+<li><p>Alice 將 Bob 的 public view key &amp; public spend key 再加上 randon data 來產生一次性的公鑰 供 Bob 後續使用一次性的公鑰大家都看得到</p></li>
+
+<li><p>Bob可以用一次性的公鑰推出一次性的私鑰，最後用private spend key來發送給別人</p></li>
+
+<li><p>整個交易都不需要Bob的address</p></li>
+
+<li><p>// A 發送給 B =&gt; 使用A+ 發送給 B+ (而A+/B+無法推回A/B)</p></li>
 </ul>
 
 <p>Reference:</p>
