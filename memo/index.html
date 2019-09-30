@@ -29,17 +29,17 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="Memo" />
-<meta property="og:description" content="調整系統時區 sudo dpkg-reconfigure tzdata 查詢容量 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh 查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l 網路設定 # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192." />
+<meta property="og:description" content="調整系統時區 sudo dpkg-reconfigure tzdata 查詢容量 // du檢視檔案資料夾 /df檢視整體磁區 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh 查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l 網路設定 # /etc/network/interfaces # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/memo/" />
 
 
   <meta itemprop="name" content="Memo">
-<meta itemprop="description" content="調整系統時區 sudo dpkg-reconfigure tzdata 查詢容量 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh 查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l 網路設定 # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192.">
+<meta itemprop="description" content="調整系統時區 sudo dpkg-reconfigure tzdata 查詢容量 // du檢視檔案資料夾 /df檢視整體磁區 // 目錄下各檔案資料夾的所佔空間 $ du -smh * // 列出佔用空間前 5 名 $ du -s /var/* | sort -rn | head -5 // 依磁區 $ df -h // 顯示目錄下檔案 ls -lh 查詢系統資訊 // 記憶體用量 $ free -h // 硬體規格 $ cat /proc/cpuinfo $ cat /proc/cpuinfo | grep processor | wc -l $ cat /proc/meminfo $ sudo lshw $ ls /sys/class/net // 登入的user $ w $ whoami $ date $ cal $ uptime // os版本資訊 $ uname -a $ lsb_release -a $ more /proc/partitions $ ls /dev/[sh]d* $ df -h $ sudo fdisk -l 網路設定 # /etc/network/interfaces # 有線 auto eth0 iface eth0 inet dhcp # iface wlan0 inet static # address 192.">
 
 
 
-<meta itemprop="wordCount" content="382">
+<meta itemprop="wordCount" content="390">
 
 
 
@@ -125,13 +125,14 @@
 
 <h1>Memo</h1>
 <h2 id="調整系統時區">調整系統時區</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash 調整系統時區" data-lang="bash 調整系統時區">  sudo dpkg-reconfigure tzdata</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">  sudo dpkg-reconfigure tzdata</code></pre></div>
 <h2 id="查詢容量">查詢容量</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash du檢視檔案資料夾/df檢視整體磁區" data-lang="bash du檢視檔案資料夾/df檢視整體磁區">// 目錄下各檔案資料夾的所佔空間
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">// du檢視檔案資料夾 /df檢視整體磁區
+// 目錄下各檔案資料夾的所佔空間
 $ du -smh *
 
-// 列出佔用空間前 5 名
-$ du -s /var/* | sort -rn | head -5
+// 列出佔用空間前 <span class="m">5</span> 名
+$ du -s /var/* <span class="p">|</span> sort -rn <span class="p">|</span> head -5
 
 // 依磁區
 $ df -h
@@ -139,12 +140,12 @@ $ df -h
 // 顯示目錄下檔案
 ls -lh</code></pre></div>
 <h2 id="查詢系統資訊">查詢系統資訊</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash linux" data-lang="bash linux">// 記憶體用量
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">// 記憶體用量
 $ free -h
 
 // 硬體規格
 $ cat /proc/cpuinfo
-$ cat /proc/cpuinfo | grep processor | wc -l
+$ cat /proc/cpuinfo <span class="p">|</span> grep processor <span class="p">|</span> wc -l
 
 $ cat /proc/meminfo
 $ sudo lshw
@@ -163,29 +164,27 @@ $ uname -a
 $ lsb_release -a
 
 $ more /proc/partitions
-$ ls /dev/[sh]d*
+$ ls /dev/<span class="o">[</span>sh<span class="o">]</span>d*
 $ df -h
 $ sudo fdisk -l</code></pre></div>
 <h2 id="網路設定">網路設定</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash /etc/network/interfaces" data-lang="bash /etc/network/interfaces">  # 有線
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/network/interfaces</span>
+  <span class="c1"># 有線</span>
   auto eth0
   iface eth0 inet dhcp
-  # iface wlan0 inet static
-  # address 192.168.1.150
-  # netmask 255.255.255.0
-  # gateway 192.168.1.1
+  <span class="c1"># iface wlan0 inet static</span>
+  <span class="c1"># address 192.168.1.150</span>
+  <span class="c1"># netmask 255.255.255.0</span>
+  <span class="c1"># gateway 192.168.1.1</span>
 
-  # wifi
+  <span class="c1"># wifi</span>
   auto wlan0
   iface wlan0 inet dhcp
   wpa-ssid &lt;SSID&gt;
-  wpa-psk &lt;PASSWORD&gt;</code></pre></div>
-<pre><code>$ route add default gw 192.168.1.1 # gateway
-$ sudo ifconfig eth0 down &amp;&amp; sudo ifconfig eth0 up
-</code></pre>
-
+  wpa-psk &lt;PASSWORD&gt;</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ route add default gw <span class="m">192</span>.168.1.1 <span class="c1"># gateway</span>
+$ sudo ifconfig eth0 down <span class="o">&amp;&amp;</span> sudo ifconfig eth0 up</code></pre></div>
 <h2 id="壓縮-解壓縮">壓縮/解壓縮</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash tar" data-lang="bash tar">$ tar -czvf FileName.tar.gz DirName
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ tar -czvf FileName.tar.gz DirName
 $ tar -xzvf FileName.tar.gz
   c 壓縮
   x 解壓縮
@@ -193,32 +192,34 @@ $ tar -xzvf FileName.tar.gz
   v 過程中顯示檔案
   f 指定檔名</code></pre></div>
 <h2 id="mysql-dump-load">mysql dump/load</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash mysql" data-lang="bash mysql">// dump
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">// dump
 mysqldump -u root -p mydb &gt; mydb20160202.sql
 
 // load
 mysql -u root -p mydb &lt; mydb20160202.sql</code></pre></div>
 <h2 id="ubuntu-rails-基本環境建置">Ubuntu rails 基本環境建置</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash ruby on rails" data-lang="bash ruby on rails">sudo apt-get update
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install nodejs
-curl -L get.rvm.io | bash -s stable
-source /etc/profile.d/rvm.sh
+curl -L get.rvm.io <span class="p">|</span> bash -s stable
+<span class="nb">source</span> /etc/profile.d/rvm.sh
 rvm requirements
-rvm install 2.3.0
+rvm install <span class="m">2</span>.3.0
 rvm rubygems current
 
-# fix nokogiri error
+<span class="c1"># fix nokogiri error</span>
 sudo apt-get install build-essential patch
 sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
 sudo apt-get install libgmp-dev
 
-echo &#39;gem: --no-document&#39; &gt;&gt; ~/.gemrc
-gem install rails</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash ngnix passenger" data-lang="bash ngnix passenger">sudo apt-get install libpcre3-dev # fix ngnix ssl
+<span class="nb">echo</span> <span class="s1">&#39;gem: --no-document&#39;</span> &gt;&gt; ~/.gemrc
+gem install rails</code></pre></div>
+<h3 id="nginx-passenger">nginx &amp; passenger</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install libpcre3-dev <span class="c1"># fix ngnix ssl</span>
 gem install passenger
 rvmsudo passenger-install-nginx-module
 
-# fix nginx
+<span class="c1"># fix nginx</span>
 wget -O init-deb.sh https://www.linode.com/docs/assets/660-init-deb.sh
 
 sudo mv init-deb.sh /etc/init.d/nginx
@@ -232,24 +233,24 @@ vim /opt/nginx/conf/nginx.conf</code></pre></div>
 <h2 id="user">user</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ passwd</code></pre></div>
 <h2 id="shutdown">shutdown</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash shutdown" data-lang="bash shutdown">$ sudo shutdown -h now
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo shutdown -h now
 $ sudo reboot</code></pre></div>
 <h2 id="network">network</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash network" data-lang="bash network">$ sudo vim /etc/network/interfaces
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo vim /etc/network/interfaces
 $ sudo /etc/init.d/networking restart</code></pre></div>
 <h2 id="linux-list-the-open-ports-and-the-process-that-owns-them">Linux List The Open Ports And The Process That Owns Them</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash check ports" data-lang="bash check ports">$ sudo lsof -i
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo lsof -i
 $ sudo netstat -lptu
 $ sudo netstat -tulpn</code></pre></div>
 <h2 id="git">Git</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash git" data-lang="bash git">$ git config --list
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ git config --list
 $ git remote -v
 $ git remote add origin &lt;url&gt;
 $ git remote rm origin
-$ git branch --set-upstream-to=origin/master master
-$ git commit --amend # 修改上一次commit
-$ git commit --amend -m &#34;update file&#34; # 把commit併到上一次commit
-# 空目錄無法上git，可放一個.keep檔</code></pre></div>
+$ git branch --set-upstream-to<span class="o">=</span>origin/master master
+$ git commit --amend <span class="c1"># 修改上一次commit</span>
+$ git commit --amend -m <span class="s2">&#34;update file&#34;</span> <span class="c1"># 把commit併到上一次commit</span>
+<span class="c1"># 空目錄無法上git，可放一個.keep檔</span></code></pre></div>
 <h2 id="web-開發筆記">Web 開發筆記</h2>
 
 <ul>
