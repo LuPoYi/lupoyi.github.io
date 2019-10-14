@@ -2,7 +2,7 @@ html { background: #112f41; }
 header { width: 25%; background: #112f41; }
 .content-wrapper { width: 75%; margin-left: 25%; min-height: 92vh; word-break: break-all; }
 footer { width: 75%; left: 25%; padding: 15px 45px; }
-#content, .breadcrumb { max-width: 50em; position: relative; }
+#content, .breadcrumb { max-width: 65em; position: relative; }
 
 @media (max-width: 767px) {
   header { width: 100% }
