@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -113,6 +113,111 @@
 
   <p></p>
   <div id="list">
+    
+      <a class="h1" href="https://blog.poyi.tw/blog/2019/10/19/dart-beginning/">[Dart] Dart 101 入門筆記</a>
+<blockquote>
+<p>無腦玩了一下 Flutter，
+後來還是覺得要看一下 Dart 語言基本用法，
+這篇單純紀錄一下，最近會補完自己覺得該備忘的範例</p>
+</blockquote>
+
+<h3 id="install">Install</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew tap dart-lang/dart
+brew install dart</code></pre></div>
+<h3 id="variables">Variables</h3>
+
+<p>int, double, bool, String, list, map</p>
+
+<p>const - 常數，賦值後不可變更，必須明確賦值</p>
+
+<p><p>final - 常數，賦值後不可變更，可以是運算後過的結果</p>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">firstname</span> <span class="o">=</span> <span class="s2">&#34;Bob&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">year</span> <span class="o">=</span> <span class="m">1989</span><span class="p">;</span>
+<span class="kt">String</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s2">&#34;Lu&#34;</span><span class="p">;</span></p>
+
+<p><span class="kd">const</span> <span class="n">bar</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">;</span>
+<span class="kd">final</span> <span class="kt">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">;</span></code></pre></div>
+<h3 id="control-flow-statements">Control flow statements</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// &hellip;
+</span><span class="c1"></span><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// &hellip;
+</span><span class="c1"></span><span class="p">}</span></p>
+
+<p><span class="k">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="s1">&#39;what&#39;</span><span class="o">:</span>
+    <span class="c1">// &hellip;
+</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s1">&#39;does&#39;</span><span class="o">:</span>
+    <span class="c1">// &hellip;
+</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s1">&#39;the&#39;</span><span class="o">:</span>
+    <span class="c1">// &hellip;
+</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s1">&#39;fox&#39;</span><span class="o">:</span>
+    <span class="c1">// &hellip;
+</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s1">&#39;say&#39;</span><span class="o">:</span>
+    <span class="c1">// &hellip;
+</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="o">:</span>
+  <span class="c1">// &hellip;
+</span><span class="c1"></span><span class="p">}</span></p>
+
+<p><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span></p>
+
+<p><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span></p>
+
+<p><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="m">2019</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span></p>
+
+<p><span class="o">//</span> <span class="k">break</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="k">return</span></code></pre></div>
+<h3 id="function">Function</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="p">}</span></p>
+
+<p><span class="kt">void</span> <span class="n">printSomething</span><span class="p">(){</span>
+  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;something&#34;</span><span class="p">);</span>
+<span class="p">}</span></p>
+
+<p><span class="kt">void</span> <span class="n">printSomething</span><span class="p">(){</span>
+  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;something&#34;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="class">Class</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Animal</span><span class="p">{</span>
+  <span class="c1">// &hellip;
+</span><span class="c1"></span><span class="p">}</span></p>
+
+<p><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+  <span class="kt">String</span> <span class="n">name</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">age</span><span class="p">;</span></p>
+
+<p><span class="c1">// contrunctor
+</span><span class="c1"></span>  <span class="n">Dog</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">age</span><span class="p">)</span> <span class="p">{}</span></p>
+
+<p><span class="c1">// method
+</span><span class="c1"></span>  <span class="kt">void</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="n">age</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;): &#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="s2">&#34;ding ding ding ding ding&#34;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="s1">&#39;woof&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></p>
+
+<p><span class="kd">var</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jex&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+<span class="n">myDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span>
+<span class="kd">var</span> <span class="n">yourDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+<span class="n">yourDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span></code></pre></div></p>
+
+<br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
 <h2 id="grpc">gRPC</h2>
@@ -972,51 +1077,6 @@ StrictModes yes</code></pre></div>
 <p><a href="http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95">http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95</a></p>
 
 <p><a href="https://help.ubuntu.com/lts/serverguide/automatic-updates.html">https://help.ubuntu.com/lts/serverguide/automatic-updates.html</a></p>
-
-<br>
-    
-      <a class="h1" href="https://blog.poyi.tw/blog/2016/07/14/ssl-certificate-nginx-ubuntu-config/">[Ubuntu] 自行簽署的SSL憑證及Nginx設定</a>
-<p>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包</p>
-
-<p>要上Production的話還是必須找SSL服務來簽</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># openssl</span>
-<span class="c1"># 我習慣在nginx把ssl裝在opt/nginx底下</span>
-mkdir /opt/nginx/ssl
-sudo openssl req -x509 -nodes -days <span class="m">365</span> -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt
-<span class="c1"># 填寫基本資料</span>
-<span class="c1"># Common Name 填 Domain Name 或 IP</span>
-<span class="c1"># 建立金鑰nginx.key及憑證nginx.crt</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nginx.conf</span>
-server <span class="o">{</span>
-  listen <span class="m">80</span> default_server<span class="p">;</span>
-
-  <span class="c1"># 將所有HTTP requests轉至HTTPS</span>
-  <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>
-<span class="o">}</span>
-
-server <span class="o">{</span>
-  listen <span class="m">443</span> ssl default_server<span class="p">;</span>
-
-  ssl_certificate /opt/nginx/ssl/nginx.crt<span class="p">;</span>
-  ssl_certificate_key /opt/nginx/ssl/nginx.key<span class="p">;</span>
-  
-  <span class="c1"># 其他ssl參數設定</span>
-  ...
-
-  server_name default_server<span class="p">;</span>
-  root /home/path/rails/public<span class="p">;</span>   <span class="c1"># &lt;--- rails路徑</span>
-  rails_env production<span class="p">;</span>
-  passenger_enabled on<span class="p">;</span>
-<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 產dhparam -out</span>
-sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span class="m">2048</span></code></pre></div>
-<p>SSL設定最佳解可以參考 <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
-
-<p>Reference:</p>
-
-<p><a href="https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/">https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/</a></p>
-
-<p><a href="https://ksmx.me/letsencrypt-ssl-https/">https://ksmx.me/letsencrypt-ssl-https/</a></p>
-
-<p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
 
 <br>
     

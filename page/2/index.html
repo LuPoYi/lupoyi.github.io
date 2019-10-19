@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -113,6 +113,51 @@
 
   <p></p>
   <div id="list">
+    
+      <a class="h1" href="https://blog.poyi.tw/blog/2016/07/14/ssl-certificate-nginx-ubuntu-config/">[Ubuntu] 自行簽署的SSL憑證及Nginx設定</a>
+<p>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包</p>
+
+<p>要上Production的話還是必須找SSL服務來簽</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># openssl</span>
+<span class="c1"># 我習慣在nginx把ssl裝在opt/nginx底下</span>
+mkdir /opt/nginx/ssl
+sudo openssl req -x509 -nodes -days <span class="m">365</span> -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt
+<span class="c1"># 填寫基本資料</span>
+<span class="c1"># Common Name 填 Domain Name 或 IP</span>
+<span class="c1"># 建立金鑰nginx.key及憑證nginx.crt</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nginx.conf</span>
+server <span class="o">{</span>
+  listen <span class="m">80</span> default_server<span class="p">;</span>
+
+  <span class="c1"># 將所有HTTP requests轉至HTTPS</span>
+  <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>
+<span class="o">}</span>
+
+server <span class="o">{</span>
+  listen <span class="m">443</span> ssl default_server<span class="p">;</span>
+
+  ssl_certificate /opt/nginx/ssl/nginx.crt<span class="p">;</span>
+  ssl_certificate_key /opt/nginx/ssl/nginx.key<span class="p">;</span>
+  
+  <span class="c1"># 其他ssl參數設定</span>
+  ...
+
+  server_name default_server<span class="p">;</span>
+  root /home/path/rails/public<span class="p">;</span>   <span class="c1"># &lt;--- rails路徑</span>
+  rails_env production<span class="p">;</span>
+  passenger_enabled on<span class="p">;</span>
+<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 產dhparam -out</span>
+sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span class="m">2048</span></code></pre></div>
+<p>SSL設定最佳解可以參考 <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
+
+<p>Reference:</p>
+
+<p><a href="https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/">https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/</a></p>
+
+<p><a href="https://ksmx.me/letsencrypt-ssl-https/">https://ksmx.me/letsencrypt-ssl-https/</a></p>
+
+<p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
+
+<br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/04/05/how-to-mine-ethereum-on-windows/">[Ethereum] 如何使用Windows來挖礦</a>
 <h2 id="1-安裝geth">1. 安裝geth</h2>
@@ -249,7 +294,7 @@ C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<sp
 
 <br>
     
-      <a class="h1" href="https://blog.poyi.tw/blog/2016/04/02/golang-begging/">[Golang] Golang 101 入門筆記</a>
+      <a class="h1" href="https://blog.poyi.tw/blog/2016/04/02/golang-beginning/">[Golang] Golang 101 入門筆記</a>
 <h2 id="hello-go">Hello Go!</h2>
 <div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// hello.go
 </span><span class="c1"></span><span class="kn">package</span> <span class="nx">main</span>
@@ -293,56 +338,55 @@ Hello Go!</code></pre></div>
 <li>int : int8, int16, int32, int64</li>
 <li>uint : uint8, uint16, uint32, uint64</li>
 <li>float: float32, float64</li>
+</ul>
 
-<li><p>不同類型之間做計算都需要經過類型轉換</p>
+<p>不同類型之間做計算都需要經過類型轉換</p>
 <div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// 類型轉換 valueOfTypeB = typeB(valueOfTypeA)
 </span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
 <span class="kd">var</span> <span class="nx">b</span> <span class="kt">int32</span>
 <span class="nx">a</span> <span class="p">=</span> <span class="mi">15</span>
 <span class="nx">b</span> <span class="p">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="mi">6</span> <span class="c1">// cannot use a + 6 (type int) as type int32 in assignment
-</span><span class="c1"></span><span class="nx">b</span> <span class="p">=</span> <span class="nb">int32</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="mi">6</span></code></pre></div></li>
-</ul>
-
-<p><h3 id="指針">指針</h3>
+</span><span class="c1"></span><span class="nx">b</span> <span class="p">=</span> <span class="nb">int32</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="mi">6</span></code></pre></div>
+<h3 id="指針">指針</h3>
 <div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// pointer
 </span><span class="c1">// 若有一個變數為abc，則 &amp;abc 可取得 abc 的記憶體位置
 </span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">i1</span> <span class="p">=</span> <span class="mi">5</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;An integer: %d, its location in memory: %p\n&#34;</span><span class="p">,</span> <span class="nx">i1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i1</span><span class="p">)</span></p>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;An integer: %d, its location in memory: %p\n&#34;</span><span class="p">,</span> <span class="nx">i1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i1</span><span class="p">)</span>
 
-<p><span class="c1">// 要直接定義pointer的話，使用 <em>abc
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">intP</span> <span class="o"></em></span><span class="kt">int</span>
+<span class="c1">// 要直接定義pointer的話，使用 *abc
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">intP</span> <span class="o">*</span><span class="kt">int</span>
   <span class="nx">intP</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">i1</span>
   <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;The value at memory location %p is %d\n&#34;</span><span class="p">,</span> <span class="nx">intP</span><span class="p">,</span> <span class="o">*</span><span class="nx">intP</span><span class="p">)</span></code></pre></div>
 <h2 id="判斷式-迴圈">判斷式、迴圈</h2>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="k">if</span> <span class="nx">abc</span> <span class="p">&gt;</span> <span class="mi">5</span> <span class="p">{</span></p>
+<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="k">if</span> <span class="nx">abc</span> <span class="p">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
 
-<p><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">abc</span> <span class="p">&lt;</span> <span class="o">-</span><span class="mi">5</span>  <span class="p">{</span></p>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">abc</span> <span class="p">&lt;</span> <span class="o">-</span><span class="mi">5</span>  <span class="p">{</span>
 
-<p><span class="p">}</span> <span class="k">else</span> <span class="p">{</span></p>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 
-<p><span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="k">switch</span> <span class="nx">abc</span> <span class="p">{</span>
+<span class="k">switch</span> <span class="nx">abc</span> <span class="p">{</span>
   <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="o">&hellip;&hellip;</span>
+    <span class="o">......</span>
   <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="o">&hellip;&hellip;</span>
+    <span class="o">......</span>
   <span class="k">default</span><span class="p">:</span>
-    <span class="o">&hellip;&hellip;</span>
-<span class="p">}</span></p>
+    <span class="o">......</span>
+<span class="p">}</span>
 
-<p><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span></p>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
 
-<p><span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="c1">// break 中斷並跳出迴圈或判斷式
+<span class="c1">// break 中斷並跳出迴圈或判斷式
 </span><span class="c1"></span><span class="o">//</span> <span class="k">continue</span> <span class="nx">略過當次剩餘的code</span><span class="err">，</span><span class="nx">直接跳至迴圈下一run</span></code></pre></div>
 <h2 id="function">Function</h2>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">say</span><span class="p">()</span> <span class="p">{</span>
   <span class="nb">println</span><span class="p">(</span><span class="s">&#34;Hi~&#34;</span><span class="p">)</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="c1">// min, max = MinMax(44, 33)
+<span class="c1">// min, max = MinMax(44, 33)
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">MinMax</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">min</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="nx">a</span> <span class="p">&lt;</span> <span class="nx">b</span> <span class="p">{</span>
       <span class="nx">min</span> <span class="p">=</span> <span class="nx">a</span>
@@ -352,16 +396,17 @@ Hello Go!</code></pre></div>
       <span class="nx">max</span> <span class="p">=</span> <span class="nx">a</span>
   <span class="p">}</span>
   <span class="k">return</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="kd">func</span> <span class="nf">Min</span><span class="p">(</span><span class="nx">a</span> <span class="o">&hellip;</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span></p>
 
-<p><span class="p">}</span></code></pre></div>
-<h2 id="其他備忘">其他備忘</h2></p>
+<span class="kd">func</span> <span class="nf">Min</span><span class="p">(</span><span class="nx">a</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+
+<span class="p">}</span></code></pre></div>
+<h2 id="其他備忘">其他備忘</h2>
 
 <ul>
 <li>不同類型之間做計算都需要經過類型轉換</li>
-<li>import library或是變數卻沒使用的話會跳錯</li>
+<li>import library 或是變數卻沒使用的話會跳錯</li>
 <li>駝峰式命名</li>
 </ul>
 
@@ -715,40 +760,6 @@ Password:
 <p>Reference:</p>
 
 <p><a href="http://blog.itist.tw/2015/01/burning-linux-iso-image-to-usb-disk-on-osx.html">http://blog.itist.tw/2015/01/burning-linux-iso-image-to-usb-disk-on-osx.html</a></p>
-
-<br>
-    
-      <a class="h1" href="https://blog.poyi.tw/blog/2015/06/12/rails-ajax-render-error-in-json/">[Rails] AJAX render errors in json</a>
-<p><div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// new.html.erb
-</span><span class="c1"></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="nx">url</span><span class="o">:</span> <span class="nx">URL</span><span class="p">,</span>
-  <span class="kr">async</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-  <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
-    <span class="nx">amount</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
-  <span class="nx">method</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
-  <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-    <span class="c1">// do success things
-</span><span class="c1"></span>  <span class="p">},</span>
-  <span class="nx">error</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">errors</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">errors</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="nx">errors</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># orders_controller.rb </span>
-<span class="k">def</span> <span class="nf">create</span>
-  <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span>
-    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:errors</span> <span class="o">=&gt;</span> <span class="s2">&#34;金額不足&#34;</span> <span class="p">},</span> <span class="ss">:status</span> <span class="o">=&gt;</span> <span class="mi">422</span>
-    <span class="k">return</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-<p>當錯誤回傳時，使用422(Unprocessable Entity)來做error handling</p></p>
-
-<p>Reference:</p>
-
-<p><a href="http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/">http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/</a>
-<a href="http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</a></p>
 
 <br>
     

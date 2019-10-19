@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -113,6 +113,39 @@
 
   <p></p>
   <div id="list">
+    
+      <a class="h1" href="https://blog.poyi.tw/blog/2013/08/29/html5/">[HTML5] 入門</a>
+<h1 id="html-5-基本樣式">HTML 5 基本樣式</h1>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML 5<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello World!<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+<h1 id="視訊播放">視訊播放</h1>
+
+<p>瀏覽器會依type特性來決定要顯示哪一個影片檔，也可以依照不同尺寸來設定觀看的的解析度。
+video標籤可用的屬性:Preload(不自動下載視訊)、Loop(重複播放)、autoplay(開啟後自動播放)、width、height&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">autoplay</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;Simple Plan.720p.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#34;screen and (min-width: 500px)&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;Simple Plan.360p.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;Simple Plan.mp4&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/mp4&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;Simple Plan.ogg&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/ogg&#34;</span><span class="p">&gt;</span>
+  Sorry...Your browser is crap...
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span></code></pre></div>
+<p>目前查到的資料：
+IE、Safari 只支援mp4
+Opera 支援webm ogg
+FireFox 支援webm ogg (mp4部分支援)
+Chrome 全都支援</p>
+
+<p><a href="http://www.w3schools.com/html/html5_video.asp">http://www.w3schools.com/html/html5_video.asp</a></p>
+
+<br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/">[ASP.NET] 檔案下載寫法</a>
 <h2 id="response-writefile-檔案下載方式一">Response.WriteFile 檔案下載方式一</h2>
@@ -395,60 +428,6 @@ $ chmod <span class="m">777</span> test.txt
 <p><a href="http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm">http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm</a></p>
 
 <p><a href="http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts">http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts</a></p>
-
-<br>
-    
-      <a class="h1" href="https://blog.poyi.tw/blog/2013/02/14/aspnet-reset-password-in-active-directory/">[ASP.NET] Reset Password in Active Directory</a>
-<p><p>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的</p>
-<div class="highlight"><pre class="chroma"><code class="language-C#" data-lang="C#"><span class="c1">// Reset Password in Active Directory
-</span><span class="c1"></span><span class="n">DirectoryEntry</span> <span class="n">userDirEntry</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectoryEntry</span><span class="p">(</span><span class="s">&#34;LDAP://&#34;</span> <span class="p">+</span> <span class="n">ldapStr</span><span class="p">,</span> <span class="n">adminAccount</span><span class="p">,</span> <span class="n">adminPassword</span><span class="p">);</span>
-<span class="n">userDirEntry</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="s">&#34;SetPassword&#34;</span><span class="p">,</span> <span class="n">CreateRandomPassword</span><span class="p">(</span><span class="m">8</span><span class="p">));</span>  <span class="c1">// 重設新密碼
-</span><span class="c1"></span><span class="n">userDirEntry</span><span class="p">.</span><span class="n">CommitChanges</span><span class="p">();</span></p>
-
-<p><span class="n">userDirEntry</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">&#34;pwdLastSet&#34;</span><span class="p">].</span><span class="n">Value</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="c1">// 下次登入會強制要求改密碼
-</span><span class="c1"></span><span class="n">userDirEntry</span><span class="p">.</span><span class="n">CommitChanges</span><span class="p">();</span></p>
-
-<p><span class="n">userDirEntry</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-C#" data-lang="C#"><span class="c1">// Generate Random Password (Winform)
-</span><span class="c1"></span>
-<span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="n">CreateRandomPassword</span><span class="p">(</span><span class="kt">int</span> <span class="n">passwordLength</span><span class="p">)</span>
-<span class="p">{</span>
-      <span class="kt">string</span> <span class="n">allowedChars</span> <span class="p">=</span> <span class="s">&#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;*()_+?&#34;</span><span class="p">;</span>
-      <span class="kt">char</span><span class="p">[]</span> <span class="n">chars</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">passwordLength</span><span class="p">];</span>
-      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">passwordLength</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-      <span class="p">{</span>
-            <span class="n">chars</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">allowedChars</span><span class="p">[</span><span class="n">rd</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">allowedChars</span><span class="p">.</span><span class="n">Length</span><span class="p">)];</span><br />
-            <span class="c1">// random.next(min,max) =&gt;int
-</span><span class="c1"></span>      <span class="p">}</span>
-      <span class="kt">string</span> <span class="n">strPwd</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">(</span><span class="n">chars</span><span class="p">);</span></p>
-
-<pre><code>  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(!((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Regex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsMatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strPwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#34;[0-9]&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Regex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsMatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strPwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#34;[a-z]&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Regex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsMatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strPwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#34;[A-Z]&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Regex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IsMatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strPwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;#34;[\W]&amp;#34;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;    
-  &lt;span class=&quot;c1&quot;&gt;// \w  [a-zA-Z0-9_]  , \W ![a-zA-Z0-9_]
-</code></pre>
-
-<p></span><span class="c1"></span>      <span class="p">{</span>
-            <span class="n">strPwd</span> <span class="p">=</span> <span class="n">CreateRandomPassword</span><span class="p">(</span><span class="m">8</span><span class="p">);</span><br />
-      <span class="p">}</span></p>
-
-<pre><code>  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strPwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-</code></pre>
-
-<p><span class="p">}</span></p>
-
-<p><span class="c1">// 靜態避免短時期內產生相同亂數
-</span><span class="c1"></span><span class="k">static</span> <span class="n">Random</span> <span class="n">rd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="n">GetRandomSeed</span><span class="p">());</span>
-<span class="k">static</span> <span class="kt">int</span> <span class="n">GetRandomSeed</span><span class="p">()</span>
-<span class="p">{</span>
-      <span class="kt">byte</span><span class="p">[]</span> <span class="n">bytes</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="p">[</span><span class="m">4</span><span class="p">];</span>
-      <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Cryptography</span><span class="p">.</span><span class="n">RNGCryptoServiceProvider</span> <span class="n">rng</span> <span class="p">=</span>
-      <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Cryptography</span><span class="p">.</span><span class="n">RNGCryptoServiceProvider</span><span class="p">();</span>
-      <span class="n">rng</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
-      <span class="k">return</span> <span class="n">BitConverter</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></p>
 
 <br>
     

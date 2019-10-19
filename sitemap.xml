@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <loc>https://blog.poyi.tw/blog/2019/10/19/dart-beginning/</loc>
+    <lastmod>2019-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/</loc>
-    <lastmod>2019-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/posts/</loc>
+    <lastmod>2019-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,7 +73,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/blog/2016/04/02/golang-begging/</loc>
+    <loc>https://blog.poyi.tw/blog/2016/04/02/golang-beginning/</loc>
     <lastmod>2016-04-02T00:00:00+00:00</lastmod>
   </url>
   

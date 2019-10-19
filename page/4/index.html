@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -113,6 +113,51 @@
 
   <p></p>
   <div id="list">
+    
+      <a class="h1" href="https://blog.poyi.tw/blog/2013/12/23/ruby-exception-handling/">[Ruby] 例外處理</a>
+<p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
+
+<p><h1 id="例外處理">例外處理</h1>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># begin..end當中的rescue</span>
+<span class="k">begin</span>
+  <span class="c1"># 有機會發生例外的code</span>
+<span class="k">rescue</span>
+  <span class="c1"># 發現例外後要執行的code</span>
+<span class="k">ensure</span>
+  <span class="c1"># 無論是否例外都會執行的code</span>
+<span class="k">end</span></code></pre></div>
+<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p></p>
+
+<ul>
+<li>$! (例外物件)
+
+<ul>
+<li>.class</li>
+<li>.message</li>
+<li>.backtrace (等同於$@)</li>
+</ul></li>
+
+<li><p>$@ (例外的位置資訊)</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># example</span>
+<span class="k">begin</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">ex</span>
+    <span class="nb">puts</span> <span class="s2">&#34;Except class:  </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="nb">puts</span> <span class="s2">&#34;Except message: </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class="k">ensure</span>
+    <span class="nb">puts</span> <span class="s1">&#39;Always print&#39;</span>
+<span class="k">end</span>
+
+<span class="no">Except</span> <span class="ss">class</span><span class="p">:</span>  <span class="no">ZeroDivisionError</span>
+<span class="no">Except</span> <span class="ss">message</span><span class="p">:</span> <span class="n">divided</span> <span class="n">by</span> <span class="mi">0</span>
+<span class="no">Always</span> <span class="nb">print</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span></code></pre></div></li>
+</ul>
+
+<p>Reference:
+<a href="http://blog.tonycube.com/2011/07/ruby8.html">http://blog.tonycube.com/2011/07/ruby8.html</a></p>
+
+<br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2013/12/18/ruby-functions-for-numbers/">[Ruby] Functions for Numbers</a>
 <p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Math</span>
@@ -462,46 +507,6 @@ IThome「防駭演練與危機處理」研習會</p>
 <span class="k">def</span> <span class="nf">destroy</span>
     <span class="no">Team</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">].</span><span class="n">destroy</span>
 <span class="k">end</span></code></pre></div>
-
-<br>
-    
-      <a class="h1" href="https://blog.poyi.tw/blog/2013/10/30/rails-sql-server/">[Rails] Connect SQL Server</a>
-<p>看到官方提供的adpter..真的不知道怎麼下手.. <del>魯蛇無誤</del></p>
-
-<h2 id="ubuntu-connect-to-sql-server">Ubuntu Connect to SQL Server</h2>
-
-<p>想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 安裝FreeTDS</span>
-$ sudo apt-get install freetds-dev freetds-bin tdsodbc</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 檢查FreeTDS版本資訊</span>
-$ tsql -C</code></pre></div>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/0fBGvXZHQ4ug2ZQOTol3_2013-11-6%20%E4%B8%8A%E5%8D%88%2010-53-15.jpg" alt="2013-11-6 上午 10-53-15.jpg" /></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 這時候就可以Connect SQL Server</span>
-$ tsql -H <span class="o">(</span>SQL Server IP<span class="o">)</span> -p <span class="m">1433</span> -U <span class="o">(</span>account<span class="o">)</span> －P <span class="o">(</span>password<span class="o">)</span> –D <span class="o">(</span>datebase name<span class="o">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 直接下TSQL，這邊要用go才會執行</span>
-$ <span class="k">select</span> * from Team
-$ go</code></pre></div>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/J9JDVHr7S9uu6H8nhWLj_2013-11-6%20%E4%B8%8A%E5%8D%88%2011-03-53.jpg" alt="2013-11-6 上午 11-03-53.jpg" /></p>
-
-<p>這邊代表已能在Ubuntu Connect SQL Server
-但Rails還需要其他套件</p>
-
-<hr />
-
-<p><h2 id="rails-connect-to-sql-server-error">Rails Connect to SQL Server (Error)</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 安裝tiny_tds、sqlserver adapter</span>
-$ sudo gem install tiny_tds
-$ sudo gem install activerecord-sqlserver-adapter</code></pre></div>
-<p>修改DateBase.yml
-<img src="http://user-image.logdown.io/user/2740/blog/2734/post/156771/n2j3Og9gRCKcn9v70smh_2013-11-6%20%E4%B8%8A%E5%8D%88%2011-36-45.jpg" alt="2013-11-6 上午 11-36-45.jpg" /></p></p>
-
-<p>OK..在這邊理論上是可以直接在Rails調用..
-但執行時卻會出錯，查了一下好像還無解 (Rails 4似乎還不太支援之類的..)
-錯誤訊息可參考 &gt; <a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279">https://github.com/rails-sqlserver/activerecord-sqlserver-adapter/issues/279</a>
-暫時找不到解法，除非把Rails降到3.x版</p>
-
-<p>Reference:
-<a href="https://github.com/rails-sqlserver">https://github.com/rails-sqlserver</a>
-<a href="http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html">http://www.cnblogs.com/lwm-1988/archive/2012/05/28/2520728.html</a>
-<a href="http://stackoverflow.com/questions/12010780/rails-how-to-do-search">http://stackoverflow.com/questions/12010780/rails-how-to-do-search</a></p>
 
 <br>
     

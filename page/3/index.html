@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.poyi.tw/" />
 
-<meta property="og:updated_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
 
   <meta itemprop="name" content="Bob 學習筆記">
 <meta itemprop="description" content="">
@@ -113,6 +113,40 @@
 
   <p></p>
   <div id="list">
+    
+      <a class="h1" href="https://blog.poyi.tw/blog/2015/06/12/rails-ajax-render-error-in-json/">[Rails] AJAX render errors in json</a>
+<p><div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// new.html.erb
+</span><span class="c1"></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="nx">url</span><span class="o">:</span> <span class="nx">URL</span><span class="p">,</span>
+  <span class="kr">async</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
+    <span class="nx">amount</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
+  <span class="nx">method</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
+  <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="c1">// do success things
+</span><span class="c1"></span>  <span class="p">},</span>
+  <span class="nx">error</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">errors</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">errors</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">errors</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># orders_controller.rb </span>
+<span class="k">def</span> <span class="nf">create</span>
+  <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span>
+    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:errors</span> <span class="o">=&gt;</span> <span class="s2">&#34;金額不足&#34;</span> <span class="p">},</span> <span class="ss">:status</span> <span class="o">=&gt;</span> <span class="mi">422</span>
+    <span class="k">return</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+<p>當錯誤回傳時，使用422(Unprocessable Entity)來做error handling</p></p>
+
+<p>Reference:</p>
+
+<p><a href="http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/">http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/</a>
+<a href="http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</a></p>
+
+<br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2015/04/18/all-your-important-files-are-encrypted/">資料被綁架軟體加密，要求贖金用比特幣支付</a>
 <p><strong>這篇單純紀錄一下被綁架後頁面的流程。</strong></p>
@@ -596,51 +630,6 @@ Command line tool已經獨立出來，不需要安裝XCode了</p>
 <p><a href="http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/">http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/</a></p>
 
 <p><a href="http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html</a></p>
-
-<br>
-    
-      <a class="h1" href="https://blog.poyi.tw/blog/2013/12/23/ruby-exception-handling/">[Ruby] 例外處理</a>
-<p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
-
-<p><h1 id="例外處理">例外處理</h1>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># begin..end當中的rescue</span>
-<span class="k">begin</span>
-  <span class="c1"># 有機會發生例外的code</span>
-<span class="k">rescue</span>
-  <span class="c1"># 發現例外後要執行的code</span>
-<span class="k">ensure</span>
-  <span class="c1"># 無論是否例外都會執行的code</span>
-<span class="k">end</span></code></pre></div>
-<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p></p>
-
-<ul>
-<li>$! (例外物件)
-
-<ul>
-<li>.class</li>
-<li>.message</li>
-<li>.backtrace (等同於$@)</li>
-</ul></li>
-
-<li><p>$@ (例外的位置資訊)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># example</span>
-<span class="k">begin</span>
-    <span class="n">abc</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">ex</span>
-    <span class="nb">puts</span> <span class="s2">&#34;Except class:  </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&#34;</span>
-    <span class="nb">puts</span> <span class="s2">&#34;Except message: </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
-<span class="k">ensure</span>
-    <span class="nb">puts</span> <span class="s1">&#39;Always print&#39;</span>
-<span class="k">end</span>
-
-<span class="no">Except</span> <span class="ss">class</span><span class="p">:</span>  <span class="no">ZeroDivisionError</span>
-<span class="no">Except</span> <span class="ss">message</span><span class="p">:</span> <span class="n">divided</span> <span class="n">by</span> <span class="mi">0</span>
-<span class="no">Always</span> <span class="nb">print</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span></code></pre></div></li>
-</ul>
-
-<p>Reference:
-<a href="http://blog.tonycube.com/2011/07/ruby8.html">http://blog.tonycube.com/2011/07/ruby8.html</a></p>
 
 <br>
     
