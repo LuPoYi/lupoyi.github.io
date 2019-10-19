@@ -136,6 +136,8 @@
     <main id="content" class="posts">
 
 <h1>[ASP.NET] Reset Password in Active Directory</h1>
+<div class="post-date">February 14, 2013</div>
+<br>
 <p><p>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的</p>
 <div class="highlight"><pre class="chroma"><code class="language-C#" data-lang="C#"><span class="c1">// Reset Password in Active Directory
 </span><span class="c1"></span><span class="n">DirectoryEntry</span> <span class="n">userDirEntry</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectoryEntry</span><span class="p">(</span><span class="s">&#34;LDAP://&#34;</span> <span class="p">+</span> <span class="n">ldapStr</span><span class="p">,</span> <span class="n">adminAccount</span><span class="p">,</span> <span class="n">adminPassword</span><span class="p">);</span>

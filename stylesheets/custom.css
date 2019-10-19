@@ -1,13 +1,45 @@
-html { background: #112f41; }
-header { width: 25%; background: #112f41; }
-.content-wrapper { width: 75%; margin-left: 25%; min-height: 92vh; word-break: break-all; }
-footer { width: 75%; left: 25%; padding: 15px 45px; }
-#content, .breadcrumb { max-width: 65em; position: relative; }
+html {
+  background: #112f41;
+}
+
+header {
+  width: 25%;
+  background: #112f41;
+}
+
+.content-wrapper {
+  width: 75%;
+  margin-left: 25%;
+  min-height: 92vh;
+  word-break: break-all;
+}
+
+footer {
+  width: 75%;
+  left: 25%;
+  padding: 15px 45px;
+}
+
+#content,
+.breadcrumb {
+  max-width: 65em;
+  position: relative;
+}
 
 @media (max-width: 767px) {
-  header { width: 100% }
-  .content-wrapper { width: 100%; margin-left: 0 }
-  footer { width: 100%; left: 0 }
+  header {
+    width: 100%
+  }
+
+  .content-wrapper {
+    width: 100%;
+    margin-left: 0
+  }
+
+  footer {
+    width: 100%;
+    left: 0
+  }
 }
 
 #content div.pagination {
@@ -18,20 +50,31 @@ footer { width: 75%; left: 25%; padding: 15px 45px; }
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
+
 #content div.pagination a.prev {
   position: absolute;
   left: 0;
 }
-#content div.pagination a.next{
-  position:absolute;right:0
+
+#content div.pagination a.next {
+  position: absolute;
+  right: 0
 }
+
 #content div.pagination a:hover {
   color: #0181eb;
 }
 
-.h1 { font-size: 36px; font-weight: 600 }
+.h1 {
+  font-size: 36px;
+  font-weight: 600
+}
 
 
 .chroma {
   overflow-x: auto;
+}
+
+.post-date {
+  text-align: right;
 }

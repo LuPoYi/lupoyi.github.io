@@ -115,6 +115,8 @@
   <div id="list">
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/07/14/ssl-certificate-nginx-ubuntu-config/">[Ubuntu] 自行簽署的SSL憑證及Nginx設定</a>
+<div class="post-date">July 14, 2016</div>
+<br>
 <p>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包</p>
 
 <p>要上Production的話還是必須找SSL服務來簽</p>
@@ -160,6 +162,8 @@ sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span class="m">2048</span>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/04/05/how-to-mine-ethereum-on-windows/">[Ethereum] 如何使用Windows來挖礦</a>
+<div class="post-date">April 5, 2016</div>
+<br>
 <h2 id="1-安裝geth">1. 安裝geth</h2>
 
 <p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
@@ -295,6 +299,8 @@ C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<sp
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/04/02/golang-beginning/">[Golang] Golang 101 入門筆記</a>
+<div class="post-date">April 2, 2016</div>
+<br>
 <h2 id="hello-go">Hello Go!</h2>
 <div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// hello.go
 </span><span class="c1"></span><span class="kn">package</span> <span class="nx">main</span>
@@ -417,6 +423,8 @@ Hello Go!</code></pre></div>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/03/05/ubuntu-openvpn-server-client/">[Ubuntu] 架設 OpenVpn Server &amp; Client</a>
+<div class="post-date">March 5, 2016</div>
+<br>
 <p><h2 id="openvpn">OpenVpn</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get update
 apt-get install openvpn easy-rsa</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf
@@ -507,6 +515,8 @@ key bob01.key</code></pre></div>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/03/05/generate-your-own-bitcoin-address/">[Bitcoin] 客製比特幣位址並匯入錢包</a>
+<div class="post-date">March 5, 2016</div>
+<br>
 <h2 id="使用vanitygen客製比特幣位址">使用vanitygen客製比特幣位址</h2>
 
 <h3 id="安裝vanitygen">安裝vanitygen</h3>
@@ -579,6 +589,8 @@ $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/01/17/ubuntu-setting-ntp-sync-time/">[Ubuntu] 設定NTP校正時間</a>
+<div class="post-date">January 17, 2016</div>
+<br>
 <h3 id="校正系統時間">校正系統時間</h3>
 
 <p>類似OTP(google authenticator)這種服務當你系統時間不對就完全不能用</p>
@@ -611,6 +623,8 @@ $ ntpdate time.stdtime.gov.tw <span class="c1"># 測試 NTP Server</span>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2016/01/17/ubuntu-setting-pppoe-static-ip/">[Ubuntu] 設定 PPPoE 固定IP</a>
+<div class="post-date">January 17, 2016</div>
+<br>
 <h4 id="一般設定ip會直接寫在-etc-network-interfaces-看是要static還是dynamic">一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic</h4>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/network/interfaces</span>
 auto p1p1
@@ -642,6 +656,8 @@ $ sudo pppoeconf</code></pre></div></li>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2015/11/07/ruby-aes-encrypt-decrypt/">[Ruby] AES 加密解密</a>
+<div class="post-date">November 7, 2015</div>
+<br>
 <p>###對稱金鑰加密：加解密使用的金鑰是同一把</p>
 
 <ul>
@@ -691,6 +707,8 @@ $ sudo pppoeconf</code></pre></div></li>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2015/07/11/rails-various-update-methods/">[Rails] 各種update method</a>
+<div class="post-date">July 11, 2015</div>
+<br>
 <p>##正規Rails的更新 - update</p>
 
 <p>會觸發validation、callback、也會更新updated_at</p>
@@ -725,6 +743,8 @@ $ sudo pppoeconf</code></pre></div></li>
 <br>
     
       <a class="h1" href="https://blog.poyi.tw/blog/2015/06/29/mac-build-ubuntu-flash-using-command/">[Mac] 三步驟純指令建立Ubuntu的USB隨身碟</a>
+<div class="post-date">June 29, 2015</div>
+<br>
 <p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 將載好的ubuntu.iso 轉成 ubuntu.dmg</span>
 Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso
 正在讀取Driver Descriptor Map（DDM：0）⋯

@@ -136,6 +136,8 @@ http://ruby-doc.org/core-2.1.4/File.html">
     <main id="content" class="posts">
 
 <h1>[Ruby] 匯出txt檔</h1>
+<div class="post-date">May 6, 2014</div>
+<br>
 <p><h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 寫入txt</span>
 <span class="n">all_users_mobile</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;mobile like ?&#39;</span><span class="p">,</span> <span class="s1">&#39;+8869%&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:mobile</span><span class="p">)</span><span class="o">.</span><span class="n">uniq</span></p>
