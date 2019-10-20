@@ -134,74 +134,74 @@ brew install dart</code></pre></div>
 
 <p>const - 常數，賦值後不可變更，必須明確賦值</p>
 
-<p><p>final - 常數，賦值後不可變更，可以是運算後過的結果</p>
+<p>final - 常數，賦值後不可變更，可以是運算後過的結果</p>
 <div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">firstname</span> <span class="o">=</span> <span class="s2">&#34;Bob&#34;</span><span class="p">;</span>
 <span class="kd">var</span> <span class="n">year</span> <span class="o">=</span> <span class="m">1989</span><span class="p">;</span>
-<span class="kt">String</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s2">&#34;Lu&#34;</span><span class="p">;</span></p>
+<span class="kt">String</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s2">&#34;Lu&#34;</span><span class="p">;</span>
 
-<p><span class="kd">const</span> <span class="n">bar</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">;</span>
+<span class="kd">const</span> <span class="n">bar</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">;</span>
 <span class="kd">final</span> <span class="kt">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">;</span></code></pre></div>
 <h3 id="control-flow-statements">Control flow statements</h3>
 <div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// &hellip;
+  <span class="c1">// ...
 </span><span class="c1"></span><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// &hellip;
-</span><span class="c1"></span><span class="p">}</span></p>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-<p><span class="k">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">case</span> <span class="s1">&#39;what&#39;</span><span class="o">:</span>
-    <span class="c1">// &hellip;
+    <span class="c1">// ...
 </span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
   <span class="k">case</span> <span class="s1">&#39;does&#39;</span><span class="o">:</span>
-    <span class="c1">// &hellip;
+    <span class="c1">// ...
 </span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
   <span class="k">case</span> <span class="s1">&#39;the&#39;</span><span class="o">:</span>
-    <span class="c1">// &hellip;
+    <span class="c1">// ...
 </span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
   <span class="k">case</span> <span class="s1">&#39;fox&#39;</span><span class="o">:</span>
-    <span class="c1">// &hellip;
+    <span class="c1">// ...
 </span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
   <span class="k">case</span> <span class="s1">&#39;say&#39;</span><span class="o">:</span>
-    <span class="c1">// &hellip;
+    <span class="c1">// ...
 </span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
   <span class="k">default</span><span class="o">:</span>
-  <span class="c1">// &hellip;
-</span><span class="c1"></span><span class="p">}</span></p>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-<p><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="m">2019</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="m">2019</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="o">//</span> <span class="k">break</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="k">return</span></code></pre></div>
+<span class="o">//</span> <span class="k">break</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="k">return</span></code></pre></div>
 <h3 id="function">Function</h3>
 <div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
   <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="kt">void</span> <span class="n">printSomething</span><span class="p">(){</span>
+<span class="kt">void</span> <span class="n">printSomething</span><span class="p">(){</span>
   <span class="n">print</span><span class="p">(</span><span class="s2">&#34;something&#34;</span><span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 <h3 id="class">Class</h3>
 <div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Animal</span><span class="p">{</span>
-  <span class="c1">// &hellip;
-</span><span class="c1"></span><span class="p">}</span></p>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
 
-<p><span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
   <span class="kt">String</span> <span class="n">name</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">age</span><span class="p">;</span></p>
+  <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
 
-<p><span class="c1">// contrunctor
-</span><span class="c1"></span>  <span class="n">Dog</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">age</span><span class="p">)</span> <span class="p">{}</span></p>
+  <span class="c1">// contrunctor
+</span><span class="c1"></span>  <span class="n">Dog</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">age</span><span class="p">)</span> <span class="p">{}</span>
 
-<p><span class="c1">// method
+  <span class="c1">// method
 </span><span class="c1"></span>  <span class="kt">void</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="n">age</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;): &#34;</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
@@ -210,12 +210,62 @@ brew install dart</code></pre></div>
       <span class="n">print</span><span class="p">(</span><span class="s1">&#39;woof&#39;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">}</span></p>
+<span class="p">}</span>
 
-<p><span class="kd">var</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jex&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jex&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
 <span class="n">myDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span>
 <span class="kd">var</span> <span class="n">yourDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-<span class="n">yourDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span></code></pre></div></p>
+<span class="n">yourDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span></code></pre></div>
+<h3 id="mixin">Mixin</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Walker</span> <span class="p">{}</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Flyer</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">Animal</span><span class="p">{}</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">with</span> <span class="n">Walker</span> <span class="p">{}</span>
+<span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">with</span> <span class="n">Walker</span><span class="p">,</span> <span class="n">Flyer</span> <span class="p">{}</span></code></pre></div>
+<h3 id="interfaces">Interfaces</h3>
+
+<blockquote>
+<p>只繼承原class的API，不繼承原class的實作</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Camera</span> <span class="p">{</span>
+  <span class="kt">void</span> <span class="n">takePhoto</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 這邊不會被Phone繼承實作
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Phone</span> <span class="kd">implements</span> <span class="n">Camera</span> <span class="p">{</span>
+  <span class="kt">void</span> <span class="n">takePhoto</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;takePhoto from Phone&#34;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+<h3 id="future-async-await">Future, async, await</h3>
+<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">(</span><span class="kt">String</span> <span class="n">message</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
+  <span class="kd">await</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">1</span><span class="p">));</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">(</span><span class="kt">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">1</span><span class="p">)).</span><span class="n">then</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="k">new</span> <span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">2</span><span class="p">)).</span><span class="n">then</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;execute printWithDelay&#34;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="n">print</span><span class="p">(</span><span class="s2">&#34;before printWithDelay&#34;</span><span class="p">);</span>
+<span class="n">printWithDelay</span><span class="p">();</span>
+<span class="n">print</span><span class="p">(</span><span class="s2">&#34;after printWithDelay&#34;</span><span class="p">);</span>
+
+<span class="c1">// before printWithDelay
+</span><span class="c1">// after printWithDelay
+</span><span class="c1"></span><span class="o">//</span> <span class="n">execute</span> <span class="n">printWithDelay</span></code></pre></div>
+<p>Reference:</p>
+
+<p><a href="https://dart.dev/samples">https://dart.dev/samples</a></p>
 
 <br>
     
