@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.poyi.tw/dart-beginning/</loc>
+    <loc>https://blog.poyi.tw/posts/dart-beginning/</loc>
     <lastmod>2019-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,362 +18,362 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/grpc-go-ruby/</loc>
+    <loc>https://blog.poyi.tw/posts/grpc-go-ruby/</loc>
     <lastmod>2019-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-ubuntu-environment-ubuntu18-dot-04/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/</loc>
     <lastmod>2019-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/bitcoin-improvement-proposal-39/</loc>
+    <loc>https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/</loc>
     <lastmod>2017-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/private-coins-monero-dash-zcash-pivx/</loc>
+    <loc>https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/how-to-mine-zcash-on-windows/</loc>
+    <loc>https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/</loc>
     <lastmod>2017-01-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-ubuntu-environment-ubuntu16-dot-04/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu16-dot-04/</loc>
     <lastmod>2016-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-mac-os-environment-sierra/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-mac-os-environment-sierra/</loc>
     <lastmod>2016-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/my-linux-command/</loc>
+    <loc>https://blog.poyi.tw/posts/my-linux-command/</loc>
     <lastmod>2016-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/linux-some-common-security-setting/</loc>
+    <loc>https://blog.poyi.tw/posts/linux-some-common-security-setting/</loc>
     <lastmod>2016-08-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ssl-certificate-nginx-ubuntu-config/</loc>
+    <loc>https://blog.poyi.tw/posts/ssl-certificate-nginx-ubuntu-config/</loc>
     <lastmod>2016-07-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/how-to-mine-ethereum-on-windows/</loc>
+    <loc>https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/</loc>
     <lastmod>2016-04-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/golang-beginning/</loc>
+    <loc>https://blog.poyi.tw/posts/golang-beginning/</loc>
     <lastmod>2016-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/generate-your-own-bitcoin-address/</loc>
+    <loc>https://blog.poyi.tw/posts/generate-your-own-bitcoin-address/</loc>
     <lastmod>2016-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ubuntu-openvpn-server-client/</loc>
+    <loc>https://blog.poyi.tw/posts/ubuntu-openvpn-server-client/</loc>
     <lastmod>2016-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ubuntu-setting-pppoe-static-ip/</loc>
+    <loc>https://blog.poyi.tw/posts/ubuntu-setting-pppoe-static-ip/</loc>
     <lastmod>2016-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ubuntu-setting-ntp-sync-time/</loc>
+    <loc>https://blog.poyi.tw/posts/ubuntu-setting-ntp-sync-time/</loc>
     <lastmod>2016-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-aes-encrypt-decrypt/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-aes-encrypt-decrypt/</loc>
     <lastmod>2015-11-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-various-update-methods/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-various-update-methods/</loc>
     <lastmod>2015-07-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/mac-build-ubuntu-flash-using-command/</loc>
+    <loc>https://blog.poyi.tw/posts/mac-build-ubuntu-flash-using-command/</loc>
     <lastmod>2015-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-ajax-render-error-in-json/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-ajax-render-error-in-json/</loc>
     <lastmod>2015-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/all-your-important-files-are-encrypted/</loc>
+    <loc>https://blog.poyi.tw/posts/all-your-important-files-are-encrypted/</loc>
     <lastmod>2015-04-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-basic-2/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-basic-2/</loc>
     <lastmod>2015-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-basic-1/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-basic-1/</loc>
     <lastmod>2015-03-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-txt-file/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-txt-file/</loc>
     <lastmod>2014-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-csv-file/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-csv-file/</loc>
     <lastmod>2014-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-require-load-include-extend/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-require-load-include-extend/</loc>
     <lastmod>2014-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/mac-directly-in-the-terminal-to-open-sublime/</loc>
+    <loc>https://blog.poyi.tw/posts/mac-directly-in-the-terminal-to-open-sublime/</loc>
     <lastmod>2014-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-mac-os-environment-build/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-mac-os-environment-build/</loc>
     <lastmod>2014-01-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/javascript-triggered-interrupt-event-or-action/</loc>
+    <loc>https://blog.poyi.tw/posts/javascript-triggered-interrupt-event-or-action/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-exception-handling/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-exception-handling/</loc>
     <lastmod>2013-12-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-functions-for-numbers/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-functions-for-numbers/</loc>
     <lastmod>2013-12-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-is-a-small-note/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-is-a-small-note/</loc>
     <lastmod>2013-12-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-and/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-and/</loc>
     <lastmod>2013-12-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-bootstrap-for-rails/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-bootstrap-for-rails/</loc>
     <lastmod>2013-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-gem/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-gem/</loc>
     <lastmod>2013-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/apt/</loc>
+    <loc>https://blog.poyi.tw/posts/apt/</loc>
     <lastmod>2013-11-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-activerecord/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-activerecord/</loc>
     <lastmod>2013-11-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-rest/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-rest/</loc>
     <lastmod>2013-11-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-sql-server/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-sql-server/</loc>
     <lastmod>2013-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-crud/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-crud/</loc>
     <lastmod>2013-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/vmware-vcenter-cluster-exercises/</loc>
+    <loc>https://blog.poyi.tw/posts/vmware-vcenter-cluster-exercises/</loc>
     <lastmod>2013-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/rails-tips/</loc>
+    <loc>https://blog.poyi.tw/posts/rails-tips/</loc>
     <lastmod>2013-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/vmware-vcenter-80-port-is-already-in-use/</loc>
+    <loc>https://blog.poyi.tw/posts/vmware-vcenter-80-port-is-already-in-use/</loc>
     <lastmod>2013-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/ruby-basic/</loc>
+    <loc>https://blog.poyi.tw/posts/ruby-basic/</loc>
     <lastmod>2013-10-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/c-delegate-delegate/</loc>
+    <loc>https://blog.poyi.tw/posts/c-delegate-delegate/</loc>
     <lastmod>2013-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-connect-to-sql-server/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-connect-to-sql-server/</loc>
     <lastmod>2013-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/c-ienumerable/</loc>
+    <loc>https://blog.poyi.tw/posts/c-ienumerable/</loc>
     <lastmod>2013-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-linq-dynamic-conditions/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-linq-dynamic-conditions/</loc>
     <lastmod>2013-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-string-is-padded-with-zeros/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-string-is-padded-with-zeros/</loc>
     <lastmod>2013-09-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-archive-folder-access/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-archive-folder-access/</loc>
     <lastmod>2013-09-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/jquery-selector/</loc>
+    <loc>https://blog.poyi.tw/posts/jquery-selector/</loc>
     <lastmod>2013-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/jquery/</loc>
+    <loc>https://blog.poyi.tw/posts/jquery/</loc>
     <lastmod>2013-09-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-access-to-ad-domain/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-access-to-ad-domain/</loc>
     <lastmod>2013-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/sql-date/</loc>
+    <loc>https://blog.poyi.tw/posts/sql-date/</loc>
     <lastmod>2013-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-date/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-date/</loc>
     <lastmod>2013-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-print/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-print/</loc>
     <lastmod>2013-09-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-implementation/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-implementation/</loc>
     <lastmod>2013-09-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/network-attacks/</loc>
+    <loc>https://blog.poyi.tw/posts/network-attacks/</loc>
     <lastmod>2013-09-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/html5/</loc>
+    <loc>https://blog.poyi.tw/posts/html5/</loc>
     <lastmod>2013-08-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/git-basic/</loc>
+    <loc>https://blog.poyi.tw/posts/git-basic/</loc>
     <lastmod>2013-08-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-file-download/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-file-download/</loc>
     <lastmod>2013-08-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/linq-introduction/</loc>
+    <loc>https://blog.poyi.tw/posts/linq-introduction/</loc>
     <lastmod>2013-08-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-viewstatus-session/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-viewstatus-session/</loc>
     <lastmod>2013-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/sql-syntax/</loc>
+    <loc>https://blog.poyi.tw/posts/sql-syntax/</loc>
     <lastmod>2013-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/string-syntax/</loc>
+    <loc>https://blog.poyi.tw/posts/string-syntax/</loc>
     <lastmod>2013-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/common-e-mail-errors/</loc>
+    <loc>https://blog.poyi.tw/posts/common-e-mail-errors/</loc>
     <lastmod>2013-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/c-datatable-operation-memos/</loc>
+    <loc>https://blog.poyi.tw/posts/c-datatable-operation-memos/</loc>
     <lastmod>2013-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-auto-return/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-auto-return/</loc>
     <lastmod>2013-03-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/linux-getting-started-with-hyper-basic-instructions/</loc>
+    <loc>https://blog.poyi.tw/posts/linux-getting-started-with-hyper-basic-instructions/</loc>
     <lastmod>2013-02-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/aspnet-reset-password-in-active-directory/</loc>
+    <loc>https://blog.poyi.tw/posts/aspnet-reset-password-in-active-directory/</loc>
     <lastmod>2013-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/mac-set-to-open-files-by-default-software/</loc>
+    <loc>https://blog.poyi.tw/posts/mac-set-to-open-files-by-default-software/</loc>
     <lastmod>2013-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/css-position/</loc>
+    <loc>https://blog.poyi.tw/posts/css-position/</loc>
     <lastmod>2013-01-02T00:00:00+00:00</lastmod>
   </url>
   

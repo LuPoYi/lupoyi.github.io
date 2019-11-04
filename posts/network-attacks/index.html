@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>
+      
+      [ASP.NET] 資安基本概念 - Bob 學習筆記
+    
+  </title>
+  <link rel='canonical' href='https://blog.poyi.tw/posts/network-attacks/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  <meta name="generator" content="Hugo 0.58.0" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[ASP.NET] 資安基本概念" />
+<meta property="og:description" content="以往都是寫供內部使用的網站，也沒想過有什麼資安的問題… 也就是說資安這一環，幾乎是無知的狀態…
+SQL Injection 將字串中夾帶SQL指令，讓SERVER認為是正常指令而執行
+ASP.NET 防範方法  避免直接將使用者輸入的資料作為SQL指令；或是利用SQLParameter來處理參數 將設定customErrors:On，至少出錯時不會show出程式碼 設定專屬SQL帳號及必要權限，避免使用sa 其他&hellip;  XSS －通常是指對方將有害程式碼惡意嵌入網頁當中，使得其他人連進此網頁時會受到影響；或是對方竊取更高的權限、Cookie等等…；(常見的為JavaScript)
+ASP.NET 防範方法  盡量保持ValidateRequest為啟用 進行Html Encode(前端或後端) 其他&hellip;必須防範所有有機會寫入Html tag的地方  Reference: http://anti-hacker.blogspot.tw/2008/01/xss.html http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC https://www.google.com.tw/#q=csrf http://blog.darkthread.net/blogs/darkthreadtw/archive/2008/05/07/are-your-website-naked.aspx" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/posts/network-attacks/" />
+<meta property="article:published_time" content="2013-09-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-09-04T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[ASP.NET] 資安基本概念">
+<meta itemprop="description" content="以往都是寫供內部使用的網站，也沒想過有什麼資安的問題… 也就是說資安這一環，幾乎是無知的狀態…
+SQL Injection 將字串中夾帶SQL指令，讓SERVER認為是正常指令而執行
+ASP.NET 防範方法  避免直接將使用者輸入的資料作為SQL指令；或是利用SQLParameter來處理參數 將設定customErrors:On，至少出錯時不會show出程式碼 設定專屬SQL帳號及必要權限，避免使用sa 其他&hellip;  XSS －通常是指對方將有害程式碼惡意嵌入網頁當中，使得其他人連進此網頁時會受到影響；或是對方竊取更高的權限、Cookie等等…；(常見的為JavaScript)
+ASP.NET 防範方法  盡量保持ValidateRequest為啟用 進行Html Encode(前端或後端) 其他&hellip;必須防範所有有機會寫入Html tag的地方  Reference: http://anti-hacker.blogspot.tw/2008/01/xss.html http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC https://www.google.com.tw/#q=csrf http://blog.darkthread.net/blogs/darkthreadtw/archive/2008/05/07/are-your-website-naked.aspx">
+
+
+<meta itemprop="datePublished" content="2013-09-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="25">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/posts/network-attacks/">[ASP.NET] 資安基本概念</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[ASP.NET] 資安基本概念</h1>
+
+<div class="post-date">2013-09-04</div>
+
+<br>
+<p>以往都是寫供內部使用的網站，也沒想過有什麼資安的問題…
+也就是說資安這一環，幾乎是無知的狀態…</p>
+
+<hr />
+
+<h1 id="sql-injection">SQL Injection</h1>
+
+<p><strong>將字串中夾帶SQL指令，讓SERVER認為是正常指令而執行</strong></p>
+
+<h2 id="asp-net-防範方法">ASP.NET 防範方法</h2>
+
+<ol>
+<li>避免直接將使用者輸入的資料作為SQL指令；或是利用SQLParameter來處理參數</li>
+<li>將設定customErrors:On，至少出錯時不會show出程式碼</li>
+<li>設定專屬SQL帳號及必要權限，避免使用sa</li>
+<li>其他&hellip;</li>
+</ol>
+
+<hr />
+
+<h1 id="xss">XSS</h1>
+
+<p><strong>－通常是指對方將有害程式碼惡意嵌入網頁當中，使得其他人連進此網頁時會受到影響；或是對方竊取更高的權限、Cookie等等…；(常見的為JavaScript)</strong></p>
+
+<h2 id="asp-net-防範方法-1">ASP.NET 防範方法</h2>
+
+<ol>
+<li>盡量保持ValidateRequest為啟用</li>
+<li>進行Html Encode(前端或後端)</li>
+<li>其他&hellip;必須防範所有有機會寫入Html tag的地方</li>
+</ol>
+
+<hr />
+
+<p>Reference:
+<a href="http://anti-hacker.blogspot.tw/2008/01/xss.html">http://anti-hacker.blogspot.tw/2008/01/xss.html</a>
+<a href="http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">http://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC</a>
+<a href="https://www.google.com.tw/#q=csrf">https://www.google.com.tw/#q=csrf</a>
+<a href="http://blog.darkthread.net/blogs/darkthreadtw/archive/2008/05/07/are-your-website-naked.aspx">http://blog.darkthread.net/blogs/darkthreadtw/archive/2008/05/07/are-your-website-naked.aspx</a></p>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'blogpoyitw';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>
