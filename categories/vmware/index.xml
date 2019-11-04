@@ -13,10 +13,10 @@
     
     <item>
       <title>[VMware] VCenter Cluster 練習筆記</title>
-      <link>https://blog.poyi.tw/blog/2013/10/25/vmware-vcenter-cluster-exercises/</link>
+      <link>https://blog.poyi.tw/posts/vmware-vcenter-cluster-exercises/</link>
       <pubDate>Fri, 25 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/25/vmware-vcenter-cluster-exercises/</guid>
+      <guid>https://blog.poyi.tw/posts/vmware-vcenter-cluster-exercises/</guid>
       <description>vSphere ESXi: 整個虛擬化平台，算是一個作業系統 vSphere Client: 操作VM用的軟體(遠端連線到ESXi) vCenter: 可統一管理，支援ADD 容錯
 &amp;ndash;VLAN 45(橘底) - 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN - 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 - 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS
 Cluster
@@ -25,10 +25,10 @@ Cluster
     
     <item>
       <title>[VMware] VCenter 80 Port 已被使用</title>
-      <link>https://blog.poyi.tw/blog/2013/10/14/vmware-vcenter-80-port-is-already-in-use/</link>
+      <link>https://blog.poyi.tw/posts/vmware-vcenter-80-port-is-already-in-use/</link>
       <pubDate>Mon, 14 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/14/vmware-vcenter-80-port-is-already-in-use/</guid>
+      <guid>https://blog.poyi.tw/posts/vmware-vcenter-80-port-is-already-in-use/</guid>
       <description>在嘗試安裝vCenter時，中途出現了「VMware VirtualCenter HTTP Port: 80」
 原因是vCenter自動安裝時會把SQL Server及.NET Framework相關的元件裝上，導致IIS佔用了80Port。
 解法之一就是直接在Roles裡把IIS移掉就行了(想在vCenter上使用IIS就要另求解了)

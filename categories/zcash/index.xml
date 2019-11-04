@@ -13,10 +13,10 @@
     
     <item>
       <title>[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</title>
-      <link>https://blog.poyi.tw/blog/2017/11/04/private-coins-monero-dash-zcash-pivx/</link>
+      <link>https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2017/11/04/private-coins-monero-dash-zcash-pivx/</guid>
+      <guid>https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/</guid>
       <description>// 個人筆記尚未整理
 Pirvacy Coins 匿名貨幣 - 強調隱私 Bitcoin 本身具有一定的隱私性，錢包地址跟使用者之間沒有直接的關聯性 所有交易都是公開的，任何人都可以知道某錢包地址現在或過去有過多少交易，但理論上無法得知該錢包是持有者是誰。
 但今天你發送一筆交易給朋友或是客戶，對方得知了你的錢包地址，就可以觀察你持有多少BTC，就像你的銀行存款暴露在外一樣，任何人只要知道你的錢包地址都可以查得到你的餘額及所有交易紀錄。當然你也可以一直換錢包地址或是透過交易所發送來隱藏你主要的錢包地址，而這些匿名貨幣用各自的手段去解決這些問題。
@@ -27,10 +27,10 @@ Dash 主要特色是雙層網路並提供即時發送及匿名發送  150 second
     
     <item>
       <title>[ZCash] 如何使用Windows來挖礦</title>
-      <link>https://blog.poyi.tw/blog/2017/01/15/how-to-mine-zcash-on-windows/</link>
+      <link>https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/</link>
       <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2017/01/15/how-to-mine-zcash-on-windows/</guid>
+      <guid>https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/</guid>
       <description>幾千塊的顯卡來挖其實收益非常低，電費還比較貴，玩票性質再試試看吧
  ZCash錢包 首先要下載一個錢包並取得address(t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE)來存放你挖到的幣
 推薦Jaxx，支援windows/macos/ios/android&amp;hellip;，幣別也支援btc/eth/etc/zec&amp;hellip;.。

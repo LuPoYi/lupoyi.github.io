@@ -13,10 +13,10 @@
     
     <item>
       <title>[gRPC] Go Server &amp; Ruby Client</title>
-      <link>https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/</link>
+      <link>https://blog.poyi.tw/posts/grpc-go-ruby/</link>
       <pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2019/09/15/grpc-go-ruby/</guid>
+      <guid>https://blog.poyi.tw/posts/grpc-go-ruby/</guid>
       <description>gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
 有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
 以下使用go實作server端，ruby實作client端

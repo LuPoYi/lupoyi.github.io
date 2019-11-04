@@ -13,10 +13,10 @@
     
     <item>
       <title>[Ruby] 匯出txt檔</title>
-      <link>https://blog.poyi.tw/blog/2014/05/06/ruby-txt-file/</link>
+      <link>https://blog.poyi.tw/posts/ruby-txt-file/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2014/05/06/ruby-txt-file/</guid>
+      <guid>https://blog.poyi.tw/posts/ruby-txt-file/</guid>
       <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&amp;#39;mobile like ?&amp;#39;, &amp;#39;+8869%&amp;#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;w&amp;#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;r&amp;#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html</description>
     </item>

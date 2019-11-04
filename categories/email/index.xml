@@ -13,10 +13,10 @@
     
     <item>
       <title>[C#] 自動寄信</title>
-      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <link>https://blog.poyi.tw/posts/aspnet-auto-return/</link>
       <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
+      <guid>https://blog.poyi.tw/posts/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
 MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;#34;這邊可放html&amp;#34; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage); </description>
     </item>

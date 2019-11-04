@@ -13,10 +13,10 @@
     
     <item>
       <title>[HTML5] 入門</title>
-      <link>https://blog.poyi.tw/blog/2013/08/29/html5/</link>
+      <link>https://blog.poyi.tw/posts/html5/</link>
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/08/29/html5/</guid>
+      <guid>https://blog.poyi.tw/posts/html5/</guid>
       <description>HTML 5 基本樣式 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;HTML 5&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello World!&amp;lt;p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 視訊播放 瀏覽器會依type特性來決定要顯示哪一個影片檔，也可以依照不同尺寸來設定觀看的的解析度。 video標籤可用的屬性:Preload(不自動下載視訊)、Loop(重複播放)、autoplay(開啟後自動播放)、width、height&amp;hellip;
 &amp;lt;video controls autoplay&amp;gt; &amp;lt;source src=&amp;#34;Simple Plan.720p.webm&amp;#34; type=&amp;#34;video/webm&amp;#34; media=&amp;#34;screen and (min-width: 500px)&amp;#34;&amp;gt; &amp;lt;source src=&amp;#34;Simple Plan.360p.webm&amp;#34; type=&amp;#34;video/webm&amp;#34;&amp;gt; &amp;lt;source src=&amp;#34;Simple Plan.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt; &amp;lt;source src=&amp;#34;Simple Plan.ogg&amp;#34; type=&amp;#34;video/ogg&amp;#34;&amp;gt; Sorry...Your browser is crap... &amp;lt;/video&amp;gt; 目前查到的資料： IE、Safari 只支援mp4 Opera 支援webm ogg FireFox 支援webm ogg (mp4部分支援) Chrome 全都支援
 http://www.w3schools.com/html/html5_video.asp</description>

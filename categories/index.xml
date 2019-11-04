@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Bob 學習筆記</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.poyi.tw/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dart</title>
+      <link>https://blog.poyi.tw/categories/dart/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/dart/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gRPC</title>

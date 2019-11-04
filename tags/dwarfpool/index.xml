@@ -13,10 +13,10 @@
     
     <item>
       <title>[Ethereum] 如何使用Windows來挖礦</title>
-      <link>https://blog.poyi.tw/blog/2016/04/05/how-to-mine-ethereum-on-windows/</link>
+      <link>https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2016/04/05/how-to-mine-ethereum-on-windows/</guid>
+      <guid>https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/</guid>
       <description>1. 安裝geth 下載geth
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼

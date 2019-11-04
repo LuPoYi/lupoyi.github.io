@@ -13,10 +13,10 @@
     
     <item>
       <title>[Crypto] BIP-39 mnemonic words</title>
-      <link>https://blog.poyi.tw/blog/2017/12/10/bitcoin-improvement-proposal-39/</link>
+      <link>https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/</link>
       <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2017/12/10/bitcoin-improvement-proposal-39/</guid>
+      <guid>https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/</guid>
       <description>// 個人筆記尚未整理
 錢包本身並不存放幣，存放的是私鑰
 而透過私鑰能轉換成錢包地址，並到區塊鏈上將交易紀錄及餘額取回

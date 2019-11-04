@@ -13,20 +13,20 @@
     
     <item>
       <title>[C#]  Delegate 委派</title>
-      <link>https://blog.poyi.tw/blog/2013/10/04/c-delegate-delegate/</link>
+      <link>https://blog.poyi.tw/posts/c-delegate-delegate/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/10/04/c-delegate-delegate/</guid>
+      <guid>https://blog.poyi.tw/posts/c-delegate-delegate/</guid>
       <description>Delegate 是 C# 的特殊型別，用來定義方法（method/function）的 signature，delegate 的實體（instance）可以存放一或多個符合該 signature 的方法。這樣講也許還是鴨子聽雷，不如我們實際來感受一下吧！ delegate實例獨立於它所封裝的方法的類 這邊在個multicst delegate的例子 using System;
 class MulticastTester { delegate void Greeting(); public static void Main() { Greeting myGreeting = new Greeting(SayThankYou); Console.WriteLine(&amp;#34;My single greeting:&amp;#34;); myGreeting(); Greeting yourGreeting = new Greeting(SayGoodMorning); Console.WriteLine(&amp;#34;\nYour single greeting:&amp;#34;); yourGreeting(); Greeting ourGreeting = myGreeting + yourGreeting; Console.WriteLine(&amp;#34;\nOur multicast greeting:&amp;#34;); ourGreeting(); ourGreeting += new Greeting(SayGoodnight); Console.WriteLine(&amp;#34;\nMulticast greeting which includes Goodnight:&amp;#34;); ourGreeting(); ourGreeting = ourGreeting - yourGreeting; Console.WriteLine(&amp;#34;\nMulticast greeting without your greeting:&amp;#34;); ourGreeting(); ourGreeting -= myGreeting; Console.</description>
     </item>
     
     <item>
       <title>[C#] IEnumerable vs IQueryable</title>
-      <link>https://blog.poyi.tw/blog/2013/09/30/c-ienumerable/</link>
+      <link>https://blog.poyi.tw/posts/c-ienumerable/</link>
       <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/09/30/c-ienumerable/</guid>
+      <guid>https://blog.poyi.tw/posts/c-ienumerable/</guid>
       <description>在linq的使用上，IEnumerable是不可或缺的泛型介面 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。
 而IQueryable又繼承了IEnumerable&amp;hellip;
 兩者的差別從概念上來說： IEnumerable:先將查詢的值取出，再一層一層做篩選。 IQueryable:把全部Linq翻成T-SQL，直到真正要使用時才去執行。
@@ -36,19 +36,19 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
     
     <item>
       <title>[ASP.NET] 檔案下載寫法</title>
-      <link>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</link>
+      <link>https://blog.poyi.tw/posts/aspnet-file-download/</link>
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/08/28/aspnet-file-download/</guid>
+      <guid>https://blog.poyi.tw/posts/aspnet-file-download/</guid>
       <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;#34;C:/porn.jpg&amp;#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;#34;application/octet-stream&amp;#34;; // 指定檔案類型 	Response.AddHeader(&amp;#34;Content-Disposition&amp;#34;,&amp;#34;attachment;filename=&amp;#34;+&amp;#34;porn.jpg&amp;#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&amp;#34;Content-Length&amp;#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;#34;C:/porn.jpg&amp;#34;; // 設定路徑 	byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 	Response.</description>
     </item>
     
     <item>
       <title>[C#] String常用語法</title>
-      <link>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</link>
+      <link>https://blog.poyi.tw/posts/string-syntax/</link>
       <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/07/22/string-syntax/</guid>
+      <guid>https://blog.poyi.tw/posts/string-syntax/</guid>
       <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
 一般情況都用String String.IndexOf 找字串中第一次出現的index
 if(employeeName.IndexOf(&amp;quot;Admin&amp;quot;) == -1)	// 可判斷Name中是否有符合Admin的字串  String.LastIndexOf 找字串中最後一次出現的index
@@ -60,30 +60,30 @@ Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;) // = Regex.IsMatch(strPwd, @&am
     
     <item>
       <title>[C#] DataTable 的操作備忘</title>
-      <link>https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/</link>
+      <link>https://blog.poyi.tw/posts/c-datatable-operation-memos/</link>
       <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/03/03/c-datatable-operation-memos/</guid>
+      <guid>https://blog.poyi.tw/posts/c-datatable-operation-memos/</guid>
       <description>稍微記一下，相關變化都蠻簡單的
 DataTable dt = new DataTable(); // 定義欄位 dt.Columns.Add(&amp;#34;name&amp;#34;); dt.Columns.Add(&amp;#34;cardNumber&amp;#34;); // 也可定義欄位型態 // dt.Columns.Add(&amp;#34;ID&amp;#34;, typeof(Int32));  dt.Rows.Add(&amp;#34;Bob&amp;#34;, &amp;#34;12345&amp;#34;); dt.Rows.Add(&amp;#34;Ada&amp;#34;, &amp;#34;10000&amp;#34;); dt.Rows.Add(&amp;#34;Kilin&amp;#34;,&amp;#34;20000&amp;#34;); // 也可用DataRow來存放資料  // 格式相同直接放入GridView GridView.DataSource = dt; GridView.DataBind(); </description>
     </item>
     
     <item>
       <title>[C#] 自動寄信</title>
-      <link>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</link>
+      <link>https://blog.poyi.tw/posts/aspnet-auto-return/</link>
       <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/03/03/aspnet-auto-return/</guid>
+      <guid>https://blog.poyi.tw/posts/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
 MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;#34;這邊可放html&amp;#34; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage); </description>
     </item>
     
     <item>
       <title>[ASP.NET] Reset Password in Active Directory</title>
-      <link>https://blog.poyi.tw/blog/2013/02/14/aspnet-reset-password-in-active-directory/</link>
+      <link>https://blog.poyi.tw/posts/aspnet-reset-password-in-active-directory/</link>
       <pubDate>Thu, 14 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/blog/2013/02/14/aspnet-reset-password-in-active-directory/</guid>
+      <guid>https://blog.poyi.tw/posts/aspnet-reset-password-in-active-directory/</guid>
       <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
 // Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int  } string strPwd = new string(chars); while (!</description>
     </item>
