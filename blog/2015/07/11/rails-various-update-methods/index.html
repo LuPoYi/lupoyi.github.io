@@ -29,10 +29,8 @@
   <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
 
   <meta property="og:title" content="[Rails] 各種update method" />
-<meta property="og:description" content="##正規Rails的更新 - update
-會觸發validation、callback、也會更新updated_at
-# update 寫法 (for 單筆) &gt; Comment.last.update(message: &#39;bbb&#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = ?, &#34;updated_at&#34; = ? WHERE &#34;comments&#34;.&#34;id&#34; = ? [[&#34;message&#34;, &#34;bbb&#34;], [&#34;updated_at&#34;, &#34;2015-07-11 09:42:02.303661&#34;], [&#34;id&#34;, 200]] (9.1ms) commit transaction =&gt; true ##相當於直接下SQL的更新 - update_columns, update_all
-而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
+<meta property="og:description" content="正規Rails的更新 - update 會觸發validation、callback、也會更新updated_at
+# update 寫法 (for 單筆) &gt; Comment.last.update(message: &#39;bbb&#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = ?, &#34;updated_at&#34; = ? WHERE &#34;comments&#34;.&#34;id&#34; = ? [[&#34;message&#34;, &#34;bbb&#34;], [&#34;updated_at&#34;, &#34;2015-07-11 09:42:02.303661&#34;], [&#34;id&#34;, 200]] (9.1ms) commit transaction =&gt; true 相當於直接下SQL的更新 - update_columns, update_all 而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
 # update_columns 寫法 (for 單筆) &gt; Comment.where(:id =&gt; 200).first.update_columns(message: &#39;bbbbb&#39;, post_id: 3) SQL (9.2ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = &#39;bbbbb&#39;, &#34;post_id&#34; = 3 WHERE &#34;comments&#34;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/blog/2015/07/11/rails-various-update-methods/" />
@@ -40,16 +38,14 @@
 <meta property="article:modified_time" content="2015-07-11T00:00:00+00:00" />
 
   <meta itemprop="name" content="[Rails] 各種update method">
-<meta itemprop="description" content="##正規Rails的更新 - update
-會觸發validation、callback、也會更新updated_at
-# update 寫法 (for 單筆) &gt; Comment.last.update(message: &#39;bbb&#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = ?, &#34;updated_at&#34; = ? WHERE &#34;comments&#34;.&#34;id&#34; = ? [[&#34;message&#34;, &#34;bbb&#34;], [&#34;updated_at&#34;, &#34;2015-07-11 09:42:02.303661&#34;], [&#34;id&#34;, 200]] (9.1ms) commit transaction =&gt; true ##相當於直接下SQL的更新 - update_columns, update_all
-而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
+<meta itemprop="description" content="正規Rails的更新 - update 會觸發validation、callback、也會更新updated_at
+# update 寫法 (for 單筆) &gt; Comment.last.update(message: &#39;bbb&#39;) (0.1ms) begin transaction SQL (0.4ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = ?, &#34;updated_at&#34; = ? WHERE &#34;comments&#34;.&#34;id&#34; = ? [[&#34;message&#34;, &#34;bbb&#34;], [&#34;updated_at&#34;, &#34;2015-07-11 09:42:02.303661&#34;], [&#34;id&#34;, 200]] (9.1ms) commit transaction =&gt; true 相當於直接下SQL的更新 - update_columns, update_all 而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。
 # update_columns 寫法 (for 單筆) &gt; Comment.where(:id =&gt; 200).first.update_columns(message: &#39;bbbbb&#39;, post_id: 3) SQL (9.2ms) UPDATE &#34;comments&#34; SET &#34;message&#34; = &#39;bbbbb&#39;, &#34;post_id&#34; = 3 WHERE &#34;comments&#34;.">
 
 
 <meta itemprop="datePublished" content="2015-07-11T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="162">
+<meta itemprop="wordCount" content="163">
 
 
 
@@ -146,16 +142,16 @@
 <div class="post-date">July 11, 2015</div>
 
 <br>
-<p>##正規Rails的更新 - update</p>
+<h2 id="正規rails的更新-update">正規Rails的更新 - update</h2>
 
-<p>會觸發validation、callback、也會更新updated_at</p>
+<p><p>會觸發validation、callback、也會更新updated_at</p>
 <div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update 寫法 (for 單筆)</span>
 <span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="ss">message</span><span class="p">:</span> <span class="s1">&#39;bbb&#39;</span><span class="p">)</span>
    <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="k">begin</span> <span class="n">transaction</span>
   <span class="no">SQL</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">4</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="sc">?,</span> <span class="s2">&#34;updated_at&#34;</span> <span class="o">=</span> <span class="p">?</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;message&#34;</span><span class="p">,</span> <span class="s2">&#34;bbb&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;updated_at&#34;</span><span class="p">,</span> <span class="s2">&#34;2015-07-11 09:42:02.303661&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span>
    <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="n">commit</span> <span class="n">transaction</span>
  <span class="o">=&gt;</span> <span class="kp">true</span></code></pre></div>
-<p>##相當於直接下SQL的更新 - update_columns, update_all</p>
+<h2 id="相當於直接下sql的更新-update-columns-update-all">相當於直接下SQL的更新 - update_columns, update_all</h2></p>
 
 <p><p>而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。</p>
 <div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update_columns 寫法 (for 單筆)</span>
@@ -163,7 +159,9 @@
   <span class="no">SQL</span> <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="s1">&#39;bbbbb&#39;</span><span class="p">,</span> <span class="s2">&#34;post_id&#34;</span> <span class="o">=</span> <span class="mi">3</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span></p>
 
 <p><span class="c1"># update_column 跟 update_columns 相同，只是傳入值key跟value必須是string，並用逗點分隔</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">update_column</span><span class="p">(</span><span class="s1">&#39;message&#39;</span> <span class="p">,</span><span class="s1">&#39;bbbbb&#39;</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update_all 寫法 (for relation)</span>
+<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">update_column</span><span class="p">(</span><span class="s1">&#39;message&#39;</span> <span class="p">,</span><span class="s1">&#39;bbbbb&#39;</span><span class="p">)</span></p>
+
+<p><span class="c1"># update_all 寫法 (for relation)</span>
 <span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">update_all</span><span class="p">(</span><span class="ss">message</span><span class="p">:</span> <span class="s1">&#39;aaaaaaaaaa&#39;</span><span class="p">,</span> <span class="ss">post_id</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
   <span class="no">SQL</span> <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="s1">&#39;aaaaaaaaaa&#39;</span><span class="p">,</span> <span class="s2">&#34;post_id&#34;</span> <span class="o">=</span> <span class="mi">10</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span>
  <span class="o">=&gt;</span> <span class="mi">1</span></code></pre></div>
