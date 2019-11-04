@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>
+      
+      [ASP.NET] 存取AD網域 - Bob 學習筆記
+    
+  </title>
+  <link rel='canonical' href='https://blog.poyi.tw/aspnet-access-to-ad-domain/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  <meta name="generator" content="Hugo 0.58.0" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[ASP.NET] 存取AD網域" />
+<meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/aspnet-access-to-ad-domain/" />
+<meta property="article:published_time" content="2013-09-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-09-12T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[ASP.NET] 存取AD網域">
+<meta itemprop="description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de.">
+
+
+<meta itemprop="datePublished" content="2013-09-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-09-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="118">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/aspnet-access-to-ad-domain/">[ASP.NET] 存取AD網域</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[ASP.NET] 存取AD網域</h1>
+
+<div class="post-date">2013-09-12</div>
+
+<br>
+<h2 id="透過ad網域來存取帳號資料">透過AD網域來存取帳號資料</h2>
+
+<h2 id="查詢資料">查詢資料</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c#" data-lang="c#">    <span class="kt">string</span> <span class="n">QueryString</span> <span class="p">=</span> <span class="s">&#34;LDAP://網域&#34;</span><span class="p">;</span>
+    <span class="n">DirectoryEntry</span> <span class="n">de</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectoryEntry</span><span class="p">(</span><span class="n">QueryString</span><span class="p">,</span><span class="n">adminAccount</span><span class="p">,</span><span class="n">adminPassword</span><span class="p">);</span>
+    <span class="n">DirectorySearcher</span> <span class="n">ds</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DirectorySearcher</span><span class="p">(</span><span class="n">de</span><span class="p">);</span>
+    <span class="n">SearchResultCollection</span> <span class="n">Results</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="c1">// 設定查詢條件：依姓名及工號查詢
+</span><span class="c1"></span>    <span class="n">ds</span><span class="p">.</span><span class="n">Filter</span> <span class="p">=</span> <span class="s">@&#34;(&amp;(samaccountname=&#34;</span> <span class="p">+</span> <span class="n">employeeName</span> <span class="p">+</span> <span class="s">&#34;)(Description=&#34;</span> <span class="p">+</span> <span class="n">employeeNo</span> <span class="p">+</span> <span class="s">&#34;))&#34;</span><span class="p">;</span>
+    <span class="c1">// 將查詢結果放入Results
+</span><span class="c1"></span>    <span class="n">Results</span> <span class="p">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">FindAll</span><span class="p">();</span>
+
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">SearchResult</span> <span class="n">result</span> <span class="k">in</span> <span class="n">Results</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">&#34;description&#34;</span><span class="p">].</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 透過AD裡的屬性「description」，取得工號
+</span><span class="c1"></span>            <span class="kt">string</span> <span class="n">resultNo</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">&#34;description&#34;</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">ToString</span><span class="p">();</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">resultNo</span><span class="p">);</span>
+            <span class="n">Response</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&#34;&lt;br&gt;&#34;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">ds</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span> <span class="c1">// 釋放資源
+</span><span class="c1"></span>    <span class="n">de</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="修改指定帳號的屬性值">修改指定帳號的屬性值</h2>
+
+<pre><code>string QueryString = &quot;LDAP://&quot;+ userLDAP;
+DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword);
+
+de.Properties[&quot;TelephoneNumber&quot;].Value = 123;     
+
+// 停用此帳號：userAccountControl = 514 
+de.Properties[&quot;userAccountControl&quot;].Value = 514;
+
+// 重設密碼
+de.Invoke(&quot;SetPassword&quot;, newPassword);
+
+de.CommitChanges();
+de.Close();
+</code></pre>
+
+<h2 id="刪除帳號">刪除帳號</h2>
+
+<pre><code>string QueryString = LDAP://&quot; + userLDAP;
+DirectoryEntry user = new DirectoryEntry(QueryString, adminAccount, adminPassword);
+// 找上一層
+DirectoryEntry ou = user.Parent;
+// 再回去刪它
+ou.Children.Remove(user);
+ou.CommitChanges();
+</code></pre>
+
+<p>基本屬性KEY跟VALUE可以在AD裡面找到
+<img src="http://user-image.logdown.io/user/2740/blog/2734/post/138560/iH5dxsHMS6SoXINR2EX2_2013-9-15%20%E4%B8%8B%E5%8D%88%2001-58-35.jpg" alt="2013-9-15 下午 01-58-35.jpg" /></p>
+
+<p>Reference:
+<a href="http://www.dotblogs.com.tw/yc421206/archive/2010/02/07/13510.aspx">http://www.dotblogs.com.tw/yc421206/archive/2010/02/07/13510.aspx</a></p>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'blogpoyitw';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

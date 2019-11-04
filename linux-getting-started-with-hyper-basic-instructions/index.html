@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>
+      
+      [Linux] 超入門的基本指令 - Bob 學習筆記
+    
+  </title>
+  <link rel='canonical' href='https://blog.poyi.tw/linux-getting-started-with-hyper-basic-instructions/' />
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='' />
+  <meta name='theme-color' content='#FD3519' />
+  
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+
+  <meta name="generator" content="Hugo 0.58.0" />
+
+  
+
+
+
+
+
+<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
+<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  <meta property="og:title" content="[Linux] 超入門的基本指令" />
+<meta property="og:description" content="之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;
+對Linux不是完全陌生，但指令倒是全忘了&hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
+# 系統資訊 $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history# 網路 $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線# chmod 調整檔案權限 chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [&#43;-=] [rwxX] test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/linux-getting-started-with-hyper-basic-instructions/" />
+<meta property="article:published_time" content="2013-02-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-02-15T00:00:00+00:00" />
+
+  <meta itemprop="name" content="[Linux] 超入門的基本指令">
+<meta itemprop="description" content="之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;
+對Linux不是完全陌生，但指令倒是全忘了&hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
+# 系統資訊 $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history# 網路 $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線# chmod 調整檔案權限 chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [&#43;-=] [rwxX] test.">
+
+
+<meta itemprop="datePublished" content="2013-02-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-02-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="127">
+
+
+
+<meta itemprop="keywords" content="" />
+
+</head>
+
+<body>
+
+  <header style="background-image:linear-gradient(
+      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
+    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
+
+  <div class="intro">
+    <div class="logo-container">
+      <a href="/">
+        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
+      </a>
+    </div>
+    <h2>Bob</h2>
+    <h3>Software Engineer</h3>
+    <div class="menu">
+      
+
+        <p>
+            <a href="/posts/">
+                Archive
+            </a>
+        </p>
+
+        <p>
+            <a href="/memo/">
+                Memo
+            </a>
+        </p>
+
+        <p>
+            <a href="/about/">
+                About
+            </a>
+        </p>
+
+      
+        
+        <p>
+            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
+                
+            </a>
+        </p>
+      
+    </div>
+
+  </div>
+
+  <div class="socials">
+      
+  </div>
+
+</header>
+
+  <div class="content-wrapper">
+    
+      <div class="breadcrumb">
+  
+
+
+
+
+
+<span >
+  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
+   / 
+</span>
+
+
+<span >
+  <a href="https://blog.poyi.tw/posts/">Posts</a>
+   / 
+</span>
+
+
+<span  class="active">
+  <a href="https://blog.poyi.tw/linux-getting-started-with-hyper-basic-instructions/">[Linux] 超入門的基本指令</a>
+  
+</span>
+
+</div>
+
+    
+    <main id="content" class="posts">
+
+<h1>[Linux] 超入門的基本指令</h1>
+
+<div class="post-date">2013-02-15</div>
+
+<br>
+<p>之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;)
+也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;</p>
+
+<p>對Linux不是完全陌生，但指令倒是全忘了&hellip;
+為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 系統資訊</span>
+$ <span class="nb">echo</span> hello word
+$ date
+$ arch  // x86_64
+$ uname –a // list system
+$ who
+$ w // show online user
+$ top // show system status
+$ cal <span class="m">2015</span> // calendar
+$ cal <span class="m">9</span> <span class="m">1752</span> // *
+$ bc –l // calculator
+$ <span class="nb">echo</span> <span class="m">77</span>/50 <span class="p">|</span> bc –l
+$ <span class="nb">history</span> // list <span class="nb">command</span> history</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 網路</span>
+$ ifconfig
+$ nslookup
+$ ping
+$ traceroute
+$ wget // download
+$ ssh 帳號@主機 // 用SSH連線</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># chmod 調整檔案權限</span>
+
+chmod <span class="o">[</span>權限角色<span class="o">]</span> <span class="o">[</span>權限動作<span class="o">]</span> <span class="o">[</span>存取權限<span class="o">]</span> 檔案/目錄
+chmod <span class="o">[</span>ugoa<span class="o">]</span> <span class="o">[</span>+-<span class="o">=]</span> <span class="o">[</span>rwxX<span class="o">]</span> test.txt
+$ chmod ugo+r test.txt 
+權限角色: u<span class="o">(</span>user/owner<span class="o">)</span>、g<span class="o">(</span>group<span class="o">)</span>、o<span class="o">(</span>other<span class="o">)</span>、a<span class="o">(</span>all<span class="o">)</span>
+權限動作: +<span class="o">(</span>增加權限<span class="o">)</span>、-<span class="o">(</span>取消權限<span class="o">)</span>、<span class="o">=(</span>直接設定權限<span class="o">)</span>
+存取權限: r<span class="o">(</span><span class="nb">read</span><span class="o">)</span>、w<span class="o">(</span>write<span class="o">)</span>、x<span class="o">(</span>execute<span class="o">)</span>、X<span class="o">(</span>execute<span class="p">&amp;</span>目錄or已被執行過<span class="o">)</span>
+
+也可用數字來調整權限
+chmod <span class="o">[</span>u<span class="o">(</span>int<span class="o">)][</span>g<span class="o">(</span>int<span class="o">)][</span>o<span class="o">(</span>int<span class="o">)]</span> 檔案/目錄
+$ chmod <span class="m">777</span> test.txt
+<span class="nv">r</span><span class="o">=</span><span class="m">4</span>，w<span class="o">=</span><span class="m">2</span>，x<span class="o">=</span><span class="m">1</span> 
+-rwx-r--r--<span class="o">(</span>10個參數，第一個無關chmod<span class="o">)</span>
+<span class="m">2</span>~4: user, <span class="m">5</span>~7: group, <span class="m">8</span>~10: others
+755代表 rwxr-xr-x</code></pre></div>
+<p>Reference:</p>
+
+<p><a href="http://www.pcnet.idv.tw/pcnet/linux/linux_command.htm">http://www.pcnet.idv.tw/pcnet/linux/linux_command.htm</a></p>
+
+<p><a href="http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm">http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm</a></p>
+
+<p><a href="http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts">http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts</a></p>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'blogpoyitw';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+  </div>
+  <footer>
+    <div class="footer-wrapper">
+      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
+      <p></p>
+    </div>
+  </footer>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>
