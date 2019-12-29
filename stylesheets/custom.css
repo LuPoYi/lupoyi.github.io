@@ -84,11 +84,20 @@ footer {
   text-align: right;
 }
 
+header {
+  overflow: auto;
+}
+
 header .recent p {
+  font-size: 0.9em;
   margin-bottom: 2px;
 }
 
 header .intro {
   bottom: auto;
   top: 0px;
+}
+
+header::-webkit-scrollbar {
+  display: none;
 }
