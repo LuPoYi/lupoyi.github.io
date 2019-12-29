@@ -31,6 +31,10 @@ footer {
     width: 100%
   }
 
+  header .recent {
+    display: none;
+  }
+
   .content-wrapper {
     width: 100%;
     margin-left: 0;
@@ -78,4 +82,13 @@ footer {
 
 .post-date {
   text-align: right;
+}
+
+header .recent p {
+  margin-bottom: 2px;
+}
+
+header .intro {
+  bottom: auto;
+  top: 0px;
 }
