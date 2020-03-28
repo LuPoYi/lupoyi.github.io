@@ -1,604 +1,15 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-    
-      Bob 學習筆記
-    
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
-
-  <meta name="generator" content="Hugo 0.58.0" />
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="Bob 學習筆記" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.poyi.tw/" />
-
-<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
-
-  <meta itemprop="name" content="Bob 學習筆記">
-<meta itemprop="description" content="">
-
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Dart"
-          class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
-      
-      <p>
-        <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-          
-        </a>
-      </p>
-      
-    </div>
-
-    <div class="recent">
-      <h4>Recent Posts</h4>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/dart-beginning/">Dart 101 入門筆記</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
-      </p>
-      
-      </p>
-    </div>
-
-  </div>
-
-  <div class="socials">
-    
-  </div>
-
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-  
-</span>
-
-</div>
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="Software Engineer" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
 
     
-    <main id="content" class="">
-
-
-
-<p></p>
-<div id="list">
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-exception-handling/">[Ruby] 例外處理</a>
-<div class="post-date">
-  2013-12-23
-</div>
-<br>
-<p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
-
-<p><h1 id="例外處理">例外處理</h1>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># begin..end當中的rescue</span>
-<span class="k">begin</span>
-  <span class="c1"># 有機會發生例外的code</span>
-<span class="k">rescue</span>
-  <span class="c1"># 發現例外後要執行的code</span>
-<span class="k">ensure</span>
-  <span class="c1"># 無論是否例外都會執行的code</span>
-<span class="k">end</span></code></pre></div>
-<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p></p>
-
-<ul>
-<li>$! (例外物件)
-
-<ul>
-<li>.class</li>
-<li>.message</li>
-<li>.backtrace (等同於$@)</li>
-</ul></li>
-
-<li><p>$@ (例外的位置資訊)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># example</span>
-<span class="k">begin</span>
-    <span class="n">abc</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">ex</span>
-    <span class="nb">puts</span> <span class="s2">&#34;Except class:  </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">class</span><span class="si">}</span><span class="s2">&#34;</span>
-    <span class="nb">puts</span> <span class="s2">&#34;Except message: </span><span class="si">#{</span><span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&#34;</span>
-<span class="k">ensure</span>
-    <span class="nb">puts</span> <span class="s1">&#39;Always print&#39;</span>
-<span class="k">end</span>
-
-<span class="no">Except</span> <span class="ss">class</span><span class="p">:</span>  <span class="no">ZeroDivisionError</span>
-<span class="no">Except</span> <span class="ss">message</span><span class="p">:</span> <span class="n">divided</span> <span class="n">by</span> <span class="mi">0</span>
-<span class="no">Always</span> <span class="nb">print</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span></code></pre></div></li>
-</ul>
-
-<p>Reference:
-<a href="http://blog.tonycube.com/2011/07/ruby8.html">http://blog.tonycube.com/2011/07/ruby8.html</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-functions-for-numbers/">[Ruby] Functions for Numbers</a>
-<div class="post-date">
-  2013-12-18
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Math</span>
-<span class="o">&gt;</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># 次方</span>
- <span class="o">=&gt;</span> <span class="mi">8</span></p>
-
-<p><span class="cm">=begin
-</span><span class="cm">  Addition (+)
-</span><span class="cm">  Subtraction (-)
-</span><span class="cm">  Multiplication (*)
-</span><span class="cm">  Division (/)
-</span><span class="cm">  Exponentiation (**)
-</span><span class="cm">  Modulo (%)
-</span><span class="cm">=end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">integer?</span>
- <span class="o">=&gt;</span> <span class="kp">false</span></p>
-
-<p><span class="o">&gt;</span> <span class="o">-</span><span class="mi">5</span><span class="o">.</span><span class="n">abs</span>
- <span class="o">=&gt;</span> <span class="mi">5</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">5</span><span class="o">.</span><span class="mi">6</span><span class="o">.</span><span class="n">round</span> <span class="c1"># 取最近的整數/四捨五入</span>
- <span class="o">=&gt;</span> <span class="mi">6</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">9</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="n">floor</span>  <span class="c1"># 取整數/無條件捨去</span>
- <span class="o">=&gt;</span> <span class="mi">9</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">2312</span><span class="o">.</span><span class="mi">22</span><span class="o">.</span><span class="n">ceil</span>   <span class="c1"># 取整數/無條件進位</span>
-<span class="o">=&gt;</span> <span class="mi">2313</span></p>
-
-<p><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">next</span>
- <span class="o">=&gt;</span> <span class="mi">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 二元運算</span>
-<span class="n">n</span> <span class="o">&amp;</span> <span class="n">num</span>
-<span class="n">n</span> <span class="o">|</span> <span class="n">num</span>
-<span class="n">n</span> <span class="o">^</span> <span class="n">num</span> <span class="p">(</span><span class="no">XOR</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向左位移</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">num</span> <span class="p">(</span><span class="err">向右位移</span><span class="p">)</span></code></pre></div>
-<p>Reference: <a href="http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm">http://www.tutorialspoint.com/ruby/ruby_builtin_functions.htm</a></p></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-is-a-small-note/">[Ruby] 變數</a>
-<div class="post-date">
-  2013-12-14
-</div>
-<br>
-<p>Ruby 有一個重要特性 <strong>Convention Over Configuration</strong></p>
-
-<p>希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)</p>
-
-<p>Ruby命名也有一定的慣例</p>
-
-<ul>
-<li>$name:全域變數</li>
-<li>@name:實例變數，作用域僅限定於 self 指示的物件</li>
-<li>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</li>
-
-<li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 全域變數 vs 實例變數 vs 區域變數</span>
-<span class="n">ruby</span><span class="o">&gt;</span> <span class="vg">$foo</span>
-    <span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="n">ruby</span><span class="o">&gt;</span> <span class="vi">@foo</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="n">ruby</span><span class="o">&gt;</span> <span class="n">foo</span>
-<span class="ss">ERR</span><span class="p">:</span> <span class="p">(</span><span class="nb">eval</span><span class="p">):</span><span class="mi">1</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">local</span> <span class="n">variable</span> <span class="ow">or</span> <span class="nb">method</span> <span class="sb">`foo&#39; for main(Object)
-</span><span class="sb">ruby&gt; Foo = 2
-</span><span class="sb">    =&gt; 2
-</span><span class="sb">ruby&gt; Foo = 3
-</span><span class="sb">=&gt; warning: alread initialized constant Foo
-</span><span class="sb">=&gt; 3</span></code></pre></div></li>
-</ul>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-and/">[Ruby] and與&amp;&amp;的差別</a>
-<div class="post-date">
-  2013-12-09
-</div>
-<br>
-<p>在Ruby中的邏輯運算有兩組，[!,&amp;&amp;,||]及[not,and,or]</p>
-
-<p><pre><code>*    [!,&amp;&amp;,||]<br />
-    * higher precedence
-*   [=,%=,~=,/=]
-    * between this two
-*   [not,and,or]
-    * lower precedence
-        * 優先權：&amp;&amp;　→　||　→　and　＝　or 。
-        * &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false)
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># &amp;&amp; 與 and 的比較</span>
-<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="kp">true</span> <span class="o">&amp;&amp;</span> <span class="kp">false</span>
- <span class="o">=&gt;</span> <span class="kp">false</span>
-<span class="o">&gt;</span> <span class="n">a</span>
- <span class="o">=&gt;</span> <span class="kp">false</span></p>
-
-<p><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="kp">true</span> <span class="ow">and</span> <span class="kp">false</span>
- <span class="o">=&gt;</span> <span class="kp">false</span>
-<span class="o">&gt;</span> <span class="n">a</span>
- <span class="o">=&gt;</span> <span class="kp">true</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># || 與 or 的比較</span>
-<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="kp">false</span> <span class="o">||</span> <span class="kp">true</span>
- <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="o">&gt;</span> <span class="n">a</span>
- <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="kp">false</span> <span class="ow">or</span> <span class="kp">true</span>
- <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="o">&gt;</span> <span class="n">a</span>
- <span class="o">=&gt;</span> <span class="kp">false</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 總結，布林運算用[!,&amp;&amp;,||]，流程控制用[not,and,or]</span>
-<span class="c1"># boolean expression</span>
-<span class="k">if</span> <span class="n">some_condition</span> <span class="o">&amp;&amp;</span> <span class="n">some_other_condition</span>
-  <span class="n">do_something</span>
-<span class="k">end</span></p>
-
-<p><span class="c1"># control flow</span>
-<span class="n">document</span><span class="o">.</span><span class="n">saved?</span> <span class="ow">or</span> <span class="n">document</span><span class="o">.</span><span class="n">save!</span></code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="http://phrogz.net/ProgrammingRuby/language.html#table%5F18.4">Ruby operators 優先順序</a></p>
-
-<p><a href="http://blog.jeffean.net/wiki/ruby.html">http://blog.jeffean.net/wiki/ruby.html</a></p>
-
-<p><a href="http://stackoverflow.com/questions/1426826/difference-between-and-and-in-ruby">http://stackoverflow.com/questions/1426826/difference-between-and-and-in-ruby</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-bootstrap-for-rails/">[Rails] Bootstrap for Rails</a>
-<div class="post-date">
-  2013-12-07
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># add to gemfile.rb and remember to bundle install</span>
-gem <span class="s1">&#39;bootstrap-sass&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增一個app/assets/stylesheets/styles.css.scss並將bootstrap import</span>
-@import <span class="s1">&#39;bootstrap&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># app/assets/javascripts/application.js 加入bootstrap</span>
-//<span class="o">=</span> require bootstrap</code></pre></div>
-<p>這樣就可以用了yaya</p></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-gem/">[Rails] 打包Gem套件</a>
-<div class="post-date">
-  2013-12-02
-</div>
-<br>
-<p>當我們要安裝別人寫好的Library、API時，通常會</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
-<span class="n">gem</span> <span class="s1">&#39;google-translate&#39;</span></code></pre></div>
-<p>或是</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ gem install google-translate</code></pre></div>
-<h1 id="打包gem">打包gem</h1>
-
-<p>而當我們要打包自己的gem，自用或供他人使用，該怎麼做？</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 用bundle 生成gem結構</span>
-$ bundle gem bob_test_plugin</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 建立gem</span>
-gem build bob_test_plugin.gemspec</code></pre></div>
-<p>此時會生成 bob_test_plugin-0.0.1.gem</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 安裝gem</span>
-$ sudo gem install bob_test_plugin-0.0.1.gem</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在rails c下測試gem</span>
-irb&gt;require <span class="s1">&#39;bob_test_plugin&#39;</span>
-<span class="o">=</span>&gt; <span class="nb">true</span>
-irb&gt;BobTestPlugin.name
-<span class="o">=</span>&gt; <span class="s2">&#34;BobTestPlugin&#34;</span></code></pre></div>
-<h1 id="發佈在-rubygems-org">發佈在 RubyGems.org</h1>
-
-<p><a href="http://rubygems.org/sign_up">申請RubyGems帳號</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 發佈</span>
-$ gem push bob_test_plugin-0.0.1.gem</code></pre></div>
-<p>Reference:
-<a href="http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem">http://blog.xdite.net/posts/2012/01/04/how-to-pack-a-gem</a>
-<a href="http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages">http://jex.logdown.com/posts/164687-ruby-build-his-own-gem-packages</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/apt/">[APT] 進階持續性滲透攻擊 筆記</a>
-<div class="post-date">
-  2013-11-22
-</div>
-<br>
-<h1 id="advanced-persistent-threat">Advanced Persistent Threat</h1>
-
-<p>Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。
- Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。
- 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。</p>
-
-<h2 id="主要攻擊目標">主要攻擊目標</h2>
-
-<ul>
-<li>依組職：政治、軍事、企業</li>
-<li>依國家：中國、美國、印度</li>
-</ul>
-
-<h2 id="常見手法">常見手法</h2>
-
-<p><strong>Internet Malware Infection</strong>
--   下載驅動程式
--   Email附件
--   非正式授權軟體
--   DNS中毒</p>
-
-<p><strong>Physical Malware Infection</strong>
--   USB</p>
-
-<p><strong>External Attacks</strong>
--   駭客入侵
--   漏洞攻擊</p>
-
-<h2 id="apt五種典型的特色">APT五種典型的特色：</h2>
-
-<ul>
-<li>高度針對性</li>
-<li>具有潛伏並保持低調的技術能力</li>
-<li>擁有資料情報分析的能力</li>
-<li>擁有多樣工具的多重面向攻擊方式</li>
-<li>資金充裕</li>
-</ul>
-
-<p>而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號
-也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 掃描漏洞..</span>
-Default Password <span class="o">(</span>root<span class="o">)</span> <span class="k">for</span> <span class="s1">&#39;root&#39;</span> Account
-Unpassworded <span class="k">for</span> <span class="s1">&#39;sa&#39;</span> Account</code></pre></div>
-<p>駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。</p>
-
-<p>Reference:
-IThome「防駭演練與危機處理」研習會</p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-activerecord/">[Rails] ActiveRecord</a>
-<div class="post-date">
-  2013-11-20
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># Model relation</span>
-<span class="k">class</span> <span class="nc">Boss</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="n">has_one</span> <span class="ss">:employee</span>
-  <span class="n">has_many</span> <span class="ss">:employees</span>
-<span class="k">end</span></p>
-
-<p><span class="k">class</span> <span class="nc">Employee</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-    <span class="n">belongs_to</span> <span class="ss">:boss</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 常用參數</span>
-<span class="k">class</span> <span class="nc">Employee</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-    <span class="n">belongs_to</span> <span class="ss">:manager</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">&#34;User&#34;</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="s2">&#34;manager_id&#34;</span> <span class="p">,</span><span class="ss">:order</span> <span class="o">=&gt;</span> <span class="s2">&#34;id desc&#34;</span>
-<span class="k">end</span></p>
-
-<p><span class="c1"># class_name =&gt; &#34;User&#34; 變更關聯class name</span>
-<span class="c1"># :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id</span>
-<span class="c1"># :order =&gt; &#34;id desc&#34; 排序</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 資料驗證</span>
-<span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-    <span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span> <span class="c1"># 此欄位必填</span></p>
-
-<p><span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:length</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:minimum</span> <span class="o">=&gt;</span> <span class="mi">2</span> <span class="p">}</span>
-  <span class="n">validates</span> <span class="ss">:bio</span><span class="p">,</span> <span class="ss">:length</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:maximum</span> <span class="o">=&gt;</span> <span class="mi">500</span> <span class="p">}</span>
-  <span class="n">validates</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">:length</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:in</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="o">..</span><span class="mi">20</span> <span class="p">}</span>
-  <span class="n">validates</span> <span class="ss">:registration_number</span><span class="p">,</span> <span class="ss">:length</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:is</span> <span class="o">=&gt;</span> <span class="mi">6</span> <span class="p">}</span></p>
-
-<p><span class="cm">=begin
-</span><span class="cm">  others helpler:
-</span><span class="cm">    acceptance
-</span><span class="cm">    validates_associated
-</span><span class="cm">    confirmation
-</span><span class="cm">    exclusion
-</span><span class="cm">    format
-</span><span class="cm">    inclusion
-</span><span class="cm">    length
-</span><span class="cm">    numericality
-</span><span class="cm">    presence
-</span><span class="cm">    uniqueness
-</span><span class="cm">    validates_with
-</span><span class="cm">    validates_each
-</span><span class="cm">=end</span>
-<span class="k">end</span></code></pre></div>
-<p>Reference:
-<a href="http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers">http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers</a></p></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-rest/">[Rails] RESTful</a>
-<div class="post-date">
-  2013-11-14
-</div>
-<br>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Action<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>helpers<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Verb<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Path<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>index<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>groups_path<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GET<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>show<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>group_path(@group)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GET<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups/1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>new<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>new_group_path<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GET<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups/new<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>create<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>groups_path<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>POST<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>edit<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>edit_group_path(@group)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>GET<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups/1/edit<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>update<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>group_path(@group)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>PUT<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups/1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>destroy<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>group_path(@group)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>DELETE<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>/groups/1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></div>
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-crud/">[Rails] CRUD 備忘</a>
-<div class="post-date">
-  2013-10-30
-</div>
-<br>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># index</span>
-<span class="o">&lt;</span><span class="s">%= link_to &#39;list&#39;, teams_path %&gt; # GET
-</span><span class="s">
-</span><span class="s">def index
-</span><span class="s"> @teams =</span> <span class="no">Team</span><span class="o">.</span><span class="n">all</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># show</span>
-<span class="o">&lt;</span><span class="s">%= link_to &#39;show&#39;, team_path(team) %&gt; # GET
-</span><span class="s">
-</span><span class="s">def show
-</span><span class="s"> @team =</span> <span class="no">Team</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># new</span>
-<span class="o">&lt;</span><span class="s">%= link_to &#39;new Team&#39;, new_team_path %&gt;
-</span><span class="s">
-</span><span class="s">def new
-</span><span class="s"> @team =</span> <span class="no">Team</span><span class="o">.</span><span class="n">new</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># create</span>
-<span class="o">&lt;</span><span class="s">%= form_for @team, :url =</span><span class="o">&gt;</span> <span class="n">teams_path</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="s">%&gt; #In a form, the default request method is POST
-</span><span class="s">&lt;%= t.text_field :name %&gt;</span>
-<span class="o">&lt;</span><span class="s">%= t.text_field :year %&gt;
-</span><span class="s">&lt;%=</span> <span class="n">t</span><span class="o">.</span><span class="n">submit</span> <span class="s2">&#34;Create&#34;</span> <span class="s">%&gt;
-</span><span class="s">&lt;% end %&gt;</span>
-
-<span class="k">def</span> <span class="nf">create</span>
-    <span class="no">Team</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># edit</span>
-<span class="o">&lt;</span><span class="s">%= link_to &#39;edit&#39;, edit_team_path(team) %&gt;
-</span><span class="s">
-</span><span class="s">def edit
-</span><span class="s"> @team =</span> <span class="no">Team</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># update</span>
-<span class="o">&lt;</span><span class="s">%= form_for @team, :url =</span><span class="o">&gt;</span> <span class="n">teams_path</span><span class="p">(</span><span class="vi">@team</span><span class="p">),</span><span class="ss">:method</span> <span class="o">=&gt;</span> <span class="ss">:put</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="s">%&gt; 
-</span><span class="s">&lt;%= t.text_field :name %&gt;</span>
-<span class="o">&lt;</span><span class="s">%= t.text_field :year %&gt;
-</span><span class="s">&lt;%=</span> <span class="n">t</span><span class="o">.</span><span class="n">submit</span> <span class="s2">&#34;Create&#34;</span> <span class="s">%&gt;
-</span><span class="s">&lt;% end %&gt;</span>
-
-<span class="k">def</span> <span class="nf">update</span>
-    <span class="vi">@team</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:team</span><span class="o">]</span><span class="p">)</span> <span class="c1">#...</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># destroy</span>
-<span class="o">&lt;</span><span class="s">%= link_to @team, team_path(@team), :method =</span><span class="o">&gt;</span> <span class="ss">:delete</span> <span class="o">%&gt;</span>
-
-<span class="k">def</span> <span class="nf">destroy</span>
-    <span class="no">Team</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">].</span><span class="n">destroy</span>
-<span class="k">end</span></code></pre></div>
-
-<br>
-  
-</div>
-
-<div class="pagination">
-  
-  <a class="prev" href="/page/5/">&larr; Older</a>
-  
-
-  
-  <a class="next" href="/page/3/">Newer &rarr;</a>
-  
-</div>
-
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
-    </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -612,5 +23,228 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bob 學習筆記"/>
+<meta name="twitter:description" content="Software Engineer"/>
+
+    <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="Software Engineer" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article>
+    <h1>Bob 學習筆記</h1>
+    <ul class="posts-list">
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-exception-handling/">[Ruby] 例外處理</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 23, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-functions-for-numbers/">[Ruby] Functions for Numbers</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 18, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-is-a-small-note/">[Ruby] 變數</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 14, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-and/">[Ruby] and與&amp;&amp;的差別</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 9, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-bootstrap-for-rails/">[Rails] Bootstrap for Rails</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 7, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-gem/">[Rails] 打包Gem套件</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 2, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/apt/">[APT] 進階持續性滲透攻擊 筆記</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Nov 22, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-activerecord/">[Rails] ActiveRecord</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Nov 20, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-rest/">[Rails] RESTful</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Nov 14, 2013
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-sql-server/">[Rails] Connect SQL Server</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Oct 30, 2013
+          </span>
+        </li>
+      
+    </ul>
+    
+
+<ul class="pagination">
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-left">
+  <title>arrow-left</title>
+  <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/">
+      1
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">
+      2
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">
+      3
+    </a>
+  </li>
+  
+  <li class="page-item active">
+    <a class="page-link" href="/page/4/">
+      4
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/5/">
+      5
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/6/">
+      6
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/7/">
+      7
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/8/">
+      8
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/5/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-right">
+  <title>arrow-right</title>
+  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  </article>
+
+    </main>
+  </body>
 </html>

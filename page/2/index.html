@@ -1,859 +1,15 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-    
-      Bob 學習筆記
-    
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
-
-  <meta name="generator" content="Hugo 0.58.0" />
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="Bob 學習筆記" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.poyi.tw/" />
-
-<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
-
-  <meta itemprop="name" content="Bob 學習筆記">
-<meta itemprop="description" content="">
-
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Dart"
-          class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
-      
-      <p>
-        <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-          
-        </a>
-      </p>
-      
-    </div>
-
-    <div class="recent">
-      <h4>Recent Posts</h4>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/dart-beginning/">Dart 101 入門筆記</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
-      </p>
-      
-      </p>
-    </div>
-
-  </div>
-
-  <div class="socials">
-    
-  </div>
-
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-  
-</span>
-
-</div>
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="Software Engineer" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
 
     
-    <main id="content" class="">
-
-
-
-<p></p>
-<div id="list">
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ssl-certificate-nginx-ubuntu-config/">[Ubuntu] 自行簽署的SSL憑證及Nginx設定</a>
-<div class="post-date">
-  2016-07-14
-</div>
-<br>
-<p>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包</p>
-
-<p>要上Production的話還是必須找SSL服務來簽</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># openssl</span>
-<span class="c1"># 我習慣在nginx把ssl裝在opt/nginx底下</span>
-mkdir /opt/nginx/ssl
-sudo openssl req -x509 -nodes -days <span class="m">365</span> -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt
-<span class="c1"># 填寫基本資料</span>
-<span class="c1"># Common Name 填 Domain Name 或 IP</span>
-<span class="c1"># 建立金鑰nginx.key及憑證nginx.crt</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># nginx.conf</span>
-server <span class="o">{</span>
-  listen <span class="m">80</span> default_server<span class="p">;</span>
-
-  <span class="c1"># 將所有HTTP requests轉至HTTPS</span>
-  <span class="k">return</span> <span class="m">301</span> https://<span class="nv">$host$request_uri</span><span class="p">;</span>
-<span class="o">}</span>
-
-server <span class="o">{</span>
-  listen <span class="m">443</span> ssl default_server<span class="p">;</span>
-
-  ssl_certificate /opt/nginx/ssl/nginx.crt<span class="p">;</span>
-  ssl_certificate_key /opt/nginx/ssl/nginx.key<span class="p">;</span>
-  
-  <span class="c1"># 其他ssl參數設定</span>
-  ...
-
-  server_name default_server<span class="p">;</span>
-  root /home/path/rails/public<span class="p">;</span>   <span class="c1"># &lt;--- rails路徑</span>
-  rails_env production<span class="p">;</span>
-  passenger_enabled on<span class="p">;</span>
-<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 產dhparam -out</span>
-sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span class="m">2048</span></code></pre></div>
-<p>SSL設定最佳解可以參考 <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
-
-<p>Reference:</p>
-
-<p><a href="https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/">https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/</a></p>
-
-<p><a href="https://ksmx.me/letsencrypt-ssl-https/">https://ksmx.me/letsencrypt-ssl-https/</a></p>
-
-<p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/">[Ethereum] 如何使用Windows來挖礦</a>
-<div class="post-date">
-  2016-04-05
-</div>
-<br>
-<h2 id="1-安裝geth">1. 安裝geth</h2>
-
-<p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
-
-<p>解壓縮後不用執行放在C:\ (我放在E:\不過沒差)</p>
-
-<p>建立錢包並設定密碼</p>
-
-<p>以下指令都需要開command line(cmd)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-geth account new</code></pre></div>
-<p>同步所有交易</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-<span class="c1"># --cache=看你想分配多少RAM來sync。預設只有16MB</span>
-geth --rpc --cache<span class="o">=</span><span class="m">8192</span></code></pre></div>
-<p>// 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)</p>
-
-<h2 id="2-安裝mining軟體">2. 安裝mining軟體</h2>
-
-<p><a href="https://build.ethdev.com/builds/Windows%20C%2B%2B%20develop%20branch/">下載mining軟體</a>(載最下面的即可)
-照一般安裝流程</p>
-
-<p>安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer -G -M <span class="c1"># GPU</span>
-ethminer -M    <span class="c1"># CPU</span></code></pre></div>
-<h2 id="3-挖礦">3. 挖礦</h2>
-
-<p>挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;</p>
-
-<p>看是要自己挖還是加入別人礦池</p>
-
-<h3 id="自己挖">自己挖</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer -G <span class="c1"># GPU</span></code></pre></div>
-<h3 id="加入礦池">加入礦池</h3>
-
-<p>需按照<a href="http://cryptomining-blog.com/7529-ethereum-mining-is-getting-way-too-centralized/">各大礦池</a>的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了</p>
-
-<p>我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
-ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G</code></pre></div>
-<p>也可以加上worker跟mail(會通知你的worker是否關閉)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\Program Files\Ethereum (版號)\Release</span>
-ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
-<h2 id="4-看成果-礦池">4. 看成果(礦池)</h2>
-
-<p>可依照nanopool提供的api查看目前情況</p>
-
-<p><a href="http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a>
-<a href="http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob">http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob</a>
-<a href="https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a></p>
-
-<p>nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</p>
-
-<p>可以在本機下geth指令查你的錢包資訊</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># C:\</span>
-geth attach
-&gt; eth.coinbase
-<span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>
-&gt; eth.acccounts
-<span class="o">[</span><span class="s2">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span><span class="o">]</span>
-&gt; eth.getBalance<span class="o">(</span>eth.coinbase<span class="o">)</span>
-<span class="m">0</span></code></pre></div>
-<p>記得要sync到最新才能拿到正確資訊</p>
-
-<p>可以到<a href="https://www.etherchain.org/">Etherchain</a>看一下Recent blocks是不是已經sync到最新的block</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># geth指令整理</span>
-geth upgradedb
-geth removedb <span class="c1"># 整個blockchain會被清掉</span>
-geth --rpc --cache<span class="o">=</span><span class="m">8192</span> <span class="c1"># sync</span></code></pre></div>
-<h2 id="其他-把指令包成-bat批次檔">其他－把指令包成.bat批次檔</h2>
-
-<h3 id="ethereum-mining-bat">ethereum_mining.bat</h3>
-
-<p>因為需要分別開mining, sync以及console三個cmd並執行不同指令，所以我把指令包成.bat放桌面一鍵執行，或是拿來排程執行也ok</p>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_mining.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-<span class="k">cd</span> <span class="s2">&#34;Program Files\Ethereum 0.9.41\Release&#34;</span>
-ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
-<p>使用GPU來挖，所以會吃顯卡效能</p>
-
-<p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
-
-<p><h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-geth &ndash;rpc &ndash;cache=8192</code></pre></div>
-<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p></p>
-
-<p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
-
-<p><h3 id="ethereum-console-bat">ethereum_console.bat</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_console.bat
-<span class="k">echo</span> on
-E<span class="p">:</span>
-geth attach</code></pre></div>
-<p>使用console前記得打開sync</p></p>
-
-<p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
-
-<h2 id="其他-將eth所佔的c槽容量移到e槽">其他－將ETH所佔的C槽容量移到E槽</h2>
-
-<p>挖礦及同步的資料預設都放在C底下</p>
-
-<p>(C:\Users\Bob\AppData\Local\Ethask)</p>
-
-<p>(C:\Users\Bob\AppData\Roaming\Ethereum)</p>
-
-<ul>
-<li>把C:\Users\Bob\AppData\Local\Ethask這個資料夾直接搬移到E:\ETH\Ethash</li>
-<li>開cmd下指令 &ldquo;mklink /D C:\Users\Bob\AppData\Local\Ethask E:\ETH\Ethash</li>
-
-<li><p>這樣就行了，另一個folder也比照辦理</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cmd</span>
-C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash E:<span class="se">\E</span>TH<span class="se">\E</span>thash
-已建立 C:<span class="se">\U</span>sers<span class="se">\B</span>ob<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\E</span>thash 的符號連結 &lt;&lt;<span class="o">===</span>&gt;&gt; E:<span class="se">\E</span>TH<span class="se">\E</span>thash</code></pre></div></li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/">https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/</a></p>
-
-<p><a href="http://nanopool.org">http://nanopool.org</a></p>
-
-<p><a href="https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore">https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore</a></p>
-
-<p><a href="https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/">https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/golang-beginning/">[Golang] Golang 101 入門筆記</a>
-<div class="post-date">
-  2016-04-02
-</div>
-<br>
-<h2 id="hello-go">Hello Go!</h2>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// hello.go
-</span><span class="c1"></span><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;hello, go!&#34;</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ go run hello.go
-Hello Go!</code></pre></div>
-<h2 id="基本結構-定義變數">基本結構、定義變數</h2>
-
-<h3 id="常數">常數</h3>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// 常數 const identifier [type] = value
-</span><span class="c1"></span><span class="kd">const</span> <span class="nx">Pi</span> <span class="p">=</span> <span class="mf">3.14159</span>
-<span class="kd">const</span> <span class="nx">Monday</span><span class="p">,</span> <span class="nx">Tuesday</span><span class="p">,</span> <span class="nx">Wednesday</span><span class="p">,</span> <span class="nx">Thursday</span><span class="p">,</span> <span class="nx">Friday</span><span class="p">,</span> <span class="nx">Saturday</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
-<span class="kd">const</span> <span class="p">(</span>
-  <span class="nx">Unknown</span> <span class="p">=</span> <span class="mi">0</span>
-  <span class="nx">Female</span> <span class="p">=</span> <span class="mi">1</span>
-  <span class="nx">Male</span> <span class="p">=</span> <span class="mi">2</span>
-<span class="p">)</span>
-<span class="o">//</span> <span class="s">&#34;iota&#34;</span></code></pre></div>
-<h3 id="變數">變數</h3>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// 變數 var identifier type / var identifier [type] = value
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="kt">bool</span>
-<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span>
-
-<span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">15</span>
-<span class="kd">var</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">5</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="kt">bool</span> <span class="p">=</span> <span class="kc">false</span>
-<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;Hello Go!&#34;</span>
-
-
-<span class="c1">// := 初始化並給值(local限定)
-</span><span class="c1"></span><span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span>
-<span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;hi&#34;</span></code></pre></div>
-<h3 id="類型轉換">類型轉換</h3>
-
-<ul>
-<li>int : int8, int16, int32, int64</li>
-<li>uint : uint8, uint16, uint32, uint64</li>
-<li>float: float32, float64</li>
-</ul>
-
-<p>不同類型之間做計算都需要經過類型轉換</p>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// 類型轉換 valueOfTypeB = typeB(valueOfTypeA)
-</span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int32</span>
-<span class="nx">a</span> <span class="p">=</span> <span class="mi">15</span>
-<span class="nx">b</span> <span class="p">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="mi">6</span> <span class="c1">// cannot use a + 6 (type int) as type int32 in assignment
-</span><span class="c1"></span><span class="nx">b</span> <span class="p">=</span> <span class="nb">int32</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">+</span> <span class="mi">6</span></code></pre></div>
-<h3 id="指針">指針</h3>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">// pointer
-</span><span class="c1">// 若有一個變數為abc，則 &amp;abc 可取得 abc 的記憶體位置
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">i1</span> <span class="p">=</span> <span class="mi">5</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;An integer: %d, its location in memory: %p\n&#34;</span><span class="p">,</span> <span class="nx">i1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">i1</span><span class="p">)</span>
-
-<span class="c1">// 要直接定義pointer的話，使用 *abc
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">intP</span> <span class="o">*</span><span class="kt">int</span>
-  <span class="nx">intP</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">i1</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;The value at memory location %p is %d\n&#34;</span><span class="p">,</span> <span class="nx">intP</span><span class="p">,</span> <span class="o">*</span><span class="nx">intP</span><span class="p">)</span></code></pre></div>
-<h2 id="判斷式-迴圈">判斷式、迴圈</h2>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="k">if</span> <span class="nx">abc</span> <span class="p">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
-
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">abc</span> <span class="p">&lt;</span> <span class="o">-</span><span class="mi">5</span>  <span class="p">{</span>
-
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="k">switch</span> <span class="nx">abc</span> <span class="p">{</span>
-  <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="o">......</span>
-  <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="o">......</span>
-  <span class="k">default</span><span class="p">:</span>
-    <span class="o">......</span>
-<span class="p">}</span>
-
-<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="c1">// break 中斷並跳出迴圈或判斷式
-</span><span class="c1"></span><span class="o">//</span> <span class="k">continue</span> <span class="nx">略過當次剩餘的code</span><span class="err">，</span><span class="nx">直接跳至迴圈下一run</span></code></pre></div>
-<h2 id="function">Function</h2>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">say</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nb">println</span><span class="p">(</span><span class="s">&#34;Hi~&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// min, max = MinMax(44, 33)
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">MinMax</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">min</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">max</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="nx">a</span> <span class="p">&lt;</span> <span class="nx">b</span> <span class="p">{</span>
-      <span class="nx">min</span> <span class="p">=</span> <span class="nx">a</span>
-      <span class="nx">max</span> <span class="p">=</span> <span class="nx">b</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// a = b or a &lt; b
-</span><span class="c1"></span>      <span class="nx">min</span> <span class="p">=</span> <span class="nx">b</span>
-      <span class="nx">max</span> <span class="p">=</span> <span class="nx">a</span>
-  <span class="p">}</span>
-  <span class="k">return</span>
-<span class="p">}</span>
-
-
-<span class="kd">func</span> <span class="nf">Min</span><span class="p">(</span><span class="nx">a</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-
-<span class="p">}</span></code></pre></div>
-<h2 id="其他備忘">其他備忘</h2>
-
-<ul>
-<li>不同類型之間做計算都需要經過類型轉換</li>
-<li>import library 或是變數卻沒使用的話會跳錯</li>
-<li>駝峰式命名</li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ubuntu-openvpn-server-client/">[Ubuntu] 架設 OpenVpn Server &amp; Client</a>
-<div class="post-date">
-  2016-03-05
-</div>
-<br>
-<p><h2 id="openvpn">OpenVpn</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get update
-apt-get install openvpn easy-rsa</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz &gt; /etc/openvpn/server.conf
-vim /etc/openvpn/server.conf</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/openvpn/server.conf</span>
-<span class="c1"># dh dh1024.pem</span>
-dh2048.pem</p>
-
-<p>ca ca.crt
-cert server.crt
-key server.key</p>
-
-<p><span class="c1"># 拿掉註解</span>
-push <span class="s2">&#34;redirect-gateway def1 bypass-dhcp&#34;</span>
-user nobody
-group nogroup
-<span class="c1"># 補上8.8.8.8</span>
-push <span class="s2">&#34;dhcp-option DNS 8.8.8.8&#34;</span>
-<span class="p">;</span>push <span class="s2">&#34;dhcp-option DNS 208.67.222.222&#34;</span>
-<span class="p">;</span>push <span class="s2">&#34;dhcp-option DNS 208.67.220.220&#34;</span></p>
-
-<p><span class="c1">#其他基本上維持預設即可</span></code></pre></div>
-<h3 id="packet-forwarding">Packet Forwarding</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/sysctl.conf</span>
-<span class="c1"># 拿掉註解</span>
-net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span></code></pre></div>
-<h3 id="uncomplicated-firewall">Uncomplicated Firewall</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ufw allow ssh
-ufw allow <span class="m">1194</span>/udp
-ufw allow <span class="m">80</span> <span class="c1"># 開外連進來所需要的port</span>
-vim /etc/default/ufw</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/default/ufw</span>
-<span class="c1"># 將DROP改成ACCEPT</span>
-<span class="nv">DEFAULT_FORWARD_POLICY</span><span class="o">=</span><span class="s2">&#34;ACCEPT&#34;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/ufw/before.rules 加入OPENVPN RULES(11~18行)</span></p>
-
-<p><span class="c1"># rules.before</span>
-#
-<span class="c1"># Rules that should be run before the ufw command line added rules. Custom</span>
-<span class="c1"># rules should be added to one of these chains:</span>
-<span class="c1">#   ufw-before-input</span>
-<span class="c1">#   ufw-before-output</span>
-<span class="c1">#   ufw-before-forward</span>
-#</p>
-
-<p><span class="c1"># START OPENVPN RULES</span>
-<span class="c1"># NAT table rules</span>
-*nat
-:POSTROUTING ACCEPT <span class="o">[</span><span class="m">0</span>:0<span class="o">]</span>
-<span class="c1"># Allow traffic from OpenVPN client to ppp0</span>
--A POSTROUTING -s <span class="m">10</span>.8.0.0/8 -o ppp0 -j MASQUERADE
-COMMIT
-<span class="c1"># END OPENVPN RULES</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ufw <span class="nb">enable</span>
-ufw status</code></pre></div>
-<h3 id="generate-certificate-authority">Generate Certificate Authority</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp -r /usr/share/easy-rsa/ /etc/openvpn
-mkdir /etc/openvpn/easy-rsa/keys
-vim /etc/openvpn/easy-rsa/vars</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/openvpn/easy-rsa/vars</span>
-<span class="nb">export</span> <span class="nv">KEY_COUNTRY</span><span class="o">=</span>“TW”
-<span class="nb">export</span> <span class="nv">KEY_PROVINCE</span><span class="o">=</span>“Taiwan”
-<span class="nb">export</span> <span class="nv">KEY_CITY</span><span class="o">=</span>“Taipei”
-<span class="nb">export</span> <span class="nv">KEY_ORG</span><span class="o">=</span><span class="s2">&#34;My Company Name&#34;</span>
-<span class="nb">export</span> <span class="nv">KEY_EMAIL</span><span class="o">=</span><span class="s2">&#34;sammy@example.com&#34;</span>
-<span class="nb">export</span> <span class="nv">KEY_OU</span><span class="o">=</span><span class="s2">&#34;MYOrganizationalUnit&#34;</span></p>
-
-<p><span class="nb">export</span> <span class="nv">KEY_NAME</span><span class="o">=</span>“server”</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">openssl dhparam -out /etc/openvpn/dh2048.pem <span class="m">2048</span>
-<span class="nb">cd</span> /etc/openvpn/easy-rsa
-. ./vars
-./clean-all
-./build-ca</code></pre></div>
-<h3 id="generate-server-side-key">Generate Server-side Key</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">./build-key-server server
-cp /etc/openvpn/easy-rsa/keys/<span class="o">{</span>server.crt,server.key,ca.crt<span class="o">}</span> /etc/openvpn</code></pre></div>
-<p>啟動Server</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">service openvpn start
-service openvpn status
-<span class="c1"># service openvpn stop</span></code></pre></div>
-<h3 id="generate-client-side-key">Generate Client-side Key</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">./build-key bob01
-mkdir /etc/openvpn/bob01
-cp /etc/openvpn/easy-rsa/keys/<span class="o">{</span>bob01.crt,bob01.key<span class="o">}</span> /etc/openvpn/bob01/
-cp /etc/openvpn/easy-rsa/ca.crt /etc/openvpn/bob01/
-cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf  /etc/openvpn/bob01/bob01.ovpn
-vim /etc/openvpn/bob01/bob01.ovpn</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># vim /etc/openvpn/bob01/bob01.ovpn</span>
-remote MY_SERVER_IP <span class="m">1194</span>
-ca ca.crt
-cert bob01.crt
-key bob01.key</code></pre></div>
-<p>最後在client端把/etc/openvpn/bob01/抓下來，用bob01.ovpn啟動即可</p></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/generate-your-own-bitcoin-address/">[Bitcoin] 客製比特幣位址並匯入錢包</a>
-<div class="post-date">
-  2016-03-05
-</div>
-<br>
-<h2 id="使用vanitygen客製比特幣位址">使用vanitygen客製比特幣位址</h2>
-
-<h3 id="安裝vanitygen">安裝vanitygen</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install build-essential libssl-dev libpcre3-dev
-git clone https://github.com/samr7/vanitygen.git
-<span class="nb">cd</span> vanitygen
-make</code></pre></div>
-<h3 id="generate-your-own-bitcoin-address">Generate Your Own Bitcoin Address</h3>
-
-<ul>
-<li>Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l</li>
-
-<li><p>要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 指定開頭</span>
-$ ./vanitygen 1Bob
-Difficulty: <span class="m">77178</span>
-Pattern: 1Bob
-Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
-Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-<span class="c1"># 忽略大小寫</span>
-$ ./vanitygen -i 1boba
-Difficulty: <span class="m">1100434</span>
-Pattern: 1boba
-Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L
-Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-<span class="c1"># 指定結尾</span>
-$ ./vanitygen -r bob$
-Pattern: bob$
-Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob
-Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></pre></div></li>
-</ul>
-
-<h3 id="將-privkey-匯入bitcoind錢包">將 Privkey 匯入Bitcoind錢包</h3>
-
-<p>大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 先確認此Address狀態</span>
-$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
-<span class="o">{</span>
-  <span class="s2">&#34;isvalid&#34;</span>: true,
-  <span class="s2">&#34;address&#34;</span>: <span class="s2">&#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;</span>,
-  <span class="s2">&#34;scriptPubKey&#34;</span>: <span class="s2">&#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;</span>,
-  <span class="s2">&#34;ismine&#34;</span>: false,
-  <span class="s2">&#34;iswatchonly&#34;</span>: false,
-  <span class="s2">&#34;isscript&#34;</span>: <span class="nb">false</span>
-<span class="o">}</span>
-<span class="c1"># &#34;ismine&#34;: false =&gt; 代表此address還不是自己的</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># bitcoin-cli importprivkey &lt;Privkey&gt; [label] [rescan=true]</span>
-<span class="c1"># label 是指你要放入哪個account，預設都會有一個””空字串的account</span>
-<span class="c1"># rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久)</span>
-<span class="c1">#        如果只是新address的話這邊填false就行了</span>
-$ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH
-<span class="o">{</span>
-  <span class="s2">&#34;isvalid&#34;</span>: true,
-  <span class="s2">&#34;address&#34;</span>: <span class="s2">&#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;</span>,
-  <span class="s2">&#34;scriptPubKey&#34;</span>: <span class="s2">&#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;</span>,
-  <span class="s2">&#34;ismine&#34;</span>: true,
-  <span class="s2">&#34;iswatchonly&#34;</span>: false,
-  <span class="s2">&#34;isscript&#34;</span>: false,
-  <span class="s2">&#34;iscompressed&#34;</span>: true,
-  <span class="s2">&#34;account&#34;</span>: <span class="s2">&#34;&#34;</span>
-<span class="o">}</span>
-<span class="c1"># &#34;ismine&#34;: true =&gt; 現在此Address就是屬於你的</span></code></pre></div>
-<p>Reference:</p>
-
-<p><a href="https://en.bitcoin.it/wiki/Vanitygen">https://en.bitcoin.it/wiki/Vanitygen</a></p>
-
-<p><a href="http://8btc.com/article-1930-1.html">http://8btc.com/article-1930-1.html</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ubuntu-setting-ntp-sync-time/">[Ubuntu] 設定NTP校正時間</a>
-<div class="post-date">
-  2016-01-17
-</div>
-<br>
-<h3 id="校正系統時間">校正系統時間</h3>
-
-<p>類似OTP(google authenticator)這種服務當你系統時間不對就完全不能用</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ date <span class="c1"># 確認目前時間</span>
-$ dpkg -l <span class="p">|</span> grep ntp <span class="c1"># 檢查是否已安裝</span>
-$ sudo apt-get install ntp ntpdate
-$ vim /etc/ntp.conf
-  <span class="c1"># Specify one or more NTP servers.</span>
-
-  <span class="c1"># Use servers from the NTP Pool Project. Approved by Ubuntu Technical Board</span>
-  <span class="c1"># on 2011-02-08 (LP: #104525). See http://www.pool.ntp.org/join.html for</span>
-  <span class="c1"># more information.</span>
-  <span class="c1"># 加上</span>
-  server tock.stdtime.gov.tw
-  server watch.stdtime.gov.tw
-  server time.stdtime.gov.tw
-  server clock.stdtime.gov.tw
-  server tick.stdtime.gov.tw
-
-$ sudo service ntp restart <span class="c1"># ntp會自動校時</span>
-
-$ ntpdate time.stdtime.gov.tw <span class="c1"># 測試 NTP Server</span>
-<span class="m">19</span> Nov <span class="m">14</span>:38:08 ntpdate<span class="o">[</span><span class="m">20006</span><span class="o">]</span>: the NTP socket is in use, exiting</code></pre></div>
-<p>Reference:</p>
-
-<p><a href="http://pineapplelin.pixnet.net/blog/post/25364493-ubuntu%E5%A6%82%E4%BD%95%E8%A8%AD%E5%AE%9Antp%E6%A0%A1%E6%99%82">http://pineapplelin.pixnet.net/blog/post/25364493-ubuntu%E5%A6%82%E4%BD%95%E8%A8%AD%E5%AE%9Antp%E6%A0%A1%E6%99%82</a></p>
-
-<p><a href="http://www.nowtaxes.com.tw/node/1112">http://www.nowtaxes.com.tw/node/1112</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ubuntu-setting-pppoe-static-ip/">[Ubuntu] 設定 PPPoE 固定IP</a>
-<div class="post-date">
-  2016-01-17
-</div>
-<br>
-<h4 id="一般設定ip會直接寫在-etc-network-interfaces-看是要static還是dynamic">一般設定IP會直接寫在/etc/network/interfaces 看是要static還是dynamic</h4>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/network/interfaces</span>
-auto p1p1
-iface p1p1 inet static
-
-address <span class="m">192</span>.168.1.100
-netmask <span class="m">255</span>.255.255.0
-gateway <span class="m">192</span>.168.1.1</code></pre></div>
-<h4 id="而需要使用pppoe-輸入電信商提供的帳號來登入時">而需要使用PPPoE 輸入電信商提供的帳號來登入時</h4>
-
-<p>#####帳號以中華電信為例</p>
-
-<ul>
-<li>xxxxxxxx@hinet.net        取得動態IP (原有帳號格式)</li>
-
-<li><p>xxxxxxxx@ip.hinet.net     取得固定IP  僅限一台電腦使用</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install pppoeconf
-$ sudo pppoeconf</code></pre></div></li>
-</ul>
-
-<p>接著照著說明下一步，輸入帳號密碼等等的，全部設定完即可使用</p>
-
-<p>也可以看到/etc/network/interfaces被加了一些設定</p>
-
-<p>Reference:</p>
-
-<p><a href="http://note.drx.tw/2008/08/networkpppoe-adsl.html">http://note.drx.tw/2008/08/networkpppoe-adsl.html</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-aes-encrypt-decrypt/">[Ruby] AES 加密解密</a>
-<div class="post-date">
-  2015-11-07
-</div>
-<br>
-<p>###對稱金鑰加密：加解密使用的金鑰是同一把</p>
-
-<ul>
-<li>DES (Data Encryption Standard)</li>
-<li>AES (Advanced Encryption Standard)</li>
-</ul>
-
-<p>###非對稱金鑰加密系統(公開金鑰加密)，加解密不同把key(公鑰私鑰)</p>
-
-<ul>
-<li><p>RSA</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="vg">$key</span> <span class="o">=</span> <span class="s2">&#34;自定key&#34;</span> <span class="c1"># 可利用rails的sercret key(Rails.application.secrets.secret_key_base)</span>
-<span class="vg">$iv</span>  <span class="o">=</span> <span class="s2">&#34;自定iv&#34;</span> 
-
-<span class="c1"># AES 加密</span>
-<span class="k">def</span> <span class="nf">aes_encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">cipher</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Cipher</span><span class="o">::</span><span class="no">AES128</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:CBC</span><span class="p">)</span>
-<span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span>
-<span class="n">cipher</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="vg">$key</span>
-<span class="n">cipher</span><span class="o">.</span><span class="n">iv</span> <span class="o">=</span> <span class="vg">$iv</span>
-<span class="n">encrypted</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="n">cipher</span><span class="o">.</span><span class="n">final</span>
-<span class="n">encrypted_base64</span> <span class="o">=</span> <span class="no">Base64</span><span class="o">.</span><span class="n">encode64</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span>
-<span class="k">return</span> <span class="n">encrypted_base64</span>
-<span class="k">end</span>
-
-<span class="c1"># 解密  </span>
-<span class="k">def</span> <span class="nf">aes_decrypt</span><span class="p">(</span><span class="n">encrypted_base64</span><span class="p">)</span>
-<span class="n">encrypted</span> <span class="o">=</span> <span class="no">Base64</span><span class="o">.</span><span class="n">decode64</span><span class="p">(</span><span class="n">encrypted_base64</span><span class="p">)</span>
-<span class="n">decipher</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">Cipher</span><span class="o">::</span><span class="no">AES128</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:CBC</span><span class="p">)</span>
-<span class="n">decipher</span><span class="o">.</span><span class="n">decrypt</span>
-<span class="n">decipher</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="vg">$key</span>
-<span class="n">decipher</span><span class="o">.</span><span class="n">iv</span>  <span class="o">=</span> <span class="vg">$iv</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">decipher</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">encrypted</span><span class="p">)</span> <span class="o">+</span> <span class="n">decipher</span><span class="o">.</span><span class="n">final</span>
-<span class="k">return</span> <span class="n">data</span>
-<span class="k">end</span>
-  </code></pre></div></li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="http://wemee.blogspot.tw/2015/01/ruby-product-key-ruby.html">http://wemee.blogspot.tw/2015/01/ruby-product-key-ruby.html</a></p>
-
-<p><a href="http://webos-goodies.jp/archives/encryption_in_ruby.html">http://webos-goodies.jp/archives/encryption_in_ruby.html</a></p>
-
-<p><a href="http://blog.ifyouseewendy.com/blog/2014/11/20/encryption-in-ruby/">http://blog.ifyouseewendy.com/blog/2014/11/20/encryption-in-ruby/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-various-update-methods/">[Rails] 各種update method</a>
-<div class="post-date">
-  2015-07-11
-</div>
-<br>
-<h2 id="正規rails的更新-update">正規Rails的更新 - update</h2>
-
-<p><p>會觸發validation、callback、也會更新updated_at</p>
-<div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update 寫法 (for 單筆)</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="ss">message</span><span class="p">:</span> <span class="s1">&#39;bbb&#39;</span><span class="p">)</span>
-   <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="k">begin</span> <span class="n">transaction</span>
-  <span class="no">SQL</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">4</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="sc">?,</span> <span class="s2">&#34;updated_at&#34;</span> <span class="o">=</span> <span class="p">?</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;message&#34;</span><span class="p">,</span> <span class="s2">&#34;bbb&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;updated_at&#34;</span><span class="p">,</span> <span class="s2">&#34;2015-07-11 09:42:02.303661&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span>
-   <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="n">commit</span> <span class="n">transaction</span>
- <span class="o">=&gt;</span> <span class="kp">true</span></code></pre></div>
-<h2 id="相當於直接下sql的更新-update-columns-update-all">相當於直接下SQL的更新 - update_columns, update_all</h2></p>
-
-<p><p>而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。</p>
-<div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update_columns 寫法 (for 單筆)</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">update_columns</span><span class="p">(</span><span class="ss">message</span><span class="p">:</span> <span class="s1">&#39;bbbbb&#39;</span><span class="p">,</span> <span class="ss">post_id</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
-  <span class="no">SQL</span> <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="s1">&#39;bbbbb&#39;</span><span class="p">,</span> <span class="s2">&#34;post_id&#34;</span> <span class="o">=</span> <span class="mi">3</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span></p>
-
-<p><span class="c1"># update_column 跟 update_columns 相同，只是傳入值key跟value必須是string，並用逗點分隔</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">update_column</span><span class="p">(</span><span class="s1">&#39;message&#39;</span> <span class="p">,</span><span class="s1">&#39;bbbbb&#39;</span><span class="p">)</span></p>
-
-<p><span class="c1"># update_all 寫法 (for relation)</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">update_all</span><span class="p">(</span><span class="ss">message</span><span class="p">:</span> <span class="s1">&#39;aaaaaaaaaa&#39;</span><span class="p">,</span> <span class="ss">post_id</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
-  <span class="no">SQL</span> <span class="p">(</span><span class="mi">9</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="s1">&#39;aaaaaaaaaa&#39;</span><span class="p">,</span> <span class="s2">&#34;post_id&#34;</span> <span class="o">=</span> <span class="mi">10</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span>
- <span class="o">=&gt;</span> <span class="mi">1</span></code></pre></div>
-<h2 id="其他-update-attribute">其他 - update_attribute</h2></p>
-
-<p><p>忽視validation，有callback，會更新updated_at</p>
-<div class="highlight"><pre class="chroma"><code class="language-Ruby" data-lang="Ruby"><span class="c1"># update_attribute 寫法 (for 單筆)</span>
-<span class="o">&gt;</span> <span class="no">Comment</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">update_attribute</span><span class="p">(</span><span class="s1">&#39;message&#39;</span> <span class="p">,</span><span class="s1">&#39;bbbbb&#39;</span><span class="p">)</span>
-   <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="n">ms</span><span class="p">)</span>  <span class="k">begin</span> <span class="n">transaction</span>
-  <span class="no">SQL</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">4</span><span class="n">ms</span><span class="p">)</span>  <span class="no">UPDATE</span> <span class="s2">&#34;comments&#34;</span> <span class="no">SET</span> <span class="s2">&#34;message&#34;</span> <span class="o">=</span> <span class="sc">?,</span> <span class="s2">&#34;updated_at&#34;</span> <span class="o">=</span> <span class="p">?</span> <span class="no">WHERE</span> <span class="s2">&#34;comments&#34;</span><span class="o">.</span><span class="s2">&#34;id&#34;</span> <span class="o">=</span> <span class="p">?</span>  <span class="o">[[</span><span class="s2">&#34;message&#34;</span><span class="p">,</span> <span class="s2">&#34;bbbbb&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;updated_at&#34;</span><span class="p">,</span> <span class="s2">&#34;2015-07-11 09:45:55.190026&#34;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&#34;id&#34;</span><span class="p">,</span> <span class="mi">200</span><span class="o">]]</span>
-   <span class="p">(</span><span class="mi">8</span><span class="o">.</span><span class="mi">5</span><span class="n">ms</span><span class="p">)</span>  <span class="n">commit</span> <span class="n">transaction</span>
- <span class="o">=&gt;</span> <span class="kp">true</span></code></pre></div></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/mac-build-ubuntu-flash-using-command/">[Mac] 三步驟純指令建立Ubuntu的USB隨身碟</a>
-<div class="post-date">
-  2015-06-29
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 將載好的ubuntu.iso 轉成 ubuntu.dmg</span>
-Bob:Downloads $ hdiutil convert -format UDRW -o ubuntu-14.04.2-server-amd64.dmg ubuntu-14.04.2-server-amd64.iso
-正在讀取Driver Descriptor Map（DDM：0）⋯
-正在讀取Ubuntu-Server <span class="m">14</span>.04.2 LTS amd64 （Apple_ISO：1）⋯
-正在讀取Apple（Apple_partition_map：2）⋯
-正在讀取Ubuntu-Server <span class="m">14</span>.04.2 LTS amd64 （Apple_ISO：3）⋯
-&hellip;&hellip;&hellip;&hellip;..
-正在讀取EFI（Apple_HFS：4）⋯
-&hellip;&hellip;&hellip;&hellip;&hellip;
-正在讀取Ubuntu-Server <span class="m">14</span>.04.2 LTS amd64 （Apple_ISO：5）⋯
-&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;
-經過時間： <span class="m">7</span>.977s
-速度：74.6Mbyte/秒
-節省：0.0%</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找到你的usb隨身碟後卸載它</span>
-Bob:Downloads $ diskutil list
-/dev/disk0
-  &hellip;
-/dev/disk1
-  &hellip;
-/dev/disk2
-   <span class="c1">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-   <span class="m">0</span>:     FDisk_partition_scheme                        *8.1 GB     disk2
-   <span class="m">1</span>:             Windows_FAT_32 ADATA UFD               <span class="m">8</span>.1 GB     disk2s1
-Bob:Downloads $ diskutil unmountDisk /dev/disk2
-Unmount of all volumes on disk2 was successful</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># dd 把資料寫入隨身碟</span>
-Bob:Downloads $ sudo dd <span class="k">if</span><span class="o">=</span>ubuntu-14.04.2-server-amd64.dmg <span class="nv">of</span><span class="o">=</span>/dev/rdisk2 <span class="nv">bs</span><span class="o">=</span>1m
-Password:
-<span class="m">595</span>+0 records in
-<span class="m">595</span>+0 records out
-<span class="m">623902720</span> bytes transferred in <span class="m">43</span>.058655 secs <span class="o">(</span><span class="m">14489601</span> bytes/sec<span class="o">)</span></code></pre></div>
-<p>執行完會跳「電腦讀不到您放入的磁碟。」，代表就成功了！</p></p>
-
-<p>Reference:</p>
-
-<p><a href="http://blog.itist.tw/2015/01/burning-linux-iso-image-to-usb-disk-on-osx.html">http://blog.itist.tw/2015/01/burning-linux-iso-image-to-usb-disk-on-osx.html</a></p>
-
-<br>
-  
-</div>
-
-<div class="pagination">
-  
-  <a class="prev" href="/page/3/">&larr; Older</a>
-  
-
-  
-  <a class="next" href="/">Newer &rarr;</a>
-  
-</div>
-
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
-    </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -867,5 +23,228 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bob 學習筆記"/>
+<meta name="twitter:description" content="Software Engineer"/>
+
+    <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="Software Engineer" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article>
+    <h1>Bob 學習筆記</h1>
+    <ul class="posts-list">
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ssl-certificate-nginx-ubuntu-config/">[Ubuntu] 自行簽署的SSL憑證及Nginx設定</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jul 14, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/">[Ethereum] 如何使用Windows來挖礦</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Apr 5, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/golang-beginning/">[Golang] Golang 101 入門筆記</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Apr 2, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/generate-your-own-bitcoin-address/">[Bitcoin] 客製比特幣位址並匯入錢包</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Mar 5, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ubuntu-openvpn-server-client/">[Ubuntu] 架設 OpenVpn Server &amp; Client</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Mar 5, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ubuntu-setting-pppoe-static-ip/">[Ubuntu] 設定 PPPoE 固定IP</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 17, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ubuntu-setting-ntp-sync-time/">[Ubuntu] 設定NTP校正時間</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 17, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-aes-encrypt-decrypt/">[Ruby] AES 加密解密</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Nov 7, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-various-update-methods/">[Rails] 各種update method</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jul 11, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/mac-build-ubuntu-flash-using-command/">[Mac] 三步驟純指令建立Ubuntu的USB隨身碟</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jun 29, 2015
+          </span>
+        </li>
+      
+    </ul>
+    
+
+<ul class="pagination">
+  
+  <li class="page-item">
+    <a class="page-link" href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-left">
+  <title>arrow-left</title>
+  <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/">
+      1
+    </a>
+  </li>
+  
+  <li class="page-item active">
+    <a class="page-link" href="/page/2/">
+      2
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">
+      3
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/4/">
+      4
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/5/">
+      5
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/6/">
+      6
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/7/">
+      7
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/8/">
+      8
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-right">
+  <title>arrow-right</title>
+  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  </article>
+
+    </main>
+  </body>
 </html>

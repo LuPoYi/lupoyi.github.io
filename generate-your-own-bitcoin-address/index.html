@@ -1,34 +1,35 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-      
-      [Bitcoin] 客製比特幣位址並匯入錢包 - Bob 學習筆記
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>[Bitcoin] 客製比特幣位址並匯入錢包 // Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
     
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/generate-your-own-bitcoin-address/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
-  <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Bitcoin] 客製比特幣位址並匯入錢包"/>
+<meta name="twitter:description" content="使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
+# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind
+# 先確認此Address狀態 $ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: false, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false } # &#34;ismine&#34;: false =&gt; 代表此address還不是自己的# bitcoin-cli importprivkey &lt;Privkey&gt; [label] [rescan=true] # label 是指你要放入哪個account，預設都會有一個””空字串的account # rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久) # 如果只是新address的話這邊填false就行了 $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: true, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false, &#34;iscompressed&#34;: true, &#34;account&#34;: &#34;&#34; } # &#34;ismine&#34;: true =&gt; 現在此Address就是屬於你的 Reference:"/>
 
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="[Bitcoin] 客製比特幣位址並匯入錢包" />
+    <meta property="og:title" content="[Bitcoin] 客製比特幣位址並匯入錢包" />
 <meta property="og:description" content="使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
 # 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind
 # 先確認此Address狀態 $ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: false, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false } # &#34;ismine&#34;: false =&gt; 代表此address還不是自己的# bitcoin-cli importprivkey &lt;Privkey&gt; [label] [rescan=true] # label 是指你要放入哪個account，預設都會有一個””空字串的account # rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久) # 如果只是新address的話這邊填false就行了 $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: true, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false, &#34;iscompressed&#34;: true, &#34;account&#34;: &#34;&#34; } # &#34;ismine&#34;: true =&gt; 現在此Address就是屬於你的 Reference:" />
@@ -37,111 +38,51 @@
 <meta property="article:published_time" content="2016-03-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-03-05T00:00:00+00:00" />
 
-  <meta itemprop="name" content="[Bitcoin] 客製比特幣位址並匯入錢包">
-<meta itemprop="description" content="使用vanitygen客製比特幣位址 安裝vanitygen sudo apt-get install build-essential libssl-dev libpcre3-dev git clone https://github.com/samr7/vanitygen.git cd vanitygen make Generate Your Own Bitcoin Address  Base58 避免使用數字0和字母大寫O以及字母大寫I和字母小寫l 要使用該Address的話，記得備份好Privkey避免公開，擁有Privkey即等於擁有此Address發送權
-# 指定開頭 $ ./vanitygen 1Bob Difficulty: 77178 Pattern: 1Bob Address: 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 忽略大小寫 $ ./vanitygen -i 1boba Difficulty: 1100434 Pattern: 1boba Address: 1BoBAeQ6vEw2wCitEvRAXuSfRJfwuVGt1L Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX # 指定結尾 $ ./vanitygen -r bob$ Pattern: bob$ Address: 14a6Pw84woyKjysT6Uc9gJF2M8prwYtbob Privkey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  將 Privkey 匯入Bitcoind錢包 大部分錢包軟體都會提供匯入Privkey的功能，但我這邊使用Bitcoind
-# 先確認此Address狀態 $ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: false, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false } # &#34;ismine&#34;: false =&gt; 代表此address還不是自己的# bitcoin-cli importprivkey &lt;Privkey&gt; [label] [rescan=true] # label 是指你要放入哪個account，預設都會有一個””空字串的account # rescan 填true的話，會去掃以前到現在所有的transaction確定此address是否有被使用過(但會跑很久) # 如果只是新address的話這邊填false就行了 $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX “” false$ bitcoin-cli validateaddress 1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH { &#34;isvalid&#34;: true, &#34;address&#34;: &#34;1Bobnp85Ns6JUDaMntc672ZjfsWSzrUnZH&#34;, &#34;scriptPubKey&#34;: &#34;76a91476816ee640da13a0d821d79a01892d8598288bb488ac&#34;, &#34;ismine&#34;: true, &#34;iswatchonly&#34;: false, &#34;isscript&#34;: false, &#34;iscompressed&#34;: true, &#34;account&#34;: &#34;&#34; } # &#34;ismine&#34;: true =&gt; 現在此Address就是屬於你的 Reference:">
 
-
-<meta itemprop="datePublished" content="2016-03-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-03-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="138">
-
-
-
-<meta itemprop="keywords" content="address,vanitygen," />
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
         
-        <p>
-            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-                
-            </a>
-        </p>
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
       
-    </div>
-
-  </div>
-
-  <div class="socials">
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Bitcoin] 客製比特幣位址並匯入錢包</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 5, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/address/">address</a><a class="tag" href="https://blog.poyi.tw/tags/vanitygen/">vanitygen</a></div></div>
+    </header>
+    <div class="post-content">
       
-  </div>
 
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-
-
-
-
-<span >
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-   / 
-</span>
-
-
-<span >
-  <a href="https://blog.poyi.tw/posts/">Posts</a>
-   / 
-</span>
-
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/generate-your-own-bitcoin-address/">[Bitcoin] 客製比特幣位址並匯入錢包</a>
-  
-</span>
-
-</div>
-
-    
-    <main id="content" class="posts">
-
-<h1>[Bitcoin] 客製比特幣位址並匯入錢包</h1>
-
-<div class="post-date">2016-03-05</div>
-
-<br>
 <h2 id="使用vanitygen客製比特幣位址">使用vanitygen客製比特幣位址</h2>
 
 <h3 id="安裝vanitygen">安裝vanitygen</h3>
@@ -211,47 +152,31 @@ $ bitcoin-cli importprivkey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 
 <p><a href="http://8btc.com/article-1930-1.html">http://8btc.com/article-1930-1.html</a></p>
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'blogpoyitw';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-43769917-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  </article>
 
-</body>
+    </main>
+  </body>
 </html>

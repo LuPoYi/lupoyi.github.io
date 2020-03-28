@@ -48,9 +48,18 @@
     </item>
     
     <item>
-      <title>ZCash</title>
-      <link>https://blog.poyi.tw/categories/zcash/</link>
+      <title>Cryptocurrency</title>
+      <link>https://blog.poyi.tw/categories/cryptocurrency/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/categories/cryptocurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zcash</title>
+      <link>https://blog.poyi.tw/categories/zcash/</link>
+      <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/categories/zcash/</guid>
       <description></description>

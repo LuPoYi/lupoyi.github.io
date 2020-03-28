@@ -13,10 +13,10 @@
     
     <item>
       <title>[jQuery] Selector</title>
-      <link>https://blog.poyi.tw/posts/jquery-selector/</link>
+      <link>https://blog.poyi.tw/jquery-selector/</link>
       <pubDate>Sun, 15 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/jquery-selector/</guid>
+      <guid>https://blog.poyi.tw/jquery-selector/</guid>
       <description>jQuery物件有下列三種： $(&amp;ldquo;a&amp;rdquo;)　$(&amp;ldquo;table&amp;rdquo;)　$(&amp;ldquo;div&amp;rdquo;)　:直接指定Tag類別
 $(&amp;ldquo;#myTable&amp;rdquo;)　:直接指定ID
 $(&amp;ldquo;.clsInput&amp;rdquo;)　:指定使用此CSS的元件
@@ -26,10 +26,10 @@ jQuery Selector 常用清單   選擇器 實例 選取   * $(&amp;quot;*&amp;quo
     
     <item>
       <title>[jQuery] 入門</title>
-      <link>https://blog.poyi.tw/posts/jquery/</link>
+      <link>https://blog.poyi.tw/jquery/</link>
       <pubDate>Sun, 15 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/jquery/</guid>
+      <guid>https://blog.poyi.tw/jquery/</guid>
       <description>jQuery 是一套 JavaScript 的 Library，目的是簡化dom的操作，也可以說是簡化HTML與JavaScript之間的操作
 基本規則：jQuery物件.方法( ).方法( )
 具名函數

@@ -1,1218 +1,15 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-    
-      Bob 學習筆記
-    
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
-
-  <meta name="generator" content="Hugo 0.58.0" />
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="Bob 學習筆記" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.poyi.tw/" />
-
-<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
-
-  <meta itemprop="name" content="Bob 學習筆記">
-<meta itemprop="description" content="">
-
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Dart"
-          class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
-      
-      <p>
-        <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-          
-        </a>
-      </p>
-      
-    </div>
-
-    <div class="recent">
-      <h4>Recent Posts</h4>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/dart-beginning/">Dart 101 入門筆記</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
-      </p>
-      
-      </p>
-    </div>
-
-  </div>
-
-  <div class="socials">
-    
-  </div>
-
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-  
-</span>
-
-</div>
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="Software Engineer" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
 
     
-    <main id="content" class="">
-
-
-
-<p></p>
-<div id="list">
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/dart-beginning/">Dart 101 入門筆記</a>
-<div class="post-date">
-  2019-10-19
-</div>
-<br>
-<blockquote>
-<p>無腦玩了一下 Flutter，
-後來還是覺得要看一下 Dart 語言基本用法，
-這篇單純紀錄一下，最近會補完自己覺得該備忘的範例</p>
-</blockquote>
-
-<h3 id="install">Install</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew tap dart-lang/dart
-brew install dart</code></pre></div>
-<h3 id="variables">Variables</h3>
-
-<p>int, double, bool, String, list, map</p>
-
-<p>const - 常數，賦值後不可變更，必須明確賦值</p>
-
-<p>final - 常數，賦值後不可變更，可以是運算後過的結果</p>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">firstname</span> <span class="o">=</span> <span class="s2">&#34;Bob&#34;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="n">year</span> <span class="o">=</span> <span class="m">1989</span><span class="p">;</span>
-<span class="kt">String</span> <span class="n">lastName</span> <span class="o">=</span> <span class="s2">&#34;Lu&#34;</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="n">bar</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">;</span>
-<span class="kd">final</span> <span class="kt">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">;</span></code></pre></div>
-<h3 id="control-flow-statements">Control flow statements</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="k">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">case</span> <span class="s1">&#39;what&#39;</span><span class="o">:</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="s1">&#39;does&#39;</span><span class="o">:</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="s1">&#39;the&#39;</span><span class="o">:</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="s1">&#39;fox&#39;</span><span class="o">:</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="s1">&#39;say&#39;</span><span class="o">:</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="k">break</span><span class="p">;</span>
-  <span class="k">default</span><span class="o">:</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="m">2019</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="o">//</span> <span class="k">break</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="k">return</span></code></pre></div>
-<h3 id="function">Function</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">printSomething</span><span class="p">(){</span>
-  <span class="n">print</span><span class="p">(</span><span class="s2">&#34;something&#34;</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="class">Class</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Animal</span><span class="p">{</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span><span class="p">{</span>
-  <span class="kt">String</span> <span class="n">name</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
-
-  <span class="c1">// contrunctor
-</span><span class="c1"></span>  <span class="n">Dog</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">age</span><span class="p">)</span> <span class="p">{}</span>
-
-  <span class="c1">// method
-</span><span class="c1"></span>  <span class="kt">void</span> <span class="n">sayHi</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&#34;(&#34;</span> <span class="o">+</span> <span class="n">age</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;): &#34;</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">print</span><span class="p">(</span><span class="s2">&#34;ding ding ding ding ding&#34;</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">print</span><span class="p">(</span><span class="s1">&#39;woof&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-
-<span class="kd">var</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jex&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-<span class="n">myDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span>
-<span class="kd">var</span> <span class="n">yourDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-<span class="n">yourDog</span><span class="p">.</span><span class="n">sayHi</span><span class="p">();</span></code></pre></div>
-<h3 id="mixin">Mixin</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Walker</span> <span class="p">{}</span>
-<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Flyer</span> <span class="p">{}</span>
-
-<span class="kd">class</span> <span class="nc">Animal</span><span class="p">{}</span>
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">with</span> <span class="n">Walker</span> <span class="p">{}</span>
-<span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">with</span> <span class="n">Walker</span><span class="p">,</span> <span class="n">Flyer</span> <span class="p">{}</span></code></pre></div>
-<h3 id="interfaces">Interfaces</h3>
-
-<blockquote>
-<p>只繼承原class的API，不繼承原class的實作</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Camera</span> <span class="p">{</span>
-  <span class="kt">void</span> <span class="n">takePhoto</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 這邊不會被Phone繼承實作
-</span><span class="c1"></span>  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Phone</span> <span class="kd">implements</span> <span class="n">Camera</span> <span class="p">{</span>
-  <span class="kt">void</span> <span class="n">takePhoto</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;takePhoto from Phone&#34;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="future-async-await">Future, async, await</h3>
-<div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">(</span><span class="kt">String</span> <span class="n">message</span><span class="p">)</span> <span class="kd">async</span> <span class="p">{</span>
-  <span class="kd">await</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">1</span><span class="p">));</span>
-  <span class="n">print</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">(</span><span class="kt">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">1</span><span class="p">)).</span><span class="n">then</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span> <span class="n">printWithDelay</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">Future</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span><span class="k">new</span> <span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span> <span class="m">2</span><span class="p">)).</span><span class="n">then</span><span class="p">((</span><span class="n">_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="s2">&#34;execute printWithDelay&#34;</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="n">print</span><span class="p">(</span><span class="s2">&#34;before printWithDelay&#34;</span><span class="p">);</span>
-<span class="n">printWithDelay</span><span class="p">();</span>
-<span class="n">print</span><span class="p">(</span><span class="s2">&#34;after printWithDelay&#34;</span><span class="p">);</span>
-
-<span class="c1">// before printWithDelay
-</span><span class="c1">// after printWithDelay
-</span><span class="c1"></span><span class="o">//</span> <span class="n">execute</span> <span class="n">printWithDelay</span></code></pre></div>
-<p>Reference:</p>
-
-<p><a href="https://dart.dev/samples">https://dart.dev/samples</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
-<div class="post-date">
-  2019-09-15
-</div>
-<br>
-<h2 id="grpc">gRPC</h2>
-
-<p>gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers
-(protobuf)序列化資料來更有效地進行傳輸。</p>
-
-<p>有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。</p>
-
-<p>以下使用go實作server端，ruby實作client端</p>
-
-<h3 id="install-grpc-grpc-tools">Install gRPC &amp; grpc-tools</h3>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">go get google.golang.org/grpc
-brew install protobuf
-
-gem install grpc
-gem install grpc-tools</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">├── go
-│   ├── pb
-│   │   └── demo.pb.go
-│   └── server
-│       └── main.go
-├── protos
-│   └── demo.proto
-└── ruby
-    ├── client
-    │   └── main.rb
-    └── pb
-        ├── demo_pb.rb
-        └── demo_services_pb.rb</code></pre></div>
-<h3 id="定義protobuf-demo-proto">定義protobuf - demo.proto</h3>
-
-<p>簡單定義兩組rpc，這邊必須先決定好request及response</p>
-<div class="highlight"><pre class="chroma"><code class="language-proto" data-lang="proto"><span class="n">syntax</span> <span class="o">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kn">package</span> <span class="nn">demo</span><span class="p">;</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">service</span> <span class="n">DemoService</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="k">rpc</span> <span class="n">SayHello</span> <span class="p">(</span><span class="n">HelloRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">HelloResponse</span><span class="p">);</span><span class="err">
-</span><span class="err"></span>  <span class="k">rpc</span> <span class="n">Sum</span> <span class="p">(</span><span class="n">SumRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">SumResponse</span><span class="p">);</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloRequest</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">string</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">HelloResponse</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">SumRequest</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">numberOne</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">numberOne</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="kd">message</span> <span class="nc">SumResponse</span> <span class="p">{</span><span class="err">
-</span><span class="err"></span>  <span class="kt">int64</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="err">
-</span><span class="err"></span><span class="p">}</span></code></pre></div>
-<h3 id="由protobuf產出go跟ruby對應的code">由protobuf產出go跟ruby對應的code</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">protoc -I protos/ protos/demo.proto --go_out<span class="o">=</span><span class="nv">plugins</span><span class="o">=</span>grpc:go/pb
-<span class="c1"># generate demo.pb.go</span>
-
-grpc_tools_ruby_protoc -I protos/ --ruby_out<span class="o">=</span>ruby/pb --grpc_out<span class="o">=</span>ruby/pb protos/demo.proto
-<span class="c1"># generate demo_pb.rb deom_services_pb.rb</span></code></pre></div>
-<h3 id="server-go-實作">Server - Go 實作</h3>
-<div class="highlight"><pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-  <span class="s">&#34;flag&#34;</span>
-  <span class="s">&#34;log&#34;</span>
-  <span class="s">&#34;net&#34;</span>
-
-  <span class="s">&#34;golang.org/x/net/context&#34;</span>
-  <span class="s">&#34;google.golang.org/grpc&#34;</span>
-
-  <span class="nx">pb</span> <span class="s">&#34;../pb&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">var</span> <span class="p">(</span>
-  <span class="nx">port</span> <span class="p">=</span> <span class="nx">flag</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="s">&#34;p&#34;</span><span class="p">,</span> <span class="s">&#34;:50051&#34;</span><span class="p">,</span> <span class="s">&#34;port&#34;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">server</span> <span class="kd">struct</span><span class="p">{}</span>
-
-<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">server</span><span class="p">)</span> <span class="nf">SayHello</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">in</span> <span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloRequest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Received: %v&#34;</span><span class="p">,</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetName</span><span class="p">())</span>
-  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">HelloResponse</span><span class="p">{</span><span class="nx">Message</span><span class="p">:</span> <span class="s">&#34;Hello &#34;</span> <span class="o">+</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetName</span><span class="p">()},</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">server</span><span class="p">)</span> <span class="nf">Sum</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">in</span> <span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumRequest</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumResponse</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Received: %v &amp; %v&#34;</span><span class="p">,</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberOne</span><span class="p">(),</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberTwo</span><span class="p">())</span>
-  <span class="nx">sum</span> <span class="o">:=</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberOne</span><span class="p">()</span> <span class="o">+</span> <span class="nx">in</span><span class="p">.</span><span class="nf">GetNumberTwo</span><span class="p">()</span>
-  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SumResponse</span><span class="p">{</span><span class="nx">Sum</span><span class="p">:</span> <span class="nx">sum</span><span class="p">},</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span>
-
-  <span class="nx">lis</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="o">*</span><span class="nx">port</span><span class="p">)</span>
-  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;failed to listen: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="nx">s</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nf">NewServer</span><span class="p">()</span>
-  <span class="nx">pb</span><span class="p">.</span><span class="nf">RegisterDemoServiceServer</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">server</span><span class="p">{})</span>
-  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">Serve</span><span class="p">(</span><span class="nx">lis</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;failed to serve: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="client-ruby-實作">Client - Ruby 實作</h3>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">this_dir</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp">__FILE__</span><span class="p">))</span>
-<span class="n">lib_dir</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">this_dir</span><span class="p">),</span> <span class="s1">&#39;pb&#39;</span><span class="p">)</span>
-<span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="n">lib_dir</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">lib_dir</span><span class="p">)</span>
-
-<span class="nb">require</span> <span class="s1">&#39;grpc&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;demo_services_pb&#39;</span>
-
-<span class="k">def</span> <span class="nf">main</span>
-  <span class="n">stub</span> <span class="o">=</span> <span class="no">Demo</span><span class="o">::</span><span class="no">DemoService</span><span class="o">::</span><span class="no">Stub</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;localhost:50051&#39;</span><span class="p">,</span> <span class="ss">:this_channel_is_insecure</span><span class="p">)</span>
-
-  <span class="n">say_hello_response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">say_hello</span><span class="p">(</span><span class="no">Demo</span><span class="o">::</span><span class="no">HelloRequest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
-    <span class="nb">name</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span>
-  <span class="p">))</span>
-  <span class="nb">puts</span> <span class="s2">&#34;say_hello_response </span><span class="si">#{</span><span class="n">say_hello_response</span><span class="si">}</span><span class="s2">&#34;</span>
-
-  <span class="n">sum_response</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="no">Demo</span><span class="o">::</span><span class="no">SumRequest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
-    <span class="ss">numberOne</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
-    <span class="ss">numberTwo</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-  <span class="p">))</span>
-  <span class="nb">puts</span> <span class="s2">&#34;sum_response </span><span class="si">#{</span><span class="n">sum_response</span><span class="si">}</span><span class="s2">&#34;</span>
-<span class="k">end</span>
-
-<span class="n">main</span></code></pre></div>
-<h3 id="執行結果">執行結果</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">server $ go run main.go
-<span class="m">2019</span>/09/28 <span class="m">14</span>:11:48 Received: Bob
-<span class="m">2019</span>/09/28 <span class="m">14</span>:11:48 Received: <span class="m">8</span> + <span class="m">7</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">client $ ruby main.rb
-say_hello_response &lt;Demo::HelloResponse: message: <span class="s2">&#34;Hello Bob&#34;</span>&gt;
-sum_response &lt;Demo::SumResponse: sum: <span class="m">15</span>&gt;</code></pre></div>
-<h4 id="source-code-https-github-com-lupoyi-grpc-demo">Source code: <a href="https://github.com/LuPoYi/grpc-demo">https://github.com/LuPoYi/grpc-demo</a></h4>
-
-<p>Reference:</p>
-
-<p><a href="https://yami.io/grpc/">https://yami.io/grpc/</a></p>
-
-<p><a href="https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w">https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
-<div class="post-date">
-  2019-05-26
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># user</span>
-sudo adduser deploy
-sudo adduser deploy sudo
-exit</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># required libraries</span>
-curl -sL <a href="https://deb.nodesource.com/setup_10.x">https://deb.nodesource.com/setup_10.x</a> <span class="p">|</span> sudo -E bash -
-curl -sS <a href="https://dl.yarnpkg.com/debian/pubkey.gpg">https://dl.yarnpkg.com/debian/pubkey.gpg</a> <span class="p">|</span> sudo apt-key add -
-<span class="nb">echo</span> <span class="s2">&#34;deb <a href="https://dl.yarnpkg.com/debian/">https://dl.yarnpkg.com/debian/</a> stable main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/yarn.list
-sudo add-apt-repository ppa:chris-lea/redis-server
-sudo apt-get update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ruby</span>
-git clone <a href="https://github.com/rbenv/rbenv.git">https://github.com/rbenv/rbenv.git</a> ~/.rbenv
-<span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
-git clone <a href="https://github.com/rbenv/ruby-build.git">https://github.com/rbenv/ruby-build.git</a> ~/.rbenv/plugins/ruby-build
-<span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-git clone <a href="https://github.com/rbenv/rbenv-vars.git">https://github.com/rbenv/rbenv-vars.git</a> ~/.rbenv/plugins/rbenv-vars
-<span class="nb">exec</span> <span class="nv">$SHELL</span>
-rbenv install <span class="m">2</span>.6.1
-rbenv global <span class="m">2</span>.6.1</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># bundler</span>
-gem install bundler
-gem install bundler -v <span class="m">1</span>.17.3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># NGINX &amp; Passenger</span>
-sudo apt-key adv &ndash;keyserver hkp://keyserver.ubuntu.com:80 &ndash;recv-keys 561F9B9CAC40B2F7
-sudo sh -c <span class="s1">&#39;echo deb <a href="https://oss-binaries.phusionpassenger.com/apt/passenger">https://oss-binaries.phusionpassenger.com/apt/passenger</a> bionic main &gt; /etc/apt/sources.list.d/passenger.list&#39;</span>
-sudo apt-get update
-sudo apt-get install -y nginx-extras libnginx-mod-http-passenger
-<span class="k">if</span> <span class="o">[</span> ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf <span class="o">]</span><span class="p">;</span> <span class="k">then</span> sudo ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf <span class="p">;</span> <span class="k">fi</span>
-sudo ls /etc/nginx/conf.d/mod-http-passenger.conf</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/nginx/conf.d/mod-http-passenger.conf</span>
-<span class="c1"># 加上</span>
-passenger_ruby /home/bob/.rbenv/shims/ruby<span class="p">;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/nginx/sites-enabled/myapp</span>
-server <span class="o">{</span>
-  listen <span class="m">80</span><span class="p">;</span>
-  listen <span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span></p>
-
-<p>server_name _<span class="p">;</span>
-  root /home/bob/myapp/current/public<span class="p">;</span></p>
-
-<p>passenger_enabled on<span class="p">;</span>
-  passenger_app_env production<span class="p">;</span></p>
-
-<p>location /cable <span class="o">{</span>
-    passenger_app_group_name myapp_websocket<span class="p">;</span>
-    passenger_force_max_concurrent_requests_per_process <span class="m">0</span><span class="p">;</span>
-  <span class="o">}</span></p>
-
-<p><span class="c1"># Allow uploads up to 100MB in size</span>
-  client_max_body_size 100m<span class="p">;</span></p>
-
-<p>location ~ ^/<span class="o">(</span>assets<span class="p">|</span>packs<span class="o">)</span> <span class="o">{</span>
-    expires max<span class="p">;</span>
-    gzip_static on<span class="p">;</span>
-  <span class="o">}</span>
-<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># mysql</span>
-sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-sudo mysql_secure_installation</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/redis/redis.conf</span>
-supervised systemd</code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="https://gorails.com/deploy/ubuntu/18.04">https://gorails.com/deploy/ubuntu/18.04</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
-<div class="post-date">
-  2017-12-10
-</div>
-<br>
-<p>// 個人筆記尚未整理</p>
-
-<p>錢包本身並不存放幣，存放的是私鑰</p>
-
-<p>而透過私鑰能轉換成錢包地址，並到區塊鏈上將交易紀錄及餘額取回</p>
-
-<h2 id="隨機-non-deterministic-錢包">隨機(non-deterministic)錢包</h2>
-
-<ul>
-<li>每個被隨機建立出來的私鑰沒有相關性</li>
-<li>需要各別管理及備份</li>
-</ul>
-
-<h2 id="deterministic-wallet">deterministic wallet</h2>
-
-<ul>
-<li>透過一組主私鑰來建立許多子私鑰</li>
-
-<li><p>只需要備份主私鑰</p></li>
-
-<li><p>Hierarchical Deterministic(HD) Wallet</p></li>
-
-<li><p>大部分的HD錢包(Jaxx、ledgerwallet&hellip;)都實作了BIP-32、BIP-39、BIP-44</p></li>
-</ul>
-
-<h2 id="bip-39-bip-32-bip-44">BIP-39 / BIP-32 / BIP-44</h2>
-
-<ul>
-<li>BIP-32 - 規範出如何建立一個HD錢包，由用一份seed產生多組私鑰</li>
-<li>BIP-39 - 制定由哪些字組來產生成512 bit seed</li>
-<li>BIP-44 - 基於BIP-32上的擴充，提供了5層path，其中包括了多幣種</li>
-</ul>
-
-<p>目前已經成為大部分加密貨幣的標準規範</p>
-
-<p>12~24字組 =&gt; 512 bit seed(BIP-39 seed) =&gt; 主私鑰 =&gt; 子私鑰(公鑰、地址)</p>
-
-<p><a href="https://github.com/bitcoin/bips/blob/master/bip-0039/bip-0039-wordlists.md" title="bip-0039-wordlists">bip-0039-wordlists</a> - 共2048字</p>
-
-<p>若錢包產出為12/24字組，那所有排列的組合共用2048的12/24次方</p>
-
-<p>###　BIP-44五層path</p>
-
-<ul>
-<li>m/purpose&rsquo;/coin_type&rsquo;/account&rsquo;/change/address_index</li>
-<li>m/44&rsquo;/60&rsquo;/0&rsquo;/0/0 : ethererum</li>
-<li>m/44&rsquo;/0&rsquo;/0&rsquo;/0/0  : bitcoin</li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="https://github.com/bitcoin/bips">https://github.com/bitcoin/bips</a></p>
-
-<p><a href="https://medium.com/@bun919tw/hd-wallet-970096a6d72f">https://medium.com/@bun919tw/hd-wallet-970096a6d72f</a></p>
-
-<p><a href="http://blog.xuite.net/metafun/life/545924715-HD+Wallet+%E5%88%86%E5%B1%A4%E7%A2%BA%E5%AE%9A%E6%80%A7%28Hierarchical+Deterministic%29%E9%8C%A2%E5%8C%85">http://blog.xuite.net/metafun/life/545924715-HD+Wallet+%E5%88%86%E5%B1%A4%E7%A2%BA%E5%AE%9A%E6%80%A7%28Hierarchical+Deterministic%29%E9%8C%A2%E5%8C%85</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
-<div class="post-date">
-  2017-11-04
-</div>
-<br>
-<p>// 個人筆記尚未整理</p>
-
-<h2 id="pirvacy-coins-匿名貨幣-強調隱私">Pirvacy Coins 匿名貨幣 - 強調隱私</h2>
-
-<p>Bitcoin 本身具有一定的隱私性，錢包地址跟使用者之間沒有直接的關聯性
-所有交易都是公開的，任何人都可以知道某錢包地址現在或過去有過多少交易，但理論上無法得知該錢包是持有者是誰。</p>
-
-<p>但今天你發送一筆交易給朋友或是客戶，對方得知了你的錢包地址，就可以觀察你持有多少BTC，就像你的銀行存款暴露在外一樣，任何人只要知道你的錢包地址都可以查得到你的餘額及所有交易紀錄。當然你也可以一直換錢包地址或是透過交易所發送來隱藏你主要的錢包地址，而這些匿名貨幣用各自的手段去解決這些問題。</p>
-
-<h2 id="dash">Dash</h2>
-
-<h3 id="主要特色是雙層網路並提供即時發送及匿名發送">主要特色是雙層網路並提供即時發送及匿名發送</h3>
-
-<blockquote>
-<p>150 seconds/block</p>
-</blockquote>
-
-<h4 id="masternodes-主節點">Masternodes 主節點</h4>
-
-<ul>
-<li>需抵押 1000 Dash</li>
-<li>具投票權可以決定Dash未來走向</li>
-<li>45%的區塊獎勵</li>
-<li>持續 sync blockchain</li>
-<li>提供 InstantSend(即時發送) 服務</li>
-<li>提供 PirvateSend(匿名發送) 服務</li>
-</ul>
-
-<h4 id="pirvatesend-匿名發送-混幣-coinjoin">PirvateSend 匿名發送 - 混幣(Coinjoin)</h4>
-
-<ul>
-<li>該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向</li>
-</ul>
-
-<h4 id="instantsend-即時發送">InstantSend 即時發送</h4>
-
-<ul>
-<li>每個block產生後會隨機挑選10個Masternodes來提供InstantSend服務</li>
-<li>發送交易時這10個Masternodes會優先收到廣播，而它們會對其他node廣播說這筆發送方已被鎖定，如果在這同時收到另一筆來自發送方的交易將會被reject</li>
-<li>這時該筆交易會馬上收到5confirm，即完成交易 (1.3秒)</li>
-</ul>
-
-<h2 id="pivx">Pivx</h2>
-
-<h3 id="特色與dash相同-似乎更著重在隱私-pos版本的dash">特色與Dash相同，似乎更著重在隱私 - PoS版本的Dash</h3>
-
-<blockquote>
-<p>60 seconds/block</p>
-</blockquote>
-
-<h4 id="masternodes-主節點-1">Masternodes 主節點</h4>
-
-<ul>
-<li>需抵押 10000 Pivx</li>
-<li>具投票權可以決定Pivx未來走向</li>
-<li>持續 sync blockchain</li>
-<li>提供 InstantSend(即時發送) 服務</li>
-<li>提供 PirvateSend(匿名發送) 服務</li>
-</ul>
-
-<h4 id="pirvatesend-匿名發送-混幣-coinjoin-1">PirvateSend 匿名發送 - 混幣(Coinjoin)</h4>
-
-<ul>
-<li>該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向</li>
-<li>Zerocoin Protocol(zPiv)</li>
-</ul>
-
-<h4 id="instantsend-即時發送-swifttx">InstantSend 即時發送(SwiftTx)</h4>
-
-<ul>
-<li>SwiftTx</li>
-</ul>
-
-<h2 id="zcash">Zcash</h2>
-
-<h3 id="主要特色是錢包地址分為兩種類型-public-address-t-addrs-及-shielded-address-z-addrs">主要特色是錢包地址分為兩種類型，Public address(t-addrs)及 Shielded address(z-addrs)</h3>
-
-<h4 id="public-address-t-addrs">Public address(t-addrs)</h4>
-
-<ul>
-<li>t開頭的地址</li>
-<li>與其他加密貨幣地址相同，在公開帳本可查詢餘額、歷史交易</li>
-</ul>
-
-<h4 id="shielded-address-z-addrs">Shielded address(z-addrs)</h4>
-
-<ul>
-<li>z開頭的地址</li>
-<li>零知識證明(Zero-knowledge proof) - zk-SNARKs</li>
-<li>無法在公開帳本上查詢</li>
-</ul>
-
-<p><img src="https://z.cash/images/basic-txn-types_v2.png" alt="Zcash Transaction Type" /></p>
-
-<h2 id="monero-xmr">Monero(XMR)</h2>
-
-<h3 id="任何地址交易金額都無法查詢-完整的強制匿名貨幣">任何地址交易金額都無法查詢，完整的強制匿名貨幣</h3>
-
-<ul>
-<li>使用 CryptoNote 演算法</li>
-<li>Ring Signature</li>
-<li>RingCT</li>
-
-<li><p>動態區塊大小</p></li>
-
-<li><p>viewkey可以選擇性公開交易</p></li>
-
-<li><p>address - 95 character string (public view key &amp; public spend key)</p></li>
-
-<li><p>add some fake transaction to mix</p></li>
-
-<li><p>Alice 要發送交易給 Bob</p></li>
-
-<li><p>Alice 將 Bob 的 public view key &amp; public spend key 再加上 randon data 來產生一次性的公鑰 供 Bob 後續使用一次性的公鑰大家都看得到</p></li>
-
-<li><p>Bob可以用一次性的公鑰推出一次性的私鑰，最後用private spend key來發送給別人</p></li>
-
-<li><p>整個交易都不需要Bob的address</p></li>
-
-<li><p>// A 發送給 B =&gt; 使用A+ 發送給 B+ (而A+/B+無法推回A/B)</p></li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="https://www.youtube.com/watch?v=591J9KcKgHM">https://www.youtube.com/watch?v=591J9KcKgHM</a></p>
-
-<p><a href="http://bitcoin-yoro.com/altcoin/dashmonerozcash">http://bitcoin-yoro.com/altcoin/dashmonerozcash</a></p>
-
-<p><a href="https://moneroforcash.com/monero-vs-dash-vs-zcash-vs-bitcoinmixers.php">https://moneroforcash.com/monero-vs-dash-vs-zcash-vs-bitcoinmixers.php</a></p>
-
-<p><a href="https://pivx.org/coin-specs/">https://pivx.org/coin-specs/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/">[ZCash] 如何使用Windows來挖礦</a>
-<div class="post-date">
-  2017-01-15
-</div>
-<br>
-<blockquote>
-<p>幾千塊的顯卡來挖其實收益非常低，電費還比較貴，玩票性質再試試看吧</p>
-</blockquote>
-
-<h2 id="zcash錢包">ZCash錢包</h2>
-
-<p>首先要下載一個錢包並取得address(t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE)來存放你挖到的幣</p>
-
-<p>推薦<a href="https://jaxx.io/">Jaxx</a>，支援windows/macos/ios/android&hellip;，幣別也支援btc/eth/etc/zec&hellip;.。</p>
-
-<p>Nvidia挖ZCash會比較快，如果是AMD可考慮挖Ethereum之類的</p>
-
-<h2 id="miner-挖礦軟體-挑一款即可">Miner 挖礦軟體 (挑一款即可)</h2>
-
-<h3 id="ewbf-miner">EWBF Miner</h3>
-
-<p><a href="https://bitcointalk.org/index.php?topic=1707546.0">EWBF&rsquo;s CUDA Zcash miner</a></p>
-
-<ul>
-<li>EWBF Miner - 效率好30% - 使用時會吃掉大部分顯卡效能無法正常使用</li>
-</ul>
-
-<h3 id="nicehash-nheqminer-0-5c">Nicehash - nheqminer-0.5c</h3>
-
-<p><a href="https://github.com/nicehash/nheqminer/releases">nheqminer-0.5c</a></p>
-
-<ul>
-<li>Nicehash - 不開大型遊戲的話，電腦還可以正常使用</li>
-</ul>
-
-<h2 id="礦池">礦池</h2>
-
-<p>如果是組礦機多張顯卡，算力夠強的話可以考慮自己挖，只是台桌機的話就加入礦池吧</p>
-
-<p>礦池是你提供多少算力，就會回饋給你多少，收益比較穩定</p>
-
-<p>自己solo的話就是有挖到block才有收益</p>
-
-<p><a href="http://zcash.flypool.org/">http://zcash.flypool.org/</a></p>
-
-<p>通常礦池首頁都會寫很清楚該怎麼做</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># EWBF Miner</span>
-miner.exe --server &lt;server&gt; --user &lt;address&gt;.&lt;worker&gt; --port &lt;port&gt; --cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
-miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port <span class="m">3333</span> --cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Nicehash Miner</span>
-nheqminer.exe -cd <span class="m">0</span> -l &lt;礦池server&gt; -u &lt;你自己的錢包地址&gt;.&lt;自命名worker&gt; 
-nheqminer.exe -cd <span class="m">0</span> -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
-<p>監控挖礦情況 (Nvidia GTX960)</p>
-
-<p><a href="http://zcash.flypool.org/miners/t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE">http://zcash.flypool.org/miners/t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE</a></p>
-
-<p><h2 id="製作成bat檔一鍵開挖">製作成bat檔一鍵開挖</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># EWBF_Miner.bat</span>
-@echo on
-E:
-<span class="nb">cd</span> <span class="s2">&#34;Zec Miner 0.3.4b\0.3.4b&#34;</span>
-miner.exe &ndash;server asia1-zcash.flypool.org &ndash;user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 &ndash;port <span class="m">3333</span> &ndash;cuda_devices <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Nicehash_Miner.bat</span>
-@echo on
-E:
-<span class="nb">cd</span> <span class="s2">&#34;Windows_x64_nheqminer-5c&#34;</span>
-nheqminer.exe -cd <span class="m">0</span> -l asia1-zcash.flypool.org:3333 -u t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob2</code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-zcash-with-gpu-and-cpu/">https://www.cryptocompare.com/mining/guides/how-to-mine-zcash-with-gpu-and-cpu/</a></p>
-
-<p><a href="http://zcash.flypool.org/">http://zcash.flypool.org/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu16-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS</a>
-<div class="post-date">
-  2016-11-26
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 建立user</span>
-sudo adduser bob
-sudo adduser bob sudo
-su bob</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 安裝常用lib</span>
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install vim nodejs autoconf
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev</code></pre></div>
-<h2 id="install-ruby-rails">Install Ruby &amp; Rails</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 使用rbenv來管理ruby</span>
-<span class="nb">cd</span>
-git clone <a href="https://github.com/rbenv/rbenv.git">https://github.com/rbenv/rbenv.git</a> ~/.rbenv
-<span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span class="nb">exec</span> <span class="nv">$SHELL</span></p>
-
-<p>git clone <a href="https://github.com/rbenv/ruby-build.git">https://github.com/rbenv/ruby-build.git</a> ~/.rbenv/plugins/ruby-build
-<span class="nb">echo</span> <span class="s1">&#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span class="nb">exec</span> <span class="nv">$SHELL</span></p>
-
-<p>rbenv install <span class="m">2</span>.3.1
-rbenv global <span class="m">2</span>.3.1
-<span class="c1"># rbenv shell 2.3.1</span>
-<span class="c1"># rbenv local 2.3.1</span>
-<span class="c1"># rbenv global 2.3.1</span>
-ruby -v</p>
-
-<p><span class="c1"># rvm</span>
-<span class="c1"># sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev</span>
-<span class="c1"># gpg &ndash;keyserver hkp://keys.gnupg.net &ndash;recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span>
-<span class="c1"># curl -sSL <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable</span>
-<span class="c1"># source ~/.rvm/scripts/rvm</span>
-<span class="c1"># rvm install 2.3.1</span>
-<span class="c1"># rvm use 2.3.1 &ndash;default</span></p>
-
-<p><span class="c1"># skip doc</span>
-<span class="nb">echo</span> <span class="s2">&#34;gem: &ndash;no-ri &ndash;no-rdoc&#34;</span> &gt; ~/.gemrc</p>
-
-<p>gem install bundler</code></pre></div>
-<h2 id="install-passenger-nginx">Install Passenger &amp; Nginx</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># install nginx</span>
-sudo apt-key adv &ndash;keyserver hkp://keyserver.ubuntu.com:80 &ndash;recv-keys 561F9B9CAC40B2F7
-sudo apt-get install -y apt-transport-https ca-certificates</p>
-
-<p><span class="c1"># Add Passenger APT repository</span>
-sudo sh -c <span class="s1">&#39;echo deb <a href="https://oss-binaries.phusionpassenger.com/apt/passenger">https://oss-binaries.phusionpassenger.com/apt/passenger</a> xenial main &gt; /etc/apt/sources.list.d/passenger.list&#39;</span>
-sudo apt-get update</p>
-
-<p><span class="c1"># Install Passenger &amp; Nginx</span>
-sudo apt-get install -y nginx-extras passenger</p>
-
-<p>sudo service nginx start</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/nginx/nginx.conf</span>
-<span class="c1">##</span>
-<span class="c1"># Phusion Passenger</span>
-<span class="c1">##</span>
-<span class="c1"># Uncomment it if you installed ruby-passenger or ruby-passenger-enterprise</span>
-<span class="c1">##</span></p>
-
-<p>include /etc/nginx/passenger.conf<span class="p">;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/nginx/passenger.conf</span>
-<span class="c1"># 加上</span>
-passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini<span class="p">;</span>
-passenger_ruby /home/bob/.rbenv/shims/ruby<span class="p">;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/nginx/sites-enabled/default</span>
-server <span class="o">{</span>
-        listen <span class="m">80</span> default_server<span class="p">;</span>
-        listen <span class="o">[</span>::<span class="o">]</span>:80 default_server <span class="nv">ipv6only</span><span class="o">=</span>on<span class="p">;</span></p>
-
-<pre><code>    server_name poyi.com&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    passenger_enabled on&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    rails_env    production&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    root         /home/bob/poyi/public&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# redirect server error pages to the static page /50x.html&lt;/span&gt;
-    error_page   &lt;span class=&quot;m&quot;&gt;500&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;502&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;503&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;504&lt;/span&gt;  /50x.html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /50x.html &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        root   html&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# 註解掉&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# root /var/www/html;&lt;/span&gt;
-</code></pre>
-
-<p><span class="o">}</span></code></pre></div>
-<h2 id="install-mysql">Install Mysql</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install mysql-server mysql-client libmysqlclient-dev</code></pre></div>
-<h2 id="install-redis">Install Redis</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get install build-essential tcl</p>
-
-<p><span class="nb">cd</span> /tmp
-curl -O <a href="http://download.redis.io/redis-stable.tar.gz">http://download.redis.io/redis-stable.tar.gz</a>
-tar xzvf redis-stable.tar.gz
-<span class="nb">cd</span> redis-stable
-make
-make <span class="nb">test</span>
-sudo make install</p>
-
-<p>sudo mkdir /etc/redis
-sudo cp /tmp/redis-stable/redis.conf /etc/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 修改/etc/redis/redis.conf</span>
-<span class="c1"># 兩個地方要改</span>
-supervised systemd
-dir /var/lib/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增/etc/systemd/system/redis.service</span>
-<span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>Redis In-Memory Data Store
-<span class="nv">After</span><span class="o">=</span>network.target</p>
-
-<p><span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">User</span><span class="o">=</span>redis
-<span class="nv">Group</span><span class="o">=</span>redis
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/redis-server /etc/redis/redis.conf
-<span class="nv">ExecStop</span><span class="o">=</span>/usr/local/bin/redis-cli shutdown
-<span class="nv">Restart</span><span class="o">=</span>always</p>
-
-<p><span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增redis user並給權限</span>
-sudo adduser &ndash;system &ndash;group &ndash;no-create-home redis
-sudo mkdir /var/lib/redis
-sudo chown redis:redis /var/lib/redis
-sudo chmod <span class="m">770</span> /var/lib/redis</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl <span class="nb">enable</span> redis <span class="c1"># 設定開機啟動</span>
-sudo systemctl start redis
-sudo systemctl stop redis
-sudo systemctl status redis</code></pre></div>
-<h2 id="install-ssdb">Install SSDB</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget &ndash;no-check-certificate <a href="https://github.com/ideawu/ssdb/archive/master.zip">https://github.com/ideawu/ssdb/archive/master.zip</a>
-unzip master
-<span class="nb">cd</span> ssdb-master
-make
-sudo make install</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增/etc/systemd/system/ssdb.service</span>
-<span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>SSDB
-<span class="nv">After</span><span class="o">=</span>network.target</p>
-
-<p><span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">LimitCORE</span><span class="o">=</span>infinity
-<span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">100000</span>
-<span class="nv">LimitNPROC</span><span class="o">=</span><span class="m">100000</span>
-<span class="nv">PIDFile</span><span class="o">=</span>/usr/local/ssdb/var/ssdb.pid
-<span class="nv">WorkingDirectory</span><span class="o">=</span>/usr/local/ssdb
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/ssdb/ssdb-server /usr/local/ssdb/ssdb.conf -s restart -d
-<span class="nv">ExecStop</span><span class="o">=</span>/usr/local/ssdb/ssdb-server /usr/local/ssdb/ssdb.conf -s stop -d
-<span class="nv">Type</span><span class="o">=</span>forking
-<span class="nv">KillMode</span><span class="o">=</span>none
-<span class="nv">Restart</span><span class="o">=</span>on-failure
-<span class="nv">RestartSec</span><span class="o">=</span>10s
-<span class="nv">User</span><span class="o">=</span>root</p>
-
-<p><span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl <span class="nb">enable</span> ssdb <span class="c1"># 設定開機啟動</span>
-sudo systemctl start ssdb
-sudo systemctl stop ssdb
-sudo systemctl status ssdb</code></pre></div>
-<h3 id="這邊先跳過-capistrano-deploy">這邊先跳過 capistrano deploy</h3></p>
-
-<p>Reference:</p>
-
-<p><a href="https://gorails.com/deploy/ubuntu/16.04">https://gorails.com/deploy/ubuntu/16.04</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-mac-os-environment-sierra/">[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave</a>
-<div class="post-date">
-  2016-10-30
-</div>
-<br>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Installing Homebrew</span>
-ruby -e <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&#34;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Installing Ruby</span>
-<span class="c1"># 改用相對輕量的rbenv取代肥肥的rvm</span>
-brew install rbenv ruby-build
-
-<span class="nb">echo</span> <span class="s1">&#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39;</span> &gt;&gt; ~/.bash_profile
-<span class="nb">source</span> ~/.bash_profile
-
-rbenv install <span class="m">2</span>.6.3
-rbenv global <span class="m">2</span>.6.3</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Installing Rails</span>
-gem install rails -v <span class="m">6</span>.0.0.rc1
-rbenv rehash</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># others</span>
-brew install mysql
-brew install redis
-brew install ssdb
-brew install memcached</code></pre></div>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/my-linux-command/">[Ubuntu] Linux 稍微進階的常用指令</a>
-<div class="post-date">
-  2016-10-19
-</div>
-<br>
-<h4 id="稍微進階是對我來說啦">稍微進階是對我來說啦</h4>
-
-<p><h2 id="grep">grep</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找該目錄底下所有出現&#39;bob&#39;的檔案</span>
-grep -r <span class="s1">&#39;bob&#39;</span> <em></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內所有出現&#39;bob&#39;或&#39;poyi&#39;的內容 (| =&gt; OR)</span>
-grep -E <span class="s1">&#39;bob|poyi&#39;</span> abc.txt
-egrep <span class="s1">&#39;bob|poyi&#39;</span> abc.txt</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內所有出現&#39;bob&#39;及&#39;poyi&#39;的內容 (.</em> =&gt; AND)</span>
-grep -E <span class="s1">&#39;bob.*poyi|200.*poyi&#39;</span> abc.txt</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 找abc.txt內沒有出現&#39;bob&#39;的內容 (NOT)</span>
-grep -v <span class="s1">&#39;bob&#39;</span> abc.txt</code></pre></div>
-<h2 id="find-找檔案">find 找檔案</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在/home目錄下找檔名為production.log的檔案</span>
-find /home -name production.log
-find /home -iname production.log <span class="c1"># 不分大小寫</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 在/home目錄下找所有的log folder</span>
-find /home -type d -name log</code></pre></div>
-<h2 id="locate-找檔案-查系統index-不是直接掃目錄">locate 找檔案(查系統index，不是直接掃目錄)</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">locate nginx.conf</code></pre></div>
-<ul>
-<li>Ctrl + c : 終止正在執行的程式</li></p>
-
-<p><li><p>Ctrl + l : clear</p></li></p>
-
-<p><li><p>Ctrl + w : 刪除文字至上一個空白</p></li></p>
-
-<p><li><p>Ctrl + u : 刪除游標前</p></li></p>
-
-<p><li><p>Ctrl + k : 刪除游標後</p></li></p>
-
-<p><li><p>Ctrl + h : Backspace</p></li></p>
-
-<p><li><p>Ctrl + d : Del</p></li></p>
-
-<p><li><p>Ctrl + a : 游標移到最前面</p></li></p>
-
-<p><li><p>Ctrl + e : 游標移到最後面</p></li></p>
-
-<p><li><p>Ctrl + f : 往右移一個字元</p></li></p>
-
-<p><li><p>Ctrl + b : 往左移一個字元</p></li>
-</ul></p>
-
-<p><h2 id="權限管理">權限管理</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查詢所屬群組</span>
-$ id bob
-<span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>bob<span class="o">)</span>,27<span class="o">(</span>sudo<span class="o">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 新增account, 給予sudo權限</span>
-$ sudo adduser newuser
-$ sudo adduser newuser sudo</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 帳號相關資訊</span>
-/etc/passwd</code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html">http://www.arthurtoday.com/2010/12/ubuntu-findlocatewhereiswhich.html</a></p>
-
-<p><a href="http://blog.jex.tw/blog/2013/11/26/grep/">http://blog.jex.tw/blog/2013/11/26/grep/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/linux-some-common-security-setting/">[Ubuntu] Linux 基本的安全設定</a>
-<div class="post-date">
-  2016-08-25
-</div>
-<br>
-<h2 id="列幾個基本款常見的一些設定">列幾個基本款常見的一些設定</h2>
-
-<h2 id="ssh-port更換到別的port">ssh port更換到別的port</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ssh port更換到別的port</span>
-$ sudo vim /etc/ssh/sshd_config
-Port <span class="m">1968</span>
-$ sudo service sshd restart</code></pre></div>
-<h2 id="開始自動安全性更新">開始自動安全性更新</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"> $ sudo apt-get install unattended-upgrades
- $ sudo dpkg-reconfigure -plow unattended-upgrades
- $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades</code></pre></div>
-<h2 id="ssh-登入盡量用-key-exchange-方式">ssh 登入盡量用 key-exchange 方式</h2>
-
-<h2 id="fail2ban-自動ban掉多次嘗試登入者">fail2ban - 自動ban掉多次嘗試登入者</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install fail2ban
-
-<span class="c1"># 保留原始conf檔，把設定都寫在.local</span>
-$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 
-$ vim /etc/fail2ban/jail.local 
-<span class="c1"># 將enabled改成true</span>
-  <span class="o">[</span>DEFAULT<span class="o">]</span>
-    <span class="nv">ignoreip</span> <span class="o">=</span> <span class="m">127</span>.0.0.1/8
-    <span class="nv">bantime</span>  <span class="o">=</span> <span class="m">600</span>
-    <span class="nv">findtime</span> <span class="o">=</span> <span class="m">600</span>
-    <span class="nv">maxretry</span> <span class="o">=</span> <span class="m">5</span>
-    <span class="nv">backend</span>  <span class="o">=</span> auto
-    <span class="nv">enabled</span> <span class="o">=</span> <span class="nb">true</span>
-
-<span class="c1"># 啟動</span>
-$ sudo service fail2ban start
-
-<span class="c1"># 看目前狀態，目前有一個被ban</span>
-$ sudo fail2ban-client status
-Status
-<span class="p">|</span>- Number of jail:      <span class="m">1</span>
-<span class="sb">`</span>- Jail list:   sshd
-
-<span class="c1"># detail</span>
-$ sudo fail2ban-client status sshd
-Status <span class="k">for</span> the jail: sshd
-<span class="p">|</span>- Filter
-<span class="p">|</span>  <span class="p">|</span>- Currently failed: <span class="m">1</span>
-<span class="p">|</span>  <span class="p">|</span>- Total failed:     <span class="m">6</span>
-<span class="p">|</span>  <span class="sb">`</span>- File list:        /var/log/auth.log
-<span class="sb">`</span>- Actions
-   <span class="p">|</span>- Currently banned: <span class="m">1</span>
-   <span class="p">|</span>- Total banned:     <span class="m">1</span>
-   <span class="sb">`</span>- Banned IP list:   <span class="m">111</span>.248.10.10</code></pre></div>
-<h2 id="設定iptables">設定iptables</h2>
-
-<h4 id="用來過濾該網路封包是否能進出server-預設都是開啟的-若是沒有外部防火牆的話還蠻危險的">用來過濾該網路封包是否能進出server，預設都是開啟的，若是沒有外部防火牆的話還蠻危險的</h4>
-
-<pre><code>### clear tables
-iptables --flush
-iptables --delete-chain
-iptables --table mangle --flush
-iptables --table mangle --delete-chain
-
-### default policies
-iptables --policy INPUT   DROP
-iptables --policy OUTPUT  DROP
-iptables --policy FORWARD DROP
-
-### loopback
-iptables --append INPUT  --in-interface lo --jump ACCEPT
-iptables --append OUTPUT --out-interface lo --jump ACCEPT
-
-### existing connections
-iptables --append INPUT  --match conntrack --ctstate ESTABLISHED,RELATED --jump ACCEPT
-iptables --append OUTPUT --match conntrack --ctstate ESTABLISHED,RELATED --jump ACCEPT
-
-### trashlog chain
-iptables --new-chain trashlog
-iptables --append trashlog --jump LOG --log-level notice --log-prefix &quot;trashlog: &quot;
-iptables --append trashlog --jump DROP
-
-### INPUT
-iptables --append INPUT  --protocol tcp --dport 22 --match conntrack --ctstate NEW --jump ACCEPT
-iptables --append INPUT  --protocol tcp --dport 80 --match conntrack --ctstate NEW --jump ACCEPT
-iptables --append INPUT  --protocol tcp --dport 443 --match conntrack --ctstate NEW --jump ACCEPT
-
-### OUTPUT
-iptables --append OUTPUT --jump ACCEPT
-
-...
-
-
-# 其他客製化設定可參考
-# https://gist.github.com/virtualstaticvoid/1024546
-</code></pre>
-
-<h2 id="logrotate-conf">Logrotate.conf</h2>
-
-<h4 id="os層的log大多紀錄在-var-log-底下-而預設開啟logrotate">OS層的log大多紀錄在/var/log/底下，而預設開啟logrotate</h4>
-
-<h4 id="調整-etc-logrotate-conf的自動rotate-把時間拉長或是不使用rotate或是另外備份">調整/etc/logrotate.conf的自動rotate，把時間拉長或是不使用rotate或是另外備份</h4>
-
-<ul>
-<li>syslog 系統日誌</li>
-<li>dpkg.log 軟體安裝及更新紀錄</li>
-
-<li><p>auth.log 身份確認相關紀錄(使用sudo)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/logrotate.conf</span>
-/path/to/your/rails/log/*.log <span class="o">{</span>
-daily # 
-dateext
-missingok
-rotate <span class="m">30</span> <span class="c1"># 保留30份</span>
-compress 
-delaycompress
-notifempty
-copytruncate
-<span class="o">}</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/logrotate.d</span>
-<span class="c1"># (略)</span></code></pre></div></li>
-</ul>
-
-<p>設定完成可直接執行看是否設定正確，或等明天系統自己run</p>
-
-<p><pre><code>/usr/sbin/logrotate -f /etc/logrotate.conf
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wtmp user登入次數及使用時間紀錄</span>
-$ last
-$ last -f /var/log/wtmp
-bob      pts/1        <span class="m">1</span>.1.1.1   Tue Aug <span class="m">23</span> <span class="m">13</span>:22   still logged in
-bob      pts/1        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">06</span>:34 - <span class="m">06</span>:45  <span class="o">(</span><span class="m">00</span>:10<span class="o">)</span>
-bob      pts/0        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">05</span>:44 - <span class="m">08</span>:45  <span class="o">(</span><span class="m">03</span>:00<span class="o">)</span>
-bob      pts/0        <span class="m">1</span>.1.1.1   Sat Aug  <span class="m">6</span> <span class="m">13</span>:14 - <span class="m">05</span>:44 <span class="o">(</span><span class="m">7</span>+16:29<span class="o">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># wtmp user登入失敗紀錄</span>
-$ sudo lastb
-$ last -f /var/log/btmp
-bob      pts/1        <span class="m">1</span>.1.1.1   Tue Aug <span class="m">23</span> <span class="m">13</span>:22   still logged in
-bob      pts/1        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">06</span>:34 - <span class="m">06</span>:45  <span class="o">(</span><span class="m">00</span>:10<span class="o">)</span>
-bob      pts/0        <span class="m">1</span>.1.1.1   Sun Aug <span class="m">14</span> <span class="m">05</span>:44 - <span class="m">08</span>:45  <span class="o">(</span><span class="m">03</span>:00<span class="o">)</span>
-bob      pts/0        <span class="m">1</span>.1.1.1   Sat Aug  <span class="m">6</span> <span class="m">13</span>:14 - <span class="m">05</span>:44 <span class="o">(</span><span class="m">7</span>+16:29<span class="o">)</span></code></pre></div>
-<h2 id="關閉root-ssh登入">關閉root ssh登入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/ssh/sshd_config</span>
-<span class="c1"># Authentication:</span>
-LoginGraceTime <span class="m">120</span>
-PermitRootLogin prohibit-password
-<span class="c1"># 新版本ssh root登入預設不能使用密碼登入，僅可用key(有設定的話)</span>
-<span class="c1"># 也可以直接改成 PermitRootLogin no 直接擋掉</span>
-StrictModes yes</code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/">https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/</a></p>
-
-<p><a href="http://www.vixual.net/blog/archives/252">http://www.vixual.net/blog/archives/252</a></p>
-
-<p><a href="http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95">http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95</a></p>
-
-<p><a href="https://help.ubuntu.com/lts/serverguide/automatic-updates.html">https://help.ubuntu.com/lts/serverguide/automatic-updates.html</a></p>
-
-<br>
-  
-</div>
-
-<div class="pagination">
-  
-  <a class="prev" href="/page/2/">&larr; Older</a>
-  
-
-  
-</div>
-
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
-    </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -1226,5 +23,219 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bob 學習筆記"/>
+<meta name="twitter:description" content="Software Engineer"/>
+
+    <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="Software Engineer" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article>
+    <h1>Bob 學習筆記</h1>
+    <ul class="posts-list">
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/dart-beginning/">Dart 101 入門筆記</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Oct 19, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Sep 15, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            May 26, 2019
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Dec 10, 2017
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Nov 4, 2017
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/how-to-mine-zcash-on-windows/">[Zcash] 如何使用Windows來挖礦</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 15, 2017
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-ubuntu-environment-ubuntu16-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 16.04 LTS</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 3 min read -
+            Nov 26, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-mac-os-environment-sierra/">[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Oct 30, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/my-linux-command/">[Ubuntu] Linux 稍微進階的常用指令</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Oct 19, 2016
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/linux-some-common-security-setting/">[Ubuntu] Linux 基本的安全設定</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 3 min read -
+            Aug 25, 2016
+          </span>
+        </li>
+      
+    </ul>
+    
+
+<ul class="pagination">
+  
+  
+  <li class="page-item active">
+    <a class="page-link" href="/">
+      1
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">
+      2
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">
+      3
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/4/">
+      4
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/5/">
+      5
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/6/">
+      6
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/7/">
+      7
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/8/">
+      8
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-right">
+  <title>arrow-right</title>
+  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  </article>
+
+    </main>
+  </body>
 </html>

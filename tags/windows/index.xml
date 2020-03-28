@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>[ZCash] 如何使用Windows來挖礦</title>
-      <link>https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/</link>
+      <title>[Zcash] 如何使用Windows來挖礦</title>
+      <link>https://blog.poyi.tw/how-to-mine-zcash-on-windows/</link>
       <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/how-to-mine-zcash-on-windows/</guid>
+      <guid>https://blog.poyi.tw/how-to-mine-zcash-on-windows/</guid>
       <description>幾千塊的顯卡來挖其實收益非常低，電費還比較貴，玩票性質再試試看吧
  ZCash錢包 首先要下載一個錢包並取得address(t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE)來存放你挖到的幣
 推薦Jaxx，支援windows/macos/ios/android&amp;hellip;，幣別也支援btc/eth/etc/zec&amp;hellip;.。
@@ -33,10 +33,10 @@ http://zcash.flypool.org/
     
     <item>
       <title>[Ethereum] 如何使用Windows來挖礦</title>
-      <link>https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/</link>
+      <link>https://blog.poyi.tw/how-to-mine-ethereum-on-windows/</link>
       <pubDate>Tue, 05 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/how-to-mine-ethereum-on-windows/</guid>
+      <guid>https://blog.poyi.tw/how-to-mine-ethereum-on-windows/</guid>
       <description>1. 安裝geth 下載geth
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼

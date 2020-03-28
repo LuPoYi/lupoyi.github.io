@@ -1,727 +1,15 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-    
-      Bob 學習筆記
-    
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
-
-  <meta name="generator" content="Hugo 0.58.0" />
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="Bob 學習筆記" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.poyi.tw/" />
-
-<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
-
-  <meta itemprop="name" content="Bob 學習筆記">
-<meta itemprop="description" content="">
-
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Dart"
-          class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
-      
-      <p>
-        <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-          
-        </a>
-      </p>
-      
-    </div>
-
-    <div class="recent">
-      <h4>Recent Posts</h4>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/dart-beginning/">Dart 101 入門筆記</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/grpc-go-ruby/">[gRPC] Go Server &amp; Ruby Client</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/rails-ubuntu-environment-ubuntu18-dot-04/">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/bitcoin-improvement-proposal-39/">[Crypto] BIP-39 mnemonic words</a>
-      </p>
-      
-      <p>
-        <a href="https://blog.poyi.tw/posts/private-coins-monero-dash-zcash-pivx/">[Crypto] 加密貨幣(Dash Pivx Zcash Monero)筆記</a>
-      </p>
-      
-      </p>
-    </div>
-
-  </div>
-
-  <div class="socials">
-    
-  </div>
-
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-  
-</span>
-
-</div>
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="Software Engineer" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
 
     
-    <main id="content" class="">
-
-
-
-<p></p>
-<div id="list">
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-ajax-render-error-in-json/">[Rails] AJAX render errors in json</a>
-<div class="post-date">
-  2015-06-12
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// new.html.erb
-</span><span class="c1"></span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="nx">url</span><span class="o">:</span> <span class="nx">URL</span><span class="p">,</span>
-  <span class="kr">async</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-  <span class="nx">data</span><span class="o">:</span><span class="p">{</span>
-    <span class="nx">amount</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="nx">dataType</span><span class="o">:</span><span class="s1">&#39;json&#39;</span><span class="p">,</span>
-  <span class="nx">method</span><span class="o">:</span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
-  <span class="nx">success</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-    <span class="c1">// do success things
-</span><span class="c1"></span>  <span class="p">},</span>
-  <span class="nx">error</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">errors</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">).</span><span class="nx">errors</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="nx">errors</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># orders_controller.rb </span>
-<span class="k">def</span> <span class="nf">create</span>
-  <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="mi">100</span>
-    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:errors</span> <span class="o">=&gt;</span> <span class="s2">&#34;金額不足&#34;</span> <span class="p">},</span> <span class="ss">:status</span> <span class="o">=&gt;</span> <span class="mi">422</span>
-    <span class="k">return</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-<p>當錯誤回傳時，使用422(Unprocessable Entity)來做error handling</p></p>
-
-<p>Reference:</p>
-
-<p><a href="http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/">http://travisjeffery.com/b/2012/04/rendering-errors-in-json-with-rails/</a>
-<a href="http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data">http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/all-your-important-files-are-encrypted/">資料被綁架軟體加密，要求贖金用比特幣支付</a>
-<div class="post-date">
-  2015-04-18
-</div>
-<br>
-<p><strong>這篇單純紀錄一下被綁架後頁面的流程。</strong></p>
-
-<p>最近遇到幾間公司發現這種事，突然所有檔案被綁架軟體加密無法開啟，而桌面多了一份文字檔，裡面附上特殊網址及比特幣錢包位址…。(當然，這只是其中一款綁架軟體的方式)</p>
-
-<p>{% img /images/poyi/bitcoin1.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>輸入它給的錢包地址登入後，就可以看到所要求的贖金或相關資料了</p>
-
-<p>應該會有類似以下的字眼 (這邊贖金要求你付2.5顆比特幣)</p>
-
-<p><strong>All your important files are encrypted. <br>At the moment, the cost of private key for decrypting your file is 2.5 BTC</strong></p>
-
-<p>而為了證明你付完贖金真的幫你解密，它還幫你解密其中一個的檔案讓你下載看看是否沒問題(如下圖下方的xlsx檔)… <del>不得不說還蠻貼心的…</del></p>
-
-<p>{% img /images/poyi/bitcoin2.jpg &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>而聽說沒付指定的贖金，對方不但不解密還會提高贖金</p>
-
-<p>所以如果資料沒備份又找不到解法，也許就甘願一點付錢吧…</p>
-
-<p>算是這年頭支付太過方便的缺點吧</p>
-
-<p>{% img /images/poyi/bitcoin3.png &lsquo;image&rsquo; &lsquo;images&rsquo; %}</p>
-
-<p>而另外它也提供如何購買比特幣相關資訊…<del>貼心再+1…</del></p>
-
-<p>目前在台灣是可以直接去全家買會比較方便，這邊就請自行google :D</p>
-
-<p><br>
-Reference:</p>
-
-<p><a href="http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/">http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/</a></p>
-
-<p><a href="http://www.epochtimes.com/b5/15/4/9/n4407355.htm">http://www.epochtimes.com/b5/15/4/9/n4407355.htm</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-basic-2/">[Ruby] 教學 - 基本使用介紹2</a>
-<div class="post-date">
-  2015-04-12
-</div>
-<br>
-<p><h2 id="define-methods">Define Methods</h2>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 基本的method定義</span>
-<span class="k">def</span> <span class="nf">temp</span>
-  <span class="nb">puts</span> <span class="mi">123</span>
-<span class="k">end</span></p>
-
-<p><span class="n">temp</span><span class="p">()</span>
-<span class="n">temp</span></p>
-
-<p><span class="k">def</span> <span class="nf">temp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="err">“</span><span class="c1">#{a} , #{b}, #{c}”</span>
-<span class="k">end</span>
-<span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">temp</span> <span class="mi">1</span> <span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">3</span></p>
-
-<p><span class="k">def</span> <span class="nf">temp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">99</span><span class="p">)</span> <span class="c1"># 第三個參數若沒傳入的話預設值為99</span>
-<span class="nb">puts</span> <span class="err">“</span><span class="c1">#{a} , #{b}, #{c}”</span>
-<span class="k">end</span>
-<span class="n">temp</span><span class="p">()</span>  <span class="c1"># wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個</span>
-<span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span></p>
-
-<p><span class="k">def</span> <span class="nf">temp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span> <span class="o">*</span><span class="n">argv</span><span class="p">)</span><br />
-  <span class="n">ap</span> <span class="o">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">argv</span><span class="o">]</span>
-<span class="k">end</span>
-<span class="n">temp</span><span class="p">()</span>  <span class="c1"># wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上</span>
-<span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 進階的method定義 (block)</span>
-<span class="k">def</span> <span class="nf">temp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-<span class="k">end</span></p>
-
-<p><span class="n">temp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數</span>
-<span class="n">temp</span><span class="p">()</span>   <span class="c1">#=&gt; nil</span>
-<span class="n">temp</span><span class="p">(){</span><span class="nb">puts</span> <span class="s2">&#34;temp&#34;</span><span class="p">}</span> <span class="c1">#=&gt; nil </span>
-<span class="c1"># 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil</span></p>
-
-<p><span class="k">def</span> <span class="nf">temp2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">abc</span><span class="p">)</span>
-  <span class="n">abc</span><span class="o">.</span><span class="n">call</span>
-<span class="k">end</span></p>
-
-<p><span class="n">temp2</span><span class="p">{</span><span class="nb">puts</span> <span class="s2">&#34;gogo&#34;</span><span class="p">}</span> <span class="c1">#=&gt; &#34;gogo&#34;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># class methods  / instance methods</span>
-<span class="k">class</span> <span class="nc">Car</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">hi</span>
-    <span class="nb">puts</span> <span class="err">“</span><span class="n">aaa</span><span class="err">”</span>
-  <span class="k">end</span>
-  <span class="k">def</span> <span class="nf">hi</span>
-    <span class="nb">puts</span> <span class="err">“</span><span class="n">bbb</span><span class="err">”</span>
-  <span class="k">end</span>
-<span class="k">end</span></p>
-
-<p><span class="n">car</span> <span class="o">=</span> <span class="no">Car</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Car</span><span class="o">.</span><span class="n">hi</span> <span class="c1">#=&gt; &#34;aaa&#34;</span>
-<span class="n">car</span><span class="o">.</span><span class="n">hi</span> <span class="c1">#=&gt; &#34;bbb&#34;</span></code></pre></div>
-<ul>
-<li>attr_accessor 自動設定setter &amp; getter</li>
-<li>attr_reader 設定getter</li></p>
-
-<p><li><p>attr_writer 設定setter</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># attr_accessor 等同於 getter &amp; setter</span>
-<span class="k">class</span> <span class="nc">Person</span>
-<span class="c1"># attr_accessor :name </span>
-<span class="k">def</span> <span class="nf">name</span> <span class="c1"># getter</span>
-<span class="vi">@name</span>
-<span class="k">end</span></p>
-
-<p><span class="k">def</span> <span class="nf">name</span><span class="o">=</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="c1"># setter</span>
-<span class="vi">@name</span> <span class="o">=</span> <span class="n">str</span>
-<span class="k">end</span>
-<span class="k">end</span></p>
-
-<p><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">new</span>
-<span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span> <span class="c1"># setter</span>
-<span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="c1"># =&gt; &#34;bob&#34; # getter</span></code></pre></div></li></p>
-
-<p><li><p>$name:全域變數</p></li></p>
-
-<p><li><p>@name:實例變數，作用域僅限定於 self 指示的物件</p></li></p>
-
-<p><li><p>@@name: 類別變數，在class內才使用，跨class</p></li></p>
-
-<p><li><p>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</p></li></p>
-
-<p><li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p></li>
-</ul></p>
-
-<h4 id="class-module">Class &amp; Module</h4>
-
-<p><p>Moudule只是一個不能被new的class</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># class / module </span>
-<span class="no">Class</span><span class="o">.</span><span class="n">superclass</span> <span class="c1">#=&gt; module </span></p>
-
-<p><span class="k">module</span> <span class="nn">Flyable</span>
-  <span class="k">def</span> <span class="nf">fly</span>
-    <span class="nb">puts</span> <span class="s2">&#34;I can fly!&#34;</span>
-  <span class="k">end</span>
-<span class="k">end</span></p>
-
-<p><span class="k">class</span> <span class="nc">Cat</span>
-  <span class="kp">include</span> <span class="no">Flyable</span>
-<span class="k">end</span></p>
-
-<p><span class="n">kitty</span> <span class="o">=</span> <span class="no">Cat</span><span class="o">.</span><span class="n">new</span>
-<span class="n">kitty</span><span class="o">.</span><span class="n">fly</span>  </code></pre></div>
-<h4 id="error-handling">Error Handling</h4></p>
-
-<p><p>沒額外指定變數的話，錯誤資訊會放至$!(ERROR_INFO)及$@(ERROR_POSITION)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="k">begin</span>
-  <span class="c1"># 有機會發生例外的code</span>
-<span class="k">rescue</span>
-  <span class="c1"># 發現例外後要執行的code</span>
-<span class="k">ensure</span>
-  <span class="c1"># 無論是否例外都會執行的code</span>
-<span class="k">end</span></code></pre></div></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-basic-1/">[Ruby] 教學 - 基本使用介紹</a>
-<div class="post-date">
-  2015-03-31
-</div>
-<br>
-<p>Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念</p>
-
-<p>未來讓以後開發不會這麼吃力，來整複習一下好了 :D</p>
-
-<h2 id="everything-is-ruby-is-an-object">Everything is Ruby is an object</h2>
-
-<p>Ruby 內皆為物件，無基本型別</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># X.class，X.methods 的用法</span>
-<span class="mi">123</span><span class="o">.</span><span class="n">methods</span> <span class="c1">#=&gt; 123可用的method列表  </span>
-<span class="mi">123</span><span class="o">.</span><span class="n">class</span>   <span class="c1">#=&gt; Fixnum #知道class後就可以查doc  </span>
-<span class="kp">true</span><span class="o">.</span><span class="n">class</span>  <span class="c1">#=&gt; TrueClass  </span>
-<span class="kp">nil</span><span class="o">.</span><span class="n">class</span>   <span class="c1">#=&gt; NilClass  </span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">even?</span>
- <span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="n">next</span>
- <span class="o">=&gt;</span> <span class="mi">4</span>
-<span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="n">abs</span>
- <span class="o">=&gt;</span> <span class="mi">1</span></code></pre></div>
-<p>##基本使用</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 各種常見型別</span>
-<span class="mi">123</span><span class="o">.</span><span class="n">class</span> <span class="c1">#integer</span>
-<span class="mi">42343243243243243242343242344234234234</span><span class="o">.</span><span class="n">class</span> <span class="c1">#bignum  </span>
-<span class="mi">123</span><span class="o">.</span><span class="mi">123</span><span class="o">.</span><span class="n">class</span> <span class="c1">#float  </span>
-<span class="err">“</span><span class="mi">123</span><span class="err">”</span><span class="o">.</span><span class="n">class</span> <span class="c1">#string  </span>
-<span class="o">[].</span><span class="n">class</span> <span class="c1">#array  </span>
-<span class="p">{}</span><span class="o">.</span><span class="n">class</span>  <span class="c1">#hash  </span>
-<span class="ss">:abc</span><span class="o">.</span><span class="n">class</span> <span class="c1">#symbol  </span>
-<span class="kp">nil</span><span class="o">.</span><span class="n">class</span> <span class="c1">#nilClass  </span>
-<span class="kp">true</span><span class="o">.</span><span class="n">class</span> <span class="c1">#TrueClass</span>
-<span class="kp">false</span><span class="o">.</span><span class="n">class</span> <span class="c1">#FalseClass  </span></code></pre></div>
-<p>###輸出String的用法</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 輸出String的用法</span>
-<span class="err">“</span><span class="mi">123</span><span class="err">”</span> <span class="o">+</span> <span class="err">“</span><span class="mi">345</span><span class="err">”</span> <span class="o">+</span> <span class="err">“</span><span class="mi">333</span><span class="err">”</span>  
-<span class="n">x</span> <span class="o">=</span> <span class="mi">18</span>  
-<span class="nb">puts</span> <span class="s2">&#34;your age is </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&#34;</span>  
-<span class="nb">puts</span> <span class="err">‘</span><span class="p">\</span><span class="n">n</span><span class="p">\</span><span class="n">t</span><span class="err">’</span> <span class="c1">#單引號 (無視內容，直接輸出)  </span>
-<span class="nb">puts</span> <span class="s2">&#34;</span><span class="se">\n\t</span><span class="s2">&#34;</span> <span class="c1">#雙引號 (換行)</span></code></pre></div>
-<h3 id="hash">Hash</h3>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># hash宣告方式</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;wer&#34;</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span> <span class="s2">&#34;sdf&#34;</span> <span class="o">=&gt;</span> <span class="mi">234</span><span class="p">}</span>  
-<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:wer</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span> <span class="ss">:sdf</span> <span class="o">=&gt;</span> <span class="mi">234</span><span class="p">}</span>  
-<span class="c1"># symbol 拿來當key用  </span>
-<span class="ss">:wer</span><span class="o">.</span><span class="n">object_id</span>  <span class="c1"># 在hash中key使用symbol會比string還相對快    </span></code></pre></div>
-<h3 id="nil-false">Nil/ False</h3>
-
-<p>ruby只有兩種東西為非 =&gt; nil / false
-其他都為true</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="kp">nil</span> <span class="o">||</span> <span class="kp">false</span> <span class="o">||</span> <span class="mi">0</span>   <span class="c1"># 0    </span>
-<span class="kp">nil</span> <span class="o">&amp;&amp;</span> <span class="kp">false</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span>   <span class="c1"># nil  </span></code></pre></div>
-<p>###判斷式</p>
-
-<p>#####基本上if else</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># if/else if/elsif/else unless/end</span>
-<span class="k">if</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">30</span>  
-  <span class="nb">puts</span> <span class="s2">&#34;winner&#34;</span>  
-<span class="k">else</span>  
-  <span class="nb">puts</span> <span class="s2">&#34;loser&#34;</span>  
-<span class="k">end</span></code></pre></div>
-<p>#####因為在ruby只有false及nil為非，所以當你要判斷該變數有沒有值時可以直接這樣寫</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="nb">name</span>
-  <span class="nb">puts</span> <span class="nb">name</span>
-<span class="k">else</span>
-  <span class="nb">puts</span> <span class="s2">&#34;error&#34;</span>
-<span class="k">end</span></code></pre></div>
-<p>#####後置判斷式，直接把if放後面</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="nb">name</span> <span class="k">if</span> <span class="nb">name</span> <span class="c1"># 當name有值時印出來，沒有值即略過</span>
-<span class="nb">puts</span> <span class="s2">&#34;error&#34;</span> <span class="k">unless</span> <span class="nb">name</span> <span class="c1"># 當name沒有值時印error</span></code></pre></div>
-<p>#####簡單的判斷式也可以寫成單行</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># condition ? true : false</span>
-<span class="nb">puts</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">30</span> <span class="o">?</span> <span class="s2">&#34;winner&#34;</span> <span class="p">:</span> <span class="s2">&#34;loser&#34;</span>    </code></pre></div>
-<h5 id="ruby的switch-case寫法">ruby的switch case寫法</h5>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="k">case</span> <span class="n">lang</span>
-<span class="k">when</span> <span class="s2">&#34;java&#34;</span>
-  <span class="nb">puts</span> <span class="s2">&#34;good&#34;</span>
-<span class="k">when</span> <span class="s2">&#34;python&#34;</span>
-  <span class="nb">puts</span> <span class="s2">&#34;great!&#34;</span>
-<span class="k">when</span> <span class="s2">&#34;ruby&#34;</span>
-  <span class="nb">puts</span> <span class="s2">&#34;perfect!&#34;</span>
-<span class="k">else</span>
-  <span class="nb">puts</span> <span class="s2">&#34;WTF&#34;</span>
-<span class="k">end</span></code></pre></div>
-<p>###迴圈</p>
-
-<p>在ruby中比較少在用for跟while迴圈，大部分情況都使用each(iterator迭代器)</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">lang</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&#34;ruby&#34;</span><span class="p">,</span><span class="s2">&#34;python&#34;</span><span class="p">,</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;c&#34;</span><span class="p">,</span><span class="s2">&#34;php&#34;</span><span class="o">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">lang</span>
-  <span class="nb">puts</span> <span class="n">i</span>
-<span class="k">end</span>
-
-<span class="n">lang</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s1">&#39;I love &#39;</span> <span class="o">+</span> <span class="n">i</span>
-<span class="k">end</span>
-
-<span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="k">end</span>
-
-<span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s1">&#39;Good Job!&#39;</span>
-<span class="k">end</span></code></pre></div>
-<p>Reference: RailsFun - JokerCatz</p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-csv-file/">[Ruby] 匯出批次csv檔</a>
-<div class="post-date">
-  2014-05-06
-</div>
-<br>
-<p>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下</p>
-
-<h2 id="匯出csv">匯出csv</h2>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="n">header</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;money&#39;</span><span class="p">,</span><span class="s1">&#39;age&#39;</span><span class="o">]</span>
-<span class="n">body</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;ruby&#39;</span><span class="p">,</span><span class="s1">&#39;1000&#39;</span><span class="p">,</span><span class="s1">&#39;18&#39;</span><span class="o">]</span>
-
-<span class="n">bom</span> <span class="o">=</span> <span class="s2">&#34;\uFEFF&#34;</span> <span class="c1"># 加入BOM，解決excel中文亂碼</span>
-<span class="n">csv_string</span> <span class="o">=</span> <span class="no">CSV</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">csv</span> <span class="o">=</span> <span class="n">bom</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">header</span>
-  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">body</span>
-<span class="k">end</span>
-
-<span class="n">csv_string</span><span class="o">.</span><span class="n">force_encoding</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 直接產出檔案</span>
-
-<span class="no">CSV</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;export.csv&#34;</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">header</span>
-  <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">body</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 直接產出檔案</span>
-
-<span class="no">CSV</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;filename.csv&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">csv</span><span class="o">|</span>
-  <span class="n">csv</span><span class="o">.</span><span class="n">to_io</span><span class="o">.</span><span class="n">write</span> <span class="s2">&#34;\uFEFF&#34;</span>
-  <span class="n">datas</span><span class="o">.</span><span class="n">each</span><span class="p">{</span><span class="o">|</span><span class="n">data</span><span class="o">|</span> <span class="n">csv</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">}</span>
-<span class="k">end</span></code></pre></div>
-<h2 id="半形轉全形">半形轉全形</h2>
-
-<p>在某些情況會需要轉出全形字元，照理說不用才對，<del>可能是因為合作對方的系統太爛</del></p>
-
-<p>其實也不太確定怎解，我單純用硬幹的方式</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># convert_to_wide_word 大小寫英文數字轉全形字元</span>
-<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">convert_to_wide_word</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-  <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[a-v]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41608</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
-    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[w-z]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41673</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
-    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[A-Z]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41614</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
-    <span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[0-9]/</span><span class="p">){</span><span class="o">|</span><span class="n">a</span><span class="o">|</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">ord</span> <span class="o">+</span> <span class="mi">41599</span><span class="p">)</span><span class="o">.</span><span class="n">chr</span><span class="p">(</span><span class="s1">&#39;big5&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)}</span>
-<span class="k">end</span>
-
-<span class="n">convert_to_wide_word</span><span class="p">(</span><span class="s2">&#34;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span><span class="p">)</span>
- <span class="o">=&gt;</span> <span class="s2">&#34;０１２３４５６７８９ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬ
-</span><span class="s2"> ＭＮＯＰＱＲＳＴＵＶＷＸＹＺ&#34;</span> </code></pre></div>
-<p>Reference:</p>
-
-<p><a href="http://www.sitepoint.com/guide-ruby-csv-library-part/">http://www.sitepoint.com/guide-ruby-csv-library-part/</a></p>
-
-<p><a href="http://blog.inheart.tw/2013/09/rubyraisl-csv-excel.html">http://blog.inheart.tw/2013/09/rubyraisl-csv-excel.html</a></p>
-
-<p><a href="http://salayhin.wordpress.com/2014/05/10/export-csv-file-from-rails-console/">http://salayhin.wordpress.com/2014/05/10/export-csv-file-from-rails-console/</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-txt-file/">[Ruby] 匯出txt檔</a>
-<div class="post-date">
-  2014-05-06
-</div>
-<br>
-<p><h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 寫入txt</span>
-<span class="n">all_users_mobile</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;mobile like ?&#39;</span><span class="p">,</span> <span class="s1">&#39;+8869%&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="ss">:mobile</span><span class="p">)</span><span class="o">.</span><span class="n">uniq</span></p>
-
-<p><span class="c1"># 建立txt並給予寫入權限</span>
-<span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mobile_tw.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span></p>
-
-<p><span class="n">all_users_mobile</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mobile</span><span class="o">|</span>
-  <span class="n">file</span><span class="o">.</span><span class="n">puts</span> <span class="n">mobile</span> <span class="c1"># 一行一筆mobile</span>
-<span class="k">end</span></p>
-
-<p><span class="c1"># 記得要關掉</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># 讀取txt</span>
-<span class="n">file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mobile_tw.txt&#39;</span> <span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span></p>
-
-<p><span class="mi">100</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
-  <span class="n">file</span><span class="o">.</span><span class="n">readline</span>
-<span class="k">end</span></code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="http://ruby-doc.org/core-2.1.4/File.html">http://ruby-doc.org/core-2.1.4/File.html</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/ruby-require-load-include-extend/">[Ruby] require,load,include,extend</a>
-<div class="post-date">
-  2014-03-16
-</div>
-<br>
-<h2 id="require-vs-load">require vs load</h2>
-
-<p>首先require與load都是用來載入指定的檔案
-差別在於使用require只會調用一次，且副檔名可省略，load則相反。</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># random.rb</span>
-<span class="vg">$a</span> <span class="o">=</span> <span class="p">(</span><span class="nb">rand</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># use_require.rb 產出的兩個值相同(只載入一次random.rb)</span>
-<span class="nb">require</span> <span class="s2">&#34;./random&#34;</span>
-<span class="nb">puts</span> <span class="vg">$a</span>
-<span class="nb">require</span> <span class="s2">&#34;./random&#34;</span> <span class="c1"># 此行無效果</span>
-<span class="nb">puts</span> <span class="vg">$a</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># use_load.rb 產生的兩個值不一定相同</span>
-<span class="nb">load</span> <span class="s2">&#34;./random.rb&#34;</span>
-<span class="nb">puts</span> <span class="vg">$a</span>
-<span class="nb">load</span> <span class="s2">&#34;./random.rb&#34;</span>
-<span class="nb">puts</span> <span class="vg">$a</span></code></pre></div>
-<hr />
-
-<h2 id="include-vs-extend">include vs extend</h2>
-
-<p>include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用
-extend: 相當於把目標的code直接放進來；具有目標的class methods</p>
-<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># include_extend.rb</span>
-<span class="k">module</span> <span class="nn">Say</span>
-  <span class="k">def</span> <span class="nf">say_hi</span>
-    <span class="nb">puts</span> <span class="s2">&#34;Hi!&#34;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">People</span>
-  <span class="kp">include</span> <span class="no">Say</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Person</span>
-  <span class="kp">extend</span> <span class="no">Say</span> <span class="c1"># 具有Say的method，可直接呼叫</span>
-<span class="k">end</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ irb
-<span class="m">001</span> &gt; require <span class="s1">&#39;./include_extend.rb&#39;</span>
- <span class="o">=</span>&gt; <span class="nb">true</span> 
-<span class="m">002</span> &gt; Person.say_hi
-Hi!
- <span class="o">=</span>&gt; nil 
-<span class="m">003</span> &gt; People.new.say_hi
-Hi!
- <span class="o">=</span>&gt; nil </code></pre></div>
-<p>Reference:</p>
-
-<p><a href="http://www.slideshare.net/BruceLi2/rubypart2">http://www.slideshare.net/BruceLi2/rubypart2</a></p>
-
-<p><a href="http://cat-son.blogspot.tw/2012/10/2-rubyinclude-extendrequire.html#sthash.QduzPsMe.cFJYqpMb.dpbs">http://cat-son.blogspot.tw/2012/10/2-rubyinclude-extendrequire.html#sthash.QduzPsMe.cFJYqpMb.dpbs</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/mac-directly-in-the-terminal-to-open-sublime/">[Mac] 直接在command line開啟sublime</a>
-<div class="post-date">
-  2014-01-19
-</div>
-<br>
-<p><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ln -sv /Applications/Sublime<span class="se">\ </span>Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl</p>
-
-<p>subl test.rb</p>
-
-<p>git clone <a href="https://github.com/bitcoin/bitcoin.git">https://github.com/bitcoin/bitcoin.git</a>
-subl bitcoin/</code></pre></div>
-<p>Reference:</p></p>
-
-<p><a href="https://gist.github.com/martinbuberl/5823ed247d279d1a2d06">https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/rails-mac-os-environment-build/">[Mac] Ruby on Rails 基本環境建置 - 10.9 Mavericks</a>
-<div class="post-date">
-  2014-01-17
-</div>
-<br>
-<p>是說終於買了mac，省去開箱文趕緊把環境用好來繼續練習Rails
-但使用上還是有一點不習慣，會覺得有些地方也蠻不人性化，但相對穩定就是了</p>
-
-<h2 id="以下環境為os-x-10-9-1-mavericks">以下環境為OS X 10.9.1 Mavericks</h2>
-
-<p>1.安裝xcode-select
-Command line tool已經獨立出來，不需要安裝XCode了</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ xcode-select --install</code></pre></div>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/176032/wrVy25UMQkeJEnuNKSEq_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-01-17%20%E4%B8%8B%E5%8D%889.07.40.png" alt="螢幕快照 2014-01-17 下午9.07.40.png" /></p>
-
-<p>如果安裝失敗的話也可以到<a href="https://developer.apple.com/downloads/index.action?q=xcode">這裡</a>下載</p>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/176032/umDZbcPSNWfhQ0VNDr7l_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-01-17%20%E4%B8%8B%E5%8D%8810.01.05.png" alt="螢幕快照 2014-01-17 下午10.01.05.png" /></p>
-
-<p>2.安裝homebrew</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ruby -e <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.github.com/mxcl/homebrew/go/install<span class="k">)</span><span class="s2">&#34;</span></code></pre></div>
-<p>3.安裝所需要的工具</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ brew install git</code></pre></div>
-<p>4.安裝RVM</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -L https://get.rvm.io <span class="p">|</span> bash -s stable</code></pre></div>
-<p>5.透過RVM來安裝RUBY</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ rvm install ruby</code></pre></div>
-<p>6.透過RVM來安裝RubyGems</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ rvm rubygems current</code></pre></div>
-<p>7.安裝Rails</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ gem install rails</code></pre></div>
-<p>===</p>
-
-<ul>
-<li>XCode:官方提供的一個IDE，主要用來開發IOS APP，不過它也包含了一些開發其他語言所需的環境</li>
-<li>Homebrew: OSX 套件管理工具</li>
-<li>RVM (Ruby Version Manager):Ruby版本管理工具，便於切換不同版本</li>
-</ul>
-
-<p>Reference:</p>
-
-<p><a href="http://www.computersnyou.com/2025/2013/06/install-command-line-tools-in-osx-10-9-mavericks-how-to/">http://www.computersnyou.com/2025/2013/06/install-command-line-tools-in-osx-10-9-mavericks-how-to/</a>
-<a href="http://www.slideshare.net/marsz330/ruby-on-rails-for-mac">http://www.slideshare.net/marsz330/ruby-on-rails-for-mac</a></p>
-
-<br>
-  
-  <a class="h1" href="https://blog.poyi.tw/posts/javascript-triggered-interrupt-event-or-action/">[JavaScript] 中斷事件或動作的觸發</a>
-<div class="post-date">
-  2014-01-13
-</div>
-<br>
-<h1 id="bubble-up-冒泡">bubble up 冒泡</h1>
-
-<p>當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發
-而要處理這問題通常會用到 stopPropagation() 或 preventDefault()</p>
-
-<h2 id="stoppropagation">stopPropagation()</h2>
-
-<p>停止向上層bubble up，但仍然會觸發browser
-看例子比較快 <a href="http://jsfiddle.net/dA6R3/1/">http://jsfiddle.net/dA6R3/1/</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">// 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作
-
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;p&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;a&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.p&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;p 外&#34;</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.a&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;a 內&#34;</span><span class="p">);</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
-<span class="p">});</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
-<h2 id="preventdefault">preventDefault()</h2>
-
-<p>會將預設的動作停掉不讓它執行，不會觸發browser
-看例子比較快 <a href="http://jsfiddle.net/88dcF/1/">http://jsfiddle.net/88dcF/1/</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"># 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE)
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://www.google.com&#34;</span><span class="p">&gt;</span>go to google<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;check&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;&lt;div&gt;&#34;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&#34;Ya&#34;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&#34;#check&#34;</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></div>
-<p>Reference:</p>
-
-<p><a href="http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/">http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/</a></p>
-
-<p><a href="http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html">http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html</a></p>
-
-<br>
-  
-</div>
-
-<div class="pagination">
-  
-  <a class="prev" href="/page/4/">&larr; Older</a>
-  
-
-  
-  <a class="next" href="/page/2/">Newer &rarr;</a>
-  
-</div>
-
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
-    </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -735,5 +23,228 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bob 學習筆記"/>
+<meta name="twitter:description" content="Software Engineer"/>
+
+    <meta property="og:title" content="Bob 學習筆記" />
+<meta property="og:description" content="Software Engineer" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.poyi.tw/" />
+
+<meta property="og:updated_time" content="2019-10-19T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article>
+    <h1>Bob 學習筆記</h1>
+    <ul class="posts-list">
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-ajax-render-error-in-json/">[Rails] AJAX render errors in json</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jun 12, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/all-your-important-files-are-encrypted/">資料被綁架軟體加密，要求贖金用比特幣支付</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Apr 18, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-basic-2/">[Ruby] 教學 - 基本使用介紹2</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Apr 12, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-basic-1/">[Ruby] 教學 - 基本使用介紹</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 2 min read -
+            Mar 31, 2015
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-txt-file/">[Ruby] 匯出txt檔</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            May 6, 2014
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-csv-file/">[Ruby] 匯出批次csv檔</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            May 6, 2014
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/ruby-require-load-include-extend/">[Ruby] require,load,include,extend</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Mar 16, 2014
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/mac-directly-in-the-terminal-to-open-sublime/">[Mac] 直接在command line開啟sublime</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 19, 2014
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/rails-mac-os-environment-build/">[Mac] Ruby on Rails 基本環境建置 - 10.9 Mavericks</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 17, 2014
+          </span>
+        </li>
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://blog.poyi.tw/javascript-triggered-interrupt-event-or-action/">[JavaScript] 中斷事件或動作的觸發</a>
+          <span class="posts-list-item-description">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg> 1 min read -
+            Jan 13, 2014
+          </span>
+        </li>
+      
+    </ul>
+    
+
+<ul class="pagination">
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-left">
+  <title>arrow-left</title>
+  <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/">
+      1
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">
+      2
+    </a>
+  </li>
+  
+  <li class="page-item active">
+    <a class="page-link" href="/page/3/">
+      3
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/4/">
+      4
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/5/">
+      5
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/6/">
+      6
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/7/">
+      7
+    </a>
+  </li>
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/8/">
+      8
+    </a>
+  </li>
+  
+  
+  <li class="page-item">
+    <a class="page-link" href="/page/4/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-right">
+  <title>arrow-right</title>
+  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+    </a>
+  </li>
+  
+</ul>
+
+
+
+  </article>
+
+    </main>
+  </body>
 </html>

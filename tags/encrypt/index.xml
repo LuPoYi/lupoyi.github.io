@@ -13,10 +13,10 @@
     
     <item>
       <title>[Ruby] AES 加密解密</title>
-      <link>https://blog.poyi.tw/posts/ruby-aes-encrypt-decrypt/</link>
+      <link>https://blog.poyi.tw/ruby-aes-encrypt-decrypt/</link>
       <pubDate>Sat, 07 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/ruby-aes-encrypt-decrypt/</guid>
+      <guid>https://blog.poyi.tw/ruby-aes-encrypt-decrypt/</guid>
       <description>###對稱金鑰加密：加解密使用的金鑰是同一把
  DES (Data Encryption Standard) AES (Advanced Encryption Standard)  ###非對稱金鑰加密系統(公開金鑰加密)，加解密不同把key(公鑰私鑰)
  RSA

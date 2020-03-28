@@ -1,34 +1,45 @@
-<!DOCTYPE html>
-<html lang='en'><head>
-  <title>
-      
-      [Ethereum] 如何使用Windows來挖礦 - Bob 學習筆記
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <title>[Ethereum] 如何使用Windows來挖礦 // Bob 學習筆記</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bob Lu" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
     
-  </title>
-  <link rel='canonical' href='https://blog.poyi.tw/how-to-mine-ethereum-on-windows/' />
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='' />
-  <meta name='theme-color' content='#FD3519' />
-  
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="icon" href="/favicon.png" type="image/x-icon" />
-  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
-  <meta name="generator" content="Hugo 0.58.0" />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Ethereum] 如何使用Windows來挖礦"/>
+<meta name="twitter:description" content="1. 安裝geth 下載geth
+解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
+建立錢包並設定密碼
+以下指令都需要開command line(cmd)
+# C:\ geth account new 同步所有交易
+# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
+2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
+安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
+看是要自己挖還是加入別人礦池
+自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
+我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
+# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer."/>
 
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://blog.poyi.tw/sass/style.min.cf2eeff825d4dbc673ce0b82d270d9fc32d34973a7d5cd079e0dcf4fe3e77515.css" integrity="sha256-zy7v&#43;CXU28ZzzguC0nDZ/DLTSXOn1c0Hng3PT&#43;PndRU=" media="screen">
-<link rel="stylesheet" href="https://blog.poyi.tw/syntax.min.css" integrity="" media="screen">
-
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
-
-  <meta property="og:title" content="[Ethereum] 如何使用Windows來挖礦" />
+    <meta property="og:title" content="[Ethereum] 如何使用Windows來挖礦" />
 <meta property="og:description" content="1. 安裝geth 下載geth
 解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
 建立錢包並設定密碼
@@ -47,121 +58,51 @@
 <meta property="article:published_time" content="2016-04-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2016-04-05T00:00:00+00:00" />
 
-  <meta itemprop="name" content="[Ethereum] 如何使用Windows來挖礦">
-<meta itemprop="description" content="1. 安裝geth 下載geth
-解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
-建立錢包並設定密碼
-以下指令都需要開command line(cmd)
-# C:\ geth account new 同步所有交易
-# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
-2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
-安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
-# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
-看是要自己挖還是加入別人礦池
-自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
-我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
-# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer.">
 
-
-<meta itemprop="datePublished" content="2016-04-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-04-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="186">
-
-
-
-<meta itemprop="keywords" content="mining,windows,nanopool,dwarfpool," />
-
-</head>
-
-<body>
-
-  <header style="background-image:linear-gradient(
-      rgba(0,0,0,0.4),rgba(0,0,0,0.4)
-    ),url(&#39;https://blog.poyi.tw/images/default-sidebar.jpg&#39;)">
-
-  <div class="intro">
-    <div class="logo-container">
-      <a href="/">
-        <img src='https://blog.poyi.tw/images/bob2.jpg' alt="Profile Posts" class="rounded-logo">
-      </a>
-    </div>
-    <h2>Bob</h2>
-    <h3>Software Engineer</h3>
-    <div class="menu">
-      
-
-        <p>
-            <a href="/posts/">
-                Archive
-            </a>
-        </p>
-
-        <p>
-            <a href="/memo/">
-                Memo
-            </a>
-        </p>
-
-        <p>
-            <a href="/about/">
-                About
-            </a>
-        </p>
-
-      
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.poyi.tw/"><img class="app-header-avatar" src="/images/avatar.jpg" alt="Bob Lu" /></a>
+      <h1>Bob 學習筆記</h1>
+      <p>Software Engineer</p>
+      <div class="app-header-social">
         
-        <p>
-            <a href="mailto:maydaybob2000@gmail.com" target="_blank" rel="external">
-                
-            </a>
-        </p>
+          <a target="_blank" href="https://github.com/lupoyi" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
       
-    </div>
-
-  </div>
-
-  <div class="socials">
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Ethereum] 如何使用Windows來挖礦</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 5, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/mining/">mining</a><a class="tag" href="https://blog.poyi.tw/tags/windows/">windows</a><a class="tag" href="https://blog.poyi.tw/tags/nanopool/">nanopool</a><a class="tag" href="https://blog.poyi.tw/tags/dwarfpool/">dwarfpool</a></div></div>
+    </header>
+    <div class="post-content">
       
-  </div>
 
-</header>
-
-  <div class="content-wrapper">
-    
-      <div class="breadcrumb">
-  
-
-
-
-
-
-<span >
-  <a href="https://blog.poyi.tw/">Bob 學習筆記</a>
-   / 
-</span>
-
-
-<span >
-  <a href="https://blog.poyi.tw/posts/">Posts</a>
-   / 
-</span>
-
-
-<span  class="active">
-  <a href="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/">[Ethereum] 如何使用Windows來挖礦</a>
-  
-</span>
-
-</div>
-
-    
-    <main id="content" class="posts">
-
-<h1>[Ethereum] 如何使用Windows來挖礦</h1>
-
-<div class="post-date">2016-04-05</div>
-
-<br>
 <h2 id="1-安裝geth">1. 安裝geth</h2>
 
 <p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
@@ -248,21 +189,21 @@ ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/b
 
 <p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
 
-<p><h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
+<h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
 <span class="k">echo</span> on
 E<span class="p">:</span>
-geth &ndash;rpc &ndash;cache=8192</code></pre></div>
-<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p></p>
+geth --rpc --cache=8192</code></pre></div>
+<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p>
 
 <p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
 
-<p><h3 id="ethereum-console-bat">ethereum_console.bat</h3>
+<h3 id="ethereum-console-bat">ethereum_console.bat</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bat" data-lang="bat"># ethereum_console.bat
 <span class="k">echo</span> on
 E<span class="p">:</span>
 geth attach</code></pre></div>
-<p>使用console前記得打開sync</p></p>
+<p>使用console前記得打開sync</p>
 
 <p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
 
@@ -294,47 +235,31 @@ C:<span class="se">\U</span>sers<span class="se">\B</span>ob&gt; mklink /D C:<sp
 
 <p><a href="https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/">https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/</a></p>
 
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'blogpoyitw';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </main>
-  </div>
-  <footer>
-    <div class="footer-wrapper">
-      <p>Made with ❤️ &mdash; Powered by <a href="https://gohugo.io/" target="_blank" rel="external">Hugo</a> and the <a href="https://github.com/bjacquemet/personal-web" target='_blank' rel="external">Personal Web</a> theme.</p>
-      <p></p>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-  </footer>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600|Raleway:400,400i,600" rel="stylesheet">
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-43769917-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+  </article>
 
-</body>
+    </main>
+  </body>
 </html>

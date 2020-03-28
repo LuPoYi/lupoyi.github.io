@@ -13,10 +13,10 @@
     
     <item>
       <title>[Mac] 直接在command line開啟sublime</title>
-      <link>https://blog.poyi.tw/posts/mac-directly-in-the-terminal-to-open-sublime/</link>
+      <link>https://blog.poyi.tw/mac-directly-in-the-terminal-to-open-sublime/</link>
       <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/mac-directly-in-the-terminal-to-open-sublime/</guid>
+      <guid>https://blog.poyi.tw/mac-directly-in-the-terminal-to-open-sublime/</guid>
       <description>ln -sv /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl subl test.rb git clone https://github.com/bitcoin/bitcoin.git subl bitcoin/ Reference:
 https://gist.github.com/martinbuberl/5823ed247d279d1a2d06</description>
     </item>

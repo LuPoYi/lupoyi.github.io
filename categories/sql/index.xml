@@ -13,20 +13,20 @@
     
     <item>
       <title>[ASP.NET] Connect to SQL Server</title>
-      <link>https://blog.poyi.tw/posts/aspnet-connect-to-sql-server/</link>
+      <link>https://blog.poyi.tw/aspnet-connect-to-sql-server/</link>
       <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/aspnet-connect-to-sql-server/</guid>
+      <guid>https://blog.poyi.tw/aspnet-connect-to-sql-server/</guid>
       <description>最陽春的寫法
 // 用SQL驗證來登入 string QueryString = &amp;#34;Data Source=xxxx;Initial Catalog=xxxx;User ID=xxxx;Password=xxxx&amp;#34;; // QUERY SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;SELECT name FROM Employee&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); SqlDataReader dr = cmd.ExecuteReader(); while (dr.Read()) { // 將找到的值取出來  string user = dr[&amp;#34;name&amp;#34;].ToString(); //... } conn.Close(); // UPDATE INSERT DELETE SqlConnection conn = new SqlConnection(QueryString); conn.Open(); sqlStr = &amp;#34;UPDATE Employee SET name = &amp;#39;Bob&amp;#39;&amp;#34;; SqlCommand cmd = new SqlCommand(sqlStr, conn); cmd.</description>
     </item>
     
     <item>
       <title>[SQL] 常用的日期函數</title>
-      <link>https://blog.poyi.tw/posts/sql-date/</link>
+      <link>https://blog.poyi.tw/sql-date/</link>
       <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/sql-date/</guid>
+      <guid>https://blog.poyi.tw/sql-date/</guid>
       <description>DATEADD (datepart , number , date ) 將日期加上n個datepart
 Select dateadd( day , 1 , &amp;#39;2020-10-20&amp;#39;) // 2020-10-21 Select dateadd( year , 5 , &amp;#39;2020-10-20&amp;#39;) // 2025-10-20 DATEDIFF ( datepart , startdate , enddate ) 計算startdate跟enddate距離幾個datepart
 Select datediff ( day , &amp;#39;2015-06-17&amp;#39;, &amp;#39;2015-06-20&amp;#39;) // 3 Select datediff ( MONTH , &amp;#39;2015-06-17&amp;#39;, &amp;#39;2016-06-20&amp;#39;) // 12 DATEPART( datepart , date ) 可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數
@@ -35,12 +35,12 @@ Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate()
     
     <item>
       <title>[SQL] 常用語法</title>
-      <link>https://blog.poyi.tw/posts/sql-syntax/</link>
+      <link>https://blog.poyi.tw/sql-syntax/</link>
       <pubDate>Sun, 28 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.poyi.tw/posts/sql-syntax/</guid>
-      <description> 不一定是常用…而是記不太起來，每次都要查… DBCC CHECKIDENT ( *tablename*, RESEED, new_reseed_value ) 強制重設table的識別值 DBCC CHECKIDENT(tablename, RESEED, 0)	// 歸零識別值 SQL驗證 Data Source=;Initial catalog=;User ID=;Password=
-Windows驗證 Data Source=;Initial Catalog=;integrated security=sspi
+      <guid>https://blog.poyi.tw/sql-syntax/</guid>
+      <description> 不一定是常用…而是記不太起來，每次都要查… DBCC CHECKIDENT ( *tablename*, RESEED, new_reseed_value ) 強制重設table的識別值 DBCC CHECKIDENT(tablename, RESEED, 0)	// 歸零識別值 SQL 驗證 Data Source=;Initial catalog=;User ID=;Password=
+Windows 驗證 Data Source=;Initial Catalog=;integrated security=sspi
 union:上下重直合併
 萬用字元
 % _:代表一個字元 〔〕:指定字元範圍；[0-9]、[A-D]、[ABCD] 〔^〕:排除字元範圍:[^ABC]  </description>
