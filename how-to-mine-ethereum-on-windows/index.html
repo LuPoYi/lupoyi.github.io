@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[Ethereum] 如何使用Windows來挖礦 // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Ethereum] 如何使用Windows來挖礦"/>
+<meta name="twitter:description" content="1. 安裝geth 下載geth
+解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
+建立錢包並設定密碼
+以下指令都需要開command line(cmd)
+# C:\ geth account new 同步所有交易
+# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
+2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
+安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
+看是要自己挖還是加入別人礦池
+自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
+我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
+# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer."/>
+
+  <meta property="og:title" content="[Ethereum] 如何使用Windows來挖礦" />
+<meta property="og:description" content="1. 安裝geth 下載geth
+解壓縮後不用執行放在C:\ (我放在E:\不過沒差)
+建立錢包並設定密碼
+以下指令都需要開command line(cmd)
+# C:\ geth account new 同步所有交易
+# C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)
+2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
+安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;
+看是要自己挖還是加入別人礦池
+自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url&#43;你的錢包地址來挖就行了
+我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)
+# C:\Program Files\Ethereum (版號)\Release // ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G ethminer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/" />
+<meta property="article:published_time" content="2016-04-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-05T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Ethereum] 如何使用Windows來挖礦</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 5, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/mining/">mining</a><a class="tag" href="https://blog.poyi.tw/tags/windows/">windows</a><a class="tag" href="https://blog.poyi.tw/tags/nanopool/">nanopool</a><a class="tag" href="https://blog.poyi.tw/tags/dwarfpool/">dwarfpool</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h2 id="1-安裝geth">1. 安裝geth</h2>
+
+<p><a href="https://github.com/ethereum/go-ethereum/releases">下載geth</a></p>
+
+<p>解壓縮後不用執行放在C:\ (我放在E:\不過沒差)</p>
+
+<p>建立錢包並設定密碼</p>
+
+<p>以下指令都需要開command line(cmd)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\</span>
+geth account new</code></pre></div>
+<p>同步所有交易</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\</span>
+<span style="color:#999;font-style:italic"># --cache=看你想分配多少RAM來sync。預設只有16MB</span>
+geth --rpc --cache=<span style="color:#3677a9">8192</span></code></pre></div>
+<p>// 第一次似乎可以用geth &ndash;rpc &ndash;fast來快速sync完整node(沒試過)</p>
+
+<h2 id="2-安裝mining軟體">2. 安裝mining軟體</h2>
+
+<p><a href="https://build.ethdev.com/builds/Windows%20C%2B%2B%20develop%20branch/">下載mining軟體</a>(載最下面的即可)
+照一般安裝流程</p>
+
+<p>安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &gt; nVidia)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G -M <span style="color:#999;font-style:italic"># GPU</span>
+ethminer -M    <span style="color:#999;font-style:italic"># CPU</span></code></pre></div>
+<h2 id="3-挖礦">3. 挖礦</h2>
+
+<p>挖礦前blockchain要先sync過，也就是&rdquo;geth &ndash;rpc&rdquo;</p>
+
+<p>看是要自己挖還是加入別人礦池</p>
+
+<h3 id="自己挖">自己挖</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer -G <span style="color:#999;font-style:italic"># GPU</span></code></pre></div>
+<h3 id="加入礦池">加入礦池</h3>
+
+<p>需按照<a href="http://cryptomining-blog.com/7529-ethereum-mining-is-getting-way-too-centralized/">各大礦池</a>的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了</p>
+
+<p>我這邊使用nanopool(另外還有dwarfpool/ethpool&hellip;)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\Program Files\Ethereum (版號)\Release</span>
+// ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS -G
+ethminer.exe http://asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123 -G</code></pre></div>
+<p>也可以加上worker跟mail(會通知你的worker是否關閉)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\Program Files\Ethereum (版號)\Release</span>
+ethminer.exe http://asia1.nanopool.org:8888/YOUR_WALLET_ADDRESS/YOUR_WORKER_NAME/YOUR_EMAIL -G</code></pre></div>
+<h2 id="4-看成果-礦池">4. 看成果(礦池)</h2>
+
+<p>可依照nanopool提供的api查看目前情況</p>
+
+<p><a href="http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">http://eth.nanopool.org/api/balance/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a>
+<a href="http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob">http://eth.nanopool.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob</a>
+<a href="https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123">https://www.etherchain.org/account/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123</a></p>
+
+<p>nanopool一天會結算四次，最少要有0.1 Eth才會發transaction到你的wallet</p>
+
+<p>可以在本機下geth指令查你的錢包資訊</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># C:\</span>
+geth attach
+&gt; eth.coinbase
+<span style="color:#ed9d13">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>
+&gt; eth.acccounts
+[<span style="color:#ed9d13">&#34;0xb2944f316e14887bce4b5fae1c66ac78ba7c9123&#34;</span>]
+&gt; eth.getBalance(eth.coinbase)
+<span style="color:#3677a9">0</span></code></pre></div>
+<p>記得要sync到最新才能拿到正確資訊</p>
+
+<p>可以到<a href="https://www.etherchain.org/">Etherchain</a>看一下Recent blocks是不是已經sync到最新的block</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># geth指令整理</span>
+geth upgradedb
+geth removedb <span style="color:#999;font-style:italic"># 整個blockchain會被清掉</span>
+geth --rpc --cache=<span style="color:#3677a9">8192</span> <span style="color:#999;font-style:italic"># sync</span></code></pre></div>
+<h2 id="其他-把指令包成-bat批次檔">其他－把指令包成.bat批次檔</h2>
+
+<h3 id="ethereum-mining-bat">ethereum_mining.bat</h3>
+
+<p>因為需要分別開mining, sync以及console三個cmd並執行不同指令，所以我把指令包成.bat放桌面一鍵執行，或是拿來排程執行也ok</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"># ethereum_mining.bat
+<span style="color:#6ab825;font-weight:bold">echo</span> on
+E:
+<span style="color:#6ab825;font-weight:bold">cd</span> <span style="color:#ed9d13">&#34;Program Files\Ethereum 0.9.41\Release&#34;</span>
+ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
+<p>使用GPU來挖，所以會吃顯卡效能</p>
+
+<p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
+
+<h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
+<span style="color:#6ab825;font-weight:bold">echo</span> on
+E:
+geth --rpc --cache=8192</code></pre></div>
+<p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p>
+
+<p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
+
+<h3 id="ethereum-console-bat">ethereum_console.bat</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"># ethereum_console.bat
+<span style="color:#6ab825;font-weight:bold">echo</span> on
+E:
+geth attach</code></pre></div>
+<p>使用console前記得打開sync</p>
+
+<p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
+
+<h2 id="其他-將eth所佔的c槽容量移到e槽">其他－將ETH所佔的C槽容量移到E槽</h2>
+
+<p>挖礦及同步的資料預設都放在C底下</p>
+
+<p>(C:\Users\Bob\AppData\Local\Ethask)</p>
+
+<p>(C:\Users\Bob\AppData\Roaming\Ethereum)</p>
+
+<ul>
+<li>把C:\Users\Bob\AppData\Local\Ethask這個資料夾直接搬移到E:\ETH\Ethash</li>
+<li>開cmd下指令 &ldquo;mklink /D C:\Users\Bob\AppData\Local\Ethask E:\ETH\Ethash</li>
+
+<li><p>這樣就行了，另一個folder也比照辦理</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># cmd</span>
+C:<span style="color:#ed9d13">\U</span>sers<span style="color:#ed9d13">\B</span>ob&gt; mklink /D C:<span style="color:#ed9d13">\U</span>sers<span style="color:#ed9d13">\B</span>ob<span style="color:#ed9d13">\A</span>ppData<span style="color:#ed9d13">\L</span>ocal<span style="color:#ed9d13">\E</span>thash E:<span style="color:#ed9d13">\E</span>TH<span style="color:#ed9d13">\E</span>thash
+已建立 C:<span style="color:#ed9d13">\U</span>sers<span style="color:#ed9d13">\B</span>ob<span style="color:#ed9d13">\A</span>ppData<span style="color:#ed9d13">\L</span>ocal<span style="color:#ed9d13">\E</span>thash 的符號連結 &lt;&lt;===&gt;&gt; E:<span style="color:#ed9d13">\E</span>TH<span style="color:#ed9d13">\E</span>thash</code></pre></div></li>
+</ul>
+
+<p>Reference:</p>
+
+<p><a href="https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/">https://www.cryptocompare.com/mining/guides/how-to-mine-ethereum/</a></p>
+
+<p><a href="http://nanopool.org">http://nanopool.org</a></p>
+
+<p><a href="https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore">https://github.com/ethereum/go-ethereum/wiki/Backup-&amp;-restore</a></p>
+
+<p><a href="https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/">https://diaryofdennis.com/2016/06/11/how-to-move-and-change-your-ethereum-mining-ethash-dag-folder/</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

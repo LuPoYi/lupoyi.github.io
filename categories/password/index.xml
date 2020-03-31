@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/password/</link>
+    <description>Recent content in Password on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Thu, 14 Feb 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/password/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[ASP.NET] Reset Password in Active Directory</title>
+      <link>https://blog.poyi.tw/aspnet-reset-password-in-active-directory/</link>
+      <pubDate>Thu, 14 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/aspnet-reset-password-in-active-directory/</guid>
+      <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
+// Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int  } string strPwd = new string(chars); while (!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS"/>
+<meta name="twitter:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit# required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn# ruby git clone https://github."/>
+
+  <meta property="og:title" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" />
+<meta property="og:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit# required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn# ruby git clone https://github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/rails-ubuntu-environment-ubuntu18-dot-04/" />
+<meta property="article:published_time" content="2019-05-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-26T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 26, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/ruby/">ruby</a><a class="tag" href="https://blog.poyi.tw/tags/rails/">rails</a></div></div>
+    </header>
+    <div class="post-content">
+      <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># user</span>
+sudo adduser deploy
+sudo adduser deploy sudo
+exit</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># required libraries</span>
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo add-apt-repository ppa:chris-lea/redis-server
+sudo apt-get update
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># ruby</span>
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+git clone https://github.com/rbenv/rbenv-vars.git ~/.rbenv/plugins/rbenv-vars
+<span style="color:#24909d">exec</span> <span style="color:#40ffff">$SHELL</span>
+rbenv install <span style="color:#3677a9">2</span>.6.1
+rbenv global <span style="color:#3677a9">2</span>.6.1</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bundler</span>
+gem install bundler
+gem install bundler -v <span style="color:#3677a9">1</span>.17.3</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># NGINX &amp; Passenger</span>
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+sudo sh -c <span style="color:#ed9d13">&#39;echo deb https://oss-binaries.phusionpassenger.com/apt/passenger bionic main &gt; /etc/apt/sources.list.d/passenger.list&#39;</span>
+sudo apt-get update
+sudo apt-get install -y nginx-extras libnginx-mod-http-passenger
+<span style="color:#6ab825;font-weight:bold">if</span> [ ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf ]; <span style="color:#6ab825;font-weight:bold">then</span> sudo ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf ; <span style="color:#6ab825;font-weight:bold">fi</span>
+sudo ls /etc/nginx/conf.d/mod-http-passenger.conf</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/conf.d/mod-http-passenger.conf</span>
+<span style="color:#999;font-style:italic"># 加上</span>
+passenger_ruby /home/bob/.rbenv/shims/ruby;</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/sites-enabled/myapp</span>
+server {
+  listen <span style="color:#3677a9">80</span>;
+  listen [::]:80;
+
+  server_name _;
+  root /home/bob/myapp/current/public;
+
+  passenger_enabled on;
+  passenger_app_env production;
+
+  location /cable {
+    passenger_app_group_name myapp_websocket;
+    passenger_force_max_concurrent_requests_per_process <span style="color:#3677a9">0</span>;
+  }
+
+  <span style="color:#999;font-style:italic"># Allow uploads up to 100MB in size</span>
+  client_max_body_size 100m;
+
+  location ~ ^/(assets|packs) {
+    expires max;
+    gzip_static on;
+  }
+}</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># mysql</span>
+sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+sudo mysql_secure_installation</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/redis/redis.conf</span>
+supervised systemd</code></pre></div>
+<p>Reference:</p>
+
+<p><a href="https://gorails.com/deploy/ubuntu/18.04">https://gorails.com/deploy/ubuntu/18.04</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/tags/javascript/</link>
+    <description>Recent content in javascript on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 13 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[JavaScript] 中斷事件或動作的觸發</title>
+      <link>https://blog.poyi.tw/javascript-triggered-interrupt-event-or-action/</link>
+      <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/javascript-triggered-interrupt-event-or-action/</guid>
+      <description>bubble up 冒泡 當底層的元件被觸發時，會將所屬的父元件會連帶被觸發 - 多層觸發 而要處理這問題通常會用到 stopPropagation() 或 preventDefault()
+stopPropagation() 停止向上層bubble up，但仍然會觸發browser 看例子比較快 http://jsfiddle.net/dA6R3/1/
+// 加入event.stopPropagation(); 當點擊下去時，就不會向上觸發其他動作 &amp;lt;div class=&amp;#34;p&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;a&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;#34;.p&amp;#34;).click(function(event){ alert(&amp;#34;p 外&amp;#34;); }); $(&amp;#34;.a&amp;#34;).click(function(event){ alert(&amp;#34;a 內&amp;#34;); event.stopPropagation(); }); &amp;lt;/script&amp;gt; preventDefault() 會將預設的動作停掉不讓它執行，不會觸發browser 看例子比較快 http://jsfiddle.net/88dcF/1/
+# 加入event.preventDefault(); 當點擊下去時，就不會執行預設動作(連到GOOGLE) &amp;lt;a href=&amp;#34;http://www.google.com&amp;#34;&amp;gt;go to google&amp;lt;/a&amp;gt; &amp;lt;div id=&amp;#34;check&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; $(&amp;#34;a&amp;#34;).click(function(event) { event.preventDefault(); $(&amp;#34;&amp;lt;div&amp;gt;&amp;#34;).append(&amp;#34;Ya&amp;#34;).appendTo(&amp;#34;#check&amp;#34;); }); &amp;lt;/script&amp;gt; Reference:
+http://www.neoease.com/stoppropagation-and-preventdefault-and-return-false/
+http://yiyingloveart.blogspot.tw/2013/08/eventpreventdefaultreturn-false.html</description>
+    </item>
+    
+  </channel>
+</rss>

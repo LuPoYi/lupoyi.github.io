@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zcash on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/zcash/</link>
+    <description>Recent content in Zcash on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 15 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/zcash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Zcash] 如何使用Windows來挖礦</title>
+      <link>https://blog.poyi.tw/how-to-mine-zcash-on-windows/</link>
+      <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/how-to-mine-zcash-on-windows/</guid>
+      <description>幾千塊的顯卡來挖其實收益非常低，電費還比較貴，玩票性質再試試看吧
+ ZCash錢包 首先要下載一個錢包並取得address(t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE)來存放你挖到的幣
+推薦Jaxx，支援windows/macos/ios/android&amp;hellip;，幣別也支援btc/eth/etc/zec&amp;hellip;.。
+Nvidia挖ZCash會比較快，如果是AMD可考慮挖Ethereum之類的
+Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&amp;rsquo;s CUDA Zcash miner
+ EWBF Miner - 效率好30% - 使用時會吃掉大部分顯卡效能無法正常使用  Nicehash - nheqminer-0.5c nheqminer-0.5c
+ Nicehash - 不開大型遊戲的話，電腦還可以正常使用  礦池 如果是組礦機多張顯卡，算力夠強的話可以考慮自己挖，只是台桌機的話就加入礦池吧
+礦池是你提供多少算力，就會回饋給你多少，收益比較穩定
+自己solo的話就是有挖到block才有收益
+http://zcash.flypool.org/
+通常礦池首頁都會寫很清楚該怎麼做
+# EWBF Miner miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3# Nicehash Miner nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>

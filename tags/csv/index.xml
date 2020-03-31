@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>csv on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/tags/csv/</link>
+    <description>Recent content in csv on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Tue, 06 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ruby] 匯出批次csv檔</title>
+      <link>https://blog.poyi.tw/ruby-csv-file/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-csv-file/</guid>
+      <description>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
+匯出csv header = [&amp;#39;name&amp;#39;,&amp;#39;money&amp;#39;,&amp;#39;age&amp;#39;] body = [&amp;#39;ruby&amp;#39;,&amp;#39;1000&amp;#39;,&amp;#39;18&amp;#39;] bom = &amp;#34;\uFEFF&amp;#34; # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = bom) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end csv_string.force_encoding(&amp;#39;big5&amp;#39;)# 直接產出檔案 CSV.open(&amp;#34;export.csv&amp;#34;,&amp;#34;w&amp;#34;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end# 直接產出檔案 CSV.open(&amp;#34;filename.csv&amp;#34;, &amp;#34;w&amp;#34;) do |csv| csv.to_io.write &amp;#34;\uFEFF&amp;#34; datas.each{|data| csv &amp;lt;&amp;lt; data} end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛
+其實也不太確定怎解，我單純用硬幹的方式
+# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[0-9]/){|a|(a.ord + 41599).</description>
+    </item>
+    
+  </channel>
+</rss>

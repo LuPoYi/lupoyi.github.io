@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[Linux] 超入門的基本指令 // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Linux] 超入門的基本指令"/>
+<meta name="twitter:description" content="之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;
+對Linux不是完全陌生，但指令倒是全忘了&hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
+# 系統資訊 $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history# 網路 $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線# chmod 調整檔案權限 chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [&#43;-=] [rwxX] test."/>
+
+  <meta property="og:title" content="[Linux] 超入門的基本指令" />
+<meta property="og:description" content="之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;) 也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;
+對Linux不是完全陌生，但指令倒是全忘了&hellip; 為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始
+# 系統資訊 $ echo hello word $ date $ arch // x86_64 $ uname –a // list system $ who $ w // show online user $ top // show system status $ cal 2015 // calendar $ cal 9 1752 // * $ bc –l // calculator $ echo 77/50 | bc –l $ history // list command history# 網路 $ ifconfig $ nslookup $ ping $ traceroute $ wget // download $ ssh 帳號@主機	// 用SSH連線# chmod 調整檔案權限 chmod [權限角色] [權限動作] [存取權限] 檔案/目錄 chmod [ugoa] [&#43;-=] [rwxX] test." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/linux-getting-started-with-hyper-basic-instructions/" />
+<meta property="article:published_time" content="2013-02-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-02-15T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Linux] 超入門的基本指令</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 15, 2013
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>之前在非洲服役時，曾想過用Linux取代Windows (當地經濟因素等等的&hellip;)
+也嘗試用Wine來執行一些常用的Windows軟體，大致上也都沒問題，只可惜當地政府的課程始終沒有開始&hellip;</p>
+
+<p>對Linux不是完全陌生，但指令倒是全忘了&hellip;
+為了往後開發上不會綁手綁腳，還是必須把基本功打好，從零開始</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 系統資訊</span>
+$ <span style="color:#24909d">echo</span> hello word
+$ date
+$ arch 	// x86_64
+$ uname –a // list system
+$ who
+$ w // show online user
+$ top // show system status
+$ cal <span style="color:#3677a9">2015</span> // calendar
+$ cal <span style="color:#3677a9">9</span> <span style="color:#3677a9">1752</span> // *
+$ bc –l // calculator
+$ <span style="color:#24909d">echo</span> <span style="color:#3677a9">77</span>/50 | bc –l
+$ <span style="color:#24909d">history</span> // list <span style="color:#24909d">command</span> history</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 網路</span>
+$ ifconfig
+$ nslookup
+$ ping
+$ traceroute
+$ wget // download
+$ ssh 帳號@主機	// 用SSH連線</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># chmod 調整檔案權限</span>
+
+chmod [權限角色] [權限動作] [存取權限] 檔案/目錄
+chmod [ugoa] [+-=] [rwxX] test.txt
+$ chmod ugo+r test.txt 
+權限角色: u(user/owner)、g(group)、o(other)、a(all)
+權限動作: +(增加權限)、-(取消權限)、=(直接設定權限)
+存取權限: r(<span style="color:#24909d">read</span>)、w(write)、x(execute)、X(execute&amp;目錄or已被執行過)
+
+也可用數字來調整權限
+chmod [u(int)][g(int)][o(int)] 檔案/目錄
+$ chmod <span style="color:#3677a9">777</span> test.txt
+<span style="color:#40ffff">r</span>=<span style="color:#3677a9">4</span>，w=<span style="color:#3677a9">2</span>，x=<span style="color:#3677a9">1</span> 
+-rwx-r--r--(10個參數，第一個無關chmod)
+<span style="color:#3677a9">2</span>~4: user, <span style="color:#3677a9">5</span>~7: group, <span style="color:#3677a9">8</span>~10: others
+755代表 rwxr-xr-x</code></pre></div>
+<p>Reference:</p>
+
+<p><a href="http://www.pcnet.idv.tw/pcnet/linux/linux_command.htm">http://www.pcnet.idv.tw/pcnet/linux/linux_command.htm</a></p>
+
+<p><a href="http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm">http://tnrc.ncku.edu.tw/course/93/fedora_core2/page8/p8.htm</a></p>
+
+<p><a href="http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts">http://jdev.tw/blog/3599/linux-terminal-commands-and-shortcuts</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

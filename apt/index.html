@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[APT] 進階持續性滲透攻擊 筆記 // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[APT] 進階持續性滲透攻擊 筆記"/>
+<meta name="twitter:description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
+Physical Malware Infection - USB
+External Attacks - 駭客入侵 - 漏洞攻擊
+APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+# 掃描漏洞.. Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Reference: IThome「防駭演練與危機處理」研習會"/>
+
+  <meta property="og:title" content="[APT] 進階持續性滲透攻擊 筆記" />
+<meta property="og:description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
+Physical Malware Infection - USB
+External Attacks - 駭客入侵 - 漏洞攻擊
+APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+# 掃描漏洞.. Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
+Reference: IThome「防駭演練與危機處理」研習會" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/apt/" />
+<meta property="article:published_time" content="2013-11-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-11-22T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[APT] 進階持續性滲透攻擊 筆記</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 22, 2013
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="advanced-persistent-threat">Advanced Persistent Threat</h1>
+
+<p>Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。
+ Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。
+ 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。</p>
+
+<h2 id="主要攻擊目標">主要攻擊目標</h2>
+
+<ul>
+<li>依組職：政治、軍事、企業</li>
+<li>依國家：中國、美國、印度</li>
+</ul>
+
+<h2 id="常見手法">常見手法</h2>
+
+<p><strong>Internet Malware Infection</strong>
+-   下載驅動程式
+-   Email附件
+-   非正式授權軟體
+-   DNS中毒</p>
+
+<p><strong>Physical Malware Infection</strong>
+-   USB</p>
+
+<p><strong>External Attacks</strong>
+-   駭客入侵
+-   漏洞攻擊</p>
+
+<h2 id="apt五種典型的特色">APT五種典型的特色：</h2>
+
+<ul>
+<li>高度針對性</li>
+<li>具有潛伏並保持低調的技術能力</li>
+<li>擁有資料情報分析的能力</li>
+<li>擁有多樣工具的多重面向攻擊方式</li>
+<li>資金充裕</li>
+</ul>
+
+<p>而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號
+也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 掃描漏洞..</span>
+Default Password (root) <span style="color:#6ab825;font-weight:bold">for</span> <span style="color:#ed9d13">&#39;root&#39;</span> Account
+Unpassworded <span style="color:#6ab825;font-weight:bold">for</span> <span style="color:#ed9d13">&#39;sa&#39;</span> Account</code></pre></div>
+<p>駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。</p>
+
+<p>Reference:
+IThome「防駭演練與危機處理」研習會</p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+blockquote {
+  color: #a5a4a4;
+  font-style: italic;
+  margin: 12px 12px 12px 0px;
+  padding: 0px 12px;
+  border-left: 5px solid #00aae1;
+  /* box-shadow: 1px 1px 15px #ccc; */
+}
+
+
+@media (min-width: 1119px) {
+
+  .app-container {
+    max-width: 90rem;
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[ASP.NET] 日期處理 // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[ASP.NET] 日期處理"/>
+<meta name="twitter:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86"/>
+
+  <meta property="og:title" content="[ASP.NET] 日期處理" />
+<meta property="og:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/aspnet-date/" />
+<meta property="article:published_time" content="2013-09-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-09-05T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[ASP.NET] 日期處理</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 5, 2013
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="日期運算其實還蠻常用到的-但好像變化不多">日期運算其實還蠻常用到的，但好像變化不多</h1>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	<span style="color:#999;font-style:italic">// 利用TimeSpan 日期相減
+</span><span style="color:#999;font-style:italic"></span>	TimeSpan ts = DateTime1 - DateTime2;
+	<span style="color:#6ab825;font-weight:bold">int</span> differenceInDays = ts.Days;
+
+    <span style="color:#999;font-style:italic">// 加上指定月數、天數、時間
+</span><span style="color:#999;font-style:italic"></span>    DateTime DateTime3 = DateTime1.AddDays(<span style="color:#3677a9">50</span>);
+    DateTime DateTime4 = DateTime1.AddMonths(<span style="color:#3677a9">12</span>);
+  
+    <span style="color:#999;font-style:italic">// 顯示特定格式
+</span><span style="color:#999;font-style:italic"></span>    TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;dddd&#34;</span>); <span style="color:#999;font-style:italic">// 星期二
+</span><span style="color:#999;font-style:italic"></span>    TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;MMMM&#34;</span>);	<span style="color:#999;font-style:italic">// 七月
+</span><span style="color:#999;font-style:italic"></span>    TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;MMMM&#34;</span>,CultureInfo.CreateSpecificCulture(<span style="color:#ed9d13">&#34;en-US&#34;</span>)));	<span style="color:#999;font-style:italic">// July
+</span><span style="color:#999;font-style:italic"></span>	TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);  
+</code></pre></div>
+<p>Reference:
+<a href="http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx">http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx</a>
+<a href="http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

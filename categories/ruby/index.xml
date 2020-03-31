@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/ruby/</link>
+    <description>Recent content in ruby on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sat, 07 Nov 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Ruby] AES 加密解密</title>
+      <link>https://blog.poyi.tw/ruby-aes-encrypt-decrypt/</link>
+      <pubDate>Sat, 07 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-aes-encrypt-decrypt/</guid>
+      <description>###對稱金鑰加密：加解密使用的金鑰是同一把
+ DES (Data Encryption Standard) AES (Advanced Encryption Standard)  ###非對稱金鑰加密系統(公開金鑰加密)，加解密不同把key(公鑰私鑰)
+ RSA
+$key = &amp;#34;自定key&amp;#34; # 可利用rails的sercret key(Rails.application.secrets.secret_key_base) $iv = &amp;#34;自定iv&amp;#34; # AES 加密 def aes_encrypt(data) cipher = OpenSSL::Cipher::AES128.new(:CBC) cipher.encrypt cipher.key = $key cipher.iv = $iv encrypted = cipher.update(data) + cipher.final encrypted_base64 = Base64.encode64(encrypted) return encrypted_base64 end # 解密  def aes_decrypt(encrypted_base64) encrypted = Base64.decode64(encrypted_base64) decipher = OpenSSL::Cipher::AES128.new(:CBC) decipher.decrypt decipher.key = $key decipher.iv = $iv data = decipher.update(encrypted) + decipher.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 教學 - 基本使用介紹2</title>
+      <link>https://blog.poyi.tw/ruby-basic-2/</link>
+      <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-basic-2/</guid>
+      <description>Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)# 進階的method定義 (block) def temp(&amp;amp;block) end temp(1) #=&amp;gt; wrong number of arguments (1 for 0) &amp;amp;block不是傳入的參數 temp() #=&amp;gt; nil temp(){puts &amp;#34;temp&amp;#34;} #=&amp;gt; nil  # 當temp()後面有block時會把這一段code放置&amp;amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;amp;abc) abc.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 教學 - 基本使用介紹</title>
+      <link>https://blog.poyi.tw/ruby-basic-1/</link>
+      <pubDate>Tue, 31 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-basic-1/</guid>
+      <description>Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
+未來讓以後開發不會這麼吃力，來整複習一下好了 :D
+Everything is Ruby is an object Ruby 內皆為物件，無基本型別
+# X.class，X.methods 的用法 123.methods #=&amp;gt; 123可用的method列表  123.class #=&amp;gt; Fixnum #知道class後就可以查doc  true.class #=&amp;gt; TrueClass  nil.class #=&amp;gt; NilClass &amp;gt; 2.even? =&amp;gt; true &amp;gt; 3.next =&amp;gt; 4 &amp;gt; -1.abs =&amp;gt; 1 ##基本使用
+# 各種常見型別 123.class #integer 42343243243243243242343242344234234234.class #bignum  123.123.class #float  “123”.class #string  [].class #array  {}.class #hash  :abc.class #symbol  nil.class #nilClass  true.class #TrueClass false.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 匯出txt檔</title>
+      <link>https://blog.poyi.tw/ruby-txt-file/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-txt-file/</guid>
+      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&amp;#39;mobile like ?&amp;#39;, &amp;#39;+8869%&amp;#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;w&amp;#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;r&amp;#39;) 100.times do file.readline end Reference:
+http://ruby-doc.org/core-2.1.4/File.html</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 匯出批次csv檔</title>
+      <link>https://blog.poyi.tw/ruby-csv-file/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-csv-file/</guid>
+      <description>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
+匯出csv header = [&amp;#39;name&amp;#39;,&amp;#39;money&amp;#39;,&amp;#39;age&amp;#39;] body = [&amp;#39;ruby&amp;#39;,&amp;#39;1000&amp;#39;,&amp;#39;18&amp;#39;] bom = &amp;#34;\uFEFF&amp;#34; # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = bom) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end csv_string.force_encoding(&amp;#39;big5&amp;#39;)# 直接產出檔案 CSV.open(&amp;#34;export.csv&amp;#34;,&amp;#34;w&amp;#34;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end# 直接產出檔案 CSV.open(&amp;#34;filename.csv&amp;#34;, &amp;#34;w&amp;#34;) do |csv| csv.to_io.write &amp;#34;\uFEFF&amp;#34; datas.each{|data| csv &amp;lt;&amp;lt; data} end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛
+其實也不太確定怎解，我單純用硬幹的方式
+# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[0-9]/){|a|(a.ord + 41599).</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] require,load,include,extend</title>
+      <link>https://blog.poyi.tw/ruby-require-load-include-extend/</link>
+      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-require-load-include-extend/</guid>
+      <description>require vs load 首先require與load都是用來載入指定的檔案 差別在於使用require只會調用一次，且副檔名可省略，load則相反。
+# random.rb $a = (rand * 10).floor# use_require.rb 產出的兩個值相同(只載入一次random.rb) require &amp;#34;./random&amp;#34; puts $a require &amp;#34;./random&amp;#34; # 此行無效果 puts $a# use_load.rb 產生的兩個值不一定相同 load &amp;#34;./random.rb&amp;#34; puts $a load &amp;#34;./random.rb&amp;#34; puts $a include vs extend include: 將目標當作instance來使用；並不直接擁有method，需建立一個實例後才能用 extend: 相當於把目標的code直接放進來；具有目標的class methods
+# include_extend.rb module Say def say_hi puts &amp;#34;Hi!&amp;#34; end end class People include Say end class Person extend Say # 具有Say的method，可直接呼叫 end$ irb 001 &amp;gt; require &amp;#39;./include_extend.rb&amp;#39; =&amp;gt; true 002 &amp;gt; Person.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 例外處理</title>
+      <link>https://blog.poyi.tw/ruby-exception-handling/</link>
+      <pubDate>Mon, 23 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-exception-handling/</guid>
+      <description>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
+例外處理 # begin..end當中的rescue begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
+ $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
+# example begin abc = 1 / 0 rescue =&amp;gt; ex puts &amp;#34;Except class: #{ex.class}&amp;#34; puts &amp;#34;Except message: #{ex.message}&amp;#34; ensure puts &amp;#39;Always print&amp;#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&amp;gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] Functions for Numbers</title>
+      <link>https://blog.poyi.tw/ruby-functions-for-numbers/</link>
+      <pubDate>Wed, 18 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-functions-for-numbers/</guid>
+      <description># Math &amp;gt; 2 ** 3 # 次方 =&amp;gt; 8 =begin Addition (+) Subtraction (-) Multiplication (*) Division (/) Exponentiation (**) Modulo (%) =end&amp;gt; 9.9.integer? =&amp;gt; false &amp;gt; -5.abs =&amp;gt; 5 &amp;gt; 5.6.round # 取最近的整數/四捨五入 =&amp;gt; 6 &amp;gt; 9.9.floor	# 取整數/無條件捨去 =&amp;gt; 9 &amp;gt; 2312.22.ceil # 取整數/無條件進位 =&amp;gt; 2313 &amp;gt; 2.next =&amp;gt; 3# 二元運算 n &amp;amp; num n | num n ^ num (XOR) n &amp;lt;&amp;lt; num (向左位移) n &amp;gt;&amp;gt; num (向右位移) Reference: http://www.</description>
+    </item>
+    
+    <item>
+      <title>[Ruby] 變數</title>
+      <link>https://blog.poyi.tw/ruby-is-a-small-note/</link>
+      <pubDate>Sat, 14 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-is-a-small-note/</guid>
+      <description>Ruby 有一個重要特性 Convention Over Configuration
+希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)
+Ruby命名也有一定的慣例
+ $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)
+# 全域變數 vs 實例變數 vs 區域變數 ruby&amp;gt; $foo =&amp;gt; nil ruby&amp;gt; @foo =&amp;gt; nil ruby&amp;gt; foo ERR: (eval):1: undefined local variable or method `foo&amp;#39; for main(Object) ruby&amp;gt; Foo = 2 =&amp;gt; 2 ruby&amp;gt; Foo = 3 =&amp;gt; warning: alread initialized constant Foo =&amp;gt; 3  </description>
+    </item>
+    
+    <item>
+      <title>[Ruby] and與&amp;&amp;的差別</title>
+      <link>https://blog.poyi.tw/ruby-and/</link>
+      <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-and/</guid>
+      <description>在Ruby中的邏輯運算有兩組，[!,&amp;amp;&amp;amp;,||]及[not,and,or]
+*	[!,&amp;amp;&amp;amp;,||]	* higher precedence *	[=,%=,~=,/=] * between this two *	[not,and,or] * lower precedence * 優先權：&amp;amp;&amp;amp;　→　||　→　and　＝　or 。 * &amp;amp;&amp;amp; 或 || 會將符號前後方都認定為boolean(true,false)# &amp;amp;&amp;amp; 與 and 的比較 &amp;gt; a = true &amp;amp;&amp;amp; false =&amp;gt; false &amp;gt; a =&amp;gt; false &amp;gt; a = true and false =&amp;gt; false &amp;gt; a =&amp;gt; true# || 與 or 的比較 &amp;gt; a = false || true =&amp;gt; true &amp;gt; a =&amp;gt; true &amp;gt; a = false or true =&amp;gt; true &amp;gt; a =&amp;gt; false# 總結，布林運算用[!</description>
+    </item>
+    
+    <item>
+      <title>[Rails] 基本概念（待補）</title>
+      <link>https://blog.poyi.tw/ruby-basic/</link>
+      <pubDate>Mon, 07 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/ruby-basic/</guid>
+      <description># config/database.yml development: # 開發用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 test: # 測試用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000 production: # 上線用 adapter: sqlite3 database: db/development.sqlite3 pool: 5 timeout: 5000# config/routes.rb get &amp;#34;welcome&amp;#34; =&amp;gt; &amp;#34;welcome#index&amp;#34; # 代表http://localhost:3000/welcome 會對應到 welcome Controller的index Action。  resources :events # 會自動生成四個四個命名路由(named routes)，搭配四個HTTP動詞，對應到七個Actions，如下： get &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#index&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; post &amp;#39;/events&amp;#39; =&amp;gt; &amp;#34;events#create&amp;#34;, :as =&amp;gt; &amp;#34;events&amp;#34; get &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#show&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; put &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#update&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; delete &amp;#39;/events/:id&amp;#39; =&amp;gt; &amp;#34;events#destroy&amp;#34;, :as =&amp;gt; &amp;#34;event&amp;#34; get &amp;#39;/events/new&amp;#39; =&amp;gt; &amp;#34;events#new&amp;#34;, :as =&amp;gt; &amp;#34;new_event&amp;#34; get &amp;#39;/events/:id/edit&amp;#39; =&amp;gt; &amp;#34;events#edit&amp;#34;, :as =&amp;gt; &amp;#34;edit_event&amp;#34; # get 是純讀取資料，對資料不會有任何影響，所以get資料可以回上一頁、refresh都ok；post則反之。 # HTML只有get、post，而Rails在post加上隱藏參數_method=PUT、_method=DELETE，就多了put、delete能用了。# &amp;lt;% 執行但不輸出 # &amp;lt;%= 輸出值 &amp;lt;% @people.</description>
+    </item>
+    
+  </channel>
+</rss>

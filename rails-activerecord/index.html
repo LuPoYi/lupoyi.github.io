@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[Rails] ActiveRecord // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Rails] ActiveRecord"/>
+<meta name="twitter:description" content="# Model relation class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss end# 常用參數 class Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &#34;User&#34;, :foreign_key =&gt; &#34;manager_id&#34; ,:order =&gt; &#34;id desc&#34; end # class_name =&gt; &#34;User&#34; 變更關聯class name # :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id # :order =&gt; &#34;id desc&#34; 排序# 資料驗證 class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6."/>
+
+  <meta property="og:title" content="[Rails] ActiveRecord" />
+<meta property="og:description" content="# Model relation class Boss &lt; ActiveRecord::Base has_one :employee has_many :employees end class Employee &lt; ActiveRecord::Base belongs_to :boss end# 常用參數 class Employee &lt; ActiveRecord::Base belongs_to :manager, :class_name =&gt; &#34;User&#34;, :foreign_key =&gt; &#34;manager_id&#34; ,:order =&gt; &#34;id desc&#34; end # class_name =&gt; &#34;User&#34; 變更關聯class name # :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id # :order =&gt; &#34;id desc&#34; 排序# 資料驗證 class Group &lt; ActiveRecord::Base validates :name, presence: true # 此欄位必填 validates :name, :length =&gt; { :minimum =&gt; 2 } validates :bio, :length =&gt; { :maximum =&gt; 500 } validates :password, :length =&gt; { :in =&gt; 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/rails-activerecord/" />
+<meta property="article:published_time" content="2013-11-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-11-20T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Rails] ActiveRecord</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 20, 2013
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># Model relation</span>
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Boss</span> &lt; <span style="color:#40ffff">ActiveRecord</span>::<span style="color:#40ffff">Base</span>
+  has_one <span style="color:#ed9d13">:employee</span> 
+  has_many <span style="color:#ed9d13">:employees</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Employee</span> &lt; <span style="color:#40ffff">ActiveRecord</span>::<span style="color:#40ffff">Base</span>
+	belongs_to <span style="color:#ed9d13">:boss</span>
+<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 常用參數</span>
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Employee</span> &lt; <span style="color:#40ffff">ActiveRecord</span>::<span style="color:#40ffff">Base</span>
+    belongs_to <span style="color:#ed9d13">:manager</span>, <span style="color:#ed9d13">:class_name</span> =&gt; <span style="color:#ed9d13">&#34;User&#34;</span>, <span style="color:#ed9d13">:foreign_key</span> =&gt; <span style="color:#ed9d13">&#34;manager_id&#34;</span> ,<span style="color:#ed9d13">:order</span> =&gt; <span style="color:#ed9d13">&#34;id desc&#34;</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+<span style="color:#999;font-style:italic"># class_name =&gt; &#34;User&#34; 變更關聯class name</span>
+<span style="color:#999;font-style:italic"># :foreign_key =&gt; &#34;manager_id&#34;變更關聯foreign key,預設為class_id</span>
+<span style="color:#999;font-style:italic"># :order =&gt; &#34;id desc&#34; 排序</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 資料驗證</span>
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Group</span> &lt; <span style="color:#40ffff">ActiveRecord</span>::<span style="color:#40ffff">Base</span>
+	validates <span style="color:#ed9d13">:name</span>, <span style="color:#ed9d13">presence</span>: <span style="color:#6ab825">true</span> <span style="color:#999;font-style:italic"># 此欄位必填</span>
+  
+  validates <span style="color:#ed9d13">:name</span>, <span style="color:#ed9d13">:length</span> =&gt; { <span style="color:#ed9d13">:minimum</span> =&gt; <span style="color:#3677a9">2</span> }
+  validates <span style="color:#ed9d13">:bio</span>, <span style="color:#ed9d13">:length</span> =&gt; { <span style="color:#ed9d13">:maximum</span> =&gt; <span style="color:#3677a9">500</span> }
+  validates <span style="color:#ed9d13">:password</span>, <span style="color:#ed9d13">:length</span> =&gt; { <span style="color:#ed9d13">:in</span> =&gt; <span style="color:#3677a9">6</span>..<span style="color:#3677a9">20</span> }
+  validates <span style="color:#ed9d13">:registration_number</span>, <span style="color:#ed9d13">:length</span> =&gt; { <span style="color:#ed9d13">:is</span> =&gt; <span style="color:#3677a9">6</span> }
+  
+<span style="color:#999;font-style:italic">=begin
+</span><span style="color:#999;font-style:italic">  others helpler:
+</span><span style="color:#999;font-style:italic">    acceptance
+</span><span style="color:#999;font-style:italic">    validates_associated
+</span><span style="color:#999;font-style:italic">    confirmation
+</span><span style="color:#999;font-style:italic">    exclusion
+</span><span style="color:#999;font-style:italic">    format
+</span><span style="color:#999;font-style:italic">    inclusion
+</span><span style="color:#999;font-style:italic">    length
+</span><span style="color:#999;font-style:italic">    numericality
+</span><span style="color:#999;font-style:italic">    presence
+</span><span style="color:#999;font-style:italic">    uniqueness
+</span><span style="color:#999;font-style:italic">    validates_with
+</span><span style="color:#999;font-style:italic">    validates_each
+</span><span style="color:#999;font-style:italic">=end</span>
+<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
+<p>Reference:
+<a href="http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers">http://guides.rubyonrails.org/v3.2.13/active_record_validations_callbacks.html#validation-helpers</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

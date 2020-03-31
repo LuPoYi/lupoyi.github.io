@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[ASP.NET] Reset Password in Active Directory // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[ASP.NET] Reset Password in Active Directory"/>
+<meta name="twitter:description" content="重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
+// Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&#34;LDAP://&#34; &#43; ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&#34;SetPassword&#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&#34;pwdLastSet&#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;*()_&#43;?&#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &lt; passwordLength; i&#43;&#43;) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&gt;int  } string strPwd = new string(chars); while (!"/>
+
+  <meta property="og:title" content="[ASP.NET] Reset Password in Active Directory" />
+<meta property="og:description" content="重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
+// Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&#34;LDAP://&#34; &#43; ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&#34;SetPassword&#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&#34;pwdLastSet&#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;*()_&#43;?&#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &lt; passwordLength; i&#43;&#43;) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&gt;int  } string strPwd = new string(chars); while (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/aspnet-reset-password-in-active-directory/" />
+<meta property="article:published_time" content="2013-02-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-02-14T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[ASP.NET] Reset Password in Active Directory</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 14, 2013
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#999;font-style:italic">// Reset Password in Active Directory
+</span><span style="color:#999;font-style:italic"></span>DirectoryEntry userDirEntry = <span style="color:#6ab825;font-weight:bold">new</span> DirectoryEntry(<span style="color:#ed9d13">&#34;LDAP://&#34;</span> + ldapStr, adminAccount, adminPassword);
+userDirEntry.Invoke(<span style="color:#ed9d13">&#34;SetPassword&#34;</span>, CreateRandomPassword(<span style="color:#3677a9">8</span>));	<span style="color:#999;font-style:italic">// 重設新密碼
+</span><span style="color:#999;font-style:italic"></span>userDirEntry.CommitChanges();
+
+
+userDirEntry.Properties[<span style="color:#ed9d13">&#34;pwdLastSet&#34;</span>].Value = <span style="color:#3677a9">0</span>; <span style="color:#999;font-style:italic">// 下次登入會強制要求改密碼
+</span><span style="color:#999;font-style:italic"></span>userDirEntry.CommitChanges();
+
+userDirEntry.Close();
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#999;font-style:italic">// Generate Random Password (Winform)
+</span><span style="color:#999;font-style:italic"></span>
+<span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">string</span> CreateRandomPassword(<span style="color:#6ab825;font-weight:bold">int</span> passwordLength) 
+{
+      <span style="color:#6ab825;font-weight:bold">string</span> allowedChars = <span style="color:#ed9d13">&#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;*()_+?&#34;</span>;
+      <span style="color:#6ab825;font-weight:bold">char</span>[] chars = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#6ab825;font-weight:bold">char</span>[passwordLength];
+      <span style="color:#6ab825;font-weight:bold">for</span> (<span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>; i &lt; passwordLength; i++)
+      {
+            chars[i] = allowedChars[rd.Next(<span style="color:#3677a9">0</span>, allowedChars.Length)];   
+            <span style="color:#999;font-style:italic">// random.next(min,max) =&gt;int
+</span><span style="color:#999;font-style:italic"></span>      }
+      <span style="color:#6ab825;font-weight:bold">string</span> strPwd = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#6ab825;font-weight:bold">string</span>(chars);
+
+      <span style="color:#6ab825;font-weight:bold">while</span> (!((Regex.IsMatch(strPwd, <span style="color:#ed9d13">&#34;[0-9]&#34;</span>)) &amp;&amp; 
+      (Regex.IsMatch(strPwd, <span style="color:#ed9d13">&#34;[a-z]&#34;</span>)) &amp;&amp; 
+      (Regex.IsMatch(strPwd, <span style="color:#ed9d13">&#34;[A-Z]&#34;</span>)) &amp;&amp; 
+      (Regex.IsMatch(strPwd, <span style="color:#ed9d13">@&#34;[\W]&#34;</span>))))    
+      <span style="color:#999;font-style:italic">// \w  [a-zA-Z0-9_]  , \W ![a-zA-Z0-9_]
+</span><span style="color:#999;font-style:italic"></span>      {
+            strPwd = CreateRandomPassword(<span style="color:#3677a9">8</span>);   
+      }
+
+      <span style="color:#6ab825;font-weight:bold">return</span> strPwd;
+}
+
+<span style="color:#999;font-style:italic">// 靜態避免短時期內產生相同亂數
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">static</span> Random rd = <span style="color:#6ab825;font-weight:bold">new</span> Random(GetRandomSeed());
+<span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">int</span> GetRandomSeed()
+{
+      <span style="color:#6ab825;font-weight:bold">byte</span>[] bytes = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#6ab825;font-weight:bold">byte</span>[<span style="color:#3677a9">4</span>];
+      System.Security.Cryptography.RNGCryptoServiceProvider rng = 
+      <span style="color:#6ab825;font-weight:bold">new</span> System.Security.Cryptography.RNGCryptoServiceProvider();
+      rng.GetBytes(bytes);
+      <span style="color:#6ab825;font-weight:bold">return</span> BitConverter.ToInt32(bytes, <span style="color:#3677a9">0</span>);
+}
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

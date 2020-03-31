@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jquery on Bob 學習筆記</title>
+    <link>https://blog.poyi.tw/categories/jquery/</link>
+    <description>Recent content in jquery on Bob 學習筆記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 15 Sep 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.poyi.tw/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[jQuery] Selector</title>
+      <link>https://blog.poyi.tw/jquery-selector/</link>
+      <pubDate>Sun, 15 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/jquery-selector/</guid>
+      <description>jQuery物件有下列三種： $(&amp;ldquo;a&amp;rdquo;)　$(&amp;ldquo;table&amp;rdquo;)　$(&amp;ldquo;div&amp;rdquo;)　:直接指定Tag類別
+$(&amp;ldquo;#myTable&amp;rdquo;)　:直接指定ID
+$(&amp;ldquo;.clsInput&amp;rdquo;)　:指定使用此CSS的元件
+
+jQuery Selector 常用清單   選擇器 實例 選取   * $(&amp;quot;*&amp;quot;) 所有元素   #id $(&amp;quot;#lastname&amp;quot;) id=&amp;quot;lastname&amp;quot; 的元素   .class $(&amp;quot;.intro&amp;quot;) 所有 class=&amp;quot;intro&amp;quot; 的元素   element $(&amp;quot;p&amp;quot;) 所有 &amp;lt;p&amp;gt; 元素   .class.class $(&amp;quot;.intro.demo&amp;quot;) 所有 class=&amp;quot;intro&amp;quot; 且 class=&amp;quot;demo&amp;quot; 的元素   &amp;nbsp; &amp;nbsp; &amp;nbsp;   :first $(&amp;quot;p:first&amp;quot;) 第一個 &amp;lt;p&amp;gt; 元素   :last $(&amp;quot;p:last&amp;quot;) 最後一個 &amp;lt;p&amp;gt; 元素   :even $(&amp;quot;tr:even&amp;quot;) 所有偶數 &amp;lt;tr&amp;gt; 元素   :odd $(&amp;quot;tr:odd&amp;quot;) 所有奇數 &amp;lt;tr&amp;gt; 元素   &amp;nbsp; &amp;nbsp; &amp;nbsp;   :eq(index) $(&amp;quot;ul li:eq(3)&amp;quot;) 清單中的第四個元素（index 從 0 開始）   :gt(no) $(&amp;quot;ul li:gt(3)&amp;quot;) 列出 index 大於 3 的元素   :lt(no) $(&amp;quot;ul li:lt(3)&amp;quot;) 列出 index 小於 3 的元素   :not(selector) $(&amp;quot;input:not(:empty)&amp;quot;) 所有不為空的 input 元素   &amp;nbsp; &amp;nbsp; &amp;nbsp;   :header $(&amp;quot;:header&amp;quot;) 所有標題元素 &amp;lt;h1&amp;gt; - &amp;lt;h6&amp;gt;   :animated &amp;nbsp; 所有動畫元素   &amp;nbsp; &amp;nbsp; &amp;nbsp;   :contains(text) $(&amp;quot;:contains(&#39;W3School&#39;)&amp;quot;) 包含指定字串的所有元素   :empty $(&amp;quot;:empty&amp;quot;) 無子（元素）節點的所有元素   :hidden $(&amp;quot;p:hidden&amp;quot;) 所有隱藏的 &amp;lt;p&amp;gt; 元素   :visible $(&amp;quot;table:visible&amp;quot;) 所有可見的表格   &amp;nbsp; &amp;nbsp; &amp;nbsp;   s1,s2,s3 $(&amp;quot;th,td,.</description>
+    </item>
+    
+    <item>
+      <title>[jQuery] 入門</title>
+      <link>https://blog.poyi.tw/jquery/</link>
+      <pubDate>Sun, 15 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/jquery/</guid>
+      <description>jQuery 是一套 JavaScript 的 Library，目的是簡化dom的操作，也可以說是簡化HTML與JavaScript之間的操作
+基本規則：jQuery物件.方法( ).方法( )
+具名函數
+var person = new Object(); person.Name = &amp;#34;Bob&amp;#34;; person.Speak = say; function say(msg) { alert(this.Name + &amp;#34;: &amp;#34; + msg); } person.Speak(&amp;#34;Fuck You Jex&amp;#34;); 不具名函數
+var person = new Object(); person.Name = &amp;#34;Bob&amp;#34;; person.Speak = function (msg) { alert(this.Name + &amp;#34;: &amp;#34; + msg); } person.Speak(&amp;#34;Fuck You Jex&amp;#34;); Reference: http://msdn.microsoft.com/zh-tw/asp.net/dd452439.aspx</description>
+    </item>
+    
+  </channel>
+</rss>

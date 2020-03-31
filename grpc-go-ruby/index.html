@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[gRPC] Go Server &amp; Ruby Client // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[gRPC] Go Server &amp; Ruby Client"/>
+<meta name="twitter:description" content="gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
+有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
+以下使用go實作server端，ruby實作client端
+Install gRPC &amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
+syntax = &#34;proto3&#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo."/>
+
+  <meta property="og:title" content="[gRPC] Go Server &amp; Ruby Client" />
+<meta property="og:description" content="gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
+有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
+以下使用go實作server端，ruby實作client端
+Install gRPC &amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
+syntax = &#34;proto3&#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/grpc-go-ruby/" />
+<meta property="article:published_time" content="2019-09-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-15T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[gRPC] Go Server &amp; Ruby Client</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 15, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/ruby/">ruby</a><a class="tag" href="https://blog.poyi.tw/tags/golang/">golang</a><a class="tag" href="https://blog.poyi.tw/tags/grpc/">gRPC</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h2 id="grpc">gRPC</h2>
+
+<p>gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers
+(protobuf)序列化資料來更有效地進行傳輸。</p>
+
+<p>有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。</p>
+
+<p>以下使用go實作server端，ruby實作client端</p>
+
+<h3 id="install-grpc-grpc-tools">Install gRPC &amp; grpc-tools</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get google.golang.org/grpc
+brew install protobuf
+
+gem install grpc
+gem install grpc-tools</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── go
+│   ├── pb
+│   │   └── demo.pb.go
+│   └── server
+│       └── main.go
+├── protos
+│   └── demo.proto
+└── ruby
+    ├── client
+    │   └── main.rb
+    └── pb
+        ├── demo_pb.rb
+        └── demo_services_pb.rb</code></pre></div>
+<h3 id="定義protobuf-demo-proto">定義protobuf - demo.proto</h3>
+
+<p>簡單定義兩組rpc，這邊必須先決定好request及response</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-proto" data-lang="proto">syntax = <span style="color:#ed9d13">&#34;proto3&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">package</span> <span style="color:#447fcf;text-decoration:underline">demo</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">service</span> DemoService {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">rpc</span> SayHello (HelloRequest) <span style="color:#6ab825;font-weight:bold">returns</span> (HelloResponse);<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">rpc</span> Sum (SumRequest) <span style="color:#6ab825;font-weight:bold">returns</span> (SumResponse);<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">message</span> <span style="color:#447fcf;text-decoration:underline">HelloRequest</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">string</span> name = <span style="color:#3677a9">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">message</span> <span style="color:#447fcf;text-decoration:underline">HelloResponse</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">string</span> <span style="color:#6ab825;font-weight:bold">message</span> = <span style="color:#3677a9">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">message</span> <span style="color:#447fcf;text-decoration:underline">SumRequest</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">int64</span> numberOne = <span style="color:#3677a9">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">int64</span> numberOne = <span style="color:#3677a9">2</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">message</span> <span style="color:#447fcf;text-decoration:underline">SumResponse</span> {<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">int64</span> sum = <span style="color:#3677a9">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}</code></pre></div>
+<h3 id="由protobuf產出go跟ruby對應的code">由protobuf產出go跟ruby對應的code</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">protoc -I protos/ protos/demo.proto --go_out=<span style="color:#40ffff">plugins</span>=grpc:go/pb
+<span style="color:#999;font-style:italic"># generate demo.pb.go</span>
+
+grpc_tools_ruby_protoc -I protos/ --ruby_out=ruby/pb --grpc_out=ruby/pb protos/demo.proto
+<span style="color:#999;font-style:italic"># generate demo_pb.rb deom_services_pb.rb</span></code></pre></div>
+<h3 id="server-go-實作">Server - Go 實作</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#6ab825;font-weight:bold">package</span> main
+
+<span style="color:#6ab825;font-weight:bold">import</span> (
+  <span style="color:#ed9d13">&#34;flag&#34;</span>
+  <span style="color:#ed9d13">&#34;log&#34;</span>
+  <span style="color:#ed9d13">&#34;net&#34;</span>
+
+  <span style="color:#ed9d13">&#34;golang.org/x/net/context&#34;</span>
+  <span style="color:#ed9d13">&#34;google.golang.org/grpc&#34;</span>
+
+  pb <span style="color:#ed9d13">&#34;../pb&#34;</span>
+)
+
+<span style="color:#6ab825;font-weight:bold">var</span> (
+  port = flag.<span style="color:#447fcf">String</span>(<span style="color:#ed9d13">&#34;p&#34;</span>, <span style="color:#ed9d13">&#34;:50051&#34;</span>, <span style="color:#ed9d13">&#34;port&#34;</span>)
+)
+
+<span style="color:#6ab825;font-weight:bold">type</span> server <span style="color:#6ab825;font-weight:bold">struct</span>{}
+
+<span style="color:#6ab825;font-weight:bold">func</span> (s *server) <span style="color:#447fcf">SayHello</span>(ctx context.Context, in *pb.HelloRequest) (*pb.HelloResponse, <span style="color:#6ab825;font-weight:bold">error</span>) {
+  log.<span style="color:#447fcf">Printf</span>(<span style="color:#ed9d13">&#34;Received: %v&#34;</span>, in.<span style="color:#447fcf">GetName</span>())
+  <span style="color:#6ab825;font-weight:bold">return</span> &amp;pb.HelloResponse{Message: <span style="color:#ed9d13">&#34;Hello &#34;</span> + in.<span style="color:#447fcf">GetName</span>()}, <span style="color:#6ab825;font-weight:bold">nil</span>
+}
+
+<span style="color:#6ab825;font-weight:bold">func</span> (s *server) <span style="color:#447fcf">Sum</span>(ctx context.Context, in *pb.SumRequest) (*pb.SumResponse, <span style="color:#6ab825;font-weight:bold">error</span>) {
+  log.<span style="color:#447fcf">Printf</span>(<span style="color:#ed9d13">&#34;Received: %v &amp; %v&#34;</span>, in.<span style="color:#447fcf">GetNumberOne</span>(), in.<span style="color:#447fcf">GetNumberTwo</span>())
+  sum := in.<span style="color:#447fcf">GetNumberOne</span>() + in.<span style="color:#447fcf">GetNumberTwo</span>()
+  <span style="color:#6ab825;font-weight:bold">return</span> &amp;pb.SumResponse{Sum: sum}, <span style="color:#6ab825;font-weight:bold">nil</span>
+}
+
+<span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">main</span>() {
+  flag.<span style="color:#447fcf">Parse</span>()
+
+  lis, err := net.<span style="color:#447fcf">Listen</span>(<span style="color:#ed9d13">&#34;tcp&#34;</span>, *port)
+  <span style="color:#6ab825;font-weight:bold">if</span> err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+    log.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;failed to listen: %v&#34;</span>, err)
+  }
+  s := grpc.<span style="color:#447fcf">NewServer</span>()
+  pb.<span style="color:#447fcf">RegisterDemoServiceServer</span>(s, &amp;server{})
+  <span style="color:#6ab825;font-weight:bold">if</span> err := s.<span style="color:#447fcf">Serve</span>(lis); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
+    log.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;failed to serve: %v&#34;</span>, err)
+  }
+}</code></pre></div>
+<h3 id="client-ruby-實作">Client - Ruby 實作</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">this_dir = <span style="color:#40ffff">File</span>.expand_path(<span style="color:#40ffff">File</span>.dirname(__FILE__))
+lib_dir = <span style="color:#40ffff">File</span>.join(<span style="color:#40ffff">File</span>.dirname(this_dir), <span style="color:#ed9d13">&#39;pb&#39;</span>)
+$LOAD_PATH.unshift(lib_dir) <span style="color:#6ab825;font-weight:bold">unless</span> $LOAD_PATH.include?(lib_dir)
+
+<span style="color:#24909d">require</span> <span style="color:#ed9d13">&#39;grpc&#39;</span>
+<span style="color:#24909d">require</span> <span style="color:#ed9d13">&#39;demo_services_pb&#39;</span>
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">main</span>
+  stub = <span style="color:#40ffff">Demo</span>::<span style="color:#40ffff">DemoService</span>::<span style="color:#40ffff">Stub</span>.new(<span style="color:#ed9d13">&#39;localhost:50051&#39;</span>, <span style="color:#ed9d13">:this_channel_is_insecure</span>)
+
+  say_hello_response = stub.say_hello(<span style="color:#40ffff">Demo</span>::<span style="color:#40ffff">HelloRequest</span>.new(
+    <span style="color:#24909d">name</span>: <span style="color:#ed9d13">&#39;Bob&#39;</span>
+  ))
+  <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;say_hello_response </span><span style="color:#ed9d13">#{</span>say_hello_response<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
+
+  sum_response = stub.sum(<span style="color:#40ffff">Demo</span>::<span style="color:#40ffff">SumRequest</span>.new(
+    <span style="color:#ed9d13">numberOne</span>: <span style="color:#3677a9">8</span>,
+    <span style="color:#ed9d13">numberTwo</span>: <span style="color:#3677a9">7</span>,
+  ))
+  <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;sum_response </span><span style="color:#ed9d13">#{</span>sum_response<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+main</code></pre></div>
+<h3 id="執行結果">執行結果</h3>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server $ go run main.go
+<span style="color:#3677a9">2019</span>/09/28 <span style="color:#3677a9">14</span>:11:48 Received: Bob
+<span style="color:#3677a9">2019</span>/09/28 <span style="color:#3677a9">14</span>:11:48 Received: <span style="color:#3677a9">8</span> + <span style="color:#3677a9">7</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client $ ruby main.rb
+say_hello_response &lt;Demo::HelloResponse: message: <span style="color:#ed9d13">&#34;Hello Bob&#34;</span>&gt;
+sum_response &lt;Demo::SumResponse: sum: <span style="color:#3677a9">15</span>&gt;</code></pre></div>
+<h4 id="source-code-https-github-com-lupoyi-grpc-demo">Source code: <a href="https://github.com/LuPoYi/grpc-demo">https://github.com/LuPoYi/grpc-demo</a></h4>
+
+<p>Reference:</p>
+
+<p><a href="https://yami.io/grpc/">https://yami.io/grpc/</a></p>
+
+<p><a href="https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w">https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w</a></p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>

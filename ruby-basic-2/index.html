@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <title>[Ruby] 教學 - 基本使用介紹2 // Bob 學習筆記</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Bob Lu" />
+  <meta name="description"
+    content="" />
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+  
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  
+  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+  
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-43769917-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Ruby] 教學 - 基本使用介紹2"/>
+<meta name="twitter:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)# 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc."/>
+
+  <meta property="og:title" content="[Ruby] 教學 - 基本使用介紹2" />
+<meta property="og:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)# 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.poyi.tw/ruby-basic-2/" />
+<meta property="article:published_time" content="2015-04-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-04-12T00:00:00+00:00" />
+
+
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
+        src="/images/avatar.jpg"
+        alt="Bob Lu" /></a>
+    <h1>Bob 學習筆記</h1>
+    <p>
+      Software Engineer
+    </p>
+    <div class="app-header-social">
+      
+      <a target="_blank" href="https://github.com/lupoyi"
+        rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+      
+    </div>
+  </header>
+  <main class="app-container">
+    
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">[Ruby] 教學 - 基本使用介紹2</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 12, 2015
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h2 id="define-methods">Define Methods</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 基本的method定義</span>
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>
+  <span style="color:#24909d">puts</span> <span style="color:#3677a9">123</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+temp() 
+temp
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>(a,b,c)
+<span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">“</span><span style="color:#999;font-style:italic">#{a} , #{b}, #{c}”</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<span style="color:#3677a9">3</span>)
+temp <span style="color:#3677a9">1</span> , <span style="color:#3677a9">2</span> , <span style="color:#3677a9">3</span>
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>(a,b,c=<span style="color:#3677a9">99</span>) <span style="color:#999;font-style:italic"># 第三個參數若沒傳入的話預設值為99</span>
+<span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">“</span><span style="color:#999;font-style:italic">#{a} , #{b}, #{c}”</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+temp()  <span style="color:#999;font-style:italic"># wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個</span>
+temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>)
+temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<span style="color:#3677a9">3</span>)
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>(a,b,c=<span style="color:#3677a9">99</span>, *argv)   
+  ap [a,b,c,argv]
+<span style="color:#6ab825;font-weight:bold">end</span>
+temp()  <span style="color:#999;font-style:italic"># wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上</span>
+temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<span style="color:#3677a9">3</span>,<span style="color:#3677a9">4</span>,<span style="color:#3677a9">5</span>,<span style="color:#3677a9">6</span>,<span style="color:#3677a9">7</span>,<span style="color:#3677a9">8</span>)</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 進階的method定義 (block)</span>
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>(&amp;block)
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+temp(<span style="color:#3677a9">1</span>)  <span style="color:#999;font-style:italic">#=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數</span>
+temp()   <span style="color:#999;font-style:italic">#=&gt; nil</span>
+temp(){<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;temp&#34;</span>} <span style="color:#999;font-style:italic">#=&gt; nil </span>
+<span style="color:#999;font-style:italic"># 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil</span>
+
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp2</span>(&amp;abc)
+  abc.call
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+temp2{<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;gogo&#34;</span>} <span style="color:#999;font-style:italic">#=&gt; &#34;gogo&#34;</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># class methods  / instance methods</span>
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Car</span>
+  <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf;text-decoration:underline">self</span>.<span style="color:#447fcf">hi</span>
+    <span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">“</span>aaa<span style="color:#a61717;background-color:#e3d2d2">”</span>
+  <span style="color:#6ab825;font-weight:bold">end</span>
+  <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">hi</span>
+    <span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">“</span>bbb<span style="color:#a61717;background-color:#e3d2d2">”</span>
+  <span style="color:#6ab825;font-weight:bold">end</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+car = <span style="color:#40ffff">Car</span>.new
+<span style="color:#40ffff">Car</span>.hi <span style="color:#999;font-style:italic">#=&gt; &#34;aaa&#34;</span>
+car.hi <span style="color:#999;font-style:italic">#=&gt; &#34;bbb&#34;</span></code></pre></div>
+<ul>
+<li>attr_accessor 自動設定setter &amp; getter</li>
+<li>attr_reader 設定getter</li>
+
+<li><p>attr_writer 設定setter</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># attr_accessor 等同於 getter &amp; setter</span>
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Person</span>
+<span style="color:#999;font-style:italic"># attr_accessor :name </span>
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span> <span style="color:#999;font-style:italic"># getter</span>
+@name
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span>=(str) <span style="color:#999;font-style:italic"># setter</span>
+@name = str
+<span style="color:#6ab825;font-weight:bold">end</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+person = <span style="color:#40ffff">Person</span>.new
+person.name = <span style="color:#ed9d13">&#39;Bob&#39;</span> <span style="color:#999;font-style:italic"># setter</span>
+person.name <span style="color:#999;font-style:italic"># =&gt; &#34;bob&#34; # getter</span></code></pre></div></li>
+
+<li><p>$name:全域變數</p></li>
+
+<li><p>@name:實例變數，作用域僅限定於 self 指示的物件</p></li>
+
+<li><p>@@name: 類別變數，在class內才使用，跨class</p></li>
+
+<li><p>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</p></li>
+
+<li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p></li>
+</ul>
+
+<h4 id="class-module">Class &amp; Module</h4>
+
+<p>Moudule只是一個不能被new的class</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># class / module </span>
+<span style="color:#40ffff">Class</span>.superclass <span style="color:#999;font-style:italic">#=&gt; module </span>
+
+<span style="color:#6ab825;font-weight:bold">module</span> <span style="color:#447fcf;text-decoration:underline">Flyable</span>
+  <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">fly</span>
+    <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;I can fly!&#34;</span>
+  <span style="color:#6ab825;font-weight:bold">end</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+<span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Cat</span>
+  <span style="color:#6ab825">include</span> <span style="color:#40ffff">Flyable</span>
+<span style="color:#6ab825;font-weight:bold">end</span>
+
+kitty = <span style="color:#40ffff">Cat</span>.new
+kitty.fly  </code></pre></div>
+<h4 id="error-handling">Error Handling</h4>
+
+<p>沒額外指定變數的話，錯誤資訊會放至$!(ERROR_INFO)及$@(ERROR_POSITION)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#6ab825;font-weight:bold">begin</span>
+  <span style="color:#999;font-style:italic"># 有機會發生例外的code</span>
+<span style="color:#6ab825;font-weight:bold">rescue</span>
+  <span style="color:#999;font-style:italic"># 發現例外後要執行的code</span>
+<span style="color:#6ab825;font-weight:bold">ensure</span>
+  <span style="color:#999;font-style:italic"># 無論是否例外都會執行的code</span>
+<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "blogpoyitw" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+  </main>
+</body>
+
+</html>
