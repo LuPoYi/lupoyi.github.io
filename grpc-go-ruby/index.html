@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
-    content="" />
+    content="使用 gRPC 實作 Go Server 及 Ruby Client" />
   <link rel="canonical" href="https://blog.poyi.tw/grpc-go-ruby/" itemprop="url" />
   
   <link rel="shortcut icon" href="https://blog.poyi.tw/favicon.png" type="image/x-icon" />
@@ -18,12 +18,12 @@
 
 
   <meta property="og:title" content="[gRPC] Go Server &amp; Ruby Client" />
-  <meta property="og:description" content="" />
+  <meta property="og:description" content="使用 gRPC 實作 Go Server 及 Ruby Client" />
   <meta property="og:url" content="https://blog.poyi.tw/grpc-go-ruby/" />
 
   <meta itemprop="name" content="[gRPC] Go Server &amp; Ruby Client" />
-  <meta name="description" content="" />
-  <meta itemprop="description" content="" />
+  <meta name="description" content="使用 gRPC 實作 Go Server 及 Ruby Client" />
+  <meta itemprop="description" content="使用 gRPC 實作 Go Server 及 Ruby Client" />
   <meta name="url" content="https://blog.poyi.tw/grpc-go-ruby/" />
 
 
@@ -60,22 +60,14 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[gRPC] Go Server &amp; Ruby Client"/>
-<meta name="twitter:description" content="gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
-有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
-以下使用go實作server端，ruby實作client端
-Install gRPC &amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
-syntax = &#34;proto3&#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo."/>
+<meta name="twitter:description" content="使用 gRPC 實作 Go Server 及 Ruby Client"/>
 
   <meta property="og:title" content="[gRPC] Go Server &amp; Ruby Client" />
-<meta property="og:description" content="gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
-有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
-以下使用go實作server端，ruby實作client端
-Install gRPC &amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
-syntax = &#34;proto3&#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo." />
+<meta property="og:description" content="使用 gRPC 實作 Go Server 及 Ruby Client" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/grpc-go-ruby/" />
 <meta property="article:published_time" content="2019-09-15T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-03T15:42:51+08:00" />
+<meta property="article:modified_time" content="2020-04-03T15:45:37+08:00" />
 
 </head>
 
