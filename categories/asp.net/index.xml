@@ -139,21 +139,6 @@ union:上下重直合併
     </item>
     
     <item>
-      <title>[C#] String常用語法</title>
-      <link>https://blog.poyi.tw/string-syntax/</link>
-      <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.poyi.tw/string-syntax/</guid>
-      <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
-一般情況都用String String.IndexOf 找字串中第一次出現的index
-if(employeeName.IndexOf(&amp;#34;Admin&amp;#34;) == -1)	// 可判斷Name中是否有符合Admin的字串 String.LastIndexOf 找字串中最後一次出現的index
-Substring(int startIndex, int length) 擷取字串
-string str = &amp;#34;台灣駐史瓦濟蘭大使館&amp;#34;; str.Substring(3, 6); // output: 史瓦濟蘭大使 Split 分隔字串
-string wholeString = &amp;#34;Bob.Lu&amp;#34;; string[] spiltString = wholeString.Split(new string[] { &amp;#34;.&amp;#34; }, StringSplitOptions.RemoveEmptyEntries); aryUserInfo[0].ToString(); // output: Bob Regex.IsMatch(string input, string pattern) 是否包含xxx
-Regex.IsMatch(strPwd, &amp;#34;[0-9]&amp;#34;) // = Regex.IsMatch(strPwd, @&amp;#34;\d&amp;#34;) Regex.IsMatch(strPwd, @&amp;#34;[\W]&amp;#34;) pattern表示法 : \d : [0-9] 數字 \D : 數字以外的字元 \w : [a-zA-Z0-9_] \W : \w以外的字元</description>
-    </item>
-    
-    <item>
       <title>[C#] 自動寄信</title>
       <link>https://blog.poyi.tw/aspnet-auto-return/</link>
       <pubDate>Sun, 03 Mar 2013 00:00:00 +0000</pubDate>
@@ -161,6 +146,16 @@ Regex.IsMatch(strPwd, &amp;#34;[0-9]&amp;#34;) // = Regex.IsMatch(strPwd, @&amp;
       <guid>https://blog.poyi.tw/aspnet-auto-return/</guid>
       <description>一樣是紀綠一下&amp;hellip;
 MailMessage mailMessage = new MailMessage(); mailMessage.IsBodyHtml = true; mailMessage.To.Add(emailAddress); mailMessage.CC.Add(cCMailAddress); MailAddress fromWho = new MailAddress(senderMailAddress); mailMessage.From = fromWho; mailMessage.Subject = title; mailMessage.Body = &amp;#34;這邊可放html&amp;#34; SmtpClient mailSmtp = new SmtpClient(mailServer,mailServerPort); mailSmtp.Send(mailMessage); </description>
+    </item>
+    
+    <item>
+      <title>[ASP.NET] Reset Password in Active Directory</title>
+      <link>https://blog.poyi.tw/aspnet-reset-password-in-active-directory/</link>
+      <pubDate>Thu, 14 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.poyi.tw/aspnet-reset-password-in-active-directory/</guid>
+      <description>重設密碼建議還是用LDAP去抓USER，以免抓錯人之類的
+// Reset Password in Active Directory DirectoryEntry userDirEntry = new DirectoryEntry(&amp;#34;LDAP://&amp;#34; + ldapStr, adminAccount, adminPassword); userDirEntry.Invoke(&amp;#34;SetPassword&amp;#34;, CreateRandomPassword(8));	// 重設新密碼 userDirEntry.CommitChanges(); userDirEntry.Properties[&amp;#34;pwdLastSet&amp;#34;].Value = 0; // 下次登入會強制要求改密碼 userDirEntry.CommitChanges(); userDirEntry.Close(); // Generate Random Password (Winform)  public static string CreateRandomPassword(int passwordLength) { string allowedChars = &amp;#34;abcdefghijkmnprstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789~!@#$%^&amp;amp;*()_+?&amp;#34;; char[] chars = new char[passwordLength]; for (int i = 0; i &amp;lt; passwordLength; i++) { chars[i] = allowedChars[rd.Next(0, allowedChars.Length)]; // random.next(min,max) =&amp;gt;int  } string strPwd = new string(chars); while (!</description>
     </item>
     
   </channel>

@@ -2,21 +2,46 @@
 <html lang="zh-TW">
 
 <head>
-  <title>Dart 101 入門筆記 // Bob 學習筆記</title>
+  <title>Dart 101 入門筆記 | Bob 學習筆記</title>
   <meta charset="utf-8" />
   <meta name="generator" content="Hugo 0.58.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
-    content="" />
-  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+    content="Dart 102 入門筆記" />
+  <link rel="canonical" href="https://blog.poyi.tw/dart-beginning/" itemprop="url" />
+  
+  <link rel="shortcut icon" href="https://blog.poyi.tw/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://blog.poyi.tw/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://blog.poyi.tw/favicon.png" />
+  
+
+
+  <meta property="og:title" content="Dart 101 入門筆記" />
+  <meta property="og:description" content="Dart 102 入門筆記" />
+  <meta property="og:url" content="https://blog.poyi.tw/dart-beginning/" />
+
+  <meta itemprop="name" content="Dart 101 入門筆記" />
+  <meta name="description" content="Dart 102 入門筆記" />
+  <meta itemprop="description" content="Dart 102 入門筆記" />
+  <meta name="url" content="https://blog.poyi.tw/dart-beginning/" />
+
 
   
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  <meta name="keywords" content="Dart, Flutter" />
   
   
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  
+  <meta name="robots" content="index, follow" />
+  
+
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+
+  
+  <link rel="stylesheet" href="https://blog.poyi.tw/stylesheets/custom.css" media="screen">
   
 
   
@@ -35,30 +60,21 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dart 101 入門筆記"/>
-<meta name="twitter:description" content="無腦玩了一下 Flutter， 後來還是覺得要看一下 Dart 語言基本用法， 這篇單純紀錄一下，最近會補完自己覺得該備忘的範例
- Install brew tap dart-lang/dart brew install dart Variables int, double, bool, String, list, map
-const - 常數，賦值後不可變更，必須明確賦值
-final - 常數，賦值後不可變更，可以是運算後過的結果
-var firstname = &#34;Bob&#34;; var year = 1989; String lastName = &#34;Lu&#34;; const bar = 1000000; final String name = &#39;Bob&#39;; Control flow statements if (a &gt; 1) { // ... } else if (a &gt; 2) { // ... } switch (expression) { case &#39;what&#39;: // ."/>
+<meta name="twitter:description" content="Dart 102 入門筆記"/>
 
   <meta property="og:title" content="Dart 101 入門筆記" />
-<meta property="og:description" content="無腦玩了一下 Flutter， 後來還是覺得要看一下 Dart 語言基本用法， 這篇單純紀錄一下，最近會補完自己覺得該備忘的範例
- Install brew tap dart-lang/dart brew install dart Variables int, double, bool, String, list, map
-const - 常數，賦值後不可變更，必須明確賦值
-final - 常數，賦值後不可變更，可以是運算後過的結果
-var firstname = &#34;Bob&#34;; var year = 1989; String lastName = &#34;Lu&#34;; const bar = 1000000; final String name = &#39;Bob&#39;; Control flow statements if (a &gt; 1) { // ... } else if (a &gt; 2) { // ... } switch (expression) { case &#39;what&#39;: // ." />
+<meta property="og:description" content="Dart 102 入門筆記" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/dart-beginning/" />
 <meta property="article:published_time" content="2019-10-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-10-19T00:00:00+00:00" />
-
+<meta property="article:modified_time" content="2020-04-03T15:42:51+08:00" />
 
 </head>
 
 <body>
   <header class="app-header">
     <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
-        src="/images/avatar.jpg"
+        src="https://blog.poyi.tw/images/avatar.jpg"
         alt="Bob Lu" /></a>
     <h1>Bob 學習筆記</h1>
     <p>
@@ -93,7 +109,12 @@ var firstname = &#34;Bob&#34;; var year = 1989; String lastName = &#34;Lu&#34;; 
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           2 min read
-        </div></div>
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.poyi.tw/tags/dart/">Dart</a><a class="tag" href="https://blog.poyi.tw/tags/flutter/">Flutter</a></div></div>
     </header>
     <div class="post-content">
       

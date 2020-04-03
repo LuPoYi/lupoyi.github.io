@@ -2,21 +2,46 @@
 <html lang="zh-TW">
 
 <head>
-  <title>[Ethereum] 如何使用Windows來挖礦 // Bob 學習筆記</title>
+  <title>[Ethereum] 如何使用Windows來挖礦 | Bob 學習筆記</title>
   <meta charset="utf-8" />
   <meta name="generator" content="Hugo 0.58.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
     content="" />
-  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+  <link rel="canonical" href="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/" itemprop="url" />
+  
+  <link rel="shortcut icon" href="https://blog.poyi.tw/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://blog.poyi.tw/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://blog.poyi.tw/favicon.png" />
+  
+
+
+  <meta property="og:title" content="[Ethereum] 如何使用Windows來挖礦" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/" />
+
+  <meta itemprop="name" content="[Ethereum] 如何使用Windows來挖礦" />
+  <meta name="description" content="" />
+  <meta itemprop="description" content="" />
+  <meta name="url" content="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/" />
+
 
   
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+  
+  <meta name="keywords" content="mining, windows, nanopool, dwarfpool" />
   
   
-  <link rel="stylesheet" href="/stylesheets/custom.css" media="screen">
+
+  
+  <meta name="robots" content="index, follow" />
+  
+
+  <link rel="stylesheet" href="https://blog.poyi.tw/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+
+  
+  <link rel="stylesheet" href="https://blog.poyi.tw/stylesheets/custom.css" media="screen">
   
 
   
@@ -66,15 +91,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/how-to-mine-ethereum-on-windows/" />
 <meta property="article:published_time" content="2016-04-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-04-05T00:00:00+00:00" />
-
+<meta property="article:modified_time" content="2020-03-28T21:00:06+08:00" />
 
 </head>
 
 <body>
   <header class="app-header">
     <a href="https://blog.poyi.tw/"><img class="app-header-avatar"
-        src="/images/avatar.jpg"
+        src="https://blog.poyi.tw/images/avatar.jpg"
         alt="Bob Lu" /></a>
     <h1>Bob 學習筆記</h1>
     <p>
@@ -203,7 +227,7 @@ E:
 ethminer -F asia1.nanopool.org:8888/0xb2944f316e14887bce4b5fae1c66ac78ba7c9123/bob/maydaybob2000@gmail.com -G</code></pre></div>
 <p>使用GPU來挖，所以會吃顯卡效能</p>
 
-<p><a href="/images/poyi/ethereum_mining.jpg" target="_blank"><img src="/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
+<p><a href="https://blog.poyi.tw/images/poyi/ethereum_mining.jpg" target="_blank"><img src="https://blog.poyi.tw/images/poyi/ethereum_mining.jpg" title="image" alt="images"></a></p>
 
 <h3 id="ethereum-sync-bat">ethereum_sync.bat</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"># ethereum_sync.bat
@@ -212,7 +236,7 @@ E:
 geth --rpc --cache=8192</code></pre></div>
 <p>sync會吃網路流量，圖中最下面的 #1401468 就是指我這台目前sync到這個block</p>
 
-<p><a href="/images/poyi/ethereum_sync.jpg" target="_blank"><img src="/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
+<p><a href="https://blog.poyi.tw/images/poyi/ethereum_sync.jpg" target="_blank"><img src="https://blog.poyi.tw/images/poyi/ethereum_sync.jpg" title="image" alt="images"></a></p>
 
 <h3 id="ethereum-console-bat">ethereum_console.bat</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat"># ethereum_console.bat
@@ -221,7 +245,7 @@ E:
 geth attach</code></pre></div>
 <p>使用console前記得打開sync</p>
 
-<p><a href="/images/poyi/ethereum_console.jpg" target="_blank"><img src="/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
+<p><a href="https://blog.poyi.tw/images/poyi/ethereum_console.jpg" target="_blank"><img src="https://blog.poyi.tw/images/poyi/ethereum_console.jpg" title="image" alt="images"></a></p>
 
 <h2 id="其他-將eth所佔的c槽容量移到e槽">其他－將ETH所佔的C槽容量移到E槽</h2>
 
