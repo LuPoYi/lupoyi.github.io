@@ -4,12 +4,12 @@
   
   <url>
     <loc>https://blog.poyi.tw/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/categories/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://blog.poyi.tw/tags/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
@@ -53,12 +53,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/grpc/</loc>
+    <loc>https://blog.poyi.tw/categories/grpc/</loc>
     <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/grpc/</loc>
+    <loc>https://blog.poyi.tw/tags/grpc/</loc>
     <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
@@ -69,7 +69,7 @@
   
   <url>
     <loc>https://blog.poyi.tw/tags/ruby/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
@@ -149,17 +149,17 @@
   
   <url>
     <loc>https://blog.poyi.tw/tags/rails/</loc>
-    <lastmod>2020-03-28T21:00:06+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/rails-mac-os-environment-sierra/</loc>
-    <lastmod>2020-03-28T21:00:06+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/categories/mac/</loc>
-    <lastmod>2020-04-03T15:42:51+08:00</lastmod>
+    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
   </url>
   
   <url>
@@ -438,12 +438,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/javascript/</loc>
+    <loc>https://blog.poyi.tw/tags/javascript/</loc>
     <lastmod>2020-03-28T21:00:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/javascript/</loc>
+    <loc>https://blog.poyi.tw/categories/javascript/</loc>
     <lastmod>2020-03-28T21:00:06+08:00</lastmod>
   </url>
   

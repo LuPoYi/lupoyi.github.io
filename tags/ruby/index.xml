@@ -39,7 +39,7 @@ syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHell
       <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/rails-mac-os-environment-sierra/</guid>
-      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached</description>
+      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres</description>
     </item>
     
   </channel>
