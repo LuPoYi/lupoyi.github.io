@@ -4,7 +4,7 @@
 <head>
   <title>[Rails] 各種update method | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -121,19 +121,15 @@ if (!doNotTrack) {
           <a class="tag" href="https://blog.poyi.tw/tags/update/">update</a><a class="tag" href="https://blog.poyi.tw/tags/update_columns/">update_columns</a><a class="tag" href="https://blog.poyi.tw/tags/update_all/">update_all</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="正規rails的更新-update">正規Rails的更新 - update</h2>
-
+      <h2 id="正規rails的更新---update">正規Rails的更新 - update</h2>
 <p>會觸發validation、callback、也會更新updated_at</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ruby" data-lang="Ruby"><span style="color:#999;font-style:italic"># update 寫法 (for 單筆)</span>
 &gt; <span style="color:#40ffff">Comment</span>.last.update(<span style="color:#ed9d13">message</span>: <span style="color:#ed9d13">&#39;bbb&#39;</span>)
    (<span style="color:#3677a9">0</span>.<span style="color:#3677a9">1</span>ms)  <span style="color:#6ab825;font-weight:bold">begin</span> transaction
   <span style="color:#40ffff">SQL</span> (<span style="color:#3677a9">0</span>.<span style="color:#3677a9">4</span>ms)  <span style="color:#40ffff">UPDATE</span> <span style="color:#ed9d13">&#34;comments&#34;</span> <span style="color:#40ffff">SET</span> <span style="color:#ed9d13">&#34;message&#34;</span> = <span style="color:#ed9d13">?,</span> <span style="color:#ed9d13">&#34;updated_at&#34;</span> = ? <span style="color:#40ffff">WHERE</span> <span style="color:#ed9d13">&#34;comments&#34;</span>.<span style="color:#ed9d13">&#34;id&#34;</span> = ?  [[<span style="color:#ed9d13">&#34;message&#34;</span>, <span style="color:#ed9d13">&#34;bbb&#34;</span>], [<span style="color:#ed9d13">&#34;updated_at&#34;</span>, <span style="color:#ed9d13">&#34;2015-07-11 09:42:02.303661&#34;</span>], [<span style="color:#ed9d13">&#34;id&#34;</span>, <span style="color:#3677a9">200</span>]]
    (<span style="color:#3677a9">9</span>.<span style="color:#3677a9">1</span>ms)  commit transaction
- =&gt; <span style="color:#6ab825">true</span></code></pre></div>
-<h2 id="相當於直接下sql的更新-update-columns-update-all">相當於直接下SQL的更新 - update_columns, update_all</h2>
-
+ =&gt; <span style="color:#6ab825">true</span>
+</code></pre></div><h2 id="相當於直接下sql的更新---update_columns-update_all">相當於直接下SQL的更新 - update_columns, update_all</h2>
 <p>而 update_columns 及 update_all 是直接幫你下SQL更新欄位，會忽視Rails的validation，也沒有callback，updated_at也不會更新。所以最好是很確定要更新的值沒問題再使用這類語法。</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ruby" data-lang="Ruby"><span style="color:#999;font-style:italic"># update_columns 寫法 (for 單筆)</span>
 &gt; <span style="color:#40ffff">Comment</span>.where(<span style="color:#ed9d13">:id</span> =&gt; <span style="color:#3677a9">200</span>).first.update_columns(<span style="color:#ed9d13">message</span>: <span style="color:#ed9d13">&#39;bbbbb&#39;</span>, <span style="color:#ed9d13">post_id</span>: <span style="color:#3677a9">3</span>)
@@ -145,16 +141,16 @@ if (!doNotTrack) {
 <span style="color:#999;font-style:italic"># update_all 寫法 (for relation)</span>
 &gt; <span style="color:#40ffff">Comment</span>.where(<span style="color:#ed9d13">:id</span> =&gt; <span style="color:#3677a9">200</span>).update_all(<span style="color:#ed9d13">message</span>: <span style="color:#ed9d13">&#39;aaaaaaaaaa&#39;</span>, <span style="color:#ed9d13">post_id</span>: <span style="color:#3677a9">10</span>)
   <span style="color:#40ffff">SQL</span> (<span style="color:#3677a9">9</span>.<span style="color:#3677a9">2</span>ms)  <span style="color:#40ffff">UPDATE</span> <span style="color:#ed9d13">&#34;comments&#34;</span> <span style="color:#40ffff">SET</span> <span style="color:#ed9d13">&#34;message&#34;</span> = <span style="color:#ed9d13">&#39;aaaaaaaaaa&#39;</span>, <span style="color:#ed9d13">&#34;post_id&#34;</span> = <span style="color:#3677a9">10</span> <span style="color:#40ffff">WHERE</span> <span style="color:#ed9d13">&#34;comments&#34;</span>.<span style="color:#ed9d13">&#34;id&#34;</span> = ?  [[<span style="color:#ed9d13">&#34;id&#34;</span>, <span style="color:#3677a9">200</span>]]
- =&gt; <span style="color:#3677a9">1</span></code></pre></div>
-<h2 id="其他-update-attribute">其他 - update_attribute</h2>
-
+ =&gt; <span style="color:#3677a9">1</span>
+</code></pre></div><h2 id="其他---update_attribute">其他 - update_attribute</h2>
 <p>忽視validation，有callback，會更新updated_at</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ruby" data-lang="Ruby"><span style="color:#999;font-style:italic"># update_attribute 寫法 (for 單筆)</span>
 &gt; <span style="color:#40ffff">Comment</span>.last.update_attribute(<span style="color:#ed9d13">&#39;message&#39;</span> ,<span style="color:#ed9d13">&#39;bbbbb&#39;</span>)
    (<span style="color:#3677a9">0</span>.<span style="color:#3677a9">1</span>ms)  <span style="color:#6ab825;font-weight:bold">begin</span> transaction
   <span style="color:#40ffff">SQL</span> (<span style="color:#3677a9">0</span>.<span style="color:#3677a9">4</span>ms)  <span style="color:#40ffff">UPDATE</span> <span style="color:#ed9d13">&#34;comments&#34;</span> <span style="color:#40ffff">SET</span> <span style="color:#ed9d13">&#34;message&#34;</span> = <span style="color:#ed9d13">?,</span> <span style="color:#ed9d13">&#34;updated_at&#34;</span> = ? <span style="color:#40ffff">WHERE</span> <span style="color:#ed9d13">&#34;comments&#34;</span>.<span style="color:#ed9d13">&#34;id&#34;</span> = ?  [[<span style="color:#ed9d13">&#34;message&#34;</span>, <span style="color:#ed9d13">&#34;bbbbb&#34;</span>], [<span style="color:#ed9d13">&#34;updated_at&#34;</span>, <span style="color:#ed9d13">&#34;2015-07-11 09:45:55.190026&#34;</span>], [<span style="color:#ed9d13">&#34;id&#34;</span>, <span style="color:#3677a9">200</span>]]
    (<span style="color:#3677a9">8</span>.<span style="color:#3677a9">5</span>ms)  commit transaction
- =&gt; <span style="color:#6ab825">true</span></code></pre></div>
+ =&gt; <span style="color:#6ab825">true</span>
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] 日期處理 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[ASP.NET] 日期處理"/>
-<meta name="twitter:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86"/>
+<meta name="twitter:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;); Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86"/>
 
   <meta property="og:title" content="[ASP.NET] 日期處理" />
-<meta property="og:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;);  Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86" />
+<meta property="og:description" content="日期運算其實還蠻常用到的，但好像變化不多 // 利用TimeSpan 日期相減 	TimeSpan ts = DateTime1 - DateTime2; int differenceInDays = ts.Days; // 加上指定月數、天數、時間  DateTime DateTime3 = DateTime1.AddDays(50); DateTime DateTime4 = DateTime1.AddMonths(12); // 顯示特定格式  TextBox1.Text = DateTime4.ToString(&#34;dddd&#34;); // 星期二  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;);	// 七月  TextBox1.Text = DateTime4.ToString(&#34;MMMM&#34;,CultureInfo.CreateSpecificCulture(&#34;en-US&#34;)));	// July 	TextBox1.Text = DateTime4.ToString(&#34;yyyy-MM-dd HH:mm:ss&#34;); Reference: http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/aspnet-date/" />
 <meta property="article:published_time" content="2013-09-05T00:00:00+00:00" />
@@ -110,9 +110,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h1 id="日期運算其實還蠻常用到的-但好像變化不多">日期運算其實還蠻常用到的，但好像變化不多</h1>
+      <h1 id="日期運算其實還蠻常用到的但好像變化不多">日期運算其實還蠻常用到的，但好像變化不多</h1>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	<span style="color:#999;font-style:italic">// 利用TimeSpan 日期相減
 </span><span style="color:#999;font-style:italic"></span>	TimeSpan ts = DateTime1 - DateTime2;
 	<span style="color:#6ab825;font-weight:bold">int</span> differenceInDays = ts.Days;
@@ -126,8 +124,7 @@ if (!doNotTrack) {
 </span><span style="color:#999;font-style:italic"></span>    TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;MMMM&#34;</span>);	<span style="color:#999;font-style:italic">// 七月
 </span><span style="color:#999;font-style:italic"></span>    TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;MMMM&#34;</span>,CultureInfo.CreateSpecificCulture(<span style="color:#ed9d13">&#34;en-US&#34;</span>)));	<span style="color:#999;font-style:italic">// July
 </span><span style="color:#999;font-style:italic"></span>	TextBox1.Text = DateTime4.ToString(<span style="color:#ed9d13">&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);  
-</code></pre></div>
-<p>Reference:
+</code></pre></div><p>Reference:
 <a href="http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx">http://www.dotblogs.com.tw/hung-chin/archive/2012/10/15/77503.aspx</a>
 <a href="http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86">http://gogo1119.pixnet.net/blog/post/28140411-%5Bc%23%5D-datetime-tostring%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%99%95%E7%90%86</a></p>
 

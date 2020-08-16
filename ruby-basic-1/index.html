@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] 教學 - 基本使用介紹 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -61,14 +61,14 @@ if (!doNotTrack) {
 <meta name="twitter:description" content="Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
 未來讓以後開發不會這麼吃力，來整複習一下好了 :D
 Everything is Ruby is an object Ruby 內皆為物件，無基本型別
-# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
+# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass  &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
 # 各種常見型別 123.class #integer 42343243243243243242343242344234234234.class #bignum  123.123.class #float  “123”.class #string  [].class #array  {}.class #hash  :abc.class #symbol  nil.class #nilClass  true.class #TrueClass false."/>
 
   <meta property="og:title" content="[Ruby] 教學 - 基本使用介紹" />
 <meta property="og:description" content="Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念
 未來讓以後開發不會這麼吃力，來整複習一下好了 :D
 Everything is Ruby is an object Ruby 內皆為物件，無基本型別
-# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
+# X.class，X.methods 的用法 123.methods #=&gt; 123可用的method列表  123.class #=&gt; Fixnum #知道class後就可以查doc  true.class #=&gt; TrueClass  nil.class #=&gt; NilClass  &gt; 2.even? =&gt; true &gt; 3.next =&gt; 4 &gt; -1.abs =&gt; 1 ##基本使用
 # 各種常見型別 123.class #integer 42343243243243243242343242344234234234.class #bignum  123.123.class #float  “123”.class #string  [].class #array  {}.class #hash  :abc.class #symbol  nil.class #nilClass  true.class #TrueClass false." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-basic-1/" />
@@ -118,26 +118,22 @@ Everything is Ruby is an object Ruby 內皆為物件，無基本型別
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<p>Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念</p>
-
+      <p>Rails熟了一點後就會發現其實大部分都是學會怎麼用它，卻很吃Ruby本身的概念</p>
 <p>未來讓以後開發不會這麼吃力，來整複習一下好了 :D</p>
-
 <h2 id="everything-is-ruby-is-an-object">Everything is Ruby is an object</h2>
-
 <p>Ruby 內皆為物件，無基本型別</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># X.class，X.methods 的用法</span>
 <span style="color:#3677a9">123</span>.methods <span style="color:#999;font-style:italic">#=&gt; 123可用的method列表  </span>
 <span style="color:#3677a9">123</span>.class   <span style="color:#999;font-style:italic">#=&gt; Fixnum #知道class後就可以查doc  </span>
 <span style="color:#6ab825">true</span>.class  <span style="color:#999;font-style:italic">#=&gt; TrueClass  </span>
-<span style="color:#6ab825">nil</span>.class   <span style="color:#999;font-style:italic">#=&gt; NilClass  </span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">&gt; <span style="color:#3677a9">2</span>.even?
+<span style="color:#6ab825">nil</span>.class   <span style="color:#999;font-style:italic">#=&gt; NilClass  </span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">&gt; <span style="color:#3677a9">2</span>.even?
  =&gt; <span style="color:#6ab825">true</span>
 &gt; <span style="color:#3677a9">3</span>.next
  =&gt; <span style="color:#3677a9">4</span>
 &gt; -<span style="color:#3677a9">1</span>.abs
- =&gt; <span style="color:#3677a9">1</span></code></pre></div>
-<p>##基本使用</p>
+ =&gt; <span style="color:#3677a9">1</span>
+</code></pre></div><p>##基本使用</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 各種常見型別</span>
 <span style="color:#3677a9">123</span>.class <span style="color:#999;font-style:italic">#integer</span>
 <span style="color:#3677a9">42343243243243243242343242344234234234</span>.class <span style="color:#999;font-style:italic">#bignum  </span>
@@ -148,48 +144,46 @@ Everything is Ruby is an object Ruby 內皆為物件，無基本型別
 <span style="color:#ed9d13">:abc</span>.class <span style="color:#999;font-style:italic">#symbol  </span>
 <span style="color:#6ab825">nil</span>.class <span style="color:#999;font-style:italic">#nilClass  </span>
 <span style="color:#6ab825">true</span>.class <span style="color:#999;font-style:italic">#TrueClass</span>
-<span style="color:#6ab825">false</span>.class <span style="color:#999;font-style:italic">#FalseClass  </span></code></pre></div>
-<p>###輸出String的用法</p>
+<span style="color:#6ab825">false</span>.class <span style="color:#999;font-style:italic">#FalseClass  </span>
+</code></pre></div><p>###輸出String的用法</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 輸出String的用法</span>
 <span style="color:#a61717;background-color:#e3d2d2">“</span><span style="color:#3677a9">123</span><span style="color:#a61717;background-color:#e3d2d2">”</span> + <span style="color:#a61717;background-color:#e3d2d2">“</span><span style="color:#3677a9">345</span><span style="color:#a61717;background-color:#e3d2d2">”</span> + <span style="color:#a61717;background-color:#e3d2d2">“</span><span style="color:#3677a9">333</span><span style="color:#a61717;background-color:#e3d2d2">”</span>  
 x = <span style="color:#3677a9">18</span>  
 <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;your age is </span><span style="color:#ed9d13">#{</span>x<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>  
 <span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">‘</span>\n\t<span style="color:#a61717;background-color:#e3d2d2">’</span> <span style="color:#999;font-style:italic">#單引號 (無視內容，直接輸出)  </span>
-<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\n\t</span><span style="color:#ed9d13">&#34;</span> <span style="color:#999;font-style:italic">#雙引號 (換行)</span></code></pre></div>
-<h3 id="hash">Hash</h3>
+<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\n\t</span><span style="color:#ed9d13">&#34;</span> <span style="color:#999;font-style:italic">#雙引號 (換行)</span>
+</code></pre></div><h3 id="hash">Hash</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># hash宣告方式</span>
 x = {<span style="color:#ed9d13">&#34;wer&#34;</span> =&gt; <span style="color:#3677a9">123</span>, <span style="color:#ed9d13">&#34;sdf&#34;</span> =&gt; <span style="color:#3677a9">234</span>}  
 y = {<span style="color:#ed9d13">:wer</span> =&gt; <span style="color:#3677a9">123</span>, <span style="color:#ed9d13">:sdf</span> =&gt; <span style="color:#3677a9">234</span>}  
 <span style="color:#999;font-style:italic"># symbol 拿來當key用  </span>
-<span style="color:#ed9d13">:wer</span>.object_id  <span style="color:#999;font-style:italic"># 在hash中key使用symbol會比string還相對快    </span></code></pre></div>
-<h3 id="nil-false">Nil/ False</h3>
-
+<span style="color:#ed9d13">:wer</span>.object_id  <span style="color:#999;font-style:italic"># 在hash中key使用symbol會比string還相對快    </span>
+</code></pre></div><h3 id="nil-false">Nil/ False</h3>
 <p>ruby只有兩種東西為非 =&gt; nil / false
 其他都為true</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#6ab825">nil</span> || <span style="color:#6ab825">false</span> || <span style="color:#3677a9">0</span>   <span style="color:#999;font-style:italic"># 0    </span>
-<span style="color:#6ab825">nil</span> &amp;&amp; <span style="color:#6ab825">false</span> &amp;&amp; <span style="color:#3677a9">0</span>   <span style="color:#999;font-style:italic"># nil  </span></code></pre></div>
-<p>###判斷式</p>
-
+<span style="color:#6ab825">nil</span> &amp;&amp; <span style="color:#6ab825">false</span> &amp;&amp; <span style="color:#3677a9">0</span>   <span style="color:#999;font-style:italic"># nil  </span>
+</code></pre></div><p>###判斷式</p>
 <p>#####基本上if else</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># if/else if/elsif/else unless/end</span>
 <span style="color:#6ab825;font-weight:bold">if</span> size &gt; <span style="color:#3677a9">30</span>  
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;winner&#34;</span>  
 <span style="color:#6ab825;font-weight:bold">else</span>  
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;loser&#34;</span>  
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>#####因為在ruby只有false及nil為非，所以當你要判斷該變數有沒有值時可以直接這樣寫</p>
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div><p>#####因為在ruby只有false及nil為非，所以當你要判斷該變數有沒有值時可以直接這樣寫</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#24909d">name</span>
   <span style="color:#24909d">puts</span> <span style="color:#24909d">name</span>
 <span style="color:#6ab825;font-weight:bold">else</span>
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;error&#34;</span>
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>#####後置判斷式，直接把if放後面</p>
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div><p>#####後置判斷式，直接把if放後面</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#24909d">puts</span> <span style="color:#24909d">name</span> <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#24909d">name</span> <span style="color:#999;font-style:italic"># 當name有值時印出來，沒有值即略過</span>
-<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;error&#34;</span> <span style="color:#6ab825;font-weight:bold">unless</span> <span style="color:#24909d">name</span> <span style="color:#999;font-style:italic"># 當name沒有值時印error</span></code></pre></div>
-<p>#####簡單的判斷式也可以寫成單行</p>
+<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;error&#34;</span> <span style="color:#6ab825;font-weight:bold">unless</span> <span style="color:#24909d">name</span> <span style="color:#999;font-style:italic"># 當name沒有值時印error</span>
+</code></pre></div><p>#####簡單的判斷式也可以寫成單行</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># condition ? true : false</span>
-<span style="color:#24909d">puts</span> size &gt; <span style="color:#3677a9">30</span> ? <span style="color:#ed9d13">&#34;winner&#34;</span> : <span style="color:#ed9d13">&#34;loser&#34;</span>    </code></pre></div>
-<h5 id="ruby的switch-case寫法">ruby的switch case寫法</h5>
+<span style="color:#24909d">puts</span> size &gt; <span style="color:#3677a9">30</span> ? <span style="color:#ed9d13">&#34;winner&#34;</span> : <span style="color:#ed9d13">&#34;loser&#34;</span>    
+</code></pre></div><h5 id="ruby的switch-case寫法">ruby的switch case寫法</h5>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#6ab825;font-weight:bold">case</span> lang
 <span style="color:#6ab825;font-weight:bold">when</span> <span style="color:#ed9d13">&#34;java&#34;</span>
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;good&#34;</span>
@@ -199,9 +193,8 @@ y = {<span style="color:#ed9d13">:wer</span> =&gt; <span style="color:#3677a9">1
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;perfect!&#34;</span>
 <span style="color:#6ab825;font-weight:bold">else</span>
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;WTF&#34;</span>
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>###迴圈</p>
-
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div><p>###迴圈</p>
 <p>在ruby中比較少在用for跟while迴圈，大部分情況都使用each(iterator迭代器)</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">lang = [<span style="color:#ed9d13">&#34;ruby&#34;</span>,<span style="color:#ed9d13">&#34;python&#34;</span>,<span style="color:#ed9d13">&#34;java&#34;</span>,<span style="color:#ed9d13">&#34;c&#34;</span>,<span style="color:#ed9d13">&#34;php&#34;</span>]
 <span style="color:#6ab825;font-weight:bold">for</span> i <span style="color:#6ab825;font-weight:bold">in</span> lang
@@ -216,8 +209,8 @@ lang.each <span style="color:#6ab825;font-weight:bold">do</span> |i|
 
 <span style="color:#3677a9">3</span>.times <span style="color:#6ab825;font-weight:bold">do</span>
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#39;Good Job!&#39;</span>
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>Reference: RailsFun - JokerCatz</p>
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div><p>Reference: RailsFun - JokerCatz</p>
 
     </div>
     <div class="post-footer">

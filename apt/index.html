@@ -4,7 +4,7 @@
 <head>
   <title>[APT] 進階持續性滲透攻擊 筆記 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -59,19 +59,19 @@ if (!doNotTrack) {
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[APT] 進階持續性滲透攻擊 筆記"/>
 <meta name="twitter:description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
-主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
-Physical Malware Infection - USB
-External Attacks - 駭客入侵 - 漏洞攻擊
-APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection
+ 下載驅動程式 Email附件 非正式授權軟體 DNS中毒  Physical Malware Infection
+ USB  External Attacks
+ 駭客入侵 漏洞攻擊  APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
 # 掃描漏洞.. Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
 Reference: IThome「防駭演練與危機處理」研習會"/>
 
   <meta property="og:title" content="[APT] 進階持續性滲透攻擊 筆記" />
 <meta property="og:description" content="Advanced Persistent Threat Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。 Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。
-主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection - 下載驅動程式 - Email附件 - 非正式授權軟體 - DNS中毒
-Physical Malware Infection - USB
-External Attacks - 駭客入侵 - 漏洞攻擊
-APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
+主要攻擊目標  依組職：政治、軍事、企業 依國家：中國、美國、印度  常見手法 Internet Malware Infection
+ 下載驅動程式 Email附件 非正式授權軟體 DNS中毒  Physical Malware Infection
+ USB  External Attacks
+ 駭客入侵 漏洞攻擊  APT五種典型的特色：  高度針對性 具有潛伏並保持低調的技術能力 擁有資料情報分析的能力 擁有多樣工具的多重面向攻擊方式 資金充裕  而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞
 # 掃描漏洞.. Default Password (root) for &#39;root&#39; Account Unpassworded for &#39;sa&#39; Account 駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。
 Reference: IThome「防駭演練與危機處理」研習會" />
 <meta property="og:type" content="article" />
@@ -122,38 +122,33 @@ Reference: IThome「防駭演練與危機處理」研習會" />
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h1 id="advanced-persistent-threat">Advanced Persistent Threat</h1>
-
+      <h1 id="advanced-persistent-threat">Advanced Persistent Threat</h1>
 <p>Advanced: 精心策劃的進階攻擊手法，並採用多元手段嘗試入侵。
- Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。
- 通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。</p>
-
+Persistent: 進行一段長時間的埋伏並監視網路使用習慣，遵循low and slow、以不被發現為原則。
+通常攻擊者為有組織、計劃性的團體，嘗試竊取特定目標機密。</p>
 <h2 id="主要攻擊目標">主要攻擊目標</h2>
-
 <ul>
 <li>依組職：政治、軍事、企業</li>
 <li>依國家：中國、美國、印度</li>
 </ul>
-
 <h2 id="常見手法">常見手法</h2>
-
-<p><strong>Internet Malware Infection</strong>
--   下載驅動程式
--   Email附件
--   非正式授權軟體
--   DNS中毒</p>
-
-<p><strong>Physical Malware Infection</strong>
--   USB</p>
-
-<p><strong>External Attacks</strong>
--   駭客入侵
--   漏洞攻擊</p>
-
+<p><strong>Internet Malware Infection</strong></p>
+<ul>
+<li>下載驅動程式</li>
+<li>Email附件</li>
+<li>非正式授權軟體</li>
+<li>DNS中毒</li>
+</ul>
+<p><strong>Physical Malware Infection</strong></p>
+<ul>
+<li>USB</li>
+</ul>
+<p><strong>External Attacks</strong></p>
+<ul>
+<li>駭客入侵</li>
+<li>漏洞攻擊</li>
+</ul>
 <h2 id="apt五種典型的特色">APT五種典型的特色：</h2>
-
 <ul>
 <li>高度針對性</li>
 <li>具有潛伏並保持低調的技術能力</li>
@@ -161,14 +156,12 @@ Reference: IThome「防駭演練與危機處理」研習會" />
 <li>擁有多樣工具的多重面向攻擊方式</li>
 <li>資金充裕</li>
 </ul>
-
 <p>而成功入侵潛伏以後，會利用內部環境向上取得更高權限的帳號
 也可透過掃描漏洞軟體看是否該組織資安上是否有漏洞</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 掃描漏洞..</span>
 Default Password (root) <span style="color:#6ab825;font-weight:bold">for</span> <span style="color:#ed9d13">&#39;root&#39;</span> Account
-Unpassworded <span style="color:#6ab825;font-weight:bold">for</span> <span style="color:#ed9d13">&#39;sa&#39;</span> Account</code></pre></div>
-<p>駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。</p>
-
+Unpassworded <span style="color:#6ab825;font-weight:bold">for</span> <span style="color:#ed9d13">&#39;sa&#39;</span> Account
+</code></pre></div><p>駭客攻擊可以想成是流行性感冒，一直都會有新的流感(攻擊手法)，是不可避免到100%，但只要一個組織的資安體制建全、員工都有資安概念，就不容易受害。</p>
 <p>Reference:
 IThome「防駭演練與危機處理」研習會</p>
 

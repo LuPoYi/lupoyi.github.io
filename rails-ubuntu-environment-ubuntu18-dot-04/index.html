@@ -4,7 +4,7 @@
 <head>
   <title>[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS"/>
-<meta name="twitter:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit# required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn# ruby git clone https://github."/>
+<meta name="twitter:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit # required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn # ruby git clone https://github."/>
 
   <meta property="og:title" content="[Ubuntu] Ruby on Rails 基本環境建置 - Ubuntu 18.04 LTS" />
-<meta property="og:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit# required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn# ruby git clone https://github." />
+<meta property="og:description" content="# user sudo adduser deploy sudo adduser deploy sudo exit # required libraries curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn # ruby git clone https://github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/rails-ubuntu-environment-ubuntu18-dot-04/" />
 <meta property="article:published_time" content="2019-05-26T00:00:00+00:00" />
@@ -113,13 +113,15 @@ if (!doNotTrack) {
       <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># user</span>
 sudo adduser deploy
 sudo adduser deploy sudo
-exit</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># required libraries</span>
+<span style="color:#24909d">exit</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># required libraries</span>
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo add-apt-repository ppa:chris-lea/redis-server
 sudo apt-get update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># ruby</span>
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># ruby</span>
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
 <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
@@ -127,20 +129,25 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;export PATH=&#34;$HOME/.rbenv/plugins/ruby-build/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
 git clone https://github.com/rbenv/rbenv-vars.git ~/.rbenv/plugins/rbenv-vars
 <span style="color:#24909d">exec</span> <span style="color:#40ffff">$SHELL</span>
-rbenv install <span style="color:#3677a9">2</span>.6.1
-rbenv global <span style="color:#3677a9">2</span>.6.1</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bundler</span>
+rbenv install 2.6.1
+rbenv global 2.6.1
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># bundler</span>
 gem install bundler
-gem install bundler -v <span style="color:#3677a9">1</span>.17.3</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># NGINX &amp; Passenger</span>
+gem install bundler -v 1.17.3
+
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># NGINX &amp; Passenger</span>
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 sudo sh -c <span style="color:#ed9d13">&#39;echo deb https://oss-binaries.phusionpassenger.com/apt/passenger bionic main &gt; /etc/apt/sources.list.d/passenger.list&#39;</span>
 sudo apt-get update
 sudo apt-get install -y nginx-extras libnginx-mod-http-passenger
 <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf ]; <span style="color:#6ab825;font-weight:bold">then</span> sudo ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf ; <span style="color:#6ab825;font-weight:bold">fi</span>
-sudo ls /etc/nginx/conf.d/mod-http-passenger.conf</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/conf.d/mod-http-passenger.conf</span>
+sudo ls /etc/nginx/conf.d/mod-http-passenger.conf
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/conf.d/mod-http-passenger.conf</span>
 <span style="color:#999;font-style:italic"># 加上</span>
-passenger_ruby /home/bob/.rbenv/shims/ruby;</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/sites-enabled/myapp</span>
+passenger_ruby /home/bob/.rbenv/shims/ruby;
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/nginx/sites-enabled/myapp</span>
 server {
-  listen <span style="color:#3677a9">80</span>;
+  listen 80;
   listen [::]:80;
 
   server_name _;
@@ -151,7 +158,7 @@ server {
 
   location /cable {
     passenger_app_group_name myapp_websocket;
-    passenger_force_max_concurrent_requests_per_process <span style="color:#3677a9">0</span>;
+    passenger_force_max_concurrent_requests_per_process 0;
   }
 
   <span style="color:#999;font-style:italic"># Allow uploads up to 100MB in size</span>
@@ -161,12 +168,13 @@ server {
     expires max;
     gzip_static on;
   }
-}</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># mysql</span>
+}
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># mysql</span>
 sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-sudo mysql_secure_installation</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/redis/redis.conf</span>
-supervised systemd</code></pre></div>
-<p>Reference:</p>
-
+sudo mysql_secure_installation
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/redis/redis.conf</span>
+supervised systemd
+</code></pre></div><p>Reference:</p>
 <p><a href="https://gorails.com/deploy/ubuntu/18.04">https://gorails.com/deploy/ubuntu/18.04</a></p>
 
     </div>

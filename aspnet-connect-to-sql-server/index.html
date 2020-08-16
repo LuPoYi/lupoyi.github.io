@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] Connect to SQL Server | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -131,6 +131,7 @@ SqlDataReader dr = cmd.ExecuteReader();
 </span><span style="color:#999;font-style:italic"></span>}
 
 conn.Close();
+
 </code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#999;font-style:italic">// UPDATE INSERT DELETE
 </span><span style="color:#999;font-style:italic"></span>SqlConnection conn = <span style="color:#6ab825;font-weight:bold">new</span> SqlConnection(QueryString);
 conn.Open();

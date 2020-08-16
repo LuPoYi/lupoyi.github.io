@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] 例外處理 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -60,14 +60,12 @@ if (!doNotTrack) {
 <meta name="twitter:title" content="[Ruby] 例外處理"/>
 <meta name="twitter:description" content="好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
 例外處理 # begin..end當中的rescue begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
- $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
-# example begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html"/>
+ $! (例外物件)  .class .message .backtrace (等同於$@)   $@ (例外的位置資訊)  # example begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil Reference: http://blog.tonycube.com/2011/07/ruby8.html"/>
 
   <meta property="og:title" content="[Ruby] 例外處理" />
 <meta property="og:description" content="好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了
 例外處理 # begin..end當中的rescue begin # 有機會發生例外的code rescue # 發現例外後要執行的code ensure # 無論是否例外都會執行的code end 而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@
- $! (例外物件)  .class .message .backtrace (等同於$@)  $@ (例外的位置資訊)
-# example begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil  Reference: http://blog.tonycube.com/2011/07/ruby8.html" />
+ $! (例外物件)  .class .message .backtrace (等同於$@)   $@ (例外的位置資訊)  # example begin abc = 1 / 0 rescue =&gt; ex puts &#34;Except class: #{ex.class}&#34; puts &#34;Except message: #{ex.message}&#34; ensure puts &#39;Always print&#39; end Except class: ZeroDivisionError Except message: divided by 0 Always print =&gt; nil Reference: http://blog.tonycube.com/2011/07/ruby8.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-exception-handling/" />
 <meta property="article:published_time" content="2013-12-23T00:00:00+00:00" />
@@ -116,10 +114,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
-
+      <p>好像各語言都大同小異，try..catch..finally語法轉換一下就差不多了</p>
 <h1 id="例外處理">例外處理</h1>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># begin..end當中的rescue</span>
 <span style="color:#6ab825;font-weight:bold">begin</span>
@@ -128,25 +123,24 @@ if (!doNotTrack) {
   <span style="color:#999;font-style:italic"># 發現例外後要執行的code</span>
 <span style="color:#6ab825;font-weight:bold">ensure</span>
   <span style="color:#999;font-style:italic"># 無論是否例外都會執行的code</span>
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p>
-
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div><p>而當例外發生時，如果沒有指定變數，Ruby會將錯誤資訊存放至$!及$@</p>
 <ul>
 <li>$! (例外物件)
-
 <ul>
 <li>.class</li>
 <li>.message</li>
 <li>.backtrace (等同於$@)</li>
-</ul></li>
-
-<li><p>$@ (例外的位置資訊)</p>
+</ul>
+</li>
+<li>$@ (例外的位置資訊)</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># example</span>
 <span style="color:#6ab825;font-weight:bold">begin</span>
 	abc = <span style="color:#3677a9">1</span> / <span style="color:#3677a9">0</span>
 <span style="color:#6ab825;font-weight:bold">rescue</span> =&gt; ex
 	<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;Except class:  </span><span style="color:#ed9d13">#{</span>ex.class<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
-	<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;Except message: </span><span style="color:#ed9d13">#{</span>ex.message<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
+  	<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;Except message: </span><span style="color:#ed9d13">#{</span>ex.message<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
 <span style="color:#6ab825;font-weight:bold">ensure</span>
 	<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#39;Always print&#39;</span>
 <span style="color:#6ab825;font-weight:bold">end</span>
@@ -154,10 +148,8 @@ if (!doNotTrack) {
 <span style="color:#40ffff">Except</span> <span style="color:#ed9d13">class</span>:  <span style="color:#40ffff">ZeroDivisionError</span>
 <span style="color:#40ffff">Except</span> <span style="color:#ed9d13">message</span>: divided by <span style="color:#3677a9">0</span>
 <span style="color:#40ffff">Always</span> <span style="color:#24909d">print</span>
-=&gt; <span style="color:#6ab825">nil</span></code></pre></div></li>
-</ul>
-
-<p>Reference:
+=&gt; <span style="color:#6ab825">nil</span>
+</code></pre></div><p>Reference:
 <a href="http://blog.tonycube.com/2011/07/ruby8.html">http://blog.tonycube.com/2011/07/ruby8.html</a></p>
 
     </div>

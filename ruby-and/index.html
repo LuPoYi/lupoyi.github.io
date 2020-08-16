@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] and與&amp;&amp;的差別 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -59,11 +59,11 @@ if (!doNotTrack) {
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ruby] and與&amp;&amp;的差別"/>
 <meta name="twitter:description" content="在Ruby中的邏輯運算有兩組，[!,&amp;&amp;,||]及[not,and,or]
-*	[!,&amp;&amp;,||]	* higher precedence *	[=,%=,~=,/=] * between this two *	[not,and,or] * lower precedence * 優先權：&amp;&amp;　→　||　→　and　＝　or 。 * &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false)# &amp;&amp; 與 and 的比較 &gt; a = true &amp;&amp; false =&gt; false &gt; a =&gt; false &gt; a = true and false =&gt; false &gt; a =&gt; true# || 與 or 的比較 &gt; a = false || true =&gt; true &gt; a =&gt; true &gt; a = false or true =&gt; true &gt; a =&gt; false# 總結，布林運算用[!"/>
+*	[!,&amp;&amp;,||]	* higher precedence *	[=,%=,~=,/=] * between this two *	[not,and,or] * lower precedence * 優先權：&amp;&amp;　→　||　→　and　＝　or 。 * &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false) # &amp;&amp; 與 and 的比較 &gt; a = true &amp;&amp; false =&gt; false &gt; a =&gt; false &gt; a = true and false =&gt; false &gt; a =&gt; true # || 與 or 的比較 &gt; a = false || true =&gt; true &gt; a =&gt; true &gt; a = false or true =&gt; true &gt; a =&gt; false # 總結，布林運算用[!"/>
 
   <meta property="og:title" content="[Ruby] and與&amp;&amp;的差別" />
 <meta property="og:description" content="在Ruby中的邏輯運算有兩組，[!,&amp;&amp;,||]及[not,and,or]
-*	[!,&amp;&amp;,||]	* higher precedence *	[=,%=,~=,/=] * between this two *	[not,and,or] * lower precedence * 優先權：&amp;&amp;　→　||　→　and　＝　or 。 * &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false)# &amp;&amp; 與 and 的比較 &gt; a = true &amp;&amp; false =&gt; false &gt; a =&gt; false &gt; a = true and false =&gt; false &gt; a =&gt; true# || 與 or 的比較 &gt; a = false || true =&gt; true &gt; a =&gt; true &gt; a = false or true =&gt; true &gt; a =&gt; false# 總結，布林運算用[!" />
+*	[!,&amp;&amp;,||]	* higher precedence *	[=,%=,~=,/=] * between this two *	[not,and,or] * lower precedence * 優先權：&amp;&amp;　→　||　→　and　＝　or 。 * &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false) # &amp;&amp; 與 and 的比較 &gt; a = true &amp;&amp; false =&gt; false &gt; a =&gt; false &gt; a = true and false =&gt; false &gt; a =&gt; true # || 與 or 的比較 &gt; a = false || true =&gt; true &gt; a =&gt; true &gt; a = false or true =&gt; true &gt; a =&gt; false # 總結，布林運算用[!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-and/" />
 <meta property="article:published_time" content="2013-12-09T00:00:00+00:00" />
@@ -113,14 +113,15 @@ if (!doNotTrack) {
     </header>
     <div class="post-content">
       <p>在Ruby中的邏輯運算有兩組，[!,&amp;&amp;,||]及[not,and,or]</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">*	[!,&amp;&amp;,||]			
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">*	[!,&amp;&amp;,||]			
 	* higher precedence
 *	[=,%=,~=,/=] 
 	* between this two
 *	[not,and,or]
 	* lower precedence
 		* 優先權：&amp;&amp;　→　||　→　and　＝　or 。
-		* &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false)</pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># &amp;&amp; 與 and 的比較</span>
+		* &amp;&amp; 或 || 會將符號前後方都認定為boolean(true,false)
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># &amp;&amp; 與 and 的比較</span>
 &gt; a = <span style="color:#6ab825">true</span> &amp;&amp; <span style="color:#6ab825">false</span>
  =&gt; <span style="color:#6ab825">false</span> 
 &gt; a
@@ -129,7 +130,8 @@ if (!doNotTrack) {
 &gt; a = <span style="color:#6ab825">true</span> <span style="color:#6ab825;font-weight:bold">and</span> <span style="color:#6ab825">false</span>
  =&gt; <span style="color:#6ab825">false</span> 
 &gt; a
- =&gt; <span style="color:#6ab825">true</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># || 與 or 的比較</span>
+ =&gt; <span style="color:#6ab825">true</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># || 與 or 的比較</span>
 &gt; a = <span style="color:#6ab825">false</span> || <span style="color:#6ab825">true</span>
  =&gt; <span style="color:#6ab825">true</span> 
 &gt; a
@@ -137,20 +139,18 @@ if (!doNotTrack) {
 &gt; a = <span style="color:#6ab825">false</span> <span style="color:#6ab825;font-weight:bold">or</span> <span style="color:#6ab825">true</span>
  =&gt; <span style="color:#6ab825">true</span> 
 &gt; a
- =&gt; <span style="color:#6ab825">false</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 總結，布林運算用[!,&amp;&amp;,||]，流程控制用[not,and,or]</span>
+ =&gt; <span style="color:#6ab825">false</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 總結，布林運算用[!,&amp;&amp;,||]，流程控制用[not,and,or]</span>
 <span style="color:#999;font-style:italic"># boolean expression</span>
 <span style="color:#6ab825;font-weight:bold">if</span> some_condition &amp;&amp; some_other_condition
   do_something
 <span style="color:#6ab825;font-weight:bold">end</span>
 
 <span style="color:#999;font-style:italic"># control flow</span>
-document.saved? <span style="color:#6ab825;font-weight:bold">or</span> document.save!</code></pre></div>
-<p>Reference:</p>
-
+document.saved? <span style="color:#6ab825;font-weight:bold">or</span> document.save!
+</code></pre></div><p>Reference:</p>
 <p><a href="http://phrogz.net/ProgrammingRuby/language.html#table%5F18.4">Ruby operators 優先順序</a></p>
-
 <p><a href="http://blog.jeffean.net/wiki/ruby.html">http://blog.jeffean.net/wiki/ruby.html</a></p>
-
 <p><a href="http://stackoverflow.com/questions/1426826/difference-between-and-and-in-ruby">http://stackoverflow.com/questions/1426826/difference-between-and-and-in-ruby</a></p>
 
     </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptocurrency on Bob 學習筆記</title>
@@ -20,16 +20,16 @@
       <description>個人筆記尚未整理
  錢包本身並不存放幣，存放的是私鑰
 而透過私鑰能轉換成錢包地址，並到區塊鏈上將交易紀錄及餘額取回
-隨機(non-deterministic)錢包  每個被隨機建立出來的私鑰沒有相關性 需要各別管理及備份  deterministic wallet  透過一組主私鑰來建立許多子私鑰 只需要備份主私鑰
- Hierarchical Deterministic(HD) Wallet
- 大部分的HD錢包(Jaxx、ledgerwallet&amp;hellip;)都實作了BIP-32、BIP-39、BIP-44
+隨機(non-deterministic)錢包  每個被隨機建立出來的私鑰沒有相關性 需要各別管理及備份  deterministic wallet   透過一組主私鑰來建立許多子私鑰
+  只需要備份主私鑰
+  Hierarchical Deterministic(HD) Wallet
+  大部分的HD錢包(Jaxx、ledgerwallet&amp;hellip;)都實作了BIP-32、BIP-39、BIP-44
   BIP-39 / BIP-32 / BIP-44  BIP-32 - 規範出如何建立一個HD錢包，由用一份seed產生多組私鑰 BIP-39 - 制定由哪些字組來產生成512 bit seed BIP-44 - 基於BIP-32上的擴充，提供了5層path，其中包括了多幣種  目前已經成為大部分加密貨幣的標準規範
 12~24字組 =&amp;gt; 512 bit seed(BIP-39 seed) =&amp;gt; 主私鑰 =&amp;gt; 子私鑰(公鑰、地址)
 bip-0039-wordlists - 共2048字
 若錢包產出為12/24字組，那所有排列的組合共用2048的12/24次方
 ###　BIP-44五層path
- m/purpose&amp;rsquo;/coin_type&amp;rsquo;/account&amp;rsquo;/change/address_index m/44&amp;rsquo;/60&amp;rsquo;/0&amp;rsquo;/0/0 : ethererum m/44&amp;rsquo;/0&amp;rsquo;/0&amp;rsquo;/0/0 : bitcoin  Reference:
-https://github.com/bitcoin/bips</description>
+ m/purpose&amp;rsquo;/coin_type&amp;rsquo;/account&amp;rsquo;/change/address_index m/44&amp;rsquo;/60&amp;rsquo;/0&amp;rsquo;/0/0 : ethererum m/44&amp;rsquo;/0&amp;rsquo;/0&amp;rsquo;/0/0 : bitcoin  Reference:</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ https://github.com/bitcoin/bips</description>
 但今天你發送一筆交易給朋友或是客戶，對方得知了你的錢包地址，就可以觀察你持有多少BTC，就像你的銀行存款暴露在外一樣，任何人只要知道你的錢包地址都可以查得到你的餘額及所有交易紀錄。當然你也可以一直換錢包地址或是透過交易所發送來隱藏你主要的錢包地址，而這些匿名貨幣用各自的手段去解決這些問題。
 Dash 主要特色是雙層網路並提供即時發送及匿名發送  150 seconds/block
  Masternodes 主節點  需抵押 1000 Dash 具投票權可以決定Dash未來走向 45%的區塊獎勵 持續 sync blockchain 提供 InstantSend(即時發送) 服務 提供 PirvateSend(匿名發送) 服務  PirvateSend 匿名發送 - 混幣(Coinjoin)  該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向  InstantSend 即時發送  每個block產生後會隨機挑選10個Masternodes來提供InstantSend服務 發送交易時這10個Masternodes會優先收到廣播，而它們會對其他node廣播說這筆發送方已被鎖定，如果在這同時收到另一筆來自發送方的交易將會被reject 這時該筆交易會馬上收到5confirm，即完成交易 (1.3秒)  Pivx 特色與Dash相同，似乎更著重在隱私 - PoS版本的Dash  60 seconds/block
- Masternodes 主節點  需抵押 10000 Pivx 具投票權可以決定Pivx未來走向 持續 sync blockchain 提供 InstantSend(即時發送) 服務 提供 PirvateSend(匿名發送) 服務  PirvateSend 匿名發送 - 混幣(Coinjoin)  該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向 Zerocoin Protocol(zPiv)  InstantSend 即時發送(SwiftTx)  SwiftTx  Zcash 主要特色是錢包地址分為兩種類型，Public address(t-addrs)及 Shielded address(z-addrs) Public address(t-addrs)  t開頭的地址 與其他加密貨幣地址相同，在公開帳本可查詢餘額、歷史交易  Shielded address(z-addrs)  z開頭的地址 零知識證明(Zero-knowledge proof) - zk-SNARKs 無法在公開帳本上查詢  Monero(XMR) 任何地址交易金額都無法查詢，完整的強制匿名貨幣  使用 CryptoNote 演算法 Ring Signature RingCT 動態區塊大小</description>
+ Masternodes 主節點  需抵押 10000 Pivx 具投票權可以決定Pivx未來走向 持續 sync blockchain 提供 InstantSend(即時發送) 服務 提供 PirvateSend(匿名發送) 服務  PirvateSend 匿名發送 - 混幣(Coinjoin)  該筆交易會在Masternodes上與相同數量的交易進行合併，併成同一筆交易來混淆你的資金流向 Zerocoin Protocol(zPiv)  InstantSend 即時發送(SwiftTx)  SwiftTx  Zcash 主要特色是錢包地址分為兩種類型，Public address(t-addrs)及 Shielded address(z-addrs) Public address(t-addrs)  t開頭的地址 與其他加密貨幣地址相同，在公開帳本可查詢餘額、歷史交易  Shielded address(z-addrs)  z開頭的地址 零知識證明(Zero-knowledge proof) - zk-SNARKs 無法在公開帳本上查詢  Monero(XMR) 任何地址交易金額都無法查詢，完整的強制匿名貨幣   使用 CryptoNote 演算法</description>
     </item>
     
   </channel>

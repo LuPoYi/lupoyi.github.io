@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vmware on Bob 學習筆記</title>
@@ -18,8 +18,8 @@
       
       <guid>https://blog.poyi.tw/vmware-vcenter-cluster-exercises/</guid>
       <description>vSphere ESXi: 整個虛擬化平台，算是一個作業系統 vSphere Client: 操作VM用的軟體(遠端連線到ESXi) vCenter: 可統一管理，支援ADD 容錯
-&amp;ndash;VLAN 45(橘底) - 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN - 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 - 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS
-Cluster
+&amp;ndash;VLAN 45(橘底)
+ 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS  Cluster
 註記： HT Hyper-threading 可將核心分成兩個序列在處理 cpu數核心數(2)(HT)=邏輯核心 硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)</description>
     </item>
     
@@ -31,9 +31,7 @@ Cluster
       <guid>https://blog.poyi.tw/vmware-vcenter-80-port-is-already-in-use/</guid>
       <description>在嘗試安裝vCenter時，中途出現了「VMware VirtualCenter HTTP Port: 80」
 原因是vCenter自動安裝時會把SQL Server及.NET Framework相關的元件裝上，導致IIS佔用了80Port。
-解法之一就是直接在Roles裡把IIS移掉就行了(想在vCenter上使用IIS就要另求解了)
-
-Reference: http://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80%91%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E5%93%AA%E5%80%8B%E7%A8%8B%E5%BC%8F%E4%BD%94%E7%94%A8%E4%BA%86%E6%8C%87%E5%AE%9APort</description>
+解法之一就是直接在Roles裡把IIS移掉就行了(想在vCenter上使用IIS就要另求解了)</description>
     </item>
     
   </channel>

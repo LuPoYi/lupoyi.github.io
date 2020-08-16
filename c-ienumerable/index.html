@@ -4,7 +4,7 @@
 <head>
   <title>[C#] IEnumerable vs IQueryable | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -118,14 +118,12 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
         </div></div>
     </header>
     <div class="post-content">
-      <p>在linq的使用上，IEnumerable<T>是不可或缺的泛型介面
+      <p>在linq的使用上，IEnumerable<!-- raw HTML omitted -->是不可或缺的泛型介面
 像是foreach迴圈就是利用IEnumerable的特性(MoveNext)來實現逐一檢查。</p>
-
-<p>而IQueryable<T>又繼承了IEnumerable<T>&hellip;</p>
-
+<p>而IQueryable<!-- raw HTML omitted -->又繼承了IEnumerable<!-- raw HTML omitted -->&hellip;</p>
 <p>兩者的差別從概念上來說：
-<strong>IEnumerable<T></strong>:先將查詢的值取出，再一層一層做篩選。
-<strong>IQueryable<T></strong>:把全部Linq翻成T-SQL，直到真正要使用時才去執行。</p>
+<strong>IEnumerable<!-- raw HTML omitted --></strong>:先將查詢的值取出，再一層一層做篩選。
+<strong>IQueryable<!-- raw HTML omitted --></strong>:把全部Linq翻成T-SQL，直到真正要使用時才去執行。</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#999;font-style:italic">// IEnumerable
 </span><span style="color:#999;font-style:italic">// list1
 </span><span style="color:#999;font-style:italic"></span>IEnumerable&lt;Employee&gt; list1 = myDB.Employees.Where(p =&gt; p.Name.StartsWith(<span style="color:#ed9d13">&#34;S&#34;</span>));
@@ -140,9 +138,8 @@ list2 = list2.Take&lt;Employee&gt;(<span style="color:#3677a9">10</span>);
 
 // list2
 <span style="color:#6ab825;font-weight:bold">SELECT</span> TOP <span style="color:#3677a9">10</span> [t0].[EmpID], [t0].[EmpName], [t0].[Salary] <span style="color:#6ab825;font-weight:bold">FROM</span> [Employee] <span style="color:#6ab825;font-weight:bold">AS</span> [t0]
-<span style="color:#6ab825;font-weight:bold">WHERE</span> [t0].[EmpName] <span style="color:#6ab825;font-weight:bold">LIKE</span> @p0</code></pre></div>
-<p>可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。</p>
-
+<span style="color:#6ab825;font-weight:bold">WHERE</span> [t0].[EmpName] <span style="color:#6ab825;font-weight:bold">LIKE</span> @p0
+</code></pre></div><p>可以看到 IQueryable 在執行時直接向SQL要求TOP 10；而 IEnumerable 則是把全部撈出來再做一些篩選。</p>
 <p>Reference:
 <a href="http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX">http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX</a>
 <a href="http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html">http://www.cnblogs.com/seebook/archive/2009/02/21/1395310.html</a>

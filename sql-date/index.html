@@ -4,7 +4,7 @@
 <head>
   <title>[SQL] 常用的日期函數 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -119,22 +119,24 @@ Select DATEPART( weekday , getdate() ) // 4 Select DATEPART( quarter , getdate()
       <p>DATEADD (datepart , number , date )
 將日期加上n個datepart</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#6ab825;font-weight:bold">Select</span> dateadd( <span style="color:#6ab825;font-weight:bold">day</span> , <span style="color:#3677a9">1</span> , <span style="color:#ed9d13">&#39;2020-10-20&#39;</span>) // <span style="color:#3677a9">2020</span>-<span style="color:#3677a9">10</span>-<span style="color:#3677a9">21</span>
-    <span style="color:#6ab825;font-weight:bold">Select</span> dateadd( <span style="color:#6ab825;font-weight:bold">year</span> , <span style="color:#3677a9">5</span> , <span style="color:#ed9d13">&#39;2020-10-20&#39;</span>) // <span style="color:#3677a9">2025</span>-<span style="color:#3677a9">10</span>-<span style="color:#3677a9">20</span></code></pre></div>
-<p>DATEDIFF ( datepart , startdate , enddate )
+    <span style="color:#6ab825;font-weight:bold">Select</span> dateadd( <span style="color:#6ab825;font-weight:bold">year</span> , <span style="color:#3677a9">5</span> , <span style="color:#ed9d13">&#39;2020-10-20&#39;</span>) // <span style="color:#3677a9">2025</span>-<span style="color:#3677a9">10</span>-<span style="color:#3677a9">20</span>
+</code></pre></div><p>DATEDIFF ( datepart , startdate , enddate )
 計算startdate跟enddate距離幾個datepart</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#6ab825;font-weight:bold">Select</span> datediff ( <span style="color:#6ab825;font-weight:bold">day</span> , <span style="color:#ed9d13">&#39;2015-06-17&#39;</span>, <span style="color:#ed9d13">&#39;2015-06-20&#39;</span>) // <span style="color:#3677a9">3</span> 
-		<span style="color:#6ab825;font-weight:bold">Select</span> datediff ( <span style="color:#6ab825;font-weight:bold">MONTH</span> , <span style="color:#ed9d13">&#39;2015-06-17&#39;</span>, <span style="color:#ed9d13">&#39;2016-06-20&#39;</span>) // <span style="color:#3677a9">12</span></code></pre></div>
-<p>DATEPART( datepart , date )
-  可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數</p>
+		<span style="color:#6ab825;font-weight:bold">Select</span> datediff ( <span style="color:#6ab825;font-weight:bold">MONTH</span> , <span style="color:#ed9d13">&#39;2015-06-17&#39;</span>, <span style="color:#ed9d13">&#39;2016-06-20&#39;</span>) // <span style="color:#3677a9">12</span>
+</code></pre></div><p>DATEPART( datepart , date )
+可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回整數</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#6ab825;font-weight:bold">Select</span> DATEPART( weekday , getdate() ) // <span style="color:#3677a9">4</span>
-    <span style="color:#6ab825;font-weight:bold">Select</span> DATEPART( quarter , getdate() ) // <span style="color:#3677a9">3</span></code></pre></div>
-<p>DATENAME ( datepart , date )
-  可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回字串</p>
+    <span style="color:#6ab825;font-weight:bold">Select</span> DATEPART( quarter , getdate() ) // <span style="color:#3677a9">3</span>
+</code></pre></div><p>DATENAME ( datepart , date )
+可查詢日期的細部資料：第幾季、第幾週、星期幾..傳回字串</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  	<span style="color:#6ab825;font-weight:bold">Select</span> DATENAME( weekday , getdate() ) // Wednesday
-    <span style="color:#6ab825;font-weight:bold">Select</span> DATENAME( <span style="color:#6ab825;font-weight:bold">month</span>  , getdate() ) // September</code></pre></div>
-<p>其他</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">IsDate() 判斷是否為合法日期
-getdate()   取得系統目前時間</pre></div>
+    <span style="color:#6ab825;font-weight:bold">Select</span> DATENAME( <span style="color:#6ab825;font-weight:bold">month</span>  , getdate() ) // September
+</code></pre></div><p>其他</p>
+<pre><code>IsDate() 判斷是否為合法日期
+getdate()	取得系統目前時間
+</code></pre>
+
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

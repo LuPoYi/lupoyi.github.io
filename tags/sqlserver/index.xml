@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQLServer on Bob 學習筆記</title>
@@ -19,8 +19,8 @@
       <guid>https://blog.poyi.tw/rails-sql-server/</guid>
       <description>看到官方提供的adpter..真的不知道怎麼下手.. 魯蛇無誤
 Ubuntu Connect to SQL Server 想在Unix、Linux環境上，存取SQL Server似乎大多都使用FreeTDS
-# 安裝FreeTDS $ sudo apt-get install freetds-dev freetds-bin tdsodbc# 檢查FreeTDS版本資訊 $ tsql -C # 這時候就可以Connect SQL Server $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name)# 直接下TSQL，這邊要用go才會執行 $ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
-Rails Connect to SQL Server (Error) # 安裝tiny_tds、sqlserver adapter $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.</description>
+# 安裝FreeTDS $ sudo apt-get install freetds-dev freetds-bin tdsodbc # 檢查FreeTDS版本資訊 $ tsql -C # 這時候就可以Connect SQL Server $ tsql -H (SQL Server IP) -p 1433 -U (account) －P (password) –D (datebase name) # 直接下TSQL，這邊要用go才會執行 $ select * from Team $ go 這邊代表已能在Ubuntu Connect SQL Server 但Rails還需要其他套件
+ Rails Connect to SQL Server (Error) # 安裝tiny_tds、sqlserver adapter $ sudo gem install tiny_tds $ sudo gem install activerecord-sqlserver-adapter 修改DateBase.</description>
     </item>
     
   </channel>

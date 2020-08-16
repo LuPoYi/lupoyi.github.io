@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] 匯出txt檔 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -60,11 +60,11 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ruby] 匯出txt檔"/>
-<meta name="twitter:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
+<meta name="twitter:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html"/>
 
   <meta property="og:title" content="[Ruby] 匯出txt檔" />
-<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
+<meta property="og:description" content="需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&#39;mobile like ?&#39;, &#39;&#43;8869%&#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&#39;mobile_tw.txt&#39; , &#39;w&#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close # 讀取txt file = File.open(&#39;mobile_tw.txt&#39; , &#39;r&#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-txt-file/" />
@@ -119,9 +119,7 @@ http://ruby-doc.org/core-2.1.4/File.html" />
           <a class="tag" href="https://blog.poyi.tw/tags/rails/">rails</a><a class="tag" href="https://blog.poyi.tw/tags/file/">file</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<h4 id="需要在正式環境上撈大量特定資料下來-又不想dump整份database-用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
+      <h4 id="需要在正式環境上撈大量特定資料下來又不想dump整份database用orm來把資料匯出成txt就很方便了">需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了</h4>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 寫入txt</span>
 all_users_mobile = <span style="color:#40ffff">User</span>.where(<span style="color:#ed9d13">&#39;mobile like ?&#39;</span>, <span style="color:#ed9d13">&#39;+8869%&#39;</span>).select(<span style="color:#ed9d13">:mobile</span>).uniq
 
@@ -133,14 +131,15 @@ all_users_mobile.each <span style="color:#6ab825;font-weight:bold">do</span> |mo
 <span style="color:#6ab825;font-weight:bold">end</span>
 
 <span style="color:#999;font-style:italic"># 記得要關掉</span>
-file.close</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 讀取txt</span>
+file.close
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 讀取txt</span>
 file = <span style="color:#40ffff">File</span>.open(<span style="color:#ed9d13">&#39;mobile_tw.txt&#39;</span> , <span style="color:#ed9d13">&#39;r&#39;</span>)
 
 <span style="color:#3677a9">100</span>.times <span style="color:#6ab825;font-weight:bold">do</span>
   file.readline
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
-<p>Reference:</p>
+<span style="color:#6ab825;font-weight:bold">end</span>
 
+</code></pre></div><p>Reference:</p>
 <p><a href="http://ruby-doc.org/core-2.1.4/File.html">http://ruby-doc.org/core-2.1.4/File.html</a></p>
 
     </div>

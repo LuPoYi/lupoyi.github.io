@@ -4,7 +4,7 @@
 <head>
   <title>[Ubuntu] Linux 基本的安全設定 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -117,22 +117,18 @@ if (!doNotTrack) {
           <a class="tag" href="https://blog.poyi.tw/tags/ubuntu/">ubuntu</a><a class="tag" href="https://blog.poyi.tw/tags/security/">security</a><a class="tag" href="https://blog.poyi.tw/tags/fail2ban/">fail2ban</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="列幾個基本款常見的一些設定">列幾個基本款常見的一些設定</h2>
-
+      <h2 id="列幾個基本款常見的一些設定">列幾個基本款常見的一些設定</h2>
 <h2 id="ssh-port更換到別的port">ssh port更換到別的port</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># ssh port更換到別的port</span>
 $ sudo vim /etc/ssh/sshd_config
 Port <span style="color:#3677a9">1968</span>
-$ sudo service sshd restart</code></pre></div>
-<h2 id="開始自動安全性更新">開始自動安全性更新</h2>
+$ sudo service sshd restart
+</code></pre></div><h2 id="開始自動安全性更新">開始自動安全性更新</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ sudo apt-get install unattended-upgrades
  $ sudo dpkg-reconfigure -plow unattended-upgrades
- $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades</code></pre></div>
-<h2 id="ssh-登入盡量用-key-exchange-方式">ssh 登入盡量用 key-exchange 方式</h2>
-
-<h2 id="fail2ban-自動ban掉多次嘗試登入者">fail2ban - 自動ban掉多次嘗試登入者</h2>
+ $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+</code></pre></div><h2 id="ssh-登入盡量用-key-exchange-方式">ssh 登入盡量用 key-exchange 方式</h2>
+<h2 id="fail2ban---自動ban掉多次嘗試登入者">fail2ban - 自動ban掉多次嘗試登入者</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install fail2ban
 
 <span style="color:#999;font-style:italic"># 保留原始conf檔，把設定都寫在.local</span>
@@ -140,7 +136,7 @@ $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 $ vim /etc/fail2ban/jail.local 
 <span style="color:#999;font-style:italic"># 將enabled改成true</span>
   [DEFAULT]
-    <span style="color:#40ffff">ignoreip</span> = <span style="color:#3677a9">127</span>.0.0.1/8
+    <span style="color:#40ffff">ignoreip</span> = 127.0.0.1/8
     <span style="color:#40ffff">bantime</span>  = <span style="color:#3677a9">600</span>
     <span style="color:#40ffff">findtime</span> = <span style="color:#3677a9">600</span>
     <span style="color:#40ffff">maxretry</span> = <span style="color:#3677a9">5</span>
@@ -166,11 +162,11 @@ Status <span style="color:#6ab825;font-weight:bold">for</span> the jail: sshd
 <span style="color:#ed9d13">`</span>- Actions
    |- Currently banned: <span style="color:#3677a9">1</span>
    |- Total banned:     <span style="color:#3677a9">1</span>
-   <span style="color:#ed9d13">`</span>- Banned IP list:   <span style="color:#3677a9">111</span>.248.10.10</code></pre></div>
-<h2 id="設定iptables">設定iptables</h2>
+   <span style="color:#ed9d13">`</span>- Banned IP list:   111.248.10.10
 
-<h4 id="用來過濾該網路封包是否能進出server-預設都是開啟的-若是沒有外部防火牆的話還蠻危險的">用來過濾該網路封包是否能進出server，預設都是開啟的，若是沒有外部防火牆的話還蠻危險的</h4>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">### clear tables
+</code></pre></div><h2 id="設定iptables">設定iptables</h2>
+<h4 id="用來過濾該網路封包是否能進出server預設都是開啟的若是沒有外部防火牆的話還蠻危險的">用來過濾該網路封包是否能進出server，預設都是開啟的，若是沒有外部防火牆的話還蠻危險的</h4>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">### clear tables
 iptables --flush
 iptables --delete-chain
 iptables --table mangle --flush
@@ -206,62 +202,57 @@ iptables --append OUTPUT --jump ACCEPT
 
 
 # 其他客製化設定可參考
-# https://gist.github.com/virtualstaticvoid/1024546</pre></div>
-<h2 id="logrotate-conf">Logrotate.conf</h2>
-
-<h4 id="os層的log大多紀錄在-var-log-底下-而預設開啟logrotate">OS層的log大多紀錄在/var/log/底下，而預設開啟logrotate</h4>
-
-<h4 id="調整-etc-logrotate-conf的自動rotate-把時間拉長或是不使用rotate或是另外備份">調整/etc/logrotate.conf的自動rotate，把時間拉長或是不使用rotate或是另外備份</h4>
-
+# https://gist.github.com/virtualstaticvoid/1024546
+</code></pre></div><h2 id="logrotateconf">Logrotate.conf</h2>
+<h4 id="os層的log大多紀錄在varlog底下而預設開啟logrotate">OS層的log大多紀錄在/var/log/底下，而預設開啟logrotate</h4>
+<h4 id="調整etclogrotateconf的自動rotate把時間拉長或是不使用rotate或是另外備份">調整/etc/logrotate.conf的自動rotate，把時間拉長或是不使用rotate或是另外備份</h4>
 <ul>
 <li>syslog 系統日誌</li>
 <li>dpkg.log 軟體安裝及更新紀錄</li>
-
-<li><p>auth.log 身份確認相關紀錄(使用sudo)</p>
+<li>auth.log 身份確認相關紀錄(使用sudo)</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/logrotate.conf</span>
 /path/to/your/rails/log/*.log {
-daily # 
-dateext
-missingok
-rotate <span style="color:#3677a9">30</span> <span style="color:#999;font-style:italic"># 保留30份</span>
-compress 
-delaycompress
-notifempty
-copytruncate
-}</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/logrotate.d</span>
-<span style="color:#999;font-style:italic"># (略)</span></code></pre></div></li>
-</ul>
+  daily # 
+  dateext
+  missingok
+  rotate <span style="color:#3677a9">30</span> <span style="color:#999;font-style:italic"># 保留30份</span>
+  compress 
+  delaycompress
+  notifempty
+  copytruncate
+}
 
-<p>設定完成可直接執行看是否設定正確，或等明天系統自己run</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">/usr/sbin/logrotate -f /etc/logrotate.conf </pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># wtmp user登入次數及使用時間紀錄</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/logrotate.d</span>
+<span style="color:#999;font-style:italic"># (略)</span>
+</code></pre></div><p>設定完成可直接執行看是否設定正確，或等明天系統自己run</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">/usr/sbin/logrotate -f /etc/logrotate.conf 
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># wtmp user登入次數及使用時間紀錄</span>
 $ last
 $ last -f /var/log/wtmp
-bob      pts/1        <span style="color:#3677a9">1</span>.1.1.1   Tue Aug <span style="color:#3677a9">23</span> <span style="color:#3677a9">13</span>:22   still logged in
-bob      pts/1        <span style="color:#3677a9">1</span>.1.1.1   Sun Aug <span style="color:#3677a9">14</span> <span style="color:#3677a9">06</span>:34 - <span style="color:#3677a9">06</span>:45  (<span style="color:#3677a9">00</span>:10)
-bob      pts/0        <span style="color:#3677a9">1</span>.1.1.1   Sun Aug <span style="color:#3677a9">14</span> <span style="color:#3677a9">05</span>:44 - <span style="color:#3677a9">08</span>:45  (<span style="color:#3677a9">03</span>:00)
-bob      pts/0        <span style="color:#3677a9">1</span>.1.1.1   Sat Aug  <span style="color:#3677a9">6</span> <span style="color:#3677a9">13</span>:14 - <span style="color:#3677a9">05</span>:44 (<span style="color:#3677a9">7</span>+16:29)</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># wtmp user登入失敗紀錄</span>
+bob      pts/1        1.1.1.1   Tue Aug <span style="color:#3677a9">23</span> 13:22   still logged in
+bob      pts/1        1.1.1.1   Sun Aug <span style="color:#3677a9">14</span> 06:34 - 06:45  (00:10)
+bob      pts/0        1.1.1.1   Sun Aug <span style="color:#3677a9">14</span> 05:44 - 08:45  (03:00)
+bob      pts/0        1.1.1.1   Sat Aug  <span style="color:#3677a9">6</span> 13:14 - 05:44 (7+16:29)
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># wtmp user登入失敗紀錄</span>
 $ sudo lastb
 $ last -f /var/log/btmp
-bob      pts/1        <span style="color:#3677a9">1</span>.1.1.1   Tue Aug <span style="color:#3677a9">23</span> <span style="color:#3677a9">13</span>:22   still logged in
-bob      pts/1        <span style="color:#3677a9">1</span>.1.1.1   Sun Aug <span style="color:#3677a9">14</span> <span style="color:#3677a9">06</span>:34 - <span style="color:#3677a9">06</span>:45  (<span style="color:#3677a9">00</span>:10)
-bob      pts/0        <span style="color:#3677a9">1</span>.1.1.1   Sun Aug <span style="color:#3677a9">14</span> <span style="color:#3677a9">05</span>:44 - <span style="color:#3677a9">08</span>:45  (<span style="color:#3677a9">03</span>:00)
-bob      pts/0        <span style="color:#3677a9">1</span>.1.1.1   Sat Aug  <span style="color:#3677a9">6</span> <span style="color:#3677a9">13</span>:14 - <span style="color:#3677a9">05</span>:44 (<span style="color:#3677a9">7</span>+16:29)</code></pre></div>
-<h2 id="關閉root-ssh登入">關閉root ssh登入</h2>
+bob      pts/1        1.1.1.1   Tue Aug <span style="color:#3677a9">23</span> 13:22   still logged in
+bob      pts/1        1.1.1.1   Sun Aug <span style="color:#3677a9">14</span> 06:34 - 06:45  (00:10)
+bob      pts/0        1.1.1.1   Sun Aug <span style="color:#3677a9">14</span> 05:44 - 08:45  (03:00)
+bob      pts/0        1.1.1.1   Sat Aug  <span style="color:#3677a9">6</span> 13:14 - 05:44 (7+16:29)
+</code></pre></div><h2 id="關閉root-ssh登入">關閉root ssh登入</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># /etc/ssh/sshd_config</span>
 <span style="color:#999;font-style:italic"># Authentication:</span>
 LoginGraceTime <span style="color:#3677a9">120</span>
 PermitRootLogin prohibit-password 
 <span style="color:#999;font-style:italic"># 新版本ssh root登入預設不能使用密碼登入，僅可用key(有設定的話)</span>
 <span style="color:#999;font-style:italic"># 也可以直接改成 PermitRootLogin no 直接擋掉</span>
-StrictModes yes</code></pre></div>
-<p>Reference:</p>
-
+StrictModes yes
+</code></pre></div><p>Reference:</p>
 <p><a href="https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/">https://blog.camel2243.com/2016/02/29/ubuntu-fail2ban-%E9%98%B2%E6%AD%A2-ssh-%E6%9A%B4%E5%8A%9B%E5%98%97%E8%A9%A6%E5%AF%86%E7%A2%BC/</a></p>
-
 <p><a href="http://www.vixual.net/blog/archives/252">http://www.vixual.net/blog/archives/252</a></p>
-
 <p><a href="http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95">http://yuanann.pixnet.net/blog/post/16610463-linux-%3Assh-%E6%9B%B4%E6%94%B9%E9%A0%90%E8%A8%ADport%E7%9A%84%E6%96%B9%E6%B3%95</a></p>
-
 <p><a href="https://help.ubuntu.com/lts/serverguide/automatic-updates.html">https://help.ubuntu.com/lts/serverguide/automatic-updates.html</a></p>
 
     </div>

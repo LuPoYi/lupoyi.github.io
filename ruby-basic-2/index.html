@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] 教學 - 基本使用介紹2 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ruby] 教學 - 基本使用介紹2"/>
-<meta name="twitter:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)# 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc."/>
+<meta name="twitter:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8) # 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc."/>
 
   <meta property="og:title" content="[Ruby] 教學 - 基本使用介紹2" />
-<meta property="og:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8)# 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc." />
+<meta property="og:description" content="Define Methods # 基本的method定義 def temp puts 123 end temp() temp def temp(a,b,c) puts “#{a} , #{b}, #{c}” end temp(1,2,3) temp 1 , 2 , 3 def temp(a,b,c=99) # 第三個參數若沒傳入的話預設值為99 puts “#{a} , #{b}, #{c}” end temp() # wrong arguments (0 for 2..3) 錯誤訊息提示傳入值需要2~3個 temp(1,2) temp(1,2,3) def temp(a,b,c=99, *argv) ap [a,b,c,argv] end temp() # wrong arguments (0 for 2&#43;) 錯誤訊息提示傳入值需要2個以上 temp(1,2,3,4,5,6,7,8) # 進階的method定義 (block) def temp(&amp;block) end temp(1) #=&gt; wrong number of arguments (1 for 0) &amp;block不是傳入的參數 temp() #=&gt; nil temp(){puts &#34;temp&#34;} #=&gt; nil  # 當temp()後面有block時會把這一段code放置&amp;block當中，但因為裡面沒有呼叫它執行所以nil def temp2(&amp;abc) abc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-basic-2/" />
 <meta property="article:published_time" content="2015-04-12T00:00:00+00:00" />
@@ -110,9 +110,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="define-methods">Define Methods</h2>
+      <h2 id="define-methods">Define Methods</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 基本的method定義</span>
 <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>
   <span style="color:#24909d">puts</span> <span style="color:#3677a9">123</span>
@@ -138,7 +136,8 @@ temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<
   ap [a,b,c,argv]
 <span style="color:#6ab825;font-weight:bold">end</span>
 temp()  <span style="color:#999;font-style:italic"># wrong arguments (0 for 2+) 錯誤訊息提示傳入值需要2個以上</span>
-temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<span style="color:#3677a9">3</span>,<span style="color:#3677a9">4</span>,<span style="color:#3677a9">5</span>,<span style="color:#3677a9">6</span>,<span style="color:#3677a9">7</span>,<span style="color:#3677a9">8</span>)</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 進階的method定義 (block)</span>
+temp(<span style="color:#3677a9">1</span>,<span style="color:#3677a9">2</span>,<span style="color:#3677a9">3</span>,<span style="color:#3677a9">4</span>,<span style="color:#3677a9">5</span>,<span style="color:#3677a9">6</span>,<span style="color:#3677a9">7</span>,<span style="color:#3677a9">8</span>)
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 進階的method定義 (block)</span>
 <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">temp</span>(&amp;block)
 <span style="color:#6ab825;font-weight:bold">end</span>
 
@@ -152,7 +151,8 @@ temp(){<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;
   abc.call
 <span style="color:#6ab825;font-weight:bold">end</span>
 
-temp2{<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;gogo&#34;</span>} <span style="color:#999;font-style:italic">#=&gt; &#34;gogo&#34;</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># class methods  / instance methods</span>
+temp2{<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;gogo&#34;</span>} <span style="color:#999;font-style:italic">#=&gt; &#34;gogo&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># class methods  / instance methods</span>
 <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Car</span>
   <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf;text-decoration:underline">self</span>.<span style="color:#447fcf">hi</span>
     <span style="color:#24909d">puts</span> <span style="color:#a61717;background-color:#e3d2d2">“</span>aaa<span style="color:#a61717;background-color:#e3d2d2">”</span>
@@ -164,41 +164,35 @@ temp2{<span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;g
 
 car = <span style="color:#40ffff">Car</span>.new
 <span style="color:#40ffff">Car</span>.hi <span style="color:#999;font-style:italic">#=&gt; &#34;aaa&#34;</span>
-car.hi <span style="color:#999;font-style:italic">#=&gt; &#34;bbb&#34;</span></code></pre></div>
-<ul>
+car.hi <span style="color:#999;font-style:italic">#=&gt; &#34;bbb&#34;</span>
+</code></pre></div><ul>
 <li>attr_accessor 自動設定setter &amp; getter</li>
 <li>attr_reader 設定getter</li>
-
-<li><p>attr_writer 設定setter</p>
+<li>attr_writer 設定setter</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># attr_accessor 等同於 getter &amp; setter</span>
 <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Person</span>
-<span style="color:#999;font-style:italic"># attr_accessor :name </span>
-<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span> <span style="color:#999;font-style:italic"># getter</span>
-@name
-<span style="color:#6ab825;font-weight:bold">end</span>
+  <span style="color:#999;font-style:italic"># attr_accessor :name </span>
+  <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span> <span style="color:#999;font-style:italic"># getter</span>
+    @name
+  <span style="color:#6ab825;font-weight:bold">end</span>
 
-<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span>=(str) <span style="color:#999;font-style:italic"># setter</span>
-@name = str
-<span style="color:#6ab825;font-weight:bold">end</span>
+  <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">name</span>=(str) <span style="color:#999;font-style:italic"># setter</span>
+    @name = str
+  <span style="color:#6ab825;font-weight:bold">end</span>
 <span style="color:#6ab825;font-weight:bold">end</span>
 
 person = <span style="color:#40ffff">Person</span>.new
 person.name = <span style="color:#ed9d13">&#39;Bob&#39;</span> <span style="color:#999;font-style:italic"># setter</span>
-person.name <span style="color:#999;font-style:italic"># =&gt; &#34;bob&#34; # getter</span></code></pre></div></li>
-
-<li><p>$name:全域變數</p></li>
-
-<li><p>@name:實例變數，作用域僅限定於 self 指示的物件</p></li>
-
-<li><p>@@name: 類別變數，在class內才使用，跨class</p></li>
-
-<li><p>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</p></li>
-
-<li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p></li>
+person.name <span style="color:#999;font-style:italic"># =&gt; &#34;bob&#34; # getter</span>
+</code></pre></div><ul>
+<li>$name:全域變數</li>
+<li>@name:實例變數，作用域僅限定於 self 指示的物件</li>
+<li>@@name: 類別變數，在class內才使用，跨class</li>
+<li>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</li>
+<li>Name:常數(大寫開頭；重覆定義時會出現警告)</li>
 </ul>
-
-<h4 id="class-module">Class &amp; Module</h4>
-
+<h4 id="class--module">Class &amp; Module</h4>
 <p>Moudule只是一個不能被new的class</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># class / module </span>
 <span style="color:#40ffff">Class</span>.superclass <span style="color:#999;font-style:italic">#=&gt; module </span>
@@ -214,9 +208,8 @@ person.name <span style="color:#999;font-style:italic"># =&gt; &#34;bob&#34; # g
 <span style="color:#6ab825;font-weight:bold">end</span>
 
 kitty = <span style="color:#40ffff">Cat</span>.new
-kitty.fly  </code></pre></div>
-<h4 id="error-handling">Error Handling</h4>
-
+kitty.fly  
+</code></pre></div><h4 id="error-handling">Error Handling</h4>
 <p>沒額外指定變數的話，錯誤資訊會放至$!(ERROR_INFO)及$@(ERROR_POSITION)</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#6ab825;font-weight:bold">begin</span>
   <span style="color:#999;font-style:italic"># 有機會發生例外的code</span>
@@ -224,7 +217,8 @@ kitty.fly  </code></pre></div>
   <span style="color:#999;font-style:italic"># 發現例外後要執行的code</span>
 <span style="color:#6ab825;font-weight:bold">ensure</span>
   <span style="color:#999;font-style:italic"># 無論是否例外都會執行的code</span>
-<span style="color:#6ab825;font-weight:bold">end</span></code></pre></div>
+<span style="color:#6ab825;font-weight:bold">end</span>
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

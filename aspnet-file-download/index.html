@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] 檔案下載寫法 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[ASP.NET] 檔案下載寫法"/>
-<meta name="twitter:description" content="Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &#34;C:/porn.jpg&#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &#34;application/octet-stream&#34;; // 指定檔案類型 	Response.AddHeader(&#34;Content-Disposition&#34;,&#34;attachment;filename=&#34;&#43;&#34;porn.jpg&#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&#34;Content-Length&#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &#34;C:/porn.jpg&#34;; // 設定路徑 	byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 	Response."/>
+<meta name="twitter:description" content="Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &#34;C:/porn.jpg&#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &#34;application/octet-stream&#34;; // 指定檔案類型 	Response.AddHeader(&#34;Content-Disposition&#34;,&#34;attachment;filename=&#34;&#43;&#34;porn.jpg&#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&#34;Content-Length&#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End(); System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &#34;C:/porn.jpg&#34;; // 設定路徑  byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱  Response."/>
 
   <meta property="og:title" content="[ASP.NET] 檔案下載寫法" />
-<meta property="og:description" content="Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &#34;C:/porn.jpg&#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &#34;application/octet-stream&#34;; // 指定檔案類型 	Response.AddHeader(&#34;Content-Disposition&#34;,&#34;attachment;filename=&#34;&#43;&#34;porn.jpg&#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&#34;Content-Length&#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &#34;C:/porn.jpg&#34;; // 設定路徑 	byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 	Response." />
+<meta property="og:description" content="Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &#34;C:/porn.jpg&#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &#34;application/octet-stream&#34;; // 指定檔案類型 	Response.AddHeader(&#34;Content-Disposition&#34;,&#34;attachment;filename=&#34;&#43;&#34;porn.jpg&#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&#34;Content-Length&#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End(); System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &#34;C:/porn.jpg&#34;; // 設定路徑  byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱  Response." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/aspnet-file-download/" />
 <meta property="article:published_time" content="2013-08-28T00:00:00+00:00" />
@@ -110,9 +110,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="response-writefile-檔案下載方式一">Response.WriteFile 檔案下載方式一</h2>
+      <h2 id="responsewritefile-檔案下載方式一">Response.WriteFile 檔案下載方式一</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.IO</span>;
 	
 	<span style="color:#6ab825;font-weight:bold">string</span> filePath = <span style="color:#ed9d13">&#34;C:/porn.jpg&#34;</span>;
@@ -126,23 +124,20 @@ if (!doNotTrack) {
 </span><span style="color:#999;font-style:italic"></span>	Response.WriteFile(file.FullName);
 	Response.Flush();
 	Response.End();
-</code></pre></div>
-<h2 id="system-net-webclient-downloaddata-檔案下載方式二">System.Net.WebClient.DownloadData 檔案下載方式二</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Net</span>;
-	 
-	WebClient wc = <span style="color:#6ab825;font-weight:bold">new</span> WebClient();
-	<span style="color:#6ab825;font-weight:bold">byte</span>[] byteFile = <span style="color:#6ab825;font-weight:bold">null</span>;
-	<span style="color:#6ab825;font-weight:bold">string</span> path = <span style="color:#ed9d13">&#34;C:/porn.jpg&#34;</span>; <span style="color:#999;font-style:italic">// 設定路徑
-</span><span style="color:#999;font-style:italic"></span>	byteFile = wc.DownloadData(path);
-	<span style="color:#6ab825;font-weight:bold">string</span> fileName = System.IO.Path.GetFileName(path); <span style="color:#999;font-style:italic">// 取得檔案名稱
-</span><span style="color:#999;font-style:italic"></span>	Response.AppendHeader(<span style="color:#ed9d13">&#34;content-disposition&#34;</span>, <span style="color:#ed9d13">&#34;attachment;filename=&#34;</span> + <span style="color:#ed9d13">&#34;porn.jpg&#34;</span>); <span style="color:#999;font-style:italic">//設定檔名
-</span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">// HttpContext.Current.Server.UrlEncode(fileName) 解決中文檔名亂碼
-</span><span style="color:#999;font-style:italic"></span>	Response.ContentType = <span style="color:#ed9d13">&#34;application/octet-stream&#34;</span>;  <span style="color:#999;font-style:italic">// 指定檔案類型	
-</span><span style="color:#999;font-style:italic"></span>	Response.BinaryWrite(byteFile); <span style="color:#999;font-style:italic">// 內容轉出作檔案下載
-</span><span style="color:#999;font-style:italic"></span>	Response.End();
-</code></pre></div>
-<h2 id="參考資料">參考資料</h2>
-
+</code></pre></div><h2 id="systemnetwebclientdownloaddata-檔案下載方式二">System.Net.WebClient.DownloadData 檔案下載方式二</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">   <span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Net</span>;
+    
+   WebClient wc = <span style="color:#6ab825;font-weight:bold">new</span> WebClient();
+   <span style="color:#6ab825;font-weight:bold">byte</span>[] byteFile = <span style="color:#6ab825;font-weight:bold">null</span>;
+   <span style="color:#6ab825;font-weight:bold">string</span> path = <span style="color:#ed9d13">&#34;C:/porn.jpg&#34;</span>; <span style="color:#999;font-style:italic">// 設定路徑
+</span><span style="color:#999;font-style:italic"></span>   byteFile = wc.DownloadData(path);
+   <span style="color:#6ab825;font-weight:bold">string</span> fileName = System.IO.Path.GetFileName(path); <span style="color:#999;font-style:italic">// 取得檔案名稱
+</span><span style="color:#999;font-style:italic"></span>   Response.AppendHeader(<span style="color:#ed9d13">&#34;content-disposition&#34;</span>, <span style="color:#ed9d13">&#34;attachment;filename=&#34;</span> + <span style="color:#ed9d13">&#34;porn.jpg&#34;</span>); <span style="color:#999;font-style:italic">//設定檔名
+</span><span style="color:#999;font-style:italic"></span>   <span style="color:#999;font-style:italic">// HttpContext.Current.Server.UrlEncode(fileName) 解決中文檔名亂碼
+</span><span style="color:#999;font-style:italic"></span>   Response.ContentType = <span style="color:#ed9d13">&#34;application/octet-stream&#34;</span>;  <span style="color:#999;font-style:italic">// 指定檔案類型	
+</span><span style="color:#999;font-style:italic"></span>   Response.BinaryWrite(byteFile); <span style="color:#999;font-style:italic">// 內容轉出作檔案下載
+</span><span style="color:#999;font-style:italic"></span>   Response.End();
+</code></pre></div><h2 id="參考資料">參考資料</h2>
 <p><a href="http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx">http://www.dotblogs.com.tw/jerrymow/archive/2013/04/22/102084.aspx</a>
 <a href="http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx">http://blog.miniasp.com/post/2008/03/12/Caution-about-ASPNET-Response-a-Large-File.aspx</a>
 <a href="http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx">http://www.dotblogs.com.tw/whitewing/archive/2010/03/18/14102.aspx</a></p>

@@ -4,7 +4,7 @@
 <head>
   <title>[Golang] Golang 101 入門筆記 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Golang] Golang 101 入門筆記"/>
-<meta name="twitter:description" content="Hello Go! // hello.go package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!"/>
+<meta name="twitter:description" content="Hello Go! // hello.go package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) } $ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!"/>
 
   <meta property="og:title" content="[Golang] Golang 101 入門筆記" />
-<meta property="og:description" content="Hello Go! // hello.go package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!" />
+<meta property="og:description" content="Hello Go! // hello.go package main import &#34;fmt&#34; func main() { fmt.Println(&#34;hello, go!&#34;) } $ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &#34;iota&#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &#34;Hello Go!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/golang-beginning/" />
 <meta property="article:published_time" content="2016-04-02T00:00:00+00:00" />
@@ -110,9 +110,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="hello-go">Hello Go!</h2>
+      <h2 id="hello-go">Hello Go!</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#999;font-style:italic">// hello.go
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">package</span> main
 
@@ -120,10 +118,10 @@ if (!doNotTrack) {
 
 <span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">main</span>() {
     fmt.<span style="color:#447fcf">Println</span>(<span style="color:#ed9d13">&#34;hello, go!&#34;</span>)
-}</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run hello.go
-Hello Go!</code></pre></div>
-<h2 id="基本結構-定義變數">基本結構、定義變數</h2>
-
+}
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go run hello.go
+Hello Go!
+</code></pre></div><h2 id="基本結構定義變數">基本結構、定義變數</h2>
 <h3 id="常數">常數</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#999;font-style:italic">// 常數 const identifier [type] = value
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">const</span> Pi = <span style="color:#3677a9">3.14159</span>
@@ -133,8 +131,8 @@ Hello Go!</code></pre></div>
   Female = <span style="color:#3677a9">1</span>
   Male = <span style="color:#3677a9">2</span>
 )
-// <span style="color:#ed9d13">&#34;iota&#34;</span></code></pre></div>
-<h3 id="變數">變數</h3>
+<span style="color:#999;font-style:italic">// &#34;iota&#34;
+</span></code></pre></div><h3 id="變數">變數</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#999;font-style:italic">// 變數 var identifier type / var identifier [type] = value
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">var</span> a <span style="color:#6ab825;font-weight:bold">int</span>
 <span style="color:#6ab825;font-weight:bold">var</span> b <span style="color:#6ab825;font-weight:bold">bool</span>
@@ -148,23 +146,21 @@ Hello Go!</code></pre></div>
 
 <span style="color:#999;font-style:italic">// := 初始化並給值(local限定)
 </span><span style="color:#999;font-style:italic"></span>i := <span style="color:#3677a9">1</span>
-s := <span style="color:#ed9d13">&#34;hi&#34;</span></code></pre></div>
-<h3 id="類型轉換">類型轉換</h3>
-
+s := <span style="color:#ed9d13">&#34;hi&#34;</span>
+</code></pre></div><h3 id="類型轉換">類型轉換</h3>
 <ul>
 <li>int : int8, int16, int32, int64</li>
 <li>uint : uint8, uint16, uint32, uint64</li>
 <li>float: float32, float64</li>
 </ul>
-
 <p>不同類型之間做計算都需要經過類型轉換</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#999;font-style:italic">// 類型轉換 valueOfTypeB = typeB(valueOfTypeA)
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">var</span> a <span style="color:#6ab825;font-weight:bold">int</span>
 <span style="color:#6ab825;font-weight:bold">var</span> b <span style="color:#6ab825;font-weight:bold">int32</span>
 a = <span style="color:#3677a9">15</span>
 b = a + <span style="color:#3677a9">6</span> <span style="color:#999;font-style:italic">// cannot use a + 6 (type int) as type int32 in assignment
-</span><span style="color:#999;font-style:italic"></span>b = <span style="color:#24909d">int32</span>(a) + <span style="color:#3677a9">6</span></code></pre></div>
-<h3 id="指針">指針</h3>
+</span><span style="color:#999;font-style:italic"></span>b = <span style="color:#24909d">int32</span>(a) + <span style="color:#3677a9">6</span>
+</code></pre></div><h3 id="指針">指針</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#999;font-style:italic">// pointer
 </span><span style="color:#999;font-style:italic">// 若有一個變數為abc，則 &amp;abc 可取得 abc 的記憶體位置
 </span><span style="color:#999;font-style:italic"></span>  <span style="color:#6ab825;font-weight:bold">var</span> i1 = <span style="color:#3677a9">5</span>
@@ -173,8 +169,9 @@ b = a + <span style="color:#3677a9">6</span> <span style="color:#999;font-style:
 <span style="color:#999;font-style:italic">// 要直接定義pointer的話，使用 *abc
 </span><span style="color:#999;font-style:italic"></span>  <span style="color:#6ab825;font-weight:bold">var</span> intP *<span style="color:#6ab825;font-weight:bold">int</span>
   intP = &amp;i1
-  fmt.<span style="color:#447fcf">Printf</span>(<span style="color:#ed9d13">&#34;The value at memory location %p is %d\n&#34;</span>, intP, *intP)</code></pre></div>
-<h2 id="判斷式-迴圈">判斷式、迴圈</h2>
+  fmt.<span style="color:#447fcf">Printf</span>(<span style="color:#ed9d13">&#34;The value at memory location %p is %d\n&#34;</span>, intP, *intP)
+
+</code></pre></div><h2 id="判斷式迴圈">判斷式、迴圈</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#6ab825;font-weight:bold">if</span> abc &gt; <span style="color:#3677a9">5</span> {
 
 } <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#6ab825;font-weight:bold">if</span> abc &lt; -<span style="color:#3677a9">5</span>  {
@@ -197,8 +194,8 @@ b = a + <span style="color:#3677a9">6</span> <span style="color:#999;font-style:
 }
 
 <span style="color:#999;font-style:italic">// break 中斷並跳出迴圈或判斷式
-</span><span style="color:#999;font-style:italic"></span>// <span style="color:#6ab825;font-weight:bold">continue</span> 略過當次剩餘的code<span style="color:#a61717;background-color:#e3d2d2">，</span>直接跳至迴圈下一run</code></pre></div>
-<h2 id="function">Function</h2>
+</span><span style="color:#999;font-style:italic">// continue 略過當次剩餘的code，直接跳至迴圈下一run
+</span></code></pre></div><h2 id="function">Function</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">say</span>() {
   <span style="color:#24909d">println</span>(<span style="color:#ed9d13">&#34;Hi~&#34;</span>)
 }
@@ -218,17 +215,14 @@ b = a + <span style="color:#3677a9">6</span> <span style="color:#999;font-style:
 
 <span style="color:#6ab825;font-weight:bold">func</span> <span style="color:#447fcf">Min</span>(a ...<span style="color:#6ab825;font-weight:bold">int</span>) <span style="color:#6ab825;font-weight:bold">int</span> {
 
-}</code></pre></div>
-<h2 id="其他備忘">其他備忘</h2>
-
+}
+</code></pre></div><h2 id="其他備忘">其他備忘</h2>
 <ul>
 <li>不同類型之間做計算都需要經過類型轉換</li>
 <li>import library 或是變數卻沒使用的話會跳錯</li>
 <li>駝峰式命名</li>
 </ul>
-
 <p>Reference:</p>
-
 <p><a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md">https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md</a></p>
 
     </div>

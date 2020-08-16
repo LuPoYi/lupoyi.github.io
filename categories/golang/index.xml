@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Bob 學習筆記</title>
@@ -20,8 +20,8 @@
       <description>gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
 有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
 以下使用go實作server端，ruby實作client端
-Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
-syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
+Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools ├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
+syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;}由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@ syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHell
       <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/golang-beginning/</guid>
-      <description>Hello Go! // hello.go package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello, go!&amp;#34;) }$ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;#34;iota&amp;#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;#34;Hello Go!</description>
+      <description>Hello Go! // hello.go package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello, go!&amp;#34;) } $ go run hello.go Hello Go! 基本結構、定義變數 常數 // 常數 const identifier [type] = value const Pi = 3.14159 const Monday, Tuesday, Wednesday, Thursday, Friday, Saturday = 1, 2, 3, 4, 5, 6 const ( Unknown = 0 Female = 1 Male = 2 ) // &amp;#34;iota&amp;#34; 變數 // 變數 var identifier type / var identifier [type] = value var a int var b bool var str string var a int = 15 var i = 5 var b bool = false var str string = &amp;#34;Hello Go!</description>
     </item>
     
   </channel>

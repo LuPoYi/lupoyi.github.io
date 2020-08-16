@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rails on Bob 學習筆記</title>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 26 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/rails-ubuntu-environment-ubuntu16-dot-04/</guid>
-      <description># 建立user sudo adduser bob sudo adduser bob sudo su bob# 安裝常用lib sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails # 使用rbenv來管理ruby cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.</description>
+      <description># 建立user sudo adduser bob sudo adduser bob sudo su bob # 安裝常用lib sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails # 使用rbenv來管理ruby cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/rails-mac-os-environment-sierra/</guid>
-      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres</description>
+      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34; # Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3 # Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash # others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres </description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/ruby-txt-file/</guid>
-      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&amp;#39;mobile like ?&amp;#39;, &amp;#39;+8869%&amp;#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;w&amp;#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close# 讀取txt file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;r&amp;#39;) 100.times do file.readline end Reference:
+      <description>需要在正式環境上撈大量特定資料下來，又不想dump整份database，用ORM來把資料匯出成txt就很方便了 # 寫入txt all_users_mobile = User.where(&amp;#39;mobile like ?&amp;#39;, &amp;#39;+8869%&amp;#39;).select(:mobile).uniq # 建立txt並給予寫入權限 file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;w&amp;#39;) all_users_mobile.each do |mobile| file.puts mobile # 一行一筆mobile end # 記得要關掉 file.close # 讀取txt file = File.open(&amp;#39;mobile_tw.txt&amp;#39; , &amp;#39;r&amp;#39;) 100.times do file.readline end Reference:
 http://ruby-doc.org/core-2.1.4/File.html</description>
     </item>
     
@@ -46,9 +46,9 @@ http://ruby-doc.org/core-2.1.4/File.html</description>
       
       <guid>https://blog.poyi.tw/ruby-csv-file/</guid>
       <description>讀取或寫入csv在ruby都蠻方便的，只是編碼或格式要稍微注意一下
-匯出csv header = [&amp;#39;name&amp;#39;,&amp;#39;money&amp;#39;,&amp;#39;age&amp;#39;] body = [&amp;#39;ruby&amp;#39;,&amp;#39;1000&amp;#39;,&amp;#39;18&amp;#39;] bom = &amp;#34;\uFEFF&amp;#34; # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = bom) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end csv_string.force_encoding(&amp;#39;big5&amp;#39;)# 直接產出檔案 CSV.open(&amp;#34;export.csv&amp;#34;,&amp;#34;w&amp;#34;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end# 直接產出檔案 CSV.open(&amp;#34;filename.csv&amp;#34;, &amp;#34;w&amp;#34;) do |csv| csv.to_io.write &amp;#34;\uFEFF&amp;#34; datas.each{|data| csv &amp;lt;&amp;lt; data} end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛
+匯出csv header = [&amp;#39;name&amp;#39;,&amp;#39;money&amp;#39;,&amp;#39;age&amp;#39;] body = [&amp;#39;ruby&amp;#39;,&amp;#39;1000&amp;#39;,&amp;#39;18&amp;#39;] bom = &amp;#34;\uFEFF&amp;#34; # 加入BOM，解決excel中文亂碼 csv_string = CSV.generate(csv = bom) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end csv_string.force_encoding(&amp;#39;big5&amp;#39;) # 直接產出檔案 CSV.open(&amp;#34;export.csv&amp;#34;,&amp;#34;w&amp;#34;) do |csv| csv &amp;lt;&amp;lt; header csv &amp;lt;&amp;lt; body end # 直接產出檔案 CSV.open(&amp;#34;filename.csv&amp;#34;, &amp;#34;w&amp;#34;) do |csv| csv.to_io.write &amp;#34;\uFEFF&amp;#34; datas.each{|data| csv &amp;lt;&amp;lt; data} end 半形轉全形 在某些情況會需要轉出全形字元，照理說不用才對，可能是因為合作對方的系統太爛
 其實也不太確定怎解，我單純用硬幹的方式
-# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[0-9]/){|a|(a.ord + 41599).</description>
+# convert_to_wide_word 大小寫英文數字轉全形字元 def self.convert_to_wide_word(text) text.gsub(/[a-v]/){|a|(a.ord + 41608).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[w-z]/){|a|(a.ord + 41673).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .gsub(/[A-Z]/){|a|(a.ord + 41614).chr(&amp;#39;big5&amp;#39;).encode(&amp;#39;utf-8&amp;#39;)} .</description>
     </item>
     
   </channel>

@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] 呼叫執行檔 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[ASP.NET] 呼叫執行檔"/>
-<meta name="twitter:description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); "/>
+<meta name="twitter:description" content="執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start(); Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); "/>
 
   <meta property="og:title" content="[ASP.NET] 呼叫執行檔" />
-<meta property="og:description" content=" 執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start();  Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); " />
+<meta property="og:description" content="執行指定檔案(or .exe) Client端 Process p = new Process(); p.StartInfo.FileName = &#34;@&#34;C:\Users\PoYi\Desktop\test.txt&#34;&#34;; p.Start(); Server端 System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(); psi.FileName = @&#34;C:\Users\PoYi\Desktop\test.txt&#34;; psi.Arguments=&#34;&#34;; System.Diagnostics.Process.Start(psi); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/aspnet-implementation/" />
 <meta property="article:published_time" content="2013-09-04T00:00:00+00:00" />
@@ -110,16 +110,12 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="執行指定檔案-or-exe">執行指定檔案(or .exe)</h2>
-
+      <h2 id="執行指定檔案or-exe">執行指定檔案(or .exe)</h2>
 <h2 id="client端">Client端</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	Process p = <span style="color:#6ab825;font-weight:bold">new</span> Process();
 	p.StartInfo.FileName   = <span style="color:#ed9d13">&#34;@&#34;</span>C:<span style="color:#a61717;background-color:#e3d2d2">\</span>Users<span style="color:#a61717;background-color:#e3d2d2">\</span>PoYi<span style="color:#a61717;background-color:#e3d2d2">\</span>Desktop<span style="color:#a61717;background-color:#e3d2d2">\</span>test.txt<span style="color:#ed9d13">&#34;&#34;</span>;
 	p.Start();
-</code></pre></div>
-<h2 id="server端">Server端</h2>
+</code></pre></div><h2 id="server端">Server端</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	System.Diagnostics.ProcessStartInfo psi = <span style="color:#6ab825;font-weight:bold">new</span> System.Diagnostics.ProcessStartInfo();
 	psi.FileName = <span style="color:#ed9d13">@&#34;C:\Users\PoYi\Desktop\test.txt&#34;</span>;
 	psi.Arguments=<span style="color:#ed9d13">&#34;&#34;</span>;

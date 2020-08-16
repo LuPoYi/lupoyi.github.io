@@ -4,7 +4,7 @@
 <head>
   <title>[Ruby] 變數 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -61,15 +61,13 @@ if (!doNotTrack) {
 <meta name="twitter:description" content="Ruby 有一個重要特性 Convention Over Configuration
 希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)
 Ruby命名也有一定的慣例
- $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)
-# 全域變數 vs 實例變數 vs 區域變數 ruby&gt; $foo =&gt; nil ruby&gt; @foo =&gt; nil ruby&gt; foo ERR: (eval):1: undefined local variable or method `foo&#39; for main(Object) ruby&gt; Foo = 2 =&gt; 2 ruby&gt; Foo = 3 =&gt; warning: alread initialized constant Foo =&gt; 3  "/>
+ $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)  # 全域變數 vs 實例變數 vs 區域變數 ruby&gt; $foo =&gt; nil ruby&gt; @foo =&gt; nil ruby&gt; foo ERR: (eval):1: undefined local variable or method `foo&#39; for main(Object) ruby&gt; Foo = 2 =&gt; 2 ruby&gt; Foo = 3 =&gt; warning: alread initialized constant Foo =&gt; 3 "/>
 
   <meta property="og:title" content="[Ruby] 變數" />
 <meta property="og:description" content="Ruby 有一個重要特性 Convention Over Configuration
 希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)
 Ruby命名也有一定的慣例
- $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)
-# 全域變數 vs 實例變數 vs 區域變數 ruby&gt; $foo =&gt; nil ruby&gt; @foo =&gt; nil ruby&gt; foo ERR: (eval):1: undefined local variable or method `foo&#39; for main(Object) ruby&gt; Foo = 2 =&gt; 2 ruby&gt; Foo = 3 =&gt; warning: alread initialized constant Foo =&gt; 3  " />
+ $name:全域變數 @name:實例變數，作用域僅限定於 self 指示的物件 name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值) Name:常數(大寫開頭；重覆定義時會出現警告)  # 全域變數 vs 實例變數 vs 區域變數 ruby&gt; $foo =&gt; nil ruby&gt; @foo =&gt; nil ruby&gt; foo ERR: (eval):1: undefined local variable or method `foo&#39; for main(Object) ruby&gt; Foo = 2 =&gt; 2 ruby&gt; Foo = 3 =&gt; warning: alread initialized constant Foo =&gt; 3 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ruby-is-a-small-note/" />
 <meta property="article:published_time" content="2013-12-14T00:00:00+00:00" />
@@ -119,31 +117,28 @@ Ruby命名也有一定的慣例
     </header>
     <div class="post-content">
       <p>Ruby 有一個重要特性 <strong>Convention Over Configuration</strong></p>
-
 <p>希望去做到一個約定成俗的習慣/慣例，省去過多的設定，讓程式更為簡潔。(ex:route maping)</p>
-
 <p>Ruby命名也有一定的慣例</p>
-
 <ul>
 <li>$name:全域變數</li>
 <li>@name:實例變數，作用域僅限定於 self 指示的物件</li>
 <li>name:區域變數(小寫字母或底線開頭；初始化前並沒有 nil 值)</li>
-
-<li><p>Name:常數(大寫開頭；重覆定義時會出現警告)</p>
+<li>Name:常數(大寫開頭；重覆定義時會出現警告)</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#999;font-style:italic"># 全域變數 vs 實例變數 vs 區域變數</span>
 ruby&gt; $foo
 	=&gt; <span style="color:#6ab825">nil</span>
 ruby&gt; @foo
-=&gt; <span style="color:#6ab825">nil</span>
+  =&gt; <span style="color:#6ab825">nil</span>
 ruby&gt; foo
 <span style="color:#ed9d13">ERR</span>: (<span style="color:#24909d">eval</span>):<span style="color:#3677a9">1</span>: undefined local variable <span style="color:#6ab825;font-weight:bold">or</span> <span style="color:#24909d">method</span> <span style="color:#ed9d13">`foo&#39; for main(Object)
 </span><span style="color:#ed9d13">ruby&gt; Foo = 2
 </span><span style="color:#ed9d13">	=&gt; 2
 </span><span style="color:#ed9d13">ruby&gt; Foo = 3
-</span><span style="color:#ed9d13">=&gt; warning: alread initialized constant Foo
-</span><span style="color:#ed9d13">=&gt; 3</span></code></pre></div></li>
-</ul>
-
+</span><span style="color:#ed9d13">  =&gt; warning: alread initialized constant Foo
+</span><span style="color:#ed9d13">  =&gt; 3
+</span><span style="color:#ed9d13">
+</span></code></pre></div>
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

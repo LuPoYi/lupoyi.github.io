@@ -4,7 +4,7 @@
 <head>
   <title>[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -60,10 +60,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave"/>
-<meta name="twitter:description" content="# Installing Homebrew ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39; &gt;&gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres"/>
+<meta name="twitter:description" content="# Installing Homebrew ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34; # Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39; &gt;&gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3 # Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash # others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres "/>
 
   <meta property="og:title" content="[Mac] Ruby on Rails 基本環境建置 - 10.14 Mojave" />
-<meta property="og:description" content="# Installing Homebrew ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39; &gt;&gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres" />
+<meta property="og:description" content="# Installing Homebrew ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34; # Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39; &gt;&gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3 # Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash # others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/rails-mac-os-environment-sierra/" />
 <meta property="article:published_time" content="2016-10-30T00:00:00+00:00" />
@@ -118,22 +118,27 @@ if (!doNotTrack) {
     </header>
     <div class="post-content">
       <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Installing Homebrew</span>
-ruby -e <span style="color:#ed9d13">&#34;</span><span style="color:#6ab825;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">&#34;</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Installing Ruby</span>
+ruby -e <span style="color:#ed9d13">&#34;</span><span style="color:#6ab825;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">&#34;</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Installing Ruby</span>
 <span style="color:#999;font-style:italic"># 改用相對輕量的rbenv取代肥肥的rvm</span>
 brew install rbenv ruby-build
 
 <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#39;if which rbenv &gt; /dev/null; then eval &#34;$(rbenv init -)&#34;; fi&#39;</span> &gt;&gt; ~/.bash_profile
 <span style="color:#24909d">source</span> ~/.bash_profile
 
-rbenv install <span style="color:#3677a9">2</span>.6.3
-rbenv global <span style="color:#3677a9">2</span>.6.3</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Installing Rails</span>
-gem install rails -v <span style="color:#3677a9">6</span>.0.0.rc1
-rbenv rehash</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># others</span>
+rbenv install 2.6.3
+rbenv global 2.6.3
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Installing Rails</span>
+gem install rails -v 6.0.0.rc1
+rbenv rehash
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># others</span>
 brew install mysql
 brew install redis
 brew install ssdb
 brew install memcached
-brew install postgres</code></pre></div>
+brew install postgres
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

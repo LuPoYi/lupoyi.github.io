@@ -4,7 +4,7 @@
 <head>
   <title>[VMware] VCenter Cluster 練習筆記 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -61,14 +61,14 @@ if (!doNotTrack) {
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[VMware] VCenter Cluster 練習筆記"/>
 <meta name="twitter:description" content="vSphere ESXi: 整個虛擬化平台，算是一個作業系統 vSphere Client: 操作VM用的軟體(遠端連線到ESXi) vCenter: 可統一管理，支援ADD 容錯
-&ndash;VLAN 45(橘底) - 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN - 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 - 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS
-Cluster
+&ndash;VLAN 45(橘底)
+ 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS  Cluster
 註記： HT Hyper-threading 可將核心分成兩個序列在處理 cpu數核心數(2)(HT)=邏輯核心 硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)"/>
 
   <meta property="og:title" content="[VMware] VCenter Cluster 練習筆記" />
 <meta property="og:description" content="vSphere ESXi: 整個虛擬化平台，算是一個作業系統 vSphere Client: 操作VM用的軟體(遠端連線到ESXi) vCenter: 可統一管理，支援ADD 容錯
-&ndash;VLAN 45(橘底) - 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN - 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 - 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS
-Cluster
+&ndash;VLAN 45(橘底)
+ 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS  Cluster
 註記： HT Hyper-threading 可將核心分成兩個序列在處理 cpu數核心數(2)(HT)=邏輯核心 硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/vmware-vcenter-cluster-exercises/" />
@@ -123,24 +123,21 @@ Cluster
           <a class="tag" href="https://blog.poyi.tw/tags/vmware/">vmware</a><a class="tag" href="https://blog.poyi.tw/tags/cluster/">cluster</a></div></div>
     </header>
     <div class="post-content">
-      <p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/91YcA52rS8Owm0IT1612_SHL-TEST.COM.jpg" alt="SHL-TEST.COM.jpg" /></p>
-
+      <p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/91YcA52rS8Owm0IT1612_SHL-TEST.COM.jpg" alt="SHL-TEST.COM.jpg"></p>
 <p>vSphere ESXi: 整個虛擬化平台，算是一個作業系統
 vSphere Client: 操作VM用的軟體(遠端連線到ESXi)
 vCenter: 可統一管理，支援ADD 容錯</p>
-
-<p>&ndash;VLAN 45(橘底)
-- 準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN
-- 分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域
-- 找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS</p>
-
+<p>&ndash;VLAN 45(橘底)</p>
+<ul>
+<li>準備兩台電腦，灌上vSphere ESXi，設定名稱、IP、VLAN</li>
+<li>分別灌上不同OS，其中一台用來架AD網域，並將每個OS加入網域</li>
+<li>找一台安裝vCenter，安裝後直接連入這台就可直接操作其他OS</li>
+</ul>
 <p>Cluster</p>
-
 <p>註記：
 HT Hyper-threading 可將核心分成兩個序列在處理 cpu數<em>核心數</em>(2)(HT)=邏輯核心
 硬碟分區格式 GPT VS MBR：MBR上限為2T(超過2T以上的空間無法分配出來)</p>
-
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/MiZIdkkTlW47nQrleONw_2013-10-27%20%E4%B8%8B%E5%8D%88%2006-32-23.jpg" alt="2013-10-27 下午 06-32-23.jpg" /></p>
+<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/154247/MiZIdkkTlW47nQrleONw_2013-10-27%20%E4%B8%8B%E5%8D%88%2006-32-23.jpg" alt="2013-10-27 下午 06-32-23.jpg"></p>
 
     </div>
     <div class="post-footer">

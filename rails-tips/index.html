@@ -4,7 +4,7 @@
 <head>
   <title>[Rails] 小技巧 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Rails] 小技巧"/>
-<meta name="twitter:description" content=" .erb的註解 &lt;% #註解可寫在井號後面  %&gt; &lt;% if false %&gt; 或寫在這 &lt;% end  %&gt; .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end 檢查自己寫了多少code $ bundle exec rake stats $ rake routes "/>
+<meta name="twitter:description" content=".erb的註解 &lt;% #註解可寫在井號後面  %&gt; &lt;% if false %&gt; 或寫在這 &lt;% end  %&gt; .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end 檢查自己寫了多少code $ bundle exec rake stats $ rake routes "/>
 
   <meta property="og:title" content="[Rails] 小技巧" />
-<meta property="og:description" content=" .erb的註解 &lt;% #註解可寫在井號後面  %&gt; &lt;% if false %&gt; 或寫在這 &lt;% end  %&gt; .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end 檢查自己寫了多少code $ bundle exec rake stats $ rake routes " />
+<meta property="og:description" content=".erb的註解 &lt;% #註解可寫在井號後面  %&gt; &lt;% if false %&gt; 或寫在這 &lt;% end  %&gt; .rb的註解 # 一般只用單行註解 =begin 多行註解比較少見 =end 檢查自己寫了多少code $ bundle exec rake stats $ rake routes " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/rails-tips/" />
 <meta property="article:published_time" content="2013-10-16T00:00:00+00:00" />
@@ -110,25 +110,24 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="erb的註解">.erb的註解</h2>
+      <h2 id="erb的註解">.erb的註解</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">&lt;<span style="color:#ffa500">% #註解可寫在井號後面 </span> <span style="color:#ed9d13">%&gt;
 </span><span style="color:#ed9d13">
 </span><span style="color:#ed9d13">&lt;% if false %&gt;</span>
 <span style="color:#a61717;background-color:#e3d2d2">或寫在這</span>
-&lt;<span style="color:#ffa500">% end </span> %&gt;</code></pre></div>
-<h2 id="rb的註解">.rb的註解</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># 一般只用單行註解
+&lt;<span style="color:#ffa500">% end </span> %&gt;
+</code></pre></div><h2 id="rb的註解">.rb的註解</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 一般只用單行註解
 
 =begin
 	多行註解比較少見
-=end</pre></div>
-<h2 id="檢查自己寫了多少code">檢查自己寫了多少code</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ bundle <span style="color:#24909d">exec</span> rake stats</code></pre></div>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/9dPiFwgmRd61Oaf5xz2Z_2013-10-17%20%E4%B8%8B%E5%8D%88%2010-38-13.jpg" alt="2013-10-17 下午 10-38-13.jpg" /></p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rake routes</code></pre></div>
-<p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/gXa3Ts8RrqxlUGr0Ducw_2013-11-1%20%E4%B8%8B%E5%8D%88%2002-58-54.jpg" alt="2013-11-1 下午 02-58-54.jpg" /></p>
+=end
+
+</code></pre></div><h2 id="檢查自己寫了多少code">檢查自己寫了多少code</h2>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ bundle <span style="color:#24909d">exec</span> rake stats
+</code></pre></div><p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/9dPiFwgmRd61Oaf5xz2Z_2013-10-17%20%E4%B8%8B%E5%8D%88%2010-38-13.jpg" alt="2013-10-17 下午 10-38-13.jpg"></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rake routes
+</code></pre></div><p><img src="http://user-image.logdown.io/user/2740/blog/2734/post/147937/gXa3Ts8RrqxlUGr0Ducw_2013-11-1%20%E4%B8%8B%E5%8D%88%2002-58-54.jpg" alt="2013-11-1 下午 02-58-54.jpg"></p>
 
     </div>
     <div class="post-footer">

@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] 檔案資料夾存取 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -59,18 +59,18 @@ if (!doNotTrack) {
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[ASP.NET] 檔案資料夾存取"/>
 <meta name="twitter:description" content="刪除
-System.IO.File.Delete(filePath); System.IO.Directory.Delete(folderPath); 搬移
-System.IO.File.Move(sourceFilePath, destinationFilePath); System.IO.Directory.Move(sourceFolderPath, destinationFolderPath); 複製
-System.IO.File.Copy(sourceFilePath, destinationFilePath, true); System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫 取得該目標下所有檔案
-string[] files = System.IO.Directory.GetFiles(folderPath); 比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。
+ System.IO.File.Delete(filePath); System.IO.Directory.Delete(folderPath);  搬移
+ System.IO.File.Move(sourceFilePath, destinationFilePath); System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);  複製
+ System.IO.File.Copy(sourceFilePath, destinationFilePath, true); System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫  取得該目標下所有檔案
+ string[] files = System.IO.Directory.GetFiles(folderPath);  比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。
 這樣也一篇…"/>
 
   <meta property="og:title" content="[ASP.NET] 檔案資料夾存取" />
 <meta property="og:description" content="刪除
-System.IO.File.Delete(filePath); System.IO.Directory.Delete(folderPath); 搬移
-System.IO.File.Move(sourceFilePath, destinationFilePath); System.IO.Directory.Move(sourceFolderPath, destinationFolderPath); 複製
-System.IO.File.Copy(sourceFilePath, destinationFilePath, true); System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫 取得該目標下所有檔案
-string[] files = System.IO.Directory.GetFiles(folderPath); 比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。
+ System.IO.File.Delete(filePath); System.IO.Directory.Delete(folderPath);  搬移
+ System.IO.File.Move(sourceFilePath, destinationFilePath); System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);  複製
+ System.IO.File.Copy(sourceFilePath, destinationFilePath, true); System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫  取得該目標下所有檔案
+ string[] files = System.IO.Directory.GetFiles(folderPath);  比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。
 這樣也一篇…" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/aspnet-archive-folder-access/" />
@@ -121,18 +121,21 @@ string[] files = System.IO.Directory.GetFiles(folderPath); 比較需要注意的
     </header>
     <div class="post-content">
       <p>刪除</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    System.IO.File.Delete(filePath);
-    System.IO.Directory.Delete(folderPath);</pre></div>
+<pre><code>    System.IO.File.Delete(filePath);
+    System.IO.Directory.Delete(folderPath);
+</code></pre>
 <p>搬移</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    System.IO.File.Move(sourceFilePath, destinationFilePath);
-    System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);</pre></div>
+<pre><code>    System.IO.File.Move(sourceFilePath, destinationFilePath);
+    System.IO.Directory.Move(sourceFolderPath, destinationFolderPath);
+</code></pre>
 <p>複製</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    System.IO.File.Copy(sourceFilePath, destinationFilePath, true); 
-    System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫</pre></div>
+<pre><code>    System.IO.File.Copy(sourceFilePath, destinationFilePath, true); 
+    System.IO.Directory.Copy(sourceFolderPath, destinationFolderPath, true);// true表示是否覆寫
+</code></pre>
 <p>取得該目標下所有檔案</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    string[] files = System.IO.Directory.GetFiles(folderPath);</pre></div>
+<pre><code>    string[] files = System.IO.Directory.GetFiles(folderPath);
+</code></pre>
 <p>比較需要注意的是做任何動作之前，都要需要先檢查目標是否存在，否則會跳出錯誤。</p>
-
 <p>這樣也一篇…</p>
 
     </div>

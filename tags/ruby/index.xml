@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ruby on Bob 學習筆記</title>
@@ -20,8 +20,8 @@
       <description>gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
 有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
 以下使用go實作server端，ruby實作client端
-Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
-syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
+Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools ├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
+syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;}由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@ syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHell
       <pubDate>Sat, 26 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/rails-ubuntu-environment-ubuntu16-dot-04/</guid>
-      <description># 建立user sudo adduser bob sudo adduser bob sudo su bob# 安裝常用lib sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails # 使用rbenv來管理ruby cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.</description>
+      <description># 建立user sudo adduser bob sudo adduser bob sudo su bob # 安裝常用lib sudo apt-get update sudo apt-get upgrade sudo apt-get install vim nodejs autoconf sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev Install Ruby &amp;amp; Rails # 使用rbenv來管理ruby cd git clone https://github.com/rbenv/rbenv.git ~/.rbenv echo &amp;#39;export PATH=&amp;#34;$HOME/.rbenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc echo &amp;#39;eval &amp;#34;$(rbenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bashrc exec $SHELL git clone https://github.com/rbenv/ruby-build.git ~/.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHell
       <pubDate>Sun, 30 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/rails-mac-os-environment-sierra/</guid>
-      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;# Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3# Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash# others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres</description>
+      <description># Installing Homebrew ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34; # Installing Ruby # 改用相對輕量的rbenv取代肥肥的rvm brew install rbenv ruby-build echo &amp;#39;if which rbenv &amp;gt; /dev/null; then eval &amp;#34;$(rbenv init -)&amp;#34;; fi&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile rbenv install 2.6.3 rbenv global 2.6.3 # Installing Rails gem install rails -v 6.0.0.rc1 rbenv rehash # others brew install mysql brew install redis brew install ssdb brew install memcached brew install postgres </description>
     </item>
     
   </channel>

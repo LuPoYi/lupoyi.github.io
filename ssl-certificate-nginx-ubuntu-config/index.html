@@ -4,7 +4,7 @@
 <head>
   <title>[Ubuntu] 自行簽署的SSL憑證及Nginx設定 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -62,12 +62,12 @@ if (!doNotTrack) {
 <meta name="twitter:title" content="[Ubuntu] 自行簽署的SSL憑證及Nginx設定"/>
 <meta name="twitter:description" content="自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包
 要上Production的話還是必須找SSL服務來簽
-# openssl # 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt# nginx.conf server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &lt;--- rails路徑 rails_env production; passenger_enabled on; }# 產dhparam -out sudo openssl dhparam -out /opt/nginx/ssl/dhparam."/>
+# openssl # 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt # nginx.conf server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &lt;--- rails路徑 rails_env production; passenger_enabled on; } # 產dhparam -out sudo openssl dhparam -out /opt/nginx/ssl/dhparam."/>
 
   <meta property="og:title" content="[Ubuntu] 自行簽署的SSL憑證及Nginx設定" />
 <meta property="og:description" content="自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包
 要上Production的話還是必須找SSL服務來簽
-# openssl # 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt# nginx.conf server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &lt;--- rails路徑 rails_env production; passenger_enabled on; }# 產dhparam -out sudo openssl dhparam -out /opt/nginx/ssl/dhparam." />
+# openssl # 我習慣在nginx把ssl裝在opt/nginx底下 mkdir /opt/nginx/ssl sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt # 填寫基本資料 # Common Name 填 Domain Name 或 IP # 建立金鑰nginx.key及憑證nginx.crt # nginx.conf server { listen 80 default_server; # 將所有HTTP requests轉至HTTPS return 301 https://$host$request_uri; } server { listen 443 ssl default_server; ssl_certificate /opt/nginx/ssl/nginx.crt; ssl_certificate_key /opt/nginx/ssl/nginx.key; # 其他ssl參數設定 ... server_name default_server; root /home/path/rails/public; # &lt;--- rails路徑 rails_env production; passenger_enabled on; } # 產dhparam -out sudo openssl dhparam -out /opt/nginx/ssl/dhparam." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/ssl-certificate-nginx-ubuntu-config/" />
 <meta property="article:published_time" content="2016-07-14T00:00:00+00:00" />
@@ -122,7 +122,6 @@ if (!doNotTrack) {
     </header>
     <div class="post-content">
       <p>自簽SSL單純只是讓資料傳送時加密，避免使用明文傳輸資料而被直接監聽到封包</p>
-
 <p>要上Production的話還是必須找SSL服務來簽</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># openssl</span>
 <span style="color:#999;font-style:italic"># 我習慣在nginx把ssl裝在opt/nginx底下</span>
@@ -130,7 +129,8 @@ mkdir /opt/nginx/ssl
 sudo openssl req -x509 -nodes -days <span style="color:#3677a9">365</span> -newkey rsa:2048 -keyout /opt/nginx/ssl/nginx.key -out /opt/nginx/ssl/nginx.crt
 <span style="color:#999;font-style:italic"># 填寫基本資料</span>
 <span style="color:#999;font-style:italic"># Common Name 填 Domain Name 或 IP</span>
-<span style="color:#999;font-style:italic"># 建立金鑰nginx.key及憑證nginx.crt</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># nginx.conf</span>
+<span style="color:#999;font-style:italic"># 建立金鑰nginx.key及憑證nginx.crt</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># nginx.conf</span>
 server {
   listen <span style="color:#3677a9">80</span> default_server;
 
@@ -151,16 +151,15 @@ server {
   root /home/path/rails/public;   <span style="color:#999;font-style:italic"># &lt;--- rails路徑</span>
   rails_env production;
   passenger_enabled on;
-}</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 產dhparam -out</span>
-sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span style="color:#3677a9">2048</span></code></pre></div>
-<p>SSL設定最佳解可以參考 <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
+}
 
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># 產dhparam -out</span>
+sudo openssl dhparam -out /opt/nginx/ssl/dhparam.pem <span style="color:#3677a9">2048</span>
+
+</code></pre></div><p>SSL設定最佳解可以參考 <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
 <p>Reference:</p>
-
 <p><a href="https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/">https://blog.gtwang.org/linux/nginx-create-and-install-ssl-certificate-on-ubuntu-linux/</a></p>
-
 <p><a href="https://ksmx.me/letsencrypt-ssl-https/">https://ksmx.me/letsencrypt-ssl-https/</a></p>
-
 <p><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">https://mozilla.github.io/server-side-tls/ssl-config-generator/</a></p>
 
     </div>

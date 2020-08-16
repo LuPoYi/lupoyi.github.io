@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C# on Bob 學習筆記</title>
@@ -40,7 +40,7 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
       <pubDate>Wed, 28 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/aspnet-file-download/</guid>
-      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;#34;C:/porn.jpg&amp;#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;#34;application/octet-stream&amp;#34;; // 指定檔案類型 	Response.AddHeader(&amp;#34;Content-Disposition&amp;#34;,&amp;#34;attachment;filename=&amp;#34;+&amp;#34;porn.jpg&amp;#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&amp;#34;Content-Length&amp;#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End();  System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;#34;C:/porn.jpg&amp;#34;; // 設定路徑 	byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱 	Response.</description>
+      <description>Response.WriteFile 檔案下載方式一 using System.IO; string filePath = &amp;#34;C:/porn.jpg&amp;#34;; FileInfo file = new FileInfo(filePath); Response.Clear() Response.Buffer = false; Response.ContentType = &amp;#34;application/octet-stream&amp;#34;; // 指定檔案類型 	Response.AddHeader(&amp;#34;Content-Disposition&amp;#34;,&amp;#34;attachment;filename=&amp;#34;+&amp;#34;porn.jpg&amp;#34;); // 設定檔名 	// System.Web.HttpUtility.UrlEncode(newFileName, System.Text.Encoding.UTF8) 解決中文檔名亂碼 	Response.AppendHeader(&amp;#34;Content-Length&amp;#34;, file.Length.ToString()); // 表頭加入檔案大小 	Response.WriteFile(file.FullName); Response.Flush(); Response.End(); System.Net.WebClient.DownloadData 檔案下載方式二 using System.Net; WebClient wc = new WebClient(); byte[] byteFile = null; string path = &amp;#34;C:/porn.jpg&amp;#34;; // 設定路徑  byteFile = wc.DownloadData(path); string fileName = System.IO.Path.GetFileName(path); // 取得檔案名稱  Response.</description>
     </item>
     
     <item>
@@ -52,10 +52,10 @@ Reference: http://msdn.microsoft.com/zh-tw/library/ttw7t8t6.ASPX http://www.cnbl
       <description>StringBuilder: 用append串接；大量動態字串時效率較高 String: 用+串接；固定字串時，效率較高
 一般情況都用String String.IndexOf 找字串中第一次出現的index
 if(employeeName.IndexOf(&amp;#34;Admin&amp;#34;) == -1)	// 可判斷Name中是否有符合Admin的字串 String.LastIndexOf 找字串中最後一次出現的index
-Substring(int startIndex, int length) 擷取字串
-string str = &amp;#34;台灣駐史瓦濟蘭大使館&amp;#34;; str.Substring(3, 6); // output: 史瓦濟蘭大使 Split 分隔字串
-string wholeString = &amp;#34;Bob.Lu&amp;#34;; string[] spiltString = wholeString.Split(new string[] { &amp;#34;.&amp;#34; }, StringSplitOptions.RemoveEmptyEntries); aryUserInfo[0].ToString(); // output: Bob Regex.IsMatch(string input, string pattern) 是否包含xxx
-Regex.IsMatch(strPwd, &amp;#34;[0-9]&amp;#34;) // = Regex.IsMatch(strPwd, @&amp;#34;\d&amp;#34;) Regex.IsMatch(strPwd, @&amp;#34;[\W]&amp;#34;) pattern表示法 : \d : [0-9] 數字 \D : 數字以外的字元 \w : [a-zA-Z0-9_] \W : \w以外的字元</description>
+Substring(int startIndex,	int length) 擷取字串
+string str = &amp;quot;台灣駐史瓦濟蘭大使館&amp;quot;; str.Substring(3, 6);	// output: 史瓦濟蘭大使  Split 分隔字串
+string wholeString = &amp;quot;Bob.Lu&amp;quot;; string[] spiltString = wholeString.Split(new string[] { &amp;quot;.&amp;quot; }, StringSplitOptions.RemoveEmptyEntries); aryUserInfo[0].ToString(); // output: Bob  Regex.IsMatch(string input,	string pattern) 是否包含xxx
+Regex.IsMatch(strPwd, &amp;quot;[0-9]&amp;quot;) // = Regex.IsMatch(strPwd, @&amp;quot;\d&amp;quot;) Regex.IsMatch(strPwd, @&amp;quot;[\W]&amp;quot;)  pattern表示法 : \d : [0-9] 數字 \D : 數字以外的字元 \w : [a-zA-Z0-9_] \W : \w以外的字元</description>
     </item>
     
     <item>

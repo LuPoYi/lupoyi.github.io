@@ -1,49 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://blog.poyi.tw/</loc>
-    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/categories/</loc>
-    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/dart/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/tags/dart/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.poyi.tw/categories/dart/</loc>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/dart-beginning/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/tags/flutter/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/tags/</loc>
-    <lastmod>2020-07-03T15:14:30+08:00</lastmod>
+    <lastmod>2020-08-16T21:32:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/grpc-go-ruby/</loc>
-    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.poyi.tw/categories/golang/</loc>
     <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
@@ -53,7 +48,7 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/grpc/</loc>
+    <loc>https://blog.poyi.tw/categories/golang/</loc>
     <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
@@ -63,13 +58,18 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/ruby/</loc>
+    <loc>https://blog.poyi.tw/categories/grpc/</loc>
     <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.poyi.tw/tags/ruby/</loc>
     <lastmod>2020-07-03T15:14:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.poyi.tw/categories/ruby/</loc>
+    <lastmod>2020-04-03T15:45:37+08:00</lastmod>
   </url>
   
   <url>
@@ -523,12 +523,12 @@
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/categories/vmware/</loc>
+    <loc>https://blog.poyi.tw/tags/vmware/</loc>
     <lastmod>2020-03-28T21:00:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.poyi.tw/tags/vmware/</loc>
+    <loc>https://blog.poyi.tw/categories/vmware/</loc>
     <lastmod>2020-03-28T21:00:06+08:00</lastmod>
   </url>
   

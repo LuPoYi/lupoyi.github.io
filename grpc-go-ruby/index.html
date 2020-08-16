@@ -4,7 +4,7 @@
 <head>
   <title>[gRPC] Go Server &amp; Ruby Client | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -117,23 +117,18 @@ if (!doNotTrack) {
           <a class="tag" href="https://blog.poyi.tw/tags/ruby/">ruby</a><a class="tag" href="https://blog.poyi.tw/tags/golang/">Golang</a><a class="tag" href="https://blog.poyi.tw/tags/grpc/">gRPC</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="grpc">gRPC</h2>
-
+      <h2 id="grpc">gRPC</h2>
 <p>gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers
 (protobuf)序列化資料來更有效地進行傳輸。</p>
-
 <p>有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。</p>
-
 <p>以下使用go實作server端，ruby實作client端</p>
-
-<h3 id="install-grpc-grpc-tools">Install gRPC &amp; grpc-tools</h3>
+<h3 id="install-grpc--grpc-tools">Install gRPC &amp; grpc-tools</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get google.golang.org/grpc
 brew install protobuf
 
 gem install grpc
-gem install grpc-tools</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── go
+gem install grpc-tools
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── go
 │   ├── pb
 │   │   └── demo.pb.go
 │   └── server
@@ -145,9 +140,8 @@ gem install grpc-tools</code></pre></div><div class="highlight"><pre style="colo
     │   └── main.rb
     └── pb
         ├── demo_pb.rb
-        └── demo_services_pb.rb</code></pre></div>
-<h3 id="定義protobuf-demo-proto">定義protobuf - demo.proto</h3>
-
+        └── demo_services_pb.rb
+</code></pre></div><h3 id="定義protobuf---demoproto">定義protobuf - demo.proto</h3>
 <p>簡單定義兩組rpc，這邊必須先決定好request及response</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-proto" data-lang="proto">syntax = <span style="color:#ed9d13">&#34;proto3&#34;</span>;<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2">
@@ -173,14 +167,15 @@ gem install grpc-tools</code></pre></div><div class="highlight"><pre style="colo
 </span><span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">message</span> <span style="color:#447fcf;text-decoration:underline">SumResponse</span> {<span style="color:#a61717;background-color:#e3d2d2">
 </span><span style="color:#a61717;background-color:#e3d2d2"></span>  <span style="color:#6ab825;font-weight:bold">int64</span> sum = <span style="color:#3677a9">1</span>;<span style="color:#a61717;background-color:#e3d2d2">
-</span><span style="color:#a61717;background-color:#e3d2d2"></span>}</code></pre></div>
-<h3 id="由protobuf產出go跟ruby對應的code">由protobuf產出go跟ruby對應的code</h3>
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>}<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></code></pre></div><h3 id="由protobuf產出go跟ruby對應的code">由protobuf產出go跟ruby對應的code</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">protoc -I protos/ protos/demo.proto --go_out=<span style="color:#40ffff">plugins</span>=grpc:go/pb
 <span style="color:#999;font-style:italic"># generate demo.pb.go</span>
 
 grpc_tools_ruby_protoc -I protos/ --ruby_out=ruby/pb --grpc_out=ruby/pb protos/demo.proto
-<span style="color:#999;font-style:italic"># generate demo_pb.rb deom_services_pb.rb</span></code></pre></div>
-<h3 id="server-go-實作">Server - Go 實作</h3>
+<span style="color:#999;font-style:italic"># generate demo_pb.rb deom_services_pb.rb</span>
+</code></pre></div><h3 id="server---go-實作">Server - Go 實作</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#6ab825;font-weight:bold">package</span> main
 
 <span style="color:#6ab825;font-weight:bold">import</span> (
@@ -223,8 +218,8 @@ grpc_tools_ruby_protoc -I protos/ --ruby_out=ruby/pb --grpc_out=ruby/pb protos/d
   <span style="color:#6ab825;font-weight:bold">if</span> err := s.<span style="color:#447fcf">Serve</span>(lis); err != <span style="color:#6ab825;font-weight:bold">nil</span> {
     log.<span style="color:#447fcf">Fatalf</span>(<span style="color:#ed9d13">&#34;failed to serve: %v&#34;</span>, err)
   }
-}</code></pre></div>
-<h3 id="client-ruby-實作">Client - Ruby 實作</h3>
+}
+</code></pre></div><h3 id="client---ruby-實作">Client - Ruby 實作</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">this_dir = <span style="color:#40ffff">File</span>.expand_path(<span style="color:#40ffff">File</span>.dirname(__FILE__))
 lib_dir = <span style="color:#40ffff">File</span>.join(<span style="color:#40ffff">File</span>.dirname(this_dir), <span style="color:#ed9d13">&#39;pb&#39;</span>)
 $LOAD_PATH.unshift(lib_dir) <span style="color:#6ab825;font-weight:bold">unless</span> $LOAD_PATH.include?(lib_dir)
@@ -247,19 +242,17 @@ $LOAD_PATH.unshift(lib_dir) <span style="color:#6ab825;font-weight:bold">unless<
   <span style="color:#24909d">puts</span> <span style="color:#ed9d13">&#34;sum_response </span><span style="color:#ed9d13">#{</span>sum_response<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
 <span style="color:#6ab825;font-weight:bold">end</span>
 
-main</code></pre></div>
-<h3 id="執行結果">執行結果</h3>
+main
+</code></pre></div><h3 id="執行結果">執行結果</h3>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server $ go run main.go
-<span style="color:#3677a9">2019</span>/09/28 <span style="color:#3677a9">14</span>:11:48 Received: Bob
-<span style="color:#3677a9">2019</span>/09/28 <span style="color:#3677a9">14</span>:11:48 Received: <span style="color:#3677a9">8</span> + <span style="color:#3677a9">7</span></code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client $ ruby main.rb
+2019/09/28 14:11:48 Received: Bob
+2019/09/28 14:11:48 Received: <span style="color:#3677a9">8</span> + <span style="color:#3677a9">7</span>
+</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">client $ ruby main.rb
 say_hello_response &lt;Demo::HelloResponse: message: <span style="color:#ed9d13">&#34;Hello Bob&#34;</span>&gt;
-sum_response &lt;Demo::SumResponse: sum: <span style="color:#3677a9">15</span>&gt;</code></pre></div>
-<h4 id="source-code-https-github-com-lupoyi-grpc-demo">Source code: <a href="https://github.com/LuPoYi/grpc-demo">https://github.com/LuPoYi/grpc-demo</a></h4>
-
+sum_response &lt;Demo::SumResponse: sum: 15&gt;
+</code></pre></div><h4 id="source-code-httpsgithubcomlupoyigrpc-demo">Source code: <a href="https://github.com/LuPoYi/grpc-demo">https://github.com/LuPoYi/grpc-demo</a></h4>
 <p>Reference:</p>
-
 <p><a href="https://yami.io/grpc/">https://yami.io/grpc/</a></p>
-
 <p><a href="https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w">https://yushuanhsieh.github.io/webdevelopment/gRPC-Dial/?fbclid=IwAR1A7a9jryOuadKS7tC5K2FStdy9WWRcucHiOoJ6L5V7tyTDn2kVKZngH0w</a></p>
 
     </div>

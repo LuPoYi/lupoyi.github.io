@@ -4,7 +4,7 @@
 <head>
   <title>[Ubuntu] 設定NTP校正時間 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -119,10 +119,7 @@ $ date # 確認目前時間 $ dpkg -l | grep ntp # 檢查是否已安裝 $ sudo 
           <a class="tag" href="https://blog.poyi.tw/tags/ntp/">ntp</a><a class="tag" href="https://blog.poyi.tw/tags/ntpdate/">ntpdate</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<h3 id="校正系統時間">校正系統時間</h3>
-
+      <h3 id="校正系統時間">校正系統時間</h3>
 <p>類似OTP(google authenticator)這種服務當你系統時間不對就完全不能用</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ date <span style="color:#999;font-style:italic"># 確認目前時間</span>
 $ dpkg -l | grep ntp <span style="color:#999;font-style:italic"># 檢查是否已安裝</span>
@@ -143,11 +140,9 @@ $ vim /etc/ntp.conf
 $ sudo service ntp restart <span style="color:#999;font-style:italic"># ntp會自動校時</span>
 
 $ ntpdate time.stdtime.gov.tw <span style="color:#999;font-style:italic"># 測試 NTP Server</span>
-<span style="color:#3677a9">19</span> Nov <span style="color:#3677a9">14</span>:38:08 ntpdate[<span style="color:#3677a9">20006</span>]: the NTP socket is in use, exiting</code></pre></div>
-<p>Reference:</p>
-
+<span style="color:#3677a9">19</span> Nov 14:38:08 ntpdate[20006]: the NTP socket is in use, exiting
+</code></pre></div><p>Reference:</p>
 <p><a href="http://pineapplelin.pixnet.net/blog/post/25364493-ubuntu%E5%A6%82%E4%BD%95%E8%A8%AD%E5%AE%9Antp%E6%A0%A1%E6%99%82">http://pineapplelin.pixnet.net/blog/post/25364493-ubuntu%E5%A6%82%E4%BD%95%E8%A8%AD%E5%AE%9Antp%E6%A0%A1%E6%99%82</a></p>
-
 <p><a href="http://www.nowtaxes.com.tw/node/1112">http://www.nowtaxes.com.tw/node/1112</a></p>
 
     </div>

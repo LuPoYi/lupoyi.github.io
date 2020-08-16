@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] Linq基本用法 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -60,12 +60,12 @@ if (!doNotTrack) {
 <meta name="twitter:title" content="[ASP.NET] Linq基本用法"/>
 <meta name="twitter:description" content="公司前輩跟我提過可以用用看Linq比較潮(?) 寫.NET的時候就不需要寫的這麼..無腦
 sqlStr &#43;= &#34;Select ...&#34;; sqlStr &#43;= &#34;from ....&#34;; sqlStr &#43;= &#34;join ...&#34;; sqlStr &#43;= &#34;where ....&#34; string sql = @&#34;SELECT ... FROM table1 WHERE field3 = @Param1&#34;; 基本Linq類似這樣
-var Query = from q in myDB.Employee where q.Name == &#34;Bob&#34; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4"/>
+var Query = from q in myDB.Employee where q.Name == &#34;Bob&#34; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4 "/>
 
   <meta property="og:title" content="[ASP.NET] Linq基本用法" />
 <meta property="og:description" content="公司前輩跟我提過可以用用看Linq比較潮(?) 寫.NET的時候就不需要寫的這麼..無腦
 sqlStr &#43;= &#34;Select ...&#34;; sqlStr &#43;= &#34;from ....&#34;; sqlStr &#43;= &#34;join ...&#34;; sqlStr &#43;= &#34;where ....&#34; string sql = @&#34;SELECT ... FROM table1 WHERE field3 = @Param1&#34;; 基本Linq類似這樣
-var Query = from q in myDB.Employee where q.Name == &#34;Bob&#34; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4" />
+var Query = from q in myDB.Employee where q.Name == &#34;Bob&#34; select q; Group By int[] values = {1,2,3,4,5,6}; var Query = from p in values group p by p % 2 ==0; // values =&gt; 1 3 5 0 2 4 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/linq-introduction/" />
 <meta property="article:published_time" content="2013-08-23T00:00:00+00:00" />
@@ -116,16 +116,16 @@ var Query = from q in myDB.Employee where q.Name == &#34;Bob&#34; select q; Grou
     <div class="post-content">
       <p>公司前輩跟我提過可以用用看Linq比較潮(?)
 寫.NET的時候就不需要寫的這麼..無腦</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    sqlStr += &#34;Select ...&#34;;
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    sqlStr += &#34;Select ...&#34;;
     sqlStr += &#34;from ....&#34;;
     sqlStr += &#34;join ...&#34;;
     sqlStr += &#34;where ....&#34;
 		
     string sql = @&#34;SELECT ...
                FROM table1
-               WHERE field3 = @Param1&#34;;</pre></div>
-<p>基本Linq類似這樣</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    var Query =
+               WHERE field3 = @Param1&#34;;
+</code></pre></div><p>基本Linq類似這樣</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    var Query =
     	from q in myDB.Employee
     	where q.Name == &#34;Bob&#34;
     	select q;
@@ -136,7 +136,8 @@ Group By
     var Query =
         from p in values
         group p by p % 2 ==0;
-        // values =&gt; 1 3 5 0 2 4</pre></div>
+        // values =&gt; 1 3 5 0 2 4
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div id="disqus_thread"></div>

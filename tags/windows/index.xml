@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>windows on Bob 學習筆記</title>
@@ -28,7 +28,7 @@ Miner 挖礦軟體 (挑一款即可) EWBF Miner EWBF&amp;rsquo;s CUDA Zcash mine
 自己solo的話就是有挖到block才有收益
 http://zcash.flypool.org/
 通常礦池首頁都會寫很清楚該怎麼做
-# EWBF Miner miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3# Nicehash Miner nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
+# EWBF Miner miner.exe --server &amp;lt;server&amp;gt; --user &amp;lt;address&amp;gt;.&amp;lt;worker&amp;gt; --port &amp;lt;port&amp;gt; --cuda_devices 0 1 2 3 miner.exe --server asia1-zcash.flypool.org --user t1bjg8ZSVhW2LzRP3BiHZKbMGipLJuxibYE.bob3 --port 3333 --cuda_devices 0 1 2 3 # Nicehash Miner nheqminer.exe -cd 0 -l &amp;lt;礦池server&amp;gt; -u &amp;lt;你自己的錢包地址&amp;gt;.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ http://zcash.flypool.org/
 # C:\ # --cache=看你想分配多少RAM來sync。預設只有16MB geth --rpc --cache=8192 // 第一次似乎可以用geth &amp;ndash;rpc &amp;ndash;fast來快速sync完整node(沒試過)
 2. 安裝mining軟體 下載mining軟體(載最下面的即可) 照一般安裝流程
 安裝好後可以測設備的算力，正常來說是GPU比較快(AMD &amp;gt; nVidia)
-# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&amp;rdquo;geth &amp;ndash;rpc&amp;rdquo;
+# C:\Program Files\Ethereum (版號)\Release ethminer -G -M # GPU ethminer -M # CPU 3. 挖礦 挖礦前blockchain要先sync過，也就是&amp;quot;geth &amp;ndash;rpc&amp;rdquo;
 看是要自己挖還是加入別人礦池
 自己挖 # C:\Program Files\Ethereum (版號)\Release ethminer -G # GPU 加入礦池 需按照各大礦池的教學操作，基本上都不需要註冊，直接使用礦池提供的url+你的錢包地址來挖就行了
 我這邊使用nanopool(另外還有dwarfpool/ethpool&amp;hellip;)

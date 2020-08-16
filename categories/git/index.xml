@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Bob 學習筆記</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://blog.poyi.tw/git-basic/</guid>
-      <description>apt-get install git-core git config --global user.name &amp;#34;name&amp;#34; git config --global user.email &amp;#34;email&amp;#34; git config --list # 查看設定# Git的基本功(status, add, commit, log, .gitignore) git status git add git add . git commit git commit -m &amp;#34;Add test.rb to test git function&amp;#34; git log (-p) git log --statgitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;#34;Loser&amp;#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
+      <description>apt-get install git-core git config --global user.name &amp;#34;name&amp;#34; git config --global user.email &amp;#34;email&amp;#34; git config --list # 查看設定 # Git的基本功(status, add, commit, log, .gitignore) git status git add git add . git commit git commit -m &amp;#34;Add test.rb to test git function&amp;#34; git log (-p) git log --stat gitk --all (&amp;amp;) 內建gui git branch 這個指令可以列出所有的 branch 並告訴你目前正在哪個 branch： git branch (new_branch_name) git checkout &amp;#34;Loser&amp;#34; 切換branch http://howar31.blogspot.tw/2013/06/git.html http://tech.marsw.tw/blog/2013/08/16/git-notes-github 因此我們稍微做一下流程的整理： 修改檔案 =&amp;gt; 加入 stage (git add) =&amp;gt; 提交( git commit )=&amp;gt; 繼續修改其他檔案</description>
     </item>
     
   </channel>

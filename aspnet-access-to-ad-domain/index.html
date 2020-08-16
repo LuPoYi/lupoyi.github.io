@@ -4,7 +4,7 @@
 <head>
   <title>[ASP.NET] 存取AD網域 | Bob 學習筆記</title>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.58.0" />
+  <meta name="generator" content="Hugo 0.73.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Bob Lu" />
   <meta name="description"
@@ -58,10 +58,10 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[ASP.NET] 存取AD網域"/>
-<meta name="twitter:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &#34;LDAP://&#34;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de."/>
+<meta name="twitter:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose(); 修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de."/>
 
   <meta property="og:title" content="[ASP.NET] 存取AD網域" />
-<meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose();  修改指定帳號的屬性值 string QueryString = &#34;LDAP://&#34;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
+<meta property="og:description" content="透過AD網域來存取帳號資料 查詢資料 string QueryString = &#34;LDAP://網域&#34;; DirectoryEntry de = new DirectoryEntry(QueryString,adminAccount,adminPassword); DirectorySearcher ds = new DirectorySearcher(de); SearchResultCollection Results = null; // 設定查詢條件：依姓名及工號查詢  ds.Filter = @&#34;(&amp;(samaccountname=&#34; &#43; employeeName &#43; &#34;)(Description=&#34; &#43; employeeNo &#43; &#34;))&#34;; // 將查詢結果放入Results  Results = ds.FindAll(); foreach (SearchResult result in Results) { if (result.Properties[&#34;description&#34;].Count &gt; 0) { // 透過AD裡的屬性「description」，取得工號  string resultNo = result.Properties[&#34;description&#34;][0].ToString(); Response.Write(resultNo); Response.Write(&#34;&lt;br&gt;&#34;); } } ds.Dispose(); // 釋放資源  de.Dispose(); 修改指定帳號的屬性值 string QueryString = &quot;LDAP://&quot;&#43; userLDAP; DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword); de." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.poyi.tw/aspnet-access-to-ad-domain/" />
 <meta property="article:published_time" content="2013-09-12T00:00:00+00:00" />
@@ -110,10 +110,7 @@ if (!doNotTrack) {
         </div></div>
     </header>
     <div class="post-content">
-      
-
-<h2 id="透過ad網域來存取帳號資料">透過AD網域來存取帳號資料</h2>
-
+      <h2 id="透過ad網域來存取帳號資料">透過AD網域來存取帳號資料</h2>
 <h2 id="查詢資料">查詢資料</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">	<span style="color:#6ab825;font-weight:bold">string</span> QueryString = <span style="color:#ed9d13">&#34;LDAP://網域&#34;</span>;
     DirectoryEntry de = <span style="color:#6ab825;font-weight:bold">new</span> DirectoryEntry(QueryString,adminAccount,adminPassword);
@@ -137,32 +134,32 @@ if (!doNotTrack) {
     }
     ds.Dispose(); <span style="color:#999;font-style:italic">// 釋放資源
 </span><span style="color:#999;font-style:italic"></span>    de.Dispose();
-</code></pre></div>
-<h2 id="修改指定帳號的屬性值">修改指定帳號的屬性值</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string QueryString = &#34;LDAP://&#34;+ userLDAP;
+</code></pre></div><h2 id="修改指定帳號的屬性值">修改指定帳號的屬性值</h2>
+<pre><code>string QueryString = &quot;LDAP://&quot;+ userLDAP;
 DirectoryEntry de = new DirectoryEntry(QueryString, adminAccount,adminPassword);
 
-de.Properties[&#34;TelephoneNumber&#34;].Value = 123;     
+de.Properties[&quot;TelephoneNumber&quot;].Value = 123;     
 
 // 停用此帳號：userAccountControl = 514 
-de.Properties[&#34;userAccountControl&#34;].Value = 514;
+de.Properties[&quot;userAccountControl&quot;].Value = 514;
 
 // 重設密碼
-de.Invoke(&#34;SetPassword&#34;, newPassword);
+de.Invoke(&quot;SetPassword&quot;, newPassword);
 
 de.CommitChanges();
-de.Close();</pre></div>
+de.Close();
+</code></pre>
 <h2 id="刪除帳號">刪除帳號</h2>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string QueryString = LDAP://&#34; + userLDAP;
+<pre><code>string QueryString = LDAP://&quot; + userLDAP;
 DirectoryEntry user = new DirectoryEntry(QueryString, adminAccount, adminPassword);
 // 找上一層
 DirectoryEntry ou = user.Parent;
 // 再回去刪它
 ou.Children.Remove(user);
-ou.CommitChanges();</pre></div>
+ou.CommitChanges();
+</code></pre>
 <p>基本屬性KEY跟VALUE可以在AD裡面找到
-<img src="http://user-image.logdown.io/user/2740/blog/2734/post/138560/iH5dxsHMS6SoXINR2EX2_2013-9-15%20%E4%B8%8B%E5%8D%88%2001-58-35.jpg" alt="2013-9-15 下午 01-58-35.jpg" /></p>
-
+<img src="http://user-image.logdown.io/user/2740/blog/2734/post/138560/iH5dxsHMS6SoXINR2EX2_2013-9-15%20%E4%B8%8B%E5%8D%88%2001-58-35.jpg" alt="2013-9-15 下午 01-58-35.jpg"></p>
 <p>Reference:
 <a href="http://www.dotblogs.com.tw/yc421206/archive/2010/02/07/13510.aspx">http://www.dotblogs.com.tw/yc421206/archive/2010/02/07/13510.aspx</a></p>
 

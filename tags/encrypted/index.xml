@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>encrypted on Bob 學習筆記</title>
@@ -31,8 +31,6 @@ All your important files are encrypted. At the moment, the cost of private key f
 {% img /images/poyi/bitcoin3.png &amp;lsquo;image&amp;rsquo; &amp;lsquo;images&amp;rsquo; %}
 而另外它也提供如何購買比特幣相關資訊…貼心再+1…
 目前在台灣是可以直接去全家買會比較方便，這邊就請自行google :D
-
-Reference:
 http://buzzorange.com/techorange/2015/01/19/how-my-mom-got-hacked/
 http://www.epochtimes.com/b5/15/4/9/n4407355.htm</description>
     </item>

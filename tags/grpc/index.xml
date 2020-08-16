@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gRPC on Bob 學習筆記</title>
@@ -20,8 +20,8 @@
       <description>gRPC gRPC是由Google推出的Remote Procedure Calls(RPC)，開發上支援各種主流語言，底層採用HTTP/2協定，再利用Protocol Buffers (protobuf)序列化資料來更有效地進行傳輸。
 有別於傳統的REST，gRPC之間溝通不需要傳遞多餘的HTTP header及HTTP method(GET, POST, PUT, DELETE)，而是由事先就必須定義好protobuf的資料結構，而server端與client端直接去實作這些interface即可，並不需要額外去寫路由。
 以下使用go實作server端，ruby實作client端
-Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
-syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;} 由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
+Install gRPC &amp;amp; grpc-tools go get google.golang.org/grpc brew install protobuf gem install grpc gem install grpc-tools ├── go │ ├── pb │ │ └── demo.pb.go │ └── server │ └── main.go ├── protos │ └── demo.proto └── ruby ├── client │ └── main.rb └── pb ├── demo_pb.rb └── demo_services_pb.rb 定義protobuf - demo.proto 簡單定義兩組rpc，這邊必須先決定好request及response
+syntax = &amp;#34;proto3&amp;#34;;package demo;service DemoService { rpc SayHello (HelloRequest) returns (HelloResponse); rpc Sum (SumRequest) returns (SumResponse);}message HelloRequest { string name = 1;}message HelloResponse { string message = 1;}message SumRequest { int64 numberOne = 1; int64 numberOne = 2;}message SumResponse { int64 sum = 1;}由protobuf產出go跟ruby對應的code protoc -I protos/ protos/demo.</description>
     </item>
     
   </channel>
